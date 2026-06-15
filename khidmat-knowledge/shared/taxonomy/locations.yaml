@@ -1,0 +1,41 @@
+version: "1.0"
+domain: shared
+file: taxonomy/locations.yaml
+
+purpose: >
+  Location vocabulary shared across all Khidmat domains.
+  Registration uses location to enable volunteer dispatch.
+  Future domains (support delivery, programs) will use it for
+  geographic targeting and routing.
+
+location_precision:
+  - id: exact_address
+    label: Exact Address
+    description: Street, building, floor, unit sufficient for unassisted navigation
+  - id: area_with_landmark
+    label: Area with Landmark
+    description: Neighbourhood and nearby landmark sufficient for volunteer navigation
+  - id: area_only
+    label: Area Only
+    description: Neighbourhood or zone — insufficient alone, requires follow-up
+  - id: unknown
+    label: Unknown
+    description: No location information available
+
+location_stability:
+  - id: permanent
+    label: Permanent
+    description: Beneficiary has been at this location for an extended period
+  - id: temporary
+    label: Temporary
+    description: Beneficiary is at this location temporarily
+  - id: transient
+    label: Transient
+    description: Beneficiary moves frequently, location may change before visit
+  - id: unknown
+    label: Unknown
+
+# Future domains will extend this file with:
+# - geographic area taxonomies for program targeting
+# - service area definitions for volunteer routing
+# Do not add those here until those domains are active

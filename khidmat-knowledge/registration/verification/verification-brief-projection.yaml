@@ -1,0 +1,107 @@
+version: "1.1"
+domain: registration
+file: verification/verification-brief-projection.yaml
+
+purpose: >
+  Defines the structure of the document produced at case closure
+  and provided to a volunteer for field verification.
+  This is a PROJECTION of the Case entity at a point in time.
+  It is not a stored entity in the registration domain.
+  The Case is the source of truth. The brief is a derived view of it.
+
+snapshot_semantics:
+  model: snapshot_at_issuance
+  description: >
+    When a Verification Brief is generated and issued to a volunteer,
+    it represents the state of the Case at that exact moment.
+    It does not update automatically if the Case is subsequently modified.
+  consequence: >
+    If the Case is updated after a brief has been issued to a volunteer
+    — for example, new contact information is provided, or a claim
+    is revised — the volunteer is working from a stale brief.
+    Re-issuance is required to give the volunteer current information.
+  re_issuance_responsibility: >
+    Re-issuance is the responsibility of the verification-operations domain,
+    which does not yet exist. In V1, re-issuance must be handled manually.
+    This is an accepted gap for V1 and is recorded in DECISIONS.md.
+  rationale_for_snapshot_over_live: >
+    A live projection would mean the volunteer's brief changes while
+    they are in the field. A volunteer who received a brief, departed
+    for the visit, and then finds the requirements have changed mid-visit
+    has no reliable guide. Snapshot semantics give the volunteer a stable
+    document. The cost is potential staleness; the benefit is operational
+    predictability. This tradeoff is appropriate for V1.
+
+open_gaps_in_brief:
+  description: >
+    open_gaps from case.open_gaps are included in the brief.
+    At ready_for_verification status, all blocking gaps are resolved.
+    Any gaps present in the brief at this status are non-blocking gaps —
+    information that was sought but not obtained, noted for the volunteer
+    to attempt to resolve during the field visit.
+  volunteer_instruction: >
+    Gaps listed in a ready_for_verification brief are not blocking conditions.
+    They are informational — the volunteer should attempt to address them
+    but the visit is not conditional on their resolution.
+
+projection_fields:
+  # All fields map directly to Case or its contained entities.
+  # No field is defined here that is not already in the Case.
+
+  brief_id: derived
+  case_id: from case.case_id
+  generated_at: timestamp at projection time
+  registrant_type: from case.registrant_type
+  registration_channel: from case.registration_channel
+
+  safety_flag: from case.safety_flag
+  safety_notes: from situation.safety_notes where safety_flag is true
+
+  beneficiary_summary:
+    # from beneficiary entity
+    name, age, gender, minor, location, contact, language,
+    legal_status, documentation_status, functional_capacity
+
+  household_summary:
+    # from household entity and household_member list
+    size, head_of_household, guardian_status,
+    income_sources, members (name, age, gender, relationship)
+
+  situations:
+    # from all situation entities in the case
+    # ordered by severity of associated needs
+    trajectory, affected_domains, trigger_event,
+    onset, duration, safety_flag
+
+  needs:
+    # from all need entities
+    # ordered by severity (critical first), then primary flag
+    need_id, need_category, need_subtype, need_source,
+    need_severity, need_duration, primary,
+    deadline, urgency_timeline,
+    treatment_plan, cost_estimate,
+    concerns_member (name and relationship)
+
+  support_interventions:
+    # from all support_intervention entities
+    intervention_type, requested_amount,
+    requested_duration, linked_need_id, justification
+
+  claims:
+    # from all claim entities
+    claim_id, claim_type, claim_text,
+    information_sufficiency, information_consistency,
+    claim_basis, verifiable, evidence_available
+
+  verification_requirements:
+    # derived from claims at projection time
+    # ordered by priority (critical first)
+    requirement_id, linked_claim_id,
+    verification_action, observable,
+    evidence_to_check, priority
+
+  open_gaps:
+    # from case.open_gaps — gaps unresolved at closure
+    gap_type, description, suggested_resolution
+
+  case_status: from case.status

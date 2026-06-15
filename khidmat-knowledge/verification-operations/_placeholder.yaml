@@ -1,0 +1,31 @@
+domain: verification-operations
+maturity: level_2_placeholder
+status: not_yet_active
+
+scope: >
+  This domain governs what happens after a verification brief is assigned
+  to a volunteer and before the case is updated with findings.
+  It does not exist in registration. It begins where registration ends.
+
+concepts_this_domain_will_own:
+  - volunteer_assignment
+  - field_visit
+  - visit_outcome
+  - claim_confirmation (the result of a verification requirement)
+  - evidence_collection
+  - volunteer_notes
+  - escalation_during_verification
+  - re_verification_trigger
+
+concepts_this_domain_explicitly_does_not_own:
+  - verification_requirement (owned by registration — generated from claims)
+  - claim (owned by registration)
+  - verification_brief (projection owned by registration)
+
+dependency_on_registration: >
+  Imports: Case, Claim, VerificationRequirement, Evidence types
+  Does not modify registration entities. Creates new entities.
+
+do_not_implement_until: >
+  Registration domain is stable in production and
+  a volunteer field workflow has been defined.

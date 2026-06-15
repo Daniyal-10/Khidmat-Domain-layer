@@ -1,0 +1,13 @@
+# domain: shared
+# file: shared/ontology/entities.yaml
+# status: placeholder
+#
+# This file will contain entity definitions shared across two or more domains.
+# Currently, no entity has been identified that requires cross-domain definition
+# beyond what is declared in shared/taxonomy/.
+#
+# Candidate future entries:
+#   - Organisation entity (when organisations domain activates)
+#   - Person base entity (if domain-specific person entities need a common base)
+#
+# Do not add entries here until at least two active domains require the same entity.

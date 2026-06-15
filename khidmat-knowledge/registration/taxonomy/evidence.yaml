@@ -1,0 +1,25 @@
+version: "1.0"
+domain: registration
+file: taxonomy/evidence.yaml
+status: placeholder
+
+purpose: >
+  Classification of evidence types used during registration to support claims.
+  Evidence subtypes refine the shared document-type vocabulary from
+  shared/taxonomy/document-types.yaml with registration-specific context.
+
+dependency: >
+  Evidence document types are defined in shared/taxonomy/document-types.yaml.
+  This file adds registration-specific classification metadata — particularly
+  which evidence types are most relevant to each claim type.
+
+concepts_this_file_will_own:
+  - evidence_type (maps to claim_type: which evidence supports which claim)
+  - evidence_subtype (refinement of document type for registration context)
+  - availability_classification (present, accessible, exists_but_unavailable, unknown)
+
+do_not_implement_until: >
+  The evidence entity in registration/ontology/entities.yaml requires
+  structured classification beyond the shared document types.
+  Current registration AI can reference shared/taxonomy/document-types.yaml
+  directly for evidence identification.

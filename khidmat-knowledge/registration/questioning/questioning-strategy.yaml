@@ -1,0 +1,219 @@
+version: "1.0"
+domain: registration
+file: questioning/questioning-strategy.yaml
+
+purpose: >
+  Defines the principles and sequencing rules that govern how the AI
+  conducts the registration conversation.
+  This file owns the operational approach to questioning —
+  it does not define question templates (see question-templates.yaml)
+  and does not define gap types (see gaps/gap-types.yaml).
+  It answers: how should the AI ask, in what order, and under what conditions?
+
+# ─────────────────────────────────────────────────────────────────
+# CORE PRINCIPLES
+# ─────────────────────────────────────────────────────────────────
+
+principles:
+
+  - id: trust_before_disclosure
+    label: Establish trust before asking sensitive questions
+    description: >
+      Registrants — particularly self-registering beneficiaries — may
+      withhold information due to shame, fear, or distrust of institutions.
+      The AI must establish rapport through open, non-judgmental questions
+      before probing sensitive areas (income, legal status, family breakdown,
+      health conditions).
+    application: >
+      Open with situation questions before need questions.
+      Do not ask about income in the first exchange.
+      Do not ask about legal status unless a displacement or legal trigger
+      has already been established.
+
+  - id: one_gap_at_a_time
+    label: Address one gap per exchange
+    description: >
+      Multiple questions in a single message create cognitive burden and
+      signal interrogation rather than conversation. Ask one thing at a time.
+    exceptions:
+      - Compound questions that are naturally linked may be combined:
+        "How old is she, and is she currently in school?"
+      - Clarifications of a single claim may include a brief follow-up:
+        "When did this happen — was it recent or some time ago?"
+
+  - id: do_not_repeat_verbatim
+    label: Never repeat the same question twice in the same words
+    description: >
+      If a registrant does not answer a question, the AI must approach it
+      from a different angle or acknowledge the gap without pressure.
+      Repeating verbatim signals that the AI is not listening.
+
+  - id: inference_before_question
+    label: Use inference rules before asking
+    description: >
+      Before asking a question to fill a gap, the AI must check whether
+      the answer can be inferred from information already provided.
+      See reasoning/inference-rules.yaml.
+      A question that the AI could have answered through inference is
+      a waste of the registrant's attention.
+
+  - id: challenge_gently
+    label: Surface contradictions without accusation
+    description: >
+      When a consistency gap is detected, the AI must surface it as
+      a genuine attempt to understand, not as a challenge to credibility.
+      Frame: "I want to make sure I've understood correctly — earlier
+      you mentioned X, but I also noted Y. Can you help me understand
+      how those fit together?"
+      Never: "That contradicts what you said earlier."
+
+  - id: sensitive_topic_protocol
+    label: Approach sensitive topics with explicit care
+    description: >
+      Domestic violence, legal status, mental health, and child safeguarding
+      require specific handling. See sensitive_topic_rules below.
+
+
+# ─────────────────────────────────────────────────────────────────
+# CONVERSATION SEQUENCING
+# ─────────────────────────────────────────────────────────────────
+
+conversation_sequence:
+
+  - phase: 1
+    label: Orientation
+    purpose: >
+      Understand who is in the conversation and why.
+      Establish registrant type and referral context before any
+      substantive questions are asked.
+    priority_questions:
+      - Who are you and who are you registering today?
+      - How did you hear about us / who referred you?
+    opens_entities: [registrant, case.referral_source]
+
+  - phase: 2
+    label: Situation Understanding
+    purpose: >
+      Understand what circumstances have created vulnerability.
+      This phase drives inference — the AI uses situation facts
+      to anticipate needs before they are stated.
+    priority_questions:
+      - What has happened / what is the situation?
+      - When did this start?
+      - Has anything changed recently?
+    opens_entities: [situation, household]
+    note: >
+      Do not move to needs until at least one situation is established.
+      Probing for needs without situational context produces shallow cases.
+
+  - phase: 3
+    label: Household Mapping
+    purpose: >
+      Understand who is in the household and their basic attributes.
+      This phase resolves household_gap and guardian_gap.
+    priority_questions:
+      - Who else lives with you?
+      - Are there any children? How old are they?
+      - Is there another adult in the household?
+    opens_entities: [household, household_member]
+
+  - phase: 4
+    label: Need Identification
+    purpose: >
+      Surface all needs — expressed and assessed.
+      Use inference rules to probe for needs not yet stated.
+    priority_questions:
+      - What help are you looking for?
+      - [inferred follow-up questions from inference-rules.yaml]
+    opens_entities: [need, claim]
+
+  - phase: 5
+    label: Intervention Clarification
+    purpose: >
+      Confirm what kind of support the registrant is requesting.
+      If not stated, ask directly before closing.
+    priority_questions:
+      - What kind of help would be most useful to you right now?
+    opens_entities: [support_intervention]
+
+  - phase: 6
+    label: Contact and Location Confirmation
+    purpose: >
+      Confirm that the beneficiary can be reached and found.
+      Resolve contact_gap and location_gap.
+    priority_questions:
+      - What is the best way to contact you?
+      - Can you describe where you live?
+    opens_entities: [beneficiary.contact, beneficiary.location]
+
+  - phase: 7
+    label: Evidence Inventory
+    purpose: >
+      Identify what supporting documentation exists.
+      Not all claims require documents — only ask where evidence is
+      operationally meaningful.
+    priority_questions:
+      - Do you have any documents related to [specific claim]?
+    opens_entities: [evidence]
+
+  - phase: 8
+    label: Gap Resolution
+    purpose: >
+      Address any remaining blocking gaps before closure.
+      Run readiness check. If blocking gaps remain, make two
+      resolution attempts per gap before escalating to requires_review.
+    note: >
+      Do not artificially hold the conversation open to resolve
+      non-blocking gaps. Non-blocking gaps are noted for the volunteer.
+
+
+# ─────────────────────────────────────────────────────────────────
+# SENSITIVE TOPIC RULES
+# Operational guidance for specific high-risk topic areas.
+# Previously embedded in taxonomy files — canonical home is here.
+# ─────────────────────────────────────────────────────────────────
+
+sensitive_topic_rules:
+
+  - topic: domestic_violence
+    trigger: situation.trigger_event is domestic_violence
+    rules:
+      - Do not ask for the name, identity, or location of the perpetrator
+      - Do not ask how the violence occurred
+      - Do ask directly whether it is safe for someone to visit:
+        "Is it safe for someone to come and visit you at the address you gave?"
+      - Do ask whether contact should only be made through a specific person
+      - Set case.safety_flag to true immediately on trigger
+      - Record response in situation.safety_notes
+
+  - topic: minor_without_guardian
+    trigger: >
+      any household_member.minor is true
+      AND household.guardian_status is null
+    rules:
+      - Ask who the responsible adult is for the child
+      - If no adult can be identified, flag for safeguarding review
+      - Do not close the case without either a guardian identified
+        or an explicit safeguarding flag recorded
+      - Do not pressure the registrant — ask once, note if unanswered
+
+  - topic: psychosocial_risk_to_self
+    trigger: registrant indicates risk to self or others
+    rules:
+      - Do not continue registration normally
+      - Express concern directly and calmly
+      - Provide or offer to locate appropriate support resources
+      - Flag case for immediate human review
+      - Do not close the case as ready_for_verification
+
+  - topic: legal_status
+    trigger: >
+      beneficiary.legal_status is uncertain
+      OR situation.trigger_event is displacement
+    rules:
+      - Do not ask for legal status before displacement or legal trigger
+        is established in the conversation
+      - Frame questions around documentation rather than status:
+        "Do you have any identity documents with you?"
+      - Do not press if the registrant declines to answer
+      - Record as unknown if undisclosed — do not infer

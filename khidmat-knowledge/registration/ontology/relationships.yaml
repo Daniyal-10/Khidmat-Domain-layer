@@ -1,0 +1,169 @@
+version: "1.1"
+domain: registration
+file: ontology/relationships.yaml
+
+relationships:
+
+  - id: registrant_conducts_case
+    from: registrant
+    relationship: conducts
+    to: case
+    cardinality: one_to_one
+    required: true
+
+  - id: case_has_registrant
+    from: case
+    relationship: has
+    to: registrant
+    cardinality: one_to_one
+    required: true
+
+  - id: case_has_beneficiary
+    from: case
+    relationship: has
+    to: beneficiary
+    cardinality: one_to_one
+    required: true
+
+  - id: case_has_household
+    from: case
+    relationship: has
+    to: household
+    cardinality: one_to_one
+    required: true
+
+  - id: case_has_situations
+    from: case
+    relationship: has
+    to: situation
+    cardinality: one_to_many    # CORRECTED from one_to_one
+    required: true
+    minimum: 1
+
+  - id: case_has_needs
+    from: case
+    relationship: has
+    to: need
+    cardinality: one_to_many
+    required: true
+    minimum: 1
+
+  - id: case_has_claims
+    from: case
+    relationship: has
+    to: claim
+    cardinality: one_to_many
+    required: true
+    minimum: 1
+
+  - id: case_has_evidence
+    from: case
+    relationship: has
+    to: evidence
+    cardinality: zero_to_many
+    required: false
+
+  - id: case_has_support_interventions
+    from: case
+    relationship: has
+    to: support_intervention
+    cardinality: one_to_many
+    required: true
+    closure_rule: >
+      At least one support_intervention must exist before case status
+      can be set to ready_for_verification.
+
+  - id: beneficiary_is_member_of_household
+    from: beneficiary
+    relationship: is_member_of
+    to: household
+    cardinality: one_to_one
+    required: true
+
+  - id: household_has_members
+    from: household
+    relationship: has_members
+    to: household_member
+    cardinality: one_to_many
+    required: true
+    minimum: 1
+    notes: The beneficiary is always one of the household members.
+
+  - id: situation_contextualises_need
+    from: situation
+    relationship: contextualises  # CORRECTED from generates
+    to: need
+    cardinality: many_to_many
+    required: true
+    notes: >
+      A need must be linked to at least one situation.
+      A situation may contextualise multiple needs.
+      The word contextualises replaces generates because
+      the situation does not always cause the need —
+      it provides the context that explains and supports it.
+
+  - id: need_concerns_member
+    from: need
+    relationship: concerns
+    to: household_member
+    cardinality: zero_to_one    # NEW relationship
+    required: false
+    notes: >
+      Null means the need affects the whole household.
+      Required for medical, education, and therapeutic nutrition needs.
+      The AI should ask which member is affected for these categories.
+
+  - id: need_expressed_through_claim
+    from: need
+    relationship: expressed_through
+    to: claim
+    cardinality: one_to_many
+    required: true
+    minimum: 1
+
+  - id: need_addressed_by_intervention
+    from: need
+    relationship: addressed_by
+    to: support_intervention
+    cardinality: one_to_many
+    required: true
+    closure_rule: >
+      Required before case closure as ready_for_verification.
+
+  - id: claim_supported_by_evidence
+    from: claim
+    relationship: supported_by
+    to: evidence
+    cardinality: zero_to_many
+    required: false
+
+  - id: case_produces_verification_brief
+    from: case
+    relationship: produces
+    to: verification_brief
+    cardinality: one_to_one
+    notes: >
+      Verification Brief is a derived projection, not a stored entity.
+      See verification/verification-brief-projection.yaml.
+      This relationship is listed here for completeness of the case model.
+
+  - id: lead_produces_review
+    from: lead
+    relationship: produces
+    to: volunteer_review
+    cardinality: one_to_one
+    required: false
+
+  - id: lead_promotes_to_case
+    from: lead
+    relationship: promotes_to
+    to: case
+    cardinality: one_to_one
+    required: false
+
+  - id: lead_promotes_to_beneficiary
+    from: lead
+    relationship: promotes_to
+    to: beneficiary
+    cardinality: one_to_one
+    required: false

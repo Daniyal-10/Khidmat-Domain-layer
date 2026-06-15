@@ -1,0 +1,144 @@
+version: "1.0"
+domain: registration
+file: reasoning/inference-rules.yaml
+
+purpose: >
+  Forward-chaining inference rules the AI uses to anticipate
+  likely gaps and needs before they are explicitly stated.
+  These rules allow the AI to ask proactive questions rather
+  than waiting for information to be volunteered.
+  Rules do not assert facts — they raise likelihoods that
+  trigger questioning. The AI should explore, not assume.
+
+rules:
+
+  - id: infer_economic_from_bereavement
+    label: Economic Vulnerability from Bereavement
+    condition:
+      trigger_event: bereavement
+    inference: >
+      If the deceased was the head of household or primary earner,
+      economic vulnerability is likely present even if registrant
+      has not mentioned income loss.
+    action: >
+      Ask about income sources and who now provides for the household.
+      Do not assume — ask.
+    confidence: high
+
+  - id: infer_livelihood_from_injury
+    label: Livelihood Need from Injury to Working-Age Adult
+    condition:
+      trigger_event: accident_or_injury
+      affected_member_age: working_age
+    inference: >
+      Injury to a working-age adult likely affects the household's
+      income capacity. Livelihood need may be present.
+    action: >
+      Ask whether the injured person was working before the accident
+      and whether they are now able to work.
+    confidence: high
+
+  - id: infer_shelter_from_displacement
+    label: Shelter Need from Displacement
+    condition:
+      trigger_event: displacement
+    inference: >
+      Displacement implies the household has left its previous
+      location. Shelter need is likely present.
+    action: >
+      Ask where the household is currently staying and whether
+      it is safe and stable.
+    confidence: high
+
+  - id: infer_documentation_gap_from_displacement
+    label: Documentation Gap from Displacement
+    condition:
+      trigger_event: displacement
+    inference: >
+      Displaced households frequently lack or have lost identity documents.
+      A documentation gap is likely.
+    action: >
+      Ask whether the beneficiary has identity documents with them.
+      If not, ask whether they have documents anywhere accessible.
+    confidence: medium
+
+  - id: infer_psychosocial_from_bereavement
+    label: Psychosocial Need from Bereavement
+    condition:
+      trigger_event: bereavement
+      affected_domain: social
+    inference: >
+      Bereavement, especially of a spouse, parent, or primary caregiver,
+      commonly creates psychosocial need in addition to economic need.
+      The registrant may not think to mention this.
+    action: >
+      After economic needs are explored, gently ask how the household
+      is managing emotionally and whether there is any support available
+      to them.
+    confidence: medium
+
+  - id: infer_education_risk_from_economic_crisis
+    label: Education Risk from Economic Crisis
+    condition:
+      affected_domain: economic
+      household_has_children: true
+    inference: >
+      Economic hardship creates risk of children being withdrawn from
+      school. Education need may be present even if registrant
+      has not raised it.
+    action: >
+      Ask whether all children in the household are still attending school
+      and whether school fees are affordable.
+    confidence: medium
+
+  - id: infer_safeguarding_from_minor_without_guardian
+    label: Safeguarding from Minor Without Guardian
+    condition:
+      beneficiary.minor: true
+      household.guardian_status: absent
+    inference: >
+      A minor with no identified guardian is a safeguarding concern.
+      This is a blocking condition that must be resolved before case closure.
+    action: >
+      Ask who the responsible adult is. If no adult is identified,
+      flag for safeguarding review. Do not close case without resolution.
+    confidence: high
+    blocking: true
+
+  - id: infer_safety_flag_from_domestic_violence
+    label: Safety Flag from Domestic Violence
+    condition:
+      trigger_event: domestic_violence
+    inference: >
+      Domestic violence situations require safety assessment before
+      any field visit. Automatic safety flag.
+    action: >
+      Ask directly and sensitively whether it is safe for someone
+      to visit. Ask whether contact should only be made through
+      a specific person. Do not ask for details about the perpetrator.
+    confidence: high
+    blocking: true
+
+  - id: infer_medical_from_illness_onset
+    label: Medical Need from Illness Onset
+    condition:
+      trigger_event: illness_onset
+    inference: >
+      Illness onset implies a medical need is present.
+    action: >
+      Ask about diagnosis, treatment plan, and which doctor or hospital
+      is involved.
+    confidence: high
+
+  - id: infer_multi_need_from_high_dependent_load
+    label: Multiple Need Risk from High Dependent Load
+    condition:
+      affected_domain: dependent_load
+    inference: >
+      High dependent load amplifies the severity of other needs and
+      often generates both food and economic needs simultaneously.
+    action: >
+      After identifying the primary need, ask whether the dependents
+      are receiving adequate food and whether there is enough income
+      to care for all of them.
+    confidence: medium

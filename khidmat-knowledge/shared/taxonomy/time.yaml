@@ -1,0 +1,21 @@
+version: "1.0"
+domain: shared
+file: taxonomy/time.yaml
+status: placeholder
+
+purpose: >
+  Shared time vocabulary for use across all Khidmat domains.
+  Registration currently uses duration and onset as free-text or
+  domain-specific values. This file will formalise shared time
+  vocabulary when cross-domain reporting requires consistent
+  time classification.
+
+concepts_this_file_will_own:
+  - duration_bands (days, weeks, months, years)
+  - onset_recency (acute: < 7 days, recent: < 30 days,
+                   established: 1-6 months, chronic: > 6 months)
+  - recurrence_patterns (daily, weekly, monthly, seasonal, irregular)
+
+do_not_implement_until: >
+  Impact domain or programs domain requires time-based
+  cross-case aggregation.

@@ -1,0 +1,197 @@
+version: "1.1"
+domain: registration
+file: taxonomy/needs.yaml
+
+purpose: >
+  Classification of needs identified during registration.
+  A need is a specific, concrete gap between a household member's
+  current state and a basic standard of wellbeing.
+  Subtypes describe qualitative differences in need type, not duration.
+  Duration is captured via the need_duration attribute separately.
+
+need_source:
+  # Whether the need was expressed by the registrant or assessed by the AI
+  values:
+    - id: expressed
+      label: Expressed
+      description: >
+        The registrant explicitly asked for this type of assistance.
+        Record verbatim what was requested.
+    - id: assessed
+      label: Assessed
+      description: >
+        The situation indicates this need is likely present even if
+        the registrant did not explicitly state it.
+        The AI inferred this from other information.
+    - id: both
+      label: Expressed and Assessed
+      description: >
+        The registrant expressed this need and the situation independently
+        supports its presence.
+
+need_categories:
+
+  - id: food
+    label: Food
+    description: Insufficient access to adequate nutrition for household members
+    subtypes:
+      - id: general_food_supply
+        label: General Food Supply
+        description: >
+          The household lacks access to sufficient food for normal sustenance.
+          This is the default food need subtype.
+      - id: therapeutic_nutrition
+        label: Therapeutic Nutrition
+        description: >
+          A specific household member requires medically prescribed nutrition.
+          Distinct clinical pathway from general food supply.
+          Examples: RUTF for SAM, fortified supplement for MAM,
+          prescribed diet for a specific medical condition.
+        requires_linked_member: true
+        note: >
+          If therapeutic nutrition is identified, link to the specific
+          household member it concerns. A medical claim will also be needed
+          to support the prescription.
+
+  - id: medical
+    label: Medical
+    description: Healthcare needs including treatment, medication, and rehabilitation
+    subtypes:
+      - id: surgical_treatment
+        label: Surgical Treatment
+        description: A procedure requiring hospitalisation or surgery
+        requires_linked_member: true
+      - id: ongoing_medication
+        label: Ongoing Medication
+        description: Recurring prescription medication
+        requires_linked_member: true
+      - id: rehabilitation
+        label: Rehabilitation
+        description: Post-injury or post-surgery recovery support
+        requires_linked_member: true
+      - id: assistive_device
+        label: Assistive Device
+        description: >
+          Wheelchair, hearing aid, prosthetic, crutches, or similar device.
+          Note: if the primary purpose is enabling return to work,
+          also record a livelihood need.
+        requires_linked_member: true
+      - id: diagnostic_assessment
+        label: Diagnostic Assessment
+        description: >
+          Clinical assessment has not yet occurred and is itself the need.
+          The beneficiary has symptoms but no confirmed diagnosis.
+        requires_linked_member: true
+
+  - id: shelter
+    label: Shelter
+    description: Housing instability or inadequate living conditions
+    subtypes:
+      - id: emergency_housing
+        label: Emergency Housing
+        description: >
+          No current safe place to sleep. Immediate intervention required.
+      - id: rent_support
+        label: Rent Support
+        description: Unable to pay rent, at risk of eviction
+      - id: shelter_repair
+        label: Shelter Repair
+        description: Current shelter is structurally unsafe or environmentally inadequate
+
+  - id: education
+    label: Education
+    description: Barriers to accessing education for a household member
+    requires_linked_member: true
+    subtypes:
+      - id: school_fees
+        label: School Fees
+        description: Cannot afford tuition or enrollment fees
+      - id: educational_supplies
+        label: Educational Supplies
+        description: Lacks books, uniform, stationery, or required materials
+      - id: re_enrollment_support
+        label: Re-Enrollment Support
+        description: >
+          Child is out of school and requires active assistance
+          to re-enroll — not merely fee payment
+
+  - id: livelihood
+    label: Livelihood
+    description: Inability to earn income or sustain economic activity
+    subtypes:
+      - id: income_support
+        label: Income Support
+        description: >
+          Temporary financial support while unable to work.
+          Distinct from emergency cash — implies a trajectory toward
+          restored income capacity.
+      - id: equipment_or_tools
+        label: Equipment or Tools
+        description: Requires specific tools or equipment to resume work
+      - id: skills_development
+        label: Skills Development
+        description: >
+          Requires training, certification, or skills acquisition
+          to access employment or restart economic activity
+
+  - id: psychosocial
+    label: Psychosocial
+    description: >
+      Mental health, emotional wellbeing, or social support needs.
+      Subtypes describe the nature of the need, not the response type.
+    subtypes:
+      - id: grief_and_bereavement
+        label: Grief and Bereavement
+        description: >
+          Loss of a family member, particularly the primary caregiver or earner.
+          Often co-occurs with economic and dependent-load vulnerability.
+      - id: trauma_response
+        label: Trauma Response
+        description: >
+          Acute psychological distress following a specific event.
+          Examples: disaster, violence, accident, displacement.
+      - id: chronic_stress_and_isolation
+        label: Chronic Stress and Isolation
+        description: >
+          Persistent psychological burden from structural vulnerability
+          with no single triggering event.
+      - id: caregiver_burden
+        label: Caregiver Burden
+        description: >
+          The needs of a person who is the sole caregiver for a dependent
+          with high support requirements.
+      - id: domestic_violence_aftermath
+        label: Domestic Violence Aftermath
+        description: >
+          Psychological support needs following exposure to domestic violence.
+          Safety flag must be assessed before this need can be addressed.
+
+need_severity:
+  values:
+    - id: critical
+      label: Critical
+      description: Life-threatening or causing immediate serious harm if unaddressed
+    - id: high
+      label: High
+      description: Significant hardship, time-sensitive response required
+    - id: medium
+      label: Medium
+      description: Important but not immediately dangerous
+    - id: low
+      label: Low
+      description: Quality-of-life improvement, not urgent
+
+need_duration:
+  values:
+    - id: one_time
+      label: One-Time
+      description: A single intervention will resolve the need
+    - id: short_term
+      label: Short-Term
+      description: Support required for days to a few weeks
+    - id: recurring
+      label: Recurring
+      description: Support required on a regular cycle (weekly or monthly)
+    - id: long_term
+      label: Long-Term
+      description: Ongoing chronic need with no foreseeable resolution

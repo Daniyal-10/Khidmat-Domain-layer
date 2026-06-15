@@ -1,0 +1,80 @@
+version: "1.0"
+domain: registration
+file: reasoning/case-coherence-rules.yaml
+
+purpose: >
+  Rules for assessing whether a case is internally coherent —
+  not just complete but logically consistent.
+  A case can have no blocking gaps and still fail coherence.
+  Coherence failures must be resolved before case closure.
+
+coherence_rules:
+
+  - id: situation_need_alignment
+    description: >
+      Every need must be explicable by at least one recorded situation.
+      A food need with no economic, environmental, or health situation
+      recorded is not coherent.
+    check: >
+      For each need, at least one linked situation exists whose
+      affected_domains include a domain relevant to the need category.
+    failure_action: >
+      Identify which need has no traceable situation.
+      Ask what circumstances led to this specific need.
+
+  - id: severity_timeline_alignment
+    description: >
+      A need classified as critical must have evidence of immediacy.
+      If critical severity is assigned but no urgency indicators are present,
+      the classification is incoherent.
+    check: >
+      If need.need_severity is critical, at least one of the following
+      must be present: need.deadline, urgency_timeline, or a supporting
+      claim with complete information_sufficiency.
+    failure_action: >
+      Ask what makes this need urgent right now.
+
+  - id: household_size_member_count_alignment
+    description: >
+      The stated household size must match the number of recorded members
+      or the AI must have explicitly noted why they differ.
+    check: >
+      household.size == count(household.members)
+      OR a discrepancy_note is present explaining the difference.
+    failure_action: >
+      Ask to confirm the household size and who is included.
+
+  - id: minor_guardian_coherence
+    description: >
+      If any household member is a minor, guardian_status must be resolved.
+      A case with minor members and guardian_status absent or uncertain
+      cannot be marked ready_for_verification without a safeguarding note.
+    check: >
+      If any member.minor is true:
+        household.guardian_status must be present OR absent with safeguarding_flag.
+    failure_action: >
+      Ask who the responsible adult is for the minor.
+      If none, flag for safeguarding review.
+
+  - id: proxy_claim_basis_coherence
+    description: >
+      If registrant is a proxy, claims about the beneficiary's internal
+      experience (how they feel, what they want) should not be marked
+      first_hand unless explicitly confirmed.
+    check: >
+      If registrant.registrant_type is proxy:
+        psychosocial claims should have claim_basis second_hand unless
+        the proxy has direct cohabitation knowledge.
+    failure_action: >
+      Note in the claim that the proxy may not have direct knowledge
+      of the beneficiary's emotional state.
+
+  - id: support_intervention_need_alignment
+    description: >
+      Every support intervention must address a recorded need.
+      An intervention with no linked need is incoherent.
+    check: >
+      For each support_intervention, linked_need_id must reference
+      an existing need in the case.
+    failure_action: >
+      Internal validation — remove or re-link the intervention.

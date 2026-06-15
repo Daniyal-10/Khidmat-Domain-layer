@@ -1,0 +1,27 @@
+domain: case-management
+maturity: level_2_placeholder
+status: not_yet_active
+
+scope: >
+  This domain governs the lifecycle of a case after registration
+  and verification are complete. It tracks what decisions are made,
+  what interventions are approved, and how the case progresses
+  toward resolution.
+
+concepts_this_domain_will_own:
+  - case_decision
+  - intervention_approval
+  - case_assignment (to a caseworker)
+  - case_review
+  - case_closure
+  - case_escalation
+  - intervention_record
+
+concepts_this_domain_explicitly_does_not_own:
+  - case (registration owns the base entity — this domain extends it)
+  - need (owned by registration)
+  - support_intervention (owned by registration — this domain tracks delivery)
+
+do_not_implement_until: >
+  Verification operations domain is active and a caseworker
+  workflow has been defined.

@@ -1,0 +1,20 @@
+domain: volunteer-operations
+maturity: level_2_placeholder
+status: not_yet_active
+
+scope: >
+  This domain governs volunteer identity, capacity, assignment,
+  routing, performance, and trust. It is entirely separate from
+  the registration domain. Volunteers appear in registration only
+  as a registrant_type — their full profile lives here.
+
+concepts_this_domain_will_own:
+  - volunteer_profile
+  - volunteer_availability
+  - volunteer_geographic_coverage
+  - volunteer_trust_score
+  - volunteer_assignment_history
+  - volunteer_training_status
+
+do_not_implement_until: >
+  A volunteer management workflow is defined.

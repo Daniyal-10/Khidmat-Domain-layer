@@ -1,0 +1,19 @@
+domain: impact
+maturity: level_2_placeholder
+status: not_yet_active
+
+scope: >
+  This domain governs measurement of outcomes — whether interventions
+  produced the intended change in a beneficiary's situation.
+  It requires longitudinal data from beneficiary lifecycle.
+
+concepts_this_domain_will_own:
+  - outcome_indicator
+  - measurement_event
+  - baseline (pre-intervention state)
+  - endline (post-intervention state)
+  - change_assessment
+
+do_not_implement_until: >
+  Beneficiary lifecycle domain is active and sufficient
+  longitudinal data exists to measure change.

@@ -1,0 +1,24 @@
+version: "1.0"
+domain: shared
+file: taxonomy/organisations.yaml
+
+purpose: >
+  Organisation types referenced across Khidmat domains.
+  Registration references organisations as sources of referrals
+  and as institutional evidence sources.
+  Future domains (programs, support delivery) will reference
+  organisations as implementing partners.
+  This file owns the shared classification vocabulary only.
+
+organisation_types:
+  - hospital_or_clinic
+  - school_or_madrasa
+  - mosque_or_religious_institution
+  - ngo_or_charity
+  - government_office
+  - community_organisation
+  - employer
+  - court_or_legal_authority
+
+# Detailed organisation ontology (relationships, accountability,
+# program participation) is reserved for a future organisations domain.

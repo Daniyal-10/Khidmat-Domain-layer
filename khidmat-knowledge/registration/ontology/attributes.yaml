@@ -1,0 +1,1042 @@
+version: "1.0"
+domain: registration
+file: ontology/attributes.yaml
+
+purpose: >
+  Defines the attribute schemas for registration domain entities.
+  Only attributes required for gap detection, readiness rules, coherence
+  checking, and verification brief generation are fully specified here.
+  This file is the authoritative source for attribute names, types,
+  constraints, and validation rules.
+  Entity structure (cardinality, relationships) is in ontology/entities.yaml.
+  This file owns the field-level detail only.
+
+imports:
+  - shared/taxonomy/persons.yaml        # functional_capacity, gender, minor
+  - shared/taxonomy/locations.yaml      # location precision and stability
+  - shared/taxonomy/document-types.yaml # documentation_status reference
+  - registration/taxonomy/actors.yaml   # registrant_type, claim_basis
+  - registration/taxonomy/needs.yaml    # need_category, need_severity, need_duration
+  - registration/taxonomy/claims.yaml   # claim_type, information_sufficiency, information_consistency
+  - registration/taxonomy/situations.yaml # trajectory, trigger_events, affected_domains
+
+
+# ═══════════════════════════════════════════════════════════════════
+# BENEFICIARY
+# ═══════════════════════════════════════════════════════════════════
+
+beneficiary:
+
+  name:
+    type: string
+    required: true
+    gap_type: entity_gap
+    notes: >
+      Record as given by the registrant. Do not normalise or reformat.
+      If the beneficiary is known by more than one name, record both.
+
+  age:
+    type: integer
+    unit: years
+    required: true
+    gap_type: entity_gap
+    validation: age >= 0
+    notes: >
+      If exact age is unknown, record the registrant's best estimate
+      and flag as estimated: true.
+
+  age_estimated:
+    type: boolean
+    required: false
+    default: false
+    notes: >
+      Set to true when age is an estimate rather than a known value.
+      Affects claim_basis weight for age-dependent claims (minor status,
+      school-age determination).
+
+  gender:
+    type: enum
+    required: true
+    values_ref: shared/taxonomy/persons.yaml#gender_vocabulary
+    values: [male, female, not_disclosed]
+    gap_type: entity_gap
+
+  minor:
+    type: boolean
+    required: true
+    derivation: "age < 18"
+    notes: >
+      Derived from age. Do not ask directly — compute from age.
+      When true, guardian_status on household becomes required.
+      Triggers guardian_gap detection if household.guardian_status is null.
+
+  contact:
+    type: object
+    required: false
+    gap_type: contact_gap
+    gap_condition: >
+      contact_gap fires when BOTH beneficiary.contact AND registrant.contact are null.
+      A single reachable contact satisfies the gap.
+    fields:
+      phone:
+        type: string
+        format: international preferred, local accepted
+        required: false
+      whatsapp:
+        type: string
+        required: false
+      in_person_contact:
+        type: string
+        description: >
+          Name and relationship of a person who can relay messages
+          if the beneficiary has no direct phone.
+        required: false
+      contact_notes:
+        type: string
+        description: >
+          Any constraints on contact — times, preferred language,
+          person who must not be contacted.
+        required: false
+
+  location:
+    type: object
+    required: true
+    gap_type: location_gap
+    gap_condition: >
+      location_gap fires when location is null, OR
+      location.precision is area_only, OR
+      location.precision is unknown.
+    fields:
+      address_text:
+        type: string
+        description: Free-text address as given by registrant
+        required: false
+      area:
+        type: string
+        description: Neighbourhood, zone, or district
+        required: false
+      landmark:
+        type: string
+        description: Nearby landmark for volunteer navigation
+        required: false
+      precision:
+        type: enum
+        values_ref: shared/taxonomy/locations.yaml#location_precision
+        values: [exact_address, area_with_landmark, area_only, unknown]
+        required: true
+      stability:
+        type: enum
+        values_ref: shared/taxonomy/locations.yaml#location_stability
+        values: [permanent, temporary, transient, unknown]
+        required: false
+        notes: >
+          If stability is temporary or transient, ask for an alternative
+          contact address or a person who will know where the beneficiary
+          has moved.
+
+  language:
+    type: string
+    required: false
+    notes: >
+      Primary language the beneficiary communicates in.
+      Relevant for volunteer assignment and brief preparation.
+      Record even if it is the same as the registration language.
+
+  documentation_status:
+    type: enum
+    required: false
+    values: [has_documents, documents_lost, documents_in_process, no_documents, unknown]
+    notes: >
+      Whether the beneficiary has valid identity documentation.
+      Relevant for volunteer verification planning.
+      Do not ask unless a displacement or legal trigger is present
+      in the conversation — see questioning-strategy.yaml.
+
+  legal_status:
+    type: enum
+    required: false
+    values: [citizen, resident, refugee, asylum_seeker, undocumented, unknown]
+    notes: >
+      Sensitive field. Do not ask proactively.
+      Record only if volunteered by the registrant or if a legal or
+      displacement trigger has already been established.
+      If undisclosed, record as unknown.
+
+  functional_capacity:
+    type: enum
+    required: false
+    values_ref: shared/taxonomy/persons.yaml#functional_capacity
+    values: [full, partial, dependent]
+    notes: >
+      The beneficiary's capacity to manage daily tasks independently.
+      Only ask if the conversation has indicated a disability, illness,
+      or injury. Do not ask as a routine question.
+
+
+# ═══════════════════════════════════════════════════════════════════
+# HOUSEHOLD
+# ═══════════════════════════════════════════════════════════════════
+
+household:
+
+  size:
+    type: integer
+    required: true
+    gap_type: household_gap
+    validation: size >= 1
+    coherence_rule: >
+      household.size must equal count(household.members) or a
+      discrepancy_note must explain the difference.
+      See case-coherence-rules.yaml#household_size_member_count_alignment.
+
+  members:
+    type: list
+    item_type: household_member
+    required: true
+    minimum: 1
+    gap_type: household_gap
+    notes: >
+      The beneficiary is always a household member and must appear in this list.
+      Other members are recorded with their relationship to the beneficiary.
+
+  head_of_household:
+    type: string
+    description: Name of the person who is the primary decision-maker and earner
+    required: false
+    notes: >
+      Ask if not volunteered when economic or livelihood needs are present.
+      If the head of household is deceased or incapacitated, this is a
+      key inference trigger for economic vulnerability.
+
+  guardian_status:
+    type: object
+    required: conditional
+    required_when: any household_member.minor is true
+    gap_type: guardian_gap
+    fields:
+      guardian_name:
+        type: string
+        required: true
+      guardian_relationship:
+        type: string
+        required: true
+      guardian_present_in_household:
+        type: boolean
+        required: false
+      safeguarding_flag:
+        type: boolean
+        default: false
+        description: >
+          Set to true when a minor is present and no guardian can be identified.
+          Blocks case closure. Requires human review.
+
+  income_sources:
+    type: list
+    item_type: string
+    required: false
+    notes: >
+      List of current income sources as described by the registrant.
+      Free text — do not force into a controlled vocabulary at registration.
+      Examples: daily labour, remittance from son, selling produce.
+
+  total_income:
+    type: object
+    required: false
+    fields:
+      amount:
+        type: number
+        required: false
+      currency:
+        type: string
+        required: false
+      frequency:
+        type: enum
+        values: [daily, weekly, monthly, irregular, none]
+        required: false
+    notes: >
+      Ask when economic or livelihood needs are present.
+      If the registrant cannot give a figure, record as unknown.
+      Do not press for a precise amount — an order of magnitude is sufficient.
+
+  discrepancy_note:
+    type: string
+    required: false
+    notes: >
+      Required when household.size does not equal count(household.members).
+      Records the registrant's explanation for the difference.
+      Example: "Two children are at boarding school and not present."
+
+
+# ═══════════════════════════════════════════════════════════════════
+# HOUSEHOLD MEMBER
+# ═══════════════════════════════════════════════════════════════════
+
+household_member:
+
+  member_id:
+    type: string
+    format: uuid or sequential local id
+    required: true
+    notes: >
+      Used to link needs and evidence to specific members.
+      Generated by the system, not collected from the registrant.
+
+  name:
+    type: string
+    required: false
+    notes: >
+      Name is preferred but not required. If the registrant is reluctant
+      to give names for all members, record relationship and age instead.
+      A household member referenced by a need must have at least
+      relationship and age recorded.
+
+  age:
+    type: integer
+    unit: years
+    required: false
+    notes: >
+      Required when the member is referenced by a need (medical, education,
+      therapeutic nutrition). Otherwise, approximate is acceptable.
+
+  age_estimated:
+    type: boolean
+    required: false
+    default: false
+
+  gender:
+    type: enum
+    required: false
+    values: [male, female, not_disclosed]
+
+  relationship_to_beneficiary:
+    type: string
+    required: true
+    notes: >
+      Free text describing how this person relates to the beneficiary.
+      Examples: spouse, eldest child, father-in-law, mother (deceased).
+      Do not force into a controlled taxonomy — relationship vocabulary
+      varies too much across contexts.
+
+  minor:
+    type: boolean
+    derivation: "age < 18 if age is known"
+    required: false
+    notes: >
+      Derived from age when age is known. If age is unknown but the
+      registrant describes the person as a child, set minor: true.
+
+  functional_capacity:
+    type: enum
+    required: false
+    values_ref: shared/taxonomy/persons.yaml#functional_capacity
+    values: [full, partial, dependent]
+    notes: >
+      Only record when different from full. Ask only when the member
+      is referenced by a need or when the conversation reveals a
+      disability, illness, or dependency.
+
+
+# ═══════════════════════════════════════════════════════════════════
+# NEED
+# ═══════════════════════════════════════════════════════════════════
+
+need:
+
+  need_id:
+    type: string
+    format: uuid or sequential local id
+    required: true
+    notes: Generated by the system. Used to link claims, interventions, and evidence.
+
+  need_category:
+    type: enum
+    required: true
+    values_ref: registration/taxonomy/needs.yaml#need_categories
+    values: [food, medical, shelter, education, livelihood, psychosocial]
+    gap_type: entity_gap
+    gap_condition: A need entity exists but need_category is null.
+
+  need_subtype:
+    type: enum
+    required: false
+    values_ref: registration/taxonomy/needs.yaml
+    notes: >
+      Subtypes are specific to each need_category.
+      See taxonomy/needs.yaml for the full subtype list per category.
+      If the registrant's description maps clearly to a subtype, record it.
+      If ambiguous, leave null and record the description in a note.
+
+  need_source:
+    type: enum
+    required: true
+    values: [expressed, assessed, both]
+    definitions:
+      expressed: The registrant explicitly asked for this type of assistance.
+      assessed: >
+        The AI identified this need from the situation even though the
+        registrant did not explicitly name it.
+      both: The registrant expressed it and the situation independently supports it.
+
+  need_severity:
+    type: enum
+    required: true
+    values: [critical, high, medium, low]
+    values_ref: registration/taxonomy/needs.yaml#need_severity
+    gap_type: severity_gap
+    gap_condition: need_category is populated AND need_severity is null.
+    classification_rules_ref: registration/reasoning/severity-rules.yaml
+    notes: >
+      Severity must be classified using severity-rules.yaml, not assigned
+      arbitrarily. The AI must be able to state which condition from
+      that file justified the classification.
+
+  need_duration:
+    type: enum
+    required: false
+    values: [one_time, short_term, recurring, long_term]
+    values_ref: registration/taxonomy/needs.yaml#need_duration
+    gap_type: duration_gap
+    gap_condition: need_category is populated AND need_duration is null.
+
+  primary:
+    type: boolean
+    required: true
+    default: false
+    notes: >
+      Set to true for the single most urgent need in the case.
+      Only one need per case should have primary: true.
+      Used for brief ordering and volunteer prioritisation.
+
+  deadline:
+    type: date
+    required: false
+    notes: >
+      The date after which irreversible harm occurs if the need is unaddressed.
+      Examples: surgery scheduled, eviction date, school exam cutoff.
+      Required for severity classification as critical.
+      See severity-rules.yaml#severity_timeline_alignment.
+
+  urgency_timeline:
+    type: string
+    required: false
+    notes: >
+      Free text description of the time constraint driving urgency.
+      Examples: "doctor said surgery must happen within 3 weeks",
+      "landlord has given notice for end of month".
+      Complements deadline when a precise date is unavailable.
+
+  onset:
+    type: string
+    required: false
+    notes: >
+      How long this specific need has existed.
+      Distinct from situation onset — a structural poverty situation
+      may have existed for years but a specific food need may be acute.
+      Free text is acceptable. Examples: "three days", "since last winter".
+
+  treatment_plan:
+    type: object
+    required: conditional
+    required_when: need_category is medical
+    gap_type: treatment_plan_gap
+    fields:
+      provider_name:
+        type: string
+        description: Name of the doctor, clinic, or hospital managing the case
+        required: false
+      plan_description:
+        type: string
+        description: Brief description of the treatment plan as stated by registrant
+        required: false
+      plan_known:
+        type: boolean
+        description: >
+          Whether a treatment plan exists at all.
+          False means the beneficiary has a medical need but no care plan yet.
+        required: true
+
+  cost_estimate:
+    type: object
+    required: conditional
+    required_when: need_category in [medical, livelihood]
+    gap_type: cost_estimate_gap
+    fields:
+      amount:
+        type: number
+        required: false
+      currency:
+        type: string
+        required: false
+      basis:
+        type: string
+        description: >
+          How the estimate was arrived at.
+          Examples: "doctor's quote", "registrant's estimate", "previous invoice".
+        required: false
+      estimate_confidence:
+        type: enum
+        values: [confirmed_quote, registrant_estimate, rough_guess, unknown]
+        required: false
+
+  concerns_member:
+    type: string
+    format: household_member.member_id or null
+    required: conditional
+    required_when: >
+      need_category in [medical, education, therapeutic_nutrition]
+    notes: >
+      The member_id of the specific household member this need concerns.
+      Null means the need affects the whole household.
+      For livelihood needs, this identifies the earner whose capacity
+      is impaired — not the exclusive beneficiary of the intervention.
+      See relationships.yaml#need_concerns_member.
+
+
+# ═══════════════════════════════════════════════════════════════════
+# CLAIM
+# ═══════════════════════════════════════════════════════════════════
+
+claim:
+
+  claim_id:
+    type: string
+    format: uuid or sequential local id
+    required: true
+    notes: Generated by the system.
+
+  claim_type:
+    type: enum
+    required: true
+    values_ref: registration/taxonomy/claims.yaml#claim_types
+    values: [identity_claim, situation_claim, need_claim, household_claim]
+
+  claim_text:
+    type: string
+    required: true
+    notes: >
+      The assertion as stated by the registrant, in their own words
+      as closely as possible. This is the source record.
+      Do not paraphrase or interpret in this field.
+
+  information_sufficiency:
+    type: enum
+    required: true
+    values_ref: registration/taxonomy/claims.yaml#information_sufficiency
+    values: [complete, partial, missing]
+    definitions:
+      complete: All key information for this claim is present.
+      partial: Some information is present but important detail is missing.
+      missing: The claim type is identified but almost no information has been provided.
+    notes: >
+      This dimension governs whether more questioning is needed.
+      partial and missing trigger follow-up questions.
+
+  information_consistency:
+    type: enum
+    required: true
+    values_ref: registration/taxonomy/claims.yaml#information_consistency
+    values: [consistent, ambiguous, contradictory]
+    definitions:
+      consistent: No internal contradictions detected.
+      ambiguous: Information is open to more than one interpretation.
+      contradictory: Two or more statements about this claim conflict.
+    gap_condition: >
+      consistency_gap fires when information_consistency is contradictory.
+    notes: >
+      This dimension governs whether a challenge is needed.
+      contradictory blocks case closure.
+      ambiguous requires a clarifying question but does not block.
+
+  claim_basis:
+    type: enum
+    required: true
+    values_ref: registration/taxonomy/actors.yaml#claim_basis
+    values: [first_hand, second_hand, observational, inferred]
+    default_behaviour: >
+      Inherits from registrant.default_claim_basis unless explicitly set.
+      Only set explicitly when this claim's basis differs from the registrant default.
+
+  verifiable:
+    type: boolean
+    required: true
+    notes: >
+      Whether the claim can be confirmed by field observation, documentation,
+      or third-party reference.
+      If false, record why in verifiable_note.
+      Unverifiable claims are excluded from verification requirements.
+      See verification/verification-requirements.yaml#unverifiable_claim_handling.
+
+  verifiable_note:
+    type: string
+    required: conditional
+    required_when: verifiable is false
+    notes: >
+      Required when verifiable is false.
+      Records why verification is not possible.
+      Example: "Registrant reports internal emotional state — not externally observable."
+
+  evidence_available:
+    type: boolean
+    required: false
+    notes: >
+      Whether the registrant indicates that supporting documentation
+      or physical evidence exists and can be produced.
+      Null means the question was not asked or the answer was unclear.
+      True triggers evidence entity creation.
+      False with a verifiable claim triggers evidence_gap detection.
+
+  linked_need_id:
+    type: string
+    format: need.need_id
+    required: true
+    notes: >
+      Every claim must be linked to a need.
+      claim_gap fires when a need exists with no linked claim.
+      This field is the link from the claim back to its need.
+
+# ═══════════════════════════════════════════════════════════════════
+# REGISTRANT
+# ═══════════════════════════════════════════════════════════════════
+
+registrant:
+
+  registrant_type:
+    type: enum
+    required: true
+    values_ref: registration/taxonomy/actors.yaml#registrant_types
+    values: [beneficiary, proxy, volunteer]
+    gap_condition: registrant_relationship_gap fires when type is proxy AND relationship_to_beneficiary is null.
+
+  relationship_to_beneficiary:
+    type: string
+    required: conditional
+    required_when: registrant_type is proxy
+    gap_type: registrant_relationship_gap
+    notes: >
+      Free text. Examples: wife, son, neighbour, social worker.
+      Do not force into a taxonomy — relationships vary too widely.
+
+  default_claim_basis:
+    type: enum
+    required: true
+    values_ref: registration/taxonomy/actors.yaml#claim_basis
+    values: [first_hand, second_hand, observational, inferred]
+    derivation: >
+      Derived from registrant_type if not explicitly set:
+        beneficiary → first_hand
+        proxy (family_member) → first_hand
+        proxy (community_member) → second_hand
+        proxy (professional_advocate) → second_hand
+        volunteer → observational
+    notes: >
+      Claims inherit this value unless explicitly overridden on the claim.
+
+  contact:
+    type: object
+    required: false
+    notes: >
+      Registrant's own contact — distinct from beneficiary contact.
+      Required as a fallback when beneficiary.contact is null.
+    fields:
+      phone:
+        type: string
+        required: false
+      whatsapp:
+        type: string
+        required: false
+
+  proxy_consent:
+    type: enum
+    required: conditional
+    required_when: registrant_type is proxy
+    gap_type: proxy_consent_gap
+    gap_condition: >
+      proxy_consent is null OR proxy_consent is not_yet_obtained.
+    values_ref: registration/taxonomy/actors.yaml#proxy_consent
+    values: [confirmed, unable_to_obtain, not_yet_obtained, not_applicable]
+    notes: >
+      Whether the beneficiary is aware of and has consented to registration.
+      unable_to_obtain is acceptable when beneficiary is incapacitated or
+      a minor and a responsible adult is acting in their interest.
+
+
+# ═══════════════════════════════════════════════════════════════════
+# SITUATION
+# ═══════════════════════════════════════════════════════════════════
+
+situation:
+
+  situation_id:
+    type: string
+    format: uuid or sequential local id
+    required: true
+    notes: Generated by the system. Used to link needs to situations.
+
+  trajectory:
+    type: enum
+    required: true
+    values_ref: registration/taxonomy/situations.yaml#trajectory
+    values: [structural, crisis_triggered, progressive, acute]
+    notes: >
+      How the situation developed over time.
+      A single household may have multiple situations with different trajectories.
+      Example: chronic poverty (structural) compounded by a recent bereavement (crisis_triggered).
+
+  affected_domains:
+    type: list
+    item_type: enum
+    required: true
+    minimum: 1
+    values_ref: registration/taxonomy/situations.yaml#affected_domains
+    values: [economic, health, social, environmental, dependent_load, legal_and_documentation]
+    notes: >
+      Multiple domains may be affected simultaneously. Record all that apply.
+      This list drives inference — see reasoning/inference-rules.yaml.
+
+  trigger_event:
+    type: enum
+    required: conditional
+    required_when: trajectory in [crisis_triggered, acute]
+    values_ref: registration/taxonomy/situations.yaml#trigger_events
+    values: [bereavement, job_loss, accident_or_injury, illness_onset,
+             displacement, domestic_violence, natural_disaster, legal_crisis]
+    notes: >
+      The specific event that caused or significantly worsened the situation.
+      Null for structural and progressive trajectories.
+      Each trigger event has associated inference rules in inference-rules.yaml.
+
+  onset:
+    type: string
+    required: false
+    notes: >
+      When the situation began. Free text is acceptable.
+      For crisis_triggered situations, onset corresponds to the triggering event.
+      For structural situations, onset may be indeterminate or lifelong.
+
+  duration:
+    type: string
+    required: false
+    notes: >
+      How long the situation has been ongoing, from the registrant's perspective.
+      Complements onset. Free text. Examples: "three months", "since childhood".
+
+  safety_flag:
+    type: boolean
+    required: true
+    default: false
+    automatic_triggers:
+      - trigger_event is domestic_violence
+      - trigger_event is displacement AND beneficiary.legal_status is undocumented
+      - registrant explicitly indicates risk to beneficiary
+      - registrant requests confidential contact only
+    notes: >
+      When true, a volunteer visit may endanger the beneficiary.
+      Triggers safety_gap detection. Must be assessed before case closure.
+      See questioning-strategy.yaml#sensitive_topic_rules for assessment approach.
+
+  safety_notes:
+    type: string
+    required: conditional
+    required_when: safety_flag is true
+    notes: >
+      The outcome of the safety assessment conversation.
+      Records what the registrant said when asked whether a visit is safe,
+      any contact restrictions, and any specific instructions for the volunteer.
+      Required before case can close when safety_flag is true.
+
+
+# ═══════════════════════════════════════════════════════════════════
+# SUPPORT INTERVENTION
+# ═══════════════════════════════════════════════════════════════════
+
+support_intervention:
+
+  intervention_id:
+    type: string
+    format: uuid or sequential local id
+    required: true
+    notes: Generated by the system.
+
+  intervention_type:
+    type: string
+    required: true
+    values_ref: registration/taxonomy/support-interventions.yaml
+    notes: >
+      The type of assistance being requested.
+      See taxonomy/support-interventions.yaml for the intervention catalogue.
+      Until that file is complete, record as free text.
+
+  requested_amount:
+    type: object
+    required: false
+    fields:
+      amount:
+        type: number
+        required: false
+      currency:
+        type: string
+        required: false
+      unit:
+        type: string
+        description: >
+          Unit of measure when relevant.
+          Examples: "per month", "per treatment", "one-time".
+        required: false
+    notes: >
+      Record what the registrant requests, not what you assess as appropriate.
+      If the registrant cannot specify an amount, leave null.
+
+  requested_duration:
+    type: enum
+    required: false
+    values: [one_time, short_term, recurring, long_term]
+    notes: >
+      How long the registrant expects the intervention to be needed.
+      Maps to the need_duration of the linked need in most cases.
+
+  linked_need_id:
+    type: string
+    format: need.need_id
+    required: true
+    notes: >
+      Every intervention must address a recorded need.
+      support_intervention_gap fires when a need exists with no linked intervention.
+      See relationships.yaml#need_addressed_by_intervention.
+
+  justification:
+    type: string
+    required: false
+    notes: >
+      Why this specific intervention type addresses the linked need.
+      Particularly important when need_source is assessed — the AI
+      should note the reasoning behind an assessed intervention.
+
+  need_source_note:
+    type: string
+    required: false
+    notes: >
+      Whether this intervention was expressed by the registrant or
+      identified through assessment. Records the AI's reasoning
+      when need_source is assessed or both.
+
+
+# ═══════════════════════════════════════════════════════════════════
+# CASE
+# ═══════════════════════════════════════════════════════════════════
+
+case:
+
+  case_id:
+    type: string
+    format: uuid
+    required: true
+    notes: Generated by the system at case creation.
+
+  registrant_type:
+    type: enum
+    required: true
+    values: [beneficiary, proxy, volunteer]
+    notes: >
+      Denormalised from registrant.registrant_type for fast case-level filtering.
+      Must match registrant.registrant_type exactly.
+
+  registration_channel:
+    type: enum
+    required: true
+    values: [whatsapp, web_form, phone, in_person, volunteer_app]
+    notes: >
+      The channel through which the registration conversation took place.
+      Affects what media types are available for evidence collection.
+
+  referral_source:
+    type: string
+    required: false
+    notes: >
+      Free text name of the person or institution that referred the beneficiary.
+      Example: "Dr. Khalid at City Hospital", "Neighbour Fatima", "self".
+      Distinct from referral_type which categorises the source.
+
+  referral_type:
+    type: enum
+    required: false
+    values_ref: registration/taxonomy/referral-sources.yaml#referral_types
+    values: [self_initiated, community_referral, institutional_referral,
+             volunteer_identification, repeat_registration]
+
+  previous_registration:
+    type: boolean
+    required: false
+    default: false
+    notes: >
+      Whether the beneficiary has registered before.
+      If true, previous_case_id should be populated.
+      Triggers duplicate_suspected status if previous_case_id cannot be confirmed.
+
+  previous_case_id:
+    type: string
+    format: case.case_id
+    required: conditional
+    required_when: referral_type is repeat_registration
+    notes: >
+      The case_id of the most recent previous registration for this beneficiary.
+
+  re_registration_reason:
+    type: string
+    required: conditional
+    required_when: previous_registration is true
+    notes: >
+      What has changed since the previous registration.
+      Free text. Required to distinguish a new situation from a duplicate.
+
+  status:
+    type: enum
+    required: true
+    default: in_progress
+    values_ref: registration/taxonomy/case-outcomes.yaml#case_statuses
+    values: [in_progress, ready_for_verification, requires_review,
+             unsafe_to_verify, duplicate_suspected, referred_externally,
+             on_hold]
+    transition_rules_ref: registration/readiness/readiness-rules.yaml#status_transitions
+    notes: >
+      Status transitions are governed by readiness-rules.yaml.
+      Do not set status directly — evaluate readiness rules and let
+      the outcome determine the status.
+
+  safety_flag:
+    type: boolean
+    required: true
+    default: false
+    derivation: >
+      Set to true when ANY situation in the case has safety_flag: true.
+      Denormalised to the case level for fast filtering and status gating.
+    notes: >
+      Case-level flag. The authoritative safety assessment and notes
+      are on the situation entity. This flag exists for readiness rule
+      evaluation without traversing all situations.
+
+  open_gaps:
+    type: list
+    item_type: object
+    required: false
+    notes: >
+      List of unresolved gaps at the point of case closure.
+      At ready_for_verification, only non-blocking gaps may be present.
+      Blocking gaps in this list indicate requires_review status.
+    fields:
+      gap_type:
+        type: enum
+        values_ref: registration/gaps/gap-types.yaml
+      description:
+        type: string
+        notes: Specific description of this instance of the gap
+      suggested_resolution:
+        type: string
+        notes: What a volunteer or caseworker could do to resolve it
+
+  created_at:
+    type: datetime
+    required: true
+    notes: Timestamp of case creation. Set by the system at first message.
+
+  updated_at:
+    type: datetime
+    required: true
+    notes: Timestamp of most recent update. Updated on every state change.
+
+  closed_at:
+    type: datetime
+    required: false
+    notes: >
+      Timestamp of case closure — when status moved from in_progress
+      to any terminal state. Null while in_progress or on_hold.
+
+# ═══════════════════════════════════════════════════════════════════
+# LEAD
+# ═══════════════════════════════════════════════════════════════════
+
+lead:
+
+  lead_id:
+    type: string
+    required: true
+    notes: Unique identifier of the lead (UUID).
+
+  status:
+    type: enum
+    required: true
+    values: [draft, submitted, assigned_for_review, under_review, approved, rejected, escalated]
+    default: draft
+    notes: The current state of the lead lifecycle.
+
+  registrant_persona:
+    type: enum
+    required: true
+    values: [BENEFICIARY, PROXY, VOLUNTEER]
+    notes: The persona of the person conducting the registration.
+
+  raw_transcript:
+    type: string
+    required: false
+    notes: The raw audio transcript or text of the intake session.
+
+  urgency_score:
+    type: float
+    required: false
+    validation: "urgency_score >= 0.0 AND urgency_score <= 1.0"
+    notes: AI-calculated urgency ranking.
+
+  urgency_reason:
+    type: string
+    required: false
+    notes: Explanation text for the urgency score.
+
+  lead_source:
+    type: enum
+    required: true
+    values: [audio_upload, whatsapp, manual, telegram]
+    default: manual
+
+  created_at:
+    type: datetime
+    required: true
+
+  updated_at:
+    type: datetime
+    required: true
+
+# ═══════════════════════════════════════════════════════════════════
+# VOLUNTEER REVIEW
+# ═══════════════════════════════════════════════════════════════════
+
+volunteer_review:
+
+  review_id:
+    type: string
+    required: true
+    notes: Unique identifier of the review (UUID).
+
+  lead_id:
+    type: string
+    required: true
+    notes: Reference to the lead being reviewed.
+
+  assigned_volunteer_id:
+    type: string
+    required: false
+    notes: Reference to the volunteer actor assigned to conduct the review.
+
+  decision:
+    type: enum
+    required: true
+    values: [approve, reject, dispatch_required, escalate, needs_clarification, referred]
+    notes: The desk audit routing decision.
+
+  notes:
+    type: string
+    required: false
+    notes: Volunteer's rationale, comments, or escalation reasons.
+
+  completed_at:
+    type: datetime
+    required: false
+    notes: Timestamp when the review decision was finalized.

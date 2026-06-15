@@ -1,0 +1,140 @@
+version: "1.0"
+domain: registration
+file: reasoning/gap-detection-rules.yaml
+
+purpose: >
+  Inference rules for detecting gaps during registration.
+  These are detection conditions — when they are true, the corresponding
+  gap type is present and the questioning strategy must address it.
+  Gap type definitions remain in gaps/gap-types.yaml.
+  This file owns the detection logic only.
+
+detection_rules:
+
+  - gap_type: entity_gap
+    detection_condition: >
+      A required entity is referenced but has no attributes populated.
+    examples:
+      - "A need is identified but need_category is null"
+      - "A household member is mentioned but no age or relationship is given"
+
+  - gap_type: household_gap
+    detection_condition: >
+      household.size is null OR household.members is empty
+    blocking: true
+
+  - gap_type: severity_gap
+    detection_condition: >
+      need.need_category is populated AND need.need_severity is null
+    blocking: true
+
+  - gap_type: duration_gap
+    detection_condition: >
+      need.need_category is populated AND need.need_duration is null
+    blocking: false
+    severity: medium
+
+  - gap_type: claim_gap
+    detection_condition: >
+      need is present AND no claim is linked to that need
+    blocking: true
+
+  - gap_type: consistency_gap
+    detection_condition: >
+      claim.information_consistency is contradictory
+    blocking: true
+    resolution_approach: >
+      Gently surface the contradiction. Frame as seeking to understand,
+      not as a challenge. Do not accuse.
+
+  - gap_type: evidence_gap
+    detection_condition: >
+      claim.verifiable is true AND claim.evidence_available is null
+    blocking: false
+    severity: medium
+
+  - gap_type: safety_gap
+    detection_condition: >
+      situation.safety_flag is true AND safety assessment has not been conducted
+    blocking: true
+
+  - gap_type: guardian_gap
+    detection_condition: >
+      any household_member.minor is true AND household.guardian_status is null
+    blocking: true
+
+  - gap_type: situation_traceability_gap
+    detection_condition: >
+      need is present AND no situation is linked to that need
+    blocking: true
+
+  - gap_type: contact_gap
+    detection_condition: >
+      beneficiary.contact is null AND registrant.contact is null
+    blocking: true
+
+  - gap_type: location_gap
+    detection_condition: >
+      beneficiary.location is null OR
+      location.precision is area_only OR
+      location.precision is unknown
+    blocking: true
+
+  - gap_type: treatment_plan_gap
+    detection_condition: >
+      need.need_category is medical AND need.treatment_plan is null
+    blocking: false
+    severity: medium
+    resolution_approach: >
+      Ask which doctor or hospital is managing the condition
+      and what the current treatment plan is.
+
+  - gap_type: cost_estimate_gap
+    detection_condition: >
+      need.need_category in [medical, livelihood] AND need.cost_estimate is null
+    blocking: false
+    severity: medium
+
+  - gap_type: member_linkage_gap
+    detection_condition: >
+      need.need_category in [medical, education, therapeutic_nutrition]
+      AND need.concerns_member is null
+    blocking: false
+    severity: medium
+    resolution_approach: >
+      Ask which specific household member this need concerns.
+
+  - gap_type: support_intervention_gap
+    detection_condition: >
+      need is present AND no support_intervention is linked to that need
+      AND case.status approaching ready_for_verification
+    blocking: true
+    resolution_approach: >
+      Ask what kind of help the registrant is seeking for this need.
+
+  - gap_type: registrant_relationship_gap
+    detection_condition: >
+      registrant.registrant_type is proxy AND
+      registrant.relationship_to_beneficiary is null
+    blocking: true
+
+  - gap_type: proxy_consent_gap
+    detection_condition: >
+      registrant.registrant_type is proxy AND
+      (registrant.proxy_consent is null OR
+       registrant.proxy_consent is not_yet_obtained)
+    blocking: false
+    severity: medium
+
+  - gap_type: need_subtype_gap
+    detection_condition: >
+      need.need_category is medical AND need.need_subtype is null
+    blocking: false
+    severity: low
+
+  - gap_type: referral_source_gap
+    detection_condition: >
+      registrant.referral_type is not self_initiated AND
+      registrant.referral_source is null
+    blocking: false
+    severity: low

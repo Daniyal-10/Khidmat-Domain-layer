@@ -1,0 +1,71 @@
+version: "1.0"
+domain: registration
+file: taxonomy/case-outcomes.yaml
+
+purpose: >
+  Classification of case status values at registration close.
+  Owned here as taxonomy. Referenced by readiness-rules.yaml.
+  The case entity uses these values in its status attribute.
+
+case_statuses:
+  - id: in_progress
+    label: In Progress
+    description: Registration conversation is ongoing
+
+  - id: ready_for_verification
+    label: Ready for Verification
+    description: >
+      All required conditions are met and no blocking gaps remain.
+      A verification brief can be generated and assigned to a volunteer.
+
+  - id: requires_review
+    label: Requires Review
+    description: >
+      One or more blocking gaps could not be resolved.
+      Human review is required before volunteer assignment.
+
+  - id: unsafe_to_verify
+    label: Unsafe to Verify
+    description: >
+      Safety flag is raised and a field visit cannot be conducted
+      without risk to beneficiary or volunteer.
+      Safe contact protocol required before proceeding.
+
+  - id: duplicate_suspected
+    label: Duplicate Suspected
+    description: >
+      The beneficiary appears to have been registered previously.
+      The existing record must be located before this case proceeds.
+  - id: on_hold
+    label: On Hold
+    description: >
+      Registration is paused pending an external condition.
+      The case is not failed and does not require human review —
+      it is awaiting a specific, identified event before it can continue.
+    hold_triggers:
+      - registrant_unavailable_to_continue: >
+          Conversation ended before completion.
+          Registrant may return to continue.
+      - pending_document: >
+          A specific document is required before closure.
+          Registrant will provide it separately.
+      - external_confirmation_awaited: >
+          An institutional reference or
+          third-party confirmation is pending before the case can proceed.
+    reactivation: >
+      When the hold condition is resolved, the case returns to in_progress
+      and all gap detection and coherence checks are re-evaluated.
+    distinction_from_requires_review: >
+      requires_review means a human caseworker must intervene because
+      a blocking gap could not be resolved.
+      on_hold means the case is waiting for something external —
+      no human intervention is needed, only time or a specific action
+      by the registrant or a third party.
+
+  - id: referred_externally
+    label: Referred Externally
+    description: >
+      The need identified is outside Khidmat's current capacity.
+      Beneficiary has been directed to another organisation.
+      # Reserved for future use. Do not implement until referral
+      # network domain is active.

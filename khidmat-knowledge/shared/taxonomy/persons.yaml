@@ -1,0 +1,48 @@
+version: "1.0"
+domain: shared
+file: taxonomy/persons.yaml
+
+purpose: >
+  Generic person taxonomy used across all Khidmat domains.
+  Registration, volunteer operations, case management, and programs
+  all reference persons. This file owns the shared vocabulary.
+  Domain-specific person roles are defined within each domain.
+
+person_roles:
+  # Registration domain roles — declared here, detailed in registration/taxonomy/actors.yaml
+  - beneficiary
+  - registrant
+  - proxy
+  - volunteer
+
+  # Future domain roles — declared here, detailed when domains become active
+  - case_manager          # case-management domain
+  - programme_officer     # programs domain
+  - organisation_staff    # organisation domain
+  - donor                 # future domain
+
+age_classification:
+  minor:
+    definition: Under 18 years of age
+    consequence: guardian_status required, safeguarding rules apply
+  adult:
+    definition: 18 years of age or older
+
+gender_vocabulary:
+  - male
+  - female
+  - not_disclosed
+
+functional_capacity:
+  # Owned here because it describes the person, not the situation
+  # Applies across registration, case management, and beneficiary lifecycle
+  values:
+    - id: full
+      label: Full
+      description: Can manage daily tasks independently
+    - id: partial
+      label: Partial
+      description: Requires some assistance with daily tasks
+    - id: dependent
+      label: Dependent
+      description: Cannot manage daily tasks without full support

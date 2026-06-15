@@ -1,0 +1,24 @@
+domain: beneficiary-lifecycle
+maturity: level_2_placeholder
+status: not_yet_active
+
+scope: >
+  This domain tracks a beneficiary across multiple registrations,
+  interventions, and time periods. It is distinct from a single case.
+  A beneficiary lifecycle spans many cases.
+
+concepts_this_domain_will_own:
+  - beneficiary_record (the persistent identity across cases)
+  - registration_history
+  - intervention_history
+  - re_registration_trigger
+  - status_change (improvement, deterioration, exit from program)
+  - periodic_review
+
+concepts_this_domain_explicitly_does_not_own:
+  - beneficiary (registration owns the per-case entity — this domain
+    creates the persistent cross-case identity)
+
+do_not_implement_until: >
+  At least two complete registrations for returning beneficiaries
+  exist and cross-case tracking is operationally required.

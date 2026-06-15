@@ -1,0 +1,45 @@
+version: "1.0"
+domain: shared
+file: taxonomy/document-types.yaml
+
+purpose: >
+  Shared document type vocabulary.
+  Registration uses this in evidence classification.
+  Future domains (verification operations, case management)
+  will use it for document management and audit.
+
+identity_documents:
+  - national_id
+  - passport
+  - birth_certificate
+  - voter_registration_card
+  - ration_card
+  - refugee_documentation
+  - no_document
+
+medical_documents:
+  - doctors_letter
+  - diagnosis_report
+  - prescription
+  - discharge_summary
+  - referral_letter
+  - medical_test_result
+
+financial_documents:
+  - salary_slip
+  - bank_statement
+  - termination_letter
+  - tax_document
+
+legal_documents:
+  - court_order
+  - eviction_notice
+  - tenancy_agreement
+  - death_certificate
+  - police_report
+
+institutional_documents:
+  - school_fee_statement
+  - enrollment_certificate
+  - ngo_referral_letter
+  - government_benefit_letter
