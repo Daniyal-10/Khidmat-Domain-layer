@@ -1,0 +1,601 @@
+# =============================================================================
+# Khidmat Shared Human Model — Lifecycle Stages Ontology
+# =============================================================================
+ontology_version: "1.0"
+authority: "shared/human-model/"
+owner_domain: "Shared Human Model"
+status: "Phase 2.0 — Active"
+# -----------------------------------------------------------------------------
+# Purpose:        Defines developmental lifecycle stages as reasoning contexts.
+#                 This is not an age-band classification file.
+#                 Each stage carries implications for dependency, capability,
+#                 vulnerability, and the relationships between them.
+# Scope:          This file answers "what is true about people in this stage."
+#                 It does not answer "what should the system do."
+#                 Operational, severity, workflow, and intervention logic
+#                 belongs to Registration Reasoning, Risk Domain, Case
+#                 Management, and future operational domains.
+# Governing ADRs: ADR-007, ADR-008
+# Age units:      All age ranges expressed in months for consistency.
+#                 Stage boundaries are indicative, not deterministic.
+# =============================================================================
+
+lifecycle_stages:
+
+  # ---------------------------------------------------------------------------
+  - id: infant
+    name: Infant
+    typical_age_range:
+      from_months: 0
+      to_months: 12
+      boundary_note: >
+        From birth through the first year of life. The transition to Toddler
+        is marked by independent mobility and emergent language, not a
+        birthday.
+    description: >
+      The period of complete physiological and developmental dependency.
+      An infant cannot survive, communicate needs, or protect itself without
+      a caregiver. Every dimension of wellbeing is mediated through the
+      caregiver relationship. The infant's vulnerability is inseparable from
+      the caregiver's situation. Brain development is at its most rapid and
+      sensitive phase; deprivation in this stage has irreversible
+      consequences.
+    characteristic_dependencies:
+      - type: physiological
+        description: >
+          Total dependency on caregiver for feeding, warmth, hygiene, and
+          safety. Cannot meet any survival need independently.
+      - type: developmental
+        description: >
+          Brain development requires caregiver responsiveness and stimulation.
+          Deprivation or caregiver unavailability produces lasting deficit.
+      - type: medical
+        description: >
+          Immature immune system; illness severity and deterioration speed
+          are disproportionate to older stages.
+    characteristic_capabilities:
+      - Sensory response and caregiver recognition
+      - Communication through crying, facial expression, and gesture
+      - Progressive motor development across the stage (grasping, rolling,
+        sitting, early standing)
+    characteristic_vulnerabilities:
+      - Severe acute malnutrition (SAM) and moderate acute malnutrition
+        (MAM) with developmental consequences distinct from adult malnutrition
+      - Developmental delay from inadequate stimulation, nutrition, or
+        caregiver responsiveness
+      - Rapid illness deterioration due to immature immune system
+      - Complete exposure to caregiver vulnerability — the infant's safety
+        is the caregiver's safety
+    reasoning_implications:
+      - Caregiver wellbeing directly determines infant wellbeing; the two
+        cannot be understood independently
+      - Food insecurity in the household has developmental consequences for
+        an infant that are qualitatively distinct from nutritional hardship
+        at other lifecycle stages
+      - Caregiver incapacity or absence removes the infant's only source
+        of survival support; no self-protective capacity exists at this stage
+      - The infant's vulnerability profile is a function of the caregiver's
+        situation, not only the infant's own characteristics
+      - Illness in an infant progresses faster than at other stages;
+        the severity relationship between illness and outcome is compressed
+    ontology_notes:
+      - Developmental stage takes precedence over chronological age where
+        evidence of advanced or delayed development exists
+      - Stage boundaries are indicative rather than deterministic
+      - Lifecycle stage should be interpreted alongside the capability and
+        dependency models
+      - The infant is the only stage in which the person's full vulnerability
+        profile is a subset of the caregiver's profile
+
+  # ---------------------------------------------------------------------------
+  - id: toddler
+    name: Toddler
+    typical_age_range:
+      from_months: 12
+      to_months: 36
+      boundary_note: >
+        From independent walking and emergent language through age three.
+        The transition to Early Childhood is marked by expanding social
+        engagement and pre-school readiness, not a birthday.
+    description: >
+      A period of rapid motor and language development with decreasing but
+      still substantial dependency. Toddlers can express needs and move
+      independently but remain entirely dependent for safety, nutrition,
+      and guidance. Developmental milestones in this stage are highly
+      sensitive to household stress and caregiver availability.
+    characteristic_dependencies:
+      - type: safety
+        description: >
+          Cannot identify or avoid physical hazards without active supervision.
+          Independent mobility increases exposure to harm without corresponding
+          risk awareness.
+      - type: nutritional
+        description: >
+          Requires age-appropriate nutrition distinct from adult requirements.
+          Malnutrition and stunting in this window cause lasting developmental
+          harm.
+      - type: developmental
+        description: >
+          Language and cognitive development require consistent caregiver
+          engagement. Neglect or household instability produces measurable
+          deficits.
+    characteristic_capabilities:
+      - Independent mobility within the immediate environment
+      - Emergent language — can indicate pain, hunger, fear, and discomfort
+      - Early social play and peer interaction
+      - Basic self-help skills emerging with caregiver support
+    characteristic_vulnerabilities:
+      - Nutritional deficiency and stunting
+      - Developmental delay from household stress or caregiver unavailability
+      - Accidental harm due to mobility without risk awareness
+      - Psychosocial harm as a witness to domestic violence or household
+        crisis
+    reasoning_implications:
+      - Caregiver stress, illness, or absence directly shapes toddler
+        developmental outcomes; the caregiver's situation remains a
+        primary determinant of the toddler's wellbeing
+      - Nutritional needs at this stage are qualitatively distinct from
+        adult needs; household food insecurity affects toddlers through
+        stunting and developmental loss, not only hunger
+      - Toddlers present in households experiencing domestic violence are
+        developmentally affected as secondary persons, not neutral bystanders
+      - Caregiver absence or incapacity removes the protective layer on
+        which the toddler's safety depends; no self-protective capacity
+        exists at this stage
+    ontology_notes:
+      - Stage boundaries are indicative; developmental assessment takes
+        precedence over chronological age
+      - Lifecycle stage should be interpreted alongside the capability and
+        dependency models
+      - The toddler stage introduces emergent self-expression, which
+        distinguishes it from the infant stage in terms of need disclosure
+
+  # ---------------------------------------------------------------------------
+  - id: early_childhood
+    name: Early Childhood
+    typical_age_range:
+      from_months: 36
+      to_months: 72
+      boundary_note: >
+        Pre-school age through kindergarten. The transition to School-Age
+        is marked by formal school enrolment and the primacy of educational
+        context, not a birthday.
+    description: >
+      A period of expanding social and cognitive development where the child
+      begins to engage beyond the immediate family. Dependency for protection
+      and guidance remains high. School readiness and early educational
+      experience in this stage have lasting effects on life outcomes.
+      Needs in this stage are frequently underdisclosed by caregivers who
+      do not identify them as needs distinct from the household's needs.
+    characteristic_dependencies:
+      - type: protective
+        description: >
+          Requires adult protection from harm and exploitation. Cannot
+          navigate social threats or unfamiliar environments independently.
+      - type: educational
+        description: >
+          Requires structured early learning opportunities. Absence creates
+          measurable school readiness gaps with compounding educational
+          consequences.
+      - type: nutritional
+        description: >
+          Sustained nutritional support required for cognitive and physical
+          development. Micronutrient deficiency in this stage affects
+          cognitive capacity into adulthood.
+    characteristic_capabilities:
+      - Language and basic communication adequate for self-expression
+      - Play-based social interaction and emerging peer relationships
+      - Early literacy and numeracy readiness
+      - Emerging self-regulation and emotional understanding
+    characteristic_vulnerabilities:
+      - Educational exclusion or delayed school entry
+      - Domestic child labour displacing play and early learning
+      - Abuse and exploitation, often undetected because the child cannot
+        report it adequately
+      - Nutritional deficiency affecting cognitive development in a
+        critical window
+    reasoning_implications:
+      - Household financial constraints directly affect early educational
+        access; the relationship between economic stress and educational
+        exclusion begins at this stage
+      - Protective dependency means that caregiver absence has developmental
+        consequences distinct from material deprivation; presence matters
+        independently of provision
+      - Multiple children in this stage within a single household multiply
+        the caregiver dependency burden without proportionally increasing
+        caregiver capacity
+      - Needs of children in this stage are frequently invisible in
+        household-level reporting; the stage characteristic is
+        underdisclosure, not absence of need
+    ontology_notes:
+      - Stage boundaries are indicative; developmental assessment takes
+        precedence over chronological age
+      - Lifecycle stage should be interpreted alongside the capability and
+        dependency models
+      - This stage marks the first point at which educational context
+        becomes a primary developmental domain
+
+  # ---------------------------------------------------------------------------
+  - id: school_age_child
+    name: School-Age Child
+    typical_age_range:
+      from_months: 72
+      to_months: 144
+      boundary_note: >
+        Primary school years, approximately 6 to 12 years. The transition
+        to Adolescent is marked by puberty onset and the emergence of
+        gender-differentiated risk profiles, not a birthday.
+    description: >
+      Educational participation is the defining context of this stage.
+      The child has growing independence but remains legally and practically
+      dependent on caregivers for economic support and protection. School
+      attendance, academic continuity, and peer relationships are the primary
+      developmental tasks. Dropout in this stage produces compounding
+      lifetime consequences that are well-documented in humanitarian contexts.
+    characteristic_dependencies:
+      - type: educational
+        description: >
+          Dependent on household economic stability and caregiver
+          prioritisation of education for continued enrolment. Fees, uniforms,
+          and opportunity costs frequently drive withdrawal.
+      - type: protective
+        description: >
+          Dependent on caregivers and school environment for safety.
+          Vulnerable to exploitation in unsupervised contexts outside
+          home and school.
+    characteristic_capabilities:
+      - Independent mobility within familiar environments
+      - Literacy and numeracy when in school
+      - Social peer relationships and emerging social identity
+      - Meaningful household contribution tasks
+    characteristic_vulnerabilities:
+      - School dropout due to household financial crisis
+      - Child labour replacing education
+      - Psychosocial harm from household instability affecting educational
+        performance and concentration
+      - Dropout at critical educational transition points carries elevated
+        lifetime impact compared to dropout at non-transitional points
+    reasoning_implications:
+      - Educational continuity is the primary developmental stake of this
+        stage; household economic disruption has a direct and documented
+        relationship with school attendance
+      - Dropout at critical educational transition points has consequences
+        that differ qualitatively from dropout at non-transitional points;
+        the developmental loss is not proportional to the time lost
+      - Engagement in labour during this stage displaces educational
+        development within a window that cannot be recovered in the same
+        form at a later stage
+      - Caregiver availability is a determinant of school attendance,
+        particularly where children must navigate safety risks independently
+        to reach school
+    ontology_notes:
+      - Stage boundaries are indicative; developmental assessment takes
+        precedence over chronological age
+      - Lifecycle stage should be interpreted alongside the capability and
+        dependency models
+      - Educational context is the primary developmental domain of this
+        stage; disruption to education is the primary developmental loss
+
+  # ---------------------------------------------------------------------------
+  - id: adolescent
+    name: Adolescent
+    typical_age_range:
+      from_months: 144
+      to_months: 216
+      boundary_note: >
+        Through legal adulthood at 18 years. Early adolescence (12–15) and
+        late adolescence (15–18) carry distinct sub-profiles. Gender
+        differences in vulnerability are most pronounced in this stage.
+        Legal dependency continues through the full stage.
+    description: >
+      A period of transition from childhood dependency toward adult autonomy.
+      Adolescents have significant and growing capabilities but remain
+      legally dependent and carry gender-differentiated vulnerability profiles
+      that are among the highest of any lifecycle stage. Early marriage,
+      child labour, psychosocial risk, and reproductive health vulnerabilities
+      peak in this stage. Reasoning must be gender-sensitive and
+      context-sensitive. Adolescents often do not self-identify their
+      vulnerabilities; underdisclosure is a characteristic of the stage.
+    characteristic_dependencies:
+      - type: legal
+        description: >
+          Legally dependent until 18. Consent for major decisions rests with
+          guardian. Legal dependency does not align with actual capability
+          in late adolescence, creating complexity in household
+          decision-making authority.
+      - type: economic
+        description: >
+          Rarely economically independent. Household economic stress transfers
+          directly to the adolescent through withdrawal from education or
+          pressure to contribute income.
+    characteristic_capabilities:
+      - Adult-level physical capacity in late adolescence
+      - Emerging vocational skills and educational attainment
+      - Independent social relationships and peer networks
+      - Developing autonomous decision-making capacity
+    characteristic_vulnerabilities:
+      - Early and forced marriage, disproportionately affecting adolescent
+        females in financially distressed households
+      - Hazardous child labour replacing education
+      - Psychosocial distress, mental and behavioural health vulnerability,
+        and identity instability
+      - Reproductive health risks for adolescent females
+      - Recruitment into exploitative, criminal, or harmful contexts
+    reasoning_implications:
+      - Gender differences in vulnerability are most pronounced in this
+        stage; female and male adolescents in equivalent household
+        circumstances carry materially different vulnerability profiles
+      - Legal dependency and actual capability are misaligned in late
+        adolescence; this affects the household decision-making model
+        and who holds authority over the adolescent's choices
+      - Educational withdrawal in this stage is frequently associated
+        with labour or marriage rather than voluntary discontinuation;
+        the cause relationship is reversed compared to younger stages
+      - Psychosocial vulnerability in this stage is shaped by the
+        intersection of identity development and household instability;
+        the two reinforce each other
+    ontology_notes:
+      - Stage boundaries are indicative; developmental assessment takes
+        precedence over chronological age
+      - Lifecycle stage should be interpreted alongside the capability and
+        dependency models
+      - The adolescent stage is the first in which gender becomes a
+        primary differentiator within the stage's vulnerability profile
+      - Underdisclosure of vulnerability is characteristic of this stage;
+        self-reporting should not be taken as a complete representation
+
+  # ---------------------------------------------------------------------------
+  - id: young_adult
+    name: Young Adult
+    typical_age_range:
+      from_months: 216
+      to_months: 300
+      boundary_note: >
+        From legal adulthood through approximately 25 years. The transition
+        to Adult is marked by household establishment and the shift from
+        building economic independence to operating within it, not a
+        birthday.
+    description: >
+      A period of establishing economic independence, household formation,
+      and social identity. Young adults are legally autonomous but often
+      economically fragile. They may simultaneously carry residual dependency
+      on parental households and begin acquiring dependents of their own.
+      Livelihood disruption in this stage interrupts accumulation before
+      any safety net has formed.
+    characteristic_dependencies:
+      - type: economic
+        description: >
+          Often partially dependent on family household. Economic
+          self-sufficiency is being established, not assured. Loss of
+          livelihood leaves no accumulated buffer.
+    characteristic_capabilities:
+      - Full legal autonomy
+      - Physical and cognitive capacity at or near peak
+      - Vocational and educational capacity building
+      - Emerging caregiving capacity for own dependents
+    characteristic_vulnerabilities:
+      - Unemployment and absence of vocational pathways
+      - Early parenthood without economic stability, combining high
+        capability with high dependency burden
+      - Livelihood disruption without savings or accumulated safety net
+      - Psychosocial stress from transition expectations and economic
+        precarity
+    reasoning_implications:
+      - Livelihood disruption at this stage interrupts economic accumulation
+        at the point before any safety net has formed; the consequences
+        compound differently than disruption at a more established stage
+      - Young adults with dependent children carry a compound burden:
+        establishing economic independence while simultaneously providing
+        care for dependents
+      - Displacement at this stage severs nascent social and economic
+        networks whose absence has longer-term consequences than
+        displacement at more established stages, where networks are
+        already formed
+    ontology_notes:
+      - Stage boundaries are indicative; economic establishment is a
+        more meaningful boundary marker than chronological age for this
+        stage
+      - Lifecycle stage should be interpreted alongside the capability and
+        dependency models
+      - This stage may involve simultaneous dependency and caregiving roles;
+        neither should be assumed to exclude the other
+
+  # ---------------------------------------------------------------------------
+  - id: adult
+    name: Adult
+    typical_age_range:
+      from_months: 300
+      to_months: 720
+      boundary_note: >
+        Primary productive and caregiving years, approximately 25 to 60.
+        The transition to Older Adult is marked by measurable productive
+        capacity decline and increasing health management need. Within this
+        stage, adults in the 40–60 sub-range frequently carry simultaneous
+        caregiving responsibility for children and ageing parents
+        (sandwich generation dynamic).
+    description: >
+      The primary productive and caregiving stage. Adults are the economic
+      and relational anchor of most households. They are often simultaneously
+      providing care for children and ageing parents. Loss of a primary
+      adult — through death, illness, displacement, or incapacity — cascades
+      as vulnerability across all dependents. This stage is the central node
+      of the household dependency graph.
+    characteristic_dependencies:
+      - type: situational
+        description: >
+          Adults in crisis carry dependency on external support. Chronic
+          illness creates care dependency on other household members,
+          inverting the expected caregiving direction.
+    characteristic_capabilities:
+      - Full economic productive capacity
+      - Caregiving capacity for children, elderly, and other dependents
+      - Household decision-making authority
+      - Social and community participation
+    characteristic_vulnerabilities:
+      - Livelihood disruption as the household's primary economic shock
+        vector
+      - Chronic illness onset with no treatment plan or healthcare access
+      - Caregiver burden when providing care for multiple dependents
+        simultaneously
+      - Domestic violence risk, particularly for adult women in
+        economically constrained households
+    reasoning_implications:
+      - The adult is typically the central node of the household dependency
+        graph; incapacity or loss propagates as vulnerability across all
+        dependents simultaneously
+      - Chronic illness in a primary adult reduces productive and caregiving
+        capacity simultaneously; the household loses both income and care
+        provision from a single event
+      - The simultaneous caregiving responsibility for children and ageing
+        parents concentrates household vulnerability in a single person;
+        that person's own wellbeing is the structural point of risk
+      - Domestic violence within the adult stage has household-level
+        consequences beyond the immediate person affected, particularly
+        where the adult is the primary caregiver for dependents
+    ontology_notes:
+      - Stage boundaries are indicative; productive and caregiving capacity
+        are more meaningful boundary markers than chronological age
+      - Lifecycle stage should be interpreted alongside the capability and
+        dependency models
+      - The adult stage spans the widest age range; within it, the
+        sandwich generation sub-profile (simultaneous child and elder care)
+        is a distinct dependency configuration that future domains should
+        recognise
+
+  # ---------------------------------------------------------------------------
+  - id: older_adult
+    name: Older Adult
+    typical_age_range:
+      from_months: 720
+      to_months: 900
+      boundary_note: >
+        Transition from primary productive phase toward increasing care
+        needs, approximately 60 to 75 years. The transition to Elderly is
+        marked by frailty onset and activities of daily living dependency,
+        not a birthday. Many people in this stage retain substantial
+        capability and caregiving roles.
+    description: >
+      A transitional stage in which productive capacity begins to decline
+      while health management needs increase. Older adults may still be
+      primary caregivers or economic contributors but face growing personal
+      vulnerability. Social isolation and income reduction are common.
+      This stage requires understanding of both residual capability and
+      emerging dependency. Capability must not be assumed absent without
+      assessment.
+    characteristic_dependencies:
+      - type: health
+        description: >
+          Increasing frequency of health conditions requiring management.
+          Healthcare access becomes critical to maintaining function.
+      - type: economic
+        description: >
+          Reduced income from retirement or reduced working capacity. Often
+          dependent on family support without a formal pension or savings.
+    characteristic_capabilities:
+      - Substantial life experience and household advisory role
+      - Continued caregiving and household economic contribution in many
+        cases
+      - Social capital, community networks, and institutional knowledge
+    characteristic_vulnerabilities:
+      - Chronic disease onset and management burden
+      - Income reduction without pension, savings, or family support
+      - Social isolation as mobility reduces and peer networks contract
+      - Caregiver absence when adult children have migrated or are
+        otherwise unavailable
+    reasoning_implications:
+      - Chronic illness without healthcare access has compounding
+        consequences in this stage; conditions that are manageable under
+        treatment become debilitating without it, and the trajectory is
+        not linear
+      - Social isolation removes the informal support networks that buffer
+        against health and safety risks; isolation and vulnerability
+        reinforce each other
+      - An older adult carrying primary caregiving responsibility for
+        grandchildren holds two roles simultaneously — caregiver and
+        person with increasing dependency need — and the two roles
+        interact with each other
+    ontology_notes:
+      - Stage boundaries are indicative; frailty onset is a more meaningful
+        boundary marker than chronological age for this stage
+      - Lifecycle stage should be interpreted alongside the capability and
+        dependency models
+      - Residual capability at this stage is highly variable; the stage
+        does not imply dependency — it implies a transition toward
+        increasing dependency need that must be assessed rather than assumed
+
+  # ---------------------------------------------------------------------------
+  - id: elderly
+    name: Elderly
+    typical_age_range:
+      from_months: 900
+      to_months: null
+      boundary_note: >
+        Advanced age, approximately 75 years and older. No upper boundary.
+        Frailty, activities of daily living dependency, and environmental
+        vulnerability are characteristic of this stage. Capability must
+        not be assumed absent without assessment.
+    description: >
+      A stage of high and often accelerating dependency. The elderly may
+      require assistance with basic activities of daily living. Cognitive
+      decline, frailty, and social isolation are common. Vulnerability to
+      environmental extremes — heat, cold, flood — is disproportionately
+      high. Underdisclosure of needs is characteristic of this stage;
+      absence of self-reported need should not be taken as evidence that
+      needs are absent.
+    characteristic_dependencies:
+      - type: physical
+        description: >
+          Activities of daily living (mobility, hygiene, nutrition,
+          medication) may require caregiver assistance. Dependency level
+          varies and must not be assumed.
+      - type: medical
+        description: >
+          Multiple comorbidities common. Medication management, clinical
+          monitoring, and healthcare access are recurring needs.
+      - type: social
+        description: >
+          Social participation and safety dependent on household and
+          community support. Isolation risk is high and frequently
+          unrecognised by the household itself.
+    characteristic_capabilities:
+      - Household advisory and relational role
+      - Oral history and cultural knowledge
+      - Residual independent capability varies widely and must not be
+        assumed absent
+    characteristic_vulnerabilities:
+      - Frailty and fall risk
+      - Cognitive decline and associated exploitation risk
+      - Disproportionate vulnerability to extreme temperatures (heat and
+        cold) and flood events due to reduced thermoregulation and mobility
+      - Polypharmacy and medication management risk without support
+      - Elder abuse — financial, physical, and neglect — which is
+        frequently unreported and underdisclosed
+      - Complete functional dependency if primary caregiver is unavailable
+    reasoning_implications:
+      - Living alone without a caregiver removes the practical support layer
+        on which safety in this stage depends; self-sufficiency cannot be
+        assumed from the absence of stated need
+      - Environmental extremes have disproportionate physiological
+        consequences at this stage due to reduced thermoregulation capacity
+        and mobility; the relationship between environmental conditions and
+        health outcome is more direct than at other stages
+      - Self-disclosure is an unreliable signal of need at this stage;
+        underdisclosure is a characteristic property of the stage, not
+        evidence that needs are absent
+      - Caregiver absence at this stage cannot be compensated for by the
+        person's own capability in the way it can at younger stages;
+        the dependency is structural, not situational
+      - Cognitive decline reduces the capacity to self-protect against
+        financial and physical exploitation; the absence of a disclosed
+        incident does not indicate absence of risk
+    ontology_notes:
+      - Stage boundaries are indicative; frailty and daily living dependency
+        are more meaningful boundary markers than chronological age
+      - Lifecycle stage should be interpreted alongside the capability and
+        dependency models
+      - Underdisclosure of need is the defining epistemic challenge of
+        this stage; it is a property of the stage itself, not of the
+        individual
+      - Residual capability varies widely; the stage signals increasing
+        dependency likelihood that warrants active assessment rather than
+        assumption in either direction

@@ -1,0 +1,199 @@
+# Khidmat Knowledge Layer — Ontology Completion Checklist
+
+**Authority:** Knowledge Layer Architect
+**Purpose:** Single source of truth for ontology progress. Updated as work completes.
+**Scope:** All taxonomy, ontology, reasoning, verification, questioning, and governance files
+
+---
+
+## COMPLETED
+
+### Registration Domain — Core
+
+✓ Actors Taxonomy (`registration/taxonomy/actors.yaml`)
+✓ Needs Taxonomy (`registration/taxonomy/needs.yaml`)
+✓ Situations Taxonomy (`registration/taxonomy/situations.yaml`)
+✓ Claims Taxonomy (`registration/taxonomy/claims.yaml`)
+✓ Case Outcomes Taxonomy (`registration/taxonomy/case-outcomes.yaml`)
+✓ Lead Statuses Taxonomy (`registration/taxonomy/lead-statuses.yaml`)
+✓ Referral Sources Taxonomy (`registration/taxonomy/referral-sources.yaml`)
+✓ Registration Entities Ontology (`registration/ontology/entities.yaml`)
+✓ Registration Attributes Ontology (`registration/ontology/attributes.yaml`)
+✓ Registration Relationships Ontology (`registration/ontology/relationships.yaml`)
+✓ Inference Rules (`registration/reasoning/inference-rules.yaml`)
+✓ Severity Rules (`registration/reasoning/severity-rules.yaml`)
+✓ Case Coherence Rules (`registration/reasoning/case-coherence-rules.yaml`)
+✓ Gap Detection Rules (`registration/reasoning/gap-detection-rules.yaml`)
+✓ Gap Types (`registration/gaps/gap-types.yaml`)
+✓ Questioning Strategy (`registration/questioning/questioning-strategy.yaml`)
+✓ Question Templates (`registration/questioning/question-templates.yaml`)
+✓ Verification Brief Projection (`registration/verification/verification-brief-projection.yaml`)
+✓ Verification Requirements (`registration/verification/verification-requirements.yaml`)
+✓ Readiness Rules (`registration/readiness/readiness-rules.yaml`)
+
+### Shared Domain — Core
+
+✓ Person Base Taxonomy (`shared/taxonomy/persons.yaml`)
+✓ Organisation Types Taxonomy (`shared/taxonomy/organisations.yaml`)
+✓ Location Taxonomy (`shared/taxonomy/locations.yaml`)
+✓ Document Types Taxonomy (`shared/taxonomy/document-types.yaml`)
+
+### Architecture and Governance
+
+✓ Architecture Declaration (`ARCHITECTURE.md`)
+✓ Architectural Decision Log (`DECISIONS.md`)
+✓ Ubiquitous Language Glossary (`GLOSSARY.md`)
+✓ AI Collaboration Workflow (`AI_WORKFLOW.md`)
+✓ Agent Handoff Briefing (`AGENT_HANDOFF.md`)
+
+### Phase 2.0 Governance (Produced This Phase)
+
+✓ Knowledge Layer Inventory (`knowledge_layer_inventory.md`)
+✓ Ontology Completion Checklist (`ontology_completion_checklist.md`) ← this file
+✓ Ontology Authority Matrix (`ontology_authority_matrix.md`)
+✓ Knowledge Layer Roadmap (`knowledge_layer_roadmap.md`)
+
+### Phase 2.0 — Shared Human Model (Architecture)
+
+✓ Shared Human Model Architecture (`shared/human-model/README.md`)
+✓ Lifecycle Stages Ontology (`shared/human-model/lifecycle-stages.yaml`)
+
+---
+
+## IN PROGRESS
+
+### Registration Domain — Incomplete Files
+
+□ Support Intervention Taxonomy (`registration/taxonomy/support-interventions.yaml`)
+  Status: Placeholder declared. Concepts listed. Implementation deferred pending operations staff input.
+  Blocker: Requires operational intervention catalogue confirmed with programme staff.
+
+□ Evidence Taxonomy (`registration/taxonomy/evidence.yaml`)
+  Status: Placeholder declared. Dependency on shared/taxonomy/document-types.yaml declared.
+  Blocker: Requires registration domain to need structured evidence classification beyond document type labels.
+
+### Shared Domain — In Progress
+
+□ Time Taxonomy (`shared/taxonomy/time.yaml`)
+  Status: Placeholder declared. Will formalise duration bands and onset recency vocabulary.
+  Blocker: Requires cross-domain reporting to make consistent time vocabulary necessary.
+
+### Phase 2.0 — Shared Human Model (Implementation In Progress)
+
+□ Capability Ontology (`shared/human-model/capabilities.yaml`)
+  Status: Not yet started. Pending architectural design and Human Owner approval.
+
+□ Dependency Ontology (`shared/human-model/dependency.yaml`)
+  Status: Not yet started. Pending architectural design and Human Owner approval.
+
+□ Family Structure Ontology (`shared/human-model/family-structure.yaml`)
+  Status: Not yet started. Pending architectural design and Human Owner approval.
+
+□ Health Conditions Ontology (`shared/human-model/health-conditions.yaml`)
+  Status: Not yet started. Pending architectural design and Human Owner approval.
+
+---
+
+## MISSING
+
+### Registration Domain — Known Gaps Not Yet Addressed
+
+□ Evidence Entity Attributes
+  Gap: `registration/ontology/attributes.yaml` declares an evidence entity in entities.yaml but has no attribute block for it. Evidence entity attributes must be added before verification operations can function.
+
+□ Compound Situation Inference Rules
+  Gap: All inference rules are single-trigger. No rule models the compounding of multiple simultaneous triggers. A bereavement + displacement compound is qualitatively different from either alone.
+
+□ Lifecycle-Stage-Aware Inference Rules
+  Gap: Inference rules do not use lifecycle stage. An infant in a food-insecure household should trigger developmental malnutrition risk distinct from the household food need.
+
+□ Functional Capacity Inference Rules
+  Gap: `functional_capacity` is defined on Beneficiary and HouseholdMember but no inference rule operates on it. The attribute is inert in the reasoning layer.
+
+□ Medical Severity with Treatment Plan Absence
+  Gap: A critical medical need with no care pathway does not escalate severity. The treatment_plan_gap is classified as medium regardless of need severity.
+
+### Shared Layer — Missing Entities
+
+□ Person Entity (Shared, Persistent)
+  Gap: No cross-domain persistent Person entity exists. `shared/ontology/entities.yaml` is a placeholder. The promotion from registration Beneficiary (snapshot) to Person (persistent) has no structural seam.
+
+□ Family Entity
+  Gap: No family unit as a distinct concept. The household has members but family dynamics, decision-making, and internal support relationships are not modelled.
+
+□ Community Entity
+  Gap: No community context model. Location is for volunteer dispatch only.
+
+### New Domains Required — Not Yet Placeholdered
+
+□ Risk Taxonomy and Ontology
+  The risk domain is not among the eight declared placeholder domains. Risk concepts are currently scattered as inference rules in the registration domain. Risk must become a first-class domain with its own taxonomy, ontology, and reasoning layer.
+
+□ Vulnerability Ontology
+  No composite vulnerability model exists. Individual factors, household factors, and community factors combine to produce aggregate vulnerability that is greater than the sum of its parts. This is not expressible in the current layer.
+
+□ Outcome Indicator Vocabulary
+  No outcome model exists. The system ends at case closure. Outcome indicators must be in shared vocabulary before beneficiary lifecycle, programs, or impact domains can measure change.
+
+□ Health Condition Taxonomy
+  Medical needs reference no health condition vocabulary. There is no chronic disease classification, no disability model beyond the three-value functional capacity enum, no malnutrition staging (SAM/MAM), no mental health condition vocabulary.
+
+□ Seasonal and Environmental Risk Model
+  No seasonal calendar. No environmental risk profile per geographic area. The damaged-roof-before-rainy-season reasoning scenario is entirely unsupported.
+
+---
+
+## FUTURE
+
+### Domains to Activate (from Architecture.md Placeholders)
+
+□ Verification Operations Domain
+  Prerequisite: Support Intervention Taxonomy + Evidence Taxonomy complete.
+
+□ Case Management Domain
+  Prerequisite: Verification Operations Domain active.
+
+□ Beneficiary Lifecycle Domain
+  Prerequisite: Persistent Person entity in shared + Outcome Indicator vocabulary + Case Management Domain active.
+
+□ Volunteer Operations Domain
+  Prerequisite: Volunteer profile requirements defined with operations staff.
+
+□ Support Delivery Domain
+  Prerequisite: Case Management Domain active + Intervention Taxonomy complete.
+
+□ Programs Domain
+  Prerequisite: Structured program distinct from ad-hoc assistance defined by client.
+
+□ Impact Domain
+  Prerequisite: Beneficiary Lifecycle Domain active + Outcome Indicator vocabulary.
+
+### Future Knowledge Graph Domains (Not Yet Placeholdered)
+
+□ Community Context Domain
+  Owner: Shared or dedicated domain. Covers geographic area profiles, service access maps, seasonal risk calendars, community social capital indicators.
+
+□ Donor Matching Domain
+  Future. Requires: Intervention taxonomy, program taxonomy, donor profile model.
+
+□ Resource Optimisation Domain
+  Future. Requires: Intervention taxonomy, geographic data, volunteer capacity model.
+
+□ Predictive Risk Domain
+  Future. Requires: Risk domain, seasonal model, community context, household resilience model, longitudinal case data.
+
+□ Programme Impact Ontology
+  Future. Requires: Outcome indicators, impact measurement methodology, longitudinal data model.
+
+---
+
+## STATUS SUMMARY
+
+| Category | Count | Notes |
+|----------|-------|-------|
+| Completed | 27 files | Registration domain fully modelled for intake |
+| In Progress | 7 items | Registration placeholders + Phase 2.0 design |
+| Missing (registration) | 5 items | Gaps within current domain scope |
+| Missing (shared) | 6 items | New concepts required before expansion |
+| Future (placeholder) | 7 domains | From ARCHITECTURE.md |
+| Future (new) | 5 domains | Not yet declared anywhere |

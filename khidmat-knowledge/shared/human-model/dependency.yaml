@@ -1,0 +1,562 @@
+# =============================================================================
+# Khidmat Shared Human Model — Dependency Ontology
+# =============================================================================
+ontology_version: "1.0"
+authority: "shared/human-model/"
+owner_domain: "Shared Human Model"
+status: "Phase 2.0 — Active"
+# -----------------------------------------------------------------------------
+# Purpose:        Defines the authoritative vocabulary for dependency
+#                 relationships between people across the lifecycle.
+#                 Dependency is a relationship — one person relying on another
+#                 for care, support, resources, supervision, protection, or
+#                 decision-making.
+# Scope:          This file answers "what kind of reliance is this?"
+#                 It does not answer "who are these people to each other?"
+#                 (family-structure.yaml), "what can this person do?"
+#                 (capabilities.yaml), or "what should the system do?"
+#                 (operational domains).
+# Governing ADRs: ADR-007, ADR-008
+# Cross-reference: shared/human-model/lifecycle-stages.yaml
+#                  characteristic_dependency labels in that file are
+#                  descriptive anticipations of the types defined here.
+# =============================================================================
+
+dependency_types:
+
+  # ---------------------------------------------------------------------------
+  - id: developmental
+    name: Developmental Dependency
+    description: >
+      The reliance of a developing person on a provider for the conditions,
+      stimulation, and responsive interaction necessary for healthy cognitive,
+      emotional, physical, and social development. Developmental dependency
+      is distinct from basic caregiving: passive presence is insufficient.
+      The provider must actively engage, respond, and create a nurturing
+      environment. Deprivation within critical developmental windows produces
+      deficits that may be more difficult to recover at later stages.
+    dependency_direction:
+      dependent_role: >
+        The developing person — typically an infant, toddler, or young child
+        — who requires active developmental support to reach stage-appropriate
+        milestones.
+      provider_role: >
+        The primary caregiver who provides responsive interaction, stimulation,
+        emotional attunement, and a stable learning environment.
+      reversibility: unidirectional
+      note: >
+        The provider does not depend on the developing person developmentally.
+        The relationship is inherently one-directional during the active
+        developmental window.
+    dependency_characteristics:
+      - Time-bounded: each developmental stage has a window; opportunities
+        missed within that window may be more difficult to recover at later
+        stages
+      - Quality-dependent: the nature of the provider's engagement matters
+        as much as their presence; unresponsive or absent caregiving produces
+        developmental deficit even when physical needs are met
+      - Sensitivity-graduated: earlier stages carry higher sensitivity to
+        deprivation; infant brain development is more sensitive to caregiver
+        quality than school-age cognitive development
+      - Invisible at registration: developmental need is frequently not
+        self-reported; it must be understood as present by nature of the
+        stage, not by explicit disclosure
+    typical_lifecycle_associations:
+      primary:
+        - infant
+        - toddler
+        - early_childhood
+      secondary:
+        - school_age_child
+        - adolescent
+      note: >
+        Developmental dependency is most acute at infant and toddler stages
+        where brain development is fastest. It persists at reduced intensity
+        through early childhood and school-age years. Adolescent identity
+        development carries a form of developmental dependency on peer and
+        family relational context, though this is qualitatively distinct from
+        the early childhood dependency on caregiver responsiveness.
+    vulnerability_implications:
+      - Provider stress, illness, or absence directly diminishes the quality
+        of developmental support available to the dependent; the developmental
+        consequence is proportional to the duration and depth of the
+        disruption
+      - Provider mental and behavioural health has a direct relationship with
+        the quality of developmental engagement; a provider who is
+        experiencing psychosocial distress provides qualitatively different
+        developmental support than one who is not
+      - Loss of a primary developmental provider — through death, separation,
+        or displacement — removes the relational anchor of the developing
+        person's environment with consequences for attachment and development
+      - Developmental dependency cannot be met by material provision alone;
+        a household that provides food but not responsive interaction does not
+        meet the developing person's developmental dependency
+    ontology_notes:
+      - Developmental dependency is a relationship concept, not a diagnosis
+        or a deficit label for the developing person
+      - The absence of stated developmental need is not evidence that the
+        dependency is met; it is characteristic of this dependency type that
+        it is underdisclosed
+      - Capability ontology will formally define developmental capabilities;
+        this file defines the reliance relationship that supports their
+        acquisition
+      - Family structure ontology will identify who the primary developmental
+        provider is in a given household; this file defines what that role
+        involves
+
+  # ---------------------------------------------------------------------------
+  - id: caregiving
+    name: Caregiving Dependency
+    description: >
+      The reliance of a person on another for the performance of basic care
+      activities that the dependent cannot perform independently. Caregiving
+      dependency covers the essential activities of daily living: feeding,
+      hygiene, safety supervision, preparation of food, and physical care.
+      It differs from developmental dependency in that it is primarily about
+      meeting immediate physical needs rather than supporting long-term
+      developmental outcomes. Caregiving dependency may be total (the
+      dependent can perform none of the relevant activities) or partial (the
+      dependent can perform some but requires assistance with others).
+    dependency_direction:
+      dependent_role: >
+        The person who cannot independently perform basic care activities
+        and requires another person to perform or assist with them.
+      provider_role: >
+        The caregiver who performs or assists with basic care activities on
+        behalf of the dependent.
+      reversibility: dynamic_reversible
+      note: >
+        Caregiving dependency is typically unidirectional within any given
+        period but may reverse over the lifecycle. An adult who provides
+        caregiving for their infant may later receive caregiving from that
+        same person as an elderly parent. The role of caregiver and dependent
+        can shift within a household across time.
+    dependency_characteristics:
+      - May be total or partial: the degree of dependency ranges from
+        complete reliance (infant, severely disabled person) to partial
+        reliance (older adult who can dress independently but requires
+        assistance with cooking)
+      - Time-continuous: caregiving dependency requires sustained provider
+        availability — not a single event but an ongoing relationship
+      - Provider-substitutable in principle: unlike developmental dependency,
+        caregiving can in principle be provided by any capable person, not
+        only a specific attachment figure. In practice, substitution may
+        still carry emotional cost for the dependent
+      - Bidirectional burden: while the dependency is unidirectional
+        (dependent relies on caregiver), the caregiving role creates its
+        own demands on the provider that affect the provider's own wellbeing
+        and capacity
+    typical_lifecycle_associations:
+      primary:
+        - infant
+        - toddler
+        - elderly
+      secondary:
+        - early_childhood
+        - older_adult
+      situational:
+        - adult
+        - young_adult
+        - school_age_child
+      note: >
+        Caregiving dependency is highest at the infant stage (total) and
+        progressively reduces through early childhood as capabilities develop.
+        It may re-emerge in the older adult and elderly stages as physical
+        capacity declines. At any lifecycle stage, a person may acquire
+        temporary caregiving dependency through serious illness, injury, or
+        crisis — hence the situational association with adult and young_adult.
+    vulnerability_implications:
+      - Caregiver absence or incapacity leaves a totally dependent person
+        without means to meet their basic survival needs; the dependent's
+        wellbeing is entirely a function of the caregiver's availability
+      - Multiple caregiving-dependent persons in a single household,
+        served by a single caregiver, create a concentrated dependency
+        burden; the caregiver's capacity becomes the household's
+        most critical structural constraint
+      - Caregiver burden — the cumulative demand of providing care —
+        affects the caregiver's own physical and mental wellbeing and
+        over time reduces the quality and sustainability of the care
+        they can provide
+      - Partial caregiving dependency can mask total dependency in disclosure;
+        a person who can dress independently may present as more capable
+        than they are in activities not observed or not mentioned
+    ontology_notes:
+      - Caregiving dependency is a relationship concept; it does not imply
+        incapacity in all domains — a partially dependent person may be
+        fully capable in financial, decision-making, and emotional domains
+      - Capability ontology will formally define which capabilities determine
+        independence from caregiving dependency; this file defines the
+        reliance relationship itself
+      - Family structure ontology will identify who the caregiver is;
+        this file defines what the caregiving dependency relationship involves
+      - The caregiving dependency of an adult in crisis (illness, injury)
+        is qualitatively different from that of an infant; both are
+        addressed by this concept but future domains may model them with
+        different reasoning approaches
+
+  # ---------------------------------------------------------------------------
+  - id: financial
+    name: Financial Dependency
+    description: >
+      The reliance of a person on another for access to economic resources
+      — income, assets, money, or material provision. Financial dependency
+      exists when a person lacks independent means of economic sustenance
+      and depends on another person's income, savings, or willingness to
+      provide material support. It may be total (no independent income or
+      assets whatsoever) or partial (some independent resources but
+      insufficient for self-sustenance). Financial dependency may be
+      formalised through legal obligation (parental duty, guardianship)
+      or may be informal and culturally embedded.
+    dependency_direction:
+      dependent_role: >
+        The person who lacks independent economic resources and relies on
+        another for material support.
+      provider_role: >
+        The income earner, resource holder, or provider of material support
+        on whom the dependent relies.
+      reversibility: dynamic_reversible
+      note: >
+        Financial dependency is typically unidirectional from child to parent
+        during childhood and from non-working person to working person in
+        many household configurations. The direction may reverse over time —
+        an adult child may become the financial provider for elderly parents
+        who previously provided for them.
+    dependency_characteristics:
+      - Quantifiable in principle: unlike emotional or developmental
+        dependency, financial dependency has a measurable dimension —
+        the gap between the dependent's own resources and their needs
+      - Subject to disruption events: financial dependency is highly
+        sensitive to shocks — the provider's death, job loss, illness,
+        displacement, or incapacity immediately terminates the resource
+        flow on which the dependent relies
+      - May persist beyond expected lifecycle stage: financial dependency
+        in young adults who cannot achieve economic independence, or in
+        adults who lose livelihood in mid-life, extends the dependency
+        relationship beyond the childhood stage where it is normatively
+        expected
+      - Structurally embedded: in many household configurations, financial
+        dependency is an expected and stable feature, not a crisis condition;
+        the vulnerability arises when the provider's capacity is disrupted
+    typical_lifecycle_associations:
+      primary:
+        - infant
+        - toddler
+        - early_childhood
+        - school_age_child
+        - adolescent
+      secondary:
+        - young_adult
+        - elderly
+        - older_adult
+      situational:
+        - adult
+      note: >
+        Financial dependency is normative across all childhood and adolescent
+        stages. It frequently persists into young adulthood during the period
+        of economic establishment. In the elderly stage, it often re-emerges
+        when independent income is no longer available. In the adult stage,
+        it may arise situationally through illness, unemployment, or crisis.
+    vulnerability_implications:
+      - Loss of the financial provider — through death, displacement,
+        illness, or unemployment — immediately removes the resource basis
+        on which the dependent's material needs are met
+      - Financial dependency concentrated in a single provider for multiple
+        dependents creates a household structure in which one event can
+        simultaneously affect all members
+      - A financially dependent person has limited agency to address their
+        own needs independently; their access to services, healthcare,
+        and education is mediated by the provider's willingness and capacity
+      - Financial dependency without a legal obligation (informal support
+        only) is more fragile than formal dependency; it is subject to
+        withdrawal without recourse
+    ontology_notes:
+      - Financial dependency is a relationship concept; a financially
+        dependent person may be fully capable in developmental, physical,
+        and decision-making domains
+      - The fact of financial dependency does not indicate that the
+        dependent is receiving adequate resources; the provider may be
+        present but providing insufficiently
+      - Family structure ontology will define household economic relationships;
+        this file defines the nature of financial reliance
+
+  # ---------------------------------------------------------------------------
+  - id: physical_support
+    name: Physical Support Dependency
+    description: >
+      The reliance of a person on another for physical assistance — mobility,
+      transport, physical protection, physical tasks, or medical care
+      activities that require physical presence or physical action by the
+      provider. Physical support dependency arises when a person's own
+      physical capacity is insufficient to perform necessary activities
+      independently. It may be temporary (during illness or injury recovery)
+      or permanent (advanced age, chronic physical disability).
+    dependency_direction:
+      dependent_role: >
+        The person whose physical capacity is insufficient for independent
+        performance of necessary activities and who requires another person's
+        physical involvement.
+      provider_role: >
+        The person who provides physical assistance, mobility support,
+        transport, or medical care activities to the dependent.
+      reversibility: unidirectional
+      note: >
+        Physical support dependency is predominantly unidirectional within
+        a given period. However, it may reverse across the lifecycle as
+        the provider ages and their own physical capacity declines, while
+        a previously dependent person (such as a recovered adult) regains
+        capacity and begins to provide support.
+    dependency_characteristics:
+      - Directly linked to physical capability: the degree of physical
+        support dependency is inversely related to the person's own
+        physical capability; as capability increases, dependency decreases,
+        and vice versa
+      - Provider must be physically present: unlike financial dependency,
+        physical support cannot be provided remotely or in advance;
+        the provider must be physically available at the time the need arises
+      - Covers a spectrum: from mobility assistance (helping someone walk)
+        to full physical care (carrying, bathing, administering medication)
+        to physical protection (accompanying a person through unsafe areas)
+      - Environmental sensitivity: physical support dependency is amplified
+        by environmental conditions — stairs, distances, terrain, weather —
+        that a physically capable person navigates independently but that
+        create barriers for the physically dependent person
+    typical_lifecycle_associations:
+      primary:
+        - infant
+        - elderly
+      secondary:
+        - toddler
+        - older_adult
+      situational:
+        - adult
+        - young_adult
+        - school_age_child
+      note: >
+        Physical support dependency is highest at the infant stage (complete
+        physical dependence for all movement) and at the elderly stage where
+        frailty reduces physical independence. In the adult and young_adult
+        stages, it arises situationally through injury, serious illness, or
+        chronic physical disability. School-age children in unsafe environments
+        may depend on physical accompaniment for safety.
+    vulnerability_implications:
+      - Provider absence leaves the physically dependent person unable to
+        access services, healthcare, food, or exit dangerous environments;
+        the dependency is immediate and cannot be compensated by the
+        dependent's own action
+      - Environmental conditions that restrict movement — flooding, extreme
+        heat, damaged infrastructure — have disproportionate consequences
+        for physically dependent persons, as their mobility is already
+        constrained before those conditions arise
+      - Physical support dependency that is unrecognised or understated
+        by the household may result in the dependent person being left
+        behind or unprotected in crisis situations
+      - The physical effort of providing support creates its own burden
+        on the provider, which over time affects the provider's own
+        physical capacity and health
+    ontology_notes:
+      - Physical support dependency is a relationship concept; it does not
+        imply cognitive, financial, or emotional dependency
+      - Capability ontology will formally define the physical capabilities
+        whose absence creates physical support dependency; this file defines
+        the reliance relationship itself
+      - Medical care activities (medication administration, wound care,
+        clinical monitoring) are included within this type as they require
+        physical presence and physical action by the provider
+
+  # ---------------------------------------------------------------------------
+  - id: decision_making
+    name: Decision-Making Dependency
+    description: >
+      The reliance of a person on another for decisions that affect their
+      own life, wellbeing, or legal status. Decision-making dependency may
+      be formalised through legal structures (guardianship, parental
+      authority, power of attorney) or embedded informally in cultural and
+      household authority structures where certain persons are not expected
+      or permitted to make independent decisions. It is the most complex
+      dependency type because it operates at the intersection of legal
+      status, cognitive capacity, cultural norms, and power relationships
+      within households.
+    dependency_direction:
+      dependent_role: >
+        The person whose decisions are made by, or are heavily subject to
+        the authority of, another person.
+      provider_role: >
+        The decision-maker, authority holder, or legal guardian who makes
+        or substantially influences decisions on behalf of the dependent.
+      reversibility: dynamic_reversible
+      note: >
+        Decision-making dependency is strongly unidirectional in legal
+        contexts (a child has no reciprocal authority over a parent's
+        decisions). It may be more complex in cultural household authority
+        structures where authority is contextual. It typically diminishes
+        as the dependent gains legal standing and cognitive capacity, but
+        may re-emerge with cognitive decline in later life.
+    dependency_characteristics:
+      - Legally formalised or culturally embedded: the clearest cases
+        involve legal guardianship and parental authority; less visible
+        cases involve cultural household authority structures where certain
+        members (women, younger members) may have limited decision-making
+        autonomy even as adults
+      - May conflict with actual capability: the most significant tension
+        in this dependency type is between legal or cultural dependency
+        status and the dependent person's own capability and preferences;
+        an adolescent who is legally dependent may have greater decision-
+        making capacity than the legal framework acknowledges
+      - Decisions with high stakes: the dependency is most consequential
+        for irreversible or high-impact decisions — medical consent,
+        educational withdrawal, marriage, financial transactions — where
+        a harmful decision by the authority holder cannot be undone
+      - Cognitive dimension: in elderly persons with cognitive decline,
+        decision-making dependency arises from a genuine reduction in
+        capacity rather than legal or cultural imposition
+    typical_lifecycle_associations:
+      primary:
+        - infant
+        - toddler
+        - early_childhood
+        - school_age_child
+        - adolescent
+      secondary:
+        - elderly
+      situational:
+        - adult
+        - older_adult
+        - young_adult
+      note: >
+        Decision-making dependency is legally and practically universal
+        across all childhood and adolescent stages. In the elderly stage,
+        it may re-emerge as cognitive capacity declines. In the adult and
+        older_adult stages, it may arise situationally through cognitive
+        impairment, serious illness, or cultural household authority
+        dynamics. The situational adult dependency may not be visible
+        or acknowledged in registration.
+    vulnerability_implications:
+      - When the decision-making authority holder makes decisions that
+        are contrary to the dependent person's interests, the dependent
+        has limited or no recourse — the harm is authorised by the
+        dependency structure itself
+      - Absence of the decision-making authority holder creates a vacuum
+        in which critical decisions cannot be made; a child without a
+        guardian, or an elderly person with cognitive decline without a
+        designated authority, cannot consent to necessary interventions
+      - Decision-making dependency that is culturally embedded but not
+        legally formalised is harder to surface; the dependent person
+        may not name it as a constraint even when it materially affects
+        their situation
+      - The misalignment between legal decision-making dependency and
+        actual capability is most acute in late adolescence, where legal
+        dependence persists beyond the point at which genuine autonomous
+        capacity has developed
+    ontology_notes:
+      - Decision-making dependency is a relationship and power concept,
+        not a cognitive incapacity label; it encompasses both cases of
+        genuine cognitive limitation and cases of structural authority
+      - Capability ontology will formally define decision-making capability;
+        this file defines the reliance relationship that exists when that
+        capability is legally or culturally overridden
+      - Family structure ontology will define who holds household authority;
+        this file defines the nature of decision-making dependency itself
+      - The presence of decision-making dependency does not imply the
+        dependent person lacks preferences, views, or the ability to
+        communicate them; it means those preferences may not be the
+        deciding factor in outcomes
+
+  # ---------------------------------------------------------------------------
+  - id: emotional_support
+    name: Emotional Support Dependency
+    description: >
+      The reliance of a person on another for psychological safety, comfort,
+      emotional validation, social connection, and the sense of being known
+      and cared for. Emotional support dependency is present at every
+      lifecycle stage, though its character changes across stages. It is
+      the least visible of the dependency types in formal assessment contexts
+      — it is rarely self-reported as a need — but its absence is among the
+      strongest amplifiers of vulnerability across all other domains. Social
+      isolation is the extreme form of unmet emotional support dependency.
+    dependency_direction:
+      dependent_role: >
+        The person who relies on another for psychological safety, comfort,
+        and social connection.
+      provider_role: >
+        The person who provides emotional presence, responsive attention,
+        validation, and relational continuity.
+      reversibility: bidirectional
+      note: >
+        Emotional support is the most frequently bidirectional of the
+        dependency types; most close relationships involve mutual provision
+        of emotional support. The dependency is most one-directional at
+        the infant stage (where the infant depends entirely on the caregiver
+        for felt safety) and in crisis contexts where one person is acutely
+        distressed and draws primarily on the other. In stable adult
+        relationships, both parties typically provide and receive support.
+    dependency_characteristics:
+      - Universal: present at every lifecycle stage, though the form and
+        intensity change; no person is without emotional support dependency
+        even if they are fully independent in all other domains
+      - Relational, not transactional: emotional support cannot be
+        scheduled or assigned; it emerges from consistent relational
+        presence over time; a new provider cannot immediately substitute
+        for a lost long-term provider
+      - Cumulative: unmet emotional support dependency over time produces
+        compounding effects on psychological functioning, coping capacity,
+        and the ability to engage with other domains of life
+      - Invisible at disclosure: emotional support needs are among the
+        least frequently disclosed in formal assessment; they carry stigma,
+        are often not recognised as a dependency by the person experiencing
+        them, and require relational trust to surface
+      - Loss multiplier: when emotional support dependency is unmet, the
+        person's capacity to manage other dependencies and challenges is
+        reduced; emotional isolation makes all other difficulties harder
+        to navigate
+    typical_lifecycle_associations:
+      primary:
+        - infant
+        - adolescent
+        - elderly
+      secondary:
+        - toddler
+        - early_childhood
+        - older_adult
+      situational:
+        - school_age_child
+        - young_adult
+        - adult
+      note: >
+        Emotional support dependency is most acute at the infant stage
+        (attachment formation, felt safety), the adolescent stage (identity
+        formation, peer and family relational context), and the elderly
+        stage (isolation risk, bereavement of peer group). In school-age,
+        young adult, and adult stages it is situationally intensified by
+        crisis, bereavement, displacement, or relational rupture.
+    vulnerability_implications:
+      - Loss of the primary emotional support provider — through bereavement,
+        separation, displacement, or relational breakdown — removes the
+        relational anchor that supports functioning across all other domains;
+        the effect is not limited to emotional wellbeing alone
+      - Social isolation, as the extreme case of unmet emotional support
+        dependency, has documented relationships with physical health,
+        cognitive function, and mortality particularly in the elderly stage
+      - Emotional support dependency that is unmet over an extended period
+        reduces the person's coping capacity and their ability to engage
+        with services, relationships, and opportunities that might address
+        other needs
+      - The bidirectional nature of emotional support means that when
+        one person in a relationship is overwhelmed, both parties' emotional
+        support capacity may be simultaneously reduced; a household in
+        acute crisis often has no member who can provide emotional support
+        to another
+    ontology_notes:
+      - Emotional support dependency is a relationship concept; it does
+        not imply psychological diagnosis or disorder
+      - The bidirectional nature of this dependency type means that provider
+        and dependent roles are often held simultaneously by the same person
+        in different relational contexts
+      - Family structure ontology will identify the relational network
+        within which emotional support is typically provided; this file
+        defines the nature of the dependency itself
+      - Capability ontology may address emotional and social capability;
+        this file addresses the reliance relationship independently of
+        whether that capability is formally modelled
+      - The absence of self-reported emotional need should not be interpreted
+        as evidence that emotional support dependency is met or absent;
+        underdisclosure is a structural characteristic of this dependency type

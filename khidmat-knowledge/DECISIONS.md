@@ -192,3 +192,90 @@ in `situation.safety_notes`. The resulting status depends on the answer.
 **Alternatives rejected:**  
 - Automatic `unsafe_to_verify` on any safety flag: rejected as too blunt.
 - No safety gate at all: rejected as a safeguarding failure.
+
+---
+
+## ADR-007: Shared Human Model as a First-Class Knowledge Layer
+
+**Date:** 2026
+**Status:** Accepted
+
+**Decision:**
+
+Lifecycle stages, capabilities, dependencies, family structures, and health conditions will be modelled in a dedicated Shared Human Model layer.
+
+These concepts are promoted to shared ownership.
+
+**Reasoning:**
+
+Future domains require a consistent representation of human development, household relationships, dependency structures, and capabilities.
+
+Allowing each domain to define its own person model would create ontology drift.
+
+A dedicated human model establishes a single source of truth.
+
+**Consequence:**
+
+Future domains must reference the Shared Human Model rather than defining competing human concepts.
+
+**Alternatives rejected:**
+
+* Defining lifecycle concepts independently in each domain.
+* Extending registration ontology to own human concepts.
+* Delaying human modelling until beneficiary lifecycle activation.
+
+---
+
+## ADR-008: Single Ownership of Concepts
+
+**Date:** 2026
+**Status:** Accepted
+
+**Decision:**
+
+Every concept in the knowledge layer must have exactly one authoritative owner.
+
+Ownership is maintained through ontology_authority_matrix.md.
+
+**Reasoning:**
+
+Duplicate ownership creates ontology drift and inconsistent reasoning.
+
+Concepts may be referenced by many files but defined by only one file.
+
+**Consequence:**
+
+When a concept appears in multiple locations, one location must be designated canonical and all others become references.
+
+**Alternatives rejected:**
+
+* Distributed ownership.
+* Duplicate definitions across domains.
+
+---
+
+## ADR-009: Dependency-Driven Domain Activation
+
+**Date:** 2026
+**Status:** Accepted
+
+**Decision:**
+
+Domains activate according to the dependency order defined in knowledge_layer_roadmap.md.
+
+Placeholder domains remain inactive until prerequisites are satisfied.
+
+**Reasoning:**
+
+Premature activation causes domains to invent concepts they do not own.
+
+Dependency-first activation preserves architectural integrity.
+
+**Consequence:**
+
+Roadmap dependencies become governance constraints.
+
+**Alternatives rejected:**
+
+* Activating domains on implementation demand alone.
+* Allowing placeholder domains to define concepts early.

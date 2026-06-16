@@ -79,3 +79,49 @@ Determines verification weight and questioning approach.
 The pattern of how a situation developed over time.
 Values: structural (chronic, pre-existing), crisis_triggered (caused by an event),
 progressive (gradually worsening), acute (sudden onset).
+
+## Human Model Terms
+
+**Lifecycle Stage**
+A developmental stage of human life associated with characteristic needs, dependencies, capabilities, vulnerabilities, and expected outcomes.
+Examples include infant, child, adolescent, adult, and elderly.
+Lifecycle stages are reasoning concepts, not merely age ranges.
+
+**Capability**
+A person's ability to perform activities, contribute to household wellbeing, participate in society, or support others.
+Capabilities represent strengths and assets rather than deficits.
+
+**Dependency**
+A relationship in which one person relies on another for care, support, resources, supervision, protection, or decision-making.
+Dependencies may be developmental, physical, financial, emotional, or legal.
+
+**Family**
+A social unit consisting of individuals connected through kinship, caregiving, marriage, guardianship, or other recognised relationships.
+A family is distinct from a household.
+Multiple families may exist within a household.
+
+## Risk and Vulnerability Terms
+
+**Vulnerability**
+A condition that increases exposure to harm or reduces the ability to withstand adverse circumstances.
+Vulnerability may exist at individual, family, household, or community level.
+
+**Risk Factor**
+A characteristic, condition, event, or circumstance that increases the likelihood of a negative outcome.
+A risk factor does not necessarily indicate current harm.
+
+**Household Resilience**
+The capacity of a household to absorb, adapt to, and recover from adversity while maintaining wellbeing.
+
+## Outcome Terms
+
+**Outcome Indicator**
+A measurable signal used to assess whether an intervention produced meaningful change in a beneficiary, family, household, or community.
+Outcome indicators support lifecycle tracking, program evaluation, and impact measurement.
+
+## Governance Terms
+
+**Concept Ownership**
+The assignment of a concept to exactly one authoritative file or domain.
+A concept may be referenced by many files but may only be defined by one owner.
+Ownership authority is maintained through ontology_authority_matrix.md.
