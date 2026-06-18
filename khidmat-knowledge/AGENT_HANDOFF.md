@@ -24,7 +24,7 @@ The primary intelligence of the Khidmat AI system lives here.
 | Registration Domain | Complete (Level 1) |
 | Shared Domain — base taxonomy | Active |
 | Governance Layer | Complete (Phase 2.0) |
-| Shared Human Model | In Progress (Phase 2.2) |
+| Shared Human Model | In Progress (Phase 2.4) |
 | Risk Domain | Planned, not yet activated |
 | All other placeholder domains | Level 2 — inactive |
 
@@ -34,17 +34,18 @@ Source of truth: `ontology_completion_checklist.md`, `knowledge_layer_roadmap.md
 
 # Current Phase
 
-**Phase 2.3 — Family Structure Ontology**
+**Phase 2.4 — Health Conditions Ontology**
 
 Active implementation target:
 
-`shared/human-model/family-structure.yaml`
+`shared/human-model/health-conditions.yaml`
 
 Completed:
 
 - lifecycle-stages.yaml
 - dependency.yaml
 - capabilities.yaml
+- family-structure.yaml 
 
 Governance completed:
 
@@ -55,7 +56,17 @@ Governance completed:
 
 Current objective:
 
-Design the family as a first-class humanitarian entity distinct from both a household and an individual person.
+Design the Health Conditions Ontology that will become the authoritative vocabulary for:
+
+- chronic illness
+- disability
+- injury
+- pregnancy
+- malnutrition
+- mental health
+- age-related decline
+
+This ontology must support future Risk Domain reasoning without implementing risk models.
 
 | File | Purpose |
 |---|---|
@@ -124,15 +135,26 @@ without prior architectural review.
 
 # Current Next Step
 
-Phase 2.3 — Family Structure Ontology
+Phase 2.4 — Health Conditions Ontology
 
 Create:
 
-shared/human-model/family-structure.yaml
+shared/human-model/health-conditions.yaml
 
 After completion:
 
-Phase 2.4 — Health Conditions Ontology
+Phase 3.0 — Risk Domain
+
+Prerequisites satisfied:
+
+- lifecycle-stages.yaml
+- dependency.yaml
+- capabilities.yaml
+- family-structure.yaml
+
+Remaining prerequisite:
+
+- health-conditions.yaml
 
 Only after:
 
@@ -145,5 +167,10 @@ Only after:
 are complete may the project enter:
 
 Phase 3.0 — Risk Domain
+
+Current status:
+
+4 of 5 Shared Human Model ontologies complete.
+Health Conditions Ontology remains the final prerequisite.
 
 This sequencing is mandatory and governed by knowledge_layer_roadmap.md.

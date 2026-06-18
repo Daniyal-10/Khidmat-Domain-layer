@@ -59,6 +59,7 @@
 ✓ Lifecycle Stages Ontology (`shared/human-model/lifecycle-stages.yaml`)
 ✓ Dependency Ontology (`shared/human-model/dependency.yaml`)
 ✓ Capability Ontology (`shared/human-model/capabilities.yaml`)
+✓ Family Structure Ontology (`shared/human-model/family-structure.yaml`)
 
 ---
 
@@ -82,11 +83,8 @@
 
 ### Phase 2.0 — Shared Human Model (Implementation In Progress)
 
-□ Family Structure Ontology (`shared/human-model/family-structure.yaml`)
-  Status: Not yet started. Pending architectural design and Human Owner approval.
-
 □ Health Conditions Ontology (`shared/human-model/health-conditions.yaml`)
-  Status: Not yet started. Pending architectural design and Human Owner approval.
+  Status: Next active phase. Pending architectural design and Human Owner approval.
 
 ---
 
@@ -122,9 +120,6 @@ Required Future Work:
 
 □ Person Entity (Shared, Persistent)
   Gap: No cross-domain persistent Person entity exists. `shared/ontology/entities.yaml` is a placeholder. The promotion from registration Beneficiary (snapshot) to Person (persistent) has no structural seam.
-
-□ Family Entity
-  Gap: No family unit as a distinct concept. The household has members but family dynamics, decision-making, and internal support relationships are not modelled.
 
 □ Community Entity
   Gap: No community context model. Location is for volunteer dispatch only.
@@ -224,9 +219,9 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Completed | 31+ files | Registration ontology and Shared Human Model foundations established |
-| In Progress | 4 items | Family structure, health conditions, evidence taxonomy, time taxonomy |
+| Completed | 32+ files | Registration ontology and Shared Human Model foundations established |
+| In Progress | 3 items | Health conditions, evidence taxonomy, time taxonomy |
 | Missing (registration) | 4 items | Advanced reasoning and evidence modelling gaps |
-| Missing (shared) | 7 items | Person, Family, Household, Community and governance entities |
+| Missing (shared) | 6 items | Person, Household, Community and governance entities |
 | Future (placeholder) | 7 domains | Planned operational domains |
 | Future (new) | 6 domains | Knowledge graph expansion domains |

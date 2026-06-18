@@ -46,16 +46,16 @@ Missing Entirely
 ├── Community context
 └── Outcome indicators
 
-Planned in Active Stage
+Current Active Phase
 
-├── Family structure ontology
 └── Health conditions ontology
 
 Already Created
 
 ├── Lifecycle model
 ├── Dependency model
-└── Capability model
+├── Capability model
+└── Family structure model
 ```
 
 **Reasoning capability at current state:** The system can conduct a structured intake conversation, identify needs and claims, detect gaps, assess case readiness, and produce a verification brief. It cannot reason about a person across time, cannot model household resilience, cannot generate preventive signals, and cannot evaluate whether interventions work.
@@ -90,18 +90,16 @@ Completed:
 ✓ lifecycle-stages.yaml
 ✓ dependency.yaml
 ✓ capabilities.yaml
+✓ family-structure.yaml
 
 Current Active Deliverable:
-□ family-structure.yaml
-
-Upcoming Deliverable:
 □ health-conditions.yaml
 
 Future Shared Ontology Work:
 □ shared human entity promotion model
 
 Current Active Phase:
-Phase 2.3 — Family Structure Ontology
+Phase 2.4 — Health Conditions Ontology
 
 **Prerequisites:** Stage 1 should be in progress but need not be complete. The shared human model does not depend on the intervention taxonomy. It does depend on the person base taxonomy in `shared/taxonomy/persons.yaml` which is already mature enough to extend.
 
@@ -118,14 +116,15 @@ Completed
 * shared/human-model/lifecycle-stages.yaml
 * shared/human-model/dependency.yaml
 * shared/human-model/capabilities.yaml
+* shared/human-model/family-structure.yaml
 
 Next Active Deliverable
 
-shared/human-model/family-structure.yaml
+shared/human-model/health-conditions.yaml
 
 After Completion
 
-shared/human-model/health-conditions.yaml
+Stage 3 — Risk Domain
 
 Architecture Rule
 
@@ -336,11 +335,9 @@ Completed:
 ✓ lifecycle-stages.yaml
 ✓ dependency.yaml
 ✓ capabilities.yaml
+✓ family-structure.yaml
 
 Active:
-□ family-structure.yaml
-
-Next:
 □ health-conditions.yaml
 
 Stage 2 is considered complete only after:
