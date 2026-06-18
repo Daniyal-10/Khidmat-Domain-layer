@@ -1,0 +1,1400 @@
+# =============================================================================
+# Khidmat Shared Human Model — Capability Ontology
+# =============================================================================
+ontology_version: "1.0"
+authority: "shared/human-model/"
+owner_domain: "Shared Human Model"
+status: "Phase 2.2 — Active"
+# -----------------------------------------------------------------------------
+# Purpose:        Defines the authoritative vocabulary for human capabilities
+#                 across the Khidmat Knowledge Layer.
+#                 Capabilities are what a person CAN do — their strengths,
+#                 assets, and functional capacities across domains of life.
+#                 This file models capacity, not deficit.
+# Scope:          This file answers "what is this person able to do?"
+#                 It does not answer "what has gone wrong?" (that is the
+#                 risk domain's concern), "what support is needed?" (case
+#                 management), or "what outcomes were achieved?" (impact).
+# Governing ADRs: ADR-007, ADR-008
+# Cross-reference:
+#   shared/human-model/lifecycle-stages.yaml
+#     characteristic_capabilities entries in that file are descriptive
+#     anticipations of the concepts formally defined here. FLAG-004 in
+#     ontology_authority_matrix.md requires alignment between the two files.
+#   shared/taxonomy/persons.yaml
+#     functional_capacity enum (full, partial, dependent) is a proto-
+#     capability placeholder. FLAG-001 in ontology_authority_matrix.md
+#     requires that file to reference this one as its authority once
+#     this file is complete.
+#   shared/human-model/dependency.yaml
+#     Capability and dependency are paired concepts. When a person lacks
+#     a capability, they incur a dependency on someone who has it. This
+#     file owns capability definitions; dependency.yaml owns the reliance
+#     relationship that results from capability absence.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# DESIGN NOTES
+# -----------------------------------------------------------------------------
+design_notes:
+  multi_dimensionality: >
+    A person's capability profile is multi-dimensional. A person may be
+    cognitively capable and physically limited simultaneously. A person
+    may be vocationally skilled and economically inactive simultaneously.
+    No single capability score exists. Each domain is assessed independently.
+
+  capability_vs_performance: >
+    Capability is what a person CAN do under conditions that allow it.
+    It is distinct from current performance, which describes what a person
+    IS doing under current conditions. A person who is currently unemployed
+    may retain full employment capability. A person who is currently
+    caregiving may retain full vocational capability. Capability is latent;
+    performance is situational.
+
+  capability_vs_vulnerability: >
+    Capability and vulnerability are separate concepts. Vulnerability
+    describes exposure to harm and the conditions that increase it.
+    Capability describes what a person can do to navigate their situation.
+    A person with high capability may still face severe vulnerability
+    due to external conditions. These must not be conflated.
+
+  capability_and_lifecycle: >
+    Capabilities develop, stabilise, and decline across the lifecycle.
+    This file does not own lifecycle stage definitions — those belong to
+    lifecycle-stages.yaml. This file defines capability concepts as
+    stable abstractions. The association of capability profiles with
+    lifecycle stages is a matter of reference, not of definition here.
+
+  graded_levels: >
+    All capabilities use a four-level scale: full, functional, partial,
+    and minimal. This replaces the three-level functional_capacity enum
+    in shared/taxonomy/persons.yaml, which was a placeholder. The graded
+    scale allows more precise reasoning about intervention thresholds,
+    dependency triggers, and risk factors.
+
+  capability_is_not_static: >
+    Capabilities change over time. Events (illness, injury, displacement,
+    education) alter capability profiles. This file defines capability
+    as a concept with a level at a point in time. It does not model
+    capability trajectories — that belongs to the Beneficiary Lifecycle
+    domain when it activates.
+
+  underdisclosure: >
+    Capability underdisclosure is a systematic risk in registration contexts.
+    Registrants presenting in distress may understate their capabilities.
+    Registrants presenting on behalf of another may not accurately represent
+    capabilities they have not observed. The capability model must be
+    interpreted alongside this uncertainty.
+
+# -----------------------------------------------------------------------------
+# CAPABILITY LEVEL SCALE
+# Authoritative scale for all capability assessments in this file.
+# Replaces functional_capacity (full, partial, dependent) in persons.yaml.
+# -----------------------------------------------------------------------------
+
+capability_levels:
+
+  - id: full
+    label: Full
+    description: >
+      The person can perform activities within this capability domain
+      independently, reliably, and without assistance under normal conditions.
+      No accommodation or support is needed.
+    reasoning_use: >
+      A person with full capability in a domain is not dependent on others
+      for that domain. No intervention or support for this capability
+      is indicated.
+
+  - id: functional
+    label: Functional
+    description: >
+      The person can perform activities within this capability domain
+      independently in most circumstances but may require occasional
+      assistance, accommodation, or additional time under demanding
+      conditions. The limitation does not prevent meaningful participation.
+    reasoning_use: >
+      A person with functional capability can manage independently in
+      stable conditions. Under stress or adversity, they may require
+      targeted support. Dependency is not yet triggered.
+
+  - id: partial
+    label: Partial
+    description: >
+      The person can perform some activities within this capability domain
+      independently but requires consistent assistance, accommodation, or
+      support for a significant portion of activities. Participation is
+      possible but constrained.
+    reasoning_use: >
+      A person with partial capability has a soft dependency on support
+      for the activities they cannot perform. Intervention may increase
+      independence. Dependency on a provider is likely for the constrained
+      portion.
+
+  - id: minimal
+    label: Minimal
+    description: >
+      The person has very limited capacity within this capability domain.
+      They can perform at most rudimentary aspects of activities in this
+      domain and require substantial support or full substitution by another
+      person for almost all activities within the domain.
+    reasoning_use: >
+      A person with minimal capability has a hard dependency on a provider
+      for almost all activities in this domain. Absence of a provider
+      leaves the person unable to meet needs in this domain independently.
+
+  note: >
+    A person without any capacity in a domain — through a permanent condition
+    or developmental stage — will typically present as minimal. The scale
+    does not have a zero level; absence of capability is represented by
+    minimal combined with dependency type information from dependency.yaml.
+
+# -----------------------------------------------------------------------------
+# CAPABILITY DOMAINS
+# Each domain defines a distinct area of human functioning.
+# Domains are assessed independently.
+# -----------------------------------------------------------------------------
+
+capability_domains:
+
+  # ---------------------------------------------------------------------------
+  - id: physical_mobility
+    name: Physical Mobility Capability
+    description: >
+      The ability to move the body through space — to walk, stand, climb,
+      carry, navigate distances, and physically access locations. Physical
+      mobility is the foundational capability for accessing services,
+      participating in work, fulfilling caregiving duties, and maintaining
+      social connections. Its absence or reduction has cascading effects
+      on nearly all other capability domains.
+    level_definitions:
+      full: >
+        Can walk, climb, carry, and navigate all typical environments
+        without limitation. Can travel distances required for work, services,
+        and social participation independently.
+      functional: >
+        Can move independently in most environments but may be limited
+        in some terrain, distances, or physical demands. Can access most
+        services and locations needed for daily life.
+      partial: >
+        Requires assistance, adaptive equipment, or environmental
+        accommodation for significant portions of mobility tasks. Access
+        to services and locations is constrained. Can manage some short-
+        distance or familiar-environment movement independently.
+      minimal: >
+        Cannot independently navigate outside the immediate home environment
+        or requires full physical support for most movement. Dependent on
+        a provider for transport, access to services, and physical tasks
+        beyond the immediate living space.
+    key_attributes:
+      - indoor_mobility: whether the person can move within their home
+      - outdoor_mobility: whether the person can travel beyond their home
+      - load_bearing: whether the person can carry items (relevant for
+        caregiving, work, and daily living tasks)
+      - terrain_range: the range of terrain types the person can navigate
+        (flat, stairs, uneven ground)
+      - distance_range: the distance the person can travel independently
+      - assistive_equipment_used: list of any equipment in use (crutches,
+        wheelchair, walking frame)
+    lifecycle_associations:
+      peak_stages: [young_adult, adult]
+      developing_stages: [infant, toddler, early_childhood]
+      typically_declining_stages: [older_adult, elderly]
+      situationally_reduced_at: any_stage_with_injury_illness_or_disability
+    reasoning_opportunities:
+      - A person with minimal physical mobility cannot independently access
+        a hospital, school, or government office; service access planning
+        must account for this
+      - A primary caregiver with reduced physical mobility may be unable to
+        perform physical caregiving tasks for dependents; the dependency
+        relationship between caregiver and dependent is affected
+      - An adult with full cognitive and vocational capability but minimal
+        physical mobility may require adapted livelihood intervention rather
+        than a standard employment pathway
+      - Physical mobility reduction amplifies the impact of geographic
+        remoteness and environmental obstacles
+    ontology_notes:
+      - Physical mobility capability is distinct from physical support
+        dependency (dependency.yaml). Mobility describes what the person
+        can do; physical_support dependency describes the reliance
+        relationship that results when mobility is insufficient
+      - Assistive equipment that restores functional or full mobility
+        should be reflected in the level assessment — the relevant question
+        is the person's effective capability, not their unassisted baseline
+
+  # ---------------------------------------------------------------------------
+  - id: cognitive_functioning
+    name: Cognitive Functioning Capability
+    description: >
+      The ability to understand situations, process information, learn,
+      remember, reason, plan, and apply knowledge to solve problems and
+      navigate daily life. Cognitive functioning is the foundational
+      capability for decision-making, self-advocacy, learning, employment,
+      and participation in most domains. It encompasses memory, attention,
+      language comprehension, spatial reasoning, and executive function
+      (planning and self-regulation).
+    level_definitions:
+      full: >
+        Can understand complex information, learn new skills, remember and
+        use information across time, plan and execute multi-step activities,
+        and reason effectively under normal conditions.
+      functional: >
+        Can manage most cognitive tasks required for daily life independently.
+        May require additional time, repetition, or simplified presentation
+        for complex information. Learning new material takes more effort
+        than typical.
+      partial: >
+        Can perform familiar and routine cognitive tasks but has significant
+        difficulty with novel situations, complex information, multi-step
+        planning, or sustained attention. Requires support for significant
+        decisions and complex tasks.
+      minimal: >
+        Can respond to immediate and simple communication but has very limited
+        capacity for planning, complex understanding, or independent decision-
+        making. Requires consistent cognitive support and guidance for
+        most life tasks beyond routine daily activities.
+    key_attributes:
+      - memory_functioning: short-term and long-term memory adequacy
+      - attention_span: ability to sustain focus on tasks
+      - processing_speed: how quickly the person can understand and respond
+        to new information
+      - executive_function: planning, self-regulation, and task sequencing
+      - learning_capacity: ability to acquire new skills and knowledge
+      - language_comprehension: ability to understand spoken and written
+        language at the level required for daily life
+    lifecycle_associations:
+      developing_stages: [infant, toddler, early_childhood, school_age_child,
+                          adolescent]
+      stable_stages: [young_adult, adult]
+      potentially_declining_stages: [older_adult, elderly]
+    reasoning_opportunities:
+      - A person with minimal cognitive functioning has decision-making
+        dependency regardless of their legal status; this informs who must
+        be engaged in consent and planning processes
+      - A person with partial cognitive functioning may retain full physical
+        and vocational capability; their need for support is specific to
+        cognitive tasks, not global
+      - Cognitive capability is a prerequisite for interpreting and acting
+        on risk information; without it, a person may not respond to
+        warnings or instructions that would protect them
+      - In registration contexts, cognitive capability affects the reliability
+        of self-reported information; this does not make the information
+        invalid but informs how it should be weighted
+    ontology_notes:
+      - Cognitive capability at infant and toddler stages is developmental,
+        not impaired; the minimal level at those stages is expected and
+        normative, not a deficit
+      - Health-conditions.yaml (not yet created) will own clinical
+        cognitive condition vocabulary (dementia, intellectual disability,
+        traumatic brain injury). This file defines the capability concept;
+        that file will own the conditions that affect it
+      - Decision-making dependency (dependency.yaml) is triggered when
+        cognitive capability is partial or minimal; the two concepts
+        are paired
+
+  # ---------------------------------------------------------------------------
+  - id: communication
+    name: Communication Capability
+    description: >
+      The ability to express information, needs, and intentions to others
+      and to receive and understand communication from others. Communication
+      capability encompasses spoken language, written language, non-verbal
+      communication, and the ability to advocate for oneself in
+      institutional and formal settings. It is distinct from literacy
+      (which is specifically about reading and writing) and language
+      (which concerns the specific languages available to the person).
+      Communication capability is about the functional ability to
+      communicate, regardless of the modality used.
+    level_definitions:
+      full: >
+        Can express complex thoughts, needs, and information clearly and
+        can understand communication from others at the level required
+        for institutional, legal, and social engagement. Can advocate for
+        themselves in formal settings.
+      functional: >
+        Can communicate effectively in most daily life situations. May
+        have some limitation in complex, formal, or high-stakes communication
+        contexts but can manage most interactions needed for service access
+        and social participation.
+      partial: >
+        Can communicate basic needs and information but has significant
+        difficulty in complex communication contexts. May require
+        assistance, an interpreter, or a communication aid for important
+        interactions. Self-advocacy in formal settings is constrained.
+      minimal: >
+        Can communicate only basic or immediate needs, often in limited
+        modalities. Requires consistent support from another person to
+        communicate effectively in most contexts beyond immediate interaction.
+    key_attributes:
+      - expressive_ability: ability to communicate outwardly to others
+      - receptive_ability: ability to understand communication from others
+      - self_advocacy: ability to represent one's own interests in formal
+        or institutional contexts
+      - preferred_modality: the modality through which the person communicates
+        most effectively (spoken, written, sign, augmentative)
+    lifecycle_associations:
+      developing_stages: [infant, toddler, early_childhood]
+      stable_stages: [school_age_child, adolescent, young_adult, adult]
+      potentially_declining_stages: [elderly]
+    reasoning_opportunities:
+      - A person with minimal communication capability cannot self-register
+        and requires a proxy or volunteer; this is a structural constraint
+        on registration persona
+      - Partial communication capability may mean that claims made in
+        registration are incomplete not due to withholding but due to
+        difficulty expressing complex situations; follow-up must be
+        designed accordingly
+      - A person with full cognitive functioning but partial communication
+        capability due to a physical speech condition is not cognitively
+        impaired; communication support, not cognitive support, is indicated
+    ontology_notes:
+      - This domain intentionally separates communication capability from
+        the specific capability domains of literacy and language, which
+        are defined below
+      - Communication capability includes non-verbal modalities; a person
+        who cannot speak but who can write, sign, or use augmentative
+        communication has communication capability at the level those
+        modalities afford
+
+  # ---------------------------------------------------------------------------
+  - id: literacy
+    name: Literacy Capability
+    description: >
+      The ability to read and write in at least one language at a level
+      sufficient to function in daily life, access information, and engage
+      with written documentation. Literacy is distinct from language
+      capability (which concerns which languages are available) and from
+      general communication capability (which concerns broader functional
+      communication). Literacy level matters because many humanitarian
+      systems, legal processes, and institutional interactions assume it.
+      Its absence creates specific barriers that are addressable through
+      mediation rather than the person lacking underlying capability.
+    level_definitions:
+      full: >
+        Can read and write fluently in at least one language at a level
+        sufficient for employment, institutional engagement, and independent
+        navigation of written documentation.
+      functional: >
+        Can read and write in at least one language at a basic functional
+        level — sufficient to read signs, fill simple forms, and understand
+        short written information. Complex documents require assistance.
+      partial: >
+        Can read some words, numbers, or simple phrases but cannot read
+        and write sufficiently to engage independently with written
+        institutional or daily life materials. Requires consistent support
+        for written communication.
+      minimal: >
+        Cannot read or write in any language at a functional level.
+        All written communication requires full mediation by another person.
+    key_attributes:
+      - reading_level: assessed reading capability in best language
+      - writing_level: assessed writing capability in best language
+      - numeracy_level: ability to understand and use numbers (closely
+        associated but distinct from literacy; both are assessed here
+        as they commonly co-occur and co-affect daily functioning)
+      - languages_with_literacy: list of languages in which literacy
+        exists at any level
+    lifecycle_associations:
+      absent_at: [infant, toddler]
+      developing_at: [early_childhood, school_age_child, adolescent]
+      stable_if_acquired: [young_adult, adult, older_adult]
+      risk_of_decline: [elderly] (due to vision or cognitive change, not loss
+                                   of underlying skill)
+    reasoning_opportunities:
+      - A person with minimal literacy requires a proxy or volunteer-mediated
+        registration process; they cannot engage with written interfaces
+      - Literacy level is a significant determinant of employability
+        and livelihood pathway; a person with minimal literacy who has
+        high physical capability and vocational skill has a different
+        intervention pathway than one with both minimal literacy and
+        minimal vocational capability
+      - Literacy level affects a person's ability to manage their own
+        medical care (reading prescriptions, understanding instructions)
+        and legal status (understanding documents)
+      - A person with minimal literacy is not cognitively limited; the
+        absence of literacy is a skills gap that may have entirely
+        structural causes (exclusion from schooling) and is potentially
+        addressable
+    ontology_notes:
+      - Literacy is an acquired capability dependent on access to education.
+        Its absence does not indicate lower cognitive capability.
+      - Numeracy is included within this domain because its functional
+        consequences (ability to manage money, understand quantities,
+        engage with numerical documentation) closely parallel literacy's
+        consequences and the two capabilities typically co-develop
+
+  # ---------------------------------------------------------------------------
+  - id: language
+    name: Language Capability
+    description: >
+      The repertoire of languages a person can use to communicate, and their
+      functional level in each. Language capability affects which services,
+      institutions, and social environments are accessible. It is distinct
+      from communication capability (whether the person can communicate)
+      and literacy (whether they can read and write). Language capability
+      matters because service delivery languages, official languages, and
+      local community languages may differ, creating barriers for persons
+      whose language repertoire does not include the relevant language.
+    level_definitions:
+      full: >
+        The person can communicate in the language in question at the level
+        required for formal, institutional, and complex personal interaction.
+        No limitation on participation due to language.
+      functional: >
+        The person can communicate in the language at a level sufficient for
+        most daily life and service interactions. May struggle with complex
+        legal, medical, or technical language in this language.
+      partial: >
+        The person can communicate basic information in the language but
+        cannot manage complex interactions independently. Requires support
+        for institutional engagement in this language.
+      minimal: >
+        The person has very limited capability in the language — sufficient
+        for greetings or simple transactions but not for meaningful
+        participation in service, legal, or social contexts.
+    key_attributes:
+      - primary_language: the language the person communicates in most
+        fluently and comfortably
+      - additional_languages: list of other languages with their level
+        (full, functional, partial, minimal)
+      - official_language_capability: level in the official language(s)
+        of the jurisdiction (relevant for legal, educational, and
+        institutional access)
+      - service_language_capability: level in the language(s) used by
+        the service provider (relevant for registration, case management,
+        and support delivery)
+    lifecycle_associations:
+      developing_at: [toddler, early_childhood, school_age_child]
+      note: >
+        Language capability in the primary language is acquired through
+        early childhood. Additional language capability may be acquired
+        at any stage. Elderly persons may experience reduced capability
+        in their primary language through cognitive decline affecting
+        language processing — this is a cognitive, not a language, phenomenon.
+    reasoning_opportunities:
+      - A person whose primary language differs from the registration system's
+        language requires an interpreter or language-matched volunteer;
+        this is a structural requirement for the registration process
+      - A person with minimal official language capability may have reduced
+        access to government services and formal institutions regardless of
+        their entitlements; this is a structural access barrier, not
+        a capability deficit in other domains
+      - Language capability interacts with literacy: a person may have full
+        spoken language capability but limited literacy in that language,
+        or may have literacy in a language other than their spoken primary
+        language
+    ontology_notes:
+      - Language capability is a profile, not a single level; a person may
+        have full capability in one language and minimal in another
+      - The relevant language for assessment purposes depends on the
+        context: registration language, service language, and community
+        language may all differ
+
+  # ---------------------------------------------------------------------------
+  - id: vocational
+    name: Vocational Capability
+    description: >
+      The acquired skills, knowledge, and experience required to perform
+      work in one or more specific occupational areas. Vocational capability
+      is what a person knows how to do in an economic or productive context —
+      it is built through training, apprenticeship, employment experience,
+      and informal skills acquisition. It is distinct from employment
+      capability (whether a person is currently able and positioned to work)
+      and from economic capability (whether a person can manage economic
+      resources and activity). Vocational capability is an asset that
+      persists through periods of unemployment.
+    level_definitions:
+      full: >
+        The person has demonstrable skills and experience in one or more
+        vocational areas at a level that meets or exceeds market expectations
+        for entry-level or skilled employment in those areas.
+      functional: >
+        The person has useful skills in one or more vocational areas but may
+        need some additional training, updating, or adaptation to meet
+        current market expectations or to shift into a new context.
+      partial: >
+        The person has some skills relevant to productive work but at a
+        level insufficient for independent employment in those areas without
+        significant additional development or close supervision.
+      minimal: >
+        The person has very limited work skills and would require substantial
+        training and supervised development before contributing productively
+        in most formal or semi-formal vocational contexts.
+    key_attributes:
+      - primary_vocation: the area of work the person is most skilled in
+      - additional_vocations: other areas of useful skill
+      - skill_source: how skills were acquired (formal training,
+        apprenticeship, employment experience, informal/self-taught)
+      - experience_duration: years of experience in primary vocational area
+      - transferability: whether skills are context-specific or broadly
+        applicable across industries or geographic settings
+      - certification_status: whether the person holds any formal
+        qualifications or certifications in their vocational area
+    lifecycle_associations:
+      absent_at: [infant, toddler, early_childhood]
+      developing_at: [school_age_child, adolescent, young_adult]
+      peak_at: [adult]
+      typically_stable_at: [older_adult]
+      potentially_declining_at: [elderly] (due to physical or cognitive
+                                            change, not loss of knowledge)
+    reasoning_opportunities:
+      - A person with high vocational capability who is unemployed may
+        need a livelihood support intervention of a different type than
+        a person with minimal vocational capability; the former needs
+        access to opportunity, the latter needs skills development
+      - Vocational capability interacts with physical mobility; a person
+        with skilled vocational capability and reduced physical mobility
+        requires adaptation of work context, not development of new skills
+      - In humanitarian contexts, vocational capability is frequently
+        underdisclosed; a person in distress may not volunteer that they
+        have marketable skills when they are focused on immediate survival
+        needs
+      - Vocational capability acquired informally (without certification)
+        is nonetheless real and economically valuable; the absence of
+        certification should not be treated as absence of capability
+    ontology_notes:
+      - Vocational capability is a latent asset that persists through
+        periods of unemployment, displacement, or crisis
+      - This domain does not include caregiving or household management
+        as vocational work, though those are real capabilities defined
+        separately below; this choice reflects the distinction between
+        economic production and care production
+      - The absence of vocational capability in children and young
+        adolescents is developmental and expected; it indicates a
+        development pathway, not a deficit
+
+  # ---------------------------------------------------------------------------
+  - id: employment
+    name: Employment Capability
+    description: >
+      The ability to access, enter into, and sustain paid employment or
+      self-employment in the current context. Employment capability is
+      distinct from vocational capability (what the person knows how to do)
+      because it is contextually conditioned: a person may have full
+      vocational capability but minimal employment capability due to
+      location, documentation status, age, care responsibilities, or
+      discrimination. Employment capability is the realistic ability to
+      convert vocational skills into economic activity in the person's
+      actual environment.
+    level_definitions:
+      full: >
+        The person can access employment opportunities, meet employer or
+        self-employment requirements, and sustain employment without
+        structural barriers in their current context.
+      functional: >
+        The person can access some employment opportunities in their context
+        but faces constraints that limit range, sector, or hours of
+        employment. Can sustain employment where accessible.
+      partial: >
+        The person faces significant barriers to employment access —
+        documentation, mobility, care responsibilities, discrimination,
+        or market conditions — that substantially constrain what is available
+        to them. May be able to access irregular or informal work.
+      minimal: >
+        The person faces near-total barriers to employment in their current
+        context. Even informal or irregular work access is very limited.
+        Employment is currently not a realistic immediate pathway.
+    key_attributes:
+      - contextual_barriers: list of structural barriers currently constraining
+        employment access (documentation, location, care responsibilities,
+        discrimination, market conditions)
+      - eligible_sectors: employment sectors accessible to the person
+        given current constraints
+      - work_time_availability: how much time the person can realistically
+        allocate to employment given current care and other obligations
+      - formal_vs_informal: whether the person can access formal employment
+        (with contract, registration) or only informal arrangements
+    lifecycle_associations:
+      not_applicable_at: [infant, toddler, early_childhood]
+      emerging_at: [school_age_child] (informal, should be flagged as
+                                       child labour risk)
+      developing_at: [adolescent]
+      expected_at: [young_adult, adult]
+      context_dependent_at: [older_adult, elderly]
+    reasoning_opportunities:
+      - A person with high vocational capability but minimal employment
+        capability requires barrier removal (documentation, childcare,
+        location) rather than skills development
+      - A young adult with no employment history but full vocational
+        capability may need a supported first employment pathway, not
+        ongoing aid
+      - Employment capability is time-sensitive: a person who is employed
+        has it; the same person displaced three months later may have
+        minimal employment capability until stabilised; the capability
+        has not changed but the conditions have
+      - An adolescent with employment capability must be approached
+        cautiously; productive employment is appropriate, but employment
+        that displaces education represents a different risk
+    ontology_notes:
+      - Employment capability interacts with every other capability domain;
+        it is best understood as a composite assessment rather than a
+        stand-alone attribute
+      - This domain is specifically about the ability to access and sustain
+        employment; economic capability (defined below) addresses the
+        broader ability to manage economic activity beyond employment
+
+  # ---------------------------------------------------------------------------
+  - id: economic_management
+    name: Economic Management Capability
+    description: >
+      The ability to manage money, understand economic obligations, make
+      financial decisions, plan economically, and engage with financial
+      institutions and instruments. Economic management capability enables
+      a person to use whatever financial resources they have effectively.
+      A person may have income (financial dependency resolved) but minimal
+      economic management capability — meaning resources are poorly utilised,
+      debt accumulates, or financial decisions expose the household to risk.
+      Conversely, a person may have minimal income but high economic
+      management capability — meaning limited resources are used with
+      maximum effectiveness.
+    level_definitions:
+      full: >
+        Can budget, plan, save, manage debt, and engage with financial
+        institutions and instruments at a level appropriate for the
+        household's economic situation. Financial decisions are made with
+        understanding of consequences.
+      functional: >
+        Can manage day-to-day financial transactions and basic planning.
+        May struggle with complex financial instruments, long-term planning,
+        or debt management but can handle routine economic management.
+      partial: >
+        Can manage immediate cash transactions but has significant difficulty
+        with planning, savings, credit, or complex financial decisions.
+        Requires guidance for financial decisions beyond basic transactions.
+      minimal: >
+        Can perform only the most basic financial transactions and has
+        very limited understanding of economic obligations, planning,
+        or resource management. Requires consistent support for all
+        financial decisions beyond immediate spending.
+    key_attributes:
+      - budgeting: ability to allocate resources across household needs
+      - savings_behaviour: ability to set aside resources for future needs
+      - debt_understanding: ability to understand and manage credit and debt
+      - financial_institution_access: whether the person can engage with
+        banks, mobile money, or other financial services
+      - income_source_diversity: ability to maintain multiple income sources
+        as a risk management strategy (this is economic management, not
+        income level)
+    lifecycle_associations:
+      not_applicable_at: [infant, toddler, early_childhood]
+      developing_at: [school_age_child, adolescent]
+      expected_at: [young_adult, adult]
+      potentially_declining_at: [elderly] (due to cognitive change,
+                                           not loss of inherent capability)
+    reasoning_opportunities:
+      - A household that receives a cash transfer with minimal economic
+        management capability may use it less effectively than one with
+        full economic management capability; the intervention design must
+        account for this
+      - A person with high vocational and employment capability but minimal
+        economic management capability may sustain income but not accumulate
+        resilience; the vulnerability is real but in a different domain
+      - Economic management capability interacts directly with literacy
+        and cognitive capability; a person with minimal literacy may have
+        difficulty with written financial instruments regardless of their
+        underlying economic management capacity
+    ontology_notes:
+      - Economic management capability is distinct from income level, assets,
+        or financial security; those are outcomes and context, not capability
+      - Business capability (defined below) extends economic management
+        capability into the domain of enterprise; economic management is
+        the prerequisite
+
+  # ---------------------------------------------------------------------------
+  - id: enterprise
+    name: Enterprise Capability
+    description: >
+      The ability to conceive, establish, manage, and sustain a small
+      business, enterprise, or independent economic activity. Enterprise
+      capability goes beyond employment and economic management to encompass
+      the capacity to identify opportunities, assume productive risk,
+      organise resources, and generate economic value through independent
+      activity. It is particularly relevant in contexts where formal
+      employment is scarce and self-employment is the primary livelihood
+      pathway.
+    level_definitions:
+      full: >
+        Can independently identify a viable economic opportunity, plan
+        and establish a business or enterprise, manage it through normal
+        challenges, and adapt as conditions change. Has demonstrated or
+        credibly demonstrated capacity to generate economic value independently.
+      functional: >
+        Has demonstrated or can demonstrate the core elements of independent
+        economic activity but may need support in specific aspects (market
+        access, capital access, bookkeeping, legal registration) to sustain
+        growth or formalise the enterprise.
+      partial: >
+        Has some experience or concept of self-employment activity but
+        has not demonstrated sustained viable enterprise. May have operated
+        informally or at subsistence scale without growth potential in
+        the current form.
+      minimal: >
+        Has limited experience or capacity for independent economic activity
+        beyond basic trading or day labour. Enterprise is a future possibility
+        contingent on significant skill and confidence development.
+    key_attributes:
+      - enterprise_experience: whether the person has previously operated
+        a business or independent economic activity
+      - enterprise_sector: the sector(s) in which the person has or could
+        have enterprise capability
+      - market_knowledge: understanding of the market environment relevant
+        to the enterprise
+      - risk_tolerance_capacity: not psychological disposition but practical
+        ability to absorb business risk without household catastrophe
+    lifecycle_associations:
+      emerging_at: [young_adult]
+      peak_at: [adult]
+      stable_at: [older_adult]
+    reasoning_opportunities:
+      - An unemployed person with high enterprise capability may benefit
+        more from a micro-enterprise support intervention than from
+        employment placement
+      - Enterprise capability combined with minimal economic management
+        capability creates a specific pattern of risk; the person can
+        create activity but may not sustain it without support in
+        financial management
+    ontology_notes:
+      - Enterprise capability is not present at any meaningful level in
+        childhood stages; emerging enterprise thinking in adolescence is
+        better categorised as developing vocational and economic capability
+
+  # ---------------------------------------------------------------------------
+  - id: caregiving
+    name: Caregiving Capability
+    description: >
+      The ability to provide consistent care for a dependent person —
+      including physical care, emotional support, developmental support,
+      supervision, and coordination of the dependent's needs. Caregiving
+      capability is a real and important capability that is systematically
+      undervalued in economic frameworks but that has direct consequences
+      for household vulnerability: when caregiving capability is present,
+      dependents' needs are met; when it is absent or reduced, dependents
+      are at risk. It is one of the most critical household assets in
+      humanitarian contexts.
+    level_definitions:
+      full: >
+        Can provide consistent, appropriate care for the dependent(s) in
+        the household. Care covers physical needs, supervision, emotional
+        support, and developmental support where relevant. The caregiver
+        can sustain this across the demands of normal daily life.
+      functional: >
+        Can provide adequate care for dependents in most circumstances.
+        May have some limitation in demanding periods or with complex
+        care needs but can sustain adequate caregiving for typical situations.
+      partial: >
+        Can provide some care for dependents but has significant gaps —
+        either in the scope of care they can provide or in their ability
+        to sustain caregiving across time and demand. Some of the dependent's
+        needs are met but others are not consistently addressed.
+      minimal: >
+        Can provide only the most basic presence for dependents. Most care
+        needs of the dependent are not being met by this person. A different
+        provider or substantial support is needed for the dependent to
+        receive adequate care.
+    key_attributes:
+      - dependent_types_cared_for: the types of dependents the person
+        currently cares for (infant, toddler, disabled adult, elderly
+        parent, etc.) — these determine the demands on caregiving capability
+      - caregiving_hours: the number of hours per day caregiving demands
+        occupy; this affects residual capacity for employment and
+        other activities
+      - caregiving_burden_level: whether the caregiving demand is within
+        the person's capacity or is straining it; this is an attribute
+        of the current situation, not of the capability itself
+      - number_of_dependents: the count of persons the caregiver is
+        responsible for; multiple dependents increase the demand on
+        caregiving capability
+    lifecycle_associations:
+      not_applicable_at: [infant, toddler, early_childhood]
+      emerging_at: [school_age_child, adolescent]
+      typical_at: [young_adult, adult]
+      may_persist_at: [older_adult, elderly] (grandparents caregiving
+                                               for grandchildren)
+    reasoning_opportunities:
+      - A person with minimal caregiving capability who is the sole
+        caregiver for an infant is simultaneously the primary risk factor
+        for that infant's wellbeing; the capability gap in the caregiver
+        directly affects the dependent
+      - A person with full caregiving capability but a high caregiving
+        burden (multiple dependents) has reduced residual capacity for
+        employment; their employment capability is constrained not by
+        personal limitation but by demand on their time
+      - Caregiving capability enables a household to be self-sufficient
+        in meeting dependents' needs; its absence or reduction triggers
+        dependency on external providers for those functions
+      - In a household where the primary caregiver's caregiving capability
+        is reduced by illness, injury, or crisis, all dependents in the
+        household are simultaneously affected
+    ontology_notes:
+      - Caregiving capability is distinct from caregiving dependency
+        (dependency.yaml); capability describes what the caregiver can do,
+        dependency describes the reliance relationship from the dependent's
+        perspective
+      - This capability domain is often invisible in registration contexts
+        because caregiving is not perceived as a skill or asset by
+        registrants; it requires active identification
+
+  # ---------------------------------------------------------------------------
+  - id: household_management
+    name: Household Management Capability
+    description: >
+      The ability to organise, maintain, and manage the domestic environment
+      and the household as a functioning unit. Household management capability
+      covers food preparation, procurement, hygiene maintenance, household
+      scheduling, domestic safety, and the coordination of multiple household
+      members' needs. It is the operational capability that translates
+      resources into functioning daily life. A household with resources
+      but without household management capability is more vulnerable than
+      one with fewer resources but high management capability.
+    level_definitions:
+      full: >
+        Can organise and maintain the household effectively — food is
+        prepared, hygiene is maintained, household members' basic needs
+        are coordinated, and domestic safety is managed. Can adapt as
+        household circumstances change.
+      functional: >
+        Can manage most household functions adequately under normal
+        conditions. May struggle under additional demand, illness, or
+        significant change but can maintain core household functioning.
+      partial: >
+        Can maintain some household functions but has significant gaps
+        — food may be managed but hygiene is inconsistent, or basic
+        needs of some members are met but not others. Requires assistance
+        to maintain a fully functioning household.
+      minimal: >
+        Can manage very basic immediate tasks but cannot sustain a
+        functioning household independently. The household as a unit
+        is not being maintained at an adequate level by this person alone.
+    key_attributes:
+      - food_management: ability to procure, store, and prepare food
+        adequately for all household members
+      - hygiene_management: ability to maintain adequate personal and
+        household hygiene
+      - schedule_coordination: ability to manage the competing demands
+        and schedules of multiple household members
+      - domestic_safety: ability to maintain a physically safe home
+        environment
+      - resource_allocation: ability to allocate household resources
+        (food, water, money) across competing needs within the household
+    lifecycle_associations:
+      not_applicable_at: [infant, toddler]
+      emerging_at: [early_childhood, school_age_child, adolescent]
+      typical_at: [young_adult, adult]
+      potentially_declining_at: [elderly] (due to physical or cognitive
+                                            change)
+    reasoning_opportunities:
+      - A household with resources but minimal household management capability
+        may present with nutritional deficiency that is not caused by food
+        insecurity; the intervention is different from a food supply
+        intervention
+      - Household management capability may be distributed within the
+        household; the loss of the person who held this capability (through
+        bereavement, displacement, or incapacity) can suddenly reduce
+        household management capacity even if physical and economic
+        resources are unchanged
+      - Children in households with minimal adult household management
+        capability face elevated risk of neglect even when the adult is
+        present and intends care
+    ontology_notes:
+      - Household management capability is closely related to but distinct
+        from caregiving capability; caregiving is about the person-to-person
+        care relationship, household management is about the domestic
+        environment as a system
+      - Household management capability is highly gendered in many cultural
+        contexts; the person who holds it may not be the household head
+        and may not be the person presenting for registration
+
+  # ---------------------------------------------------------------------------
+  - id: social_participation
+    name: Social Participation Capability
+    description: >
+      The ability to engage with social relationships, community networks,
+      and the social fabric of the community in a way that generates
+      connection, mutual support, information, and social capital. Social
+      participation capability is the asset side of the social domain:
+      it encompasses the person's ability to build and maintain relationships,
+      navigate community dynamics, and contribute to and draw from social
+      networks. Its presence creates resilience; its absence amplifies
+      the impact of other challenges.
+    level_definitions:
+      full: >
+        Can engage actively with family, community, peers, and social
+        institutions. Maintains reciprocal social relationships. Can
+        draw on social networks for support and contributes to them.
+        Is known and present within their community.
+      functional: >
+        Can maintain most important social relationships and participates
+        in social life, though may have some limitation in the breadth
+        or depth of social engagement. Has sufficient social capital
+        to draw on in times of need.
+      partial: >
+        Social engagement is constrained — by mobility, stigma, language,
+        displacement, or circumstance. Maintains some key relationships
+        but broader community participation is limited. Social capital
+        is thin or geographically displaced.
+      minimal: >
+        Severely socially isolated. Has very few or no active social
+        relationships. No meaningful community network to draw on.
+        The person is not known or not accessible to the social fabric
+        around them.
+    key_attributes:
+      - relationship_network: the people with whom the person has active
+        social relationships
+      - community_embeddedness: how known and integrated the person is
+        within their immediate community
+      - reciprocity: whether the person's social relationships are
+        mutual (giving and receiving) or primarily one-directional
+      - social_capital_quality: whether the social network includes people
+        with access to resources, information, and influence that benefit
+        the person
+    lifecycle_associations:
+      developing_at: [early_childhood, school_age_child, adolescent]
+      peak_at: [adult, young_adult]
+      risk_of_decline_at: [elderly]
+    reasoning_opportunities:
+      - A displaced person may have high social participation capability
+        as a general trait but their current social capital is minimal
+        because their network is geographically displaced; the capability
+        exists but the asset has been temporarily lost
+      - Social participation capability is a buffer against vulnerability;
+        a person with high social participation capability who faces a
+        crisis has more informal support available than an isolated person
+        in the same situation
+      - Reduced social participation capability amplifies the impact of
+        all other capability limitations; isolation removes the informal
+        support that would otherwise partially compensate
+    ontology_notes:
+      - Social participation capability is measured in relation to the
+        person's current context, not an abstract ideal; a person who
+        participates fully in a small rural community has full capability
+        in this domain
+      - Social isolation may be imposed externally (stigma, discrimination,
+        displacement) rather than reflecting an internal capability limitation;
+        the cause matters for intervention design
+
+  # ---------------------------------------------------------------------------
+  - id: community_participation
+    name: Community Participation Capability
+    description: >
+      The ability to engage in structured community roles, collective
+      activities, and civic participation — beyond individual social
+      relationships. Community participation capability encompasses
+      the ability to contribute to collective decision-making, participate
+      in community institutions (religious organisations, local governance,
+      community groups), take on recognised roles within the community,
+      and engage with formal civic processes. It is the public-facing
+      aspect of the social domain, distinct from the relational aspect
+      captured in social participation capability.
+    level_definitions:
+      full: >
+        Actively participates in community institutions, takes on recognised
+        roles, contributes to collective activities and decisions, and
+        can engage with formal civic processes and institutions.
+      functional: >
+        Participates in most community activities relevant to their context.
+        May not hold formal roles but is an active and recognised community
+        member. Can engage with formal civic processes when needed.
+      partial: >
+        Limited community participation due to time constraints, mobility,
+        cultural exclusion, documentation barriers, or institutional
+        distrust. Can engage with some community activities but not others.
+      minimal: >
+        Very limited or no community participation. Either excluded from
+        community institutions or entirely unable to engage with them.
+        Not a participant in collective activity or civic processes.
+    key_attributes:
+      - institutional_membership: formal memberships in community organisations
+        (mosque committee, women's group, farmers' cooperative)
+      - civic_engagement: ability and willingness to engage with local
+        governance and formal civic processes
+      - community_recognition: the degree to which the person is known and
+        recognised in a community role
+      - exclusion_factors: specific barriers that constrain participation
+        (gender, documentation, language, disability, stigma)
+    lifecycle_associations:
+      developing_at: [adolescent, young_adult]
+      typical_at: [adult]
+      may_reduce_at: [older_adult, elderly]
+    reasoning_opportunities:
+      - A person with high community participation capability has access
+        to community information networks that may provide early warning
+        of risk (seasonal, environmental) that would not otherwise reach them
+      - Community participation capability creates a channel for collective
+        advocacy; a person who can engage in community decision-making
+        has more agency in shaping local conditions than one who cannot
+      - Documentation barriers are a common exclusion factor for community
+        participation in India; an undocumented person may be excluded
+        from formal community structures regardless of their capability
+    ontology_notes:
+      - Community participation capability is distinct from social participation
+        capability; the former is about structured collective and civic roles,
+        the latter is about personal relational networks
+      - Community participation is highly context-dependent; the same
+        person may have full capability in one community context and
+        minimal capability in another after displacement
+
+  # ---------------------------------------------------------------------------
+  - id: self_advocacy
+    name: Self-Advocacy Capability
+    description: >
+      The ability to represent one's own interests, assert entitlements,
+      navigate institutional systems, and seek redress when rights are
+      violated. Self-advocacy capability is the meta-capability that enables
+      a person to use other capabilities effectively in formal settings.
+      Without it, a person may have vocational, educational, and social
+      capabilities but be unable to convert them into outcomes because
+      they cannot navigate the institutional environments that gate access
+      to those outcomes. In humanitarian contexts, self-advocacy is what
+      enables a person to access services they are entitled to, register
+      complaints, seek alternative providers, and protect themselves from
+      exploitation.
+    level_definitions:
+      full: >
+        Can identify their rights and entitlements, articulate their needs
+        and interests to institutions, navigate bureaucratic and formal
+        systems, and seek redress when treated unfairly. Confident and
+        effective in formal settings.
+      functional: >
+        Can manage most institutional interactions needed for daily life
+        and service access. May struggle with complex or adversarial
+        institutional contexts but can navigate most standard processes.
+      partial: >
+        Can make basic requests in institutional settings but has difficulty
+        asserting entitlements, challenging decisions, or navigating complex
+        or multi-step institutional processes. Relies on assistance for
+        significant institutional engagement.
+      minimal: >
+        Cannot effectively navigate institutional settings independently.
+        Cannot assert entitlements or interests in formal contexts. Is
+        vulnerable to institutional gatekeepers and dependent on an advocate
+        or proxy for meaningful institutional engagement.
+    key_attributes:
+      - institutional_literacy: knowledge of how institutions work, what
+        rights exist, and what processes are available
+      - assertiveness_capacity: ability to state needs and interests clearly
+        without distress in institutional contexts
+      - persistence_capacity: ability to continue pursuing an outcome
+        through bureaucratic obstacles
+      - exploitation_resistance: ability to recognise and resist exploitation
+        by institutional gatekeepers
+    lifecycle_associations:
+      developing_at: [adolescent, young_adult]
+      typical_at: [adult]
+      potentially_declining_at: [elderly]
+    reasoning_opportunities:
+      - A person with minimal self-advocacy capability is more vulnerable
+        to gatekeeping effects in service access; they may not receive
+        services they are entitled to because they cannot navigate the
+        system to claim them
+      - Self-advocacy capability is particularly important in contexts
+        where services are conditional on documentation, identity verification,
+        or institutional registration
+      - A person with high vocational and social capability but minimal
+        self-advocacy capability may require case management support
+        specifically for institutional navigation
+    ontology_notes:
+      - Self-advocacy capability overlaps with communication capability
+        in the self-advocacy dimension; the distinction is that communication
+        capability concerns functional communication in general, while
+        self-advocacy is specifically about institutional representation
+        and rights assertion
+      - Self-advocacy capability is culturally conditioned; in contexts
+        where institutional deference is strong, lower assertiveness
+        may reflect cultural context rather than capability limitation
+
+  # ---------------------------------------------------------------------------
+  - id: independent_living
+    name: Independent Living Capability
+    description: >
+      The composite ability to manage one's own daily life without requiring
+      ongoing support from another person for the fundamental activities
+      of self-maintenance — personal hygiene, food preparation for oneself,
+      basic domestic maintenance, medication management, and the organisation
+      of daily routines. Independent living capability is the practical
+      expression of personal autonomy. Its presence means a person can
+      function without a caregiver for their own needs; its absence means
+      they require one. It is distinct from household management (which
+      concerns the household as a system) and caregiving (which concerns
+      care for others).
+    level_definitions:
+      full: >
+        Can manage all personal care, daily self-maintenance, and basic
+        domestic tasks for themselves without requiring assistance from
+        another person. Can organise and execute their own daily routines
+        independently.
+      functional: >
+        Can manage most personal care and daily tasks independently.
+        May require occasional assistance for specific tasks or during
+        challenging periods but does not require ongoing daily support.
+      partial: >
+        Can manage some personal care and daily tasks independently but
+        requires consistent assistance from another person for a significant
+        number of daily activities. Cannot sustain independent living
+        without a caregiver for those activities.
+      minimal: >
+        Cannot independently manage personal care and daily self-maintenance
+        at a level that sustains health and safety. Requires daily caregiver
+        support for a broad range of fundamental activities.
+    key_attributes:
+      - personal_care: ability to manage personal hygiene and grooming
+        independently
+      - self_feeding: ability to prepare and consume food for themselves
+      - medication_management: ability to manage their own medication
+        schedule and dosing where medications are required
+      - daily_routine_organisation: ability to structure and execute
+        a daily routine that meets their own needs
+      - domestic_self_maintenance: ability to maintain their own living
+        space at a basic adequate standard
+    lifecycle_associations:
+      not_applicable_at: [infant, toddler]
+      developing_at: [early_childhood, school_age_child]
+      expected_at: [adolescent, young_adult, adult]
+      potentially_declining_at: [older_adult, elderly]
+    reasoning_opportunities:
+      - A person with minimal independent living capability who lives alone
+        has no caregiver to provide the support they need; this is an
+        acute household risk that does not require a separate event trigger
+      - Independent living capability reduction due to illness or injury
+        creates an immediate caregiving dependency; the caregiver must
+        be identified as part of household vulnerability assessment
+      - In elderly persons, independent living capability decline is
+        frequently underreported; the person and their family may both
+        normalise a level of unmet need that in fact represents significant
+        risk
+    ontology_notes:
+      - Independent living capability is the inverse concept to caregiving
+        dependency (dependency.yaml); when independent living capability
+        is minimal, caregiving dependency is present
+      - The alignment with functional_capacity (full, partial, dependent)
+        in shared/taxonomy/persons.yaml is explicit here; when capabilities.yaml
+        is integrated, functional_capacity in persons.yaml should reference
+        this domain as its authoritative source per FLAG-001
+
+# -----------------------------------------------------------------------------
+# CAPABILITY PROFILE
+# A person's capability profile is the collection of their assessments
+# across all relevant capability domains. Not all domains are relevant
+# at all lifecycle stages. Assessment should cover domains relevant to
+# the person's current stage and situation.
+# -----------------------------------------------------------------------------
+
+capability_profile:
+  description: >
+    The capability profile is not a score or a composite index.
+    It is a per-domain assessment that allows multi-dimensional
+    understanding of a person's strengths and limitations without
+    collapsing them into a misleading single figure.
+
+  profile_purpose: >
+    The profile answers: what can this person do, and in which domains
+    is support likely to amplify their existing capability rather than
+    substitute for it?
+
+  assessment_guidance:
+    - Assess only domains relevant to the person's lifecycle stage
+      and presenting situation
+    - Do not assess to produce a vulnerability score; assess to identify
+      both strengths and gaps
+    - A domain not assessed is not a domain assessed as minimal;
+      distinguish between 'not assessed' and 'minimal'
+    - Capability is assessed at a point in time; situational disruption
+      may have temporarily reduced capability that would otherwise be
+      higher; note this where relevant
+    - Underdisclosure risk: in registration contexts, distressed persons
+      and proxies systematically understate capability; probe for
+      capability as well as need
+
+  lifecycle_stage_relevance:
+    # Which domains are typically assessed at each lifecycle stage.
+    # Assessment at other stages does not produce meaningful results.
+    infant:
+      not_applicable: [vocational, employment, economic_management,
+                       enterprise, self_advocacy, independent_living,
+                       community_participation]
+      developing: [cognitive_functioning, communication,
+                   physical_mobility]
+      note: Infant assessment is primarily about caregiver capability.
+
+    toddler:
+      not_applicable: [vocational, employment, economic_management,
+                       enterprise, self_advocacy, community_participation]
+      developing: [physical_mobility, cognitive_functioning, communication,
+                   literacy, independent_living]
+
+    early_childhood:
+      not_applicable: [vocational, employment, economic_management,
+                       enterprise, community_participation]
+      developing: [physical_mobility, cognitive_functioning, communication,
+                   literacy, language, social_participation,
+                   household_management, independent_living]
+
+    school_age_child:
+      not_applicable: [vocational, employment, economic_management,
+                       enterprise]
+      developing: [cognitive_functioning, communication, literacy,
+                   language, social_participation, community_participation,
+                   household_management, independent_living, self_advocacy]
+
+    adolescent:
+      all_domains_relevant: true
+      note: >
+        Vocational and employment capability are emerging; enterprise is
+        nascent. All domains should be assessed but expectations reflect
+        development rather than full adult performance.
+
+    young_adult:
+      all_domains_relevant: true
+
+    adult:
+      all_domains_relevant: true
+      note: This is the reference stage; all capability definitions are
+            written with the adult stage as the primary context.
+
+    older_adult:
+      all_domains_relevant: true
+      note: >
+        Assessment should be sensitive to gradual change without assuming
+        decline. Many older adults maintain full or functional capability
+        across all domains.
+
+    elderly:
+      all_domains_relevant: true
+      note: >
+        Underdisclosure risk is highest at this stage. Physical mobility,
+        cognitive functioning, independent living, and caregiving capability
+        are the domains where decline is most common. Assessment must not
+        assume decline; it must be assessed.
+
+# -----------------------------------------------------------------------------
+# ALIGNMENT WITH EXISTING SHARED HUMAN MODEL FILES
+# Formal resolution of FLAG-001 and FLAG-004 from ontology_authority_matrix.md
+# -----------------------------------------------------------------------------
+
+flag_resolutions:
+
+  flag_001_functional_capacity:
+    flag_id: FLAG-001
+    resolution: >
+      The functional_capacity enum in shared/taxonomy/persons.yaml
+      (full, partial, dependent) is replaced by the capability level scale
+      defined in this file (full, functional, partial, minimal) and by
+      the independent_living capability domain, which most directly
+      corresponds to the intended meaning of functional_capacity.
+      When this file is integrated, shared/taxonomy/persons.yaml must
+      be updated to reference capabilities.yaml as its authority for
+      functional capacity rather than maintaining its own enum.
+      The three-level enum (full, partial, dependent) is superseded by:
+        full → full (no change)
+        partial → partial (no change in label, expanded definition)
+        dependent → minimal (more precise label; 'dependent' described
+                    an outcome, 'minimal' describes a capability level)
+    action_required: >
+      Update shared/taxonomy/persons.yaml: remove the functional_capacity
+      enum definition and replace with a reference to this file.
+      Record the change in DECISIONS.md as it modifies an existing
+      taxonomy design.
+
+  flag_004_characteristic_capabilities:
+    flag_id: FLAG-004
+    resolution: >
+      The characteristic_capabilities entries in lifecycle-stages.yaml
+      use descriptive language that anticipates the vocabulary defined
+      formally in this file. The mapping is as follows:
+
+      lifecycle-stages descriptive → capabilities.yaml domain
+
+      "Sensory response and caregiver recognition" → cognitive_functioning (developing)
+      "Communication through crying, facial expression, gesture" → communication (developing)
+      "Progressive motor development" → physical_mobility (developing)
+      "Independent mobility within immediate environment" → physical_mobility (partial→functional)
+      "Emergent language" → communication (developing)
+      "Early social play" → social_participation (developing)
+      "Language and basic communication" → communication (functional)
+      "Early literacy and numeracy readiness" → literacy (developing)
+      "Emerging self-regulation" → cognitive_functioning (developing)
+      "Independent mobility within familiar environments" → physical_mobility (functional)
+      "Literacy and numeracy when in school" → literacy (functional→full)
+      "Emerging autonomous decision-making capacity" → cognitive_functioning, self_advocacy (developing)
+      "Adult-level physical capacity in late adolescence" → physical_mobility (full)
+      "Emerging vocational skills" → vocational (developing)
+      "Full economic productive capacity" → employment (full), vocational (full)
+      "Caregiving capacity for children, elderly, dependents" → caregiving (full)
+      "Household decision-making authority" → self_advocacy (full)
+      "Household advisory and relational role" → social_participation, community_participation
+      "Continued caregiving and household economic contribution" → caregiving, household_management
+      "Residual independent capability varies widely" → independent_living (to be assessed)
+
+    action_required: >
+      No modification to lifecycle-stages.yaml is required; the descriptive
+      entries there remain valid as narrative context. This file is now
+      the authoritative source for the formal vocabulary behind those
+      descriptions. The alignment is confirmed; no conflict exists.
+
+# -----------------------------------------------------------------------------
+# FUTURE EXTENSIONS
+# Concepts identified during this file's development that belong in
+# other files. Do not implement here.
+# -----------------------------------------------------------------------------
+
+future_extensions:
+
+  - concept: Health condition impact on capability
+    belongs_in: shared/human-model/health-conditions.yaml (not yet created)
+    description: >
+      The relationship between specific health conditions and capability
+      levels is important for reasoning but health condition vocabulary
+      is not yet owned. When health-conditions.yaml is created, it should
+      define how conditions such as severe acute malnutrition, chronic
+      illness, physical disability, cognitive disability, and mental health
+      conditions affect capability profiles. This file defines capability
+      as an abstract concept; health-conditions.yaml will define the
+      conditions that modify it.
+
+  - concept: Capability trajectory and change over time
+    belongs_in: shared/human-model/beneficiary-lifecycle.yaml or
+                beneficiary-lifecycle domain (Stage 7)
+    description: >
+      A person's capability profile changes over time. Education increases
+      literacy and vocational capability. Illness reduces physical mobility
+      and independent living capability. Recovery restores them. This file
+      defines capability at a point in time; the trajectory of change across
+      time must be modelled by the beneficiary lifecycle domain. The
+      capability profile at each registration is the point-in-time snapshot
+      that the lifecycle domain tracks.
+
+  - concept: Risk factor derivation from capability gaps
+    belongs_in: shared/risk/ (Stage 3, not yet active)
+    description: >
+      Capability gaps are not themselves risk factors, but they are inputs
+      to risk factor assessment. A person with minimal physical mobility
+      in a flood zone has a compounded risk that the capability model
+      by itself cannot express. Risk factor derivation logic belongs in
+      the risk domain and must reference this file's capability vocabulary.
+
+  - concept: Intervention eligibility conditions based on capability
+    belongs_in: registration/taxonomy/support-interventions.yaml (Stage 1)
+                and case-management domain (Stage 5)
+    description: >
+      Intervention types have capability-related eligibility conditions.
+      A skills development intervention is not appropriate for a person
+      with full vocational capability who needs employment access support.
+      A livelihood support intervention for a person with minimal
+      vocational capability should include a skills component. These
+      conditions belong in the support intervention taxonomy and case
+      management domain, not in the capability model.
+
+  - concept: Family-level capability distribution
+    belongs_in: shared/human-model/family-structure.yaml (not yet created)
+    description: >
+      The distribution of capabilities across family members determines
+      household resilience. A household where caregiving capability is
+      concentrated in one person is more vulnerable than one where it
+      is distributed. Family-structure.yaml should model how individual
+      capability profiles combine into household capability assets.
+
+  - concept: Community-level capability assets
+    belongs_in: Community Context Domain (Stage 8, not yet active)
+    description: >
+      Community-level capabilities (local healthcare workers, teachers,
+      skilled tradespeople, community organisations) are assets that
+      affect all members of the community. These are not individual
+      capabilities and belong in the community context domain.

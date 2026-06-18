@@ -41,13 +41,21 @@ Placeholder Domains [DECLARED, NOT ACTIVE]
     └── impact
 
 Missing Entirely
-    ├── Risk domain [not declared]
-    ├── Community context [not declared]
-    ├── Lifecycle model [not declared]
-    ├── Capability model [not declared]
-    ├── Dependency model [not declared]
-    ├── Family structure [not declared]
-    └── Outcome indicators [not declared]
+
+├── Risk domain
+├── Community context
+└── Outcome indicators
+
+Planned in Active Stage
+
+├── Family structure ontology
+└── Health conditions ontology
+
+Already Created
+
+├── Lifecycle model
+├── Dependency model
+└── Capability model
 ```
 
 **Reasoning capability at current state:** The system can conduct a structured intake conversation, identify needs and claims, detect gaps, assess case readiness, and produce a verification brief. It cannot reason about a person across time, cannot model household resilience, cannot generate preventive signals, and cannot evaluate whether interventions work.
@@ -74,14 +82,26 @@ Missing Entirely
 
 ---
 
-## Stage 2 — Shared Human Model
+Stage 2 — Shared Human Model
 
-**What this stage produces (Phase 2.0 — current work):**
-- Lifecycle Ontology (`shared/human-model/lifecycle-stages.yaml`)
-- Capability Ontology (`shared/human-model/capabilities.yaml`)
-- Dependency Ontology (`shared/human-model/dependency.yaml`)
-- Family Structure Ontology (`shared/human-model/family-structure.yaml`)
-- Shared Human Entity (conceptual design for `shared/ontology/entities.yaml`)
+STATUS: ACTIVE
+
+Completed:
+✓ lifecycle-stages.yaml
+✓ dependency.yaml
+✓ capabilities.yaml
+
+Current Active Deliverable:
+□ family-structure.yaml
+
+Upcoming Deliverable:
+□ health-conditions.yaml
+
+Future Shared Ontology Work:
+□ shared human entity promotion model
+
+Current Active Phase:
+Phase 2.3 — Family Structure Ontology
 
 **Prerequisites:** Stage 1 should be in progress but need not be complete. The shared human model does not depend on the intervention taxonomy. It does depend on the person base taxonomy in `shared/taxonomy/persons.yaml` which is already mature enough to extend.
 
@@ -90,6 +110,32 @@ Missing Entirely
 **Reasoning capability gained:** The system can now differentiate a 6-month-old from a 16-year-old not merely by age integer but by lifecycle stage and the developmental expectations, risks, and needs associated with that stage. It can model what a person is capable of (not only what they lack). It can represent that a mother's vulnerability is an infant's vulnerability without requiring a separate registration for the infant.
 
 ---
+### Current Shared Human Model Status
+
+Completed
+
+* shared/human-model/README.md
+* shared/human-model/lifecycle-stages.yaml
+* shared/human-model/dependency.yaml
+* shared/human-model/capabilities.yaml
+
+Next Active Deliverable
+
+shared/human-model/family-structure.yaml
+
+After Completion
+
+shared/human-model/health-conditions.yaml
+
+Architecture Rule
+
+Risk Domain must not begin until:
+
+* Family Structure Ontology
+* Health Conditions Ontology
+
+are complete and stable.
+
 
 ## Stage 3 — Risk Domain
 
@@ -285,8 +331,22 @@ Stage 1: Registration Completion
     ↓ enables: Stage 4
 
 Stage 2: Shared Human Model
-    (no external prerequisites — can run parallel to Stage 1)
-    ↓ enables: Stages 3, 7
+
+Completed:
+✓ lifecycle-stages.yaml
+✓ dependency.yaml
+✓ capabilities.yaml
+
+Active:
+□ family-structure.yaml
+
+Next:
+□ health-conditions.yaml
+
+Stage 2 is considered complete only after:
+- family-structure.yaml
+- health-conditions.yaml
+
 
 Stage 3: Risk Domain
     (requires: Stage 2)
@@ -358,6 +418,7 @@ khidmat-knowledge/
 │   │   └── time.yaml                 [placeholder — complete in Stage 5]
 │   │
 │   ├── human-model/                  [NEW in Stage 2]
+│   │   ├── README.md
 │   │   ├── lifecycle-stages.yaml
 │   │   ├── capabilities.yaml
 │   │   ├── dependency.yaml

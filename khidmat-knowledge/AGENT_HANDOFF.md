@@ -21,10 +21,10 @@ The primary intelligence of the Khidmat AI system lives here.
 
 | Layer | Status |
 |---|---|
-| Registration Domain | Largely complete (Level 1) |
-| Shared Domain — base taxonomy | Partially complete |
-| Governance Layer | Established (Phase 2.0) |
-| Shared Human Model | Not yet implemented |
+| Registration Domain | Complete (Level 1) |
+| Shared Domain — base taxonomy | Active |
+| Governance Layer | Complete (Phase 2.0) |
+| Shared Human Model | In Progress (Phase 2.2) |
 | Risk Domain | Planned, not yet activated |
 | All other placeholder domains | Level 2 — inactive |
 
@@ -34,9 +34,28 @@ Source of truth: `ontology_completion_checklist.md`, `knowledge_layer_roadmap.md
 
 # Current Phase
 
-**Phase 2.0 — Shared Human Model**
+**Phase 2.3 — Family Structure Ontology**
 
-Active implementation target: `shared/human-model/`
+Active implementation target:
+
+`shared/human-model/family-structure.yaml`
+
+Completed:
+
+- lifecycle-stages.yaml
+- dependency.yaml
+- capabilities.yaml
+
+Governance completed:
+
+- knowledge_layer_inventory.md
+- ontology_completion_checklist.md
+- ontology_authority_matrix.md
+- knowledge_layer_roadmap.md
+
+Current objective:
+
+Design the family as a first-class humanitarian entity distinct from both a household and an individual person.
 
 | File | Purpose |
 |---|---|
@@ -105,6 +124,26 @@ without prior architectural review.
 
 # Current Next Step
 
-Design and implement `shared/human-model/` in full before any Risk Domain
-work begins. Read `knowledge_layer_roadmap.md` Stage 2 for the complete
-scope. All designs require Human Owner approval before implementation.
+Phase 2.3 — Family Structure Ontology
+
+Create:
+
+shared/human-model/family-structure.yaml
+
+After completion:
+
+Phase 2.4 — Health Conditions Ontology
+
+Only after:
+
+- lifecycle-stages.yaml
+- dependency.yaml
+- capabilities.yaml
+- family-structure.yaml
+- health-conditions.yaml
+
+are complete may the project enter:
+
+Phase 3.0 — Risk Domain
+
+This sequencing is mandatory and governed by knowledge_layer_roadmap.md.

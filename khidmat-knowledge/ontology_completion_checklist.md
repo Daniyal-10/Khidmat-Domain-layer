@@ -53,10 +53,12 @@
 ✓ Ontology Authority Matrix (`ontology_authority_matrix.md`)
 ✓ Knowledge Layer Roadmap (`knowledge_layer_roadmap.md`)
 
-### Phase 2.0 — Shared Human Model (Architecture)
+### Phase 2.0 — Shared Human Model (Foundational Ontologies)
 
 ✓ Shared Human Model Architecture (`shared/human-model/README.md`)
 ✓ Lifecycle Stages Ontology (`shared/human-model/lifecycle-stages.yaml`)
+✓ Dependency Ontology (`shared/human-model/dependency.yaml`)
+✓ Capability Ontology (`shared/human-model/capabilities.yaml`)
 
 ---
 
@@ -80,12 +82,6 @@
 
 ### Phase 2.0 — Shared Human Model (Implementation In Progress)
 
-□ Capability Ontology (`shared/human-model/capabilities.yaml`)
-  Status: Not yet started. Pending architectural design and Human Owner approval.
-
-□ Dependency Ontology (`shared/human-model/dependency.yaml`)
-  Status: Not yet started. Pending architectural design and Human Owner approval.
-
 □ Family Structure Ontology (`shared/human-model/family-structure.yaml`)
   Status: Not yet started. Pending architectural design and Human Owner approval.
 
@@ -107,8 +103,17 @@
 □ Lifecycle-Stage-Aware Inference Rules
   Gap: Inference rules do not use lifecycle stage. An infant in a food-insecure household should trigger developmental malnutrition risk distinct from the household food need.
 
-□ Functional Capacity Inference Rules
-  Gap: `functional_capacity` is defined on Beneficiary and HouseholdMember but no inference rule operates on it. The attribute is inert in the reasoning layer.
+□ Capability Alignment Migration
+
+Gap:
+`functional_capacity` currently exists inside the registration domain while the emerging Shared Human Model introduces a dedicated capability ontology.
+
+Required Future Work:
+
+- align registration functional_capacity
+- map lifecycle capability expectations
+- migrate reasoning ownership to capability ontology
+- prevent duplicate capability definitions across domains
 
 □ Medical Severity with Treatment Plan Absence
   Gap: A critical medical need with no care pathway does not escalate severity. The treatment_plan_gap is classified as medium regardless of need severity.
@@ -123,6 +128,19 @@
 
 □ Community Entity
   Gap: No community context model. Location is for volunteer dispatch only.
+
+□ Household Entity
+
+Gap:
+The system currently models beneficiaries and family members but does not yet define a first-class household entity.
+
+Required for:
+
+- household vulnerability assessment
+- livelihood modelling
+- family dependency chains
+- seasonal risk analysis
+- community-level planning
 
 ### New Domains Required — Not Yet Placeholdered
 
@@ -185,15 +203,30 @@
 □ Programme Impact Ontology
   Future. Requires: Outcome indicators, impact measurement methodology, longitudinal data model.
 
+□ Household Resilience Domain
+
+Future.
+
+Requires:
+
+- Family Structure Ontology
+- Capability Ontology
+- Risk Domain
+- Community Context Domain
+
+Purpose:
+
+Model the household's ability to absorb shocks, recover from crises, and maintain basic wellbeing over time.
+
 ---
 
 ## STATUS SUMMARY
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Completed | 27 files | Registration domain fully modelled for intake |
-| In Progress | 7 items | Registration placeholders + Phase 2.0 design |
-| Missing (registration) | 5 items | Gaps within current domain scope |
-| Missing (shared) | 6 items | New concepts required before expansion |
-| Future (placeholder) | 7 domains | From ARCHITECTURE.md |
-| Future (new) | 5 domains | Not yet declared anywhere |
+| Completed | 31+ files | Registration ontology and Shared Human Model foundations established |
+| In Progress | 4 items | Family structure, health conditions, evidence taxonomy, time taxonomy |
+| Missing (registration) | 4 items | Advanced reasoning and evidence modelling gaps |
+| Missing (shared) | 7 items | Person, Family, Household, Community and governance entities |
+| Future (placeholder) | 7 domains | Planned operational domains |
+| Future (new) | 6 domains | Knowledge graph expansion domains |
