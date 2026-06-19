@@ -1,5 +1,15 @@
 # Khidmat Knowledge Architecture
 
+## Current Active Phase
+
+Stage 3 — Risk Domain
+
+Status:
+
+- Shared Human Model complete
+- Risk Domain architecture review pending Human Owner approval
+- No Risk Domain ontology implementation approved
+
 ## Domain Inventory
 
 | Domain                  | Maturity  | Status              |
@@ -48,7 +58,7 @@ Location:
 
     shared/human-model/
 
-Planned files:
+Completed files:
 
 * lifecycle-stages.yaml
 * capabilities.yaml
@@ -66,7 +76,7 @@ The Shared Human Model owns:
 
 No future domain may redefine these concepts.
 
-These concepts must be promoted to shared ownership.
+These concepts have been promoted to shared ownership.
 
 ## Maturity Levels
 
@@ -79,10 +89,13 @@ Level 2: Folder exists. README declares scope.
 
 ## Future Domain Layers
 
-Planned future layers:
+Completed foundational layer:
 
 * Shared Human Model
-* Risk Domain
+
+Upcoming layers:
+
+* Risk Domain (Current Active Target)
 * Community Context Domain
 * Outcome Measurement Layer
 
