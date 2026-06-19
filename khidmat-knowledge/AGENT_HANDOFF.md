@@ -24,7 +24,7 @@ The primary intelligence of the Khidmat AI system lives here.
 | Registration Domain | Complete (Level 1) |
 | Shared Domain — base taxonomy | Active |
 | Governance Layer | Complete (Phase 2.0) |
-| Shared Human Model | In Progress (Phase 2.4) |
+| Shared Human Model | Complete (Phase 2.4) |
 | Risk Domain | Planned, not yet activated |
 | All other placeholder domains | Level 2 — inactive |
 
@@ -34,18 +34,17 @@ Source of truth: `ontology_completion_checklist.md`, `knowledge_layer_roadmap.md
 
 # Current Phase
 
-**Phase 2.4 — Health Conditions Ontology**
+**Phase 3.0 — Risk Domain**
 
-Active implementation target:
-
-`shared/human-model/health-conditions.yaml`
+The Shared Human Model is now complete.
 
 Completed:
 
 - lifecycle-stages.yaml
 - dependency.yaml
 - capabilities.yaml
-- family-structure.yaml 
+- family-structure.yaml
+- health-conditions.yaml
 
 Governance completed:
 
@@ -53,27 +52,20 @@ Governance completed:
 - ontology_completion_checklist.md
 - ontology_authority_matrix.md
 - knowledge_layer_roadmap.md
+- health-conditions-governance.md
 
 Current objective:
 
-Design the Health Conditions Ontology that will become the authoritative vocabulary for:
+Risk Domain is now the active architecture target.
 
-- chronic illness
-- disability
-- injury
-- pregnancy
-- malnutrition
-- mental health
-- age-related decline
-
-This ontology must support future Risk Domain reasoning without implementing risk models.
+No Risk Domain implementation should begin until architecture review and Human Owner approval.
 
 | File | Purpose |
 |---|---|
 | `README.md` | Scope declaration |
 | `lifecycle-stages.yaml` | Developmental stages as reasoning contexts |
-| `capabilities.yaml` | Human capabilities as strengths, not deficits |
 | `dependency.yaml` | Care and support dependency relationships |
+| `capabilities.yaml` | Human capabilities as strengths, not deficits |
 | `family-structure.yaml` | Family unit distinct from household |
 | `health-conditions.yaml` | Chronic disease, disability, malnutrition vocabulary |
 
@@ -81,15 +73,19 @@ This ontology must support future Risk Domain reasoning without implementing ris
 
 # Immediate Objective
 
-Complete the Shared Human Model. It is the foundational prerequisite for:
+The Shared Human Model is complete.
+
+Risk Domain is now the active architecture target.
+
+**No Risk Domain implementation begins before architecture review and Human Owner approval.**
+This is a hard governance constraint per `knowledge_layer_roadmap.md` and ADR-007.
+
+The Shared Human Model was the foundational prerequisite for:
 
 - Risk Domain (Stage 3)
 - Beneficiary Lifecycle Domain (Stage 7)
 - Future community-level modelling
 - Future impact measurement capabilities
-
-**No Risk Domain work begins before Shared Human Model completion.**
-This is a hard governance constraint per `knowledge_layer_roadmap.md` and ADR-007.
 
 ---
 
@@ -135,42 +131,31 @@ without prior architectural review.
 
 # Current Next Step
 
-Phase 2.4 — Health Conditions Ontology
-
-Create:
-
-shared/human-model/health-conditions.yaml
-
-After completion:
-
 Phase 3.0 — Risk Domain
+
+The Shared Human Model is complete.
+
+Risk Domain is now the active architecture target.
+
+No Risk Domain implementation should begin until architecture review and Human Owner approval.
 
 Prerequisites satisfied:
 
-- lifecycle-stages.yaml
-- dependency.yaml
-- capabilities.yaml
-- family-structure.yaml
+✓ lifecycle-stages.yaml
+✓ dependency.yaml
+✓ capabilities.yaml
+✓ family-structure.yaml
+✓ health-conditions.yaml
 
-Remaining prerequisite:
+All Shared Human Model ontologies are complete.
 
-- health-conditions.yaml
-
-Only after:
-
-- lifecycle-stages.yaml
-- dependency.yaml
-- capabilities.yaml
-- family-structure.yaml
-- health-conditions.yaml
-
-are complete may the project enter:
+The project may now enter:
 
 Phase 3.0 — Risk Domain
 
 Current status:
 
-4 of 5 Shared Human Model ontologies complete.
-Health Conditions Ontology remains the final prerequisite.
+5 of 5 Shared Human Model ontologies complete.
+The Shared Human Model prerequisite is fully satisfied.
 
 This sequencing is mandatory and governed by knowledge_layer_roadmap.md.

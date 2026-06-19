@@ -60,6 +60,7 @@
 ✓ Dependency Ontology (`shared/human-model/dependency.yaml`)
 ✓ Capability Ontology (`shared/human-model/capabilities.yaml`)
 ✓ Family Structure Ontology (`shared/human-model/family-structure.yaml`)
+✓ Health Conditions Ontology (`shared/human-model/health-conditions.yaml`)
 
 ---
 
@@ -80,11 +81,6 @@
 □ Time Taxonomy (`shared/taxonomy/time.yaml`)
   Status: Placeholder declared. Will formalise duration bands and onset recency vocabulary.
   Blocker: Requires cross-domain reporting to make consistent time vocabulary necessary.
-
-### Phase 2.0 — Shared Human Model (Implementation In Progress)
-
-□ Health Conditions Ontology (`shared/human-model/health-conditions.yaml`)
-  Status: Next active phase. Pending architectural design and Human Owner approval.
 
 ---
 
@@ -219,8 +215,8 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Completed | 32+ files | Registration ontology and Shared Human Model foundations established |
-| In Progress | 3 items | Health conditions, evidence taxonomy, time taxonomy |
+| Completed | 33+ files | Registration ontology and Shared Human Model foundations established |
+| In Progress | 2 items | Evidence taxonomy, time taxonomy |
 | Missing (registration) | 4 items | Advanced reasoning and evidence modelling gaps |
 | Missing (shared) | 6 items | Person, Household, Community and governance entities |
 | Future (placeholder) | 7 domains | Planned operational domains |

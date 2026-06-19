@@ -48,14 +48,15 @@ Missing Entirely
 
 Current Active Phase
 
-└── Health conditions ontology
+└── Phase 3.0 — Risk Domain
 
 Already Created
 
 ├── Lifecycle model
 ├── Dependency model
 ├── Capability model
-└── Family structure model
+├── Family structure model
+└── Health conditions model
 ```
 
 **Reasoning capability at current state:** The system can conduct a structured intake conversation, identify needs and claims, detect gaps, assess case readiness, and produce a verification brief. It cannot reason about a person across time, cannot model household resilience, cannot generate preventive signals, and cannot evaluate whether interventions work.
@@ -84,22 +85,34 @@ Already Created
 
 Stage 2 — Shared Human Model
 
-STATUS: ACTIVE
+STATUS: COMPLETED
 
 Completed:
 ✓ lifecycle-stages.yaml
 ✓ dependency.yaml
 ✓ capabilities.yaml
 ✓ family-structure.yaml
+✓ health-conditions.yaml
 
 Current Active Deliverable:
-□ health-conditions.yaml
+
+Phase 3.0 — Risk Domain
 
 Future Shared Ontology Work:
 □ shared human entity promotion model
 
 Current Active Phase:
-Phase 2.4 — Health Conditions Ontology
+Phase 3.0 — Risk Domain
+
+The Shared Human Model prerequisite is now fully satisfied:
+
+✓ lifecycle-stages.yaml
+✓ dependency.yaml
+✓ capabilities.yaml
+✓ family-structure.yaml
+✓ health-conditions.yaml
+
+Risk Domain may now be activated.
 
 **Prerequisites:** Stage 1 should be in progress but need not be complete. The shared human model does not depend on the intervention taxonomy. It does depend on the person base taxonomy in `shared/taxonomy/persons.yaml` which is already mature enough to extend.
 
@@ -117,10 +130,11 @@ Completed
 * shared/human-model/dependency.yaml
 * shared/human-model/capabilities.yaml
 * shared/human-model/family-structure.yaml
+* shared/human-model/health-conditions.yaml
 
 Next Active Deliverable
 
-shared/human-model/health-conditions.yaml
+Phase 3.0 — Risk Domain
 
 After Completion
 
@@ -336,13 +350,9 @@ Completed:
 ✓ dependency.yaml
 ✓ capabilities.yaml
 ✓ family-structure.yaml
+✓ health-conditions.yaml
 
-Active:
-□ health-conditions.yaml
-
-Stage 2 is considered complete only after:
-- family-structure.yaml
-- health-conditions.yaml
+Stage 2 is considered complete.
 
 
 Stage 3: Risk Domain
