@@ -1,7 +1,7 @@
 # Khidmat Knowledge Layer — File Inventory
 
 **Authority:** Knowledge Layer Architect
-**Scope:** All files in khidmat-knowledge/ as of Phase 2.0 entry
+**Scope:** All files in khidmat-knowledge/ as of Phase 3.0 entry
 **Purpose:** Single source of truth for what every file is, what it owns, and what it owes
 
 ---
@@ -176,19 +176,16 @@ This is an architecture document, not an ontology file.
 **Concepts Owned:** None directly. This file declares ownership boundaries
 for the five planned YAML files that will follow.
 
-**Planned files declared here:**
+**Completed files declared here:**
 - `lifecycle-stages.yaml` — lifecycle stage concepts ✓ Complete
-- `capabilities.yaml` — capability concepts
-- `dependency.yaml` — dependency relationship concepts
-- `family-structure.yaml` — family structure concepts
-- `health-conditions.yaml` — health condition vocabulary
+- `capabilities.yaml` — capability concepts ✓ Complete
+- `dependency.yaml` — dependency relationship concepts ✓ Complete
+- `family-structure.yaml` — family structure concepts ✓ Complete
+- `health-conditions.yaml` — health condition vocabulary ✓ Complete
 
-**Maturity:** Complete as an architecture document.
-Implementation of the planned YAML files is in progress.
+**Maturity:** Complete.
 
 **Known Gaps:** None for the architecture document itself.
-Four of the five planned YAML files are not yet created — tracked in
-`ontology_completion_checklist.md`.
 
 **Overlap / Conflicts:** None. Ownership boundaries explicitly declared.
 Risk factors, vulnerability scoring, interventions, outcomes, and program
@@ -231,9 +228,9 @@ dependency models are referenced by note pending those files' creation.
 **Overlap / Conflicts:**
 - `shared/taxonomy/persons.yaml` declares `functional_capacity` as a
   three-value enum (full, partial, dependent). This is a proto-capability
-  concept. When `capabilities.yaml` is created, `functional_capacity`
+  concept. Now that `capabilities.yaml` is created, `functional_capacity`
   should reference that file as its authority. No conflict currently;
-  alignment task flagged for Phase 2.0 completion.
+  alignment task flagged for Phase 3.0 completion.
 
 ---
 
@@ -704,7 +701,7 @@ dependency models are referenced by note pending those files' creation.
 
 **Purpose:** Domain inventory, dependency rules, and maturity level definitions.
 **Assessment:** Accurate and correctly maintained.
-**Gap:** Does not yet list the shared human model domains (lifecycle, capability, dependency, family structure) that Phase 2.0 is introducing. Should be updated when those files are created.
+**Gap:** None. Shared human model domains (lifecycle, capability, dependency, family structure) introduced in Phase 2.4 are now listed.
 
 ---
 
@@ -761,9 +758,9 @@ from future files must be declared here at time of creation.
 
 **Purpose:** Single source of truth for every file in the repository —
 what it owns, what it owes, its maturity, and its known gaps.
-**Assessment:** Complete as of Phase 2.0. Covers all shared domain files,
+**Assessment:** Complete as of Phase 3.0 entry. Covers all shared domain files,
 registration domain files, placeholder domains, and architecture documents.
-Shared Human Model section added in Phase 2.0.
+Shared Human Model section completed in Phase 2.4.
 **Gap:** Must be updated when new files are created. Self-referential —
 this file must include its own entry.
 
@@ -775,7 +772,7 @@ this file must include its own entry.
 and governance files. The single source of truth for what is done,
 in progress, missing, and future.
 **Assessment:** Complete as a tracking document. Updated throughout
-Phase 2.0 as files were completed and stale entries were corrected.
+Phase 2.4 as files were completed and stale entries were corrected.
 **Gap:** Must be updated as items complete or move between states.
 Status summary table at the bottom requires periodic reconciliation.
 
