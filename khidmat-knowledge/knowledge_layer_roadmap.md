@@ -42,7 +42,6 @@ Placeholder Domains [DECLARED, NOT ACTIVE]
 
 Missing Entirely
 
-├── Risk domain
 ├── Community context
 └── Outcome indicators
 

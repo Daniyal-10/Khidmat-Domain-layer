@@ -279,3 +279,83 @@ Roadmap dependencies become governance constraints.
 
 * Activating domains on implementation demand alone.
 * Allowing placeholder domains to define concepts early.
+
+---
+
+## ADR-010: Risk Domain is Qualitative Not Quantitative
+
+**Date:** 2026
+**Status:** Accepted
+
+**Decision:**
+Risk, Vulnerability, and Resilience are qualitative levels supported by structured, named inputs. No numeric scores, weighted formulas, or composite indices may be used.
+
+**Reasoning:**
+Numeric scoring obscures the underlying logic and creates false precision. Qualitative judgment is more appropriate for humanitarian reasoning.
+
+**Consequence:**
+Risk files must not introduce numeric calculations.
+
+---
+
+## ADR-011: Risk Domain Does Not Prescribe Interventions
+
+**Date:** 2026
+**Status:** Accepted
+
+**Decision:**
+The Risk Domain produces signals (risk level, risk trend, compound risk flags) but does not define what should be done in response.
+
+**Reasoning:**
+Intervention logic belongs to Case Management (Stage 5). Mixing risk identification with intervention logic creates a monolithic reasoning layer.
+
+**Consequence:**
+Risk rules must not recommend interventions.
+
+---
+
+## ADR-012: Horizon and Persistence are Distinct
+
+**Date:** 2026
+**Status:** Accepted
+
+**Decision:**
+When harm might occur (Risk Horizon) and how long the risk-generating condition lasts (Risk Factor Persistence) are modeled as separate attributes.
+
+**Reasoning:**
+They are independent questions. A short-term condition might pose an immediate threat, or a long-term condition might pose a distant threat.
+
+**Consequence:**
+Never collapse these into a single enum.
+
+---
+
+## ADR-013: Concept vs. Instance Separation
+
+**Date:** 2026
+**Status:** Accepted
+
+**Decision:**
+The Risk Domain defines types and categories. Instance-level presence is tracked in case data domains.
+
+**Reasoning:**
+Separating ontology from data prevents the knowledge layer from becoming a database.
+
+**Consequence:**
+Risk files define the model; case domains hold the instances.
+
+---
+
+## ADR-014: Risk Domain Composes Existing Entities
+
+**Date:** 2026
+**Status:** Accepted
+
+**Decision:**
+The Risk Domain references lifecycle stages, capabilities, dependencies, health conditions, and family structures by reference. It does not redefine them.
+
+**Reasoning:**
+Prevents ontology drift and maintains the Shared Human Model as the single source of truth.
+
+**Consequence:**
+Must use `*_ref` patterns defined in risk-domain-governance.md.

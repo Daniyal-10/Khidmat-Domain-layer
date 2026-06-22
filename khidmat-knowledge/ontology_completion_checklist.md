@@ -82,6 +82,17 @@
   Status: Placeholder declared. Will formalise duration bands and onset recency vocabulary.
   Blocker: Requires cross-domain reporting to make consistent time vocabulary necessary.
 
+### Phase 3.0 — Risk Domain
+
+✓ Hazard Categories (`shared/risk/hazard-categories.yaml`)
+✓ Exposure (`shared/risk/exposure.yaml`)
+✓ Vulnerability (`shared/risk/vulnerability.yaml`)
+□ Risk Factors (`shared/risk/risk-factors.yaml`)
+□ Protective Factors (`shared/risk/protective-factors.yaml`)
+□ Household Resilience (`shared/risk/household-resilience.yaml`)
+□ Risk (`shared/risk/risk.yaml`)
+□ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
+
 ---
 
 ## MISSING
@@ -135,11 +146,7 @@ Required for:
 
 ### New Domains Required — Not Yet Placeholdered
 
-□ Risk Taxonomy and Ontology
-  The risk domain is not among the eight declared placeholder domains. Risk concepts are currently scattered as inference rules in the registration domain. Risk must become a first-class domain with its own taxonomy, ontology, and reasoning layer.
 
-□ Vulnerability Ontology
-  No composite vulnerability model exists. Individual factors, household factors, and community factors combine to produce aggregate vulnerability that is greater than the sum of its parts. This is not expressible in the current layer.
 
 □ Outcome Indicator Vocabulary
   No outcome model exists. The system ends at case closure. Outcome indicators must be in shared vocabulary before beneficiary lifecycle, programs, or impact domains can measure change.

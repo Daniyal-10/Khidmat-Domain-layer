@@ -113,6 +113,27 @@ A risk factor does not necessarily indicate current harm.
 **Household Resilience**
 The capacity of a household to absorb, adapt to, and recover from adversity while maintaining wellbeing.
 
+**Risk**
+The forward-looking, time-bound likelihood and severity of harm to a specific person, family, or household.
+
+**Protective Factor**
+The atomic, symmetric inverse of a Risk Factor.
+
+**Hazard Category**
+The qualitative classification of what kind of harm a risk factor relates to (not its geographic or temporal instantiation).
+
+**Exposure**
+The relationship between a person/household and a hazard category describing the degree to which they are positioned to encounter it.
+
+**Risk Horizon**
+When harm might occur, as a qualitative band.
+
+**Risk Trend**
+Whether risk is improving, stable, or deteriorating at the point of assessment.
+
+**Compound Risk**
+Concentration compounding and interaction compounding between co-occurring risk factors.
+
 ## Outcome Terms
 
 **Outcome Indicator**

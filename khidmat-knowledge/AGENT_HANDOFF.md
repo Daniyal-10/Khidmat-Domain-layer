@@ -25,7 +25,7 @@ The primary intelligence of the Khidmat AI system lives here.
 | Shared Domain — base taxonomy | Active |
 | Governance Layer | Complete (Phase 2.0) |
 | Shared Human Model | Complete (Phase 2.4) |
-| Risk Domain | Planned, not yet activated |
+| Risk Domain | Active |
 | All other placeholder domains | Level 2 — inactive |
 
 Source of truth: `ontology_completion_checklist.md`, `knowledge_layer_roadmap.md`

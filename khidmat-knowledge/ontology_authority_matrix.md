@@ -67,6 +67,20 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 
 ---
 
+## Risk Domain
+
+**Owner domain:** Risk Domain
+**Introduced:** Phase 3.0
+**Governing ADRs:** ADR-010, ADR-011, ADR-012, ADR-013, ADR-014
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `hazard_category` | Hazard Category | `shared/risk/hazard-categories.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `exposure` | Exposure | `shared/risk/exposure.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `vulnerability` | Vulnerability | `shared/risk/vulnerability.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+
+---
+
 ## Flagged Boundary Cases
 
 The following are known areas where concept ownership requires future
