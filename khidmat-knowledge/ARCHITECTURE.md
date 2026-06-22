@@ -7,8 +7,8 @@ Stage 3 — Risk Domain
 Status:
 
 - Shared Human Model complete
-- Risk Domain architecture review pending Human Owner approval
-- No Risk Domain ontology implementation approved
+- Risk Domain architecture approved (ADRs 010-014)
+- Risk Domain ontology implementation active (Hazard Categories, Exposure, and Vulnerability complete)
 
 ## Domain Inventory
 
