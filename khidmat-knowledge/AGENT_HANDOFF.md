@@ -131,31 +131,10 @@ without prior architectural review.
 
 # Current Next Step
 
-Phase 3.0 — Risk Domain
+Phase 3.0 — Risk Domain (Active)
 
-The Shared Human Model is complete.
+Recent completion: shared/risk/household-resilience.yaml
 
-Risk Domain is now the active architecture target.
+Next active implementation target: `shared/risk/risk.yaml`
 
-No Risk Domain implementation should begin until architecture review and Human Owner approval.
-
-Prerequisites satisfied:
-
-✓ lifecycle-stages.yaml
-✓ dependency.yaml
-✓ capabilities.yaml
-✓ family-structure.yaml
-✓ health-conditions.yaml
-
-All Shared Human Model ontologies are complete.
-
-The project may now enter:
-
-Phase 3.0 — Risk Domain
-
-Current status:
-
-5 of 5 Shared Human Model ontologies complete.
-The Shared Human Model prerequisite is fully satisfied.
-
-This sequencing is mandatory and governed by knowledge_layer_roadmap.md.
+Proceed with implementing risk.yaml according to the Risk Domain architecture.

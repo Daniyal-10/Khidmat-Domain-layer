@@ -87,9 +87,8 @@
 ✓ Hazard Categories (`shared/risk/hazard-categories.yaml`)
 ✓ Exposure (`shared/risk/exposure.yaml`)
 ✓ Vulnerability (`shared/risk/vulnerability.yaml`)
-□ Risk Factors (`shared/risk/risk-factors.yaml`)
-□ Protective Factors (`shared/risk/protective-factors.yaml`)
-□ Household Resilience (`shared/risk/household-resilience.yaml`)
+✓ Protective Factors (`shared/risk/protective-factors.yaml`)
+✓ Household Resilience (`shared/risk/household-resilience.yaml`)
 □ Risk (`shared/risk/risk.yaml`)
 □ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
 
@@ -222,7 +221,7 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Completed | 33+ files | Registration ontology and Shared Human Model foundations established |
+| Completed | 34+ files | Registration ontology and Shared Human Model foundations established |
 | In Progress | 2 items | Evidence taxonomy, time taxonomy |
 | Missing (registration) | 4 items | Advanced reasoning and evidence modelling gaps |
 | Missing (shared) | 6 items | Person, Household, Community and governance entities |

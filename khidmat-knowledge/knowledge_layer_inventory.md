@@ -234,6 +234,46 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
+## RISK DOMAIN
+
+---
+
+### shared/risk/protective-factors.yaml
+
+**Purpose:** Defines observable protective factors that moderate hazard-specific risk.
+**Concepts Owned:** 
+- The 12 protective factors
+- financial_buffer
+- livelihood_diversity
+- treatment_continuity_active
+**Relationships Owned:** Moderation relationships to hazard categories.
+**Maturity:** Complete (Phase 3.2).
+**Known Gaps:** None.
+**Overlap / Conflicts:** Excludes Khidmat-provided interventions to prevent circular dependency.
+
+---
+
+### shared/risk/household-resilience.yaml
+
+**Purpose:** Defines Household Resilience as a first-class composite capacity to absorb, adapt to, and recover from adversity.
+**Concepts Owned:** 
+- household_resilience
+- absorptive_capacity
+- adaptive_capacity
+- recovery_capacity
+- support_redundancy
+- role_substitution_capacity
+- buffering_capacity
+- recovery_resources
+- caregiving_continuity
+- decision_continuity
+**Relationships Owned:** `supports` relationships (mechanisms to capacities) and `component_of` relationships (capacities to resilience).
+**Maturity:** Complete (Phase 3.0).
+**Known Gaps:** None.
+**Overlap / Conflicts:** None.
+
+---
+
 ## REGISTRATION DOMAIN
 
 ---

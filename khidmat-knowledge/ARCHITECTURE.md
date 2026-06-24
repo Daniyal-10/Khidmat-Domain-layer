@@ -8,7 +8,7 @@ Status:
 
 - Shared Human Model complete
 - Risk Domain architecture approved (ADRs 010-014)
-- Risk Domain ontology implementation active (Hazard Categories, Exposure, and Vulnerability complete)
+- Risk Domain ontology implementation active (Hazard Categories, Exposure, Vulnerability, Protective Factors, and Household Resilience complete)
 
 ## Domain Inventory
 

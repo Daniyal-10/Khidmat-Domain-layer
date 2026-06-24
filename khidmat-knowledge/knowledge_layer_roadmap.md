@@ -152,7 +152,7 @@ are complete and stable.
 ## Stage 3 — Risk Domain
 
 **What this stage produces:**
-- Risk Factor Taxonomy (`shared/risk/risk-factors.yaml`) — individual, household, community factors
+- Protective Factors Model (`shared/risk/protective-factors.yaml`) — positive characteristics moderating risk
 - Risk Trajectory Model (`shared/risk/risk-trajectory.yaml`) — improving, stable, deteriorating, imminent
 - Vulnerability Composite Model (`shared/risk/vulnerability.yaml`) — how factors combine
 - Household Resilience Model (`shared/risk/household-resilience.yaml`) — assets, social support, buffering capacity
@@ -432,7 +432,7 @@ khidmat-knowledge/
 │   │   └── health-conditions.yaml
 │   │
 │   ├── risk/                         [NEW in Stage 3]
-│   │   ├── risk-factors.yaml
+│   │   ├── protective-factors.yaml
 │   │   ├── risk-trajectory.yaml
 │   │   ├── vulnerability.yaml
 │   │   ├── household-resilience.yaml

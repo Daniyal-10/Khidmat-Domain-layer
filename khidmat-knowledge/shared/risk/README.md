@@ -82,8 +82,7 @@ supported by structured, named inputs, not computed numbers.
 **Horizon and persistence are different axes.**
 When harm might occur (horizon) and how long the risk-generating condition
 lasts (persistence) are independent questions. They are modelled as
-separate attributes, never collapsed into a single enum. See
-`risk-factors.yaml`.
+separate attributes, never collapsed into a single enum.
 
 **Concept and instance are separate.**
 The Risk Domain defines risk factor *types*, hazard *categories*, and
@@ -107,7 +106,7 @@ made during architecture review, not omissions:
 
 | Originally sketched | Implemented as | Reason |
 |---|---|---|
-| `risk-factors.yaml` | `risk-factors.yaml` | unchanged |
+| `risk-factors.yaml` | absorbed | Conceptually split between `vulnerability.yaml` (internal capacity deficits) and `exposure.yaml` (external situational positioning) during implementation. |
 | `risk-trajectory.yaml` | folded into `risk.yaml` | Risk Trend (renamed from "trajectory" to avoid colliding with `situation.trajectory`) is an attribute of the Risk entity, not an independent taxonomy. It does not need its own file. |
 | `vulnerability.yaml` | `vulnerability.yaml` | unchanged |
 | `household-resilience.yaml` | `household-resilience.yaml` | unchanged |
@@ -123,7 +122,6 @@ shared/risk/
 ├── risk-domain-governance.md          (boundary rules, cross-domain patterns, anti-patterns)
 ├── hazard-categories.yaml             (Hazard Category taxonomy — concept layer only)
 ├── exposure.yaml                      (Exposure — first-class relationship concept)
-├── risk-factors.yaml                  (Risk Factor taxonomy + Risk Horizon + Persistence)
 ├── protective-factors.yaml            (Protective Factor taxonomy)
 ├── vulnerability.yaml                 (Vulnerability concept + composition model)
 ├── household-resilience.yaml          (Resilience concept + composition model)

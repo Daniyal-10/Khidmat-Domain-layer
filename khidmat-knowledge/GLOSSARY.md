@@ -111,13 +111,49 @@ A characteristic, condition, event, or circumstance that increases the likelihoo
 A risk factor does not necessarily indicate current harm.
 
 **Household Resilience**
-The capacity of a household to absorb, adapt to, and recover from adversity while maintaining wellbeing.
+The composite household-level capacity to maintain essential functioning, adapt to disruption, and recover from adversity.
+
+**Absorptive Capacity**
+The capacity of a household to continue functioning during disruption without immediate breakdown of essential support structures, responsibilities, and household operations.
+
+**Adaptive Capacity**
+The capacity of a household to reorganize responsibilities, substitute disrupted functions, and adjust internal arrangements in response to changing circumstances.
+
+**Recovery Capacity**
+The capacity of a household to restore stability and re-establish essential functioning following disruption or loss.
+
+**Support Redundancy**
+The presence of alternative providers for critical household support functions such that disruption of a single individual does not eliminate a required household function.
+
+**Role Substitution Capacity**
+The ability of a household to replace, compensate for, or redistribute a disrupted support role among available household members and existing support relationships.
+
+**Buffering Capacity**
+The ability of a household to absorb disruption while maintaining essential household functioning and stability.
+
+**Recovery Resources**
+Existing household-accessible assets, relationships, capabilities, and internal support resources that can be mobilized to restore household functioning after disruption.
+
+**Caregiving Continuity**
+The ability of a household to maintain necessary caregiving support despite disruption affecting individual caregivers.
+
+**Decision Continuity**
+The ability of a household to maintain effective decision-making and authority structures despite disruption affecting individual decision-makers.
 
 **Risk**
 The forward-looking, time-bound likelihood and severity of harm to a specific person, family, or household.
 
 **Protective Factor**
-The atomic, symmetric inverse of a Risk Factor.
+The atomic, symmetric inverse of a Risk Factor. A positive, present condition that moderates hazard-specific risk. Assessed by positive characterisation, not logical negation of a risk.
+
+**Financial Buffer**
+Accumulated household economic reserves (savings, assets) functioning as a structural economic floor independently of current earning.
+
+**Livelihood Diversity**
+The structural independence of a household's income sources across independently-failing modes, distinct from mere count of earners.
+
+**Treatment Continuity Active**
+The positive state where a person with a manageable health condition is currently receiving functioning treatment, maintaining a stable health trajectory rather than deteriorating.
 
 **Hazard Category**
 The qualitative classification of what kind of harm a risk factor relates to (not its geographic or temporal instantiation).

@@ -78,6 +78,19 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 | `hazard_category` | Hazard Category | `shared/risk/hazard-categories.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 | `exposure` | Exposure | `shared/risk/exposure.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 | `vulnerability` | Vulnerability | `shared/risk/vulnerability.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `financial_buffer` | Financial Buffer | `shared/risk/protective-factors.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `livelihood_diversity` | Livelihood Diversity | `shared/risk/protective-factors.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `treatment_continuity_active` | Treatment Continuity Active | `shared/risk/protective-factors.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `household_resilience` | Household Resilience | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `absorptive_capacity` | Absorptive Capacity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `adaptive_capacity` | Adaptive Capacity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `recovery_capacity` | Recovery Capacity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `support_redundancy` | Support Redundancy | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `role_substitution_capacity` | Role Substitution Capacity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `buffering_capacity` | Buffering Capacity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `recovery_resources` | Recovery Resources | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `caregiving_continuity` | Caregiving Continuity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `decision_continuity` | Decision Continuity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 
 ---
 
