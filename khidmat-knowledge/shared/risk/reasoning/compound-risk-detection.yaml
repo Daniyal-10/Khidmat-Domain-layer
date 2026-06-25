@@ -1,0 +1,138 @@
+metadata:
+  file: compound-risk-detection.yaml
+  domain: Risk Domain
+  layer: shared/risk/reasoning
+  status: Phase 3.0
+  purpose: >
+    Defines the qualitative compound risk detection rules for the Risk Domain.
+    Consumes existing Risk Domain concepts to enrich risk_composition and
+    influence risk_characterization, maintaining compliance with ADR-008.
+
+reasoning_families:
+
+  - id: concentration_compounding
+    purpose: >
+      Detects compounding risk when multiple vulnerability factors are concentrated 
+      within a single household member or single structural domain, creating a single 
+      point of failure with no internal redundancy.
+    detection_logic: >
+      Triggered when a single point of failure is identified, such as the primary caregiver 
+      also serving as the primary earner, or when a sole earner configuration exists in 
+      conjunction with a high dependent load and no secondary income support.
+    required_inputs:
+      - vulnerability.yaml#household_structural.single_point_of_failure_dual_role
+      - vulnerability.yaml#household_structural.sole_earner_no_secondary_income
+      - vulnerability.yaml#household_structural.high_dependent_load
+      - family-structure.yaml#support_roles
+    optional_moderators:
+      - vulnerability.yaml#household_structural.remittance_primary_income_inaccessible
+      - family-structure.yaml#family_level_attributes.earning_structure
+    resilience_moderators:
+      - household-resilience.yaml#resilience_mechanisms.support_redundancy
+      - household-resilience.yaml#resilience_mechanisms.role_substitution_capacity
+      - household-resilience.yaml#resilience_capacities.absorptive_capacity
+    protective_factor_moderators:
+      - protective-factors.yaml#protective_factors.income_redundancy
+      - protective-factors.yaml#protective_factors.caregiver_redundancy
+    reasoning_outputs:
+      enrich_risk_composition: >
+        Identifies a structural vulnerability concentration that reduces the household's 
+        capacity to absorb any single role-specific shock.
+      influence_risk_characterization:
+        risk_severity: critical
+        risk_trend: deteriorating
+        risk_state: escalating
+        risk_horizon: near_term
+
+  - id: interaction_compounding
+    purpose: >
+      Detects compounding risk when multiple hazard categories or exposure dimensions 
+      intersect, multiplying the expected severity and accelerating the progression of harm.
+    detection_logic: >
+      Triggered when a household experiences direct or proximate exposure to more than one 
+      hazard category simultaneously, such as environmental exposure during monsoon season 
+      co-occurring with acute economic hazard or situational displacement.
+    required_inputs:
+      - exposure.yaml#exposure_entity.hazard_category_ref
+      - exposure.yaml#exposure_entity.exposure_level
+      - vulnerability.yaml#situational_circumstantial.displacement_network_severing
+    optional_moderators:
+      - hazard-categories.yaml#hazard_categories.seasonality.typically_seasonal
+    resilience_moderators:
+      - household-resilience.yaml#resilience_mechanisms.buffering_capacity
+      - household-resilience.yaml#resilience_capacities.absorptive_capacity
+    protective_factor_moderators:
+      - protective-factors.yaml#protective_factors.financial_buffer
+      - protective-factors.yaml#protective_factors.livelihood_diversity
+    reasoning_outputs:
+      enrich_risk_composition: >
+        Models the non-linear compounding effect where the co-occurrence of hazards 
+        weakens the coping mechanisms normally available for individual hazards.
+      influence_risk_characterization:
+        risk_severity: critical
+        risk_trend: deteriorating
+        risk_state: active
+        risk_horizon: immediate
+
+  - id: dependency_compounding
+    purpose: >
+      Detects compounding risk when the volume or intensity of care and financial dependencies 
+      converges with a deficit in provider capability, exhausting household coping capacities.
+    detection_logic: >
+      Triggered when a high dependent load or high-needs dependents (infants, elderly individuals 
+      with frailty, or members with high-disability-potential conditions) co-occur with a 
+      caregiving capability gap or the lack of redundant caregiving support.
+    required_inputs:
+      - vulnerability.yaml#household_structural.high_dependent_load
+      - vulnerability.yaml#physiological_developmental.infant_lifecycle_stage
+      - vulnerability.yaml#physiological_developmental.elderly_frailty
+      - vulnerability.yaml#functional_capacity.caregiving_capacity_gap_in_active_caregiver
+    optional_moderators:
+      - vulnerability.yaml#physiological_developmental.high_caregiver_intensity_condition
+    resilience_moderators:
+      - household-resilience.yaml#resilience_mechanisms.caregiving_continuity
+      - household-resilience.yaml#resilience_mechanisms.support_redundancy
+    protective_factor_moderators:
+      - protective-factors.yaml#protective_factors.caregiver_capability_adequate
+      - protective-factors.yaml#protective_factors.caregiver_redundancy
+    reasoning_outputs:
+      enrich_risk_composition: >
+        Captures the chronic imbalance between dependency demands and caregiving/economic 
+        provision capabilities within the household unit.
+      influence_risk_characterization:
+        risk_severity: serious
+        risk_trend: deteriorating
+        risk_state: persistent
+        risk_horizon: near_term
+
+  - id: cascade_compounding
+    purpose: >
+      Detects compounding risk where a shock or vulnerability in a primary provider or 
+      caregiver propagates vertically and immediately onto highly vulnerable dependents.
+    detection_logic: >
+      Triggered when a primary earner or caregiver experiences an acute crisis (illness onset, 
+      bereavement, or a high-disability-potential condition) and the household contains 
+      dependents with developmental or caregiving dependency.
+    required_inputs:
+      - vulnerability.yaml#dependency_concentration.caregiving_dependency_single_provider
+      - vulnerability.yaml#dependency_concentration.financial_dependency_sole_earner
+      - vulnerability.yaml#physiological_developmental.high_disability_potential_condition
+      - vulnerability.yaml#functional_capacity.minimal_independent_living
+      - vulnerability.yaml#physiological_developmental.infant_lifecycle_stage
+    optional_moderators:
+      - vulnerability.yaml#dependency_concentration.developmental_dependency_under_caregiver_stress
+    resilience_moderators:
+      - household-resilience.yaml#resilience_mechanisms.role_substitution_capacity
+      - household-resilience.yaml#resilience_mechanisms.caregiving_continuity
+    protective_factor_moderators:
+      - protective-factors.yaml#protective_factors.extended_family_support_active
+      - protective-factors.yaml#protective_factors.community_network_active
+    reasoning_outputs:
+      enrich_risk_composition: >
+        Identifies the direct path of transmission from provider shock to dependent harm 
+        due to the absence of role substitution.
+      influence_risk_characterization:
+        risk_severity: critical
+        risk_trend: deteriorating
+        risk_state: escalating
+        risk_horizon: immediate
