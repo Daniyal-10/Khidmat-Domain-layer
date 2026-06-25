@@ -62,6 +62,15 @@
 ✓ Family Structure Ontology (`shared/human-model/family-structure.yaml`)
 ✓ Health Conditions Ontology (`shared/human-model/health-conditions.yaml`)
 
+### Phase 3.0 — Risk Domain (Core Ontologies)
+
+✓ Hazard Categories (`shared/risk/hazard-categories.yaml`)
+✓ Exposure (`shared/risk/exposure.yaml`)
+✓ Vulnerability (`shared/risk/vulnerability.yaml`)
+✓ Protective Factors (`shared/risk/protective-factors.yaml`)
+✓ Household Resilience (`shared/risk/household-resilience.yaml`)
+✓ Risk (`shared/risk/risk.yaml`)
+
 ---
 
 ## IN PROGRESS
@@ -82,14 +91,8 @@
   Status: Placeholder declared. Will formalise duration bands and onset recency vocabulary.
   Blocker: Requires cross-domain reporting to make consistent time vocabulary necessary.
 
-### Phase 3.0 — Risk Domain
+### Phase 3.0 — Risk Domain (Reasoning)
 
-✓ Hazard Categories (`shared/risk/hazard-categories.yaml`)
-✓ Exposure (`shared/risk/exposure.yaml`)
-✓ Vulnerability (`shared/risk/vulnerability.yaml`)
-✓ Protective Factors (`shared/risk/protective-factors.yaml`)
-✓ Household Resilience (`shared/risk/household-resilience.yaml`)
-□ Risk (`shared/risk/risk.yaml`)
 □ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
 
 ---
@@ -221,8 +224,8 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Completed | 34+ files | Registration ontology and Shared Human Model foundations established |
-| In Progress | 2 items | Evidence taxonomy, time taxonomy |
+| Completed | 40+ files | Registration, Shared Human Model, and Risk Domain core ontologies established |
+| In Progress | 3 items | Evidence taxonomy, time taxonomy, compound risk detection |
 | Missing (registration) | 4 items | Advanced reasoning and evidence modelling gaps |
 | Missing (shared) | 6 items | Person, Household, Community and governance entities |
 | Future (placeholder) | 7 domains | Planned operational domains |

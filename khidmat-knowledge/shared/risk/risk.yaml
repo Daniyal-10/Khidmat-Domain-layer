@@ -1,0 +1,232 @@
+metadata:
+file: risk.yaml
+domain: Risk Domain
+layer: shared/risk
+status: Phase 3.0
+
+purpose: >
+Defines Risk as a first-class Risk Domain concept. Risk emerges from
+the interaction of hazard categories, exposure, vulnerability, and
+household resilience. The ontology models how those contributors are
+composed, interpreted, represented, and expressed as a qualitative
+risk assessment.
+
+ontology_hierarchy:
+
+referenced_contributors:
+- hazard_category
+- exposure
+- vulnerability
+- household_resilience
+
+composition_layer:
+- risk_composition
+
+interpretation_layer:
+- risk_characterization
+
+representation_layer:
+- risk_profile
+
+core_concepts:
+- risk
+
+risk_attributes:
+- risk_horizon
+- risk_trend
+- risk_state
+- risk_severity
+
+risk:
+
+definition: >
+A qualitative, forward-looking assessment of the likelihood and
+potential severity of harm to a specific person, family, or
+household.
+
+emerges_from:
+- risk_profile
+
+described_by:
+- risk_horizon
+- risk_trend
+- risk_state
+- risk_severity
+
+risk_composition:
+
+definition: >
+The structured qualitative composition of hazard categories,
+exposure, vulnerability, and household resilience that together
+create a risk condition.
+
+composed_from:
+- hazard_category
+- exposure
+- vulnerability
+- household_resilience
+
+risk_characterization:
+
+definition: >
+The qualitative interpretation of a risk composition describing
+the nature, pattern, and overall expression of risk at the point
+of assessment.
+
+derived_from:
+- risk_composition
+
+risk_profile:
+
+definition: >
+The structured representation of a current risk picture including
+the underlying composition, characterization, and associated risk
+attributes.
+
+derived_from:
+- risk_characterization
+
+represents:
+- risk
+
+risk_horizon:
+
+definition: >
+The qualitative timeframe within which harm may occur if current
+conditions persist.
+
+values:
+- immediate
+- near_term
+- medium_term
+- long_term
+
+risk_trend:
+
+definition: >
+A qualitative assessment of whether risk appears to be improving,
+stable, deteriorating, or uncertain at the point of assessment.
+
+values:
+- improving
+- stable
+- deteriorating
+- uncertain
+
+risk_state:
+
+definition: >
+The current qualitative status of risk at the time of assessment.
+
+values:
+- emerging
+- active
+- persistent
+- escalating
+
+risk_severity:
+
+definition: >
+The qualitative characterization of the potential impact of harm
+should the identified risk materialize.
+
+values:
+- limited
+- moderate
+- serious
+- critical
+
+referenced_contributors:
+
+hazard_category:
+ownership: shared/risk/hazard-categories.yaml
+description: >
+Qualitative classification of the type of harm under consideration.
+
+exposure:
+ownership: shared/risk/exposure.yaml
+description: >
+Relationship between a person, family, or household and a hazard
+category describing the degree to which they may encounter it.
+
+vulnerability:
+ownership: shared/risk/vulnerability.yaml
+description: >
+Standing susceptibility to harm resulting from vulnerability
+conditions and capacity limitations.
+
+household_resilience:
+ownership: shared/risk/household-resilience.yaml
+description: >
+Household-level capacity to absorb disruption, adapt to changing
+circumstances, and recover from adversity.
+
+relationships:
+
+* source: hazard_category
+  relationship: contributes_to
+  target: risk_composition
+
+* source: exposure
+  relationship: contributes_to
+  target: risk_composition
+
+* source: vulnerability
+  relationship: contributes_to
+  target: risk_composition
+
+* source: household_resilience
+  relationship: contributes_to
+  target: risk_composition
+
+* source: risk_composition
+  relationship: informs
+  target: risk_characterization
+
+* source: risk_characterization
+  relationship: informs
+  target: risk_profile
+
+* source: risk_profile
+  relationship: represents
+  target: risk
+
+* source: risk_horizon
+  relationship: attribute_of
+  target: risk
+
+* source: risk_trend
+  relationship: attribute_of
+  target: risk
+
+* source: risk_state
+  relationship: attribute_of
+  target: risk
+
+* source: risk_severity
+  relationship: attribute_of
+  target: risk
+
+design_decisions:
+
+* decision: Risk is a first-class ontology concept
+  rationale: >
+  Risk emerges from the interaction of multiple independently owned
+  contributors and therefore requires independent ownership.
+
+* decision: Risk composition is explicit
+  rationale: >
+  The ontology models composition separately from interpretation and
+  representation to preserve explainability and future extensibility.
+
+* decision: Risk remains qualitative
+  rationale: >
+  Risk is represented through concepts, relationships, and
+  qualitative attributes rather than scores, formulas, weights,
+  or indexes.
+
+* decision: Contributor ownership remains external
+  rationale: >
+  Hazard Categories, Exposure, Vulnerability, and Household
+  Resilience remain independently owned concepts referenced by
+  this ontology.

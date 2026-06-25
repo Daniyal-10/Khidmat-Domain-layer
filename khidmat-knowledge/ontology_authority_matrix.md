@@ -91,6 +91,14 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 | `recovery_resources` | Recovery Resources | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 | `caregiving_continuity` | Caregiving Continuity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 | `decision_continuity` | Decision Continuity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk` | Risk | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_composition` | Risk Composition | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_characterization` | Risk Characterization | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_profile` | Risk Profile | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_horizon` | Risk Horizon | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_trend` | Risk Trend | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_state` | Risk State | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_severity` | Risk Severity | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 
 ---
 

@@ -238,6 +238,64 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
+### shared/risk/README.md
+
+**Purpose:** Scope declaration, design principles, file structure mapping, and activation criteria for the Risk Domain.
+**Concepts Owned:** None directly. Declares boundaries and maps the transition from conceptual layout to active implementation.
+**Relationships Owned:** None.
+**Maturity:** Complete (Phase 3.0).
+**Known Gaps:** None.
+**Overlap / Conflicts:** None.
+
+---
+
+### shared/risk/risk-domain-governance.md
+
+**Purpose:** Boundary enforcement rules, cross-domain reference patterns, anti-patterns, and alignment contracts for the Risk Domain. Ensures ontology files stay free of documentation bloat.
+**Concepts Owned:** None directly. Declares reference constraints and patterns for capabilities, dependency, family structure, health conditions, and registration.
+**Relationships Owned:** None.
+**Maturity:** Complete (Phase 3.0).
+**Known Gaps:** None.
+**Overlap / Conflicts:** Resolves descriptive alignment with lifecycle stages (FLAG-005) and family structure.
+
+---
+
+### shared/risk/hazard-categories.yaml
+
+**Purpose:** Qualitative classification of the types of harm under consideration.
+**Concepts Owned:** 
+- `hazard_category`
+**Relationships Owned:** None.
+**Maturity:** Complete (Phase 3.0).
+**Known Gaps:** None.
+**Overlap / Conflicts:** None.
+
+---
+
+### shared/risk/exposure.yaml
+
+**Purpose:** Defines the relationship between a person, family, or household and a hazard category describing the degree to which they may encounter it.
+**Concepts Owned:**
+- `exposure`
+**Relationships Owned:** None.
+**Maturity:** Complete (Phase 3.0).
+**Known Gaps:** None.
+**Overlap / Conflicts:** None.
+
+---
+
+### shared/risk/vulnerability.yaml
+
+**Purpose:** Defines standing susceptibility to harm resulting from vulnerability conditions and capacity limitations.
+**Concepts Owned:**
+- `vulnerability`
+**Relationships Owned:** None.
+**Maturity:** Complete (Phase 3.0).
+**Known Gaps:** None.
+**Overlap / Conflicts:** None.
+
+---
+
 ### shared/risk/protective-factors.yaml
 
 **Purpose:** Defines observable protective factors that moderate hazard-specific risk.
@@ -268,6 +326,29 @@ dependency models are referenced by note pending those files' creation.
 - caregiving_continuity
 - decision_continuity
 **Relationships Owned:** `supports` relationships (mechanisms to capacities) and `component_of` relationships (capacities to resilience).
+**Maturity:** Complete (Phase 3.0).
+**Known Gaps:** None.
+**Overlap / Conflicts:** None.
+
+---
+
+### shared/risk/risk.yaml
+
+**Purpose:** Defines Risk as a first-class Risk Domain concept. Models how contributors (hazard categories, exposure, vulnerability, and household resilience) are composed, interpreted, represented, and expressed as a qualitative risk assessment.
+**Concepts Owned:**
+- `risk`
+- `risk_composition`
+- `risk_characterization`
+- `risk_profile`
+- `risk_horizon`
+- `risk_trend`
+- `risk_state`
+- `risk_severity`
+**Relationships Owned:**
+- `contributes_to` (hazard_category, exposure, vulnerability, household_resilience to risk_composition)
+- `informs` (risk_composition to risk_characterization, risk_characterization to risk_profile)
+- `represents` (risk_profile to risk)
+- `attribute_of` (risk_horizon, risk_trend, risk_state, risk_severity to risk)
 **Maturity:** Complete (Phase 3.0).
 **Known Gaps:** None.
 **Overlap / Conflicts:** None.

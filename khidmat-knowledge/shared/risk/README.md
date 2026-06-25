@@ -217,10 +217,10 @@ The Risk Domain is considered complete and ready to enable Stage 5
 (Case Management, jointly with Stage 4) when:
 
 - [x] All planned files exist and are not placeholders
-- [ ] Ownership of all concepts is declared in `ontology_authority_matrix.md`
-- [ ] All new terms are added to `GLOSSARY.md` under the correct section
-- [ ] `knowledge_layer_inventory.md` is updated for all new files
-- [ ] `ontology_completion_checklist.md` reflects completion status
-- [ ] `knowledge_layer_roadmap.md` Stage 3 is marked substantially complete
+- [x] Ownership of all concepts is declared in `ontology_authority_matrix.md`
+- [x] All new terms are added to `GLOSSARY.md` under the correct section
+- [x] `knowledge_layer_inventory.md` is updated for all new files
+- [x] `ontology_completion_checklist.md` reflects completion status
+- [x] `knowledge_layer_roadmap.md` Stage 3 is marked substantially complete
 - [ ] Human Owner has approved the model for downstream use
 - [ ] ADR-010 through ADR-014 are reviewed and recorded by the Human Owner

@@ -121,7 +121,7 @@ trigger event or need category. References `registration/taxonomy/` files.
 ### Pattern: Persistence Source Reference
 
 **Description:** How a risk factor's persistence (how long the
-risk-generating condition lasts) is determined. Used in `risk-factors.yaml`.
+risk-generating condition lasts) is determined. Used in `vulnerability.yaml` and `exposure.yaml`.
 
 **Required Fields:**
 - `persistence_source`: one of `situation_ref`, `need_ref`,
@@ -130,7 +130,7 @@ risk-generating condition lasts) is determined. Used in `risk-factors.yaml`.
   attribute (`situation.trajectory`, `need.need_duration`,
   `condition.typical_progression` / `reversibility`)
 - If `none`: a `local_persistence` value from the
-  `risk_factor_persistence` vocabulary defined in `risk-factors.yaml`,
+  `risk_factor_persistence` vocabulary defined in `vulnerability.yaml` and `exposure.yaml`,
   used only for risk factors with no existing duration-equivalent owner
 
 **Boundary Note:** This pattern exists specifically to prevent the Risk
@@ -174,11 +174,11 @@ cases (chiefly environmental/structural risk factors).
 and `reasoning_implications` fields, written before the Risk Domain existed
 as a descriptive anticipation of risk concepts.
 
-**Resolution:** `risk-factors.yaml` formalises selected lifecycle-stage
+**Resolution:** `vulnerability.yaml` and `exposure.yaml` formalise selected lifecycle-stage
 vulnerabilities into named risk factors using the Lifecycle Stage Reference
 pattern above. The narrative text in `lifecycle-stages.yaml` is **not**
 modified — it remains valid descriptive context. The formal vocabulary now
-lives in `risk-factors.yaml`. This mirrors exactly how FLAG-004 was
+lives in `vulnerability.yaml` and `exposure.yaml`. This mirrors exactly how FLAG-004 was
 resolved between `lifecycle-stages.yaml` and `capabilities.yaml`.
 
 **Status:** Resolved at time of Risk Domain implementation. Recorded

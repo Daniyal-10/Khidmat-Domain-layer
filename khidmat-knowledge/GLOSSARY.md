@@ -141,7 +141,16 @@ The ability of a household to maintain necessary caregiving support despite disr
 The ability of a household to maintain effective decision-making and authority structures despite disruption affecting individual decision-makers.
 
 **Risk**
-The forward-looking, time-bound likelihood and severity of harm to a specific person, family, or household.
+A qualitative, forward-looking assessment of the likelihood and potential severity of harm to a specific person, family, or household.
+
+**Risk Composition**
+The structured qualitative composition of hazard categories, exposure, vulnerability, and household resilience that together create a risk condition.
+
+**Risk Characterization**
+The qualitative interpretation of a risk composition describing the nature, pattern, and overall expression of risk at the point of assessment.
+
+**Risk Profile**
+The structured representation of a current risk picture including the underlying composition, characterization, and associated risk attributes.
 
 **Protective Factor**
 The atomic, symmetric inverse of a Risk Factor. A positive, present condition that moderates hazard-specific risk. Assessed by positive characterisation, not logical negation of a risk.
@@ -162,10 +171,16 @@ The qualitative classification of what kind of harm a risk factor relates to (no
 The relationship between a person/household and a hazard category describing the degree to which they are positioned to encounter it.
 
 **Risk Horizon**
-When harm might occur, as a qualitative band.
+The qualitative timeframe within which harm may occur if current conditions persist.
 
 **Risk Trend**
-Whether risk is improving, stable, or deteriorating at the point of assessment.
+A qualitative assessment of whether risk appears to be improving, stable, deteriorating, or uncertain at the point of assessment.
+
+**Risk State**
+The current qualitative status of risk at the time of assessment.
+
+**Risk Severity**
+The qualitative characterization of the potential impact of harm should the identified risk materialize.
 
 **Compound Risk**
 Concentration compounding and interaction compounding between co-occurring risk factors.

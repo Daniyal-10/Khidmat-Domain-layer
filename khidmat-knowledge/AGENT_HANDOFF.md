@@ -45,6 +45,12 @@ Completed:
 - capabilities.yaml
 - family-structure.yaml
 - health-conditions.yaml
+- hazard-categories.yaml
+- exposure.yaml
+- vulnerability.yaml
+- protective-factors.yaml
+- household-resilience.yaml
+- risk.yaml
 
 Governance completed:
 
@@ -53,6 +59,7 @@ Governance completed:
 - ontology_authority_matrix.md
 - knowledge_layer_roadmap.md
 - health-conditions-governance.md
+- risk-domain-governance.md
 
 Current objective:
 
@@ -133,8 +140,8 @@ without prior architectural review.
 
 Phase 3.0 — Risk Domain (Active)
 
-Recent completion: shared/risk/household-resilience.yaml
+Recent completion: shared/risk/risk.yaml
 
-Next active implementation target: `shared/risk/risk.yaml`
+Next active implementation target: `shared/risk/reasoning/compound-risk-detection.yaml`
 
-Proceed with implementing risk.yaml according to the Risk Domain architecture.
+Proceed with implementing compound-risk-detection.yaml according to the Risk Domain architecture.

@@ -133,11 +133,11 @@ Completed
 
 Next Active Deliverable
 
-Phase 3.0 — Risk Domain
+Phase 3.0 — Risk Domain (Reasoning: `shared/risk/reasoning/compound-risk-detection.yaml`)
 
 After Completion
 
-Stage 3 — Risk Domain
+Stage 4 — Activate Verification Operations Domain (requires Stage 1 completion)
 
 Architecture Rule
 
@@ -151,17 +151,22 @@ are complete and stable.
 
 ## Stage 3 — Risk Domain
 
-**What this stage produces:**
-- Protective Factors Model (`shared/risk/protective-factors.yaml`) — positive characteristics moderating risk
-- Risk Trajectory Model (`shared/risk/risk-trajectory.yaml`) — improving, stable, deteriorating, imminent
-- Vulnerability Composite Model (`shared/risk/vulnerability.yaml`) — how factors combine
-- Household Resilience Model (`shared/risk/household-resilience.yaml`) — assets, social support, buffering capacity
-- Seasonal Risk Calendar (`shared/risk/seasonal-risk.yaml`) — environmental time-sensitivity
-- Risk inference rules (extension of registration reasoning or new risk domain reasoning layer)
+**STATUS: SUBSTANTIALLY COMPLETE** (Core Ontologies Complete; Reasoning in progress)
+
+**Completed:**
+- ✓ Protective Factors Model (`shared/risk/protective-factors.yaml`)
+- ✓ Hazard Categories (`shared/risk/hazard-categories.yaml`)
+- ✓ Exposure Model (`shared/risk/exposure.yaml`)
+- ✓ Vulnerability Composite Model (`shared/risk/vulnerability.yaml`)
+- ✓ Household Resilience Model (`shared/risk/household-resilience.yaml`)
+- ✓ Risk Model (`shared/risk/risk.yaml` — folded Risk Trajectory / Trend Model here)
+
+**In Progress:**
+- □ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
 
 **Prerequisites:**
-- Stage 2 complete (Shared Human Model). Risk factors reference lifecycle stage and capability. Without those concepts, risk factors cannot be modelled correctly.
-- `shared/taxonomy/locations.yaml` must be extended with geographic hierarchy and environmental risk profile classification.
+- Stage 2 complete (Shared Human Model). ✓ Satisfied.
+- `shared/taxonomy/locations.yaml` must be extended with geographic hierarchy and environmental risk profile classification. (Deferred to Stage 8 Community Context).
 
 **What this enables downstream:** Case Management domain can reason about intervention urgency. Beneficiary Lifecycle domain can track risk trajectory over time. The Community Context domain depends on the seasonal risk calendar. Predictive flagging becomes possible.
 
