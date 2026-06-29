@@ -113,7 +113,7 @@ The Shared Human Model prerequisite is now fully satisfied:
 ✓ family-structure.yaml
 ✓ health-conditions.yaml
 
-Risk Domain may now be activated.
+Risk Domain is complete.
 
 **Prerequisites:** Stage 1 should be in progress but need not be complete. The shared human model does not depend on the intervention taxonomy. It does depend on the person base taxonomy in `shared/taxonomy/persons.yaml` which is already mature enough to extend.
 

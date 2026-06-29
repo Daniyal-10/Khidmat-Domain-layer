@@ -49,16 +49,20 @@ dependency_types:
         The relationship is inherently one-directional during the active
         developmental window.
     dependency_characteristics:
-      - Time-bounded: each developmental stage has a window; opportunities
+      - >
+        Time-bounded: each developmental stage has a window; opportunities
         missed within that window may be more difficult to recover at later
         stages
-      - Quality-dependent: the nature of the provider's engagement matters
+      - >
+        Quality-dependent: the nature of the provider's engagement matters
         as much as their presence; unresponsive or absent caregiving produces
         developmental deficit even when physical needs are met
-      - Sensitivity-graduated: earlier stages carry higher sensitivity to
+      - >
+        Sensitivity-graduated: earlier stages carry higher sensitivity to
         deprivation; infant brain development is more sensitive to caregiver
         quality than school-age cognitive development
-      - Invisible at registration: developmental need is frequently not
+      - >
+        Invisible at registration: developmental need is frequently not
         self-reported; it must be understood as present by nature of the
         stage, not by explicit disclosure
     typical_lifecycle_associations:
@@ -132,17 +136,21 @@ dependency_types:
         same person as an elderly parent. The role of caregiver and dependent
         can shift within a household across time.
     dependency_characteristics:
-      - May be total or partial: the degree of dependency ranges from
+      - >
+        May be total or partial: the degree of dependency ranges from
         complete reliance (infant, severely disabled person) to partial
         reliance (older adult who can dress independently but requires
         assistance with cooking)
-      - Time-continuous: caregiving dependency requires sustained provider
+      - >
+        Time-continuous: caregiving dependency requires sustained provider
         availability — not a single event but an ongoing relationship
-      - Provider-substitutable in principle: unlike developmental dependency,
+      - >
+        Provider-substitutable in principle: unlike developmental dependency,
         caregiving can in principle be provided by any capable person, not
         only a specific attachment figure. In practice, substitution may
         still carry emotional cost for the dependent
-      - Bidirectional burden: while the dependency is unidirectional
+      - >
+        Bidirectional burden: while the dependency is unidirectional
         (dependent relies on caregiver), the caregiving role creates its
         own demands on the provider that affect the provider's own wellbeing
         and capacity
@@ -222,19 +230,23 @@ dependency_types:
         an adult child may become the financial provider for elderly parents
         who previously provided for them.
     dependency_characteristics:
-      - Quantifiable in principle: unlike emotional or developmental
+      - >
+        Quantifiable in principle: unlike emotional or developmental
         dependency, financial dependency has a measurable dimension —
         the gap between the dependent's own resources and their needs
-      - Subject to disruption events: financial dependency is highly
+      - >
+        Subject to disruption events: financial dependency is highly
         sensitive to shocks — the provider's death, job loss, illness,
         displacement, or incapacity immediately terminates the resource
         flow on which the dependent relies
-      - May persist beyond expected lifecycle stage: financial dependency
+      - >
+        May persist beyond expected lifecycle stage: financial dependency
         in young adults who cannot achieve economic independence, or in
         adults who lose livelihood in mid-life, extends the dependency
         relationship beyond the childhood stage where it is normatively
         expected
-      - Structurally embedded: in many household configurations, financial
+      - >
+        Structurally embedded: in many household configurations, financial
         dependency is an expected and stable feature, not a crisis condition;
         the vulnerability arises when the provider's capacity is disrupted
     typical_lifecycle_associations:
@@ -306,17 +318,21 @@ dependency_types:
         a previously dependent person (such as a recovered adult) regains
         capacity and begins to provide support.
     dependency_characteristics:
-      - Directly linked to physical capability: the degree of physical
+      - >
+        Directly linked to physical capability: the degree of physical
         support dependency is inversely related to the person's own
         physical capability; as capability increases, dependency decreases,
         and vice versa
-      - Provider must be physically present: unlike financial dependency,
+      - >
+        Provider must be physically present: unlike financial dependency,
         physical support cannot be provided remotely or in advance;
         the provider must be physically available at the time the need arises
-      - Covers a spectrum: from mobility assistance (helping someone walk)
+      - >
+        Covers a spectrum: from mobility assistance (helping someone walk)
         to full physical care (carrying, bathing, administering medication)
         to physical protection (accompanying a person through unsafe areas)
-      - Environmental sensitivity: physical support dependency is amplified
+      - >
+        Environmental sensitivity: physical support dependency is amplified
         by environmental conditions — stairs, distances, terrain, weather —
         that a physically capable person navigates independently but that
         create barriers for the physically dependent person
@@ -392,21 +408,25 @@ dependency_types:
         as the dependent gains legal standing and cognitive capacity, but
         may re-emerge with cognitive decline in later life.
     dependency_characteristics:
-      - Legally formalised or culturally embedded: the clearest cases
+      - >
+        Legally formalised or culturally embedded: the clearest cases
         involve legal guardianship and parental authority; less visible
         cases involve cultural household authority structures where certain
         members (women, younger members) may have limited decision-making
         autonomy even as adults
-      - May conflict with actual capability: the most significant tension
+      - >
+        May conflict with actual capability: the most significant tension
         in this dependency type is between legal or cultural dependency
         status and the dependent person's own capability and preferences;
         an adolescent who is legally dependent may have greater decision-
         making capacity than the legal framework acknowledges
-      - Decisions with high stakes: the dependency is most consequential
+      - >
+        Decisions with high stakes: the dependency is most consequential
         for irreversible or high-impact decisions — medical consent,
         educational withdrawal, marriage, financial transactions — where
         a harmful decision by the authority holder cannot be undone
-      - Cognitive dimension: in elderly persons with cognitive decline,
+      - >
+        Cognitive dimension: in elderly persons with cognitive decline,
         decision-making dependency arises from a genuine reduction in
         capacity rather than legal or cultural imposition
     typical_lifecycle_associations:
@@ -490,21 +510,26 @@ dependency_types:
         distressed and draws primarily on the other. In stable adult
         relationships, both parties typically provide and receive support.
     dependency_characteristics:
-      - Universal: present at every lifecycle stage, though the form and
+      - >
+        Universal: present at every lifecycle stage, though the form and
         intensity change; no person is without emotional support dependency
         even if they are fully independent in all other domains
-      - Relational, not transactional: emotional support cannot be
+      - >
+        Relational, not transactional: emotional support cannot be
         scheduled or assigned; it emerges from consistent relational
         presence over time; a new provider cannot immediately substitute
         for a lost long-term provider
-      - Cumulative: unmet emotional support dependency over time produces
+      - >
+        Cumulative: unmet emotional support dependency over time produces
         compounding effects on psychological functioning, coping capacity,
         and the ability to engage with other domains of life
-      - Invisible at disclosure: emotional support needs are among the
+      - >
+        Invisible at disclosure: emotional support needs are among the
         least frequently disclosed in formal assessment; they carry stigma,
         are often not recognised as a dependency by the person experiencing
         them, and require relational trust to surface
-      - Loss multiplier: when emotional support dependency is unmet, the
+      - >
+        Loss multiplier: when emotional support dependency is unmet, the
         person's capacity to manage other dependencies and challenges is
         reduced; emotional isolation makes all other difficulties harder
         to navigate

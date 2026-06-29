@@ -142,8 +142,8 @@ capability_levels:
       for almost all activities in this domain. Absence of a provider
       leaves the person unable to meet needs in this domain independently.
 
-  note: >
-    A person without any capacity in a domain — through a permanent condition
+note: >
+  A person without any capacity in a domain — through a permanent condition
     or developmental stage — will typically present as minimal. The scale
     does not have a zero level; absence of capability is represented by
     minimal combined with dependency type information from dependency.yaml.
@@ -186,14 +186,20 @@ capability_domains:
         a provider for transport, access to services, and physical tasks
         beyond the immediate living space.
     key_attributes:
-      - indoor_mobility: whether the person can move within their home
-      - outdoor_mobility: whether the person can travel beyond their home
-      - load_bearing: whether the person can carry items (relevant for
+      - >
+        indoor_mobility: whether the person can move within their home
+      - >
+        outdoor_mobility: whether the person can travel beyond their home
+      - >
+        load_bearing: whether the person can carry items (relevant for
         caregiving, work, and daily living tasks)
-      - terrain_range: the range of terrain types the person can navigate
+      - >
+        terrain_range: the range of terrain types the person can navigate
         (flat, stairs, uneven ground)
-      - distance_range: the distance the person can travel independently
-      - assistive_equipment_used: list of any equipment in use (crutches,
+      - >
+        distance_range: the distance the person can travel independently
+      - >
+        assistive_equipment_used: list of any equipment in use (crutches,
         wheelchair, walking frame)
     lifecycle_associations:
       peak_stages: [young_adult, adult]
@@ -253,13 +259,19 @@ capability_domains:
         making. Requires consistent cognitive support and guidance for
         most life tasks beyond routine daily activities.
     key_attributes:
-      - memory_functioning: short-term and long-term memory adequacy
-      - attention_span: ability to sustain focus on tasks
-      - processing_speed: how quickly the person can understand and respond
+      - >
+        memory_functioning: short-term and long-term memory adequacy
+      - >
+        attention_span: ability to sustain focus on tasks
+      - >
+        processing_speed: how quickly the person can understand and respond
         to new information
-      - executive_function: planning, self-regulation, and task sequencing
-      - learning_capacity: ability to acquire new skills and knowledge
-      - language_comprehension: ability to understand spoken and written
+      - >
+        executive_function: planning, self-regulation, and task sequencing
+      - >
+        learning_capacity: ability to acquire new skills and knowledge
+      - >
+        language_comprehension: ability to understand spoken and written
         language at the level required for daily life
     lifecycle_associations:
       developing_stages: [infant, toddler, early_childhood, school_age_child,
@@ -325,11 +337,15 @@ capability_domains:
         modalities. Requires consistent support from another person to
         communicate effectively in most contexts beyond immediate interaction.
     key_attributes:
-      - expressive_ability: ability to communicate outwardly to others
-      - receptive_ability: ability to understand communication from others
-      - self_advocacy: ability to represent one's own interests in formal
+      - >
+        expressive_ability: ability to communicate outwardly to others
+      - >
+        receptive_ability: ability to understand communication from others
+      - >
+        self_advocacy: ability to represent one's own interests in formal
         or institutional contexts
-      - preferred_modality: the modality through which the person communicates
+      - >
+        preferred_modality: the modality through which the person communicates
         most effectively (spoken, written, sign, augmentative)
     lifecycle_associations:
       developing_stages: [infant, toddler, early_childhood]
@@ -386,19 +402,22 @@ capability_domains:
         Cannot read or write in any language at a functional level.
         All written communication requires full mediation by another person.
     key_attributes:
-      - reading_level: assessed reading capability in best language
-      - writing_level: assessed writing capability in best language
-      - numeracy_level: ability to understand and use numbers (closely
+      - >
+        reading_level: assessed reading capability in best language
+      - >
+        writing_level: assessed writing capability in best language
+      - >
+        numeracy_level: ability to understand and use numbers (closely
         associated but distinct from literacy; both are assessed here
         as they commonly co-occur and co-affect daily functioning)
-      - languages_with_literacy: list of languages in which literacy
+      - >
+        languages_with_literacy: list of languages in which literacy
         exists at any level
     lifecycle_associations:
       absent_at: [infant, toddler]
       developing_at: [early_childhood, school_age_child, adolescent]
       stable_if_acquired: [young_adult, adult, older_adult]
-      risk_of_decline: [elderly] (due to vision or cognitive change, not loss
-                                   of underlying skill)
+      risk_of_decline: "[elderly] (due to vision or cognitive change, not loss of underlying skill)"
     reasoning_opportunities:
       - A person with minimal literacy requires a proxy or volunteer-mediated
         registration process; they cannot engage with written interfaces
@@ -452,14 +471,18 @@ capability_domains:
         for greetings or simple transactions but not for meaningful
         participation in service, legal, or social contexts.
     key_attributes:
-      - primary_language: the language the person communicates in most
+      - >
+        primary_language: the language the person communicates in most
         fluently and comfortably
-      - additional_languages: list of other languages with their level
+      - >
+        additional_languages: list of other languages with their level
         (full, functional, partial, minimal)
-      - official_language_capability: level in the official language(s)
+      - >
+        official_language_capability: level in the official language(s)
         of the jurisdiction (relevant for legal, educational, and
         institutional access)
-      - service_language_capability: level in the language(s) used by
+      - >
+        service_language_capability: level in the language(s) used by
         the service provider (relevant for registration, case management,
         and support delivery)
     lifecycle_associations:
@@ -478,14 +501,16 @@ capability_domains:
         access to government services and formal institutions regardless of
         their entitlements; this is a structural access barrier, not
         a capability deficit in other domains
-      - Language capability interacts with literacy: a person may have full
+      - >
+        Language capability interacts with literacy: a person may have full
         spoken language capability but limited literacy in that language,
         or may have literacy in a language other than their spoken primary
         language
     ontology_notes:
       - Language capability is a profile, not a single level; a person may
         have full capability in one language and minimal in another
-      - The relevant language for assessment purposes depends on the
+      - >
+        The relevant language for assessment purposes depends on the
         context: registration language, service language, and community
         language may all differ
 
@@ -520,22 +545,27 @@ capability_domains:
         training and supervised development before contributing productively
         in most formal or semi-formal vocational contexts.
     key_attributes:
-      - primary_vocation: the area of work the person is most skilled in
-      - additional_vocations: other areas of useful skill
-      - skill_source: how skills were acquired (formal training,
+      - >
+        primary_vocation: the area of work the person is most skilled in
+      - >
+        additional_vocations: other areas of useful skill
+      - >
+        skill_source: how skills were acquired (formal training,
         apprenticeship, employment experience, informal/self-taught)
-      - experience_duration: years of experience in primary vocational area
-      - transferability: whether skills are context-specific or broadly
+      - >
+        experience_duration: years of experience in primary vocational area
+      - >
+        transferability: whether skills are context-specific or broadly
         applicable across industries or geographic settings
-      - certification_status: whether the person holds any formal
+      - >
+        certification_status: whether the person holds any formal
         qualifications or certifications in their vocational area
     lifecycle_associations:
       absent_at: [infant, toddler, early_childhood]
       developing_at: [school_age_child, adolescent, young_adult]
       peak_at: [adult]
       typically_stable_at: [older_adult]
-      potentially_declining_at: [elderly] (due to physical or cognitive
-                                            change, not loss of knowledge)
+      potentially_declining_at: "[elderly] (due to physical or cognitive change, not loss of knowledge)"
     reasoning_opportunities:
       - A person with high vocational capability who is unemployed may
         need a livelihood support intervention of a different type than
@@ -594,19 +624,22 @@ capability_domains:
         context. Even informal or irregular work access is very limited.
         Employment is currently not a realistic immediate pathway.
     key_attributes:
-      - contextual_barriers: list of structural barriers currently constraining
+      - >
+        contextual_barriers: list of structural barriers currently constraining
         employment access (documentation, location, care responsibilities,
         discrimination, market conditions)
-      - eligible_sectors: employment sectors accessible to the person
+      - >
+        eligible_sectors: employment sectors accessible to the person
         given current constraints
-      - work_time_availability: how much time the person can realistically
+      - >
+        work_time_availability: how much time the person can realistically
         allocate to employment given current care and other obligations
-      - formal_vs_informal: whether the person can access formal employment
+      - >
+        formal_vs_informal: whether the person can access formal employment
         (with contract, registration) or only informal arrangements
     lifecycle_associations:
       not_applicable_at: [infant, toddler, early_childhood]
-      emerging_at: [school_age_child] (informal, should be flagged as
-                                       child labour risk)
+      emerging_at: "[school_age_child] (informal, should be flagged as child_labour if present in formal sector)"
       developing_at: [adolescent]
       expected_at: [young_adult, adult]
       context_dependent_at: [older_adult, elderly]
@@ -617,7 +650,8 @@ capability_domains:
       - A young adult with no employment history but full vocational
         capability may need a supported first employment pathway, not
         ongoing aid
-      - Employment capability is time-sensitive: a person who is employed
+      - >
+        Employment capability is time-sensitive: a person who is employed
         has it; the same person displaced three months later may have
         minimal employment capability until stabilised; the capability
         has not changed but the conditions have
@@ -666,20 +700,24 @@ capability_domains:
         or resource management. Requires consistent support for all
         financial decisions beyond immediate spending.
     key_attributes:
-      - budgeting: ability to allocate resources across household needs
-      - savings_behaviour: ability to set aside resources for future needs
-      - debt_understanding: ability to understand and manage credit and debt
-      - financial_institution_access: whether the person can engage with
+      - >
+        budgeting: ability to allocate resources across household needs
+      - >
+        savings_behaviour: ability to set aside resources for future needs
+      - >
+        debt_understanding: ability to understand and manage credit and debt
+      - >
+        financial_institution_access: whether the person can engage with
         banks, mobile money, or other financial services
-      - income_source_diversity: ability to maintain multiple income sources
+      - >
+        income_source_diversity: ability to maintain multiple income sources
         as a risk management strategy (this is economic management, not
         income level)
     lifecycle_associations:
       not_applicable_at: [infant, toddler, early_childhood]
       developing_at: [school_age_child, adolescent]
       expected_at: [young_adult, adult]
-      potentially_declining_at: [elderly] (due to cognitive change,
-                                           not loss of inherent capability)
+      potentially_declining_at: "[elderly] (due to cognitive change, not loss of financial knowledge)"
     reasoning_opportunities:
       - A household that receives a cash transfer with minimal economic
         management capability may use it less effectively than one with
@@ -732,13 +770,17 @@ capability_domains:
         beyond basic trading or day labour. Enterprise is a future possibility
         contingent on significant skill and confidence development.
     key_attributes:
-      - enterprise_experience: whether the person has previously operated
+      - >
+        enterprise_experience: whether the person has previously operated
         a business or independent economic activity
-      - enterprise_sector: the sector(s) in which the person has or could
+      - >
+        enterprise_sector: the sector(s) in which the person has or could
         have enterprise capability
-      - market_knowledge: understanding of the market environment relevant
+      - >
+        market_knowledge: understanding of the market environment relevant
         to the enterprise
-      - risk_tolerance_capacity: not psychological disposition but practical
+      - >
+        risk_tolerance_capacity: not psychological disposition but practical
         ability to absorb business risk without household catastrophe
     lifecycle_associations:
       emerging_at: [young_adult]
@@ -791,24 +833,27 @@ capability_domains:
         provider or substantial support is needed for the dependent to
         receive adequate care.
     key_attributes:
-      - dependent_types_cared_for: the types of dependents the person
+      - >
+        dependent_types_cared_for: the types of dependents the person
         currently cares for (infant, toddler, disabled adult, elderly
         parent, etc.) — these determine the demands on caregiving capability
-      - caregiving_hours: the number of hours per day caregiving demands
+      - >
+        caregiving_hours: the number of hours per day caregiving demands
         occupy; this affects residual capacity for employment and
         other activities
-      - caregiving_burden_level: whether the caregiving demand is within
+      - >
+        caregiving_burden_level: whether the caregiving demand is within
         the person's capacity or is straining it; this is an attribute
         of the current situation, not of the capability itself
-      - number_of_dependents: the count of persons the caregiver is
+      - >
+        number_of_dependents: the count of persons the caregiver is
         responsible for; multiple dependents increase the demand on
         caregiving capability
     lifecycle_associations:
       not_applicable_at: [infant, toddler, early_childhood]
       emerging_at: [school_age_child, adolescent]
       typical_at: [young_adult, adult]
-      may_persist_at: [older_adult, elderly] (grandparents caregiving
-                                               for grandchildren)
+      may_persist_at: "[older_adult, elderly] (grandparents caregiving for orphaned grandchildren is a common pattern)"
     reasoning_opportunities:
       - A person with minimal caregiving capability who is the sole
         caregiver for an infant is simultaneously the primary risk factor
@@ -865,22 +910,26 @@ capability_domains:
         functioning household independently. The household as a unit
         is not being maintained at an adequate level by this person alone.
     key_attributes:
-      - food_management: ability to procure, store, and prepare food
+      - >
+        food_management: ability to procure, store, and prepare food
         adequately for all household members
-      - hygiene_management: ability to maintain adequate personal and
+      - >
+        hygiene_management: ability to maintain adequate personal and
         household hygiene
-      - schedule_coordination: ability to manage the competing demands
+      - >
+        schedule_coordination: ability to manage the competing demands
         and schedules of multiple household members
-      - domestic_safety: ability to maintain a physically safe home
+      - >
+        domestic_safety: ability to maintain a physically safe home
         environment
-      - resource_allocation: ability to allocate household resources
+      - >
+        resource_allocation: ability to allocate household resources
         (food, water, money) across competing needs within the household
     lifecycle_associations:
       not_applicable_at: [infant, toddler]
       emerging_at: [early_childhood, school_age_child, adolescent]
       typical_at: [young_adult, adult]
-      potentially_declining_at: [elderly] (due to physical or cognitive
-                                            change)
+      potentially_declining_at: "[elderly] (due to physical or cognitive change, not loss of social capacity)"
     reasoning_opportunities:
       - A household with resources but minimal household management capability
         may present with nutritional deficiency that is not caused by food
@@ -937,13 +986,17 @@ capability_domains:
         The person is not known or not accessible to the social fabric
         around them.
     key_attributes:
-      - relationship_network: the people with whom the person has active
+      - >
+        relationship_network: the people with whom the person has active
         social relationships
-      - community_embeddedness: how known and integrated the person is
+      - >
+        community_embeddedness: how known and integrated the person is
         within their immediate community
-      - reciprocity: whether the person's social relationships are
+      - >
+        reciprocity: whether the person's social relationships are
         mutual (giving and receiving) or primarily one-directional
-      - social_capital_quality: whether the social network includes people
+      - >
+        social_capital_quality: whether the social network includes people
         with access to resources, information, and influence that benefit
         the person
     lifecycle_associations:
@@ -1002,13 +1055,17 @@ capability_domains:
         community institutions or entirely unable to engage with them.
         Not a participant in collective activity or civic processes.
     key_attributes:
-      - institutional_membership: formal memberships in community organisations
+      - >
+        institutional_membership: formal memberships in community organisations
         (mosque committee, women's group, farmers' cooperative)
-      - civic_engagement: ability and willingness to engage with local
+      - >
+        civic_engagement: ability and willingness to engage with local
         governance and formal civic processes
-      - community_recognition: the degree to which the person is known and
+      - >
+        community_recognition: the degree to which the person is known and
         recognised in a community role
-      - exclusion_factors: specific barriers that constrain participation
+      - >
+        exclusion_factors: specific barriers that constrain participation
         (gender, documentation, language, disability, stigma)
     lifecycle_associations:
       developing_at: [adolescent, young_adult]
@@ -1068,13 +1125,17 @@ capability_domains:
         vulnerable to institutional gatekeepers and dependent on an advocate
         or proxy for meaningful institutional engagement.
     key_attributes:
-      - institutional_literacy: knowledge of how institutions work, what
+      - >
+        institutional_literacy: knowledge of how institutions work, what
         rights exist, and what processes are available
-      - assertiveness_capacity: ability to state needs and interests clearly
+      - >
+        assertiveness_capacity: ability to state needs and interests clearly
         without distress in institutional contexts
-      - persistence_capacity: ability to continue pursuing an outcome
+      - >
+        persistence_capacity: ability to continue pursuing an outcome
         through bureaucratic obstacles
-      - exploitation_resistance: ability to recognise and resist exploitation
+      - >
+        exploitation_resistance: ability to recognise and resist exploitation
         by institutional gatekeepers
     lifecycle_associations:
       developing_at: [adolescent, young_adult]
@@ -1135,14 +1196,19 @@ capability_domains:
         at a level that sustains health and safety. Requires daily caregiver
         support for a broad range of fundamental activities.
     key_attributes:
-      - personal_care: ability to manage personal hygiene and grooming
+      - >
+        personal_care: ability to manage personal hygiene and grooming
         independently
-      - self_feeding: ability to prepare and consume food for themselves
-      - medication_management: ability to manage their own medication
+      - >
+        self_feeding: ability to prepare and consume food for themselves
+      - >
+        medication_management: ability to manage their own medication
         schedule and dosing where medications are required
-      - daily_routine_organisation: ability to structure and execute
+      - >
+        daily_routine_organisation: ability to structure and execute
         a daily routine that meets their own needs
-      - domestic_self_maintenance: ability to maintain their own living
+      - >
+        domestic_self_maintenance: ability to maintain their own living
         space at a basic adequate standard
     lifecycle_associations:
       not_applicable_at: [infant, toddler]
@@ -1199,7 +1265,8 @@ capability_profile:
     - Capability is assessed at a point in time; situational disruption
       may have temporarily reduced capability that would otherwise be
       higher; note this where relevant
-    - Underdisclosure risk: in registration contexts, distressed persons
+    - >
+      Underdisclosure risk: in registration contexts, distressed persons
       and proxies systematically understate capability; probe for
       capability as well as need
 
@@ -1337,7 +1404,8 @@ flag_resolutions:
 
 future_extensions:
 
-  - concept: Health condition impact on capability
+  - >
+    concept: Health condition impact on capability
     belongs_in: shared/human-model/health-conditions.yaml (not yet created)
     description: >
       The relationship between specific health conditions and capability
@@ -1349,7 +1417,8 @@ future_extensions:
       as an abstract concept; health-conditions.yaml will define the
       conditions that modify it.
 
-  - concept: Capability trajectory and change over time
+  - >
+    concept: Capability trajectory and change over time
     belongs_in: shared/human-model/beneficiary-lifecycle.yaml or
                 beneficiary-lifecycle domain (Stage 7)
     description: >
@@ -1361,7 +1430,8 @@ future_extensions:
       capability profile at each registration is the point-in-time snapshot
       that the lifecycle domain tracks.
 
-  - concept: Risk factor derivation from capability gaps
+  - >
+    concept: Risk factor derivation from capability gaps
     belongs_in: shared/risk/ (Stage 3, not yet active)
     description: >
       Capability gaps are not themselves risk factors, but they are inputs
@@ -1370,7 +1440,8 @@ future_extensions:
       by itself cannot express. Risk factor derivation logic belongs in
       the risk domain and must reference this file's capability vocabulary.
 
-  - concept: Intervention eligibility conditions based on capability
+  - >
+    concept: Intervention eligibility conditions based on capability
     belongs_in: registration/taxonomy/support-interventions.yaml (Stage 1)
                 and case-management domain (Stage 5)
     description: >
@@ -1382,7 +1453,8 @@ future_extensions:
       conditions belong in the support intervention taxonomy and case
       management domain, not in the capability model.
 
-  - concept: Family-level capability distribution
+  - >
+    concept: Family-level capability distribution
     belongs_in: shared/human-model/family-structure.yaml (not yet created)
     description: >
       The distribution of capabilities across family members determines
@@ -1391,7 +1463,8 @@ future_extensions:
       is distributed. Family-structure.yaml should model how individual
       capability profiles combine into household capability assets.
 
-  - concept: Community-level capability assets
+  - >
+    concept: Community-level capability assets
     belongs_in: Community Context Domain (Stage 8, not yet active)
     description: >
       Community-level capabilities (local healthcare workers, teachers,

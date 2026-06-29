@@ -11,10 +11,13 @@ purpose: >
   time classification.
 
 concepts_this_file_will_own:
-  - duration_bands (days, weeks, months, years)
-  - onset_recency (acute: < 7 days, recent: < 30 days,
-                   established: 1-6 months, chronic: > 6 months)
-  - recurrence_patterns (daily, weekly, monthly, seasonal, irregular)
+  - >
+    duration_bands (days, weeks, months, years)
+  - >
+    onset_recency (acute: < 7 days, recent: < 30 days,
+    established: 1-6 months, chronic: > 6 months)
+  - >
+    recurrence_patterns (daily, weekly, monthly, seasonal, irregular)
 
 do_not_implement_until: >
   Impact domain or programs domain requires time-based

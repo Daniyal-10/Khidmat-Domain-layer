@@ -7,6 +7,8 @@ why, and what alternatives were rejected.
 Entries are added when a decision is made and are never removed.
 If a decision is reversed, a new entry is added explaining the reversal.
 
+**Note:** The formal Architecture Decision Record (ADR) system is now maintained in the `architecture-decisions/` directory. The contents of this file have been migrated to individual ADR documents.
+
 ---
 
 ## ADR-001: Verification Brief is a Projection, Not an Entity

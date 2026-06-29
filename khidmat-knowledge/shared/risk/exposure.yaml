@@ -192,7 +192,8 @@ ontology_notes:
   - Exposure is assessed per hazard category, not globally. A household
     may have direct exposure to one hazard category and none identified
     for another.
-  - "None identified" reflects the limits of what was discussed during
+  - >
+    "None identified" reflects the limits of what was discussed during
     registration, not a confirmed absence of exposure. This mirrors the
     open-world assumption that governs the rest of the knowledge layer.
   - Exposure does not imply harm. It is a necessary but not sufficient

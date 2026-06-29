@@ -1,7 +1,7 @@
 # Khidmat Knowledge Layer — Ontology Authority Matrix
 
 **Authority:** Knowledge Layer Architect
-**Governing ADR:** ADR-008: Single Ownership of Concepts
+**Governing ADR:** ADR-008: Single Ownership of Concepts (See `architecture-decisions/` directory for full ADR texts)
 **Purpose:** Declares the authoritative owner for every concept in the
 knowledge layer. This is the governance record of concept ownership.
 
@@ -64,6 +64,50 @@ Risk factors associated with each stage are not owned here. Vulnerability
 scoring, intervention recommendations, and outcome indicators associated
 with stages are not owned here. These belong to the Risk Domain (Stage 3),
 Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
+
+### Capability Concepts
+
+**Authoritative file:** shared/human-model/capabilities.yaml
+**Owner domain:** Shared Human Model
+**Introduced:** Phase 2.0
+**Governing ADRs:** ADR-008
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| capability | Capability | shared/human-model/capabilities.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+
+### Dependency Concepts
+
+**Authoritative file:** shared/human-model/dependency.yaml
+**Owner domain:** Shared Human Model
+**Introduced:** Phase 2.0
+**Governing ADRs:** ADR-008
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| dependency | Dependency | shared/human-model/dependency.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+
+### Family Structure Concepts
+
+**Authoritative file:** shared/human-model/family-structure.yaml
+**Owner domain:** Shared Human Model
+**Introduced:** Phase 2.0
+**Governing ADRs:** ADR-008
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| amily_structure | Family Structure | shared/human-model/family-structure.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+
+### Health Condition Concepts
+
+**Authoritative file:** shared/human-model/health-conditions.yaml
+**Owner domain:** Shared Human Model
+**Introduced:** Phase 2.0
+**Governing ADRs:** ADR-008
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| health_condition | Health Condition | shared/human-model/health-conditions.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
 
 ---
 
@@ -133,8 +177,8 @@ future domain designers do not create silent drift.
 | Concept | `functional_capacity` (enum: full, partial, dependent) |
 | Situation | This is a proto-capability concept declared before the Shared Human Model existed. It functions as a placeholder for a capability model. |
 | Risk | When `capabilities.yaml` is created in Phase 2.0, `functional_capacity` in persons.yaml must reference that file as its authority rather than defining its own capability vocabulary. |
-| Resolution required | When `capabilities.yaml` is complete, update `shared/taxonomy/persons.yaml` to reference it. No silent modification — record in DECISIONS.md if the change is architectural. |
-| Status | Pending `capabilities.yaml` creation |
+| Resolution required | Update `shared/taxonomy/persons.yaml` to reference `capabilities.yaml`. No silent modification — record in DECISIONS.md if the change is architectural. |
+| Status | Action Required (Capabilities model exists, alignment pending) |
 
 ### FLAG-002: Dependency type names and dependency.yaml
 
@@ -144,8 +188,8 @@ future domain designers do not create silent drift.
 | Concept | Dependency type labels (physiological, developmental, medical, safety, nutritional, protective, educational, situational, health, economic, physical, social, legal) |
 | Situation | These type labels appear in `characteristic_dependencies` entries throughout lifecycle-stages.yaml. They are descriptive, not definitional — they describe the nature of each stage's dependencies without formally owning the dependency type vocabulary. |
 | Risk | When `dependency.yaml` is created, it will formally own the dependency type taxonomy. The labels used in lifecycle-stages.yaml must align with that taxonomy. |
-| Resolution required | When `dependency.yaml` is complete, verify that all dependency type labels in lifecycle-stages.yaml are consistent with the authoritative vocabulary. Update lifecycle-stages.yaml if any labels require standardisation. |
-| Status | Pending `dependency.yaml` creation |
+| Resolution required | Verify that all dependency type labels in lifecycle-stages.yaml are consistent with the authoritative vocabulary in `dependency.yaml`. Update lifecycle-stages.yaml if any labels require standardisation. |
+| Status | Action Required (Dependency model exists, alignment pending) |
 
 ### FLAG-003: Health condition references and health-conditions.yaml
 
@@ -155,8 +199,8 @@ future domain designers do not create silent drift.
 | Concept | Health condition labels used descriptively (SAM, MAM, chronic illness, cognitive decline, frailty, polypharmacy) |
 | Situation | These appear in `characteristic_vulnerabilities` entries as descriptive references. They are not defined here — they are named as examples of vulnerabilities characteristic to each stage. |
 | Risk | When `health-conditions.yaml` is created, it will own the authoritative vocabulary for these conditions. The descriptive references in lifecycle-stages.yaml should remain consistent with that vocabulary. |
-| Resolution required | When `health-conditions.yaml` is complete, verify descriptive references in lifecycle-stages.yaml align with authoritative terminology. |
-| Status | Pending `health-conditions.yaml` creation |
+| Resolution required | Verify descriptive references in lifecycle-stages.yaml align with authoritative terminology in `health-conditions.yaml`. |
+| Status | Action Required (Health conditions model exists, alignment pending) |
 
 ### FLAG-004: Capability profile descriptions and capabilities.yaml
 
@@ -166,5 +210,5 @@ future domain designers do not create silent drift.
 | Concept | Capability descriptions in `characteristic_capabilities` entries (e.g., independent mobility, emergent language, literacy, full economic productive capacity) |
 | Situation | These are descriptive profiles of what each stage can do. They anticipate the capability vocabulary that `capabilities.yaml` will formally define. |
 | Risk | When `capabilities.yaml` is created, the capability vocabulary it establishes must be consistent with the capability descriptions already recorded in lifecycle-stages.yaml. |
-| Resolution required | When `capabilities.yaml` is complete, cross-check capability vocabulary against lifecycle-stages.yaml descriptive entries. Align terminology. |
-| Status | Pending `capabilities.yaml` creation |
+| Resolution required | Cross-check capability vocabulary in `capabilities.yaml` against lifecycle-stages.yaml descriptive entries. Align terminology. |
+| Status | Action Required (Capabilities model exists, alignment pending) |

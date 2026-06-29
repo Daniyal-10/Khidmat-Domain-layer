@@ -919,7 +919,8 @@ protective_factors:
     ontology_notes:
       - References family-structure.yaml#family_support_network. Does not
         introduce a new concept.
-      - The exclusion of Khidmat-provided interventions from this factor
+      - >
+        The exclusion of Khidmat-provided interventions from this factor
         is deliberate and architectural. Protective Factors record conditions
         present independently of Khidmat's activity. Including active Khidmat
         interventions as protective factors would create a circular dependency:
@@ -988,7 +989,8 @@ protective_factors:
     ontology_notes:
       - References family-structure.yaml#educational_investment_obligations.
         Does not introduce a new concept.
-      - This factor directly formalises the reasoning implication in
+      - >
+        This factor directly formalises the reasoning implication in
         lifecycle-stages.yaml#school_age_child: "educational continuity is
         the primary developmental stake of this stage." The lifecycle stage
         vocabulary names the importance; this factor records when it is
@@ -1062,7 +1064,8 @@ protective_factors:
       - References capabilities.yaml#self_advocacy and uses the four-level
         scale by value (functional or full). Does not redefine the capability
         concept.
-      - The minimal self_advocacy vulnerability contributor in vulnerability.yaml
+      - >
+        The minimal self_advocacy vulnerability contributor in vulnerability.yaml
         captures the risk when this capability is absent. This factor captures
         the positive protective value when it is present. The two are not
         symmetric: the vulnerability contributor fires at minimal; this
@@ -1147,7 +1150,8 @@ protective_factors:
       - This is a new concept defined for the first time in this file.
         Must be registered in ontology_authority_matrix.md as a Risk
         Domain concept owned by protective-factors.yaml.
-      - This factor applies only to conditions with treatability:
+      - >
+        This factor applies only to conditions with treatability:
         manageable_with_treatment. It does not apply to conditions rated
         curable (where the relevant question is whether the cure has been
         achieved), manageable_without_treatment (where treatment continuity
@@ -1331,7 +1335,8 @@ ontology_notes:
     conducted under time pressure or with limited conversation may not
     explore all factor categories. Unassessed factors must not be recorded
     as absent — they must be recorded as unknown or not assessed.
-  - Protective Factors are inputs to household-resilience.yaml's composition.
+  - >
+    Protective Factors are inputs to household-resilience.yaml's composition.
     They are not outputs of resilience assessment — they are the building
     blocks from which resilience is composed. The dependency is
     one-directional: this file supplies concepts upward to Resilience and
@@ -1342,14 +1347,16 @@ ontology_notes:
     the same structural pattern. This consistency enables household-resilience.yaml
     and risk.yaml to compose from both inputs in a coherent and architecturally
     uniform way.
-  - No Protective Factor constitutes a guarantee of safety. A household
+  - >
+    No Protective Factor constitutes a guarantee of safety. A household
     with all twelve factors present still faces hazards and vulnerability.
     Protective Factors moderate risk — they do not eliminate it. The
     composed Risk assessment in risk.yaml is the product of all four inputs:
     Hazard, Exposure, Vulnerability, and Resilience. Protective Factors
     improve the Resilience input; they cannot neutralise severe Vulnerability
     or acute Exposure independently.
-  - Three concepts introduced in this file must be registered in
+  - >
+    Three concepts introduced in this file must be registered in
     ontology_authority_matrix.md before this file is considered fully
     governed: financial_buffer, livelihood_diversity, and
     treatment_continuity_active. Until that registration occurs, those

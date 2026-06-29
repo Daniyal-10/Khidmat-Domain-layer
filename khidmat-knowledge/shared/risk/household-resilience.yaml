@@ -5,15 +5,15 @@
 # =============================================================================
 
 metadata:
-file: household-resilience.yaml
-domain: Risk Domain
-layer: shared/risk
-status: Phase 3.0
+  file: household-resilience.yaml
+  domain: Risk Domain
+  layer: shared/risk
+  status: Phase 3.0
 
 purpose: >
-Defines Household Resilience as a first-class Risk Domain concept.
-Household Resilience describes the capacity of a household to absorb
-disruption, adapt to changing circumstances, and recover from adversity.
+  Defines Household Resilience as a first-class Risk Domain concept.
+  Household Resilience describes the capacity of a household to absorb
+  disruption, adapt to changing circumstances, and recover from adversity.
 
 # =============================================================================
 
@@ -48,8 +48,8 @@ composite_concept:
 household_resilience:
 
 definition: >
-The composite household-level capacity to maintain essential
-functioning, adapt to disruption, and recover from adversity.
+  The composite household-level capacity to maintain essential
+  functioning, adapt to disruption, and recover from adversity.
 
 composed_of:
 - absorptive_capacity
@@ -65,9 +65,9 @@ composed_of:
 absorptive_capacity:
 
 definition: >
-The capacity of a household to continue functioning during disruption
-without immediate breakdown of essential support structures,
-responsibilities, and household operations.
+  The capacity of a household to continue functioning during disruption
+  without immediate breakdown of essential support structures,
+  responsibilities, and household operations.
 
 supported_by:
 - support_redundancy
@@ -78,9 +78,9 @@ supported_by:
 adaptive_capacity:
 
 definition: >
-The capacity of a household to reorganize responsibilities,
-substitute disrupted functions, and adjust internal arrangements
-in response to changing circumstances.
+  The capacity of a household to reorganize responsibilities,
+  substitute disrupted functions, and adjust internal arrangements
+  in response to changing circumstances.
 
 supported_by:
 - role_substitution_capacity
@@ -93,8 +93,8 @@ referenced_contributors:
 recovery_capacity:
 
 definition: >
-The capacity of a household to restore stability and re-establish
-essential functioning following disruption or loss.
+  The capacity of a household to restore stability and re-establish
+  essential functioning following disruption or loss.
 
 supported_by:
 - recovery_resources
@@ -113,49 +113,42 @@ resilience_mechanisms:
 support_redundancy:
 label: Support Redundancy
 definition: >
-The presence of alternative providers for critical household
-support functions such that disruption of a single individual
-does not eliminate a required household function.
+  The presence of alternative providers for critical household
+  support functions such that disruption of a single individual
+  does not eliminate a required household function.
 
-```
 contributes_to:
   - absorptive_capacity
   - adaptive_capacity
   - recovery_capacity
-```
 
 role_substitution_capacity:
 label: Role Substitution Capacity
 definition: >
-The ability of a household to replace, compensate for, or
-redistribute a disrupted support role among available household
-members and existing support relationships.
+  The ability of a household to replace, compensate for, or
+  redistribute a disrupted support role among available household
+  members and existing support relationships.
 
-```
 contributes_to:
   - adaptive_capacity
   - recovery_capacity
-```
 
 buffering_capacity:
 label: Buffering Capacity
 definition: >
-The ability of a household to absorb disruption while maintaining
-essential household functioning and stability.
+  The ability of a household to absorb disruption while maintaining
+  essential household functioning and stability.
 
-```
 contributes_to:
   - absorptive_capacity
-```
 
 recovery_resources:
 label: Recovery Resources
 definition: >
-Existing household-accessible assets, relationships, capabilities,
-and internal support resources that can be mobilized to restore
-household functioning after disruption.
+  Existing household-accessible assets, relationships, capabilities,
+  and internal support resources that can be mobilized to restore
+  household functioning after disruption.
 
-```
 ontology_note: >
   Recovery Resources refer only to resources already available to
   the household or its established support network. External aid,
@@ -164,31 +157,26 @@ ontology_note: >
 
 contributes_to:
   - recovery_capacity
-```
 
 caregiving_continuity:
 label: Caregiving Continuity
 definition: >
-The ability of a household to maintain necessary caregiving
-support despite disruption affecting individual caregivers.
+  The ability of a household to maintain necessary caregiving
+  support despite disruption affecting individual caregivers.
 
-```
 contributes_to:
   - absorptive_capacity
   - recovery_capacity
-```
 
 decision_continuity:
 label: Decision Continuity
 definition: >
-The ability of a household to maintain effective decision-making
-and authority structures despite disruption affecting individual
-decision-makers.
+  The ability of a household to maintain effective decision-making
+  and authority structures despite disruption affecting individual
+  decision-makers.
 
-```
 contributes_to:
   - absorptive_capacity
-```
 
 # =============================================================================
 
@@ -201,60 +189,60 @@ referenced_contributors:
 capability_distribution:
 ownership: shared/human-model/capabilities.yaml
 description: >
-Distribution of capabilities across household members.
+  Distribution of capabilities across household members.
 
 dependency_distribution:
 ownership: shared/human-model/dependency.yaml
 description: >
-Distribution and concentration of dependency relationships.
+  Distribution and concentration of dependency relationships.
 
 family_structure_attributes:
 ownership: shared/human-model/family-structure.yaml
 description: >
-Family support structures, earning structures, caregiving
-structures, decision-making structures, and support networks.
+  Family support structures, earning structures, caregiving
+  structures, decision-making structures, and support networks.
 
 protective_factors:
 ownership: shared/risk/protective-factors.yaml
 description: >
-Protective factors that strengthen resilience while remaining
-independently owned concepts.
+  Protective factors that strengthen resilience while remaining
+  independently owned concepts.
 
 health_condition_impacts:
 ownership: shared/human-model/health-conditions.yaml
 description: >
-Effects of health conditions on household functioning and
-support availability.
+  Effects of health conditions on household functioning and
+  support availability.
 
-# =============================================================================
+  # =============================================================================
 
-# ONTOLOGY RELATIONSHIPS
+  # ONTOLOGY RELATIONSHIPS
 
-# =============================================================================
+  # =============================================================================
 
 relationships:
 
-* source: support_redundancy
+- source: support_redundancy
   relationship: supports
   target: absorptive_capacity
 
-* source: role_substitution_capacity
+- source: role_substitution_capacity
   relationship: supports
   target: adaptive_capacity
 
-* source: recovery_resources
+- source: recovery_resources
   relationship: supports
   target: recovery_capacity
 
-* source: absorptive_capacity
+- source: absorptive_capacity
   relationship: component_of
   target: household_resilience
 
-* source: adaptive_capacity
+- source: adaptive_capacity
   relationship: component_of
   target: household_resilience
 
-* source: recovery_capacity
+- source: recovery_capacity
   relationship: component_of
   target: household_resilience
 
@@ -266,18 +254,18 @@ relationships:
 
 design_decisions:
 
-* decision: Household Resilience is a composite concept
+- decision: Household Resilience is a composite concept
   rationale: >
-  Household Resilience emerges from multiple resilience capacities
-  rather than existing as an independent atomic concept.
+    Household Resilience emerges from multiple resilience capacities
+    rather than existing as an independent atomic concept.
 
-* decision: Resilience mechanisms are first-class concepts
+- decision: Resilience mechanisms are first-class concepts
   rationale: >
-  Resilience mechanisms explain how absorptive, adaptive, and
-  recovery capacities are generated and maintained.
+    Resilience mechanisms explain how absorptive, adaptive, and
+    recovery capacities are generated and maintained.
 
-* decision: External contributors remain referenced
+- decision: External contributors remain referenced
   rationale: >
-  Capability distribution, dependency distribution, family
-  structure attributes, protective factors, and health condition
-  impacts remain owned by their authoritative ontologies.
+    Capability distribution, dependency distribution, family
+    structure attributes, protective factors, and health condition
+    impacts remain owned by their authoritative ontologies.

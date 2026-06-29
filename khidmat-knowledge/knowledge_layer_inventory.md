@@ -219,11 +219,11 @@ dependency models are referenced by note pending those files' creation.
 
 **Known Gaps:**
 - References to health conditions (SAM, MAM, chronic illness) are
-  descriptive placeholders pending `health-conditions.yaml`
-- References to capability concepts are descriptive placeholders pending
-  `capabilities.yaml`
+  descriptive placeholders requiring alignment with `health-conditions.yaml`
+- References to capability concepts are descriptive placeholders requiring
+  alignment with `capabilities.yaml`
 - References to dependency relationships are descriptive placeholders
-  pending `dependency.yaml`
+  requiring alignment with `dependency.yaml`
 
 **Overlap / Conflicts:**
 - `shared/taxonomy/persons.yaml` declares `functional_capacity` as a

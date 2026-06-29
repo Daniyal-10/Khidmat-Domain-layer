@@ -14,6 +14,7 @@ Status:
 | Domain                  | Maturity       | Status               |
 |-------------------------|----------------|----------------------|
 | shared                  | Level 1        | Active               |
+| shared/risk             | Level 1        | Complete             |
 | registration            | Level 1        | Active               |
 | verification-operations | Level 1 (Core) | Active / In Progress |
 | case-management         | Level 2   | Placeholder         |
@@ -31,6 +32,7 @@ The following governance files are authoritative references for the knowledge la
 * ontology_authority_matrix.md
 * ontology_completion_checklist.md
 * knowledge_layer_roadmap.md
+* architecture-decisions/ (Directory containing formal Architecture Decision Records)
 
 Purpose:
 
@@ -91,6 +93,7 @@ Level 2: Folder exists. README declares scope.
 Completed foundational layer:
 
 * Shared Human Model
+* Risk Domain
 
 Upcoming layers:
 

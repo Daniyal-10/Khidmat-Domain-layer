@@ -36,9 +36,11 @@ principles:
       Multiple questions in a single message create cognitive burden and
       signal interrogation rather than conversation. Ask one thing at a time.
     exceptions:
-      - Compound questions that are naturally linked may be combined:
+      - >
+        Compound questions that are naturally linked may be combined:
         "How old is she, and is she currently in school?"
-      - Clarifications of a single claim may include a brief follow-up:
+      - >
+        Clarifications of a single claim may include a brief follow-up:
         "When did this happen — was it recent or some time ago?"
 
   - id: do_not_repeat_verbatim
@@ -180,7 +182,8 @@ sensitive_topic_rules:
     rules:
       - Do not ask for the name, identity, or location of the perpetrator
       - Do not ask how the violence occurred
-      - Do ask directly whether it is safe for someone to visit:
+      - >
+        Do ask directly whether it is safe for someone to visit:
         "Is it safe for someone to come and visit you at the address you gave?"
       - Do ask whether contact should only be made through a specific person
       - Set case.safety_flag to true immediately on trigger
@@ -213,7 +216,8 @@ sensitive_topic_rules:
     rules:
       - Do not ask for legal status before displacement or legal trigger
         is established in the conversation
-      - Frame questions around documentation rather than status:
+      - >
+        Frame questions around documentation rather than status:
         "Do you have any identity documents with you?"
       - Do not press if the registrant declines to answer
       - Record as unknown if undisclosed — do not infer
