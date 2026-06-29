@@ -23,9 +23,10 @@ The primary intelligence of the Khidmat AI system lives here.
 |---|---|
 | Registration Domain | Complete (Level 1) |
 | Shared Domain — base taxonomy | Active |
-| Governance Layer | Complete (Phase 2.0) |
+| Governance Layer | Complete (Phase 4.0) |
 | Shared Human Model | Complete (Phase 2.4) |
-| Risk Domain | Active |
+| Risk Domain | Complete (Phase 3.0) |
+| Verification Operations Domain | Active / In Progress (Phase 4.0) |
 | All other placeholder domains | Level 2 — inactive |
 
 Source of truth: `ontology_completion_checklist.md`, `knowledge_layer_roadmap.md`
@@ -34,9 +35,9 @@ Source of truth: `ontology_completion_checklist.md`, `knowledge_layer_roadmap.md
 
 # Current Phase
 
-**Phase 3.0 — Risk Domain**
+**Phase 4.0 — Verification Operations (Active / In Progress)**
 
-The Shared Human Model is now complete.
+The Risk Domain (including reasoning) is complete. The Verification Operations core ontology (verification-operations.yaml) is complete. Operational verification models remain pending.
 
 Completed:
 
@@ -51,6 +52,8 @@ Completed:
 - protective-factors.yaml
 - household-resilience.yaml
 - risk.yaml
+- compound-risk-detection.yaml
+- verification-operations.yaml
 
 Governance completed:
 
@@ -60,46 +63,35 @@ Governance completed:
 - knowledge_layer_roadmap.md
 - health-conditions-governance.md
 - risk-domain-governance.md
+- verification-operations/verification-operations.yaml (Core Ontology)
 
 Current objective:
 
-Risk Domain is now the active architecture target.
+Verification Operations is now the active / in progress architecture target.
 
-No Risk Domain implementation should begin until architecture review and Human Owner approval.
+No Case Management implementation should begin until architecture review and Human Owner approval.
 
 | File | Purpose |
 |---|---|
-| `README.md` | Scope declaration |
-| `lifecycle-stages.yaml` | Developmental stages as reasoning contexts |
-| `dependency.yaml` | Care and support dependency relationships |
-| `capabilities.yaml` | Human capabilities as strengths, not deficits |
-| `family-structure.yaml` | Family unit distinct from household |
-| `health-conditions.yaml` | Chronic disease, disability, malnutrition vocabulary |
+| `verification-operations.yaml` | Declares core Verification Operations ontology concepts and relationships |
 
 ---
 
 # Immediate Objective
 
-The Shared Human Model is complete.
+Verification Operations is now the active / in progress architecture target.
 
-Risk Domain is now the active architecture target.
+**Stage 1 Dependency Anomaly Note:**
+The Verification Operations core ontology is completed. However, there is a recognized Stage 1 dependency anomaly: the Support Intervention Taxonomy, Evidence Taxonomy, and Evidence attributes in the registration domain are incomplete.
 
-**No Risk Domain implementation begins before architecture review and Human Owner approval.**
-This is a hard governance constraint per `knowledge_layer_roadmap.md` and ADR-007.
-
-The Shared Human Model was the foundational prerequisite for:
-
-- Risk Domain (Stage 3)
-- Beneficiary Lifecycle Domain (Stage 7)
-- Future community-level modelling
-- Future impact measurement capabilities
+The immediate next priority is to reconcile these missing Stage 1 requirements to support the physical integration of Verification Operations without causing schema mismatch on Evidence.
 
 ---
 
 # What Must Not Be Done
 
 - Do not activate placeholder domains
-- Do not create Risk Domain files
+- Do not create Case Management files
 - Do not redefine concepts already owned by the shared layer
 - Do not bypass `ontology_authority_matrix.md`
 - Do not create ontology concepts without architectural review and Human Owner approval
@@ -138,10 +130,10 @@ without prior architectural review.
 
 # Current Next Step
 
-Phase 3.0 — Risk Domain (Active)
+Phase 4.0 — Verification Operations (Active / In Progress)
 
-Recent completion: shared/risk/risk.yaml
+Recent completion: verification-operations/verification-operations.yaml
 
-Next active implementation target: `shared/risk/reasoning/compound-risk-detection.yaml`
-
-Proceed with implementing compound-risk-detection.yaml according to the Risk Domain architecture.
+Next active implementation target:
+1. Address the missing Stage 1 prerequisites (specifically `Evidence` attribute schema in registration/ontology/attributes.yaml and registration/taxonomy/evidence.yaml).
+2. Plan and implement Verification Operations reasoning rules and operational models (e.g., assignment, field visit, claim confirmation).

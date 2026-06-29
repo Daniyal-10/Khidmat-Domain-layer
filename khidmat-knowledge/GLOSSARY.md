@@ -185,6 +185,26 @@ The qualitative characterization of the potential impact of harm should the iden
 **Compound Risk**
 Concentration compounding and interaction compounding between co-occurring risk factors.
 
+## Verification Operations Terms
+
+**Verification Subject**
+The target of verification. This is typically a claim or assertion made during registration that requires external confirmation.
+
+**Verification Activity**
+A verification event performed against a verification subject. It is time-bound, evidence-generating, and repeatable.
+
+**Field Observation**
+A direct observation recorded during a verification activity.
+
+**Verification Finding**
+A verification conclusion derived from verification inputs and field observations.
+
+**Reverification Trigger**
+A condition indicating that future verification should occur, derived from a verification finding (e.g., expiring evidence, temporary documentation).
+
+**Verification Outcome**
+A derived concept representing the final verification decision; derived from verification findings and not a first-class ontology concept itself.
+
 ## Outcome Terms
 
 **Outcome Indicator**

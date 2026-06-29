@@ -1,25 +1,167 @@
-version: "1.0"
+version: "1.1"
 domain: registration
 file: taxonomy/evidence.yaml
-status: placeholder
+status: Level_1
 
 purpose: >
   Classification of evidence types used during registration to support claims.
-  Evidence subtypes refine the shared document-type vocabulary from
-  shared/taxonomy/document-types.yaml with registration-specific context.
+  Provides a controlled vocabulary for documentary, physical, and testimonial
+  evidence. Maps evidence subtypes to claim types to prevent free-text subtype drift.
 
-dependency: >
-  Evidence document types are defined in shared/taxonomy/document-types.yaml.
-  This file adds registration-specific classification metadata — particularly
-  which evidence types are most relevant to each claim type.
+imports:
+  - shared/taxonomy/document-types.yaml
+  - registration/taxonomy/claims.yaml
 
-concepts_this_file_will_own:
-  - evidence_type (maps to claim_type: which evidence supports which claim)
-  - evidence_subtype (refinement of document type for registration context)
-  - availability_classification (present, accessible, exists_but_unavailable, unknown)
+evidence_types:
 
-do_not_implement_until: >
-  The evidence entity in registration/ontology/entities.yaml requires
-  structured classification beyond the shared document types.
-  Current registration AI can reference shared/taxonomy/document-types.yaml
-  directly for evidence identification.
+  documentary:
+    label: Documentary Evidence
+    description: >
+      Written or printed certificates, official documents, bills, or digital scans.
+      Subtypes for documentary evidence are defined and imported from
+      shared/taxonomy/document-types.yaml.
+
+  physical:
+    label: Physical Evidence
+    description: >
+      Direct observable conditions, physical states, items, or infrastructure.
+    subtypes:
+      - id: living_conditions_observation
+        label: Living Conditions Observation
+        description: Observation of shelter quality, room density, or safety hazards.
+      - id: physical_impairment_observation
+        label: Physical Impairment Observation
+        description: Direct observation of a physical injury, mobility aid, or functional dependency.
+      - id: nutritional_status_observation
+        label: Nutritional Status Observation
+        description: Direct observation of nutritional risk (e.g. child wasting, severe lethargy).
+      - id: utility_disruption_observation
+        label: Utility Disruption Observation
+        description: Observed lack of basic services (no electricity, dry taps, no sanitation facilities).
+      - id: asset_status_observation
+        label: Asset Status Observation
+        description: Observed absence or presence of major assets (vehicles, electronics, appliances).
+
+  testimonial:
+    label: Testimonial Evidence
+    description: >
+      Verification or statements provided by third-party individuals or community members.
+    subtypes:
+      - id: community_leader_confirmation
+        label: Community Leader Confirmation
+        description: Statement or reference from a local mukhtar, village elder, or community leader.
+      - id: neighbour_confirmation
+        label: Neighbour Confirmation
+        description: Verification of residency, household size, or relationship by nearby residents.
+      - id: landlord_confirmation
+        label: Landlord Confirmation
+        description: Statement from property owner verifying rent status, arrears, or eviction notice.
+      - id: employer_confirmation
+        label: Employer Confirmation
+        description: Statement from current/former employer verifying active job loss or salary.
+      - id: professional_confirmation
+        label: Professional Confirmation
+        description: Verification by a local doctor, pharmacist, teacher, or social worker.
+
+availability_classifications:
+
+  - id: provided_digitally
+    label: Provided Digitally
+    description: Document or media uploaded during intake.
+
+  - id: available_at_visit
+    label: Available at Visit
+    description: Physical document or object held by beneficiary, requiring field inspection.
+
+  - id: requires_retrieval
+    label: Requires Retrieval
+    description: Exists but is not immediately available, requiring coordination.
+
+  - id: not_available
+    label: Not Available
+    description: Claimed to exist but cannot be produced (e.g. lost, destroyed).
+
+claim_evidence_matrix:
+
+  - claim_type: identity_claim
+    allowed_evidence_types:
+      - documentary
+      - testimonial
+    allowed_subtypes:
+      documentary:
+        - national_id
+        - passport
+        - birth_certificate
+        - voter_registration_card
+        - ration_card
+        - refugee_documentation
+      testimonial:
+        - community_leader_confirmation
+        - neighbour_confirmation
+
+  - claim_type: situation_claim
+    allowed_evidence_types:
+      - documentary
+      - physical
+      - testimonial
+    allowed_subtypes:
+      documentary:
+        - death_certificate
+        - termination_letter
+        - doctors_letter
+        - diagnosis_report
+        - eviction_notice
+        - tenancy_agreement
+        - court_order
+        - police_report
+      physical:
+        - living_conditions_observation
+      testimonial:
+        - landlord_confirmation
+        - neighbour_confirmation
+        - employer_confirmation
+
+  - claim_type: need_claim
+    allowed_evidence_types:
+      - documentary
+      - physical
+      - testimonial
+    allowed_subtypes:
+      documentary:
+        - doctors_letter
+        - diagnosis_report
+        - prescription
+        - discharge_summary
+        - referral_letter
+        - medical_test_result
+        - salary_slip
+        - bank_statement
+        - termination_letter
+        - tax_document
+        - school_fee_statement
+        - enrollment_certificate
+        - government_benefit_letter
+      physical:
+        - living_conditions_observation
+        - physical_impairment_observation
+        - nutritional_status_observation
+        - utility_disruption_observation
+        - asset_status_observation
+      testimonial:
+        - professional_confirmation
+        - neighbour_confirmation
+
+  - claim_type: household_claim
+    allowed_evidence_types:
+      - documentary
+      - physical
+      - testimonial
+    allowed_subtypes:
+      documentary:
+        - birth_certificate
+        - national_id
+        - voter_registration_card
+      physical:
+        - living_conditions_observation
+      testimonial:
+        - neighbour_confirmation

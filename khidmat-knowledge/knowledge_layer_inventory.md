@@ -764,11 +764,31 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### verification-operations/_placeholder.yaml
+### verification-operations/verification-operations.yaml
 
-**Status:** Level 2 placeholder. Scope declared. Concepts listed. Do-not-implement condition stated.
-**Dependency declared:** Registration domain must be stable before activation.
-**Assessment:** Well-scoped. Ready to activate once support interventions and evidence taxonomies are complete.
+**Purpose:** Defines the first-class ontology concepts owned by the Verification Operations domain. Verification Operations is responsible for producing verification knowledge from verification activities performed against registration outputs.
+
+**Concepts Owned:**
+- `verification_subject`
+- `verification_activity`
+- `field_observation`
+- `verification_finding`
+- `reverification_trigger`
+
+**Relationships Owned:**
+- `verification_subject` participates_in `verification_activity`
+- `verification_activity` evaluates `verification_subject`
+- `verification_activity` produces `field_observation`
+- `verification_activity` produces `verification_finding`
+- `verification_finding` derived_from `field_observation`
+- `reverification_trigger` may_be_created_from `verification_finding`
+
+**Maturity:** Complete (Phase 4.0).
+
+**Known Gaps / Notes:**
+- *Governance Dependency Note:* Active despite incomplete Stage 1 prerequisites (Support Interventions and Evidence Taxonomy) in the registration domain.
+- `Evidence` is referenced as a concept but its attribute block in the registration domain is currently missing.
+- Assertion subtypes (e.g., `identity_assertion`, `medical_assertion`) are illustrative examples and are not formally defined.
 
 ---
 

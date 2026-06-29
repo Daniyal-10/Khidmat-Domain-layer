@@ -47,7 +47,7 @@ Missing Entirely
 
 Current Active Phase
 
-└── Phase 3.0 — Risk Domain
+└── Phase 4.0 — Verification Operations (Active / In Progress)
 
 Already Created
 
@@ -55,7 +55,9 @@ Already Created
 ├── Dependency model
 ├── Capability model
 ├── Family structure model
-└── Health conditions model
+├── Health conditions model
+├── Risk Domain (Complete)
+└── Verification Operations (Core Ontology Complete)
 ```
 
 **Reasoning capability at current state:** The system can conduct a structured intake conversation, identify needs and claims, detect gaps, assess case readiness, and produce a verification brief. It cannot reason about a person across time, cannot model household resilience, cannot generate preventive signals, and cannot evaluate whether interventions work.
@@ -95,13 +97,13 @@ Completed:
 
 Current Active Deliverable:
 
-Phase 3.0 — Risk Domain
+Phase 4.0 — Verification Operations (Active / In Progress)
 
 Future Shared Ontology Work:
 □ shared human entity promotion model
 
 Current Active Phase:
-Phase 3.0 — Risk Domain
+Phase 4.0 — Verification Operations (Active / In Progress)
 
 The Shared Human Model prerequisite is now fully satisfied:
 
@@ -133,7 +135,7 @@ Completed
 
 Next Active Deliverable
 
-Phase 3.0 — Risk Domain (Reasoning: `shared/risk/reasoning/compound-risk-detection.yaml`)
+Phase 4.0 — Verification Operations (Active / In Progress) (Core ontology complete; operational models pending)
 
 After Completion
 
@@ -151,7 +153,7 @@ are complete and stable.
 
 ## Stage 3 — Risk Domain
 
-**STATUS: SUBSTANTIALLY COMPLETE** (Core Ontologies Complete; Reasoning in progress)
+**STATUS: COMPLETED**
 
 **Completed:**
 - ✓ Protective Factors Model (`shared/risk/protective-factors.yaml`)
@@ -160,9 +162,7 @@ are complete and stable.
 - ✓ Vulnerability Composite Model (`shared/risk/vulnerability.yaml`)
 - ✓ Household Resilience Model (`shared/risk/household-resilience.yaml`)
 - ✓ Risk Model (`shared/risk/risk.yaml` — folded Risk Trajectory / Trend Model here)
-
-**In Progress:**
-- □ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
+- ✓ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
 
 **Prerequisites:**
 - Stage 2 complete (Shared Human Model). ✓ Satisfied.
@@ -178,13 +178,15 @@ are complete and stable.
 
 ## Stage 4 — Activate Verification Operations Domain
 
+**STATUS: ACTIVE / IN PROGRESS** (Core Ontology Complete; Operational models pending; Stage 1 Dependency Anomaly Noted)
+
 **What this stage produces:**
-- Verification Operations domain — full Level 1 implementation
-- Volunteer assignment model
-- Field visit outcome model
-- Claim confirmation model (result of a verification requirement)
-- Evidence collection model
-- Re-verification trigger model
+- ✓ Verification Operations core ontology (`verification-operations/verification-operations.yaml`) [Complete]
+- □ Volunteer assignment model [Pending]
+- □ Field visit outcome model [Pending]
+- □ Claim confirmation model (result of a verification requirement) [Pending]
+- □ Evidence collection model [Pending]
+- □ Re-verification trigger model [Pending]
 
 **Prerequisites:**
 - Stage 1 complete (support interventions and evidence taxonomies)

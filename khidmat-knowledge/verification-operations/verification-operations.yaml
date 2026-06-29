@@ -1,0 +1,144 @@
+metadata:
+  file: verification-operations.yaml
+  domain: Verification Operations
+  layer: verification-operations
+  status: Phase 4.0
+
+purpose: >
+  Defines the first-class ontology concepts owned by the Verification
+  Operations domain. Verification Operations is responsible for producing
+  verification knowledge from verification activities performed against
+  registration outputs.
+
+governance:
+  governing_adr:
+    - ADR-008
+
+ownership_rules:
+  - Registration owns claims, evidence, needs, situations, readiness, verification requirements, and verification briefs.
+  - Shared Human Model owns lifecycle, capability, dependency, family, and health concepts.
+  - Risk Domain owns risk concepts.
+  - Verification Operations owns verification knowledge generated after verification begins.
+  - Verification Operations must not redefine upstream concepts.
+
+verification_outcome_decision:
+  classification: derived_concept
+  derives_from:
+    - verification_finding
+  rationale: >
+    Verification outcome is derived from verification findings and is
+    not a first-class ontology concept.
+
+ontology_hierarchy:
+  verification_subject:
+    description: >
+      The target of verification.
+    ontology_role:
+      - target_of_verification
+    examples:
+      - claim
+      - identity_assertion
+      - household_composition_assertion
+      - medical_assertion
+      - residence_assertion
+
+  verification_activity:
+    description: >
+      A verification event performed against a verification subject.
+    ontology_role:
+      - evaluates_verification_subject
+      - produces_field_observation
+      - produces_verification_finding
+    characteristics:
+      - time_bounded
+      - evidence_generating
+      - repeatable
+    classified_by:
+      - verification_method
+
+  field_observation:
+    description: >
+      A direct observation recorded during a verification activity.
+    ontology_role:
+      - observational_fact
+    examples:
+      - beneficiary_present
+      - damaged_roof_observed
+      - medication_absent
+      - household_member_confirmed
+
+  verification_finding:
+    description: >
+      A verification conclusion derived from verification inputs.
+    ontology_role:
+      - verification_conclusion
+    derives_from:
+      - field_observation
+
+  reverification_trigger:
+    description: >
+      A condition indicating that future verification should occur.
+    ontology_role:
+      - future_verification_driver
+    examples:
+      - temporary_documentation
+      - unresolved_contradiction
+      - expiring_evidence
+      - time_limited_confirmation
+
+relationships:
+  verification_subject:
+    participates_in:
+      - verification_activity
+
+  verification_activity:
+    evaluates:
+      - verification_subject
+    produces:
+      - field_observation
+      - verification_finding
+
+  verification_finding:
+    derived_from:
+      - field_observation
+
+  reverification_trigger:
+    may_be_created_from:
+      - verification_finding
+
+architectural_exclusions:
+  registration_owned:
+    - claim
+    - evidence
+    - need
+    - situation
+    - readiness
+    - verification_requirement
+    - verification_brief
+
+  shared_owned:
+    - lifecycle_stage
+    - capability
+    - dependency
+    - family_structure
+    - health_condition
+
+  risk_owned:
+    - risk
+    - vulnerability
+    - exposure
+    - resilience
+    - risk_profile
+
+workflow_concepts:
+  - verification_status
+  - assignment
+  - scheduling
+  - queue_management
+
+authoritative_concepts:
+  - verification_subject
+  - verification_activity
+  - field_observation
+  - verification_finding
+  - reverification_trigger

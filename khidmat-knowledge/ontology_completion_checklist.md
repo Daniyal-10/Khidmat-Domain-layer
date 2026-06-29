@@ -62,7 +62,7 @@
 ✓ Family Structure Ontology (`shared/human-model/family-structure.yaml`)
 ✓ Health Conditions Ontology (`shared/human-model/health-conditions.yaml`)
 
-### Phase 3.0 — Risk Domain (Core Ontologies)
+### Phase 3.0 — Risk Domain (Complete)
 
 ✓ Hazard Categories (`shared/risk/hazard-categories.yaml`)
 ✓ Exposure (`shared/risk/exposure.yaml`)
@@ -70,6 +70,12 @@
 ✓ Protective Factors (`shared/risk/protective-factors.yaml`)
 ✓ Household Resilience (`shared/risk/household-resilience.yaml`)
 ✓ Risk (`shared/risk/risk.yaml`)
+✓ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
+
+### Phase 4.0 — Verification Operations (Active / In Progress)
+
+✓ Verification Operations Core Ontology (`verification-operations/verification-operations.yaml`)
+□ Operational Verification Models (assignment, field visit, claim confirmation, etc.) [Pending]
 
 ---
 
@@ -90,10 +96,6 @@
 □ Time Taxonomy (`shared/taxonomy/time.yaml`)
   Status: Placeholder declared. Will formalise duration bands and onset recency vocabulary.
   Blocker: Requires cross-domain reporting to make consistent time vocabulary necessary.
-
-### Phase 3.0 — Risk Domain (Reasoning)
-
-□ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
 
 ---
 
@@ -165,9 +167,6 @@ Required for:
 
 ### Domains to Activate (from Architecture.md Placeholders)
 
-□ Verification Operations Domain
-  Prerequisite: Support Intervention Taxonomy + Evidence Taxonomy complete.
-
 □ Case Management Domain
   Prerequisite: Verification Operations Domain active.
 
@@ -224,9 +223,9 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Completed | 40+ files | Registration, Shared Human Model, and Risk Domain core ontologies established |
-| In Progress | 3 items | Evidence taxonomy, time taxonomy, compound risk detection |
+| Completed | 42+ files | Registration, Shared Human Model, Risk Domain (Complete), and Verification Operations core ontology established |
+| In Progress | 2 items | Evidence taxonomy, time taxonomy |
 | Missing (registration) | 4 items | Advanced reasoning and evidence modelling gaps |
 | Missing (shared) | 6 items | Person, Household, Community and governance entities |
-| Future (placeholder) | 7 domains | Planned operational domains |
+| Future (placeholder) | 6 domains | Planned operational domains (Stage 1 dependency anomaly noted; Verification Operations core complete but operational models pending) |
 | Future (new) | 6 domains | Knowledge graph expansion domains |

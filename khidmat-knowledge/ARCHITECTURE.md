@@ -2,21 +2,20 @@
 
 ## Current Active Phase
 
-Stage 3 — Risk Domain
+Stage 4 — Verification Operations Domain (Active / In Progress)
 
 Status:
 
-- Shared Human Model complete
-- Risk Domain architecture approved (ADRs 010-014)
-- Risk Domain core ontology implementation complete (Hazard Categories, Exposure, Vulnerability, Protective Factors, Household Resilience, and Risk complete; Compound Risk Detection in progress)
+- Risk Domain complete (including core ontology and compound risk detection reasoning).
+- Verification Operations core ontology complete (Stage 1 dependency anomaly noted); operational verification models pending.
 
 ## Domain Inventory
 
-| Domain                  | Maturity  | Status              |
-|-------------------------|-----------|---------------------|
-| shared                  | Level 1   | Active              |
-| registration            | Level 1   | Active              |
-| verification-operations | Level 2   | Placeholder         |
+| Domain                  | Maturity       | Status               |
+|-------------------------|----------------|----------------------|
+| shared                  | Level 1        | Active               |
+| registration            | Level 1        | Active               |
+| verification-operations | Level 1 (Core) | Active / In Progress |
 | case-management         | Level 2   | Placeholder         |
 | beneficiary-lifecycle   | Level 2   | Placeholder         |
 | volunteer-operations    | Level 2   | Placeholder         |
@@ -95,7 +94,7 @@ Completed foundational layer:
 
 Upcoming layers:
 
-* Risk Domain (Current Active Target)
+* Verification Operations (Current Active Target; core ontology complete, operational models pending)
 * Community Context Domain
 * Outcome Measurement Layer
 

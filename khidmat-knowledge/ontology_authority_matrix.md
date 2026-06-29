@@ -102,6 +102,23 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 
 ---
 
+## Verification Operations Domain
+
+**Authoritative file:** `verification-operations/verification-operations.yaml`
+**Owner domain:** Verification Operations
+**Introduced:** Phase 4.0
+**Governing ADRs:** ADR-008
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `verification_subject` | Verification Subject | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `verification_activity` | Verification Activity | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `field_observation` | Field Observation | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `verification_finding` | Verification Finding | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `reverification_trigger` | Reverification Trigger | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+
+---
+
 ## Flagged Boundary Cases
 
 The following are known areas where concept ownership requires future
