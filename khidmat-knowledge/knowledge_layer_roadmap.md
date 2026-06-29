@@ -34,7 +34,6 @@ Shared Layer [PARTIAL]
 Placeholder Domains [DECLARED, NOT ACTIVE]
     ├── verification-operations
     ├── case-management
-    ├── beneficiary-lifecycle
     ├── volunteer-operations
     ├── support-delivery
     ├── programs
@@ -57,7 +56,8 @@ Already Created
 ├── Family structure model
 ├── Health conditions model
 ├── Risk Domain (Complete)
-└── Verification Operations (Core Ontology Complete)
+├── Verification Operations (Core Ontology Complete)
+└── Beneficiary Lifecycle (Complete)
 ```
 
 **Reasoning capability at current state:** The system can conduct a structured intake conversation, identify needs and claims, detect gaps, assess case readiness, and produce a verification brief. It cannot reason about a person across time, cannot model household resilience, cannot generate preventive signals, and cannot evaluate whether interventions work.
@@ -243,15 +243,12 @@ are complete and stable.
 
 ## Stage 7 — Beneficiary Lifecycle Domain
 
-**What this stage produces:**
-- Persistent Person entity in `shared/ontology/entities.yaml` (promoted from beneficiary snapshot)
-- Beneficiary Lifecycle domain — full Level 1 implementation
-  - Beneficiary record (persistent identity across cases)
-  - Registration history
-  - Intervention history
-  - Status change tracking (improvement, deterioration, exit, re-entry)
-  - Periodic review triggers
-  - Re-registration triggers
+**STATUS: COMPLETED**
+
+**Completed:**
+- ✓ Beneficiary Lifecycle taxonomy (`beneficiary-lifecycle/taxonomy.yaml`)
+- ✓ Beneficiary Lifecycle ontology (`beneficiary-lifecycle/ontology.yaml`)
+- □ Persistent Person entity in `shared/ontology/entities.yaml` (promoted from beneficiary snapshot) [Pending]
 
 **Prerequisites:**
 - Stage 2 complete (Shared Human Model — lifecycle stages, capability)
@@ -428,7 +425,7 @@ khidmat-knowledge/
 │   │   ├── organisations.yaml        [exists — extend later]
 │   │   ├── locations.yaml            [exists — extend in Stage 3]
 │   │   ├── document-types.yaml       [exists]
-│   │   └── time.yaml                 [placeholder — complete in Stage 5]
+│   │   └── time.yaml                 [complete]
 │   │
 │   ├── human-model/                  [NEW in Stage 2]
 │   │   ├── README.md

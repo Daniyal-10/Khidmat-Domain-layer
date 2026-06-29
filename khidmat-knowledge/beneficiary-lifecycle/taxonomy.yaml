@@ -1,0 +1,43 @@
+domain: beneficiary-lifecycle
+maturity: level_3_taxonomy
+status: active
+
+taxonomy:
+  lifecycle_stage:
+    description: "The macro-level state of a beneficiary's continuous journey within the Khidmat ecosystem."
+    items:
+      - identified: "First contact made; formal registration has not begun."
+      - registration_initiated: "Data collection is underway."
+      - registered: "Registration data is complete; awaiting formal verification."
+      - verification_pending: "Identity or eligibility claims actively being verified."
+      - active: "Fully verified and in good standing, eligible for assessment or enrollment."
+      - receiving_support: "Actively enrolled in and receiving aid."
+      - monitored: "Support has ended; being monitored for sustainability or impact."
+      - suspended: "Ecosystem engagement is paused, often due to a flagged risk."
+      - review_required: "Triggered by inactivity or alerts; pending a human decision on continuation vs. exit."
+      - exited: "Relationship concluded manually (e.g., graduation, permanent relocation)."
+      - archived: "Long-term historical record."
+
+  exit_reason:
+    description: "The specific justification for manually transitioning a subject to the Exited stage."
+    items:
+      - graduated: "Subject achieved self-sufficiency and no longer requires support."
+      - deceased: "Subject has passed away."
+      - relocated_out_of_region: "Subject permanently moved outside the operational region."
+      - requested_removal: "Subject voluntarily withdrew from the ecosystem."
+      - code_of_conduct_violation: "Subject was permanently removed due to severe behavioral violations."
+
+  suspension_reason:
+    description: "The justification for pausing a subject's active engagement in the ecosystem."
+    items:
+      - risk_hold: "Ecosystem engagement is paused due to a risk threshold being exceeded; the risk itself is owned and assessed by external domains."
+      - compliance_data_missing: "Subject failed to provide mandatory annual renewal or compliance information."
+      - whereabouts_unknown: "Subject cannot be located for ongoing support or monitoring."
+      - temporary_relocation: "Subject has temporarily moved out of the operational area."
+
+  review_trigger:
+    description: "Events or conditions that transition a subject to the Review Required stage, necessitating human intervention before exit."
+    items:
+      - prolonged_inactivity: "No recorded interaction with the ecosystem over a predefined duration."
+      - recurring_suspensions: "Multiple temporary suspensions indicating a potential need for exit."
+      - systemic_alert: "Represents the lifecycle's reaction to an externally generated event; strictly references alerts originating from other bounded contexts (e.g., Shared Risk, Verification Operations) and does not define the alert itself."

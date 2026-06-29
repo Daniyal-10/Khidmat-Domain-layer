@@ -108,13 +108,23 @@
 
 ### shared/taxonomy/time.yaml
 
-**Purpose:** Shared time vocabulary for cross-domain duration and onset classification.
+**Purpose:** Defines the authoritative temporal vocabulary for the Khidmat Knowledge Layer. Every domain that reasons about duration, recurrence, validity, freshness, or time-bounded status draws from this file.
 
-**Concepts Owned:** None currently. Placeholder only.
+**Concepts Owned:**
+- duration_bands
+- onset_recency
+- recurrence_patterns
+- temporal_status
+- observation_windows
+- temporal_granularity
+- waiting_and_grace_periods
+- evidence_freshness
 
-**Maturity:** Placeholder. Not yet implemented.
+**Relationships Owned:** None.
 
-**Known Gaps:** The entire file is a gap. Duration and onset are currently free text in registration. When cross-domain aggregation is needed (programs, impact), consistent time vocabulary becomes essential.
+**Maturity:** Complete (Phase 4.0).
+
+**Known Gaps:** None.
 
 **Overlap / Conflicts:** None.
 
@@ -799,10 +809,35 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### beneficiary-lifecycle/_placeholder.yaml
+### beneficiary-lifecycle/taxonomy.yaml
 
-**Status:** Level 2 placeholder.
-**Assessment:** Correctly notes that the persistent beneficiary record (cross-case identity) is distinct from the per-case beneficiary entity. This distinction must be explicitly modelled when the domain activates.
+**Purpose:** Classifies the concepts governing the macro-state of a beneficiary's engagement (lifecycle stages, transition reasons, exit and suspension reasons, and review triggers).
+**Concepts Owned:** 
+- `lifecycle_stage`
+- `exit_reason`
+- `suspension_reason`
+- `review_trigger`
+**Relationships Owned:** None.
+**Maturity:** Complete (Level 1).
+**Known Gaps:** None.
+**Overlap / Conflicts:** None.
+
+---
+
+### beneficiary-lifecycle/ontology.yaml
+
+**Purpose:** Models the authoritative lifecycle record (BeneficiaryLifecycle) and its event-sourced transitions (LifecycleTransition) for a Person or Household over time.
+**Concepts Owned:**
+- `BeneficiaryLifecycle`
+- `LifecycleTransition`
+**Relationships Owned:**
+- `tracksJourneyOf`
+- `hasTransitionHistory`
+- `followedBy`
+- `triggeredByCrossDomainMilestone`
+**Maturity:** Complete (Level 1).
+**Known Gaps:** None.
+**Overlap / Conflicts:** References Registration, Shared Risk, Verification Operations, and Shared Human Model without redefining their concepts.
 
 ---
 

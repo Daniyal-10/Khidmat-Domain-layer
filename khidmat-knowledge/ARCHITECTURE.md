@@ -18,7 +18,7 @@ Status:
 | registration            | Level 1        | Active               |
 | verification-operations | Level 1 (Core) | Active / In Progress |
 | case-management         | Level 2   | Placeholder         |
-| beneficiary-lifecycle   | Level 2   | Placeholder         |
+| beneficiary-lifecycle   | Level 1        | Complete             |
 | volunteer-operations    | Level 2   | Placeholder         |
 | support-delivery        | Level 2   | Placeholder         |
 | programs                | Level 2   | Placeholder         |

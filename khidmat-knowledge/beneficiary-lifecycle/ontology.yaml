@@ -1,0 +1,68 @@
+domain: beneficiary-lifecycle
+maturity: level_4_ontology
+status: active
+
+imports:
+  - shared-human-model
+  - shared-time
+  - shared-risk
+  - registration
+  - verification-operations
+
+entities:
+  BeneficiaryLifecycle:
+    description: "The authoritative lifecycle record representing a continuous, overarching journey of a beneficiary (Person or Household) within the Khidmat ecosystem."
+    type: core_entity
+    attributes:
+      - lifecycle_id: Unique identifier for the lifecycle.
+      - current_stage (reference: taxonomy/lifecycle_stage)
+      - stage_entered_timestamp (reference: shared-time/Timestamp)
+      - is_active_instance: Indicates whether this lifecycle record is currently the active lifecycle for the associated Person or Household.
+    relationships:
+      - tracksJourneyOf:
+          target: shared-human-model/Subject
+          cardinality: 1..1
+          description: "Links the lifecycle instance to the independent human or household subject."
+      - hasTransitionHistory:
+          target: LifecycleTransition
+          cardinality: 0..N
+          description: "The immutable chronological log of state changes for this lifecycle."
+      - followedBy:
+          target: BeneficiaryLifecycle
+          cardinality: 0..1
+          description: "References a subsequent lifecycle instance if a subject re-enters the ecosystem after exiting."
+
+  LifecycleTransition:
+    description: "An immutable event representing a macro-state change within a BeneficiaryLifecycle."
+    type: event_entity
+    attributes:
+      - transition_id: Unique identifier for the transition.
+      - transition_timestamp (reference: shared-time/Timestamp)
+      - prior_stage (reference: taxonomy/lifecycle_stage)
+      - new_stage (reference: taxonomy/lifecycle_stage)
+      - exit_reason (reference: taxonomy/exit_reason, optional)
+      - suspension_reason (reference: taxonomy/suspension_reason, optional)
+      - review_trigger (reference: taxonomy/review_trigger, optional)
+    relationships:
+      - triggeredByCrossDomainMilestone:
+          target: CrossDomainMilestone
+          cardinality: 0..1
+          description: "References business outcomes or milestones originating in other bounded contexts (e.g., from Risk or Verification) that caused this transition, rather than software events."
+      - partOfLifecycle:
+          target: BeneficiaryLifecycle
+          cardinality: 1..1
+          description: "The lifecycle to which this transition belongs."
+
+constraints:
+  - one_active_lifecycle_per_subject: "A Person or Household can have at most one active BeneficiaryLifecycle instance at a time."
+  - independent_household_individual_lifecycles: "Household lifecycles and Individual lifecycles are tracked independently and do not overwrite each other."
+  - immutable_history: "Historical, inactive BeneficiaryLifecycle instances and LifecycleTransitions cannot be modified or deleted."
+  - manual_exit_policy: "A transition to the 'exited' stage must be accompanied by an explicit exit_reason representing human approval."
+  - re_entry_creates_new_instance: "Re-activating an exited subject generates a brand new BeneficiaryLifecycle instance, linked to the previous via the 'followedBy' relationship."
+
+cross_domain_references:
+  - shared-human-model: "References Person and Household as the subjects of the lifecycle. Never redefines demographic data."
+  - registration: "References Registration complete events as transition triggers. Never redefines registration forms."
+  - verification-operations: "References Verification outcome events to gate transitions. Never redefines verification mechanics."
+  - shared-risk: "References Risk events as triggers for suspension holds. Never redefines risk definitions."
+  - shared-time: "References Timestamps for accurate duration and transition tracking."

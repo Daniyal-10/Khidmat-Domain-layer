@@ -163,6 +163,42 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 
 ---
 
+## Beneficiary Lifecycle Domain
+
+**Authoritative files:** `beneficiary-lifecycle/taxonomy.yaml`, `beneficiary-lifecycle/ontology.yaml`
+**Owner domain:** Beneficiary Lifecycle
+**Introduced:** Phase 4.x
+**Governing ADRs:** ADR-008
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `lifecycle_stage` | Lifecycle Stage | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
+| `exit_reason` | Exit Reason | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
+| `suspension_reason` | Suspension Reason | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
+| `review_trigger` | Review Trigger | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
+| `BeneficiaryLifecycle` | Beneficiary Lifecycle | `beneficiary-lifecycle/ontology.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
+| `LifecycleTransition` | Lifecycle Transition | `beneficiary-lifecycle/ontology.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
+
+## Shared Time Domain
+
+**Authoritative file:** `shared/taxonomy/time.yaml`
+**Owner domain:** Shared Domain
+**Introduced:** Phase 4.0
+**Governing ADRs:** ADR-007, ADR-008
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `duration_bands` | Duration Bands | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
+| `onset_recency` | Onset Recency | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
+| `recurrence_patterns` | Recurrence Patterns | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
+| `temporal_status` | Temporal Status | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
+| `observation_windows` | Observation Windows | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
+| `temporal_granularity` | Temporal Granularity | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
+| `waiting_and_grace_periods` | Waiting and Grace Periods | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
+| `evidence_freshness` | Evidence Freshness | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
+
+---
+
 ## Flagged Boundary Cases
 
 The following are known areas where concept ownership requires future

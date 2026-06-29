@@ -77,6 +77,11 @@
 ✓ Verification Operations Core Ontology (`verification-operations/verification-operations.yaml`)
 □ Operational Verification Models (assignment, field visit, claim confirmation, etc.) [Pending]
 
+### Phase 4.x — Beneficiary Lifecycle (Complete)
+
+✓ Beneficiary Lifecycle Taxonomy (`beneficiary-lifecycle/taxonomy.yaml`)
+✓ Beneficiary Lifecycle Ontology (`beneficiary-lifecycle/ontology.yaml`)
+
 ---
 
 ## IN PROGRESS
@@ -170,9 +175,6 @@ Required for:
 □ Case Management Domain
   Prerequisite: Verification Operations Domain active.
 
-□ Beneficiary Lifecycle Domain
-  Prerequisite: Persistent Person entity in shared + Outcome Indicator vocabulary + Case Management Domain active.
-
 □ Volunteer Operations Domain
   Prerequisite: Volunteer profile requirements defined with operations staff.
 
@@ -223,9 +225,9 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Completed | 42+ files | Registration, Shared Human Model, Risk Domain (Complete), and Verification Operations core ontology established |
+| Completed | 44+ files | Registration, Shared Human Model, Risk Domain, Beneficiary Lifecycle, and Verification Operations core established |
 | In Progress | 2 items | Evidence taxonomy, time taxonomy |
 | Missing (registration) | 4 items | Advanced reasoning and evidence modelling gaps |
 | Missing (shared) | 6 items | Person, Household, Community and governance entities |
-| Future (placeholder) | 6 domains | Planned operational domains (Stage 1 dependency anomaly noted; Verification Operations core complete but operational models pending) |
+| Future (placeholder) | 5 domains | Planned operational domains (Stage 1 dependency anomaly noted; Verification Operations core complete but operational models pending) |
 | Future (new) | 6 domains | Knowledge graph expansion domains |
