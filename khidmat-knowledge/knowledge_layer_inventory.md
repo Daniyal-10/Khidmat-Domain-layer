@@ -813,7 +813,7 @@ dependency models are referenced by note pending those files' creation.
 
 **Purpose:** Classifies the concepts governing the macro-state of a beneficiary's engagement (lifecycle stages, transition reasons, exit and suspension reasons, and review triggers).
 **Concepts Owned:** 
-- `lifecycle_stage`
+- `engagement_stage`
 - `exit_reason`
 - `suspension_reason`
 - `review_trigger`
@@ -834,7 +834,10 @@ dependency models are referenced by note pending those files' creation.
 - `tracksJourneyOf`
 - `hasTransitionHistory`
 - `followedBy`
-- `triggeredByCrossDomainMilestone`
+- `triggeredByRegistrationCompletion`
+- `triggeredByVerificationOutcome`
+- `triggeredByRiskAssessment`
+- `triggeredByCaseDecision`
 **Maturity:** Complete (Level 1).
 **Known Gaps:** None.
 **Overlap / Conflicts:** References Registration, Shared Risk, Verification Operations, and Shared Human Model without redefining their concepts.

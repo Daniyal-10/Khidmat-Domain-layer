@@ -3,7 +3,7 @@ maturity: level_3_taxonomy
 status: active
 
 taxonomy:
-  lifecycle_stage:
+  engagement_stage:
     description: "The macro-level state of a beneficiary's continuous journey within the Khidmat ecosystem."
     items:
       - identified: "First contact made; formal registration has not begun."
@@ -11,12 +11,11 @@ taxonomy:
       - registered: "Registration data is complete; awaiting formal verification."
       - verification_pending: "Identity or eligibility claims actively being verified."
       - active: "Fully verified and in good standing, eligible for assessment or enrollment."
-      - receiving_support: "Actively enrolled in and receiving aid."
-      - monitored: "Support has ended; being monitored for sustainability or impact."
+      - engaged: "The subject is actively engaged with one or more humanitarian services, programs, or interventions within the Khidmat ecosystem."
+      - monitored: "Active intervention has ended; being monitored for sustainability or impact."
       - suspended: "Ecosystem engagement is paused, often due to a flagged risk."
       - review_required: "Triggered by inactivity or alerts; pending a human decision on continuation vs. exit."
       - exited: "Relationship concluded manually (e.g., graduation, permanent relocation)."
-      - archived: "Long-term historical record."
 
   exit_reason:
     description: "The specific justification for manually transitioning a subject to the Exited stage."

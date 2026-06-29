@@ -117,7 +117,7 @@ architectural_exclusions:
     - verification_brief
 
   shared_owned:
-    - lifecycle_stage
+    - engagement_stage
     - capability
     - dependency
     - family_structure

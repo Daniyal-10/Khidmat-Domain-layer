@@ -33,6 +33,20 @@ this file.
 
 ---
 
+## Shared Ontology
+
+**Owner domain:** Shared Ontology
+**Introduced:** Phase 1 (Foundation Remediation Sprint)
+**Governing ADRs:** ADR-018
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `subject` | Subject | `shared/ontology/entities.yaml` | Shared Ontology | Semantic parent for Person/Household. Owns no demographic data. Must not be redefined. |
+| `person` | Person | `shared/ontology/entities.yaml` | Shared Ontology | Authoritative concept for individuals. Must not be redefined. |
+| `household` | Household | `shared/ontology/entities.yaml` | Shared Ontology | Authoritative concept for households. Must not be redefined. |
+
+---
+
 ## Shared Human Model
 
 ### Lifecycle Stage Concepts
@@ -172,7 +186,7 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| `lifecycle_stage` | Lifecycle Stage | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
+| `engagement_stage` | Engagement Stage | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
 | `exit_reason` | Exit Reason | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
 | `suspension_reason` | Suspension Reason | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
 | `review_trigger` | Review Trigger | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
