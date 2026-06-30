@@ -36,6 +36,7 @@ Placeholder Domains [DECLARED, NOT ACTIVE]
     ├── volunteer-operations
     ├── support-delivery
     ├── programs
+    ├── consent-and-privacy
     └── impact
 
 Missing Entirely
@@ -488,6 +489,7 @@ khidmat-knowledge/
 ├── volunteer-operations/             [activate in Stage 9]
 ├── support-delivery/                 [activate in Stage 9]
 ├── programs/                         [activate in Stage 9]
+├── consent-and-privacy/              [activate in Stage 9]
 ├── impact/                           [activate in Stage 9]
 │
 ├── ARCHITECTURE.md                   [update at each stage]

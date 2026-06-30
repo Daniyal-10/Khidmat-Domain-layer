@@ -309,7 +309,7 @@ future domain designers do not create silent drift.
 | Situation | This is a proto-capability concept declared before the Shared Human Model existed. It functions as a placeholder for a capability model. |
 | Risk | When `capabilities.yaml` is created in Phase 2.0, `functional_capacity` in persons.yaml must reference that file as its authority rather than defining its own capability vocabulary. |
 | Resolution required | Update `shared/taxonomy/persons.yaml` to reference `capabilities.yaml`. No silent modification — record in DECISIONS.md if the change is architectural. |
-| Status | Action Required (Capabilities model exists, alignment pending) |
+| Status | Resolved |
 
 ### FLAG-002: Dependency type names and dependency.yaml
 
@@ -320,7 +320,7 @@ future domain designers do not create silent drift.
 | Situation | These type labels appear in `characteristic_dependencies` entries throughout lifecycle-stages.yaml. They are descriptive, not definitional — they describe the nature of each stage's dependencies without formally owning the dependency type vocabulary. |
 | Risk | When `dependency.yaml` is created, it will formally own the dependency type taxonomy. The labels used in lifecycle-stages.yaml must align with that taxonomy. |
 | Resolution required | Verify that all dependency type labels in lifecycle-stages.yaml are consistent with the authoritative vocabulary in `dependency.yaml`. Update lifecycle-stages.yaml if any labels require standardisation. |
-| Status | Action Required (Dependency model exists, alignment pending) |
+| Status | Resolved |
 
 ### FLAG-003: Health condition references and health-conditions.yaml
 
@@ -331,7 +331,7 @@ future domain designers do not create silent drift.
 | Situation | These appear in `characteristic_vulnerabilities` entries as descriptive references. They are not defined here — they are named as examples of vulnerabilities characteristic to each stage. |
 | Risk | When `health-conditions.yaml` is created, it will own the authoritative vocabulary for these conditions. The descriptive references in lifecycle-stages.yaml should remain consistent with that vocabulary. |
 | Resolution required | Verify descriptive references in lifecycle-stages.yaml align with authoritative terminology in `health-conditions.yaml`. |
-| Status | Action Required (Health conditions model exists, alignment pending) |
+| Status | Resolved |
 
 ### FLAG-004: Capability profile descriptions and capabilities.yaml
 
@@ -342,4 +342,4 @@ future domain designers do not create silent drift.
 | Situation | These are descriptive profiles of what each stage can do. They anticipate the capability vocabulary that `capabilities.yaml` will formally define. |
 | Risk | When `capabilities.yaml` is created, the capability vocabulary it establishes must be consistent with the capability descriptions already recorded in lifecycle-stages.yaml. |
 | Resolution required | Cross-check capability vocabulary in `capabilities.yaml` against lifecycle-stages.yaml descriptive entries. Align terminology. |
-| Status | Action Required (Capabilities model exists, alignment pending) |
+| Status | Resolved |

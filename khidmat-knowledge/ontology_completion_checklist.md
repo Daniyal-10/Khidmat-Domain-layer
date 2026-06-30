@@ -96,6 +96,7 @@
 
 ✓ Case Management Taxonomy (`case-management/taxonomy.yaml`)
 ✓ Case Management Ontology (`case-management/ontology.yaml`)
+✓ Consent Placeholder (`consent-and-privacy/ontology.yaml`)
 
 ---
 
@@ -131,18 +132,6 @@
 
 □ Lifecycle-Stage-Aware Inference Rules
   Gap: Inference rules do not use lifecycle stage. An infant in a food-insecure household should trigger developmental malnutrition risk distinct from the household food need.
-
-□ Capability Alignment Migration
-
-Gap:
-`functional_capacity` currently exists inside the registration domain while the emerging Shared Human Model introduces a dedicated capability ontology.
-
-Required Future Work:
-
-- align registration functional_capacity
-- map lifecycle capability expectations
-- migrate reasoning ownership to capability ontology
-- prevent duplicate capability definitions across domains
 
 □ Medical Severity with Treatment Plan Absence
   Gap: A critical medical need with no care pathway does not escalate severity. The treatment_plan_gap is classified as medium regardless of need severity.
@@ -239,7 +228,7 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 |----------|-------|-------|
 | Completed | 44+ files | Registration, Shared Human Model, Risk Domain, Beneficiary Lifecycle, and Verification Operations core established |
 | In Progress | 2 items | Evidence taxonomy, time taxonomy |
-| Missing (registration) | 4 items | Advanced reasoning and evidence modelling gaps |
+| Missing (registration) | 3 items | Advanced reasoning and evidence modelling gaps |
 | Missing (shared) | 6 items | Person, Household, Community and governance entities |
 | Future (placeholder) | 4 domains | Planned operational domains (Stage 1 dependency anomaly noted; Verification Operations core complete but operational models pending) |
 | Future (new) | 6 domains | Knowledge graph expansion domains |

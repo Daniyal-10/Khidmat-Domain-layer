@@ -18,11 +18,11 @@
 - Person role labels (beneficiary, registrant, proxy, volunteer, case_manager, programme_officer, organisation_staff, donor)
 - Age classification (minor / adult boundary and consequences)
 - Gender vocabulary (male, female, not_disclosed)
-- Functional capacity enum (full, partial, dependent)
+- Functional capacity (reference to capabilities.yaml)
 
 **Relationships Owned:** None. Taxonomy only — no structural relationships declared.
 
-**Maturity:** Partial. Roles are declared but not defined. Functional capacity is a three-value enum serving as a placeholder for a disability model that does not yet exist.
+**Maturity:** Partial. Roles are declared but not defined. Functional capacity references the Shared Human Model capabilities.
 
 **Known Gaps:**
 - No lifecycle stage model. Age is a boundary (minor/adult), not a developmental context.
@@ -32,7 +32,7 @@
 - Future domain roles (case_manager, programme_officer) are declared here but their detailed definitions belong in their respective domains. The declaration is correct; the future detail is absent.
 
 **Overlap / Conflicts:**
-- `functional_capacity` is referenced by both `registration/ontology/attributes.yaml#beneficiary` and `registration/ontology/attributes.yaml#household_member`. Authority is correctly in shared. No conflict, but the attribute is unused in any reasoning rule — a latent consistency risk.
+- `functional_capacity` is referenced by both `registration/ontology/attributes.yaml#beneficiary` and `registration/ontology/attributes.yaml#household_member`. Authority is now deferred to `capabilities.yaml`. No conflict.
 
 ---
 
@@ -398,7 +398,7 @@ dependency models are referenced by note pending those files' creation.
 - Need categories (food, medical, shelter, education, livelihood, psychosocial)
 - Need subtypes per category
 - Need source (expressed, assessed, both)
-- Need severity (critical, high, medium, low)
+- Need severity (reference to needs-assessment/taxonomy.yaml)
 - Need duration (one_time, short_term, recurring, long_term)
 
 **Relationships Owned:** None. Subtypes are nested classification, not relationships.
@@ -411,7 +411,7 @@ dependency models are referenced by note pending those files' creation.
 - Psychosocial subtypes describe the nature of the need correctly but do not reference a mental health condition vocabulary. This creates a gap when mental health reasoning is needed.
 - `therapeutic_nutrition` is a subtype of food need. It is clinically a distinct pathway that belongs closer to the medical domain. The current placement is pragmatic but architecturally ambiguous.
 
-**Overlap / Conflicts:** Need severity values are defined here but severity classification rules are in `reasoning/severity-rules.yaml`. Authority is split correctly — taxonomy owns the values, reasoning owns the rules. No conflict.
+**Overlap / Conflicts:** Need severity definitions have been consolidated into `needs-assessment/taxonomy.yaml`. Severity classification rules remain in `reasoning/severity-rules.yaml`. No conflict.
 
 ---
 
@@ -955,6 +955,13 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
+### consent-and-privacy/ontology.yaml
+
+**Status:** Level 2 placeholder.
+**Assessment:** Minimal placeholder declaration for Consent, required for Case Management to reference.
+
+---
+
 ## ARCHITECTURE DOCUMENTS
 
 ---
@@ -970,7 +977,7 @@ dependency models are referenced by note pending those files' creation.
 ### DECISIONS.md
 
 **Purpose:** Architectural decision log. Records what was decided, why, and what was rejected.
-**Assessment:** Well-maintained. Six decisions recorded. All confirmed as correct in the principal audit.
+**Assessment:** Well-maintained. 21 decisions recorded (including ADR-021 Case Lifecycle Handoff).
 **Gap:** Does not yet record the decision to defer functional_capacity from reasoning rules, which is effectively an undocumented ADR (the attribute exists but is inert).
 
 ---
