@@ -77,10 +77,25 @@
 ✓ Verification Operations Core Ontology (`verification-operations/verification-operations.yaml`)
 □ Operational Verification Models (assignment, field visit, claim confirmation, etc.) [Pending]
 
+### Phase 4.5 — Needs Assessment Domain (Complete)
+
+✓ Discovery
+✓ Taxonomy
+✓ Ontology
+✓ Independent Reviews
+✓ Semantic Validation
+✓ Foundation Review
+✓ Governance Synchronization
+
 ### Phase 4.x — Beneficiary Lifecycle (Complete)
 
 ✓ Beneficiary Lifecycle Taxonomy (`beneficiary-lifecycle/taxonomy.yaml`)
 ✓ Beneficiary Lifecycle Ontology (`beneficiary-lifecycle/ontology.yaml`)
+
+### Phase 5.0 — Case Management Domain (Complete)
+
+✓ Case Management Taxonomy (`case-management/taxonomy.yaml`)
+✓ Case Management Ontology (`case-management/ontology.yaml`)
 
 ---
 
@@ -172,9 +187,6 @@ Required for:
 
 ### Domains to Activate (from Architecture.md Placeholders)
 
-□ Case Management Domain
-  Prerequisite: Verification Operations Domain active.
-
 □ Volunteer Operations Domain
   Prerequisite: Volunteer profile requirements defined with operations staff.
 
@@ -229,5 +241,5 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 | In Progress | 2 items | Evidence taxonomy, time taxonomy |
 | Missing (registration) | 4 items | Advanced reasoning and evidence modelling gaps |
 | Missing (shared) | 6 items | Person, Household, Community and governance entities |
-| Future (placeholder) | 5 domains | Planned operational domains (Stage 1 dependency anomaly noted; Verification Operations core complete but operational models pending) |
+| Future (placeholder) | 4 domains | Planned operational domains (Stage 1 dependency anomaly noted; Verification Operations core complete but operational models pending) |
 | Future (new) | 6 domains | Knowledge graph expansion domains |

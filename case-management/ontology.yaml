@@ -1,0 +1,82 @@
+case_management:
+  entities:
+    - name: Case
+      description: The central, long-lived container orchestrating holistic support for a subject.
+    - name: CasePlan
+      description: The structured, approved set of intended operational interventions.
+    - name: Referral
+      description: A formal request for a specialized service from an internal or external party.
+    - name: FollowUp
+      description: A scheduled interaction, review, or monitoring visit.
+    - name: CaseAssignment
+      description: The operational linkage of a responsible actor capable of carrying out operational responsibilities to a case.
+    - name: CaseNote
+      description: A chronological observational record that preserves operational history regarding the case.
+
+  relationships:
+    internal:
+      - name: has_case_plan
+        source: Case
+        target: CasePlan
+        cardinality: one_to_many
+        description: Supports historical plans while preserving a single current plan semantically.
+      - name: has_referral
+        source: Case
+        target: Referral
+        cardinality: one_to_many
+      - name: has_follow_up
+        source: Case
+        target: FollowUp
+        cardinality: one_to_many
+      - name: has_case_assignment
+        source: Case
+        target: CaseAssignment
+        cardinality: one_to_many
+      - name: has_case_note
+        source: Case
+        target: CaseNote
+        cardinality: one_to_many
+      - name: has_case_outcome
+        source: Case
+        target: CaseOutcome
+        cardinality: one_to_one
+        description: Semantic link representing the final operational result of a completed Case.
+    
+    external_references:
+      - name: references_subject
+        source: Case
+        target: Subject
+        domain: Shared Human Model
+        cardinality: many_to_one
+        description: The Case references the authoritative Subject, designating it as the Primary Subject role for this case.
+      - name: references_assessment
+        source: CasePlan
+        target: Assessment
+        domain: Needs Assessment
+        cardinality: one_to_many
+      - name: references_consent
+        source: Referral
+        target: Consent
+        domain: Consent & Privacy
+        cardinality: one_to_one
+      - name: references_intervention_type
+        source: CasePlan
+        target: InterventionType
+        domain: Shared Ontology
+        cardinality: many_to_many
+      - name: references_beneficiary_lifecycle
+        source: Case
+        target: BeneficiaryLifecycle
+        domain: Beneficiary Lifecycle
+        cardinality: many_to_one
+
+  constraints:
+    - A Case requires exactly one Subject acting in the primary role.
+    - A Subject acting in the primary role may have multiple Cases over time or concurrently.
+    - A Case may reference multiple Referrals.
+    - Case Notes form a chronological observational record; corrections require a new addendum note.
+    - Emergency Cases may temporarily reference an unverified Subject without duplicating Registration or Verification.
+    - Closing a Case never changes the BeneficiaryLifecycle.
+    - A Case is permitted to progress to active status only after an approved Case Plan is established.
+    - An external Referral requires referencing a valid Consent record.
+    - A formally completed Case is preserved for operational history and is not permitted to be reopened for a new operational objective.

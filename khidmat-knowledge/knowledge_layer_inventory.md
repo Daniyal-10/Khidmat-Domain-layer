@@ -770,6 +770,71 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
+## NEEDS ASSESSMENT DOMAIN
+
+---
+
+### needs-assessment/needs_assessment_discovery_report.md
+
+**Purpose:** Discovery architectural mapping for the Needs Assessment bounded context. Defines boundaries, semantic invariant rules, and justification.
+**Concepts Owned:** N/A (Architecture document)
+**Relationships Owned:** N/A
+**Maturity:** Complete.
+
+---
+
+### needs-assessment/taxonomy.yaml
+
+**Purpose:** Authoritative vocabulary for the Needs Assessment domain.
+**Concepts Owned:** 
+- assessment_depth
+- assessment_urgency
+- assessment_scope
+- assessment_status
+- assessment_methodology
+- finding_confidence
+- need_severity
+**Relationships Owned:** None.
+**Maturity:** Complete.
+**Known Gaps:** None.
+**Overlap / Conflicts:** None.
+
+---
+
+### needs-assessment/ontology.yaml
+
+**Purpose:** First-class semantic model of the Needs Assessment domain.
+**Concepts Owned:** 
+- Assessment
+- AssessmentFinding
+- IdentifiedNeed
+**Relationships Owned:** 
+- assesses, produces, belongs_to, synthesizes_into, synthesized_from, based_on_claim, based_on_verified_fact, affects, superseded_by
+**Referenced Concepts:** Subject (Shared), HumanitarianSector (Shared), AssessmentTool (Shared), RegistrationClaim (Registration), VerificationFinding (Verification)
+**Maturity:** Complete.
+**Known Gaps:** None.
+**Overlap / Conflicts:** None.
+
+---
+
+### needs-assessment/needs_assessment_taxonomy_review.md
+
+**Purpose:** Justification and architectural validation for the taxonomy decisions.
+**Concepts Owned:** N/A
+**Relationships Owned:** N/A
+**Maturity:** Complete.
+
+---
+
+### needs-assessment/needs_assessment_ontology_review.md
+
+**Purpose:** Justification and architectural validation for the ontology decisions.
+**Concepts Owned:** N/A
+**Relationships Owned:** N/A
+**Maturity:** Complete.
+
+---
+
 ## PLACEHOLDER DOMAINS
 
 ---
@@ -802,10 +867,28 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### case-management/_placeholder.yaml
+### case-management/taxonomy.yaml
 
-**Status:** Level 2 placeholder.
-**Assessment:** Correctly defers to verification-operations domain being active first.
+**Purpose:** Authoritative vocabulary for the Case Management domain.
+**Concepts Owned:**
+- `case_status`, `priority_level`, `referral_status`, `case_origin`, `case_outcome`, `administrative_closure_reason`
+**Relationships Owned:** None.
+**Maturity:** Complete (Level 1).
+**Known Gaps:** None.
+**Overlap / Conflicts:** None.
+
+---
+
+### case-management/ontology.yaml
+
+**Purpose:** Semantic model of Case Management orchestration concepts and their relationships.
+**Concepts Owned:**
+- `Case`, `CasePlan`, `Referral`, `FollowUp`, `CaseAssignment`, `CaseNote`
+**Relationships Owned:**
+- `has_case_plan`, `has_referral`, `has_follow_up`, `has_case_assignment`, `has_case_note`, `has_case_outcome`
+**Maturity:** Complete (Level 1).
+**Known Gaps:** None.
+**Overlap / Conflicts:** Correctly references Subject, BeneficiaryLifecycle, NeedsAssessment without redefining them.
 
 ---
 

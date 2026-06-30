@@ -17,7 +17,8 @@ Status:
 | shared/risk             | Level 1        | Complete             |
 | registration            | Level 1        | Active               |
 | verification-operations | Level 1 (Core) | Active / In Progress |
-| case-management         | Level 2   | Placeholder         |
+| needs-assessment        | Level 1        | Complete             |
+| case-management         | Level 1        | Complete             |
 | beneficiary-lifecycle   | Level 1        | Complete             |
 | volunteer-operations    | Level 2   | Placeholder         |
 | support-delivery        | Level 2   | Placeholder         |
@@ -94,6 +95,7 @@ Completed foundational layer:
 
 * Shared Human Model
 * Risk Domain
+* Needs Assessment Domain
 
 Upcoming layers:
 

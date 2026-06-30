@@ -33,7 +33,6 @@ Shared Layer [PARTIAL]
 
 Placeholder Domains [DECLARED, NOT ACTIVE]
     ├── verification-operations
-    ├── case-management
     ├── volunteer-operations
     ├── support-delivery
     ├── programs
@@ -57,7 +56,9 @@ Already Created
 ├── Health conditions model
 ├── Risk Domain (Complete)
 ├── Verification Operations (Core Ontology Complete)
-└── Beneficiary Lifecycle (Complete)
+├── Needs Assessment (Complete)
+├── Beneficiary Lifecycle (Complete)
+└── Case Management (Complete)
 ```
 
 **Reasoning capability at current state:** The system can conduct a structured intake conversation, identify needs and claims, detect gaps, assess case readiness, and produce a verification brief. It cannot reason about a person across time, cannot model household resilience, cannot generate preventive signals, and cannot evaluate whether interventions work.
@@ -199,20 +200,35 @@ are complete and stable.
 
 ---
 
-## Stage 5 — Intervention Taxonomy and Case Management Domain
+## Stage 4.5 — Needs Assessment Domain
+
+**STATUS: COMPLETED**
 
 **What this stage produces:**
-- Completed Support Intervention Taxonomy (operationally validated by programme staff)
+- ✓ Needs Assessment taxonomy (`needs-assessment/taxonomy.yaml`) [Complete]
+- ✓ Needs Assessment ontology (`needs-assessment/ontology.yaml`) [Complete]
+
+**Prerequisites:**
+- Stage 4 complete (Verification Operations active) — assessment synthesizes facts and claims.
+
+**What this enables downstream:** Case Management, Support Delivery, Program Management, and Monitoring & Evaluation can now safely reference Needs Assessment.
+
+**Reasoning capability gained:** The system can evaluate what assessments occurred, what findings were produced with explicit epistemic confidence, and what needs were synthesized, decoupling them from operational case management.
+
+---
+
+## Stage 5 — Intervention Taxonomy and Case Management Domain
+
+**STATUS: PARTIALLY COMPLETED** (Case Management domain complete; Intervention taxonomy pending operational input)
+
+**What this stage produces:**
+- [Pending] Completed Support Intervention Taxonomy (operationally validated by programme staff)
   - Intervention type hierarchy
   - Eligibility conditions per intervention type
   - Typical duration norms
   - Contraindications (circumstances where an intervention type is inappropriate)
-- Case Management domain — full Level 1 implementation
-  - Case decision model
-  - Intervention approval model
-  - Case assignment model
-  - Case escalation model
-  - Intervention record
+- [Complete] Case Management domain — full Level 1 implementation
+  - Case taxonomy and ontology (Complete)
 
 **Prerequisites:**
 - Stage 3 complete (Risk Domain) — case management needs to reason about risk when prioritising interventions
@@ -364,10 +380,14 @@ Stage 3: Risk Domain
 
 Stage 4: Verification Operations
     (requires: Stage 1)
+    ↓ enables: Stage 4.5
+
+Stage 4.5: Needs Assessment
+    (requires: Stage 4)
     ↓ enables: Stage 5
 
 Stage 5: Intervention Taxonomy + Case Management
-    (requires: Stages 3 + 4)
+    (requires: Stages 3 + 4.5)
     ↓ enables: Stage 6
 
 Stage 6: Outcome Indicator Vocabulary
@@ -462,6 +482,7 @@ khidmat-knowledge/
 │   └── readiness/
 │
 ├── verification-operations/          [activate in Stage 4]
+├── needs-assessment/                 [complete]
 ├── case-management/                  [activate in Stage 5]
 ├── beneficiary-lifecycle/            [activate in Stage 7]
 ├── volunteer-operations/             [activate in Stage 9]

@@ -1,0 +1,39 @@
+case_management:
+  case_status:
+    - opened
+    - planning
+    - active
+    - suspended
+    - closed
+  referral_status:
+    - draft
+    - sent
+    - acknowledged
+    - accepted
+    - rejected
+    - completed
+  priority_level:
+    - critical
+    - high
+    - medium
+    - low
+  case_origin:
+    - registration
+    - referral
+    - risk_identification
+    - emergency
+    - volunteer_identification
+    - community_outreach
+    - self_request
+    - program_escalation
+  case_outcome:
+    - resolved
+    - partially_resolved
+    - referred_elsewhere
+    - transferred
+    - withdrawn
+    - unable_to_contact
+  administrative_closure_reason:
+    - duplicate
+    - merged
+    - cancelled

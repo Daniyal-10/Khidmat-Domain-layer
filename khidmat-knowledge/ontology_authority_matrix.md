@@ -193,6 +193,70 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 | `BeneficiaryLifecycle` | Beneficiary Lifecycle | `beneficiary-lifecycle/ontology.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
 | `LifecycleTransition` | Lifecycle Transition | `beneficiary-lifecycle/ontology.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
 
+---
+
+## Needs Assessment Domain
+
+**Authoritative files:** `needs-assessment/taxonomy.yaml`, `needs-assessment/ontology.yaml`
+**Owner domain:** Needs Assessment
+**Introduced:** Phase 4.5
+**Governing ADRs:** ADR-008
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `assessment_depth` | Assessment Depth | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessment_urgency` | Assessment Urgency | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessment_scope` | Assessment Scope | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessment_status` | Assessment Status | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessment_methodology` | Assessment Methodology | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `finding_confidence` | Finding Confidence | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `need_severity` | Need Severity | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `Assessment` | Assessment | `needs-assessment/ontology.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `AssessmentFinding` | Assessment Finding | `needs-assessment/ontology.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `IdentifiedNeed` | Identified Need | `needs-assessment/ontology.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+
+**Relationships Owned:**
+- `assesses`
+- `produces`
+- `belongs_to`
+- `synthesizes_into`
+- `synthesized_from`
+- `based_on_claim`
+- `based_on_verified_fact`
+- `affects`
+- `superseded_by`
+
+**Explicit References Only (Owned Elsewhere):**
+- `Subject` (Shared)
+- `HumanitarianSector` (Shared)
+- `AssessmentTool` (Shared)
+- `RegistrationClaim` (Registration)
+- `VerificationFinding` (Verification)
+
+---
+
+## Case Management Domain
+
+**Authoritative files:** `case-management/taxonomy.yaml`, `case-management/ontology.yaml`
+**Owner domain:** Case Management
+**Introduced:** Phase 5.0
+**Governing ADRs:** ADR-008
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `case_status` | Case Status | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `priority_level` | Priority Level | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `referral_status` | Referral Status | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `case_origin` | Case Origin | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `case_outcome` | Case Outcome | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `administrative_closure_reason` | Administrative Closure Reason | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `Case` | Case | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `CasePlan` | Case Plan | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `Referral` | Referral | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `FollowUp` | Follow Up | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `CaseAssignment` | Case Assignment | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `CaseNote` | Case Note | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+
 ## Shared Time Domain
 
 **Authoritative file:** `shared/taxonomy/time.yaml`

@@ -1,0 +1,103 @@
+# Needs Assessment Ontology
+
+namespaces:
+  core: "khidmat:needs-assessment:core"
+  taxonomy: "khidmat:needs-assessment:taxonomy"
+  shared: "khidmat:shared:core"
+  registration: "khidmat:registration:core"
+  verification: "khidmat:verification:core"
+
+entities:
+  Assessment:
+    description: "The formal event or structured process of evaluating a Subject's situation against standardized humanitarian criteria."
+    properties:
+      assessment_depth:
+        type: "taxonomy:assessment_depth"
+        cardinality: "1"
+        description: "The granularity and duration of the assessment event."
+      assessment_urgency:
+        type: "taxonomy:assessment_urgency"
+        cardinality: "1"
+        description: "The operational context and triage pressure driving the assessment."
+      assessment_scope:
+        type: "taxonomy:assessment_scope"
+        cardinality: "1"
+        description: "The analytical lens defining the primary unit being evaluated."
+      assessment_status:
+        type: "taxonomy:assessment_status"
+        cardinality: "1"
+        description: "The lifecycle stage of the evaluation event."
+    relationships:
+      - type: "assesses"
+        target: "shared:Subject"
+        cardinality: "1"
+        description: "The individual, household, or community being evaluated."
+      - type: "uses"
+        target: "shared:AssessmentTool"
+        cardinality: "1..N"
+        description: "The specific framework or instrument utilized to conduct the evaluation. Needs Assessment references tools owned by the Shared Ontology."
+      - type: "produces"
+        target: "core:AssessmentFinding"
+        cardinality: "1..N"
+        inverse: "belongs_to"
+        description: "The objective observations and conclusions drawn during the assessment."
+
+  AssessmentFinding:
+    description: "An objective conclusion, observation, or metric produced during an assessment."
+    properties:
+      finding_confidence:
+        type: "taxonomy:finding_confidence"
+        cardinality: "1"
+        description: "The degree of epistemic trust or analytical confidence placed in the finding."
+    relationships:
+      - type: "belongs_to"
+        target: "core:Assessment"
+        cardinality: "1"
+        inverse: "produces"
+        description: "The assessment event that produced this finding."
+      - type: "synthesizes_into"
+        target: "core:IdentifiedNeed"
+        cardinality: "0..N"
+        inverse: "synthesized_from"
+        description: "The humanitarian abstraction derived from this specific finding."
+      - type: "based_on_claim"
+        target: "registration:RegistrationClaim"
+        cardinality: "0..N"
+        description: "A subjective, reported claim from Registration used to inform the finding."
+      - type: "based_on_verified_fact"
+        target: "verification:VerificationFinding"
+        cardinality: "0..N"
+        description: "An objective, organizationally verified fact from Verification Operations used to inform the finding."
+
+  IdentifiedNeed:
+    description: "A specific, validated deprivation or requirement of a Subject, synthesized objectively from Assessment Findings."
+    properties:
+      need_severity:
+        type: "taxonomy:need_severity"
+        cardinality: "1"
+        description: "The objective intensity, depth, or acuteness of the deprivation."
+    relationships:
+      - type: "synthesized_from"
+        target: "core:AssessmentFinding"
+        cardinality: "1..N"
+        inverse: "synthesizes_into"
+        description: "The underlying objective findings that justify the existence of this need."
+      - type: "affects"
+        target: "shared:Subject"
+        cardinality: "1"
+        description: "The entity experiencing the deprivation."
+      - type: "belongs_to_sector"
+        target: "shared:HumanitarianSector"
+        cardinality: "1..N"
+        description: "The universal sector(s) (e.g., WASH, Shelter) this need falls under."
+      - type: "superseded_by"
+        target: "core:IdentifiedNeed"
+        cardinality: "0..1"
+        description: "A subsequent need identified in a later assessment that replaces or updates the status of this need."
+
+constraints:
+  - "Every AssessmentFinding belongs to exactly one Assessment."
+  - "An IdentifiedNeed must be synthesized from at least one AssessmentFinding. Needs cannot exist in a vacuum without an underlying finding."
+  - "IdentifiedNeeds remain authoritative until superseded by an IdentifiedNeed from a subsequent Needs Assessment. Closing a Case or delivering Support does not implicitly alter the objective severity or existence of the need."
+  - "finding_confidence applies exclusively to AssessmentFindings, representing analytical trust in the conclusion, distinct from the objective verification of evidence."
+  - "The Needs Assessment domain consumes evidence by reference but never creates new evidence records outside of its own synthesized findings."
