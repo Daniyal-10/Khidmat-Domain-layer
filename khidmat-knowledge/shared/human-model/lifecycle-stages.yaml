@@ -16,6 +16,25 @@ status: "Phase 2.0 — Active"
 #                 belongs to Registration Reasoning, Risk Domain, Case
 #                 Management, and future operational domains.
 # Governing ADRs: ADR-007, ADR-008
+# Cross-reference: shared/human-model/dependency.yaml is the sole
+#                  authoritative owner of dependency-type semantics.
+#                  Every `type` value under `characteristic_dependencies`
+#                  below is a reference to an `id` defined in
+#                  dependency.yaml#dependency_types and must not diverge
+#                  from, extend, or redefine that vocabulary.
+# Cross-reference: shared/human-model/health-conditions.yaml is the sole
+#                  authoritative owner of health-condition semantics.
+#                  Most vulnerability/risk language below is intentionally
+#                  generic reasoning context, not a clinical assertion, and
+#                  remains descriptive prose by design. Where this file
+#                  names a specific condition that exists as a canonical
+#                  `id` in health-conditions.yaml, an inline
+#                  `(see health-conditions.yaml#<id>)` pointer is given.
+#                  The authoritative structural linkage runs the other way:
+#                  each condition in health-conditions.yaml declares its
+#                  own `characteristic_lifecycle_manifestations[].stage_ref`
+#                  into this file. This file must not redefine, restate, or
+#                  duplicate condition definitions owned there.
 # Age units:      All age ranges expressed in months for consistency.
 #                 Stage boundaries are indicative, not deterministic.
 # =============================================================================
@@ -41,7 +60,7 @@ lifecycle_stages:
       sensitive phase; deprivation in this stage has irreversible
       consequences.
     characteristic_dependencies:
-      - type: physiological
+      - type: caregiving
         description: >
           Total dependency on caregiver for feeding, warmth, hygiene, and
           safety. Cannot meet any survival need independently.
@@ -49,7 +68,7 @@ lifecycle_stages:
         description: >
           Brain development requires caregiver responsiveness and stimulation.
           Deprivation or caregiver unavailability produces lasting deficit.
-      - type: medical
+      - type: physical_support
         description: >
           Immature immune system; illness severity and deterioration speed
           are disproportionate to older stages.
@@ -61,8 +80,10 @@ lifecycle_stages:
     characteristic_vulnerabilities:
       - Severe acute malnutrition (SAM) and moderate acute malnutrition
         (MAM) with developmental consequences distinct from adult malnutrition
+        (see health-conditions.yaml#severe_acute_malnutrition,
+        #moderate_acute_malnutrition)
       - Developmental delay from inadequate stimulation, nutrition, or
-        caregiver responsiveness
+        caregiver responsiveness (see health-conditions.yaml#developmental_delay)
       - Rapid illness deterioration due to immature immune system
       - Complete exposure to caregiver vulnerability — the infant's safety
         is the caregiver's safety
@@ -104,12 +125,12 @@ lifecycle_stages:
       and guidance. Developmental milestones in this stage are highly
       sensitive to household stress and caregiver availability.
     characteristic_dependencies:
-      - type: safety
+      - type: caregiving
         description: >
           Cannot identify or avoid physical hazards without active supervision.
           Independent mobility increases exposure to harm without corresponding
           risk awareness.
-      - type: nutritional
+      - type: caregiving
         description: >
           Requires age-appropriate nutrition distinct from adult requirements.
           Malnutrition and stunting in this window cause lasting developmental
@@ -125,8 +146,9 @@ lifecycle_stages:
       - Early social play and peer interaction
       - Basic self-help skills emerging with caregiver support
     characteristic_vulnerabilities:
-      - Nutritional deficiency and stunting
+      - Nutritional deficiency and stunting (see health-conditions.yaml#stunting)
       - Developmental delay from household stress or caregiver unavailability
+        (see health-conditions.yaml#developmental_delay)
       - Accidental harm due to mobility without risk awareness
       - Psychosocial harm as a witness to domestic violence or household
         crisis
@@ -168,16 +190,16 @@ lifecycle_stages:
       Needs in this stage are frequently underdisclosed by caregivers who
       do not identify them as needs distinct from the household's needs.
     characteristic_dependencies:
-      - type: protective
+      - type: caregiving
         description: >
           Requires adult protection from harm and exploitation. Cannot
           navigate social threats or unfamiliar environments independently.
-      - type: educational
+      - type: developmental
         description: >
           Requires structured early learning opportunities. Absence creates
           measurable school readiness gaps with compounding educational
           consequences.
-      - type: nutritional
+      - type: caregiving
         description: >
           Sustained nutritional support required for cognitive and physical
           development. Micronutrient deficiency in this stage affects
@@ -233,12 +255,12 @@ lifecycle_stages:
       developmental tasks. Dropout in this stage produces compounding
       lifetime consequences that are well-documented in humanitarian contexts.
     characteristic_dependencies:
-      - type: educational
+      - type: financial
         description: >
           Dependent on household economic stability and caregiver
           prioritisation of education for continued enrolment. Fees, uniforms,
           and opportunity costs frequently drive withdrawal.
-      - type: protective
+      - type: caregiving
         description: >
           Dependent on caregivers and school environment for safety.
           Vulnerable to exploitation in unsupervised contexts outside
@@ -297,13 +319,13 @@ lifecycle_stages:
       context-sensitive. Adolescents often do not self-identify their
       vulnerabilities; underdisclosure is a characteristic of the stage.
     characteristic_dependencies:
-      - type: legal
+      - type: decision_making
         description: >
           Legally dependent until 18. Consent for major decisions rests with
           guardian. Legal dependency does not align with actual capability
           in late adolescence, creating complexity in household
           decision-making authority.
-      - type: economic
+      - type: financial
         description: >
           Rarely economically independent. Household economic stress transfers
           directly to the adolescent through withdrawal from education or
@@ -363,7 +385,7 @@ lifecycle_stages:
       Livelihood disruption in this stage interrupts accumulation before
       any safety net has formed.
     characteristic_dependencies:
-      - type: economic
+      - type: financial
         description: >
           Often partially dependent on family household. Economic
           self-sufficiency is being established, not assured. Loss of
@@ -422,7 +444,7 @@ lifecycle_stages:
       as vulnerability across all dependents. This stage is the central node
       of the household dependency graph.
     characteristic_dependencies:
-      - type: situational
+      - type: caregiving
         description: >
           Adults in crisis carry dependency on external support. Chronic
           illness creates care dependency on other household members,
@@ -484,11 +506,11 @@ lifecycle_stages:
       emerging dependency. Capability must not be assumed absent without
       assessment.
     characteristic_dependencies:
-      - type: health
+      - type: physical_support
         description: >
           Increasing frequency of health conditions requiring management.
           Healthcare access becomes critical to maintaining function.
-      - type: economic
+      - type: financial
         description: >
           Reduced income from retirement or reduced working capacity. Often
           dependent on family support without a formal pension or savings.
@@ -544,16 +566,16 @@ lifecycle_stages:
       absence of self-reported need should not be taken as evidence that
       needs are absent.
     characteristic_dependencies:
-      - type: physical
+      - type: caregiving
         description: >
           Activities of daily living (mobility, hygiene, nutrition,
           medication) may require caregiver assistance. Dependency level
           varies and must not be assumed.
-      - type: medical
+      - type: physical_support
         description: >
           Multiple comorbidities common. Medication management, clinical
           monitoring, and healthcare access are recurring needs.
-      - type: social
+      - type: emotional_support
         description: >
           Social participation and safety dependent on household and
           community support. Isolation risk is high and frequently
