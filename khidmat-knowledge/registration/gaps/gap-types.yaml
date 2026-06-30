@@ -53,3 +53,27 @@ gap_types:
       At least one intervention must address each need before case closure
       as ready_for_verification.
     severity: high
+
+  - id: cost_estimate_gap
+    description: Medical or livelihood need without a cost estimate.
+    severity: medium
+
+  - id: member_linkage_gap
+    description: Specific household member this need concerns is unknown.
+    severity: medium
+
+  - id: registrant_relationship_gap
+    description: Proxy registrant with no declared relationship to beneficiary.
+    severity: high
+
+  - id: proxy_consent_gap
+    description: Proxy consent has not been obtained.
+    severity: medium
+
+  - id: need_subtype_gap
+    description: Medical need without a specified subtype.
+    severity: low
+
+  - id: referral_source_gap
+    description: Referral source is missing for a non-self-initiated registration.
+    severity: low

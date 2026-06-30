@@ -75,7 +75,7 @@ blocking_gap_clearance:
       failure_label: Minor household member with no identified guardian
 
     - id: situation_linked_to_need
-      gap_type: situation_traceability_gap
+      gap_type: situation_need_traceability_gap
       condition: >
         for all needs: at least one situation is linked to the need
       failure_label: At least one need has no linked situation

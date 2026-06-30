@@ -46,11 +46,13 @@ All ontology work must remain consistent with these files.
 
 ## Dependency Rules
 
-- registration/ may import from shared/
-- No other domain may import from registration/
-- Future domains may import from shared/
-- No circular dependencies permitted
-- Concepts shared between two or more domains must be promoted to shared/
+To maintain long-term ontological stability, single-source-of-truth knowledge graph normalization, and clear bounded context boundaries, the following rules govern cross-domain relationships:
+
+- **Semantic Reference:** Domains may freely establish semantic references (via `*_ref` pointers in RDF/OWL equivalent property paths) to ontology concepts natively owned by other bounded contexts when required for cross-domain business logic.
+- **Reference-Not-Redefine:** Consuming domains must *never* redefine, overload, or create competing taxonomy/ontology definitions for concepts owned elsewhere. Natively owned concepts remain canonical.
+- **Concept Ownership:** Semantic referencing never transfers concept ownership. Canonical ownership always remains strictly with the originating bounded context as dictated by ADR-008 and `ontology_authority_matrix.md`.
+- **Acyclic Dependencies:** Circular semantic dependencies between bounded contexts are strictly prohibited. The knowledge graph must form a Directed Acyclic Graph (DAG) across domain boundaries.
+- **Shared Promotion Constraint:** Concepts must only be promoted to the `shared/` bounded context through an explicit architectural governance decision (e.g., an ADR). A concept is not promoted merely because multiple downstream domains happen to reference it.
 
 ## Shared Human Model
 

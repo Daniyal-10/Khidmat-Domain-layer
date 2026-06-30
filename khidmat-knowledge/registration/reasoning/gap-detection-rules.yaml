@@ -63,7 +63,7 @@ detection_rules:
       any household_member.minor is true AND household.guardian_status is null
     blocking: true
 
-  - gap_type: situation_traceability_gap
+  - gap_type: situation_need_traceability_gap
     detection_condition: >
       need is present AND no situation is linked to that need
     blocking: true
