@@ -17,7 +17,7 @@ entities:
     attributes:
       - lifecycle_id: Unique identifier for the lifecycle.
       - current_stage (reference: taxonomy/engagement_stage)
-      - stage_entered_timestamp (reference: shared-time/Timestamp)
+      - stage_entered_timestamp (datatype: xsd:dateTime)
     relationships:
       - tracksJourneyOf:
           target: shared-ontology/Subject
@@ -40,7 +40,7 @@ entities:
     type: event_entity
     attributes:
       - transition_id: Unique identifier for the transition.
-      - transition_timestamp (reference: shared-time/Timestamp)
+      - transition_timestamp (datatype: xsd:dateTime)
       - prior_stage (reference: taxonomy/engagement_stage)
       - new_stage (reference: taxonomy/engagement_stage)
       - exit_reason (reference: taxonomy/exit_reason, optional)
@@ -106,4 +106,4 @@ cross_domain_references:
   - registration: "References Registration complete events as transition triggers. Never redefines registration forms."
   - verification-operations: "References Verification outcome events to gate transitions. Never redefines verification mechanics."
   - shared-risk: "References Risk events as triggers for suspension holds. Never redefines risk definitions."
-  - shared-time: "References Timestamps for accurate duration and transition tracking."
+  - xsd:dateTime: "Uses standard RDF datatype for accurate duration and transition tracking instead of a custom temporal ontology."

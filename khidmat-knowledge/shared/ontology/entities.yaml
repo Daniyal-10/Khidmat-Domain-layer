@@ -37,4 +37,28 @@ entities:
       Inherits from Subject.
     required: false
     cardinality_in_case: zero_or_more
-    parent: subject
+    parent: subject
+
+  - id: assessment_tool
+    label: AssessmentTool
+    description: >
+      A placeholder for the framework or instrument utilized to conduct an evaluation.
+      Forward-declared for Needs Assessment.
+
+  - id: humanitarian_sector
+    label: HumanitarianSector
+    description: >
+      A placeholder for a universal humanitarian sector (e.g., WASH, Shelter).
+      Forward-declared for Needs Assessment.
+
+  - id: intervention_type
+    label: InterventionType
+    description: >
+      A placeholder for standardized intervention types used in case planning.
+      Forward-declared for Case Management.
+
+  - id: actor
+    label: Actor
+    description: >
+      A placeholder for an operational participant (e.g., volunteer, partner organization, AI agent).
+      Forward-declared for Case Management and other operational domains.

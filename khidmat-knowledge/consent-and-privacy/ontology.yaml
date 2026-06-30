@@ -1,0 +1,10 @@
+domain: consent-and-privacy
+status: placeholder
+
+namespaces:
+  core: "khidmat:consent-and-privacy:core"
+
+entities:
+  Consent:
+    description: >
+      A minimal placeholder declaration for Consent, required for Case Management to reference.

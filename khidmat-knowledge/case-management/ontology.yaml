@@ -104,7 +104,7 @@ case_management:
       - name: references_actor
         source: CaseAssignment
         target: Actor
-        domain: Shared Human Model
+        domain: Shared Ontology
         cardinality: many_to_one
         description: References the authoritative Actor responsible for the assignment.
 

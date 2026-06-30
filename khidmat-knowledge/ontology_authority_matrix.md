@@ -44,6 +44,10 @@ this file.
 | `subject` | Subject | `shared/ontology/entities.yaml` | Shared Ontology | Semantic parent for Person/Household. Owns no demographic data. Must not be redefined. |
 | `person` | Person | `shared/ontology/entities.yaml` | Shared Ontology | Authoritative concept for individuals. Must not be redefined. |
 | `household` | Household | `shared/ontology/entities.yaml` | Shared Ontology | Authoritative concept for households. Must not be redefined. |
+| `assessment_tool` | AssessmentTool | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Needs Assessment. Must not be redefined. |
+| `humanitarian_sector` | HumanitarianSector | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Needs Assessment. Must not be redefined. |
+| `intervention_type` | InterventionType | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Case Management. Must not be redefined. |
+| `actor` | Actor | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for an operational participant. Must not be redefined. |
 
 ---
 
@@ -259,7 +263,7 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 
 ## Shared Time Domain
 
-**Authoritative file:** `shared/taxonomy/time.yaml`
+**Authoritative files:** `shared/taxonomy/time.yaml`
 **Owner domain:** Shared Domain
 **Introduced:** Phase 4.0
 **Governing ADRs:** ADR-007, ADR-008
@@ -274,6 +278,19 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 | `temporal_granularity` | Temporal Granularity | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
 | `waiting_and_grace_periods` | Waiting and Grace Periods | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
 | `evidence_freshness` | Evidence Freshness | `shared/taxonomy/time.yaml` | Shared Domain | May be referenced by any domain; must not be redefined |
+
+---
+
+## Consent & Privacy Domain
+
+**Authoritative file:** `consent-and-privacy/ontology.yaml`
+**Owner domain:** Consent & Privacy
+**Introduced:** Phase 5.0
+**Governing ADRs:** ADR-008
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `Consent` | Consent | `consent-and-privacy/ontology.yaml` | Consent & Privacy | May be referenced by any domain; must not be redefined |
 
 ---
 
