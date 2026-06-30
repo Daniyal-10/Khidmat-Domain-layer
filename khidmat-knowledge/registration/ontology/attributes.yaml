@@ -381,7 +381,7 @@ need:
     type: enum
     required: true
     values: [critical, high, medium, low]
-    values_ref: registration/taxonomy/needs.yaml#need_severity
+    values_ref: needs-assessment/taxonomy.yaml#need_severity
     gap_type: severity_gap
     gap_condition: need_category is populated AND need_severity is null.
     classification_rules_ref: registration/reasoning/severity-rules.yaml

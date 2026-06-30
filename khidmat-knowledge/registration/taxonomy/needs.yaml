@@ -166,21 +166,6 @@ need_categories:
           Psychological support needs following exposure to domestic violence.
           Safety flag must be assessed before this need can be addressed.
 
-need_severity:
-  values:
-    - id: critical
-      label: Critical
-      description: Life-threatening or causing immediate serious harm if unaddressed
-    - id: high
-      label: High
-      description: Significant hardship, time-sensitive response required
-    - id: medium
-      label: Medium
-      description: Important but not immediately dangerous
-    - id: low
-      label: Low
-      description: Quality-of-life improvement, not urgent
-
 need_duration:
   values:
     - id: one_time
