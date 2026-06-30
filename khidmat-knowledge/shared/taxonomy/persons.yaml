@@ -34,15 +34,4 @@ gender_vocabulary:
   - not_disclosed
 
 functional_capacity:
-  # Owned here because it describes the person, not the situation
-  # Applies across registration, case management, and beneficiary lifecycle
-  values:
-    - id: full
-      label: Full
-      description: Can manage daily tasks independently
-    - id: partial
-      label: Partial
-      description: Requires some assistance with daily tasks
-    - id: dependent
-      label: Dependent
-      description: Cannot manage daily tasks without full support
+  ref: shared/human-model/capabilities.yaml#capability_levels
