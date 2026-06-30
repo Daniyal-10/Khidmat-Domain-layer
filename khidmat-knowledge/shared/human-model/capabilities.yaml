@@ -18,9 +18,13 @@ status: "Phase 2.2 — Active"
 # Governing ADRs: ADR-007, ADR-008
 # Cross-reference:
 #   shared/human-model/lifecycle-stages.yaml
-#     characteristic_capabilities entries in that file are descriptive
-#     anticipations of the concepts formally defined here. FLAG-004 in
-#     ontology_authority_matrix.md requires alignment between the two files.
+#     characteristic_capabilities entries in that file are, by design,
+#     mostly generic developmental narrative rather than capability-level
+#     assessments. Where an entry names a specific capability that is also
+#     confirmed by this file's own `lifecycle_associations` for that stage,
+#     that file carries an inline `(see capabilities.yaml#<id>)` pointer.
+#     This file remains the sole authority for capability definitions
+#     (FLAG-004, resolved).
 #   shared/taxonomy/persons.yaml
 #     functional_capacity enum (full, partial, dependent) is a proto-
 #     capability placeholder. FLAG-001 in ontology_authority_matrix.md

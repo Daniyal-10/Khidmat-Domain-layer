@@ -35,6 +35,18 @@ status: "Phase 2.0 — Active"
 #                  own `characteristic_lifecycle_manifestations[].stage_ref`
 #                  into this file. This file must not redefine, restate, or
 #                  duplicate condition definitions owned there.
+# Cross-reference: shared/human-model/capabilities.yaml is the sole
+#                  authoritative owner of capability semantics. Most
+#                  `characteristic_capabilities` entries below are
+#                  intentionally generic developmental narrative, not a
+#                  capability-level assessment, and remain descriptive
+#                  prose by design. Where an entry names a specific
+#                  capability that exists as a canonical `id` in
+#                  capabilities.yaml AND that file's own
+#                  `lifecycle_associations` confirms the stage, an inline
+#                  `(see capabilities.yaml#<id>)` pointer is given. This
+#                  file must not redefine, restate, or duplicate capability
+#                  definitions owned there.
 # Age units:      All age ranges expressed in months for consistency.
 #                 Stage boundaries are indicative, not deterministic.
 # =============================================================================
@@ -75,8 +87,9 @@ lifecycle_stages:
     characteristic_capabilities:
       - Sensory response and caregiver recognition
       - Communication through crying, facial expression, and gesture
+        (see capabilities.yaml#communication)
       - Progressive motor development across the stage (grasping, rolling,
-        sitting, early standing)
+        sitting, early standing) (see capabilities.yaml#physical_mobility)
     characteristic_vulnerabilities:
       - Severe acute malnutrition (SAM) and moderate acute malnutrition
         (MAM) with developmental consequences distinct from adult malnutrition
@@ -142,7 +155,9 @@ lifecycle_stages:
           deficits.
     characteristic_capabilities:
       - Independent mobility within the immediate environment
+        (see capabilities.yaml#physical_mobility)
       - Emergent language — can indicate pain, hunger, fear, and discomfort
+        (see capabilities.yaml#communication)
       - Early social play and peer interaction
       - Basic self-help skills emerging with caregiver support
     characteristic_vulnerabilities:
@@ -206,8 +221,11 @@ lifecycle_stages:
           cognitive capacity into adulthood.
     characteristic_capabilities:
       - Language and basic communication adequate for self-expression
+        (see capabilities.yaml#communication, capabilities.yaml#language)
       - Play-based social interaction and emerging peer relationships
-      - Early literacy and numeracy readiness
+        (see capabilities.yaml#social_participation)
+      - Early literacy (see capabilities.yaml#literacy) and numeracy
+        readiness
       - Emerging self-regulation and emotional understanding
     characteristic_vulnerabilities:
       - Educational exclusion or delayed school entry
@@ -267,9 +285,12 @@ lifecycle_stages:
           home and school.
     characteristic_capabilities:
       - Independent mobility within familiar environments
-      - Literacy and numeracy when in school
+      - Literacy (see capabilities.yaml#literacy) and numeracy when in
+        school
       - Social peer relationships and emerging social identity
+        (see capabilities.yaml#social_participation)
       - Meaningful household contribution tasks
+        (see capabilities.yaml#household_management)
     characteristic_vulnerabilities:
       - School dropout due to household financial crisis
       - Child labour replacing education
@@ -332,8 +353,10 @@ lifecycle_stages:
           pressure to contribute income.
     characteristic_capabilities:
       - Adult-level physical capacity in late adolescence
-      - Emerging vocational skills and educational attainment
+      - Emerging vocational skills (see capabilities.yaml#vocational) and
+        educational attainment
       - Independent social relationships and peer networks
+        (see capabilities.yaml#social_participation)
       - Developing autonomous decision-making capacity
     characteristic_vulnerabilities:
       - Early and forced marriage, disproportionately affecting adolescent
@@ -393,8 +416,12 @@ lifecycle_stages:
     characteristic_capabilities:
       - Full legal autonomy
       - Physical and cognitive capacity at or near peak
-      - Vocational and educational capacity building
+        (see capabilities.yaml#physical_mobility,
+        capabilities.yaml#cognitive_functioning)
+      - Vocational (see capabilities.yaml#vocational) and educational
+        capacity building
       - Emerging caregiving capacity for own dependents
+        (see capabilities.yaml#caregiving)
     characteristic_vulnerabilities:
       - Unemployment and absence of vocational pathways
       - Early parenthood without economic stability, combining high
@@ -451,9 +478,13 @@ lifecycle_stages:
           inverting the expected caregiving direction.
     characteristic_capabilities:
       - Full economic productive capacity
+        (see capabilities.yaml#vocational, capabilities.yaml#employment)
       - Caregiving capacity for children, elderly, and other dependents
+        (see capabilities.yaml#caregiving)
       - Household decision-making authority
       - Social and community participation
+        (see capabilities.yaml#social_participation,
+        capabilities.yaml#community_participation)
     characteristic_vulnerabilities:
       - Livelihood disruption as the household's primary economic shock
         vector
@@ -516,9 +547,11 @@ lifecycle_stages:
           dependent on family support without a formal pension or savings.
     characteristic_capabilities:
       - Substantial life experience and household advisory role
-      - Continued caregiving and household economic contribution in many
-        cases
+      - Continued caregiving (see capabilities.yaml#caregiving) and
+        household economic contribution in many cases
       - Social capital, community networks, and institutional knowledge
+        (see capabilities.yaml#social_participation,
+        capabilities.yaml#community_participation)
     characteristic_vulnerabilities:
       - Chronic disease onset and management burden
       - Income reduction without pension, savings, or family support
@@ -584,7 +617,7 @@ lifecycle_stages:
       - Household advisory and relational role
       - Oral history and cultural knowledge
       - Residual independent capability varies widely and must not be
-        assumed absent
+        assumed absent (see capabilities.yaml#independent_living)
     characteristic_vulnerabilities:
       - Frailty and fall risk
       - Cognitive decline and associated exploitation risk
