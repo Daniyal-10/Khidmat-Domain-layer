@@ -27,6 +27,10 @@ entities:
         type: "taxonomy:assessment_status"
         cardinality: "1"
         description: "The lifecycle stage of the evaluation event."
+      assessment_methodology:
+        type: "taxonomy:assessment_methodology"
+        cardinality: "1"
+        description: "The broad methodological approach or class of the evaluation."
     relationships:
       - type: "assesses"
         target: "shared:Subject"
@@ -93,6 +97,7 @@ entities:
       - type: "superseded_by"
         target: "core:IdentifiedNeed"
         cardinality: "0..1"
+        inverse: "supersedes"
         description: "A subsequent need identified in a later assessment that replaces or updates the status of this need."
 
 constraints:

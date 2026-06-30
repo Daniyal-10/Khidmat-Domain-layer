@@ -3,7 +3,7 @@
 assessment_depth:
   description: "The granularity and duration of the assessment event."
   values:
-    - rapid: "Conducted immediately post-crisis to gauge macro-level needs quickly; lower granularity, higher urgency."
+    - rapid: "A quick, lower-granularity evaluation conducted to gauge macro-level needs over a short duration."
     - detailed: "A comprehensive, in-depth evaluation conducted to formulate long-term recovery plans."
 
 assessment_urgency:
