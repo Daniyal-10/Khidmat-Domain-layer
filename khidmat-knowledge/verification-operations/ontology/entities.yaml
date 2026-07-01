@@ -203,6 +203,12 @@ entities:
           consistent with the examples already declared in the Phase
           4.0 core ontology. Observational only — carries no
           conclusion; conclusions belong to VerificationFinding.
+      observation_alignment:
+        type: string # Enum: supports_claim, partially_supports_claim, contradicts_claim, refutes_claim, inconclusive
+        cardinality: "1"
+        description: >
+          The semantic alignment of this observation with the underlying claim.
+          Exposes the result of the observation for purely semantic reasoning.
       observed_at:
         type: "xsd:dateTime"
         cardinality: "1"

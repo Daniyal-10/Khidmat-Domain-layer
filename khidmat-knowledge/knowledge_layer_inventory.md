@@ -835,7 +835,7 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-## PLACEHOLDER DOMAINS
+## VERIFICATION OPERATIONS DOMAIN
 
 ---
 
@@ -849,21 +849,62 @@ dependency models are referenced by note pending those files' creation.
 - `field_observation`
 - `verification_finding`
 - `reverification_trigger`
+- `human_review`
+- `verification_assignment`
 
 **Relationships Owned:**
-- `verification_subject` participates_in `verification_activity`
-- `verification_activity` evaluates `verification_subject`
-- `verification_activity` produces `field_observation`
-- `verification_activity` produces `verification_finding`
-- `verification_finding` derived_from `field_observation`
-- `reverification_trigger` may_be_created_from `verification_finding`
+- Declared in `ontology/relationships.yaml`
 
 **Maturity:** Complete (Phase 4.0).
 
-**Known Gaps / Notes:**
-- *Governance Dependency Note:* Active despite incomplete Stage 1 prerequisites (Support Interventions and Evidence Taxonomy) in the registration domain.
-- `Evidence` is referenced as a concept but its attribute block in the registration domain is currently missing.
-- Assertion subtypes (e.g., `identity_assertion`, `medical_assertion`) are illustrative examples and are not formally defined.
+**Known Gaps / Notes:** None.
+
+---
+
+### verification-operations/taxonomy/*.yaml
+
+**Purpose:** Authoritative vocabularies for verification operations (escalation reasons, review decisions, verification confidence, findings, methods, roles, status, triggers).
+**Maturity:** Complete.
+
+---
+
+### verification-operations/ontology/entities.yaml
+
+**Purpose:** Semantic model of Verification Operations entities.
+**Concepts Owned:** VerificationSubject, VerificationActivity, FieldObservation, VerificationFinding, HumanReview, ReverificationTrigger, VerificationAssignment.
+**Maturity:** Complete.
+
+---
+
+### verification-operations/ontology/relationships.yaml
+
+**Purpose:** Structural relationships between verification entities.
+**Maturity:** Complete.
+
+---
+
+### verification-operations/ontology/lifecycle.yaml
+
+**Purpose:** State machines and lifecycle constraints for verification entities.
+**Maturity:** Complete.
+
+---
+
+### verification-operations/ontology/constraints.yaml
+
+**Purpose:** Semantic invariants and cardinality constraints.
+**Maturity:** Complete.
+
+---
+
+### verification-operations/reasoning/*.yaml
+
+**Purpose:** Rules for verification findings, confidence composition, contradictions, escalation, reverification, and completeness.
+**Maturity:** Complete.
+
+---
+
+## PLACEHOLDER DOMAINS
 
 ---
 

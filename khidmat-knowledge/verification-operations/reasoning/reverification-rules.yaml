@@ -1,0 +1,82 @@
+version: "1.0"
+domain: Verification Operations
+file: reasoning/reverification-rules.yaml
+
+purpose: >
+  Inference rules for raising a reverification_trigger when circumstances,
+  evidence, or time dictate that a previously verified fact must be re-checked.
+
+scope: >
+  Maps temporal data, evidence freshness, risk trends, and case updates
+  to reverification_trigger_type values.
+
+governance:
+  governing_adr:
+    - ADR-008
+    - ADR-010
+
+inputs:
+  - entity: core:VerificationFinding
+  - entity: case_management:Case
+  - entity: registration:Evidence
+  - concept: taxonomy:reverification-triggers.yaml#reverification_trigger_type
+  - concept: taxonomy:time.yaml#waiting_and_grace_periods
+
+outputs:
+  - entity: core:ReverificationTrigger
+
+reasoning_rules:
+  - rule_id: trigger_evidence_expiring
+    description: Evidence supporting a confirmed finding is expiring or expired.
+    condition: >
+      finding.finding_status in [confirmed, partially_confirmed] AND
+      finding.evidence.temporal_status in [expiring_soon, expired]
+    outcome:
+      reverification_trigger_type: evidence_expiring
+    semantic_rationale: >
+      Verification tied to time-limited evidence must be renewed when that
+      evidence loses validity.
+
+  - rule_id: trigger_risk_escalation
+    description: Household risk trend deteriorated since last verification.
+    condition: >
+      finding.finding_status in [confirmed, partially_confirmed] AND
+      case.risk_trend == deteriorating AND
+      case.risk_trend.updated_at > finding.created_at
+    outcome:
+      reverification_trigger_type: risk_escalation
+    semantic_rationale: >
+      A deteriorating risk situation means previously verified stable conditions
+      may no longer hold, requiring fresh verification.
+
+  - rule_id: trigger_periodic_reassessment
+    description: Standard time elapsed requiring routine reverification.
+    condition: >
+      current_date > (finding.created_at + reassessment_window)
+    outcome:
+      reverification_trigger_type: periodic_reassessment
+    semantic_rationale: >
+      Routine health-checks on long-term cases ensure the knowledge graph
+      does not silently drift from reality.
+
+  - rule_id: trigger_case_updated_after_issuance
+    description: The registration case was updated after a VerificationBrief was generated.
+    condition: >
+      activity.verification_status in [scheduled, in_progress] AND
+      case.updated_at > activity.brief_issued_at
+    outcome:
+      reverification_trigger_type: case_updated_after_issuance
+    semantic_rationale: >
+      The verifier in the field may be working from stale instructions. The brief
+      must be re-issued or the activity reassessed.
+
+  - rule_id: trigger_contradiction_detected
+    description: A new contradiction was flagged on a previously settled claim.
+    condition: >
+      new_finding.contradiction_type != null AND
+      new_finding.subject == prior_finding.subject
+    outcome:
+      reverification_trigger_type: contradiction_detected
+    semantic_rationale: >
+      Conflicts between past and present findings automatically trigger a dedicated
+      reverification assignment to resolve the discrepancy.

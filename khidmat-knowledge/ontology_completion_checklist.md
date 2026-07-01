@@ -72,10 +72,15 @@
 ✓ Risk (`shared/risk/risk.yaml`)
 ✓ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
 
-### Phase 4.0 — Verification Operations (Active / In Progress)
+### Phase 4.0 — Verification Operations (Complete)
 
 ✓ Verification Operations Core Ontology (`verification-operations/verification-operations.yaml`)
-□ Operational Verification Models (assignment, field visit, claim confirmation, etc.) [Pending]
+✓ Verification Taxonomy (`verification-operations/taxonomy/*.yaml`)
+✓ Verification Ontology Entities (`verification-operations/ontology/entities.yaml`)
+✓ Verification Ontology Relationships (`verification-operations/ontology/relationships.yaml`)
+✓ Verification Lifecycle Constraints (`verification-operations/ontology/lifecycle.yaml`)
+✓ Verification Constraints (`verification-operations/ontology/constraints.yaml`)
+✓ Verification Reasoning (`verification-operations/reasoning/*.yaml`)
 
 ### Phase 4.5 — Needs Assessment Domain (Complete)
 

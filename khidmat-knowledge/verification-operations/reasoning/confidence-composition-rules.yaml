@@ -1,0 +1,83 @@
+version: "1.0"
+domain: Verification Operations
+file: reasoning/confidence-composition-rules.yaml
+
+purpose: >
+  Inference rules for determining the verification_confidence of a finding.
+  Evaluates the strength of the verification method, the corroboration of sources,
+  and the quality of evidence.
+
+scope: >
+  Assigns a verification_confidence level (high, medium, low, none) to a
+  VerificationFinding.
+
+governance:
+  governing_adr:
+    - ADR-008
+    - ADR-010
+
+inputs:
+  - entity: core:VerificationFinding
+  - entity: core:VerificationActivity
+  - concept: taxonomy:verification-methods.yaml#verification_method
+  - concept: taxonomy:verification-confidence.yaml#verification_confidence
+
+outputs:
+  - entity: core:VerificationFinding
+    property: verification_confidence
+
+reasoning_rules:
+  - rule_id: confidence_high_direct_observation
+    description: High confidence via direct field observation by an authorized actor.
+    condition: >
+      activity.method == field_visit AND
+      activity.actor.role == trained_verifier AND
+      finding.finding_status in [confirmed, refuted]
+    outcome:
+      verification_confidence: high
+    semantic_rationale: >
+      Direct observation by a trained verification actor is the gold standard for
+      verifying physical reality (e.g., household composition, shelter condition).
+
+  - rule_id: confidence_high_corroborated_institutional
+    description: High confidence via official institutional records.
+    condition: >
+      activity.method == institutional_verification AND
+      activity.evidence.source_type == official_institution AND
+      activity.evidence.tamper_evident == true
+    outcome:
+      verification_confidence: high
+    semantic_rationale: >
+      Official, tamper-evident records from recognized institutions (e.g., medical
+      facility, government registry) provide high certainty for documentary claims.
+
+  - rule_id: confidence_medium_uncorroborated_remote
+    description: Medium confidence via a remote interview without physical evidence.
+    condition: >
+      activity.method in [remote_interview, phone_verification] AND
+      count(activity.evidence) == 0
+    outcome:
+      verification_confidence: medium
+    semantic_rationale: >
+      Remote interviews provide useful signals but carry inherent identity and
+      presence risks compared to physical visits.
+
+  - rule_id: confidence_low_single_community_reference
+    description: Low confidence via a single informal community reference.
+    condition: >
+      activity.method == community_reference AND
+      count(activity.evidence) == 0
+    outcome:
+      verification_confidence: low
+    semantic_rationale: >
+      A single community reference without corroborating physical evidence is prone 
+      to bias or lack of full context. It yields low operational trust.
+
+  - rule_id: confidence_none_unverifiable
+    description: No confidence for unable_to_confirm findings.
+    condition: >
+      finding.finding_status == unable_to_confirm
+    outcome:
+      verification_confidence: none
+    semantic_rationale: >
+      If the conclusion itself could not be reached, there is no confidence to measure.

@@ -46,7 +46,7 @@ Missing Entirely
 
 Current Active Phase
 
-└── Phase 4.0 — Verification Operations (Active / In Progress)
+└── Phase 4.5 — Needs Assessment Domain (Complete) / Ready for next stage
 
 Already Created
 
@@ -56,7 +56,7 @@ Already Created
 ├── Family structure model
 ├── Health conditions model
 ├── Risk Domain (Complete)
-├── Verification Operations (Core Ontology Complete)
+├── Verification Operations (Complete)
 ├── Needs Assessment (Complete)
 ├── Beneficiary Lifecycle (Complete)
 └── Case Management (Complete)
@@ -99,13 +99,13 @@ Completed:
 
 Current Active Deliverable:
 
-Phase 4.0 — Verification Operations (Active / In Progress)
+Phase 4.5 — Needs Assessment Domain (Complete) / Phase 5.0 — Case Management Domain (Complete)
 
 Future Shared Ontology Work:
 □ shared human entity promotion model
 
 Current Active Phase:
-Phase 4.0 — Verification Operations (Active / In Progress)
+Ready for next stage
 
 The Shared Human Model prerequisite is now fully satisfied:
 
@@ -137,7 +137,7 @@ Completed
 
 Next Active Deliverable
 
-Phase 4.0 — Verification Operations (Active / In Progress) (Core ontology complete; operational models pending)
+Phase 5.0 — Case Management Domain (Partially Complete)
 
 After Completion
 
@@ -180,15 +180,15 @@ are complete and stable.
 
 ## Stage 4 — Activate Verification Operations Domain
 
-**STATUS: ACTIVE / IN PROGRESS** (Core Ontology Complete; Operational models pending; Stage 1 Dependency Anomaly Noted)
+**STATUS: COMPLETED** (Stage 1 Dependency Anomaly Noted)
 
 **What this stage produces:**
 - ✓ Verification Operations core ontology (`verification-operations/verification-operations.yaml`) [Complete]
-- □ Volunteer assignment model [Pending]
-- □ Field visit outcome model [Pending]
-- □ Claim confirmation model (result of a verification requirement) [Pending]
-- □ Evidence collection model [Pending]
-- □ Re-verification trigger model [Pending]
+- ✓ Volunteer assignment model [Complete]
+- ✓ Field visit outcome model [Complete]
+- ✓ Claim confirmation model (result of a verification requirement) [Complete]
+- ✓ Evidence collection model [Complete]
+- ✓ Re-verification trigger model [Complete]
 
 **Prerequisites:**
 - Stage 1 complete (support interventions and evidence taxonomies)
