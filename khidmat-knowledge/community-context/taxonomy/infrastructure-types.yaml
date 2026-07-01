@@ -1,0 +1,219 @@
+# Khidmat Knowledge Layer — Community Context Taxonomy
+# Domain: Community Context
+# File: infrastructure-types.yaml
+# Purpose: Defines the canonical classification of physical and institutional infrastructure present in a community.
+
+domain: community_context
+taxonomy: infrastructure_types
+version: 1.0.0
+
+concepts:
+  infrastructure_category:
+    description: "The primary domain or sector of the infrastructure."
+    type: enum
+    values:
+      - id: healthcare
+        label: "Healthcare"
+        description: "Facilities providing medical, dental, or mental health services."
+      - id: education
+        label: "Education"
+        description: "Facilities providing formal or informal learning and schooling."
+      - id: water
+        label: "Water (WASH)"
+        description: "Infrastructure for the extraction, treatment, and distribution of water."
+      - id: sanitation
+        label: "Sanitation (WASH)"
+        description: "Facilities for waste management and hygiene."
+      - id: transportation
+        label: "Transportation"
+        description: "Infrastructure supporting the movement of people and goods."
+      - id: communications
+        label: "Communications"
+        description: "Infrastructure enabling digital and telephonic connectivity."
+      - id: energy
+        label: "Energy"
+        description: "Infrastructure providing electricity or other fuel sources."
+      - id: markets
+        label: "Markets & Commerce"
+        description: "Locations for trading goods and basic commodities."
+      - id: financial_services
+        label: "Financial Services"
+        description: "Facilities providing banking, credit, or money transfer services."
+      - id: emergency_services
+        label: "Emergency Services"
+        description: "Infrastructure supporting acute crisis response (fire, police, ambulance)."
+      - id: public_administration
+        label: "Public Administration"
+        description: "Government offices handling civil registry, justice, and civic services."
+      - id: community_facilities
+        label: "Community Facilities"
+        description: "Public spaces for gathering, recreation, or community-led activities."
+      - id: religious_facilities
+        label: "Religious Facilities"
+        description: "Places of worship or religious instruction."
+
+  infrastructure_type:
+    description: "Specific types of infrastructure within the broader categories."
+    type: enum
+    values:
+      # Healthcare
+      - id: primary_health_clinic
+        label: "Primary Health Clinic"
+        description: "Basic outpatient facility for routine care and minor ailments."
+        category: healthcare
+      - id: tertiary_hospital
+        label: "Tertiary Hospital"
+        description: "Advanced medical facility with specialized care and inpatient beds."
+        category: healthcare
+      - id: pharmacy
+        label: "Pharmacy / Dispensary"
+        description: "Location for dispensing medicines and basic health supplies."
+        category: healthcare
+      - id: health_post
+        label: "Health Post"
+        description: "A small, basic health facility often staffed by community health workers or nurses."
+        category: healthcare
+      - id: community_health_worker_base
+        label: "Community Health Worker Base"
+        description: "The primary operating base or home clinic for a community health worker."
+        category: healthcare
+      - id: maternal_child_health_center
+        label: "Maternal and Child Health Center"
+        description: "A specialized facility focusing on prenatal, maternal, and pediatric care."
+        category: healthcare
+      - id: diagnostic_laboratory
+        label: "Diagnostic Laboratory"
+        description: "A facility for medical testing and diagnostics."
+        category: healthcare
+      - id: blood_bank
+        label: "Blood Bank"
+        description: "A facility for collecting, testing, and storing blood."
+        category: healthcare
+      # Education
+      - id: primary_school
+        label: "Primary School"
+        description: "Institution for foundational childhood education."
+        category: education
+      - id: secondary_school
+        label: "Secondary School"
+        description: "Institution for adolescent education."
+        category: education
+      - id: vocational_center
+        label: "Vocational / Training Center"
+        description: "Facility for skills training and adult education."
+        category: education
+      # Water
+      - id: communal_well
+        label: "Communal Well / Borehole"
+        description: "Shared access point for groundwater."
+        category: water
+      - id: piped_water_network
+        label: "Piped Water Network"
+        description: "System delivering water directly to households or shared taps."
+        category: water
+      # Sanitation
+      - id: public_latrine
+        label: "Public Latrine / Toilet Block"
+        description: "Shared sanitation facility."
+        category: sanitation
+      - id: waste_disposal_site
+        label: "Waste Disposal Site"
+        description: "Designated area for solid waste collection or processing."
+        category: sanitation
+      # Transportation
+      - id: transit_hub
+        label: "Transit Hub"
+        description: "Major station for buses, trains, or shared transport."
+        category: transportation
+      - id: paved_road
+        label: "Paved Road"
+        description: "All-weather road infrastructure."
+        category: transportation
+      - id: bridge
+        label: "Bridge"
+        description: "A structure carrying a road or path across a physical obstacle."
+        category: transportation
+      - id: footbridge
+        label: "Footbridge"
+        description: "A bridge designed solely for pedestrians or pack animals."
+        category: transportation
+      - id: ferry_terminal
+        label: "Ferry Terminal"
+        description: "A facility where ferries dock to transport vehicles and passengers."
+        category: transportation
+      - id: boat_landing
+        label: "Boat Landing"
+        description: "A simple dock or slipway for small watercraft."
+        category: transportation
+      - id: railway_station
+        label: "Railway Station"
+        description: "A facility for passenger or freight rail transport."
+        category: transportation
+      - id: airstrip_helipad
+        label: "Airstrip / Helipad"
+        description: "A designated area for the takeoff and landing of aircraft."
+        category: transportation
+      # Communications
+      - id: cell_tower
+        label: "Cell Tower"
+        description: "Infrastructure providing mobile network coverage."
+        category: communications
+      - id: internet_cafe
+        label: "Internet Cafe / Digital Hub"
+        description: "Public access point for internet services."
+        category: communications
+      # Energy
+      - id: grid_connection
+        label: "Grid Connection Point"
+        description: "Access to the main electrical grid."
+        category: energy
+      - id: off_grid_power
+        label: "Off-Grid Power Station"
+        description: "Localized power generation such as solar micro-grids."
+        category: energy
+      # Markets
+      - id: daily_market
+        label: "Daily Market"
+        description: "Permanent market operating every day for essential goods."
+        category: markets
+      - id: periodic_market
+        label: "Periodic Market"
+        description: "Market operating on specific days of the week or month."
+        category: markets
+      # Financial Services
+      - id: bank_branch
+        label: "Bank Branch"
+        description: "Formal banking institution."
+        category: financial_services
+      - id: mobile_money_agent
+        label: "Mobile Money Agent"
+        description: "Local agent facilitating digital cash transfers and withdrawals."
+        category: financial_services
+      # Emergency
+      - id: police_station
+        label: "Police Station"
+        description: "Local law enforcement facility."
+        category: emergency_services
+      - id: fire_station
+        label: "Fire Station"
+        description: "Facility for fire and rescue services."
+        category: emergency_services
+      # Public Admin
+      - id: government_office
+        label: "Government Office"
+        description: "Local administrative center for civic services and registration."
+        category: public_administration
+      # Community
+      - id: community_center
+        label: "Community Center / Hall"
+        description: "Public building for community gatherings and events."
+        category: community_facilities
+      # Religious
+      - id: place_of_worship
+        label: "Place of Worship"
+        description: "Mosque, church, temple, or other primary religious structure."
+        category: religious_facilities
+
+alignment_notes:
+  - constraint: "This taxonomy explicitly excludes state concepts (e.g., 'operational', 'damaged', 'inaccessible'). Those are attributes of the infrastructure entity in the ontology, not part of the type classification."
+  - constraint: "Adheres to ADR-008 by strictly defining the 'what' of the community environment. Interactions with these types (like referrals) will be reasoned upon by Case Management."

@@ -1,0 +1,62 @@
+# Khidmat Knowledge Layer — Community Context Taxonomy
+# Domain: Community Context
+# File: geographic-hierarchy.yaml
+# Purpose: Defines the spatial and administrative boundaries used to group and locate communities.
+
+domain: community_context
+taxonomy: geographic_hierarchy
+version: 1.0.0
+
+concepts:
+  geographic_level:
+    description: "The classification of a spatial boundary, ranging from broad administrative regions to highly localized settlements."
+    type: enum
+    values:
+      - id: country
+        label: "Country"
+        description: "The national boundary, used for international deployments, overarching policy context, and national-level risk factors."
+      - id: region
+        label: "Region / State / Province"
+        description: "The highest administrative division, used for large-scale coordination and macroeconomic context."
+      - id: district
+        label: "District"
+        description: "A primary administrative subdivision, typically where major government services and tertiary infrastructure are headquartered."
+      - id: block
+        label: "Block / Sub-District / Tehsil"
+        description: "An intermediate administrative unit grouping multiple villages or towns, often the focal point for programmatic interventions."
+      - id: cluster
+        label: "Cluster"
+        description: "An operational geographic level representing a grouping of multiple villages, settlements, or neighbourhoods used for humanitarian planning and service delivery."
+      - id: municipality
+        label: "Municipality / Town"
+        description: "An urban or semi-urban local government area with dense infrastructure."
+      - id: village
+        label: "Village"
+        description: "A rural settlement with defined boundaries, typically governed by a village council."
+      - id: ward
+        label: "Ward"
+        description: "An electoral or administrative subdivision of a municipality or village council."
+      - id: neighbourhood
+        label: "Neighbourhood / Settlement / Hamlet"
+        description: "An organically defined, highly localized settlement or cluster of households sharing immediate physical proximity, often smaller than an administrative ward."
+      - id: informal_settlement
+        label: "Informal Settlement / Camp"
+        description: "An unplanned or temporary settlement, such as a refugee camp or slum, which may lack formal administrative recognition but requires distinct operational tracking."
+
+  boundary_type:
+    description: "The nature of the geographic area's boundary definition."
+    type: enum
+    values:
+      - id: administrative
+        label: "Administrative"
+        description: "Officially demarcated by government authorities."
+      - id: organic
+        label: "Organic / Community-Defined"
+        description: "Defined by social consensus, natural geography, or shared identity rather than official government maps."
+      - id: operational
+        label: "Operational"
+        description: "Defined specifically for humanitarian or service delivery purposes (e.g., a distribution zone)."
+
+alignment_notes:
+  - constraint: "This taxonomy integrates with `shared/taxonomy/locations.yaml`, which defines location precision (e.g., area_only). Community Context provides the structured hierarchy that `shared/locations` can reference for area definitions."
+  - adr_compliance: "Adheres to ADR-008. Ownership is strictly within Community Context. Household entities in the Shared Domain will reference these areas via ontology, not redefine them."
