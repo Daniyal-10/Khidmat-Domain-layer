@@ -1,0 +1,166 @@
+metadata:
+  file: verification-confidence.yaml
+  domain: Verification Operations
+  layer: verification-operations/taxonomy
+  status: Phase 4.1
+
+purpose: >
+  Defines the qualitative vocabulary for how much operational trust a
+  verification_finding warrants. Confidence is independent of
+  finding_status (verification-findings.yaml) — a confirmed finding
+  may carry high or low confidence depending on the method and
+  corroboration behind it, and an unable_to_confirm finding is not
+  automatically low confidence in the sense of being untrustworthy,
+  since "we correctly established that we cannot tell" can itself be
+  a high-confidence conclusion.
+
+scope: >
+  Qualitative confidence levels for a verification_finding, and the
+  named factors that inform (but do not formulaically compute) a
+  confidence classification.
+
+out_of_scope: >
+  This file does not define a numeric score, weighted formula, or
+  composite index. Consistent with ADR-010 (Risk Domain is
+  Qualitative Not Quantitative) and the qualitative-only composition
+  principle applied throughout the Shared Human Model and Risk
+  Domain, confidence here is a structured, reasoned judgement
+  expressed through named levels — never a computed number. This
+  file also does not define finding_status
+  (verification-findings.yaml) or escalation triggers
+  (escalation-reasons.yaml), though low confidence is a common input
+  to escalation.
+
+governance:
+  governing_adr:
+    - ADR-008
+    - ADR-010
+
+cross_references:
+  - verification-methods.yaml#directness_classification
+      Method directness is a named input to confidence composition
+      below. This file reuses that classification by reference; it
+      does not redefine it.
+  - shared/taxonomy/time.yaml#evidence_freshness
+      Evidence freshness is a named input to confidence composition
+      for document-based findings. This file reuses that vocabulary
+      by reference; it does not redefine it.
+  - registration/taxonomy/claims.yaml#claim_basis
+      The original claim's claim_basis (first_hand, second_hand,
+      observational, inferred) is contextual background for
+      confidence assessment but is not itself part of this
+      vocabulary — claim_basis describes the registrant's epistemic
+      relationship to the original statement, not the verifier's
+      confidence in the verification finding. The two must not be
+      conflated.
+
+verification_confidence:
+  description: >
+    A structured, reasoned judgement of how much operational trust a
+    verification_finding warrants, expressed as a qualitative level
+    rather than a score. No formula produces these levels — a
+    composed judgement is made considering method directness,
+    corroboration, and evidence freshness together, consistent with
+    the composition-not-scoring principle applied throughout this
+    knowledge layer (see
+    shared/risk/vulnerability.yaml#vulnerability_level for the
+    precedent this vocabulary follows).
+
+  values:
+
+    - id: high
+      label: High
+      description: >
+        The finding rests on direct observation, authoritative
+        documentation, or multiple independent corroborating sources
+        with no material inconsistency between them.
+      typical_composition_indicators:
+        - A direct-method (home_visit, institutional_visit,
+          field_investigation) observation with no contradicting
+          input.
+        - A freshly_issued or recently_issued document
+          (shared/taxonomy/time.yaml#evidence_freshness) from an
+          authoritative institutional source.
+        - Two or more independent remote sources corroborating the
+          same claim element without contact between the sources.
+
+    - id: moderate
+      label: Moderate
+      description: >
+        The finding rests on a single credible source without
+        independent corroboration, or on a direct-method observation
+        of a situation that is inherently variable over time (making
+        a single point-in-time observation less conclusive than it
+        would be for a stable fact).
+      typical_composition_indicators:
+        - A single direct-method observation of a fluctuating
+          circumstance (e.g. household income, which may vary week
+          to week).
+        - A single remote method (document_verification,
+          digital_verification) with no independent corroboration,
+          where the document itself is current and appears
+          authentic.
+
+    - id: low
+      label: Low
+      description: >
+        The finding rests on a single uncorroborated remote source of
+        inherently limited reliability, an older or
+        freshness-uncertain document, or a method chosen under access
+        or safety constraints rather than as the strongest available
+        option for the claim.
+      typical_composition_indicators:
+        - A single community_reference or phone_verification with no
+          corroboration.
+        - An older_document or undated evidence source
+          (shared/taxonomy/time.yaml#evidence_freshness).
+        - A method substitution made because a stronger method was
+          unsafe or infeasible (see
+          verification-status.yaml#could_not_complete_reason).
+      note: >
+        A low confidence classification is not itself a negative
+        judgement about the claim — it is an honest statement about
+        the strength of the verification performed. A low-confidence
+        confirmed finding on a priority_1 requirement is a common and
+        legitimate trigger for escalation_reason: low_confidence
+        (see escalation-reasons.yaml), not a sign that the claim is
+        false.
+
+    - id: indeterminate
+      label: Indeterminate
+      description: >
+        Confidence cannot yet be assessed — the finding is newly
+        recorded and has not yet been composed, or the composing
+        actor has explicitly deferred the judgement to human_review
+        rather than assert a level themselves.
+      note: >
+        Distinct from low. Indeterminate means "not yet judged"; low
+        means "judged, and found weak." An indeterminate confidence
+        should not persist past human_review.
+
+design_notes:
+  - decision: Four levels, including indeterminate, not three
+    rationale: >
+      Every field-recorded finding must have a confidence value the
+      moment it is created, before a human or AI-assist step has had
+      the opportunity to compose a reasoned judgement. Forcing a
+      premature choice between high/moderate/low at the point of
+      recording would produce false precision. indeterminate is the
+      honest placeholder, consistent with the open-world assumption
+      applied throughout the knowledge layer.
+  - decision: No numeric score anywhere in this file
+    rationale: >
+      Direct application of ADR-010. A Hazard x Exposure x
+      Vulnerability style formula was explicitly rejected in the Risk
+      Domain for the same reason it is rejected here: false precision
+      obscures the underlying reasoning and cannot be audited by a
+      human reviewer the way a named, structured judgement can.
+  - decision: claim_basis and verification_confidence are kept
+      structurally separate
+    rationale: >
+      claim_basis (registration/taxonomy/actors.yaml) describes the
+      registrant's epistemic relationship to their own statement at
+      the point it was made. verification_confidence describes the
+      verifier's trust in the conclusion reached after independent
+      checking. Collapsing these would conflate two different
+      epistemic actors and two different points in time.

@@ -1,0 +1,165 @@
+metadata:
+  file: reverification-triggers.yaml
+  domain: Verification Operations
+  layer: verification-operations/taxonomy
+  status: Phase 4.1
+
+purpose: >
+  Defines the controlled vocabulary of conditions under which a
+  previously verified (or previously attempted) fact must be checked
+  again. Supplies the type classification for the
+  reverification_trigger concept already declared in
+  verification-operations/verification-operations.yaml. This file
+  does not define the reverification_trigger entity itself, only the
+  controlled reasons a trigger may be raised.
+
+scope: >
+  reverification_trigger_type values covering evidence expiry, risk
+  escalation, periodic reassessment, contradiction, case update after
+  brief issuance, and explicit request.
+
+out_of_scope: >
+  This file does not define the seasonal or geographic calendar that
+  might inform periodic_reassessment timing — that is explicitly
+  Community Context Domain territory (Stage 8, not yet active; see
+  shared/risk/hazard-categories.yaml boundary_note for the governing
+  precedent). This file also does not define the specific duration of
+  any reassessment window — those durations are owned by
+  shared/taxonomy/time.yaml#waiting_and_grace_periods and referenced
+  here, not redefined.
+
+governance:
+  governing_adr:
+    - ADR-008
+
+cross_references:
+  - verification-operations/verification-operations.yaml#reverification_trigger
+      This file supplies the type vocabulary for the
+      reverification_trigger concept already declared there. It does
+      not redefine that concept.
+  - shared/taxonomy/time.yaml#evidence_freshness
+      evidence_expiring triggers reference freshness levels defined
+      there. This file does not redefine evidence freshness.
+  - shared/taxonomy/time.yaml#waiting_and_grace_periods
+      reassessment_window and reregistration_window are referenced by
+      periodic_reassessment below. This file does not define specific
+      durations.
+  - shared/risk/risk.yaml#risk_trend
+      risk_escalation triggers reference a risk_trend of
+      deteriorating. This file does not redefine risk_trend or any
+      Risk Domain concept.
+  - registration/verification/verification-brief-projection.yaml#snapshot_semantics
+      case_updated_after_issuance directly closes the re-issuance gap
+      named in that file's re_issuance_responsibility note. This file
+      does not redefine snapshot semantics.
+  - verification-findings.yaml#contradiction_type
+      contradiction_detected triggers reference the contradiction
+      classification defined there. This file does not redefine it.
+
+reverification_trigger_type:
+  description: >
+    The reason a reverification_trigger was raised for a given
+    verification_subject or case. Multiple trigger types may apply to
+    the same subject simultaneously; each is recorded as an
+    independent reason rather than collapsed into a single composite
+    trigger.
+
+  values:
+
+    - id: evidence_expiring
+      label: Evidence Expiring
+      description: >
+        The evidence underlying a previously confirmed or
+        partially_confirmed finding is approaching or has passed the
+        end of its useful or valid period, per
+        shared/taxonomy/time.yaml#temporal_status and
+        #evidence_freshness.
+      typical_use: >
+        A time-limited residency document, a medical certification
+        with a stated review date, or a document classified as
+        expiring_soon or expired.
+
+    - id: risk_escalation
+      label: Risk Escalation
+      description: >
+        A risk_trend of deteriorating (shared/risk/risk.yaml) has
+        been assessed for the household since the last verification,
+        warranting a check of whether previously verified
+        circumstances still hold.
+      typical_use: >
+        A household previously verified as food-secure now shows a
+        deteriorating risk_trend following a new situation reported
+        in a subsequent contact.
+
+    - id: periodic_reassessment
+      label: Periodic Reassessment
+      description: >
+        A scheduled reassessment window
+        (shared/taxonomy/time.yaml#waiting_and_grace_periods#reassessment_window)
+        has elapsed since the last verification, independent of any
+        specific new event.
+      typical_use: >
+        Standing, long-duration cases (need_duration: long_term) that
+        require confirmation the underlying circumstances have not
+        changed, on a routine cycle rather than in response to a
+        trigger event.
+
+    - id: contradiction_detected
+      label: Contradiction Detected
+      description: >
+        A new field_observation, finding, or third-party account
+        conflicts with a previously confirmed or partially_confirmed
+        finding, per verification-findings.yaml#contradiction_type.
+      typical_use: >
+        A subsequent verification activity — for a different
+        requirement, or conducted incidentally — surfaces information
+        that disputes an earlier finding on the same subject.
+
+    - id: case_updated_after_issuance
+      label: Case Updated After Brief Issuance
+      description: >
+        The underlying registration Case was modified after a
+        verification_brief was issued to a verifier, per the
+        snapshot semantics and re_issuance_responsibility defined in
+        registration/verification/verification-brief-projection.yaml.
+        The verifier is working from a brief that no longer reflects
+        the current case state.
+      typical_use: >
+        New contact information is added, a claim is revised, or a
+        household member is added to the case after the brief for an
+        in-progress or scheduled verification_activity has already
+        been generated.
+      note: >
+        This trigger type is the formal closure of the re-issuance
+        gap explicitly named as an accepted V1 limitation in
+        verification-brief-projection.yaml. Recording it here does
+        not itself re-issue the brief; it records the condition under
+        which re-issuance is warranted.
+
+    - id: registrant_or_third_party_request
+      label: Registrant or Third-Party Request
+      description: >
+        The beneficiary, registrant, or a relevant third party
+        explicitly requests that a previously verified fact be
+        reconsidered, independent of any system-detected condition.
+      typical_use: >
+        A beneficiary reports that their circumstances have changed
+        since the last verification and asks for a fresh assessment.
+
+design_notes:
+  - decision: Six named trigger types, each independently recordable
+    rationale: >
+      A single case may accumulate more than one simultaneous
+      reverification reason (e.g. evidence_expiring and
+      periodic_reassessment landing in the same window). Recording
+      each as an independent, named reason preserves the ability to
+      reason about why reverification is needed, rather than
+      collapsing multiple reasons into an undifferentiated "needs
+      reverification" flag.
+  - decision: This file does not own trigger timing or calendars
+    rationale: >
+      Direct application of the boundary already established in
+      shared/risk/hazard-categories.yaml — geographic and temporal
+      instantiation belongs to Community Context (Stage 8). This file
+      names the reasons reverification is needed; it does not compute
+      when a given household's window falls due.
