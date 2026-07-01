@@ -142,3 +142,5 @@ authoritative_concepts:
   - field_observation
   - verification_finding
   - reverification_trigger
+  - human_review
+  - verification_assignment

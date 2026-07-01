@@ -160,10 +160,6 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 | `risk_horizon` | Risk Horizon | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 | `risk_trend` | Risk Trend | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 | `risk_state` | Risk State | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `risk_severity` | Risk Severity | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-
----
-
 ## Verification Operations Domain
 
 **Authoritative file:** `verification-operations/verification-operations.yaml`
@@ -178,6 +174,8 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 | `field_observation` | Field Observation | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
 | `verification_finding` | Verification Finding | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
 | `reverification_trigger` | Reverification Trigger | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `human_review` | Human Review | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `verification_assignment` | Verification Assignment | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
 
 ---
 
@@ -192,15 +190,6 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 |---|---|---|---|---|
 | `engagement_stage` | Engagement Stage | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
 | `exit_reason` | Exit Reason | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
-| `suspension_reason` | Suspension Reason | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
-| `review_trigger` | Review Trigger | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
-| `BeneficiaryLifecycle` | Beneficiary Lifecycle | `beneficiary-lifecycle/ontology.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
-| `LifecycleTransition` | Lifecycle Transition | `beneficiary-lifecycle/ontology.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
-
----
-
-## Needs Assessment Domain
-
 **Authoritative files:** `needs-assessment/taxonomy.yaml`, `needs-assessment/ontology.yaml`
 **Owner domain:** Needs Assessment
 **Introduced:** Phase 4.5

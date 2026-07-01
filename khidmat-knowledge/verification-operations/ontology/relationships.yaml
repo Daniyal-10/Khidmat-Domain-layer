@@ -230,8 +230,8 @@ external_references:
   - id: assignment_verifies_case
     from: core:VerificationAssignment
     relationship: verifies
-    to: registration:Case
-    domain: Registration / Case Management
+    to: case_management:Case
+    domain: Case Management
     cardinality: many_to_one
     required: true
     description: >
@@ -321,35 +321,11 @@ external_references:
       References the scheduling window vocabulary owned by
       shared/taxonomy/time.yaml. Not redefined here.
 
-  - id: needs_assessment_references_finding
-    from: needs_assessment:AssessmentFinding
-    relationship: based_on_verified_fact
-    to: core:VerificationFinding
-    domain: Needs Assessment (downstream, not owned here)
-    cardinality: zero_to_many
-    required: false
-    description: >
-      Recorded here for completeness of the bidirectional picture only.
-      This relationship is owned and declared by
-      needs-assessment/ontology.yaml#AssessmentFinding.based_on_verified_fact;
-      Verification Operations does not restate or redefine it.
 
-  - id: beneficiary_lifecycle_references_finding
-    from: beneficiary_lifecycle:LifecycleTransition
-    relationship: triggeredByVerificationOutcome
-    to: core:VerificationFinding
-    domain: Beneficiary Lifecycle (downstream, not owned here)
-    cardinality: zero_to_one
-    required: false
-    description: >
-      Recorded here for completeness of the bidirectional picture only.
-      This relationship is owned and declared by
-      beneficiary-lifecycle/ontology.yaml#LifecycleTransition.triggeredByVerificationOutcome;
-      Verification Operations does not restate or redefine it.
 
 cross_domain_references:
   - registration: >
-      References Claim, Evidence, and Case. Never redefines claim
+      References Claim and Evidence. Never redefines claim
       types, evidence types, or case status vocabulary. Treats
       Verification Requirement and Verification Brief as derived
       projections per ADR-001, never as stored entities to hold a
@@ -366,16 +342,7 @@ cross_domain_references:
       References evidence_freshness and waiting_and_grace_periods by
       value throughout the taxonomy layer this file's entities carry.
       Never redefines temporal vocabulary.
-  - needs-assessment: >
-      Is referenced by, but does not itself reference, Needs
-      Assessment. AssessmentFinding.based_on_verified_fact points into
-      VerificationFinding; this is Needs Assessment's relationship to
-      declare and own, not Verification Operations'.
-  - beneficiary-lifecycle: >
-      Is referenced by, but does not itself reference, Beneficiary
-      Lifecycle. LifecycleTransition.triggeredByVerificationOutcome
-      points into VerificationFinding; this is Beneficiary Lifecycle's
-      relationship to declare and own, not Verification Operations'.
+
   - case-management: >
       VerificationAssignment.verifies references the canonical Case per
       ADR-021. Case Management remains the eventual canonical owner of

@@ -38,12 +38,14 @@ namespaces:
   shared_risk: "khidmat:shared:risk"
   registration: "khidmat:registration:core"
   registration_taxonomy: "khidmat:registration:taxonomy"
+  case_management: "khidmat:case-management:core"
 
 imports:
   - shared-ontology            # shared/ontology/entities.yaml (Actor, Subject)
   - shared-taxonomy-time        # shared/taxonomy/time.yaml (evidence_freshness, waiting_and_grace_periods)
   - shared-risk                 # shared/risk/risk.yaml (risk_trend, referenced only)
-  - registration-ontology       # registration/ontology/entities.yaml (Case, Claim, Evidence)
+  - registration-ontology       # registration/ontology/entities.yaml (Claim, Evidence)
+  - case-management-ontology    # case-management/ontology.yaml (Case)
   - registration-taxonomy       # registration/taxonomy/claims.yaml, evidence.yaml
   - registration-verification   # registration/verification/verification-requirements.yaml (derived, not stored)
   - verification-operations-core       # verification-operations/verification-operations.yaml
@@ -59,7 +61,7 @@ ownership:
     - core:ReverificationTrigger
     - core:VerificationAssignment
   owned_upstream_referenced_only:
-    - registration:Case
+    - case_management:Case
     - registration:Claim
     - registration:Evidence
     - registration:VerificationRequirement   # derived/computed, never stored — see notes on VerificationSubject below
