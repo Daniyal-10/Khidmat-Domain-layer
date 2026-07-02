@@ -96,26 +96,8 @@ concepts:
         label: "Remote / Hard-to-Reach"
         description: "Extreme isolation, requiring specialized transport or multi-day travel."
 
-  logistics_constraints:
-    description: "Physical barriers affecting the movement of goods, volunteers, or beneficiaries."
-    type: enum
-    values:
-      - id: unconstrained
-        label: "Unconstrained"
-        description: "Standard vehicles can operate without issue."
-      - id: unpaved_roads
-        label: "Unpaved / Dirt Roads"
-        description: "Requires off-road capable vehicles; highly sensitive to weather changes."
-      - id: water_crossing_required
-        label: "Water Crossing Required"
-        description: "Access depends on bridges, ferries, or fording rivers."
-      - id: narrow_access
-        label: "Narrow Access"
-        description: "Impassable by heavy trucks; requires smaller vehicles or motorcycles."
-      - id: foot_access_only
-        label: "Foot / Pack Animal Access Only"
-        description: "No vehicle access possible."
+
 
 alignment_notes:
   - constraint: "This taxonomy models the physical reality, NOT the hazard. 'Riverine' is a terrain; 'Flood' is a hazard. 'Mountainous' is terrain; 'Landslide' or 'Earthquake' is a hazard. Hazards remain strictly in `shared/risk/hazard-categories.yaml`."
-  - constraint: "Logistics constraints describe the baseline physical requirement, distinct from temporary operational safety constraints (which will be handled in security/safety taxonomies) and seasonal constraints."
+  - constraint: "C2 remediation: The `logistics_constraints` category was removed to eliminate semantic duplication with `accessibility.yaml#physical_accessibility`. `physical-environment.yaml` now strictly owns pure physical geography (terrain, climate, water, land use, remoteness), while `accessibility.yaml` canonically owns access mode classifications and physical access constraints."

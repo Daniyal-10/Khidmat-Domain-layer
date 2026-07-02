@@ -10,11 +10,21 @@
 #        It explicitly does NOT model the *services* provided (which belong in 
 #        `essential-services.yaml`), individual beneficiary possessions, or 
 #        humanitarian interventions.
+#        As of the C1 final remediation, it also does NOT model permanent
+#        built infrastructure already owned by `infrastructure-types.yaml`
+#        (wells, energy generation, communication towers, community/gathering
+#        facilities, religious/cultural structures, administrative buildings,
+#        markets, agricultural/productive facilities) or transportation-network
+#        structures owned by `transportation.yaml` (bridges, ferries, rail, roads, terminals).
+#        Community Assets is scoped strictly to genuine natural resources and shared natural spaces.
 #
 # ADR Validation:
 # - ADR-008 (Single Ownership): Assets belong to the community geography. They 
 #   are distinct from individual household assets (which would belong to 
 #   Registration/Needs) and from operational interventions (Support Delivery).
+#   Built infrastructure with an existing canonical owner elsewhere in
+#   Community Context is referenced, not redefined, here (see C1 remediation
+#   note below).
 # - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
 #   (e.g., `communal_storage_facility`) avoiding regional terminology.
 #
@@ -32,44 +42,47 @@
 # standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-community_assets:
+domain: community_context
+taxonomy: community_assets
+version: 1.0.0
+
+concepts:
   natural_resources:
     description: Classification of shared, naturally occurring environmental assets utilized by the community.
+    type: enum
+
     values:
-      - surface_water_body: "Lakes, rivers, ponds, or streams utilized for drinking, agriculture, or livelihood."
-      - groundwater_source: "Accessible natural springs or aquifers."
-      - arable_land: "Shared or accessible land suitable for crop cultivation."
-      - grazing_land: "Shared pastures or scrubland utilized for livestock foraging."
-      - communal_forest_or_woodland: "Wooded areas providing timber, foraging, or ecological protection."
-      - coastal_or_marine_fishing_ground: "Accessible waters utilized for fishing or aquaculture."
+      - id: surface_water_body
+        label: "Surface Water Body"
+        description: "Lakes, rivers, ponds, or streams utilized for drinking, agriculture, or livelihood."
+      - id: groundwater_source
+        label: "Groundwater Source"
+        description: "Accessible natural springs or aquifers."
+      - id: arable_land
+        label: "Arable Land"
+        description: "Shared or accessible land suitable for crop cultivation."
+      - id: grazing_land
+        label: "Grazing Land"
+        description: "Shared pastures or scrubland utilized for livestock foraging."
+      - id: communal_forest_or_woodland
+        label: "Communal Forest Or Woodland"
+        description: "Wooded areas providing timber, foraging, or ecological protection."
+      - id: coastal_or_marine_fishing_ground
+        label: "Coastal Or Marine Fishing Ground"
+        description: "Accessible waters utilized for fishing or aquaculture."
 
   civic_and_social_infrastructure:
     description: Classification of physical structures dedicated to community gathering and administration.
-    values:
-      - public_gathering_space: "Open plazas, squares, or community halls used for assembly."
-      - religious_or_cultural_structure: "Physical buildings dedicated to worship or cultural practices."
-      - recreational_space: "Parks, sports fields, or designated areas for leisure."
-      - administrative_building: "Physical structures housing local governance or community leadership."
+    type: enum
 
-  productive_and_livelihood_infrastructure:
-    description: Classification of physical assets that directly support economic and agricultural output.
     values:
-      - communal_storage_facility: "Granaries, warehouses, or cold storage for preserving crops and goods."
-      - physical_marketplace: "Designated physical structures or zones where trading and commerce occur."
-      - irrigation_network: "Physical canals, dams, or channels managing agricultural water distribution."
-      - communal_processing_facility: "Mills, presses, or structures used collectively to process raw goods."
-      - livestock_infrastructure: "Communal dips, pens, or veterinary structures."
-
-  critical_lifeline_infrastructure:
-    description: Classification of physical assets forming the backbone of community connectivity and utility.
-    values:
-      - vehicular_bridge: "Physical structure allowing motorized transport across natural or artificial barriers."
-      - pedestrian_bridge: "Physical structure allowing foot traffic across barriers."
-      - community_well_or_borehole: "Constructed point for extracting groundwater for communal use."
-      - local_energy_generation_asset: "Solar arrays, micro-hydro, or community generators providing power."
-      - communication_mast_or_tower: "Physical infrastructure enabling radio or cellular transmission."
+      - id: recreational_space
+        label: "Recreational Space"
+        description: "Parks, sports fields, or designated areas for leisure."
 
 alignment_notes:
-  - "This taxonomy classifies the *asset itself*, not the *service*. A `community_well_or_borehole` is the physical asset. `potable_water_supply` (in `essential-services.yaml`) is the service it provides."
-  - "These assets are shared or structural to the community. A privately owned tractor is an individual household asset (Registration Domain), whereas a `communal_processing_facility` is a Community Context asset."
-  - "By separating the physical asset (e.g., `physical_marketplace`) from the service (e.g., `general_food_market`), the AI can reason about scenarios where the asset exists but the service is disrupted (e.g., the marketplace building stands, but food supply has failed)."
+  - "This taxonomy classifies the *asset itself*, not the *service*."
+  - "These assets are shared or structural to the community. A privately owned tract of land is an individual household asset (Registration Domain), whereas `arable_land` is a Community Context asset."
+  - "By separating the physical asset from the service, the AI can reason about scenarios where the asset exists but the service is disrupted."
+  - "C1 remediation (this sprint): the `critical_lifeline_infrastructure` category (vehicular_bridge, pedestrian_bridge, community_well_or_borehole, local_energy_generation_asset, communication_mast_or_tower) has been removed. Each of these duplicated a concept already owned elsewhere: bridges by `transportation.yaml#connectivity_bottlenecks`, the well by `infrastructure-types.yaml#communal_well`, energy generation by `infrastructure-types.yaml#off_grid_power`, and the communication mast by `infrastructure-types.yaml#communication_tower`. `public_gathering_space` was similarly removed and merged into `infrastructure-types.yaml#community_center`, which now covers both built halls and open assembly spaces."
+  - "C1 final remediation: `religious_or_cultural_structure`, `administrative_building`, and all `productive_and_livelihood_infrastructure` (communal_storage_facility, physical_marketplace, irrigation_network, communal_processing_facility, livestock_infrastructure) were removed and migrated to `infrastructure-types.yaml`. This establishes a strict NaturalResource vs BuiltInfrastructure boundary in compliance with ADR-008. This file now strictly models genuine natural resources and shared natural community assets."

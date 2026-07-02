@@ -33,68 +33,148 @@
 # standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-essential_services:
+domain: community_context
+taxonomy: essential_services
+version: 1.0.0
+
+concepts:
   health_and_medical_services:
     description: Classification of permanent health-related community services.
+    type: enum
+
     values:
-      - primary_healthcare: "Basic, foundational health care including preventative services, immunizations, and general practitioner access."
-      - secondary_healthcare: "Specialized medical services typically requiring referral, including inpatient care and specialized diagnostics."
-      - emergency_medical_response: "Acute trauma and emergency transport and stabilization services."
-      - maternal_and_infant_care: "Dedicated services for pregnancy, childbirth, and early childhood health."
-      - mental_health_support: "Psychiatric, psychological, or structured psychosocial support services."
-      - pharmaceutical_dispensary: "Facilities providing access to essential medicines and medical supplies."
+      - id: primary_healthcare
+        label: "Primary Healthcare"
+        description: "Basic, foundational health care including preventative services, immunizations, and general practitioner access."
+      - id: secondary_healthcare
+        label: "Secondary Healthcare"
+        description: "Specialized medical services typically requiring referral, including inpatient care and specialized diagnostics."
+      - id: emergency_medical_response
+        label: "Emergency Medical Response"
+        description: "Acute trauma and emergency transport and stabilization services."
+      - id: maternal_and_infant_care
+        label: "Maternal And Infant Care"
+        description: "Dedicated services for pregnancy, childbirth, and early childhood health."
+      - id: mental_health_support
+        label: "Mental Health Support"
+        description: "Psychiatric, psychological, or structured psychosocial support services."
+      - id: pharmaceutical_dispensary
+        label: "Pharmaceutical Dispensary"
+        description: "Facilities providing access to essential medicines and medical supplies."
 
   water_sanitation_and_hygiene:
     description: Classification of critical WASH infrastructure services.
+    type: enum
+
     values:
-      - potable_water_supply: "Access to safe, treated, and reliable drinking water."
-      - wastewater_and_sewage_management: "Systems for the safe disposal and treatment of human waste."
-      - solid_waste_management: "Regular collection and safe disposal of household and commercial refuse."
-      - public_hygiene_facilities: "Accessible public toilets, bathing, or laundry facilities."
+      - id: potable_water_supply
+        label: "Potable Water Supply"
+        description: "Access to safe, treated, and reliable drinking water."
+      - id: wastewater_and_sewage_management
+        label: "Wastewater And Sewage Management"
+        description: "Systems for the safe disposal and treatment of human waste."
+      - id: solid_waste_management
+        label: "Solid Waste Management"
+        description: "Regular collection and safe disposal of household and commercial refuse."
+      - id: public_hygiene_facilities
+        label: "Public Hygiene Facilities"
+        description: "Accessible public toilets, bathing, or laundry facilities."
 
   food_and_nutrition_security:
     description: Classification of stable food access points and nutritional services.
+    type: enum
+
     values:
-      - general_food_market: "Commercial access to diverse, staple, and fresh foods."
-      - subsidized_staple_distribution: "State or institutional mechanisms for distributing essential food items at controlled prices."
-      - therapeutic_nutrition_center: "Specialized facilities treating acute malnutrition."
+      - id: general_food_market
+        label: "General Food Market"
+        description: "Commercial access to diverse, staple, and fresh foods."
+      - id: subsidized_staple_distribution
+        label: "Subsidized Staple Distribution"
+        description: "State or institutional mechanisms for distributing essential food items at controlled prices."
+      - id: therapeutic_nutrition_center
+        label: "Therapeutic Nutrition Center"
+        description: "Specialized facilities treating acute malnutrition."
 
   education_and_childcare:
     description: Classification of formal and early childhood educational services.
+    type: enum
+
     values:
-      - early_childhood_care: "Supervised developmental care and education for pre-school-aged children."
-      - primary_education: "Foundational, mandatory schooling."
-      - secondary_education: "Advanced schooling preparing for higher education or vocational entry."
-      - vocational_and_skills_training: "Practical education focused on trade and livelihood skills."
-      - special_education_services: "Dedicated educational services accommodating severe physical or cognitive disabilities."
+      - id: early_childhood_care
+        label: "Early Childhood Care"
+        description: "Supervised developmental care and education for pre-school-aged children."
+      - id: primary_education
+        label: "Primary Education"
+        description: "Foundational, mandatory schooling."
+      - id: secondary_education
+        label: "Secondary Education"
+        description: "Advanced schooling preparing for higher education or vocational entry."
+      - id: vocational_and_skills_training
+        label: "Vocational And Skills Training"
+        description: "Practical education focused on trade and livelihood skills."
+      - id: special_education_services
+        label: "Special Education Services"
+        description: "Dedicated educational services accommodating severe physical or cognitive disabilities."
 
   protection_and_legal_services:
     description: Classification of services providing safety, rights enforcement, and safeguarding.
+    type: enum
+
     values:
-      - law_enforcement_and_security: "State-mandated police or community security forces."
-      - legal_aid_and_rights_counseling: "Access to legal representation, rights education, and dispute resolution."
-      - child_protection_services: "Dedicated safeguarding for vulnerable minors, orphans, and at-risk children."
-      - gender_based_violence_support: "Safe spaces, counseling, and medical/legal support for victims of GBV."
-      - civil_registration_services: "Administrative access for birth, death, marriage, and identity documentation."
+      - id: law_enforcement_and_security
+        label: "Law Enforcement And Security"
+        description: "State-mandated police or community security forces."
+      - id: legal_aid_and_rights_counseling
+        label: "Legal Aid And Rights Counseling"
+        description: "Access to legal representation, rights education, and dispute resolution."
+      - id: child_protection_services
+        label: "Child Protection Services"
+        description: "Dedicated safeguarding for vulnerable minors, orphans, and at-risk children."
+      - id: gender_based_violence_support
+        label: "Gender Based Violence Support"
+        description: "Safe spaces, counseling, and medical/legal support for victims of GBV."
+      - id: civil_registration_services
+        label: "Civil Registration Services"
+        description: "Administrative access for birth, death, marriage, and identity documentation."
 
   financial_and_livelihood_services:
     description: Classification of economic infrastructure and livelihood support.
+    type: enum
+
     values:
-      - formal_banking_services: "Access to regulated financial institutions for savings, credit, and transfers."
-      - microfinance_and_savings_groups: "Community-level or specialized small-scale credit and savings mechanisms."
-      - agricultural_extension_services: "Technical support, veterinary care, and resource distribution for farmers and pastoralists."
-      - employment_and_labor_exchanges: "Mechanisms connecting job seekers with local or regional labor demand."
+      - id: formal_banking_services
+        label: "Formal Banking Services"
+        description: "Access to regulated financial institutions for savings, credit, and transfers."
+      - id: microfinance_and_savings_groups
+        label: "Microfinance And Savings Groups"
+        description: "Community-level or specialized small-scale credit and savings mechanisms."
+      - id: agricultural_extension_services
+        label: "Agricultural Extension Services"
+        description: "Technical support, veterinary care, and resource distribution for farmers and pastoralists."
+      - id: employment_and_labor_exchanges
+        label: "Employment And Labor Exchanges"
+        description: "Mechanisms connecting job seekers with local or regional labor demand."
 
   shelter_and_community_infrastructure:
     description: Classification of collective infrastructure and emergency refuge.
+    type: enum
+
     values:
-      - emergency_shelter_facilities: "Designated safe spaces for temporary refuge during acute crises or weather events."
-      - collective_community_centers: "Public spaces for community assembly, information dissemination, and social cohesion."
-      - reliable_electricity_grid: "Stable access to domestic and commercial electrical power."
-      - telecommunications_access: "Stable access to cellular networks, internet, or public communication hubs."
-      - public_transport_nodes: "Access points for scheduled or reliable shared transit."
+      - id: emergency_shelter_facilities
+        label: "Emergency Shelter Facilities"
+        description: "Designated safe spaces for temporary refuge during acute crises or weather events."
+      - id: reliable_electricity_grid
+        label: "Reliable Electricity Grid"
+        description: "Stable access to domestic and commercial electrical power."
+      - id: telecommunications_access
+        label: "Telecommunications Access"
+        description: "Stable access to cellular networks, internet, or public communication hubs."
+      - id: public_transport_nodes
+        label: "Public Transport Nodes"
+        description: "Access points for scheduled or reliable shared transit."
 
 alignment_notes:
   - "The `essential_services` taxonomy strictly describes what exists in the community environment. It does not map to `Needs` (which belong to Registration) or `Interventions` (which belong to Support Delivery)."
   - "`subsidized_staple_distribution` is a canonical concept replacing localized terms like 'PDS', 'Ration Shop', or 'Food Stamp Office', strictly adhering to ADR-022."
   - "Organizations (e.g., 'NGO', 'Ministry of Health') are explicitly excluded. This taxonomy classifies the *service provided*, not the *entity providing it*, maintaining separation from the Shared Organisations taxonomy."
+  - "R3 remediation: The `collective_community_centers` concept was removed from this file. A community center is a physical facility, not inherently a service. It is properly modeled by `infrastructure-types.yaml#community_center`, complying with ADR-008 single ownership."

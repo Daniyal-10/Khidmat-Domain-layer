@@ -32,40 +32,88 @@
 # standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-seasonal_events:
+domain: community_context
+taxonomy: seasonal_events
+version: 1.0.0
+
+concepts:
   climatic_phase:
     description: Classification of recurring meteorological and climatic seasons.
+    type: enum
+
     values:
-      - heavy_precipitation_season: "Period characterized by prolonged or intense rainfall (e.g., monsoon, wet season)."
-      - dry_season: "Period characterized by consistently low precipitation and high evaporation."
-      - extreme_temperature_season: "Period characterized by severe seasonal heat or cold (e.g., peak summer, deep winter)."
-      - transitional_season: "Shoulder periods between major climatic phases (e.g., spring thaw, autumn)."
+      - id: heavy_precipitation_season
+        label: "Heavy Precipitation Season"
+        description: "Period characterized by prolonged or intense rainfall (e.g., monsoon, wet season)."
+      - id: dry_season
+        label: "Dry Season"
+        description: "Period characterized by consistently low precipitation and high evaporation."
+      - id: extreme_temperature_season
+        label: "Extreme Temperature Season"
+        description: "Period characterized by severe seasonal heat or cold (e.g., peak summer, deep winter)."
+      - id: transitional_season
+        label: "Transitional Season"
+        description: "Shoulder periods between major climatic phases (e.g., spring thaw, autumn)."
 
   agricultural_cycle:
     description: Classification of the recurring phases of agrarian economies.
+    type: enum
+
     values:
-      - land_preparation_and_planting: "Period of intensive agricultural labor involving tilling, sowing, and planting."
-      - growing_season: "Period of crop maturation; often corresponds with a lull in direct agricultural labor demand."
-      - primary_harvest_season: "Peak period of crop gathering, characterized by high labor demand and incoming capital."
-      - lean_season: "Period before harvest when food stocks are lowest and agricultural employment is scarce."
-      - post_harvest_processing: "Period focused on storage, processing, and market selling."
+      - id: land_preparation_and_planting
+        label: "Land Preparation And Planting"
+        description: "Period of intensive agricultural labor involving tilling, sowing, and planting."
+      - id: growing_season
+        label: "Growing Season"
+        description: "Period of crop maturation; often corresponds with a lull in direct agricultural labor demand."
+      - id: primary_harvest_season
+        label: "Primary Harvest Season"
+        description: "Peak period of crop gathering, characterized by high labor demand and incoming capital."
+      - id: lean_season
+        label: "Lean Season"
+        description: "Period before harvest when food stocks are lowest and agricultural employment is scarce."
+      - id: post_harvest_processing
+        label: "Post Harvest Processing"
+        description: "Period focused on storage, processing, and market selling."
 
   socio_economic_cycle:
     description: Classification of recurring societal and economic shifts tied to the calendar.
+    type: enum
+
     values:
-      - labor_migration_departure: "Period when community members leave for seasonal or circular wage labor elsewhere."
-      - labor_migration_return: "Period when seasonal wage laborers return to the community."
-      - pastoral_migration_season: "Period of seasonal movement of livestock and herders (transhumance) seeking pasture or water."
-      - peak_commercial_or_tourism_season: "Period of intense local economic activity, significantly altering local labor demand, prices, and resource strain."
-      - academic_year_commencement: "Start of the primary school year, often requiring sudden financial outlay for fees and supplies."
-      - major_cultural_or_religious_season: "Period of significant observance affecting labor availability, markets, and household expenditure."
+      - id: labor_migration_departure
+        label: "Labor Migration Departure"
+        description: "Period when community members leave for seasonal or circular wage labor elsewhere."
+      - id: labor_migration_return
+        label: "Labor Migration Return"
+        description: "Period when seasonal wage laborers return to the community."
+      - id: pastoral_migration_season
+        label: "Pastoral Migration Season"
+        description: "Period of seasonal movement of livestock and herders (transhumance) seeking pasture or water."
+      - id: peak_commercial_or_tourism_season
+        label: "Peak Commercial Or Tourism Season"
+        description: "Period of intense local economic activity, significantly altering local labor demand, prices, and resource strain."
+      - id: academic_year_commencement
+        label: "Academic Year Commencement"
+        description: "Start of the primary school year, often requiring sudden financial outlay for fees and supplies."
+      - id: major_cultural_or_religious_season
+        label: "Major Cultural Or Religious Season"
+        description: "Period of significant observance affecting labor availability, markets, and household expenditure."
 
   hydrological_phase:
     description: Classification of recurring changes in water bodies and ground saturation.
+    type: enum
+
     values:
-      - peak_water_level: "Period when rivers, lakes, and ground saturation are at their highest."
-      - low_water_level: "Period when water sources run low, potentially impacting transport or drinking access."
-      - freeze_and_thaw_cycle: "Periods where waterways or ground freeze, and subsequently thaw, heavily altering physical accessibility."
+      - id: peak_water_level
+        label: "Peak Water Level"
+        description: "Period when rivers, lakes, and ground saturation are at their highest."
+      - id: low_water_level
+        label: "Low Water Level"
+        description: "Period when water sources run low, potentially impacting transport or drinking access."
+      - id: freeze_and_thaw_cycle
+        label: "Freeze And Thaw Cycle"
+        description: "Periods where waterways or ground freeze, and subsequently thaw, heavily altering physical accessibility."
 
 alignment_notes:
   - "The `agricultural_cycle` strictly avoids regional terms like 'Kharif', 'Rabi', or 'Monsoon', adhering to ADR-022 to remain globally applicable."

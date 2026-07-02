@@ -31,42 +31,94 @@
 # standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-livelihood_patterns:
+domain: community_context
+taxonomy: livelihood_patterns
+version: 1.0.0
+
+concepts:
   primary_production_and_extraction:
     description: Classification of livelihoods reliant on the direct extraction or cultivation of natural resources.
+    type: enum
+
     values:
-      - subsistence_agriculture: "Farming focused primarily on household consumption with minimal surplus for market."
-      - commercial_cash_crop_agriculture: "Farming focused primarily on generating market surplus and cash income."
-      - nomadic_or_semi_nomadic_pastoralism: "Livelihood based on livestock rearing requiring seasonal or continuous movement for pasture."
-      - sedentary_livestock_rearing: "Livestock rearing integrated with settled farming or commercial feedlots."
-      - artisanal_or_subsistence_fishing: "Small-scale fishing focused on household consumption or local markets."
-      - commercial_fishing_or_aquaculture: "Large-scale fishing or controlled aquatic farming focused on commercial markets."
-      - artisanal_mining_or_extraction: "Small-scale, often informal, extraction of minerals, timber, or stone."
-      - foraging_and_wildcrafting: "Reliance on gathering wild plants, timber, or non-timber forest products."
+      - id: subsistence_agriculture
+        label: "Subsistence Agriculture"
+        description: "Farming focused primarily on household consumption with minimal surplus for market."
+      - id: commercial_cash_crop_agriculture
+        label: "Commercial Cash Crop Agriculture"
+        description: "Farming focused primarily on generating market surplus and cash income."
+      - id: nomadic_or_semi_nomadic_pastoralism
+        label: "Nomadic Or Semi Nomadic Pastoralism"
+        description: "Livelihood based on livestock rearing requiring seasonal or continuous movement for pasture."
+      - id: sedentary_livestock_rearing
+        label: "Sedentary Livestock Rearing"
+        description: "Livestock rearing integrated with settled farming or commercial feedlots."
+      - id: artisanal_or_subsistence_fishing
+        label: "Artisanal Or Subsistence Fishing"
+        description: "Small-scale fishing focused on household consumption or local markets."
+      - id: commercial_fishing_or_aquaculture
+        label: "Commercial Fishing Or Aquaculture"
+        description: "Large-scale fishing or controlled aquatic farming focused on commercial markets."
+      - id: artisanal_mining_or_extraction
+        label: "Artisanal Mining Or Extraction"
+        description: "Small-scale, often informal, extraction of minerals, timber, or stone."
+      - id: foraging_and_wildcrafting
+        label: "Foraging And Wildcrafting"
+        description: "Reliance on gathering wild plants, timber, or non-timber forest products."
 
   secondary_production_and_manufacturing:
     description: Classification of livelihoods reliant on the processing or manufacturing of goods.
+    type: enum
+
     values:
-      - traditional_artisan_production: "Small-scale, often household-based, crafting of goods (e.g., textiles, pottery)."
-      - informal_manufacturing_and_processing: "Unregulated, small-scale industrial processing (e.g., brick making, food processing)."
-      - formal_industrial_manufacturing: "Employment within regulated, large-scale industrial factories."
+      - id: traditional_artisan_production
+        label: "Traditional Artisan Production"
+        description: "Small-scale, often household-based, crafting of goods (e.g., textiles, pottery)."
+      - id: informal_manufacturing_and_processing
+        label: "Informal Manufacturing And Processing"
+        description: "Unregulated, small-scale industrial processing (e.g., brick making, food processing)."
+      - id: formal_industrial_manufacturing
+        label: "Formal Industrial Manufacturing"
+        description: "Employment within regulated, large-scale industrial factories."
 
   services_and_trade:
     description: Classification of livelihoods reliant on commerce, transport, and service provision.
+    type: enum
+
     values:
-      - informal_retail_and_trading: "Unregulated buying and selling of goods, often in street markets or informal structures."
-      - formal_retail_and_commerce: "Regulated commercial businesses operating from permanent structures."
-      - transport_and_logistics_labor: "Livelihoods based on moving goods or people (e.g., drivers, porters, boatmen)."
-      - tourism_and_hospitality_services: "Livelihoods heavily reliant on seasonal or continuous visitor influx."
-      - domestic_or_care_labor: "Paid employment providing household, caretaking, or domestic services."
+      - id: informal_retail_and_trading
+        label: "Informal Retail And Trading"
+        description: "Unregulated buying and selling of goods, often in street markets or informal structures."
+      - id: formal_retail_and_commerce
+        label: "Formal Retail And Commerce"
+        description: "Regulated commercial businesses operating from permanent structures."
+      - id: transport_and_logistics_labor
+        label: "Transport And Logistics Labor"
+        description: "Livelihoods based on moving goods or people (e.g., drivers, porters, boatmen)."
+      - id: tourism_and_hospitality_services
+        label: "Tourism And Hospitality Services"
+        description: "Livelihoods heavily reliant on seasonal or continuous visitor influx."
+      - id: domestic_or_care_labor
+        label: "Domestic Or Care Labor"
+        description: "Paid employment providing household, caretaking, or domestic services."
 
   wage_labor_and_employment_patterns:
     description: Classification of the structural nature of community labor engagement.
+    type: enum
+
     values:
-      - daily_or_casual_wage_labor: "Heavy reliance on irregular, short-term, or day-to-day employment without job security."
-      - seasonal_agricultural_labor: "Reliance on agricultural wage labor heavily dictated by the agrarian calendar."
-      - formal_salaried_employment: "Reliance on stable, regulated employment with public or large private institutions."
-      - circular_labor_migration: "Systemic pattern where a significant portion of the workforce migrates seasonally for wage labor and returns."
+      - id: daily_or_casual_wage_labor
+        label: "Daily Or Casual Wage Labor"
+        description: "Heavy reliance on irregular, short-term, or day-to-day employment without job security."
+      - id: seasonal_agricultural_labor
+        label: "Seasonal Agricultural Labor"
+        description: "Reliance on agricultural wage labor heavily dictated by the agrarian calendar."
+      - id: formal_salaried_employment
+        label: "Formal Salaried Employment"
+        description: "Reliance on stable, regulated employment with public or large private institutions."
+      - id: circular_labor_migration
+        label: "Circular Labor Migration"
+        description: "Systemic pattern where a significant portion of the workforce migrates seasonally for wage labor and returns."
 
 alignment_notes:
   - "The `wage_labor_and_employment_patterns` class models the *systemic labor pattern* of the community, not the employment status of a single person (which belongs in Registration)."

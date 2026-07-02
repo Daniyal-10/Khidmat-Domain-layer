@@ -33,43 +33,119 @@
 # standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-transportation:
+domain: community_context
+taxonomy: transportation
+version: 1.0.0
+
+concepts:
   road_infrastructure:
     description: Classification of the physical surface and structural reliability of vehicular pathways.
+    type: enum
+
     values:
-      - primary_arterial_road: "Major, high-capacity, paved multi-lane road connecting major regions or cities."
-      - all_weather_paved_road: "Hard-surfaced road designed to remain passable by standard vehicles year-round."
-      - engineered_unpaved_road: "Graded and maintained gravel or dirt road, generally passable but susceptible to severe weather degradation."
-      - dry_season_unpaved_track: "Unengineered dirt path or track, passable by vehicles only during dry conditions."
-      - pedestrian_or_pack_animal_trail: "Narrow pathway impassable to standard motorized four-wheel vehicles."
+      - id: primary_arterial_road
+        label: "Primary Arterial Road"
+        description: "Major, high-capacity, paved multi-lane road connecting major regions or cities."
+      - id: all_weather_paved_road
+        label: "All Weather Paved Road"
+        description: "Hard-surfaced road designed to remain passable by standard vehicles year-round."
+      - id: engineered_unpaved_road
+        label: "Engineered Unpaved Road"
+        description: "Graded and maintained gravel or dirt road, generally passable but susceptible to severe weather degradation."
+      - id: dry_season_unpaved_track
+        label: "Dry Season Unpaved Track"
+        description: "Unengineered dirt path or track, passable by vehicles only during dry conditions."
+      - id: pedestrian_or_pack_animal_trail
+        label: "Pedestrian Or Pack Animal Trail"
+        description: "Narrow pathway impassable to standard motorized four-wheel vehicles."
 
   water_transport_infrastructure:
     description: Classification of navigable water routes and maritime connectivity.
+    type: enum
+
     values:
-      - deep_water_maritime_route: "Oceanic or major coastal route capable of supporting large commercial vessels."
-      - inland_navigable_waterway: "River or canal system capable of supporting motorized barge or passenger ferry traffic year-round."
-      - seasonal_or_shallow_waterway: "Water route navigable only by small craft or only during high-water seasons."
-      - informal_water_crossing: "Unregulated point where a water body is routinely crossed by small boats or fording."
+      - id: deep_water_maritime_route
+        label: "Deep Water Maritime Route"
+        description: "Oceanic or major coastal route capable of supporting large commercial vessels."
+      - id: inland_navigable_waterway
+        label: "Inland Navigable Waterway"
+        description: "River or canal system capable of supporting motorized barge or passenger ferry traffic year-round."
+      - id: seasonal_or_shallow_waterway
+        label: "Seasonal Or Shallow Waterway"
+        description: "Water route navigable only by small craft or only during high-water seasons."
+      - id: informal_water_crossing
+        label: "Informal Water Crossing"
+        description: "Unregulated point where a water body is routinely crossed by small boats or fording."
 
   rail_and_air_infrastructure:
     description: Classification of specialized, non-road mass transit and aviation connections.
+    type: enum
+
     values:
-      - commercial_aviation_hub: "Major airport with paved runways and regular commercial domestic/international flights."
-      - regional_or_unpaved_airstrip: "Small airfield or unpaved strip capable of receiving light aircraft or charter flights."
-      - helicopter_landing_zone: "Designated or structurally suitable clearing capable of receiving rotary-wing aircraft."
-      - primary_rail_network: "Active, integrated railway infrastructure supporting regular heavy freight or passenger trains."
-      - secondary_or_narrow_gauge_rail: "Light or localized railway infrastructure with limited capacity or connectivity."
+      - id: commercial_aviation_hub
+        label: "Commercial Aviation Hub"
+        description: "Major airport with paved runways and regular commercial domestic/international flights."
+      - id: regional_or_unpaved_airstrip
+        label: "Regional Or Unpaved Airstrip"
+        description: "Small airfield or unpaved strip capable of receiving light aircraft or charter flights."
+      - id: helicopter_landing_zone
+        label: "Helicopter Landing Zone"
+        description: "Designated or structurally suitable clearing capable of receiving rotary-wing aircraft."
+      - id: primary_rail_network
+        label: "Primary Rail Network"
+        description: "Active, integrated railway infrastructure supporting regular heavy freight or passenger trains."
+      - id: secondary_or_narrow_gauge_rail
+        label: "Secondary Or Narrow Gauge Rail"
+        description: "Light or localized railway infrastructure with limited capacity or connectivity."
 
   connectivity_bottlenecks:
     description: Classification of physical infrastructural choke points that dictate route viability.
+    type: enum
+
     values:
-      - high_capacity_bridge_crossing: "Engineered bridge capable of supporting heavy freight transport."
-      - low_capacity_bridge_crossing: "Light bridge, often suspension or wooden, restricted to pedestrians, animals, or light vehicles."
-      - motorized_ferry_crossing: "Organized ferry service capable of transporting vehicles across a water body."
-      - mountain_pass: "High-altitude route through a mountain range, often subject to seasonal closure."
-      - border_transit_corridor: "Designated infrastructure funneling transport through an international or administrative boundary."
+      - id: high_capacity_bridge_crossing
+        label: "High Capacity Bridge Crossing"
+        description: "Engineered bridge capable of supporting heavy freight transport."
+      - id: low_capacity_bridge_crossing
+        label: "Low Capacity Bridge Crossing"
+        description: "Light bridge, often suspension or wooden, restricted to pedestrians, animals, or light vehicles."
+      - id: motorized_ferry_crossing
+        label: "Motorized Ferry Crossing"
+        description: "Organized ferry service capable of transporting vehicles across a water body."
+      - id: mountain_pass
+        label: "Mountain Pass"
+        description: "High-altitude route through a mountain range, often subject to seasonal closure."
+      - id: border_transit_corridor
+        label: "Border Transit Corridor"
+        description: "Designated infrastructure funneling transport through an international or administrative boundary."
+
+  transit_and_terminal_facilities:
+    description: >
+      Classification of fixed point facilities that serve as origin, destination,
+      or transfer nodes within the transportation network — as distinct from the
+      routes and crossings classified above. Moved here from
+      community-context/taxonomy/infrastructure-types.yaml during the C1
+      remediation sprint: these are transportation-network facilities, not
+      general-purpose community infrastructure, and belong with the rest of
+      the transport taxonomy under single ownership (ADR-008).
+    type: enum
+
+    values:
+      - id: transit_hub
+        label: "Transit Hub"
+        description: "Major station for buses, trains, or shared transport."
+      - id: railway_station
+        label: "Railway Station"
+        description: "A facility for passenger or freight rail transport."
+      - id: ferry_terminal
+        label: "Ferry Terminal"
+        description: "A facility where ferries dock to transport vehicles and passengers."
+      - id: boat_landing
+        label: "Boat Landing"
+        description: "A simple dock or slipway for small watercraft."
 
 alignment_notes:
   - "The `road_infrastructure` category focuses on structural permanence and weather resilience rather than administrative ownership (e.g., avoiding terms like 'State Highway' or 'County Road') to comply with ADR-022."
   - "This taxonomy strictly defines the physical transport *asset or route*. The *service* running on it (e.g., a 'public bus service') is modeled separately under `essential-services.yaml`."
   - "By modeling `connectivity_bottlenecks`, the ontology allows reasoning engines to identify single points of failure (e.g., if a community's only external link is a `low_capacity_bridge_crossing`, its logistical fragility is high)."
+  - "C1 remediation (this sprint): `transit_and_terminal_facilities` was added to consolidate all transportation-network point facilities (station, terminal, landing) under this file. These were previously and incorrectly split into `infrastructure-types.yaml`, creating dual ownership of the same transportation-network concepts. `infrastructure-types.yaml` no longer defines any transportation concept; it references this file instead. Airstrip/helipad and paved-road classification were already correctly owned here and were simply de-duplicated out of `infrastructure-types.yaml`, with no change needed in this file."

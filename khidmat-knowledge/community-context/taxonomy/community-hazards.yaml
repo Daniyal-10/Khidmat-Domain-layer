@@ -33,38 +33,82 @@
 # standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-community_hazards:
+domain: community_context
+taxonomy: community_hazards
+version: 1.0.0
+
+concepts:
   hydrological_exposure_context:
     description: Classification of geographic susceptibility to water-related extremes.
+    type: enum
+
     values:
-      - flood_prone_lowland: "Geographic area subject to regular or seasonal inundation."
-      - flash_flood_susceptible_channel: "Dry or low-flow channels subject to rapid, severe water flow following heavy precipitation."
-      - storm_surge_exposed_coastline: "Coastal area highly susceptible to oceanic inundation during severe weather."
-      - drought_sensitive_zone: "Area with low structural water security, highly susceptible to periods of low precipitation."
+      - id: flood_prone_lowland
+        label: "Flood Prone Lowland"
+        description: "Geographic area subject to regular or seasonal inundation."
+      - id: flash_flood_susceptible_channel
+        label: "Flash Flood Susceptible Channel"
+        description: "Dry or low-flow channels subject to rapid, severe water flow following heavy precipitation."
+      - id: storm_surge_exposed_coastline
+        label: "Storm Surge Exposed Coastline"
+        description: "Coastal area highly susceptible to oceanic inundation during severe weather."
+      - id: drought_sensitive_zone
+        label: "Drought Sensitive Zone"
+        description: "Area with low structural water security, highly susceptible to periods of low precipitation."
 
   geological_exposure_context:
     description: Classification of geographic susceptibility to earth and tectonic movements.
+    type: enum
+
     values:
-      - earthquake_prone_fault_zone: "Region situated on or near active tectonic fault lines with high historical seismicity."
-      - landslide_susceptible_terrain: "Steep or unstable terrain prone to earth movement, especially during heavy rains or tremors."
-      - avalanche_prone_slope: "High-altitude or steep snow-covered terrain susceptible to rapid snowpack failure."
-      - volcanic_hazard_zone: "Area situated within the historical impact radius of active or dormant volcanoes."
+      - id: earthquake_prone_fault_zone
+        label: "Earthquake Prone Fault Zone"
+        description: "Region situated on or near active tectonic fault lines with high historical seismicity."
+      - id: landslide_susceptible_terrain
+        label: "Landslide Susceptible Terrain"
+        description: "Steep or unstable terrain prone to earth movement, especially during heavy rains or tremors."
+      - id: avalanche_prone_slope
+        label: "Avalanche Prone Slope"
+        description: "High-altitude or steep snow-covered terrain susceptible to rapid snowpack failure."
+      - id: volcanic_hazard_zone
+        label: "Volcanic Hazard Zone"
+        description: "Area situated within the historical impact radius of active or dormant volcanoes."
 
   climatological_exposure_context:
     description: Classification of geographic susceptibility to extreme atmospheric and climatic conditions.
+    type: enum
+
     values:
-      - cyclone_exposed_region: "Coastal or near-coastal area situated in the historical path of severe tropical cyclones/hurricanes."
-      - extreme_heat_susceptible_zone: "Area structurally prone to prolonged periods of severe, life-threatening high temperatures."
-      - severe_winter_exposure_zone: "Area prone to extreme cold, blizzards, and prolonged freezing conditions."
-      - wildfire_prone_interface: "Area where human habitation borders dense vegetation susceptible to uncontrolled fires."
+      - id: cyclone_exposed_region
+        label: "Cyclone Exposed Region"
+        description: "Coastal or near-coastal area situated in the historical path of severe tropical cyclones/hurricanes."
+      - id: extreme_heat_susceptible_zone
+        label: "Extreme Heat Susceptible Zone"
+        description: "Area structurally prone to prolonged periods of severe, life-threatening high temperatures."
+      - id: severe_winter_exposure_zone
+        label: "Severe Winter Exposure Zone"
+        description: "Area prone to extreme cold, blizzards, and prolonged freezing conditions."
+      - id: wildfire_prone_interface
+        label: "Wildfire Prone Interface"
+        description: "Area where human habitation borders dense vegetation susceptible to uncontrolled fires."
 
   anthropogenic_exposure_context:
     description: Classification of geographic susceptibility to human-made or industrial hazards.
+    type: enum
+
     values:
-      - industrial_pollution_zone: "Area persistently exposed to severe air, water, or soil contamination from adjacent industry."
-      - hazardous_material_transit_corridor: "Area situated along major routes used for the transportation of dangerous chemicals or materials."
-      - structural_collapse_risk_zone: "Urban or semi-urban area characterized by highly precarious, unregulated, or degrading infrastructure."
-      - unexploded_ordnance_zone: "Area known or suspected to contain historical landmines or unexploded military munitions."
+      - id: industrial_pollution_zone
+        label: "Industrial Pollution Zone"
+        description: "Area persistently exposed to severe air, water, or soil contamination from adjacent industry."
+      - id: hazardous_material_transit_corridor
+        label: "Hazardous Material Transit Corridor"
+        description: "Area situated along major routes used for the transportation of dangerous chemicals or materials."
+      - id: structural_collapse_risk_zone
+        label: "Structural Collapse Risk Zone"
+        description: "Urban or semi-urban area characterized by highly precarious, unregulated, or degrading infrastructure."
+      - id: unexploded_ordnance_zone
+        label: "Unexploded Ordnance Zone"
+        description: "Area known or suspected to contain historical landmines or unexploded military munitions."
 
 alignment_notes:
   - "By appending terms like `_zone`, `_terrain`, or `_context`, we structurally enforce the ADR-008 boundary. The Risk Domain owns the active `earthquake` hazard; Community Context owns the persistent `earthquake_prone_fault_zone` geographic property."

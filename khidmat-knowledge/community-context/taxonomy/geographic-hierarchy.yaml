@@ -39,9 +39,6 @@ concepts:
       - id: neighbourhood
         label: "Neighbourhood / Settlement / Hamlet"
         description: "An organically defined, highly localized settlement or cluster of households sharing immediate physical proximity, often smaller than an administrative ward."
-      - id: informal_settlement
-        label: "Informal Settlement / Camp"
-        description: "An unplanned or temporary settlement, such as a refugee camp or slum, which may lack formal administrative recognition but requires distinct operational tracking."
 
   boundary_type:
     description: "The nature of the geographic area's boundary definition."
@@ -59,4 +56,5 @@ concepts:
 
 alignment_notes:
   - constraint: "This taxonomy integrates with `shared/taxonomy/locations.yaml`, which defines location precision (e.g., area_only). Community Context provides the structured hierarchy that `shared/locations` can reference for area definitions."
+  - constraint: "C3 remediation (this sprint): `informal_settlement` / camp was removed as a geographic level. Settlement formality is an orthogonal concept owned by `settlement-types.yaml`. An informal settlement or camp occupies a standard hierarchy level (typically village, neighbourhood, or cluster) and its informality is expressed via its settlement type."
   - adr_compliance: "Adheres to ADR-008. Ownership is strictly within Community Context. Household entities in the Shared Domain will reference these areas via ontology, not redefine them."

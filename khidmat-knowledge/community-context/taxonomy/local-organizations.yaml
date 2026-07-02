@@ -32,41 +32,88 @@
 # standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-local_organizations:
+domain: community_context
+taxonomy: local_organizations
+version: 1.0.0
+
+concepts:
   civic_and_governance_bodies:
     description: Classification of local bodies that mediate community affairs, disputes, and consensus.
+    type: enum
+
     values:
-      - traditional_leadership_body: "Institution rooted in historical, customary, or tribal authority rather than formal state law."
-      - elected_community_council: "Locally elected representative body managing neighborhood or village affairs."
-      - council_of_elders: "Informal or semi-formal advisory body composed of respected senior community members."
-      - neighborhood_watch_or_security_group: "Community-organized collective focused on local safety and dispute mediation."
+      - id: traditional_leadership_body
+        label: "Traditional Leadership Body"
+        description: "Institution rooted in historical, customary, or tribal authority rather than formal state law."
+      - id: elected_community_council
+        label: "Elected Community Council"
+        description: "Locally elected representative body managing neighborhood or village affairs."
+      - id: council_of_elders
+        label: "Council Of Elders"
+        description: "Informal or semi-formal advisory body composed of respected senior community members."
+      - id: neighborhood_watch_or_security_group
+        label: "Neighborhood Watch Or Security Group"
+        description: "Community-organized collective focused on local safety and dispute mediation."
 
   economic_and_livelihood_collectives:
     description: Classification of groups organized primarily for shared economic benefit and resource management.
+    type: enum
+
     values:
-      - agricultural_or_producer_cooperative: "Collective of farmers or producers pooling resources for processing, marketing, or purchasing."
-      - micro_savings_and_credit_collective: "Community-led group pooling capital to provide informal loans and financial safety nets to members."
-      - trade_or_artisan_guild: "Association of local workers in a specific craft or trade."
-      - resource_management_committee: "Body formed specifically to manage a shared asset (e.g., water user association, forestry committee)."
+      - id: agricultural_or_producer_cooperative
+        label: "Agricultural Or Producer Cooperative"
+        description: "Collective of farmers or producers pooling resources for processing, marketing, or purchasing."
+      - id: micro_savings_and_credit_collective
+        label: "Micro Savings And Credit Collective"
+        description: "Community-led group pooling capital to provide informal loans and financial safety nets to members."
+      - id: trade_or_artisan_guild
+        label: "Trade Or Artisan Guild"
+        description: "Association of local workers in a specific craft or trade."
+      - id: resource_management_committee
+        label: "Resource Management Committee"
+        description: "Body formed specifically to manage a shared asset (e.g., water user association, forestry committee)."
 
   social_and_demographic_groups:
     description: Classification of organizations formed around shared identity, demographics, or advocacy.
+    type: enum
+
     values:
-      - womens_collective: "Group dedicated to advancing the economic, social, or political interests of women in the community."
-      - youth_organization: "Group organized by or for young people focusing on development, recreation, or advocacy."
-      - persons_with_disabilities_advocacy_group: "Collective organized to support and advocate for individuals with disabilities."
-      - minority_or_indigenous_advocacy_group: "Body representing specific ethnic, linguistic, or cultural subgroups within the broader community."
-      - faith_based_organization: "Local civic or charitable group explicitly tied to a religious institution or identity."
+      - id: womens_collective
+        label: "Womens Collective"
+        description: "Group dedicated to advancing the economic, social, or political interests of women in the community."
+      - id: youth_organization
+        label: "Youth Organization"
+        description: "Group organized by or for young people focusing on development, recreation, or advocacy."
+      - id: persons_with_disabilities_advocacy_group
+        label: "Persons With Disabilities Advocacy Group"
+        description: "Collective organized to support and advocate for individuals with disabilities."
+      - id: minority_or_indigenous_advocacy_group
+        label: "Minority Or Indigenous Advocacy Group"
+        description: "Body representing specific ethnic, linguistic, or cultural subgroups within the broader community."
+      - id: faith_based_organization
+        label: "Faith Based Organization"
+        description: "Local civic or charitable group explicitly tied to a religious institution or identity."
 
   mutual_aid_and_welfare_groups:
     description: Classification of bodies dedicated to internal community support and charity.
+    type: enum
+
     values:
-      - burial_or_bereavement_society: "Collective pooling funds specifically to support members during family deaths."
-      - spontaneous_mutual_aid_network: "Informal, rapidly forming group providing direct peer-to-peer assistance during crises."
-      - local_philanthropic_trust: "Formally structured local charity managing local donations for community welfare."
-      - parent_teacher_association: "Collective focused on the welfare, resourcing, and support of local educational facilities."
+      - id: burial_or_bereavement_society
+        label: "Burial Or Bereavement Society"
+        description: "Collective pooling funds specifically to support members during family deaths."
+      - id: spontaneous_mutual_aid_network
+        label: "Spontaneous Mutual Aid Network"
+        description: "Informal, rapidly forming group providing direct peer-to-peer assistance during crises."
+      - id: local_philanthropic_trust
+        label: "Local Philanthropic Trust"
+        description: "Formally structured local charity managing local donations for community welfare."
+      - id: parent_teacher_association
+        label: "Parent Teacher Association"
+        description: "Collective focused on the welfare, resourcing, and support of local educational facilities."
 
 alignment_notes:
   - "`micro_savings_and_credit_collective` is the globally canonical term replacing regional aliases like 'SHG' (India), 'Chama' (East Africa), or 'Stokvel' (South Africa), maintaining ADR-022."
   - "These are native community-level entities. A `local_philanthropic_trust` is a community organization, whereas a massive international NGO or UN agency belongs to an external organizational taxonomy."
   - "This taxonomy strictly defines the *type* of organization. The actual instance of the organization (e.g., 'The River Valley Farmers Coop') belongs in the ontology as an individual entity."
+  - "C4 remediation (this sprint): This taxonomy defines a genuinely separate concept space from `shared/taxonomy/organisations.yaml`. While the shared taxonomy models formally registered, externally structured, or statutory entities (e.g., hospitals, formal NGOs, government offices), this file strictly models community-native, informal, or semi-formal collectives (e.g., councils of elders, mutual aid networks, traditional leadership). They do not overlap."
