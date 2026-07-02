@@ -1,0 +1,72 @@
+# ============================================================================
+# Domain: Community Context
+# Context: Taxonomy
+# File: community-hazards.yaml
+#
+# Purpose: Model the relatively stable, structural exposure of a geographic area 
+#          to environmental, geological, and anthropogenic hazard profiles.
+# Scope: This taxonomy classifies the *context of exposure* (e.g., a flood-prone 
+#        zone). It strictly does NOT model the hazard itself (e.g., a flood event), 
+#        which is owned exclusively by the Risk Domain. It also excludes dynamic 
+#        vulnerability, disaster events, and operational responses.
+#
+# ADR Validation:
+# - ADR-008 (Single Ownership): Ensures pristine boundary with the Risk Domain. 
+#   Risk owns the hazard (`flood`). Community Context owns the environmental 
+#   trait that makes exposure likely (`flood_prone_lowland`).
+# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
+#   rather than regional terms.
+#
+# Ontology Compatibility:
+# These values will serve as property ranges for `Area` and `Community` entities 
+# in `community-context/ontology.yaml` to denote persistent geographic risk exposure.
+#
+# Reasoning Compatibility:
+# Enables forward-chaining rules linking persistent geographic traits to temporal 
+# events. For example:
+# If [Area Exposure = `cyclone_exposed_region`] + 
+#    [Seasonal Event = `heavy_precipitation_season`] -> 
+# (Future Risk rule infers heightened acute exposure probability).
+#
+# RDF/OWL Compatibility:
+# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
+# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
+# ============================================================================
+
+community_hazards:
+  hydrological_exposure_context:
+    description: Classification of geographic susceptibility to water-related extremes.
+    values:
+      - flood_prone_lowland: "Geographic area subject to regular or seasonal inundation."
+      - flash_flood_susceptible_channel: "Dry or low-flow channels subject to rapid, severe water flow following heavy precipitation."
+      - storm_surge_exposed_coastline: "Coastal area highly susceptible to oceanic inundation during severe weather."
+      - drought_sensitive_zone: "Area with low structural water security, highly susceptible to periods of low precipitation."
+
+  geological_exposure_context:
+    description: Classification of geographic susceptibility to earth and tectonic movements.
+    values:
+      - earthquake_prone_fault_zone: "Region situated on or near active tectonic fault lines with high historical seismicity."
+      - landslide_susceptible_terrain: "Steep or unstable terrain prone to earth movement, especially during heavy rains or tremors."
+      - avalanche_prone_slope: "High-altitude or steep snow-covered terrain susceptible to rapid snowpack failure."
+      - volcanic_hazard_zone: "Area situated within the historical impact radius of active or dormant volcanoes."
+
+  climatological_exposure_context:
+    description: Classification of geographic susceptibility to extreme atmospheric and climatic conditions.
+    values:
+      - cyclone_exposed_region: "Coastal or near-coastal area situated in the historical path of severe tropical cyclones/hurricanes."
+      - extreme_heat_susceptible_zone: "Area structurally prone to prolonged periods of severe, life-threatening high temperatures."
+      - severe_winter_exposure_zone: "Area prone to extreme cold, blizzards, and prolonged freezing conditions."
+      - wildfire_prone_interface: "Area where human habitation borders dense vegetation susceptible to uncontrolled fires."
+
+  anthropogenic_exposure_context:
+    description: Classification of geographic susceptibility to human-made or industrial hazards.
+    values:
+      - industrial_pollution_zone: "Area persistently exposed to severe air, water, or soil contamination from adjacent industry."
+      - hazardous_material_transit_corridor: "Area situated along major routes used for the transportation of dangerous chemicals or materials."
+      - structural_collapse_risk_zone: "Urban or semi-urban area characterized by highly precarious, unregulated, or degrading infrastructure."
+      - unexploded_ordnance_zone: "Area known or suspected to contain historical landmines or unexploded military munitions."
+
+alignment_notes:
+  - "By appending terms like `_zone`, `_terrain`, or `_context`, we structurally enforce the ADR-008 boundary. The Risk Domain owns the active `earthquake` hazard; Community Context owns the persistent `earthquake_prone_fault_zone` geographic property."
+  - "This taxonomy deliberately excludes social conflict (e.g., 'riot-prone area'). Social cohesion and conflict dynamics belong to a separate, dedicated social taxonomy within Community Context, ensuring physical and social exposures remain semantically distinct."
+  - "These classifications are persistent context. An area is a `flood_prone_lowland` year-round, even during the dry season. The actual realization of the threat requires the intersection of this context with a `SeasonalEvent` or an acute hazard."

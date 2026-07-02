@@ -1,0 +1,73 @@
+# ============================================================================
+# Domain: Community Context
+# Context: Taxonomy
+# File: seasonal-events.yaml
+#
+# Purpose: Model recurring seasonal and cyclical phenomena that influence 
+#          community life, livelihoods, accessibility, and service delivery.
+# Scope: This taxonomy strictly classifies cyclical environmental and socio-economic 
+#        events. It does NOT model hazards, sudden disasters, individual risk, 
+#        or operational responses.
+#
+# ADR Validation:
+# - ADR-008 (Single Ownership): Ensures clear separation from the Risk domain. 
+#   A "heavy precipitation season" is an expected seasonal event here, while a 
+#   "flood" is a hazard owned by Risk.
+# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
+#   (e.g., `primary_harvest_season`) rather than regional terminology (e.g., 
+#   Kharif/Rabi, Boro/Aman).
+#
+# Ontology Compatibility:
+# These values will serve as property ranges for `SeasonalEvent` or temporal 
+# attributes linked to `Community` and `Area` entities in `ontology.yaml`.
+#
+# Reasoning Compatibility:
+# Enables powerful forward-chaining rules without embedding logic. For example:
+# If [Seasonal Event = `heavy_precipitation_season`] + 
+#    [Accessibility = `seasonally_cut_off`] -> 
+# (Future rule infers `logistical_vulnerability`).
+#
+# RDF/OWL Compatibility:
+# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
+# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
+# ============================================================================
+
+seasonal_events:
+  climatic_phase:
+    description: Classification of recurring meteorological and climatic seasons.
+    values:
+      - heavy_precipitation_season: "Period characterized by prolonged or intense rainfall (e.g., monsoon, wet season)."
+      - dry_season: "Period characterized by consistently low precipitation and high evaporation."
+      - extreme_temperature_season: "Period characterized by severe seasonal heat or cold (e.g., peak summer, deep winter)."
+      - transitional_season: "Shoulder periods between major climatic phases (e.g., spring thaw, autumn)."
+
+  agricultural_cycle:
+    description: Classification of the recurring phases of agrarian economies.
+    values:
+      - land_preparation_and_planting: "Period of intensive agricultural labor involving tilling, sowing, and planting."
+      - growing_season: "Period of crop maturation; often corresponds with a lull in direct agricultural labor demand."
+      - primary_harvest_season: "Peak period of crop gathering, characterized by high labor demand and incoming capital."
+      - lean_season: "Period before harvest when food stocks are lowest and agricultural employment is scarce."
+      - post_harvest_processing: "Period focused on storage, processing, and market selling."
+
+  socio_economic_cycle:
+    description: Classification of recurring societal and economic shifts tied to the calendar.
+    values:
+      - labor_migration_departure: "Period when community members leave for seasonal or circular wage labor elsewhere."
+      - labor_migration_return: "Period when seasonal wage laborers return to the community."
+      - pastoral_migration_season: "Period of seasonal movement of livestock and herders (transhumance) seeking pasture or water."
+      - peak_commercial_or_tourism_season: "Period of intense local economic activity, significantly altering local labor demand, prices, and resource strain."
+      - academic_year_commencement: "Start of the primary school year, often requiring sudden financial outlay for fees and supplies."
+      - major_cultural_or_religious_season: "Period of significant observance affecting labor availability, markets, and household expenditure."
+
+  hydrological_phase:
+    description: Classification of recurring changes in water bodies and ground saturation.
+    values:
+      - peak_water_level: "Period when rivers, lakes, and ground saturation are at their highest."
+      - low_water_level: "Period when water sources run low, potentially impacting transport or drinking access."
+      - freeze_and_thaw_cycle: "Periods where waterways or ground freeze, and subsequently thaw, heavily altering physical accessibility."
+
+alignment_notes:
+  - "The `agricultural_cycle` strictly avoids regional terms like 'Kharif', 'Rabi', or 'Monsoon', adhering to ADR-022 to remain globally applicable."
+  - "A `heavy_precipitation_season` (Taxonomy: Community Context) is a predictable environmental reality. A `flood` or `cyclone` (Taxonomy: Risk) is a destructive realization of a hazard. This maintains the strict ADR-008 boundary between Context and Risk."
+  - "`lean_season` is a fundamental socio-economic reality across global agricultural communities and is critical for reasoning about predictable livelihood and nutritional vulnerabilities without modeling the vulnerability directly in this file."

@@ -1,0 +1,100 @@
+# ============================================================================
+# Domain: Community Context
+# Context: Taxonomy
+# File: essential-services.yaml
+#
+# Purpose: Model the stable, long-term essential services available within or 
+#          structurally accessible to a community.
+# Scope: This taxonomy strictly classifies the *types of services* that exist 
+#        as community infrastructure (e.g., primary_healthcare, potable_water_supply). 
+#        It does NOT model humanitarian interventions, Khidmat support delivery, 
+#        beneficiary needs, or operational workflows.
+#
+# ADR Validation:
+# - ADR-008 (Single Ownership): Community Context owns the persistent presence of 
+#   a service in a geography. Support Delivery / Programs owns the actual provision 
+#   of aid. Needs Assessment owns the gap experienced by a beneficiary.
+# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
+#   (e.g., `primary_healthcare`) rather than region-specific program names 
+#   (e.g., Ayushman Bharat, NHS).
+#
+# Ontology Compatibility:
+# These values will serve as property ranges for `ServiceInfrastructure` or 
+# `Community` entities in `community-context/ontology.yaml` to denote community 
+# capacity and resource availability.
+#
+# Reasoning Compatibility:
+# Enables forward-chaining rules linking community resources to vulnerability. 
+# For example: If [Area lacks `potable_water_supply`] -> 
+# (Future rule infers heightened baseline health vulnerability for all residents).
+#
+# RDF/OWL Compatibility:
+# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
+# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
+# ============================================================================
+
+essential_services:
+  health_and_medical_services:
+    description: Classification of permanent health-related community services.
+    values:
+      - primary_healthcare: "Basic, foundational health care including preventative services, immunizations, and general practitioner access."
+      - secondary_healthcare: "Specialized medical services typically requiring referral, including inpatient care and specialized diagnostics."
+      - emergency_medical_response: "Acute trauma and emergency transport and stabilization services."
+      - maternal_and_infant_care: "Dedicated services for pregnancy, childbirth, and early childhood health."
+      - mental_health_support: "Psychiatric, psychological, or structured psychosocial support services."
+      - pharmaceutical_dispensary: "Facilities providing access to essential medicines and medical supplies."
+
+  water_sanitation_and_hygiene:
+    description: Classification of critical WASH infrastructure services.
+    values:
+      - potable_water_supply: "Access to safe, treated, and reliable drinking water."
+      - wastewater_and_sewage_management: "Systems for the safe disposal and treatment of human waste."
+      - solid_waste_management: "Regular collection and safe disposal of household and commercial refuse."
+      - public_hygiene_facilities: "Accessible public toilets, bathing, or laundry facilities."
+
+  food_and_nutrition_security:
+    description: Classification of stable food access points and nutritional services.
+    values:
+      - general_food_market: "Commercial access to diverse, staple, and fresh foods."
+      - subsidized_staple_distribution: "State or institutional mechanisms for distributing essential food items at controlled prices."
+      - therapeutic_nutrition_center: "Specialized facilities treating acute malnutrition."
+
+  education_and_childcare:
+    description: Classification of formal and early childhood educational services.
+    values:
+      - early_childhood_care: "Supervised developmental care and education for pre-school-aged children."
+      - primary_education: "Foundational, mandatory schooling."
+      - secondary_education: "Advanced schooling preparing for higher education or vocational entry."
+      - vocational_and_skills_training: "Practical education focused on trade and livelihood skills."
+      - special_education_services: "Dedicated educational services accommodating severe physical or cognitive disabilities."
+
+  protection_and_legal_services:
+    description: Classification of services providing safety, rights enforcement, and safeguarding.
+    values:
+      - law_enforcement_and_security: "State-mandated police or community security forces."
+      - legal_aid_and_rights_counseling: "Access to legal representation, rights education, and dispute resolution."
+      - child_protection_services: "Dedicated safeguarding for vulnerable minors, orphans, and at-risk children."
+      - gender_based_violence_support: "Safe spaces, counseling, and medical/legal support for victims of GBV."
+      - civil_registration_services: "Administrative access for birth, death, marriage, and identity documentation."
+
+  financial_and_livelihood_services:
+    description: Classification of economic infrastructure and livelihood support.
+    values:
+      - formal_banking_services: "Access to regulated financial institutions for savings, credit, and transfers."
+      - microfinance_and_savings_groups: "Community-level or specialized small-scale credit and savings mechanisms."
+      - agricultural_extension_services: "Technical support, veterinary care, and resource distribution for farmers and pastoralists."
+      - employment_and_labor_exchanges: "Mechanisms connecting job seekers with local or regional labor demand."
+
+  shelter_and_community_infrastructure:
+    description: Classification of collective infrastructure and emergency refuge.
+    values:
+      - emergency_shelter_facilities: "Designated safe spaces for temporary refuge during acute crises or weather events."
+      - collective_community_centers: "Public spaces for community assembly, information dissemination, and social cohesion."
+      - reliable_electricity_grid: "Stable access to domestic and commercial electrical power."
+      - telecommunications_access: "Stable access to cellular networks, internet, or public communication hubs."
+      - public_transport_nodes: "Access points for scheduled or reliable shared transit."
+
+alignment_notes:
+  - "The `essential_services` taxonomy strictly describes what exists in the community environment. It does not map to `Needs` (which belong to Registration) or `Interventions` (which belong to Support Delivery)."
+  - "`subsidized_staple_distribution` is a canonical concept replacing localized terms like 'PDS', 'Ration Shop', or 'Food Stamp Office', strictly adhering to ADR-022."
+  - "Organizations (e.g., 'NGO', 'Ministry of Health') are explicitly excluded. This taxonomy classifies the *service provided*, not the *entity providing it*, maintaining separation from the Shared Organisations taxonomy."

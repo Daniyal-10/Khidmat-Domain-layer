@@ -1,0 +1,98 @@
+# ============================================================================
+# Domain: Community Context
+# Context: Taxonomy
+# File: accessibility.yaml
+#
+# Purpose: Model the accessibility characteristics of a geographic area and service location.
+# Scope: This taxonomy classifies access constraints and modes. It does not
+#        prescribe operational routing, volunteer assignments, or state transitions.
+#        It provides the semantic vocabulary for reasoning about how an area or
+#        service can be reached and communicated with.
+#
+# ADR Validation:
+# - ADR-008 (Single Ownership): Concepts are natively owned by Community Context.
+#   Does not redefine `functional_capacity` (Shared Human Model) or 
+#   `vulnerability` (Risk Domain).
+# - ADR-022 (Regional Localization): Uses globally reusable canonical concepts.
+#   (e.g., `security_checkpoint` instead of region-specific authority names).
+#
+# Ontology Compatibility:
+# These values will be used as property ranges for `Area`, `ServiceLocation`, 
+# and `Community` entities in `community-context/ontology.yaml`.
+#
+# Reasoning Compatibility:
+# Enables forward-chaining rules (e.g., if seasonal_accessibility = `seasonally_cut_off`,
+# infer `logistical_vulnerability` for services in that area).
+#
+# RDF/OWL Compatibility:
+# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
+# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
+# ============================================================================
+
+accessibility:
+  physical_accessibility:
+    description: Classification of the physical terrain and pathway access to an area or location.
+    values:
+      - paved_road_access: "Reachable via continuous paved roads suitable for all standard vehicles."
+      - unpaved_road_access: "Reachable via unpaved or dirt roads; may require specialized vehicles."
+      - pedestrian_only_access: "Reachable only on foot; no vehicular access possible."
+      - waterway_access: "Reachable primarily or exclusively via boats or waterways."
+      - terrain_restricted_access: "Access requires navigating difficult terrain (e.g., steep mountains, dense forest)."
+
+  transportation_accessibility:
+    description: Classification of the availability of public or shared transportation options.
+    values:
+      - frequent_public_transit: "Regular, scheduled public transportation is available throughout the day."
+      - sparse_public_transit: "Public transportation is available but infrequent or unreliable."
+      - informal_transit_only: "Relies entirely on informal, unscheduled shared transport (e.g., shared taxis, animal carts)."
+      - no_transit_available: "No shared or public transportation options exist."
+
+  seasonal_accessibility:
+    description: Classification of how weather and seasons impact access over time.
+    values:
+      - year_round_access: "Location remains accessible regardless of seasonal changes."
+      - seasonally_restricted: "Access becomes difficult but not impossible during specific seasons (e.g., mud, snow)."
+      - seasonally_cut_off: "Location becomes entirely unreachable during specific seasons (e.g., monsoon flooding, heavy snow)."
+      - unpredictable_disruption: "Access is subject to frequent, unpredictable weather-related closures."
+
+
+  communication_accessibility:
+    description: Classification of the ability to establish reliable communication with individuals in the area.
+    values:
+      - pervasive_communication: "Multiple reliable communication methods available (e.g., reliable post, multiple carriers)."
+      - limited_communication: "Only a single reliable communication method is available."
+      - mediated_communication: "Direct communication is impossible; relies on intermediaries or community leaders."
+      - isolated: "No reliable means of remote communication exist."
+
+  digital_connectivity:
+    description: Classification of data network and internet availability.
+    values:
+      - high_capacity_data: "Reliable, high-bandwidth internet suitable for heavy data usage."
+      - reliable_mobile_network: "Consistent voice and basic mobile data coverage."
+      - intermittent_mobile_network: "Signal drops frequently; text-based communication may work but voice/data is unreliable."
+      - network_dead_zone: "No digital or cellular network coverage exists."
+
+  economic_accessibility:
+    description: Classification of the financial requirements to access a service or location.
+    values:
+      - free_at_point_of_use: "No direct financial cost required for access."
+      - subsidized_or_sliding_scale: "Costs exist but are subsidized or adjusted based on ability to pay."
+      - prohibitive_commercial_cost: "Standard commercial costs apply, acting as a barrier to vulnerable populations."
+
+  accessibility_barrier:
+    description: Specific, identifiable obstacles that inhibit access to a location or service.
+    values:
+      - security_checkpoint: "Access is controlled by military, police, or armed actors."
+      - natural_barrier: "A physical geographic feature (e.g., unbridged river, landslide) blocks the path."
+      - infrastructure_collapse: "A previously usable route is destroyed (e.g., washed-out bridge, collapsed road)."
+      - social_exclusion_boundary: "Access is restricted due to social, sectarian, or community-enforced boundaries."
+      - administrative_or_documentation_barrier: "Access requires specific identity documents or permits that exclude vulnerable groups."
+      - language_barrier: "Services are only provided in a language not natively spoken by the local vulnerable population."
+      - cultural_or_gender_barrier: "Access is restricted due to cultural norms (e.g., absence of female practitioners for female patients)."
+      - financial_barrier: "The direct or indirect costs of access (fees, bribes, transport costs) exclude vulnerable populations."
+
+alignment_notes:
+  - "The `accessibility_barrier: social_exclusion_boundary` aligns with the need to model exclusion without hardcoding specific country dynamics, adhering exactly to ADR-022."
+  - "Do not conflate `physical_accessibility` (terrain) with `digital_connectivity` (networks). They represent separate dimensions of isolation."
+  - "These concepts describe the environment, not the individual. An area with `pedestrian_only_access` presents a systemic barrier to everyone. An individual's personal inability to walk is modeled separately under the Shared Human Model (`capabilities.yaml`) and must not be duplicated here."
+  - "Operational availability of a service (e.g., `continuous_operation`, `emergency_only`) represents a mutable state rather than an immutable semantic classification. As such, it is excluded from this taxonomy and should be modeled as an attribute of the `ServiceInfrastructure` entity in `community-context/ontology/attributes.yaml`."

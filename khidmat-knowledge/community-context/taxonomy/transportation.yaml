@@ -1,0 +1,75 @@
+# ============================================================================
+# Domain: Community Context
+# Context: Taxonomy
+# File: transportation.yaml
+#
+# Purpose: Model the persistent transportation and mobility infrastructure that 
+#          connects a community internally and to external regions.
+# Scope: This taxonomy strictly classifies the *physical networks and modalities* 
+#        of transport (e.g., `all_weather_paved_road`, `navigable_waterway`). 
+#        It does NOT model operational logistics, humanitarian delivery routes, 
+#        transit schedules, or individual travel events.
+#
+# ADR Validation:
+# - ADR-008 (Single Ownership): This domain owns the structural presence of a 
+#   transport route. Support Delivery / Programs owns the utilization of that 
+#   route for aid distribution.
+# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
+#   (e.g., `primary_arterial_road`) rather than country-specific administrative 
+#   designations (e.g., 'National Highway', 'Interstate').
+#
+# Ontology Compatibility:
+# These values will serve as property ranges for `TransportationRoute` or 
+# `MobilityInfrastructure` entities linked to an `Area` or `Community` in 
+# `community-context/ontology.yaml`.
+#
+# Reasoning Compatibility:
+# Enables forward-chaining rules. For example: If an area relies solely on a 
+# `dry_season_unpaved_track` and a `heavy_precipitation_season` begins, the AI 
+# can infer a high probability of impending logistical isolation.
+#
+# RDF/OWL Compatibility:
+# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
+# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
+# ============================================================================
+
+transportation:
+  road_infrastructure:
+    description: Classification of the physical surface and structural reliability of vehicular pathways.
+    values:
+      - primary_arterial_road: "Major, high-capacity, paved multi-lane road connecting major regions or cities."
+      - all_weather_paved_road: "Hard-surfaced road designed to remain passable by standard vehicles year-round."
+      - engineered_unpaved_road: "Graded and maintained gravel or dirt road, generally passable but susceptible to severe weather degradation."
+      - dry_season_unpaved_track: "Unengineered dirt path or track, passable by vehicles only during dry conditions."
+      - pedestrian_or_pack_animal_trail: "Narrow pathway impassable to standard motorized four-wheel vehicles."
+
+  water_transport_infrastructure:
+    description: Classification of navigable water routes and maritime connectivity.
+    values:
+      - deep_water_maritime_route: "Oceanic or major coastal route capable of supporting large commercial vessels."
+      - inland_navigable_waterway: "River or canal system capable of supporting motorized barge or passenger ferry traffic year-round."
+      - seasonal_or_shallow_waterway: "Water route navigable only by small craft or only during high-water seasons."
+      - informal_water_crossing: "Unregulated point where a water body is routinely crossed by small boats or fording."
+
+  rail_and_air_infrastructure:
+    description: Classification of specialized, non-road mass transit and aviation connections.
+    values:
+      - commercial_aviation_hub: "Major airport with paved runways and regular commercial domestic/international flights."
+      - regional_or_unpaved_airstrip: "Small airfield or unpaved strip capable of receiving light aircraft or charter flights."
+      - helicopter_landing_zone: "Designated or structurally suitable clearing capable of receiving rotary-wing aircraft."
+      - primary_rail_network: "Active, integrated railway infrastructure supporting regular heavy freight or passenger trains."
+      - secondary_or_narrow_gauge_rail: "Light or localized railway infrastructure with limited capacity or connectivity."
+
+  connectivity_bottlenecks:
+    description: Classification of physical infrastructural choke points that dictate route viability.
+    values:
+      - high_capacity_bridge_crossing: "Engineered bridge capable of supporting heavy freight transport."
+      - low_capacity_bridge_crossing: "Light bridge, often suspension or wooden, restricted to pedestrians, animals, or light vehicles."
+      - motorized_ferry_crossing: "Organized ferry service capable of transporting vehicles across a water body."
+      - mountain_pass: "High-altitude route through a mountain range, often subject to seasonal closure."
+      - border_transit_corridor: "Designated infrastructure funneling transport through an international or administrative boundary."
+
+alignment_notes:
+  - "The `road_infrastructure` category focuses on structural permanence and weather resilience rather than administrative ownership (e.g., avoiding terms like 'State Highway' or 'County Road') to comply with ADR-022."
+  - "This taxonomy strictly defines the physical transport *asset or route*. The *service* running on it (e.g., a 'public bus service') is modeled separately under `essential-services.yaml`."
+  - "By modeling `connectivity_bottlenecks`, the ontology allows reasoning engines to identify single points of failure (e.g., if a community's only external link is a `low_capacity_bridge_crossing`, its logistical fragility is high)."

@@ -1,0 +1,67 @@
+# ============================================================================
+# Domain: Community Context
+# Context: Taxonomy
+# File: settlement-types.yaml
+#
+# Purpose: Model the persistent structural settlement patterns and spatial 
+#          arrangements in which communities reside.
+# Scope: This taxonomy classifies the physical and social morphology of a 
+#        settlement (e.g., urban density, dispersion, formality). It strictly 
+#        does NOT model land ownership, political governance, individual 
+#        beneficiary conditions, or acute risk states.
+#
+# ADR Validation:
+# - ADR-008 (Single Ownership): Settlement form is a property of the community 
+#   geography, isolated from individual household traits (Shared Human Model) 
+#   or disaster impacts (Risk Domain).
+# - ADR-022 (Regional Localization): Uses canonical, globally recognized 
+#   classifications (e.g., `informal_urban_settlement`) rather than regional 
+#   terms (e.g., 'Favela', 'Slum', 'Basti').
+#
+# Ontology Compatibility:
+# These values will serve as property ranges for the `Community` or `Area` 
+# entities in `community-context/ontology.yaml`.
+#
+# Reasoning Compatibility:
+# Enables forward-chaining rules linking settlement types to systemic 
+# vulnerabilities (e.g., `informal_urban_settlement` implies baseline structural 
+# collapse risk and infrastructure deficit).
+#
+# RDF/OWL Compatibility:
+# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
+# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
+# ============================================================================
+
+settlement_types:
+  urbanization_density:
+    description: Classification of the settlement based on density and integration into urban networks.
+    values:
+      - metropolitan_center: "High-density, highly integrated core of a major city."
+      - secondary_urban_center: "Mid-sized city or significant regional urban hub."
+      - peri_urban_fringe: "Transition zone between urban and rural, often characterized by rapid, unplanned growth."
+      - nucleated_rural_village: "Clustered rural settlement surrounded by agricultural or natural land."
+      - dispersed_rural_settlement: "Isolated or widely scattered rural households with low density."
+      - remote_frontier_settlement: "Highly isolated settlement far from regional centers, characterized by difficult access."
+
+  settlement_formality:
+    description: Classification of the settlement based on structural permanence and formal planning.
+    values:
+      - planned_formal_settlement: "Settlement constructed according to official zoning, planning, and building codes."
+      - informal_urban_settlement: "Dense, unplanned urban or peri-urban settlement lacking formal recognition or structural compliance."
+      - organized_displaced_settlement: "Formally planned camp or settlement established specifically for displaced populations (e.g., refugee camp)."
+      - spontaneous_displaced_settlement: "Unplanned, informal gathering of displaced populations without structural permanence."
+      - nomadic_or_mobile_settlement: "Temporary or mobile encampments moving seasonally or periodically."
+
+  geographic_context_modifier:
+    description: Classification of the dominant geographic feature defining the settlement's character.
+    values:
+      - coastal_or_riverine_settlement: "Settlement heavily defined by its proximity to and reliance on major water bodies."
+      - mountain_or_highland_settlement: "Settlement situated at high elevation or rugged terrain, impacting access and agriculture."
+      - forest_settlement: "Settlement situated within or heavily dependent on dense forest ecosystems."
+      - arid_or_desert_settlement: "Settlement adapted to extremely low-precipitation environments."
+      - small_island_settlement: "Settlement on a constrained island landmass, highly dependent on maritime links."
+
+alignment_notes:
+  - "The `settlement_formality` category describes physical and structural reality. It explicitly avoids legal land ownership classifications (which belong to a separate Legal/Tenure domain if created)."
+  - "`informal_urban_settlement` is the globally canonical term replacing regional aliases like 'slum', 'favela', 'shanty town', or 'basti', maintaining ADR-022."
+  - "An `organized_displaced_settlement` represents the physical camp infrastructure, NOT the individual's legal status as a 'refugee' or 'IDP' (which belongs to Registration/Shared Human Model). This maintains strict ADR-008 ownership boundaries."
