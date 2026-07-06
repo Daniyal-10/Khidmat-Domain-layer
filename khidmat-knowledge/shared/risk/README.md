@@ -113,7 +113,7 @@ made during architecture review, not omissions:
 | `seasonal-risk.yaml` | `hazard-categories.yaml` | Retitled and rescoped. The original file implied a geographic/temporal calendar, which is explicitly Stage 8 (Community Context) territory. This file owns only the qualitative, non-geographic hazard category taxonomy. |
 | *(not originally listed)* | `exposure.yaml` | Exposure was elevated to a first-class concept during architecture review, distinct from both Hazard and Vulnerability. |
 | *(not originally listed)* | `protective-factors.yaml` | Protective Factor was elevated to a first-class, symmetric taxonomy alongside Risk Factor, rather than left as an undefined residual category. |
-| *(not originally listed)* | `risk-domain-governance.md` | Boundary enforcement rules, cross-domain reference patterns, and anti-patterns are centralised here rather than repeated inline in every ontology file, following the remediation pattern established for `health-conditions.yaml` (see `health-conditions-ontology-audit.md`). |
+| *(not originally listed)* | `risk-domain-governance.md` | Boundary enforcement rules, cross-domain reference patterns, and anti-patterns are centralised here rather than repeated inline in every ontology file, following the repository governance pattern established for ontology domains. |
 | "Risk inference rules" | `reasoning/compound-risk-detection.yaml` | Scoped specifically to compound risk detection (concentration and interaction compounding), which closes the long-standing "Compound Situation Inference Rules" gap recorded in `ontology_completion_checklist.md`. General risk-factor-presence detection is left for a later reasoning pass once case-level risk data exists to detect against. |
 
 ```
