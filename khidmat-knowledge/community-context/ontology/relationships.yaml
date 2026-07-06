@@ -1,0 +1,172 @@
+version: "1.0"
+domain: community_context
+file: ontology/relationships.yaml
+
+namespaces:
+  shared_org: "shared/taxonomy/organisations.yaml"
+  shared_human: "shared/human-model/ontology/entities.yaml"
+
+relationships:
+
+  # -------------------------------------------------------------------------
+  # Internal Domain Relationships (Within Community Context)
+  # -------------------------------------------------------------------------
+
+  - id: community_located_in_geographic_area
+    from: community
+    relationship: located_in
+    to: geographic_area
+    cardinality: one_to_one
+    required: true
+    notes: >
+      Anchors the social and economic entity to its physical, immutable geography.
+
+  - id: geographic_area_contains_community
+    from: geographic_area
+    relationship: contains
+    to: community
+    cardinality: one_to_many
+    required: false
+    notes: >
+      Inverse of community_located_in_geographic_area.
+      A geographic area can encompass multiple communities depending on resolution.
+
+  - id: community_utilizes_built_infrastructure
+    from: community
+    relationship: utilizes
+    to: built_infrastructure
+    cardinality: many_to_many
+    required: false
+
+  - id: built_infrastructure_serves_community
+    from: built_infrastructure
+    relationship: serves
+    to: community
+    cardinality: many_to_many
+    required: false
+    notes: >
+      Inverse of community_utilizes_built_infrastructure.
+      Infrastructure (e.g., a regional hospital) may serve multiple communities.
+
+  - id: community_utilizes_natural_resource
+    from: community
+    relationship: utilizes
+    to: natural_resource
+    cardinality: many_to_many
+    required: false
+
+  - id: natural_resource_supports_community
+    from: natural_resource
+    relationship: supports
+    to: community
+    cardinality: many_to_many
+    required: false
+    notes: >
+      Inverse of community_utilizes_natural_resource.
+      A large natural resource (like a river or forest) can support multiple communities.
+
+  - id: community_connected_by_transportation
+    from: community
+    relationship: connected_by
+    to: transportation_network_asset
+    cardinality: many_to_many
+    required: false
+
+  - id: transportation_network_asset_connects_community
+    from: transportation_network_asset
+    relationship: connects
+    to: community
+    cardinality: many_to_many
+    required: false
+    notes: >
+      Inverse of community_connected_by_transportation.
+      A single transit route typically connects multiple communities.
+
+  - id: community_represented_by_local_collective
+    from: community
+    relationship: represented_by
+    to: local_collective
+    cardinality: one_to_many
+    required: false
+    notes: >
+      A community may have multiple informal or semi-formal bodies acting on its behalf (e.g., council of elders).
+
+  - id: local_collective_represents_community
+    from: local_collective
+    relationship: represents
+    to: community
+    cardinality: many_to_one
+    required: true
+    notes: >
+      Inverse of community_represented_by_local_collective.
+      A collective typically arises from and represents a single community base.
+
+  - id: built_infrastructure_located_in_geographic_area
+    from: built_infrastructure
+    relationship: located_in
+    to: geographic_area
+    cardinality: many_to_one
+    required: true
+
+  - id: geographic_area_contains_built_infrastructure
+    from: geographic_area
+    relationship: contains
+    to: built_infrastructure
+    cardinality: one_to_many
+    required: false
+
+  - id: transportation_network_asset_located_in_geographic_area
+    from: transportation_network_asset
+    relationship: located_in
+    to: geographic_area
+    cardinality: many_to_many
+    required: true
+    notes: >
+      Networks span multiple areas; an area contains multiple segments.
+
+  - id: geographic_area_contains_transportation
+    from: geographic_area
+    relationship: contains
+    to: transportation_network_asset
+    cardinality: many_to_many
+    required: false
+
+  - id: natural_resource_located_in_geographic_area
+    from: natural_resource
+    relationship: located_in
+    to: geographic_area
+    cardinality: many_to_many
+    required: true
+    notes: >
+      Large natural resources can span multiple geographic areas.
+
+  - id: geographic_area_contains_natural_resource
+    from: geographic_area
+    relationship: contains
+    to: natural_resource
+    cardinality: many_to_many
+    required: false
+
+  # -------------------------------------------------------------------------
+  # External / Upstream Imports (Cross-Domain Relationships)
+  # -------------------------------------------------------------------------
+
+  - id: built_infrastructure_operated_by_organization
+    from: built_infrastructure
+    relationship: operated_by
+    to: shared_org:organisation
+    cardinality: many_to_one
+    required: false
+    notes: >
+      Links a physical facility to a formal statutory organization. 
+      Ownership of the physical facility is Community Context; ownership of the formal organisation is Shared Taxonomy.
+
+  - id: local_collective_composed_of_members
+    from: local_collective
+    relationship: composed_of
+    to: shared_human:person
+    cardinality: one_to_many
+    required: false
+    notes: >
+      Links the collective entity to individual human members.
+      Ownership of the collective is Community Context; ownership of the person is Shared Human Model.

@@ -1,0 +1,98 @@
+version: "1.0"
+domain: community_context
+file: ontology/entities.yaml
+
+namespaces:
+  # Upstream definitions imported for cross-domain boundaries
+  shared_org: "shared/taxonomy/organisations.yaml"
+  shared_human: "shared/human-model/ontology/entities.yaml"
+
+entities:
+
+  - id: community
+    label: Community
+    description: >
+      The central social, economic, and spatial aggregation unit. Represents the collective 
+      environment, livelihood base, and systemic conditions shared by its residents.
+    required: true
+    ownership_boundary: >
+      Owns the macro-level systemic patterns of the population. Does NOT own 
+      individual beneficiary data or tracking (which belongs to Registration/Beneficiary Lifecycle).
+    key_attributes:
+      - community_id
+      - livelihood_pattern      # from taxonomy/livelihood-patterns.yaml
+      - settlement_form         # from taxonomy/settlement-types.yaml
+      - seasonal_events         # list, from taxonomy/seasonal-events.yaml
+    attributes_ref: ontology/attributes.yaml#community
+
+  - id: geographic_area
+    label: Geographic Area
+    description: >
+      The immutable spatial boundary that anchors the community, natural resources, 
+      and built infrastructure. 
+    required: true
+    ownership_boundary: >
+      Owns pure spatial dimensions, hierarchies, and terrain.
+    key_attributes:
+      - area_id
+      - geographic_level        # from taxonomy/geographic-hierarchy.yaml
+      - physical_environment    # list, from taxonomy/physical-environment.yaml
+      - physical_accessibility  # from taxonomy/accessibility.yaml
+      - hazards                 # list, from taxonomy/community-hazards.yaml
+    attributes_ref: ontology/attributes.yaml#geographic_area
+
+  - id: built_infrastructure
+    label: Built Infrastructure
+    description: >
+      Physical, constructed facilities within the community geography.
+    required: false
+    ownership_boundary: >
+      Owns the physical building/facility (e.g., clinic). Does NOT own the formal 
+      organization running it (which belongs to shared_org) or the delivery of aid.
+    key_attributes:
+      - infrastructure_id
+      - infrastructure_type     # from taxonomy/infrastructure-types.yaml
+      - essential_service       # from taxonomy/essential-services.yaml
+    external_references:
+      - operating_organization_ref  # namespace: shared_org
+    attributes_ref: ontology/attributes.yaml#built_infrastructure
+
+  - id: natural_resource
+    label: Natural Resource
+    description: >
+      Shared, naturally occurring environmental assets utilized by the community.
+    required: false
+    ownership_boundary: >
+      Strictly distinct from built infrastructure. Owns natural spaces and resources only.
+    key_attributes:
+      - resource_id
+      - resource_type           # from taxonomy/community-assets.yaml
+    attributes_ref: ontology/attributes.yaml#natural_resource
+
+  - id: transportation_network_asset
+    label: Transportation Network Asset
+    description: >
+      A hub, terminal, route, or crossing point for transit (edges and nodes).
+    required: false
+    ownership_boundary: >
+      Exclusively owns vehicular and pedestrian transit infrastructure.
+    key_attributes:
+      - asset_id
+      - asset_type              # from taxonomy/transportation.yaml
+      - surface_condition       # from taxonomy/transportation.yaml
+    attributes_ref: ontology/attributes.yaml#transportation_network_asset
+
+  - id: local_collective
+    label: Local Collective
+    description: >
+      A community-native, informal, or semi-formal body (e.g., council of elders).
+    required: false
+    ownership_boundary: >
+      Distinct from formal statutory organizations (shared_org). Owns the collective 
+      entity type, NOT the membership of specific individuals (shared_human).
+    key_attributes:
+      - collective_id
+      - collective_type         # from taxonomy/local-organizations.yaml
+    external_references:
+      - member_ref              # namespace: shared_human (mapped via relationships, excluded here)
+    attributes_ref: ontology/attributes.yaml#local_collective
