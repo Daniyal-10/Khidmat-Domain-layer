@@ -1,0 +1,79 @@
+version: "1.0"
+domain: community_context
+file: ontology/semantic-constraints.yaml
+
+# ====================================================================
+# Semantic Constraints (Ontology Invariants)
+# ====================================================================
+# These are structural truths and invariants for the Knowledge Graph.
+# They are NOT business rules, validation workflows, or application logic.
+# They map directly to OWL restrictions, graph invariants, and DAG rules.
+
+constraints:
+
+  - constraint_type: existential_dependency
+    id: community_requires_geography
+    statement: >
+      Every Community MUST belong to exactly one GeographicArea. A community cannot exist in the graph without a spatial anchor.
+    owl_mapping: "ObjectExactCardinality(1 community_located_in_geographic_area geographic_area)"
+    entities:
+      - community
+      - geographic_area
+
+  - constraint_type: existential_dependency
+    id: collective_requires_community
+    statement: >
+      A LocalCollective MUST represent exactly one Community. An unanchored informal collective is invalid.
+    owl_mapping: "ObjectExactCardinality(1 local_collective_represents_community community)"
+    entities:
+      - local_collective
+      - community
+
+  - constraint_type: identity_disjointness
+    id: built_vs_natural
+    statement: >
+      BuiltInfrastructure MUST NOT be classified as NaturalResource. The two entities are mutually exclusive.
+    owl_mapping: "DisjointClasses(built_infrastructure natural_resource)"
+    entities:
+      - built_infrastructure
+      - natural_resource
+
+  - constraint_type: cross_domain_boundary
+    id: collective_human_reference
+    statement: >
+      LocalCollective MUST NOT own Person entities. It may only reference them via composed_of.
+    owl_mapping: null
+    notes: "Architectural constraint: No cascading deletes or ownership lifecycles from local_collective to shared_human:person."
+    entities:
+      - local_collective
+      - shared_human:person
+
+  - constraint_type: cross_domain_boundary
+    id: infrastructure_organization_reference
+    statement: >
+      BuiltInfrastructure MUST reference only formal organizations through operated_by (shared_org).
+    owl_mapping: "ObjectAllValuesFrom(built_infrastructure_operated_by_organization shared_org:organisation)"
+    entities:
+      - built_infrastructure
+      - shared_org:organisation
+
+  - constraint_type: anti_recursion
+    id: geographic_area_anti_recursion
+    statement: >
+      GeographicArea SHALL NOT reference itself recursively through the located_in or contains relationships.
+    owl_mapping: "IrreflexiveObjectProperty(contains) and AsymmetricObjectProperty(contains)"
+    entities:
+      - geographic_area
+
+  - constraint_type: domain_encapsulation
+    id: no_operational_workflows
+    statement: >
+      Community Context entities SHALL NOT directly own or originate operational workflows, case management lifecycles, or beneficiary status states.
+    owl_mapping: null
+    notes: "Architectural constraint: No outbound edges to Case Management or Support Delivery workflows."
+    entities:
+      - community
+      - built_infrastructure
+      - natural_resource
+      - transportation_network_asset
+      - local_collective
