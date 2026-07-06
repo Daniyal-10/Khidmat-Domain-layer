@@ -1,0 +1,77 @@
+version: "1.0"
+domain: community_context
+file: ontology/lifecycle-constraints.yaml
+
+lifecycle_constraints:
+
+  - entity: community
+    creation_semantics: >
+      A Community entity is instantiated when a distinct socio-economic and spatial aggregation unit is identified.
+    mutability: >
+      Highly mutable in its operational and demographic attributes over time (e.g., seasonal events, livelihood patterns), but its foundational identity remains constant.
+    merge_split_behavior: >
+      If a community splits into two distinct units, the original community is deprecated, and two new communities are created with historical reference (`derived_from`) to the original.
+    deprecation_behavior: >
+      Soft deletion. A community is never physically deleted; if it ceases to exist (e.g., due to displacement), the entity is deprecated to preserve historical records and relationships.
+    identity_continuity: >
+      Retains its `community_id` regardless of demographic shifts or administrative reclassifications.
+
+  - entity: geographic_area
+    creation_semantics: >
+      Created upon initial cartographic or administrative boundary definition.
+    mutability: >
+      Immutable in its fundamental physical dimensions. Administrative hierarchies or physical accessibility may change, but the core spatial boundary defines the entity.
+    merge_split_behavior: >
+      If an area is redistricted, new `geographic_area` entities are created. The prior boundary entity is retained historically, linking the old boundaries to the new via `superseded_by` references.
+    deprecation_behavior: >
+      Strictly historical preservation. Cannot be deleted, as historical events rely on its fixed spatial reference point at that time.
+    identity_continuity: >
+      Identity is strictly tied to the immutable spatial boundary.
+
+  - entity: built_infrastructure
+    creation_semantics: >
+      Created when a physical constructed facility is identified within a geographic area.
+    mutability: >
+      Mutable in its physical attributes. The entity represents the persistent physical footprint regardless of state.
+    merge_split_behavior: >
+      If a facility is expanded, the same entity is updated. If a facility is demolished and a functionally different facility is built on the same spot, a new entity is created.
+    deprecation_behavior: >
+      The entity is deprecated but never physically deleted, maintaining the integrity of historical dependency graphs.
+    identity_continuity: >
+      Identity is tied to the physical structure itself, regardless of changes in the formal organization operating it.
+
+  - entity: natural_resource
+    creation_semantics: >
+      Created when a shared environmental asset is mapped or identified in relation to community livelihood.
+    mutability: >
+      Attributes such as capacity or degradation levels are mutable, but the entity represents the persistent natural feature.
+    merge_split_behavior: >
+      Generally singular. If significantly altered (e.g., a river drying up permanently), its state is updated rather than split.
+    deprecation_behavior: >
+      The entity is deprecated rather than physically deleted, ensuring historical references to livelihood dependencies remain valid.
+    identity_continuity: >
+      Maintains identity throughout its environmental lifecycle (e.g., from pristine to degraded to recovered).
+
+  - entity: transportation_network_asset
+    creation_semantics: >
+      Created upon identification of a transit hub, route, or crossing point.
+    mutability: >
+      Surface condition and asset type are mutable, but the entity represents the persistent transit linkage.
+    merge_split_behavior: >
+      If a route is severed or significantly rerouted, the original asset may be split into multiple distinct segments to reflect the new topology.
+    deprecation_behavior: >
+      Retained as a historical node even if physically removed or permanently impassable, ensuring the DAG of past transit dependencies remains intact.
+    identity_continuity: >
+      Identity is maintained through physical repairs. Complete replacement with a new transit modality (e.g., replacing a ford with a bridge) results in a new entity.
+
+  - entity: local_collective
+    creation_semantics: >
+      Created when a community-native informal or semi-formal group is recognized.
+    mutability: >
+      Highly mutable membership and function. The collective_type may evolve over time.
+    merge_split_behavior: >
+      If a collective fractures into factions, the original collective is deprecated and new collectives are instantiated.
+    deprecation_behavior: >
+      The entity is deprecated but never physically deleted, as historical decisions or actions taken by the collective remain legally or socially significant.
+    identity_continuity: >
+      Maintains identity as long as the core function and community recognition remain intact, despite individual member turnover.
