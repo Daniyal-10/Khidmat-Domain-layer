@@ -1,6 +1,7 @@
-version: "1.0"
+version: "1.0.0"
 domain: shared
 file: taxonomy/document-types.yaml
+status: active
 
 purpose: >
   Shared document type vocabulary.
@@ -8,38 +9,85 @@ purpose: >
   Future domains (verification operations, case management)
   will use it for document management and audit.
 
-identity_documents:
-  - national_id
-  - passport
-  - birth_certificate
-  - voter_registration_card
-  - ration_card
-  - refugee_documentation
-  - no_document
+schemes:
+  - id: identity_documents
+    label: Identity Documents
+    description: >
+      Documents that establish or support a person's identity.
+    concepts:
+      - id: national_id
+        description: A national identity document.
+      - id: passport
+        description: A passport.
+      - id: birth_certificate
+        description: A birth certificate.
+      - id: voter_registration_card
+        description: A voter registration card.
+      - id: ration_card
+        description: A ration card.
+      - id: refugee_documentation
+        description: Refugee documentation.
+      - id: no_document
+        description: No identity document is available.
 
-medical_documents:
-  - doctors_letter
-  - diagnosis_report
-  - prescription
-  - discharge_summary
-  - referral_letter
-  - medical_test_result
+  - id: medical_documents
+    label: Medical Documents
+    description: >
+      Documents that establish or support a medical claim or condition.
+    concepts:
+      - id: doctors_letter
+        description: A doctor's letter.
+      - id: diagnosis_report
+        description: A diagnosis report.
+      - id: prescription
+        description: A prescription.
+      - id: discharge_summary
+        description: A hospital discharge summary.
+      - id: referral_letter
+        description: A medical referral letter.
+      - id: medical_test_result
+        description: A medical test result.
 
-financial_documents:
-  - salary_slip
-  - bank_statement
-  - termination_letter
-  - tax_document
+  - id: financial_documents
+    label: Financial Documents
+    description: >
+      Documents that establish or support a financial claim or status.
+    concepts:
+      - id: salary_slip
+        description: A salary slip.
+      - id: bank_statement
+        description: A bank statement.
+      - id: termination_letter
+        description: An employment termination letter.
+      - id: tax_document
+        description: A tax document.
 
-legal_documents:
-  - court_order
-  - eviction_notice
-  - tenancy_agreement
-  - death_certificate
-  - police_report
+  - id: legal_documents
+    label: Legal Documents
+    description: >
+      Documents that establish or support a legal claim or status.
+    concepts:
+      - id: court_order
+        description: A court order.
+      - id: eviction_notice
+        description: An eviction notice.
+      - id: tenancy_agreement
+        description: A tenancy agreement.
+      - id: death_certificate
+        description: A death certificate.
+      - id: police_report
+        description: A police report.
 
-institutional_documents:
-  - school_fee_statement
-  - enrollment_certificate
-  - ngo_referral_letter
-  - government_benefit_letter
+  - id: institutional_documents
+    label: Institutional Documents
+    description: >
+      Documents issued by institutions that establish or support a claim.
+    concepts:
+      - id: school_fee_statement
+        description: A school fee statement.
+      - id: enrollment_certificate
+        description: An enrollment certificate.
+      - id: ngo_referral_letter
+        description: An NGO referral letter.
+      - id: government_benefit_letter
+        description: A government benefit letter.

@@ -1,6 +1,7 @@
-version: "1.0"
+version: "1.0.0"
 domain: shared
 file: taxonomy/locations.yaml
+status: active
 
 purpose: >
   Location vocabulary shared across all Khidmat domains.
@@ -8,32 +9,42 @@ purpose: >
   Future domains (support delivery, programs) will use it for
   geographic targeting and routing.
 
-location_precision:
-  - id: exact_address
-    label: Exact Address
-    description: Street, building, floor, unit sufficient for unassisted navigation
-  - id: area_with_landmark
-    label: Area with Landmark
-    description: Neighbourhood and nearby landmark sufficient for volunteer navigation
-  - id: area_only
-    label: Area Only
-    description: Neighbourhood or zone — insufficient alone, requires follow-up
-  - id: unknown
-    label: Unknown
-    description: No location information available
+schemes:
+  - id: location_precision
+    label: Location Precision
+    description: >
+      How precisely a beneficiary's location is known.
+    concepts:
+      - id: exact_address
+        label: Exact Address
+        description: Street, building, floor, unit sufficient for unassisted navigation.
+      - id: area_with_landmark
+        label: Area with Landmark
+        description: Neighbourhood and nearby landmark sufficient for volunteer navigation.
+      - id: area_only
+        label: Area Only
+        description: Neighbourhood or zone — insufficient alone, requires follow-up.
+      - id: unknown
+        label: Unknown
+        description: No location information available.
 
-location_stability:
-  - id: permanent
-    label: Permanent
-    description: Beneficiary has been at this location for an extended period
-  - id: temporary
-    label: Temporary
-    description: Beneficiary is at this location temporarily
-  - id: transient
-    label: Transient
-    description: Beneficiary moves frequently, location may change before visit
-  - id: unknown
-    label: Unknown
+  - id: location_stability
+    label: Location Stability
+    description: >
+      How stable a beneficiary's presence at their reported location is.
+    concepts:
+      - id: permanent
+        label: Permanent
+        description: Beneficiary has been at this location for an extended period.
+      - id: temporary
+        label: Temporary
+        description: Beneficiary is at this location temporarily.
+      - id: transient
+        label: Transient
+        description: Beneficiary moves frequently, location may change before visit.
+      - id: unknown
+        label: Unknown
+        description: No location stability information available.
 
 # Future domains will extend this file with:
 # - geographic area taxonomies for program targeting

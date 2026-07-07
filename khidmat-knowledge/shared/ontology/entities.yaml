@@ -1,24 +1,21 @@
-# domain: shared
-# file: shared/ontology/entities.yaml
-# status: active
-#
+version: "1.0.0"
+domain: shared
+file: shared/ontology/entities.yaml
+status: active
+
 # This file contains entity definitions shared across two or more domains.
 
 entities:
   - id: subject
     label: Subject
     description: >
-      An abstract semantic parent representing an entity that can undergo 
+      An abstract semantic parent representing an entity that can undergo
       processes in the knowledge layer (like the Beneficiary Lifecycle).
       Exists solely as an ontology concept to enable domains to reason over
       either a Person or a Household without inventing their own abstraction.
       Subject owns no demographic data.
     required: false
     cardinality_in_case: zero_or_more
-    key_attributes: []
-    subtypes:
-      - person
-      - household
 
   - id: person
     label: Person

@@ -1,10 +1,9 @@
-# =============================================================================
-# Khidmat Shared Taxonomy — Time
-# =============================================================================
-version: "1.0"
+version: "1.0.0"
 domain: shared
 file: taxonomy/time.yaml
-status: "Phase 4.0 — Active"
+status: active
+delivery_phase: "Phase 4.0"
+
 # -----------------------------------------------------------------------------
 # Purpose:        Defines the authoritative temporal vocabulary for the
 #                 Khidmat Knowledge Layer. Every domain that reasons about
@@ -42,7 +41,13 @@ status: "Phase 4.0 — Active"
 #   requirements. It is now activated at Phase 4.0 to serve Verification
 #   Operations and future Case Management, Beneficiary Lifecycle, and
 #   Impact domains.
-# =============================================================================
+# -----------------------------------------------------------------------------
+
+purpose: >
+  Defines the authoritative temporal vocabulary for the Khidmat Knowledge
+  Layer. Every domain that reasons about duration, recurrence, validity,
+  freshness, or time-bounded status draws from this file rather than
+  defining its own temporal concepts.
 
 boundary_note: >
   This file owns reusable temporal primitives — concepts that are meaningful
@@ -56,820 +61,773 @@ boundary_note: >
   Those domains reference these primitives; they define their own
   operational scheduling semantics.
 
-
-# =============================================================================
-# PART 1: DURATION BANDS
-# =============================================================================
-# Shared reference bands for reasoning about how long something has lasted
-# or how long something is expected to last. These are interpretive anchors,
-# not rigid classifications. Registration's need_duration remains authoritative
-# for need-specific duration; these bands enable cross-domain alignment.
-# =============================================================================
-
-duration_bands:
-  description: >
-    Qualitative bands for classifying duration of conditions, needs,
-    situations, gaps between events, or any time-bounded state.
-    Used to enable consistent reasoning across domains without requiring
-    precise date arithmetic.
-  note: >
-    These bands are for humanitarian reasoning, not scheduling logic.
-    A "chronic" condition has different implications than a "chronic"
-    administrative status — the band is the same, the interpretation
-    is domain-specific. Always read duration_bands in context.
-
-  values:
-
-    - id: immediate
-      label: Immediate
-      indicative_range: "0–24 hours"
-      description: >
-        The condition, event, or need exists right now or within the
-        current day. Response within hours is meaningful.
-      reasoning_use: >
-        Distinguishes life-threatening or same-day urgency from conditions
-        that can wait even a short period. Relevant for severity
-        classification in critical needs, crisis triage, and safety
-        assessment.
-      example_uses:
-        - Need severity: critical with no food in the past 24 hours
-        - Safety flag requiring same-day volunteer contact
-        - Acute illness episode requiring immediate medical response
-
-    - id: acute
-      label: Acute
-      indicative_range: "1–7 days"
-      description: >
-        The condition, event, or need emerged recently and requires
-        response within the current week. Too recent to have generated
-        secondary consequences; early enough for prevention.
-      reasoning_use: >
-        The primary band for urgency classification. Most crisis-triggered
-        situations begin in this band. Verification briefs for high-severity
-        needs should target volunteer dispatch within this band.
-      example_uses:
-        - Onset of an acute illness
-        - Days since a displacement event
-        - Time before an eviction deadline
-
-    - id: recent
-      label: Recent
-      indicative_range: "1–4 weeks"
-      description: >
-        The condition or event occurred within the past month.
-        Consequences have begun to develop but may still be reversible
-        or addressable without long-term intervention.
-      reasoning_use: >
-        Distinguishes conditions where early intervention can prevent
-        chronic harm from conditions already entrenched. Most
-        crisis-triggered situations that have not yet been addressed
-        enter this band after the acute phase.
-      example_uses:
-        - Onset of income loss one week ago
-        - Time since a bereavement
-        - Age of an unverified registration claim
-
-    - id: established
-      label: Established
-      indicative_range: "1–6 months"
-      description: >
-        The condition has been ongoing for weeks to months. Secondary
-        consequences are likely to have developed. Intervention addresses
-        both the immediate need and downstream effects.
-      reasoning_use: >
-        The most common band at registration for non-immediate situations.
-        A household presenting for registration with an established need
-        has typically already exhausted informal coping mechanisms.
-      example_uses:
-        - A child who has been out of school for two months
-        - Ongoing income reduction since a factory closure
-        - Duration of a chronic illness episode without treatment
-
-    - id: prolonged
-      label: Prolonged
-      indicative_range: "6–24 months"
-      description: >
-        The condition has persisted for many months to approximately
-        two years. Structural adaptation has often occurred; the household
-        has reorganised around the condition. Reversibility requires
-        sustained intervention.
-      reasoning_use: >
-        Marks the transition from situational hardship to structural
-        vulnerability embedding. A need that has been prolonged is less
-        likely to resolve without active intervention and more likely to
-        have generated compounding consequences (educational dropout,
-        accumulated debt, asset depletion).
-      example_uses:
-        - Livelihood gap following a major bereavement eighteen months ago
-        - Duration of a child's educational exclusion
-        - Time since loss of housing stability
-
-    - id: chronic
-      label: Chronic
-      indicative_range: "More than 24 months"
-      description: >
-        The condition has persisted for multiple years and is now a
-        structural feature of the household's situation rather than a
-        response to a discrete event. No baseline of prior stability
-        exists to return to; the household has formed around this state.
-      reasoning_use: >
-        Distinguishes structural deprivation from situational crisis.
-        A household with chronic need requires different intervention
-        logic from one with an acute event. Chronic conditions often
-        co-occur with structural vulnerability contributors in
-        vulnerability.yaml. Corresponds to situation.trajectory:
-        structural in registration.
-      example_uses:
-        - Lifelong disability without support
-        - Multigenerational poverty
-        - Chronic illness without access to treatment for years
-
-    - id: indeterminate
-      label: Indeterminate
-      description: >
-        The duration cannot be established from available information.
-        The registrant cannot state when the condition began, or the
-        onset predates reliable memory or record.
-      reasoning_use: >
-        Used when free-text onset cannot be mapped to a band. Does not
-        imply the condition is less significant — often corresponds to
-        deeply structural situations. Triggers a notation that duration
-        is unknown rather than forcing an incorrect classification.
-      example_uses:
-        - Congenital or lifelong condition with no identifiable onset
-        - Household that cannot date the start of poverty
-        - Situation with gradual onset over many years
-
-
-# =============================================================================
-# PART 2: ONSET RECENCY
-# =============================================================================
-# How recently did something happen? This is distinct from how long something
-# has been ongoing (duration_bands). Onset recency classifies the trigger
-# or starting point; duration_bands classify the ongoing span.
-# =============================================================================
-
-onset_recency:
-  description: >
-    Classifies how recently an event, condition, or situation began.
-    Distinct from duration_bands, which describe how long it has continued.
-    Onset recency is about the moment of beginning; duration is about
-    the span since then.
-  note: >
-    A condition that began two years ago has chronic onset_recency but
-    may still be in the established or prolonged duration_band if it
-    has since partially improved or been managed. Always treat recency
-    and duration as independent dimensions.
-
-  values:
-
-    - id: current
-      label: Current
-      indicative_range: "Within the past 24 hours"
-      description: >
-        The event or onset is occurring now or occurred today.
-      reasoning_use: >
-        Triggers immediate response consideration. Overlaps with the
-        immediate duration_band for conditions that began and are
-        still in their first hours.
-
-    - id: very_recent
-      label: Very Recent
-      indicative_range: "1–7 days ago"
-      description: >
-        The onset occurred within the past week.
-      reasoning_use: >
-        The primary recency band for crisis-triggered situations in
-        registration. Most acute trigger_events in situations.yaml
-        will have very_recent onset.
-
-    - id: recent
-      label: Recent
-      indicative_range: "1 week – 1 month ago"
-      description: >
-        The onset occurred within the past month.
-
-    - id: past_several_months
-      label: Past Several Months
-      indicative_range: "1–6 months ago"
-      description: >
-        The onset occurred within the past six months.
-      reasoning_use: >
-        Still traceable to a specific event or trigger; the situation
-        is established but the cause is identifiable.
-
-    - id: past_year
-      label: Past Year
-      indicative_range: "6–24 months ago"
-      description: >
-        The onset occurred between six months and two years ago.
-
-    - id: distant
-      label: Distant
-      indicative_range: "More than 2 years ago"
-      description: >
-        The onset occurred more than two years ago.
-      reasoning_use: >
-        Often associated with structural situations in situations.yaml
-        (trajectory: structural). The cause may be difficult to
-        establish precisely.
-
-    - id: unknown
-      label: Unknown
-      description: >
-        The onset cannot be established from available information.
-
-
-# =============================================================================
-# PART 3: RECURRENCE PATTERNS
-# =============================================================================
-# How often does something happen? Applies to needs, support deliveries,
-# review cycles, monitoring intervals, and programme engagement.
-# =============================================================================
-
-recurrence_patterns:
-  description: >
-    Shared vocabulary for how frequently an event, activity, or condition
-    recurs. Referenced by any domain that needs to express periodicity
-    without defining its own frequency taxonomy.
-  note: >
-    registration/taxonomy/needs.yaml owns need_duration, which describes
-    whether a need is one-time or recurring at a structural level.
-    recurrence_patterns here provides the finer-grained frequency vocabulary
-    for use when periodicity matters — in support delivery, monitoring,
-    programme cycles, and case review scheduling.
-
-  values:
-
-    - id: one_time
-      label: One-Time
-      description: >
-        Occurs or is required once only. No recurrence is expected.
-      example_uses:
-        - A single surgical intervention
-        - A one-time document verification visit
-
-    - id: daily
-      label: Daily
-      description: >
-        Occurs or is required every day.
-      example_uses:
-        - Daily medication administration
-        - Daily caregiving support
-
-    - id: several_times_per_week
-      label: Several Times per Week
-      description: >
-        Occurs multiple times within a week but not every day.
-      example_uses:
-        - Dialysis or physiotherapy sessions
-        - School attendance (noting absence days)
-
-    - id: weekly
-      label: Weekly
-      description: >
-        Occurs approximately once per week.
-      example_uses:
-        - Weekly food package delivery
-        - Weekly case check-in call
-
-    - id: fortnightly
-      label: Fortnightly
-      description: >
-        Occurs approximately every two weeks.
-      example_uses:
-        - Bi-weekly support delivery
-        - Fortnightly medical review
-
-    - id: monthly
-      label: Monthly
-      description: >
-        Occurs approximately once per calendar month.
-      example_uses:
-        - Monthly cash transfer disbursement
-        - Monthly case review
-        - Monthly medication prescription renewal
-
-    - id: quarterly
-      label: Quarterly
-      description: >
-        Occurs approximately once every three months.
-      example_uses:
-        - Quarterly beneficiary reassessment
-        - Quarterly programme reporting
-
-    - id: biannual
-      label: Biannual
-      description: >
-        Occurs approximately twice per year, roughly every six months.
-      example_uses:
-        - Biannual health screening
-        - Mid-year programme review
-
-    - id: annual
-      label: Annual
-      description: >
-        Occurs approximately once per year.
-      example_uses:
-        - Annual eligibility renewal
-        - Annual impact assessment
-
-    - id: seasonal
-      label: Seasonal
-      description: >
-        Occurs in association with a recurring seasonal pattern
-        (monsoon, harvest, winter, school year) rather than a fixed
-        calendar interval. The specific timing depends on geographic
-        and contextual factors not owned by this file.
-      reasoning_use: >
-        Distinguishes calendar-fixed recurrence from environmentally-
-        triggered recurrence. The Community Context Domain (Stage 8)
-        will own the actual seasonal calendars; this vocabulary names
-        the pattern type.
-      note: >
-        Do not embed specific seasonal dates or geographic calendars
-        here. Those belong to Community Context.
-
-    - id: irregular
-      label: Irregular
-      description: >
-        Occurs without a predictable fixed interval. The need or
-        activity arises as circumstances require.
-      example_uses:
-        - Crisis-triggered support requests
-        - Episodic medical needs (asthma exacerbation, seizure)
-
-    - id: continuous
-      label: Continuous
-      description: >
-        Does not recur at intervals — is permanently ongoing without
-        break. Distinct from daily recurrence in that there is no
-        per-period unit; the need or activity is simply always present.
-      example_uses:
-        - Continuous caregiving dependency for a person with profound
-          physical disability
-        - Continuous medication requirement for a managed chronic condition
-
-
-# =============================================================================
-# PART 4: TEMPORAL STATUS
-# =============================================================================
-# Is a time-bounded record, assessment, document, or eligibility
-# currently valid, pending, expired, or otherwise in a known temporal state?
-# This is the shared vocabulary for time-bounded lifecycle states.
-# =============================================================================
-
-temporal_status:
-  description: >
-    The shared vocabulary for classifying the current temporal validity
-    of any time-bounded record. Used by verification operations (document
-    freshness), case management (assessment currency), beneficiary lifecycle
-    (registration recency), and programs (eligibility status).
-  note: >
-    This vocabulary classifies status at a point in time, not a schedule
-    for when to take action. Action logic belongs to the domain that holds
-    the record. A document classified as expiring_soon triggers action in
-    verification operations or case management — not in this file.
-
-  values:
-
-    - id: current
-      label: Current
-      description: >
-        The record, assessment, document, or eligibility is valid and
-        within its expected useful or valid period. No freshness concern.
-      reasoning_use: >
-        The baseline status. A verification brief generated from a
-        current case uses current information. A current document does
-        not require re-verification on these grounds.
-
-    - id: expiring_soon
-      label: Expiring Soon
-      description: >
-        The record is still valid but is approaching the end of its
-        useful or valid period. Renewal, re-verification, or reassessment
-        should be initiated before expiry occurs.
-      reasoning_use: >
-        A proactive signal, not a blocking condition. An expiring_soon
-        document or assessment is still usable now but creates a near-term
-        operational task. What "soon" means is domain-specific and not
-        encoded here.
-
-    - id: expired
-      label: Expired
-      description: >
-        The record has passed the end of its valid or useful period.
-        It cannot be treated as authoritative for current decisions
-        without re-verification or renewal.
-      reasoning_use: >
-        A blocking signal for any decision that requires current
-        information. An expired identity document cannot support identity
-        verification. An expired assessment cannot inform a current
-        risk classification.
-
-    - id: pending
-      label: Pending
-      description: >
-        The record has been initiated or applied for but is not yet
-        available or confirmed. The intended validity period has not
-        yet begun.
-      reasoning_use: >
-        Used for documents in process, assessments not yet completed,
-        or eligibility determinations awaiting confirmation. A pending
-        status does not substitute for a current one but signals that
-        one is expected.
-
-    - id: superseded
-      label: Superseded
-      description: >
-        The record has been replaced by a more recent version. The
-        superseded record is retained for audit purposes but should not
-        be used for current decisions.
-      reasoning_use: >
-        Distinct from expired: an expired record ran out of time;
-        a superseded record was explicitly replaced. Used in beneficiary
-        lifecycle tracking when a re-registration replaces a prior case.
-
-    - id: suspended
-      label: Suspended
-      description: >
-        The record's validity has been temporarily halted pending
-        review, investigation, or clarification. Not expired — it may
-        be reinstated — but not usable for current decisions.
-      reasoning_use: >
-        Used in contexts where eligibility or a verification status is
-        under active review. Prevents use of a record while a question
-        about it is open.
-
-    - id: unknown
-      label: Unknown
-      description: >
-        The validity status of the record cannot be determined from
-        available information. Consistent with the open-world assumption
-        throughout this knowledge layer.
-
-
-# =============================================================================
-# PART 5: OBSERVATION WINDOWS
-# =============================================================================
-# How recent must information be to be considered reliable for a given
-# purpose? This is the shared vocabulary for information freshness
-# requirements — used in registration, verification, case management,
-# and impact assessment.
-# =============================================================================
-
-observation_windows:
-  description: >
-    Named windows that define how recent an observation, assessment, or
-    record must be to be considered adequately current for humanitarian
-    reasoning purposes. These windows are reference standards, not
-    operational rules — the domain consuming them decides how to enforce them.
-  note: >
-    Observation windows are not deadlines or scheduling instructions.
-    They are the shared vocabulary for expressing "this information is
-    still fresh enough" vs "this information needs refreshing." The
-    domain that holds the information decides what to do when a window
-    is exceeded.
-
-  windows:
-
-    - id: same_day
-      label: Same-Day Window
-      maximum_age: "24 hours"
-      description: >
-        Information must have been gathered or confirmed today to be
-        considered current for this purpose.
-      typical_uses:
-        - Safety flag re-confirmation before a field visit
-        - Crisis-level need confirmation before emergency dispatch
-
-    - id: this_week
-      label: Within the Current Week
-      maximum_age: "7 days"
-      description: >
-        Information gathered within the past seven days is considered
-        adequately current.
-      typical_uses:
-        - Verification brief generation for acute needs
-        - Contact information for an urgent volunteer visit
-
-    - id: thirty_days
-      label: Within 30 Days
-      maximum_age: "30 days"
-      description: >
-        Information gathered within the past 30 days is considered
-        adequately current.
-      typical_uses:
-        - Standard registration claim currency
-        - Situation assessment currency for non-acute cases
-        - Evidence submission window for verification
-
-    - id: ninety_days
-      label: Within 90 Days
-      maximum_age: "90 days"
-      description: >
-        Information gathered within the past 90 days is considered
-        adequately current for standard review purposes.
-      typical_uses:
-        - Eligibility confirmation for ongoing programme support
-        - Beneficiary contact information currency for non-urgent cases
-        - Case review currency for stable, long-term cases
-
-    - id: six_months
-      label: Within 6 Months
-      maximum_age: "6 months"
-      description: >
-        Information gathered within the past six months is considered
-        adequately current for periodic assessment purposes.
-      typical_uses:
-        - Beneficiary reassessment window for stable cases
-        - Document validity for non-expiring identity documents
-          in low-change contexts
-        - Risk assessment currency for chronic vulnerability situations
-
-    - id: one_year
-      label: Within 1 Year
-      maximum_age: "12 months"
-      description: >
-        Information gathered within the past year is considered
-        adequately current for annual review purposes.
-      typical_uses:
-        - Annual impact baseline comparison
-        - Eligibility renewal window
-        - Programme participant re-enrolment standard
-
-    - id: no_expiry
-      label: No Expiry
-      description: >
-        The information does not become stale through the passage of
-        time alone. A historical fact (date of birth, country of origin,
-        diagnosis of a permanent condition) does not expire.
-      reasoning_use: >
-        Distinguishes time-stable facts from time-sensitive ones.
-        A permanent disability diagnosis does not need re-verification
-        for recency; a current address does.
-      note: >
-        "No expiry" does not mean "never reassess." It means time
-        alone does not invalidate the information. A change in
-        circumstance might still require updating.
-
-
-# =============================================================================
-# PART 6: TEMPORAL GRANULARITY
-# =============================================================================
-# At what level of precision is time being recorded or reasoned about?
-# =============================================================================
-
-temporal_granularity:
-  description: >
-    The shared vocabulary for expressing the precision at which a temporal
-    fact is known or recorded. Prevents false precision in humanitarian
-    registration contexts where exact dates are often unavailable.
-  note: >
-    Humanitarian registration frequently cannot obtain exact dates.
-    Forcing date precision produces either fabricated data or unrecorded
-    gaps. This vocabulary allows the system to record what is actually
-    known while flagging what level of confidence exists.
-
-  values:
-
-    - id: exact_date
-      label: Exact Date
-      description: >
-        The precise calendar date is known and recorded.
-      example: "14 March 2024"
-
-    - id: approximate_date
-      label: Approximate Date
-      description: >
-        The date is known within a few days of precision but not exactly.
-        The registrant can identify the approximate period but not the
-        specific day.
-      example: "Mid-March 2024"
-      recording_note: >
-        Record the closest date with a flag indicating it is approximate.
-
-    - id: known_month
-      label: Known Month
-      description: >
-        The specific month and year is known but not the day.
-      example: "March 2024"
-
-    - id: known_year
-      label: Known Year
-      description: >
-        The year is known but not the specific month.
-      example: "2024"
-
-    - id: known_season_or_period
-      label: Known Season or Period
-      description: >
-        The time can only be placed within a general seasonal period
-        (monsoon, winter, harvest, Ramadan) or a qualitative period
-        (a few months ago, last year, before the flooding).
-      example: "Last monsoon season"
-      recording_note: >
-        Record qualitatively in free text with this granularity flag.
-
-    - id: estimated_duration_only
-      label: Estimated Duration Only
-      description: >
-        The registrant cannot provide a start date but can estimate
-        how long the situation has been ongoing. Duration is known;
-        onset is not.
-      example: "About six months"
-
-    - id: unknown
-      label: Unknown
-      description: >
-        No temporal information can be established. The date, period,
-        or duration is completely unknown to the registrant.
-
-
-# =============================================================================
-# PART 7: WAITING AND GRACE PERIODS
-# =============================================================================
-# Shared vocabulary for periods of intentional waiting, grace, or
-# administrative delay. These are named temporal intervals with
-# operational significance, not scheduling rules.
-# =============================================================================
-
-waiting_and_grace_periods:
-  description: >
-    Shared vocabulary for named periods of deliberate temporal buffer.
-    These are reference concepts for any domain that needs to express
-    "the action is not due immediately" or "a period of tolerance exists
-    before this becomes blocking."
-  note: >
-    These concepts name the types of waiting periods that humanitarian
-    operations commonly require. The specific duration of each period
-    is domain- and context-specific and is not encoded here. Encoding
-    specific durations would make this file operationally brittle.
-
-  period_types:
-
-    - id: verification_window
-      label: Verification Window
-      description: >
-        The period within which a claim, registration, or document
-        submitted is expected to be verified before it is considered
-        unverified past due. The claim remains active and usable during
-        this window.
-      relevant_domains:
-        - Registration
-        - Verification Operations
-
-    - id: response_window
-      label: Response Window
-      description: >
-        The period within which a response to a referral, case action,
-        or support request is expected before escalation or follow-up
-        is triggered.
-      relevant_domains:
-        - Verification Operations
-        - Case Management
-        - Support Delivery
-
-    - id: grace_period
-      label: Grace Period
-      description: >
-        A period of tolerance after a deadline or expiry during which
-        the record or eligibility is treated as provisionally valid
-        while renewal or re-verification is sought. The record is
-        technically expired but not yet treated as blocking.
-      relevant_domains:
-        - Case Management
-        - Programs
-        - Verification Operations
-
-    - id: reassessment_window
-      label: Reassessment Window
-      description: >
-        The period within which a beneficiary assessment, risk
-        classification, or vulnerability evaluation is expected to
-        be repeated to ensure currency.
-      relevant_domains:
-        - Case Management
-        - Beneficiary Lifecycle
-        - Risk Domain
-
-    - id: reregistration_window
-      label: Re-Registration Window
-      description: >
-        The period within which a beneficiary is expected or encouraged
-        to re-register following a prior registration. Opens after a
-        prior registration reaches a defined age.
-      relevant_domains:
-        - Registration
-        - Beneficiary Lifecycle
-
-    - id: cooling_off_period
-      label: Cooling-Off Period
-      description: >
-        A mandatory or recommended delay between two occurrences of
-        the same type of action — for example, between duplicate
-        registration attempts, between support disbursements, or
-        between case re-openings. Prevents rapid cycling.
-      relevant_domains:
-        - Registration
-        - Support Delivery
-        - Case Management
-
-    - id: follow_up_window
-      label: Follow-Up Window
-      description: >
-        The period within which a follow-up contact, visit, or check-in
-        is expected to occur after an initial action. The window defines
-        the expected time between action and follow-up.
-      relevant_domains:
-        - Verification Operations
-        - Case Management
-        - Support Delivery
-
-
-# =============================================================================
-# PART 8: EVIDENCE AND DOCUMENT FRESHNESS
-# =============================================================================
-# Humanitarian-specific temporal semantics for evidence and documents.
-# These are the temporal dimensions of the documentary record — distinct
-# from document types (shared/taxonomy/document-types.yaml) and from
-# the evidence taxonomy (registration/taxonomy/evidence.yaml).
-# =============================================================================
-
-evidence_freshness:
-  description: >
-    Shared vocabulary for classifying how recent a piece of evidence is
-    and whether its age affects its reliability for the purpose at hand.
-    Document types are owned by shared/taxonomy/document-types.yaml.
-    This file owns only the temporal freshness dimension of evidence.
-  note: >
-    Evidence freshness interacts with temporal_status (Part 4) and
-    observation_windows (Part 5) but is a distinct concept. A document
-    can have current temporal_status (not expired) but low freshness
-    (it was issued three years ago and conditions may have changed).
-    The distinction matters for humanitarian verification.
-
-  freshness_levels:
-
-    - id: freshly_issued
-      label: Freshly Issued
-      indicative_age: "Issued within the past 30 days"
-      description: >
-        The document or evidence was produced very recently. Its content
-        is likely to accurately reflect the current situation.
-      verification_implication: >
-        Treat as highly reliable for the current situation. No staleness
-        concern for most verification purposes.
-
-    - id: recently_issued
-      label: Recently Issued
-      indicative_age: "Issued within the past 6 months"
-      description: >
-        The document was produced within the past six months.
-        Content is likely to remain accurate for stable facts but may
-        not reflect recent changes in circumstances.
-      verification_implication: >
-        Reliable for stable facts (identity, medical diagnosis, property
-        ownership). Requires corroboration from field observation for
-        situational facts that may have changed.
-
-    - id: issued_within_a_year
-      label: Issued Within the Past Year
-      indicative_age: "Issued 6–12 months ago"
-      description: >
-        The document was produced within the past year. Situational facts
-        should be corroborated; structural facts remain reliable.
-      verification_implication: >
-        Treat structural and identity facts as reliable. Require observation
-        or registrant statement to corroborate situational claims.
-
-    - id: older_document
-      label: Older Document
-      indicative_age: "Issued more than 1 year ago"
-      description: >
-        The document is more than a year old. Its contents may or may
-        not reflect the current situation depending on what it documents.
-        Stable facts (birth, permanent disability) remain valid. Situational
-        facts (address, employment, income) require independent corroboration.
-      verification_implication: >
-        Cannot be relied upon for situational verification without
-        corroboration. Valid for stable identity or historical facts.
-
-    - id: undated
-      label: Undated
-      description: >
-        The document or evidence carries no issue date. Freshness cannot
-        be assessed. Treat with caution for time-sensitive claims.
-      verification_implication: >
-        Flag for volunteer to assess at field visit. Cannot be classified
-        without additional information.
-
-    - id: freshness_unknown
-      label: Freshness Unknown
-      description: >
-        The issue date is not available to the assessor. The document
-        may exist but its age cannot be determined from current information.
-
+schemes:
+
+  # =============================================================================
+  # PART 1: DURATION BANDS
+  # =============================================================================
+  - id: duration_bands
+    label: Duration Bands
+    description: >
+      Qualitative bands for classifying duration of conditions, needs,
+      situations, gaps between events, or any time-bounded state.
+      Used to enable consistent reasoning across domains without requiring
+      precise date arithmetic.
+    note: >
+      These bands are for humanitarian reasoning, not scheduling logic.
+      A "chronic" condition has different implications than a "chronic"
+      administrative status — the band is the same, the interpretation
+      is domain-specific. Always read duration_bands in context.
+    concepts:
+
+      - id: immediate
+        label: Immediate
+        indicative_range: "0–24 hours"
+        description: >
+          The condition, event, or need exists right now or within the
+          current day. Response within hours is meaningful.
+        reasoning_use: >
+          Distinguishes life-threatening or same-day urgency from conditions
+          that can wait even a short period. Relevant for severity
+          classification in critical needs, crisis triage, and safety
+          assessment.
+        example_uses:
+          - Need severity: critical with no food in the past 24 hours
+          - Safety flag requiring same-day volunteer contact
+          - Acute illness episode requiring immediate medical response
+
+      - id: acute
+        label: Acute
+        indicative_range: "1–7 days"
+        description: >
+          The condition, event, or need emerged recently and requires
+          response within the current week. Too recent to have generated
+          secondary consequences; early enough for prevention.
+        reasoning_use: >
+          The primary band for urgency classification. Most crisis-triggered
+          situations begin in this band. Verification briefs for high-severity
+          needs should target volunteer dispatch within this band.
+        example_uses:
+          - Onset of an acute illness
+          - Days since a displacement event
+          - Time before an eviction deadline
+
+      - id: recent
+        label: Recent
+        indicative_range: "1–4 weeks"
+        description: >
+          The condition or event occurred within the past month.
+          Consequences have begun to develop but may still be reversible
+          or addressable without long-term intervention.
+        reasoning_use: >
+          Distinguishes conditions where early intervention can prevent
+          chronic harm from conditions already entrenched. Most
+          crisis-triggered situations that have not yet been addressed
+          enter this band after the acute phase.
+        example_uses:
+          - Onset of income loss one week ago
+          - Time since a bereavement
+          - Age of an unverified registration claim
+
+      - id: established
+        label: Established
+        indicative_range: "1–6 months"
+        description: >
+          The condition has been ongoing for weeks to months. Secondary
+          consequences are likely to have developed. Intervention addresses
+          both the immediate need and downstream effects.
+        reasoning_use: >
+          The most common band at registration for non-immediate situations.
+          A household presenting for registration with an established need
+          has typically already exhausted informal coping mechanisms.
+        example_uses:
+          - A child who has been out of school for two months
+          - Ongoing income reduction since a factory closure
+          - Duration of a chronic illness episode without treatment
+
+      - id: prolonged
+        label: Prolonged
+        indicative_range: "6–24 months"
+        description: >
+          The condition has persisted for many months to approximately
+          two years. Structural adaptation has often occurred; the household
+          has reorganised around the condition. Reversibility requires
+          sustained intervention.
+        reasoning_use: >
+          Marks the transition from situational hardship to structural
+          vulnerability embedding. A need that has been prolonged is less
+          likely to resolve without active intervention and more likely to
+          have generated compounding consequences (educational dropout,
+          accumulated debt, asset depletion).
+        example_uses:
+          - Livelihood gap following a major bereavement eighteen months ago
+          - Duration of a child's educational exclusion
+          - Time since loss of housing stability
+
+      - id: chronic
+        label: Chronic
+        indicative_range: "More than 24 months"
+        description: >
+          The condition has persisted for multiple years and is now a
+          structural feature of the household's situation rather than a
+          response to a discrete event. No baseline of prior stability
+          exists to return to; the household has formed around this state.
+        reasoning_use: >
+          Distinguishes structural deprivation from situational crisis.
+          A household with chronic need requires different intervention
+          logic from one with an acute event. Chronic conditions often
+          co-occur with structural vulnerability contributors in
+          vulnerability.yaml. Corresponds to situation.trajectory:
+          structural in registration.
+        example_uses:
+          - Lifelong disability without support
+          - Multigenerational poverty
+          - Chronic illness without access to treatment for years
+
+      - id: indeterminate
+        label: Indeterminate
+        description: >
+          The duration cannot be established from available information.
+          The registrant cannot state when the condition began, or the
+          onset predates reliable memory or record.
+        reasoning_use: >
+          Used when free-text onset cannot be mapped to a band. Does not
+          imply the condition is less significant — often corresponds to
+          deeply structural situations. Triggers a notation that duration
+          is unknown rather than forcing an incorrect classification.
+        example_uses:
+          - Congenital or lifelong condition with no identifiable onset
+          - Household that cannot date the start of poverty
+          - Situation with gradual onset over many years
+
+  # =============================================================================
+  # PART 2: ONSET RECENCY
+  # =============================================================================
+  - id: onset_recency
+    label: Onset Recency
+    description: >
+      Classifies how recently an event, condition, or situation began.
+      Distinct from duration_bands, which describe how long it has continued.
+      Onset recency is about the moment of beginning; duration is about
+      the span since then.
+    note: >
+      A condition that began two years ago has chronic onset_recency but
+      may still be in the established or prolonged duration_band if it
+      has since partially improved or been managed. Always treat recency
+      and duration as independent dimensions.
+    concepts:
+
+      - id: current
+        label: Current
+        indicative_range: "Within the past 24 hours"
+        description: >
+          The event or onset is occurring now or occurred today.
+        reasoning_use: >
+          Triggers immediate response consideration. Overlaps with the
+          immediate duration_band for conditions that began and are
+          still in their first hours.
+
+      - id: very_recent
+        label: Very Recent
+        indicative_range: "1–7 days ago"
+        description: >
+          The onset occurred within the past week.
+        reasoning_use: >
+          The primary recency band for crisis-triggered situations in
+          registration. Most acute trigger_events in situations.yaml
+          will have very_recent onset.
+
+      - id: recent
+        label: Recent
+        indicative_range: "1 week – 1 month ago"
+        description: >
+          The onset occurred within the past month.
+
+      - id: past_several_months
+        label: Past Several Months
+        indicative_range: "1–6 months ago"
+        description: >
+          The onset occurred within the past six months.
+        reasoning_use: >
+          Still traceable to a specific event or trigger; the situation
+          is established but the cause is identifiable.
+
+      - id: past_year
+        label: Past Year
+        indicative_range: "6–24 months ago"
+        description: >
+          The onset occurred between six months and two years ago.
+
+      - id: distant
+        label: Distant
+        indicative_range: "More than 2 years ago"
+        description: >
+          The onset occurred more than two years ago.
+        reasoning_use: >
+          Often associated with structural situations in situations.yaml
+          (trajectory: structural). The cause may be difficult to
+          establish precisely.
+
+      - id: unknown
+        label: Unknown
+        description: >
+          The onset cannot be established from available information.
+
+  # =============================================================================
+  # PART 3: RECURRENCE PATTERNS
+  # =============================================================================
+  - id: recurrence_patterns
+    label: Recurrence Patterns
+    description: >
+      Shared vocabulary for how frequently an event, activity, or condition
+      recurs. Referenced by any domain that needs to express periodicity
+      without defining its own frequency taxonomy.
+    note: >
+      registration/taxonomy/needs.yaml owns need_duration, which describes
+      whether a need is one-time or recurring at a structural level.
+      recurrence_patterns here provides the finer-grained frequency vocabulary
+      for use when periodicity matters — in support delivery, monitoring,
+      programme cycles, and case review scheduling.
+    concepts:
+
+      - id: one_time
+        label: One-Time
+        description: >
+          Occurs or is required once only. No recurrence is expected.
+        example_uses:
+          - A single surgical intervention
+          - A one-time document verification visit
+
+      - id: daily
+        label: Daily
+        description: >
+          Occurs or is required every day.
+        example_uses:
+          - Daily medication administration
+          - Daily caregiving support
+
+      - id: several_times_per_week
+        label: Several Times per Week
+        description: >
+          Occurs multiple times within a week but not every day.
+        example_uses:
+          - Dialysis or physiotherapy sessions
+          - School attendance (noting absence days)
+
+      - id: weekly
+        label: Weekly
+        description: >
+          Occurs approximately once per week.
+        example_uses:
+          - Weekly food package delivery
+          - Weekly case check-in call
+
+      - id: fortnightly
+        label: Fortnightly
+        description: >
+          Occurs approximately every two weeks.
+        example_uses:
+          - Bi-weekly support delivery
+          - Fortnightly medical review
+
+      - id: monthly
+        label: Monthly
+        description: >
+          Occurs approximately once per calendar month.
+        example_uses:
+          - Monthly cash transfer disbursement
+          - Monthly case review
+          - Monthly medication prescription renewal
+
+      - id: quarterly
+        label: Quarterly
+        description: >
+          Occurs approximately once every three months.
+        example_uses:
+          - Quarterly beneficiary reassessment
+          - Quarterly programme reporting
+
+      - id: biannual
+        label: Biannual
+        description: >
+          Occurs approximately twice per year, roughly every six months.
+        example_uses:
+          - Biannual health screening
+          - Mid-year programme review
+
+      - id: annual
+        label: Annual
+        description: >
+          Occurs approximately once per year.
+        example_uses:
+          - Annual eligibility renewal
+          - Annual impact assessment
+
+      - id: seasonal
+        label: Seasonal
+        description: >
+          Occurs in association with a recurring seasonal pattern
+          (monsoon, harvest, winter, school year) rather than a fixed
+          calendar interval. The specific timing depends on geographic
+          and contextual factors not owned by this file.
+        reasoning_use: >
+          Distinguishes calendar-fixed recurrence from environmentally-
+          triggered recurrence. The Community Context Domain (Stage 8)
+          will own the actual seasonal calendars; this vocabulary names
+          the pattern type.
+        note: >
+          Do not embed specific seasonal dates or geographic calendars
+          here. Those belong to Community Context.
+
+      - id: irregular
+        label: Irregular
+        description: >
+          Occurs without a predictable fixed interval. The need or
+          activity arises as circumstances require.
+        example_uses:
+          - Crisis-triggered support requests
+          - Episodic medical needs (asthma exacerbation, seizure)
+
+      - id: continuous
+        label: Continuous
+        description: >
+          Does not recur at intervals — is permanently ongoing without
+          break. Distinct from daily recurrence in that there is no
+          per-period unit; the need or activity is simply always present.
+        example_uses:
+          - Continuous caregiving dependency for a person with profound
+            physical disability
+          - Continuous medication requirement for a managed chronic condition
+
+  # =============================================================================
+  # PART 4: TEMPORAL STATUS
+  # =============================================================================
+  - id: temporal_status
+    label: Temporal Status
+    description: >
+      The shared vocabulary for classifying the current temporal validity
+      of any time-bounded record. Used by verification operations (document
+      freshness), case management (assessment currency), beneficiary lifecycle
+      (registration recency), and programs (eligibility status).
+    note: >
+      This vocabulary classifies status at a point in time, not a schedule
+      for when to take action. Action logic belongs to the domain that holds
+      the record. A document classified as expiring_soon triggers action in
+      verification operations or case management — not in this file.
+    concepts:
+
+      - id: current
+        label: Current
+        description: >
+          The record, assessment, document, or eligibility is valid and
+          within its expected useful or valid period. No freshness concern.
+        reasoning_use: >
+          The baseline status. A verification brief generated from a
+          current case uses current information. A current document does
+          not require re-verification on these grounds.
+
+      - id: expiring_soon
+        label: Expiring Soon
+        description: >
+          The record is still valid but is approaching the end of its
+          useful or valid period. Renewal, re-verification, or reassessment
+          should be initiated before expiry occurs.
+        reasoning_use: >
+          A proactive signal, not a blocking condition. An expiring_soon
+          document or assessment is still usable now but creates a near-term
+          operational task. What "soon" means is domain-specific and not
+          encoded here.
+
+      - id: expired
+        label: Expired
+        description: >
+          The record has passed the end of its valid or useful period.
+          It cannot be treated as authoritative for current decisions
+          without re-verification or renewal.
+        reasoning_use: >
+          A blocking signal for any decision that requires current
+          information. An expired identity document cannot support identity
+          verification. An expired assessment cannot inform a current
+          risk classification.
+
+      - id: pending
+        label: Pending
+        description: >
+          The record has been initiated or applied for but is not yet
+          available or confirmed. The intended validity period has not
+          yet begun.
+        reasoning_use: >
+          Used for documents in process, assessments not yet completed,
+          or eligibility determinations awaiting confirmation. A pending
+          status does not substitute for a current one but signals that
+          one is expected.
+
+      - id: superseded
+        label: Superseded
+        description: >
+          The record has been replaced by a more recent version. The
+          superseded record is retained for audit purposes but should not
+          be used for current decisions.
+        reasoning_use: >
+          Distinct from expired: an expired record ran out of time;
+          a superseded record was explicitly replaced. Used in beneficiary
+          lifecycle tracking when a re-registration replaces a prior case.
+
+      - id: suspended
+        label: Suspended
+        description: >
+          The record's validity has been temporarily halted pending
+          review, investigation, or clarification. Not expired — it may
+          be reinstated — but not usable for current decisions.
+        reasoning_use: >
+          Used in contexts where eligibility or a verification status is
+          under active review. Prevents use of a record while a question
+          about it is open.
+
+      - id: unknown
+        label: Unknown
+        description: >
+          The validity status of the record cannot be determined from
+          available information. Consistent with the open-world assumption
+          throughout this knowledge layer.
+
+  # =============================================================================
+  # PART 5: OBSERVATION WINDOWS
+  # =============================================================================
+  - id: observation_windows
+    label: Observation Windows
+    description: >
+      Named windows that define how recent an observation, assessment, or
+      record must be to be considered adequately current for humanitarian
+      reasoning purposes. These windows are reference standards, not
+      operational rules — the domain consuming them decides how to enforce them.
+    note: >
+      Observation windows are not deadlines or scheduling instructions.
+      They are the shared vocabulary for expressing "this information is
+      still fresh enough" vs "this information needs refreshing." The
+      domain that holds the information decides what to do when a window
+      is exceeded.
+    concepts:
+
+      - id: same_day
+        label: Same-Day Window
+        maximum_age: "24 hours"
+        description: >
+          Information must have been gathered or confirmed today to be
+          considered current for this purpose.
+        typical_uses:
+          - Safety flag re-confirmation before a field visit
+          - Crisis-level need confirmation before emergency dispatch
+
+      - id: this_week
+        label: Within the Current Week
+        maximum_age: "7 days"
+        description: >
+          Information gathered within the past seven days is considered
+          adequately current.
+        typical_uses:
+          - Verification brief generation for acute needs
+          - Contact information for an urgent volunteer visit
+
+      - id: thirty_days
+        label: Within 30 Days
+        maximum_age: "30 days"
+        description: >
+          Information gathered within the past 30 days is considered
+          adequately current.
+        typical_uses:
+          - Standard registration claim currency
+          - Situation assessment currency for non-acute cases
+          - Evidence submission window for verification
+
+      - id: ninety_days
+        label: Within 90 Days
+        maximum_age: "90 days"
+        description: >
+          Information gathered within the past 90 days is considered
+          adequately current for standard review purposes.
+        typical_uses:
+          - Eligibility confirmation for ongoing programme support
+          - Beneficiary contact information currency for non-urgent cases
+          - Case review currency for stable, long-term cases
+
+      - id: six_months
+        label: Within 6 Months
+        maximum_age: "6 months"
+        description: >
+          Information gathered within the past six months is considered
+          adequately current for periodic assessment purposes.
+        typical_uses:
+          - Beneficiary reassessment window for stable cases
+          - Document validity for non-expiring identity documents
+            in low-change contexts
+          - Risk assessment currency for chronic vulnerability situations
+
+      - id: one_year
+        label: Within 1 Year
+        maximum_age: "12 months"
+        description: >
+          Information gathered within the past year is considered
+          adequately current for annual review purposes.
+        typical_uses:
+          - Annual impact baseline comparison
+          - Eligibility renewal window
+          - Programme participant re-enrolment standard
+
+      - id: no_expiry
+        label: No Expiry
+        description: >
+          The information does not become stale through the passage of
+          time alone. A historical fact (date of birth, country of origin,
+          diagnosis of a permanent condition) does not expire.
+        reasoning_use: >
+          Distinguishes time-stable facts from time-sensitive ones.
+          A permanent disability diagnosis does not need re-verification
+          for recency; a current address does.
+        note: >
+          "No expiry" does not mean "never reassess." It means time
+          alone does not invalidate the information. A change in
+          circumstance might still require updating.
+
+  # =============================================================================
+  # PART 6: TEMPORAL GRANULARITY
+  # =============================================================================
+  - id: temporal_granularity
+    label: Temporal Granularity
+    description: >
+      The shared vocabulary for expressing the precision at which a temporal
+      fact is known or recorded. Prevents false precision in humanitarian
+      registration contexts where exact dates are often unavailable.
+    note: >
+      Humanitarian registration frequently cannot obtain exact dates.
+      Forcing date precision produces either fabricated data or unrecorded
+      gaps. This vocabulary allows the system to record what is actually
+      known while flagging what level of confidence exists.
+    concepts:
+
+      - id: exact_date
+        label: Exact Date
+        description: >
+          The precise calendar date is known and recorded.
+        example: "14 March 2024"
+
+      - id: approximate_date
+        label: Approximate Date
+        description: >
+          The date is known within a few days of precision but not exactly.
+          The registrant can identify the approximate period but not the
+          specific day.
+        example: "Mid-March 2024"
+        recording_note: >
+          Record the closest date with a flag indicating it is approximate.
+
+      - id: known_month
+        label: Known Month
+        description: >
+          The specific month and year is known but not the day.
+        example: "March 2024"
+
+      - id: known_year
+        label: Known Year
+        description: >
+          The year is known but not the specific month.
+        example: "2024"
+
+      - id: known_season_or_period
+        label: Known Season or Period
+        description: >
+          The time can only be placed within a general seasonal period
+          (monsoon, winter, harvest, Ramadan) or a qualitative period
+          (a few months ago, last year, before the flooding).
+        example: "Last monsoon season"
+        recording_note: >
+          Record qualitatively in free text with this granularity flag.
+
+      - id: estimated_duration_only
+        label: Estimated Duration Only
+        description: >
+          The registrant cannot provide a start date but can estimate
+          how long the situation has been ongoing. Duration is known;
+          onset is not.
+        example: "About six months"
+
+      - id: unknown
+        label: Unknown
+        description: >
+          No temporal information can be established. The date, period,
+          or duration is completely unknown to the registrant.
+
+  # =============================================================================
+  # PART 7: WAITING AND GRACE PERIODS
+  # =============================================================================
+  - id: waiting_and_grace_periods
+    label: Waiting and Grace Periods
+    description: >
+      Shared vocabulary for named periods of deliberate temporal buffer.
+      These are reference concepts for any domain that needs to express
+      "the action is not due immediately" or "a period of tolerance exists
+      before this becomes blocking."
+    note: >
+      These concepts name the types of waiting periods that humanitarian
+      operations commonly require. The specific duration of each period
+      is domain- and context-specific and is not encoded here. Encoding
+      specific durations would make this file operationally brittle.
+    concepts:
+
+      - id: verification_window
+        label: Verification Window
+        description: >
+          The period within which a claim, registration, or document
+          submitted is expected to be verified before it is considered
+          unverified past due. The claim remains active and usable during
+          this window.
+        relevant_domains:
+          - Registration
+          - Verification Operations
+
+      - id: response_window
+        label: Response Window
+        description: >
+          The period within which a response to a referral, case action,
+          or support request is expected before escalation or follow-up
+          is triggered.
+        relevant_domains:
+          - Verification Operations
+          - Case Management
+          - Support Delivery
+
+      - id: grace_period
+        label: Grace Period
+        description: >
+          A period of tolerance after a deadline or expiry during which
+          the record or eligibility is treated as provisionally valid
+          while renewal or re-verification is sought. The record is
+          technically expired but not yet treated as blocking.
+        relevant_domains:
+          - Case Management
+          - Programs
+          - Verification Operations
+
+      - id: reassessment_window
+        label: Reassessment Window
+        description: >
+          The period within which a beneficiary assessment, risk
+          classification, or vulnerability evaluation is expected to
+          be repeated to ensure currency.
+        relevant_domains:
+          - Case Management
+          - Beneficiary Lifecycle
+          - Risk Domain
+
+      - id: reregistration_window
+        label: Re-Registration Window
+        description: >
+          The period within which a beneficiary is expected or encouraged
+          to re-register following a prior registration. Opens after a
+          prior registration reaches a defined age.
+        relevant_domains:
+          - Registration
+          - Beneficiary Lifecycle
+
+      - id: cooling_off_period
+        label: Cooling-Off Period
+        description: >
+          A mandatory or recommended delay between two occurrences of
+          the same type of action — for example, between duplicate
+          registration attempts, between support disbursements, or
+          between case re-openings. Prevents rapid cycling.
+        relevant_domains:
+          - Registration
+          - Support Delivery
+          - Case Management
+
+      - id: follow_up_window
+        label: Follow-Up Window
+        description: >
+          The period within which a follow-up contact, visit, or check-in
+          is expected to occur after an initial action. The window defines
+          the expected time between action and follow-up.
+        relevant_domains:
+          - Verification Operations
+          - Case Management
+          - Support Delivery
+
+  # =============================================================================
+  # PART 8: EVIDENCE AND DOCUMENT FRESHNESS
+  # =============================================================================
+  - id: evidence_freshness
+    label: Evidence Freshness
+    description: >
+      Shared vocabulary for classifying how recent a piece of evidence is
+      and whether its age affects its reliability for the purpose at hand.
+      Document types are owned by shared/taxonomy/document-types.yaml.
+      This file owns only the temporal freshness dimension of evidence.
+    note: >
+      Evidence freshness interacts with temporal_status (Part 4) and
+      observation_windows (Part 5) but is a distinct concept. A document
+      can have current temporal_status (not expired) but low freshness
+      (it was issued three years ago and conditions may have changed).
+      The distinction matters for humanitarian verification.
+    concepts:
+
+      - id: freshly_issued
+        label: Freshly Issued
+        indicative_age: "Issued within the past 30 days"
+        description: >
+          The document or evidence was produced very recently. Its content
+          is likely to accurately reflect the current situation.
+        verification_implication: >
+          Treat as highly reliable for the current situation. No staleness
+          concern for most verification purposes.
+
+      - id: recently_issued
+        label: Recently Issued
+        indicative_age: "Issued within the past 6 months"
+        description: >
+          The document was produced within the past six months.
+          Content is likely to remain accurate for stable facts but may
+          not reflect recent changes in circumstances.
+        verification_implication: >
+          Reliable for stable facts (identity, medical diagnosis, property
+          ownership). Requires corroboration from field observation for
+          situational facts that may have changed.
+
+      - id: issued_within_a_year
+        label: Issued Within the Past Year
+        indicative_age: "Issued 6–12 months ago"
+        description: >
+          The document was produced within the past year. Situational facts
+          should be corroborated; structural facts remain reliable.
+        verification_implication: >
+          Treat structural and identity facts as reliable. Require observation
+          or registrant statement to corroborate situational claims.
+
+      - id: older_document
+        label: Older Document
+        indicative_age: "Issued more than 1 year ago"
+        description: >
+          The document is more than a year old. Its contents may or may
+          not reflect the current situation depending on what it documents.
+          Stable facts (birth, permanent disability) remain valid. Situational
+          facts (address, employment, income) require independent corroboration.
+        verification_implication: >
+          Cannot be relied upon for situational verification without
+          corroboration. Valid for stable identity or historical facts.
+
+      - id: undated
+        label: Undated
+        description: >
+          The document or evidence carries no issue date. Freshness cannot
+          be assessed. Treat with caution for time-sensitive claims.
+        verification_implication: >
+          Flag for volunteer to assess at field visit. Cannot be classified
+          without additional information.
+
+      - id: freshness_unknown
+        label: Freshness Unknown
+        description: >
+          The issue date is not available to the assessor. The document
+          may exist but its age cannot be determined from current information.
 
 # =============================================================================
 # PART 9: DESIGN DECISIONS

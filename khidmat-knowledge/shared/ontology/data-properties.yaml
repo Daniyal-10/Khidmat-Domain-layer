@@ -1,0 +1,9 @@
+version: "1.0.0"
+domain: shared
+file: shared/ontology/data-properties.yaml
+status: placeholder
+
+# This file will contain datatype/value properties shared across two or more domains.
+# No shared data properties are defined at current maturity.
+
+data_properties: []

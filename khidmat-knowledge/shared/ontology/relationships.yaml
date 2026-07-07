@@ -1,7 +1,8 @@
-# domain: shared
-# file: shared/ontology/relationships.yaml
-# status: placeholder
-#
+version: "1.0.0"
+domain: shared
+file: shared/ontology/relationships.yaml
+status: placeholder
+
 # This file will contain relationship definitions shared across two or more domains.
 # No cross-domain relationships are defined at current maturity.
 #
@@ -10,3 +11,5 @@
 #   - beneficiary enrolled_in program (beneficiary-lifecycle + programs)
 #
 # Do not add entries here until at least two active domains require the same relationship.
+
+relationships: []

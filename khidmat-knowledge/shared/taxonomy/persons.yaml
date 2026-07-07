@@ -1,6 +1,7 @@
-version: "1.0"
+version: "1.0.0"
 domain: shared
 file: taxonomy/persons.yaml
+status: active
 
 purpose: >
   Generic person taxonomy used across all Khidmat domains.
@@ -8,30 +9,66 @@ purpose: >
   all reference persons. This file owns the shared vocabulary.
   Domain-specific person roles are defined within each domain.
 
-person_roles:
-  # Registration domain roles — declared here, detailed in registration/taxonomy/actors.yaml
-  - beneficiary
-  - registrant
-  - proxy
-  - volunteer
+schemes:
+  - id: person_roles
+    label: Person Roles
+    description: >
+      Roles a person may hold across Khidmat domains.
+    concepts:
+      # Registration domain roles — declared here, detailed in registration/taxonomy/actors.yaml
+      - id: beneficiary
+        description: A person on whose behalf a registration is made.
+      - id: registrant
+        description: The person presenting during registration.
+      - id: proxy
+        description: A person registering on behalf of another.
+      - id: volunteer
+        description: A person performing registration or field activities on behalf of Khidmat.
 
-  # Future domain roles — declared here, detailed when domains become active
-  - case_manager          # case-management domain
-  - programme_officer     # programs domain
-  - organisation_staff    # organisation domain
-  - donor                 # future domain
+      # Future domain roles — declared here, detailed when domains become active
+      - id: case_manager
+        description: A role in the case-management domain.
+      - id: programme_officer
+        description: A role in the programs domain.
+      - id: organisation_staff
+        description: A role in the organisation domain.
+      - id: donor
+        description: A role in a future domain.
 
-age_classification:
-  minor:
-    definition: Under 18 years of age
-    consequence: guardian_status required, safeguarding rules apply
-  adult:
-    definition: 18 years of age or older
+  - id: age_classification
+    label: Age Classification
+    description: >
+      Classification of a person by age threshold and its consequence
+      for guardianship and safeguarding.
+    concepts:
+      - id: minor
+        label: Minor
+        description: Under 18 years of age.
+        consequence: guardian_status required, safeguarding rules apply
+      - id: adult
+        label: Adult
+        description: 18 years of age or older.
 
-gender_vocabulary:
-  - male
-  - female
-  - not_disclosed
+  - id: gender_vocabulary
+    label: Gender Vocabulary
+    description: >
+      Controlled vocabulary for recording a person's gender.
+    concepts:
+      - id: male
+        description: Male gender.
+      - id: female
+        description: Female gender.
+      - id: not_disclosed
+        description: Gender not disclosed by the person.
 
-functional_capacity:
-  ref: shared/human-model/capabilities.yaml#capability_levels
+references:
+  - scheme: capability_levels
+    relation: supplies_values_for
+    note: >
+      The functional_capacity value on a person is drawn from the
+      capability_levels scheme authored in
+      shared/human-model/capabilities.yaml. This file does not define
+      functional_capacity itself. The final cross-domain CURIE prefix for
+      this reference is pending ratification of the sub-module layout for
+      shared/human-model/ and the C-2 namespace finding; the bare scheme
+      id is used here as a placeholder for that pending resolution.
