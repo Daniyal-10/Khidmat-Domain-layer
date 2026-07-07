@@ -25,13 +25,13 @@ status: "Phase 2.3 — Active"
 #                 or "what has changed over time?" (beneficiary lifecycle).
 # Governing ADRs: ADR-007, ADR-008
 # Cross-references:
-#   shared/human-model/lifecycle-stages.yaml
+#   shared/human-model/taxonomy/lifecycle-stages.yaml
 #     Lifecycle stages are referenced here to characterise the family's
 #     developmental context. That file owns stage definitions.
-#   shared/human-model/dependency.yaml
+#   shared/human-model/taxonomy/dependency.yaml
 #     Dependency types are referenced here when characterising support
 #     relationships between family members. That file owns type definitions.
-#   shared/human-model/capabilities.yaml
+#   shared/human-model/taxonomy/capabilities.yaml
 #     Capability domains are referenced here when characterising role
 #     requirements and family member contributions. That file owns
 #     capability definitions.
@@ -364,11 +364,11 @@ family_member:
     lifecycle_stage:
       description: >
         The lifecycle stage of this individual family member.
-        References shared/human-model/lifecycle-stages.yaml.
+        References shared/human-model/taxonomy/lifecycle-stages.yaml.
         Determines the developmental context and characteristic
         dependencies of this member.
       required: false
-      values_ref: shared/human-model/lifecycle-stages.yaml#lifecycle_stages
+      values_ref: shared/human-model/taxonomy/lifecycle-stages.yaml#lifecycle_stages
 
     residency_status:
       description: >
@@ -721,7 +721,7 @@ support_roles:
         displacement — the family's economic foundation is directly affected.
       dependency_type_ref: >
         Family members who rely on this person have financial dependency
-        (see shared/human-model/dependency.yaml#financial).
+        (see shared/human-model/taxonomy/dependency.yaml#financial).
       disruption_significance: >
         Loss of the primary earner is one of the most structurally
         consequential events for a family. It simultaneously removes
@@ -776,7 +776,7 @@ support_roles:
         assets are frequently financial dependents. Adults temporarily
         out of work are situational financial dependents.
       dependency_type_ref: >
-        shared/human-model/dependency.yaml#financial
+        shared/human-model/taxonomy/dependency.yaml#financial
 
 
     # =========================================================
@@ -792,9 +792,9 @@ support_roles:
         emotional care of the dependent(s).
       dependency_type_ref: >
         Dependents rely on this person for caregiving dependency
-        (shared/human-model/dependency.yaml#caregiving) and may also
+        (shared/human-model/taxonomy/dependency.yaml#caregiving) and may also
         have developmental dependency
-        (shared/human-model/dependency.yaml#developmental).
+        (shared/human-model/taxonomy/dependency.yaml#developmental).
       disruption_significance: >
         Loss of the primary caregiver simultaneously removes support
         from all dependents they were caring for. Each dependent
@@ -842,7 +842,7 @@ support_roles:
       dependency_type_ref: >
         Family members whose decisions are made by this person have
         decision-making dependency
-        (shared/human-model/dependency.yaml#decision_making).
+        (shared/human-model/taxonomy/dependency.yaml#decision_making).
       note: >
         The decision-maker is not necessarily the registered head of
         household. In many South Asian configurations, decision-making
@@ -1004,7 +1004,7 @@ support_relationships:
         - emotional_support
         - educational
         - household_management
-      values_ref: shared/human-model/dependency.yaml#dependency_types
+      values_ref: shared/human-model/taxonomy/dependency.yaml#dependency_types
       required: true
 
     relationship_status:

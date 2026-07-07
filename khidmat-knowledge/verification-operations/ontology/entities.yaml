@@ -43,7 +43,7 @@ namespaces:
 imports:
   - shared-ontology            # shared/ontology/entities.yaml (Actor, Subject)
   - shared-taxonomy-time        # shared/taxonomy/time.yaml (evidence_freshness, waiting_and_grace_periods)
-  - shared-risk                 # shared/risk/risk.yaml (risk_trend, referenced only)
+  - shared-risk                 # shared/risk/ontology/risk.yaml (risk_trend, referenced only)
   - registration-ontology       # registration/ontology/entities.yaml (Claim, Evidence)
   - case-management-ontology    # case-management/ontology.yaml (Case)
   - registration-taxonomy       # registration/taxonomy/claims.yaml, evidence.yaml

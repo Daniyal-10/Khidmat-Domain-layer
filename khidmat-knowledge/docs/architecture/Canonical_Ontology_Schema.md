@@ -87,6 +87,12 @@ Rules:
   `shared/ontology/relationships.yaml` placeholder convention, so the module shape is deterministic.
 - `attributes_ref` and any per-entity attribute-file pointer are **removed from the architecture.**
   Datatype/value properties live only in `data-properties.yaml`. There is no `attributes.yaml`.
+- **Sub-modules.** A bounded context (e.g. `shared/`) may contain independently owned sub-modules
+  (e.g. `shared/human-model/`, `shared/risk/`) — this is a clarification of the existing architecture,
+  not a new pattern: ADR-007 and `ARCHITECTURE.md` already establish `shared/human-model/` as a
+  distinct, first-class-owned concept area. Each such sub-module follows this identical `ontology/`
+  layout (and `taxonomy/` layout per `Canonical_Taxonomy_Schema.md`, where the sub-module owns
+  controlled vocabularies) exactly as a top-level domain does.
 
 ---
 

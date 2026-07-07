@@ -25,27 +25,27 @@ status: "Phase 3.2 — Active"
 #                 Management, Stage 5).
 # Governing ADRs: ADR-007, ADR-008, ADR-010, ADR-011, ADR-012
 # Cross-references:
-#   shared/human-model/family-structure.yaml
+#   shared/human-model/ontology/family-structure.yaml
 #     Structural attributes referenced by attribute_ref. This file does
 #     not redefine family structural concepts.
-#   shared/human-model/capabilities.yaml
+#   shared/human-model/taxonomy/capabilities.yaml
 #     Capability domains referenced by domain_ref. Where a specific
 #     capability level actively buffers against a hazard category, this
 #     file names that connection using the qualifying_level field. This
 #     file does not redefine capability concepts.
-#   shared/human-model/dependency.yaml
+#   shared/human-model/taxonomy/dependency.yaml
 #     Dependency types referenced by dependency_ref where the confirmed
 #     availability of a provider constitutes a protective condition.
-#   shared/human-model/health-conditions.yaml
+#   shared/human-model/taxonomy/health-conditions.yaml
 #     Conditions referenced by condition_ref. The treatability attribute
 #     is used by value only. This file does not redefine conditions.
-#   shared/risk/hazard-categories.yaml
+#   shared/risk/taxonomy/hazard-categories.yaml
 #     Hazard categories referenced in hazard_categories_moderated fields.
-#   shared/risk/household-resilience.yaml
+#   shared/risk/ontology/household-resilience.yaml
 #     Household Resilience composes from Protective Factors defined here.
 #     The dependency is one-directional: this file supplies concepts
 #     upward to Resilience and does not reference household-resilience.yaml.
-#   shared/risk/vulnerability.yaml
+#   shared/risk/ontology/vulnerability.yaml
 #     Vulnerability and Protective Factors are parallel inputs to Risk
 #     composition in risk.yaml. They are symmetric, not inverse.
 #     This file does not reference vulnerability.yaml.
@@ -1180,7 +1180,7 @@ new_concept_declarations:
 
   - concept_id: financial_buffer
     concept_name: Financial Buffer
-    authoritative_file: "shared/risk/protective-factors.yaml"
+    authoritative_file: "shared/risk/taxonomy/protective-factors.yaml"
     owner_domain: Risk Domain
     introduced: "Phase 3.2"
     rationale: >
@@ -1197,7 +1197,7 @@ new_concept_declarations:
 
   - concept_id: livelihood_diversity
     concept_name: Livelihood Diversity
-    authoritative_file: "shared/risk/protective-factors.yaml"
+    authoritative_file: "shared/risk/taxonomy/protective-factors.yaml"
     owner_domain: Risk Domain
     introduced: "Phase 3.2"
     rationale: >
@@ -1214,7 +1214,7 @@ new_concept_declarations:
 
   - concept_id: treatment_continuity_active
     concept_name: Treatment Continuity Active
-    authoritative_file: "shared/risk/protective-factors.yaml"
+    authoritative_file: "shared/risk/taxonomy/protective-factors.yaml"
     owner_domain: Risk Domain
     introduced: "Phase 3.2"
     rationale: >

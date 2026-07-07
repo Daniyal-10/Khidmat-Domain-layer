@@ -63,7 +63,7 @@ verification_confidence:
     corroboration, and evidence freshness together, consistent with
     the composition-not-scoring principle applied throughout this
     knowledge layer (see
-    shared/risk/vulnerability.yaml#vulnerability_level for the
+    shared/risk/ontology/vulnerability.yaml#vulnerability_level for the
     precedent this vocabulary follows).
 
   values:

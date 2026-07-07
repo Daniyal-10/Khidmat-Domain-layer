@@ -360,4 +360,4 @@ The Risk Domain references lifecycle stages, capabilities, dependencies, health 
 Prevents ontology drift and maintains the Shared Human Model as the single source of truth.
 
 **Consequence:**
-Must use `*_ref` patterns defined in risk-domain-governance.md.
+Must use `*_ref` patterns defined in shared/risk/governance.md.

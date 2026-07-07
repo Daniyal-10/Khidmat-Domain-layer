@@ -129,11 +129,11 @@ Risk Domain is complete.
 Completed
 
 * shared/human-model/README.md
-* shared/human-model/lifecycle-stages.yaml
-* shared/human-model/dependency.yaml
-* shared/human-model/capabilities.yaml
-* shared/human-model/family-structure.yaml
-* shared/human-model/health-conditions.yaml
+* shared/human-model/taxonomy/lifecycle-stages.yaml
+* shared/human-model/taxonomy/dependency.yaml
+* shared/human-model/taxonomy/capabilities.yaml
+* shared/human-model/ontology/family-structure.yaml
+* shared/human-model/taxonomy/health-conditions.yaml
 
 Next Active Deliverable
 
@@ -158,12 +158,12 @@ are complete and stable.
 **STATUS: COMPLETED**
 
 **Completed:**
-- ✓ Protective Factors Model (`shared/risk/protective-factors.yaml`)
-- ✓ Hazard Categories (`shared/risk/hazard-categories.yaml`)
-- ✓ Exposure Model (`shared/risk/exposure.yaml`)
-- ✓ Vulnerability Composite Model (`shared/risk/vulnerability.yaml`)
-- ✓ Household Resilience Model (`shared/risk/household-resilience.yaml`)
-- ✓ Risk Model (`shared/risk/risk.yaml` — folded Risk Trajectory / Trend Model here)
+- ✓ Protective Factors Model (`shared/risk/taxonomy/protective-factors.yaml`)
+- ✓ Hazard Categories (`shared/risk/taxonomy/hazard-categories.yaml`)
+- ✓ Exposure Model (`shared/risk/ontology/exposure.yaml`)
+- ✓ Vulnerability Composite Model (`shared/risk/ontology/vulnerability.yaml`)
+- ✓ Household Resilience Model (`shared/risk/ontology/household-resilience.yaml`)
+- ✓ Risk Model (`shared/risk/ontology/risk.yaml` — folded Risk Trajectory / Trend Model here)
 - ✓ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
 
 **Prerequisites:**

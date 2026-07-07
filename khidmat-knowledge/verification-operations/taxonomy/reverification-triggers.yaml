@@ -22,7 +22,7 @@ out_of_scope: >
   This file does not define the seasonal or geographic calendar that
   might inform periodic_reassessment timing — that is explicitly
   Community Context Domain territory (Stage 8, not yet active; see
-  shared/risk/hazard-categories.yaml boundary_note for the governing
+  shared/risk/taxonomy/hazard-categories.yaml boundary_note for the governing
   precedent). This file also does not define the specific duration of
   any reassessment window — those durations are owned by
   shared/taxonomy/time.yaml#waiting_and_grace_periods and referenced
@@ -44,7 +44,7 @@ cross_references:
       reassessment_window and reregistration_window are referenced by
       periodic_reassessment below. This file does not define specific
       durations.
-  - shared/risk/risk.yaml#risk_trend
+  - shared/risk/ontology/risk.yaml#risk_trend
       risk_escalation triggers reference a risk_trend of
       deteriorating. This file does not redefine risk_trend or any
       Risk Domain concept.
@@ -82,7 +82,7 @@ reverification_trigger_type:
     - id: risk_escalation
       label: Risk Escalation
       description: >
-        A risk_trend of deteriorating (shared/risk/risk.yaml) has
+        A risk_trend of deteriorating (shared/risk/ontology/risk.yaml) has
         been assessed for the household since the last verification,
         warranting a check of whether previously verified
         circumstances still hold.
@@ -159,7 +159,7 @@ design_notes:
   - decision: This file does not own trigger timing or calendars
     rationale: >
       Direct application of the boundary already established in
-      shared/risk/hazard-categories.yaml — geographic and temporal
+      shared/risk/taxonomy/hazard-categories.yaml — geographic and temporal
       instantiation belongs to Community Context (Stage 8). This file
       names the reasons reverification is needed; it does not compute
       when a given household's window falls due.

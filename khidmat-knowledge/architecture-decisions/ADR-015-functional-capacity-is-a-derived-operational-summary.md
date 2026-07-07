@@ -24,5 +24,5 @@ Review if the operational summary becomes redundant once complex capability quer
 
 ## Related Documents
 - shared/taxonomy/persons.yaml
-- shared/human-model/capabilities.yaml
+- shared/human-model/taxonomy/capabilities.yaml
 - ontology_authority_matrix.md

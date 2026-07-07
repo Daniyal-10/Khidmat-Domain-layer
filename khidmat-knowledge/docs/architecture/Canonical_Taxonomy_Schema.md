@@ -60,6 +60,9 @@ Nothing here is applied to repository content until the whole document is approv
 - Single-ownership of taxonomy concepts, consistent with ADR-008 (§9).
 - Naming conventions (§10), localization posture (§11), and structural invariants (§12).
 - The reusable taxonomy-file template (§13).
+- Sub-module taxonomy folders within a bounded context (e.g. `shared/human-model/taxonomy/`,
+  `shared/risk/taxonomy/`) follow this identical template — this is a clarification of the existing
+  architecture, per `Canonical_Ontology_Schema.md` §2's sub-module rule, not a new pattern.
 
 **Not governed here (delegated elsewhere or explicitly out of scope):**
 - **Concrete IRI/base values, per-domain CURIE prefixes** — ratified under Finding **C-2**, the

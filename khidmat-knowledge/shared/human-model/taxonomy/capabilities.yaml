@@ -17,7 +17,7 @@ status: "Phase 2.2 — Active"
 #                 management), or "what outcomes were achieved?" (impact).
 # Governing ADRs: ADR-007, ADR-008
 # Cross-reference:
-#   shared/human-model/lifecycle-stages.yaml
+#   shared/human-model/taxonomy/lifecycle-stages.yaml
 #     characteristic_capabilities entries in that file are, by design,
 #     mostly generic developmental narrative rather than capability-level
 #     assessments. Where an entry names a specific capability that is also
@@ -30,7 +30,7 @@ status: "Phase 2.2 — Active"
 #     capability placeholder. FLAG-001 in ontology_authority_matrix.md
 #     requires that file to reference this one as its authority once
 #     this file is complete.
-#   shared/human-model/dependency.yaml
+#   shared/human-model/taxonomy/dependency.yaml
 #     Capability and dependency are paired concepts. When a person lacks
 #     a capability, they incur a dependency on someone who has it. This
 #     file owns capability definitions; dependency.yaml owns the reliance
@@ -1410,7 +1410,7 @@ future_extensions:
 
   - >
     concept: Health condition impact on capability
-    belongs_in: shared/human-model/health-conditions.yaml (not yet created)
+    belongs_in: shared/human-model/taxonomy/health-conditions.yaml (not yet created)
     description: >
       The relationship between specific health conditions and capability
       levels is important for reasoning but health condition vocabulary
@@ -1459,7 +1459,7 @@ future_extensions:
 
   - >
     concept: Family-level capability distribution
-    belongs_in: shared/human-model/family-structure.yaml (not yet created)
+    belongs_in: shared/human-model/ontology/family-structure.yaml (not yet created)
     description: >
       The distribution of capabilities across family members determines
       household resilience. A household where caregiving capability is

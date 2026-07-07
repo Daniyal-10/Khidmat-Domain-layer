@@ -61,8 +61,8 @@ Governance completed:
 - ontology_completion_checklist.md
 - ontology_authority_matrix.md
 - knowledge_layer_roadmap.md
-- health-conditions-governance.md
-- risk-domain-governance.md
+- shared/human-model/governance.md
+- shared/risk/governance.md
 - verification-operations/verification-operations.yaml (Core Ontology)
 
 Current objective:

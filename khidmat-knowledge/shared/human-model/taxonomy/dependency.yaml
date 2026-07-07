@@ -17,7 +17,7 @@ status: "Phase 2.0 — Active"
 #                 (capabilities.yaml), or "what should the system do?"
 #                 (operational domains).
 # Governing ADRs: ADR-007, ADR-008
-# Cross-reference: shared/human-model/lifecycle-stages.yaml
+# Cross-reference: shared/human-model/taxonomy/lifecycle-stages.yaml
 #                  characteristic_dependency `type` values in that file
 #                  are direct references to the `id` values defined here
 #                  (dependency_types). That file must not redefine,

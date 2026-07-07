@@ -203,7 +203,7 @@ classifications are explicitly excluded from this model's scope.
 
 ---
 
-### shared/human-model/lifecycle-stages.yaml
+### shared/human-model/taxonomy/lifecycle-stages.yaml
 
 **Purpose:** Authoritative lifecycle stages ontology for the Shared Human
 Model. Defines nine developmental stages as reasoning contexts — each with
@@ -259,7 +259,7 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### shared/risk/risk-domain-governance.md
+### shared/risk/governance.md
 
 **Purpose:** Boundary enforcement rules, cross-domain reference patterns, anti-patterns, and alignment contracts for the Risk Domain. Ensures ontology files stay free of documentation bloat.
 **Concepts Owned:** None directly. Declares reference constraints and patterns for capabilities, dependency, family structure, health conditions, and registration.
@@ -270,7 +270,7 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### shared/risk/hazard-categories.yaml
+### shared/risk/taxonomy/hazard-categories.yaml
 
 **Purpose:** Qualitative classification of the types of harm under consideration.
 **Concepts Owned:** 
@@ -282,7 +282,7 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### shared/risk/exposure.yaml
+### shared/risk/ontology/exposure.yaml
 
 **Purpose:** Defines the relationship between a person, family, or household and a hazard category describing the degree to which they may encounter it.
 **Concepts Owned:**
@@ -294,7 +294,7 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### shared/risk/vulnerability.yaml
+### shared/risk/ontology/vulnerability.yaml
 
 **Purpose:** Defines standing susceptibility to harm resulting from vulnerability conditions and capacity limitations.
 **Concepts Owned:**
@@ -306,7 +306,7 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### shared/risk/protective-factors.yaml
+### shared/risk/taxonomy/protective-factors.yaml
 
 **Purpose:** Defines observable protective factors that moderate hazard-specific risk.
 **Concepts Owned:** 
@@ -321,7 +321,7 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### shared/risk/household-resilience.yaml
+### shared/risk/ontology/household-resilience.yaml
 
 **Purpose:** Defines Household Resilience as a first-class composite capacity to absorb, adapt to, and recover from adversity.
 **Concepts Owned:** 
@@ -342,7 +342,7 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### shared/risk/risk.yaml
+### shared/risk/ontology/risk.yaml
 
 **Purpose:** Defines Risk as a first-class Risk Domain concept. Models how contributors (hazard categories, exposure, vulnerability, and household resilience) are composed, interpreted, represented, and expressed as a qualitative risk assessment.
 **Concepts Owned:**

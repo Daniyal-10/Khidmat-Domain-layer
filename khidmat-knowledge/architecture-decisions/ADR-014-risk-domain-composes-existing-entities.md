@@ -16,7 +16,7 @@ The Risk Domain references lifecycle stages, capabilities, dependencies, health 
 
 
 ## Consequences
-Must use `*_ref` patterns defined in risk-domain-governance.md.
+Must use `*_ref` patterns defined in shared/risk/governance.md.
 
 ## Future Review Considerations
 Not specified in original decision log.

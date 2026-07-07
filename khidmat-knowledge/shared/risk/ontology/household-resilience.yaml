@@ -187,29 +187,29 @@ contributes_to:
 referenced_contributors:
 
 capability_distribution:
-ownership: shared/human-model/capabilities.yaml
+ownership: shared/human-model/taxonomy/capabilities.yaml
 description: >
   Distribution of capabilities across household members.
 
 dependency_distribution:
-ownership: shared/human-model/dependency.yaml
+ownership: shared/human-model/taxonomy/dependency.yaml
 description: >
   Distribution and concentration of dependency relationships.
 
 family_structure_attributes:
-ownership: shared/human-model/family-structure.yaml
+ownership: shared/human-model/ontology/family-structure.yaml
 description: >
   Family support structures, earning structures, caregiving
   structures, decision-making structures, and support networks.
 
 protective_factors:
-ownership: shared/risk/protective-factors.yaml
+ownership: shared/risk/taxonomy/protective-factors.yaml
 description: >
   Protective factors that strengthen resilience while remaining
   independently owned concepts.
 
 health_condition_impacts:
-ownership: shared/human-model/health-conditions.yaml
+ownership: shared/human-model/taxonomy/health-conditions.yaml
 description: >
   Effects of health conditions on household functioning and
   support availability.

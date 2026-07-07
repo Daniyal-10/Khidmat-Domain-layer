@@ -1,7 +1,7 @@
 # Khidmat Health Conditions Ontology — Governance and Documentation
 
 **Authority:** Knowledge Layer Architect
-**Source:** Extracted from `shared/human-model/health-conditions.yaml`
+**Source:** Extracted from `shared/human-model/taxonomy/health-conditions.yaml`
 **Purpose:** Governance documentation, boundary notes, cross-domain patterns, and alignment contracts for the Health Conditions Ontology.
 
 ---

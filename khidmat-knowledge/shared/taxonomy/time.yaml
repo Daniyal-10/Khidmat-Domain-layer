@@ -29,7 +29,7 @@ delivery_phase: "Phase 4.0"
 #     onset_recency in this file is a shared primitive for classifying
 #     how recent any piece of information or event is — distinct from
 #     the situation-specific trajectory concept.
-#   shared/human-model/lifecycle-stages.yaml
+#   shared/human-model/taxonomy/lifecycle-stages.yaml
 #     Age ranges are expressed in months within lifecycle-stages.yaml.
 #     This file does not own age-based time ranges; those belong to the
 #     lifecycle stage model.

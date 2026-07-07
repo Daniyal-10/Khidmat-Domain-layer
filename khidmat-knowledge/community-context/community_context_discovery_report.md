@@ -87,9 +87,9 @@ The Community Context sits structurally above the individual/household level and
 
 ## 12. Upstream Dependencies
 - `shared/taxonomy/locations.yaml`: Needs to be extended beyond "dispatch precision" to support geographic hierarchies.
-- `shared/risk/hazard-categories.yaml`: Provides the vocabulary of harms that the Community Context maps geographically.
+- `shared/risk/taxonomy/hazard-categories.yaml`: Provides the vocabulary of harms that the Community Context maps geographically.
 - `shared/taxonomy/organisations.yaml`: Provides baseline organisation types.
-- `shared/human-model/health-conditions.yaml`: Provides the health vocabulary for mapping endemic diseases.
+- `shared/human-model/taxonomy/health-conditions.yaml`: Provides the health vocabulary for mapping endemic diseases.
 
 ## 13. Downstream Consumers
 - **Case Management:** Will use service availability, social exclusion data, and cultural norms to filter referrals and intervention design.

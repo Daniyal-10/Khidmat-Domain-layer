@@ -67,7 +67,7 @@ references:
     note: >
       The functional_capacity value on a person is drawn from the
       capability_levels scheme authored in
-      shared/human-model/capabilities.yaml. This file does not define
+      shared/human-model/taxonomy/capabilities.yaml. This file does not define
       functional_capacity itself. The final cross-domain CURIE prefix for
       this reference is pending ratification of the sub-module layout for
       shared/human-model/ and the C-2 namespace finding; the bare scheme

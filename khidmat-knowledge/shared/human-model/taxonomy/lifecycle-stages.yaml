@@ -16,13 +16,13 @@ status: "Phase 2.0 — Active"
 #                 belongs to Registration Reasoning, Risk Domain, Case
 #                 Management, and future operational domains.
 # Governing ADRs: ADR-007, ADR-008
-# Cross-reference: shared/human-model/dependency.yaml is the sole
+# Cross-reference: shared/human-model/taxonomy/dependency.yaml is the sole
 #                  authoritative owner of dependency-type semantics.
 #                  Every `type` value under `characteristic_dependencies`
 #                  below is a reference to an `id` defined in
 #                  dependency.yaml#dependency_types and must not diverge
 #                  from, extend, or redefine that vocabulary.
-# Cross-reference: shared/human-model/health-conditions.yaml is the sole
+# Cross-reference: shared/human-model/taxonomy/health-conditions.yaml is the sole
 #                  authoritative owner of health-condition semantics.
 #                  Most vulnerability/risk language below is intentionally
 #                  generic reasoning context, not a clinical assertion, and
@@ -35,7 +35,7 @@ status: "Phase 2.0 — Active"
 #                  own `characteristic_lifecycle_manifestations[].stage_ref`
 #                  into this file. This file must not redefine, restate, or
 #                  duplicate condition definitions owned there.
-# Cross-reference: shared/human-model/capabilities.yaml is the sole
+# Cross-reference: shared/human-model/taxonomy/capabilities.yaml is the sole
 #                  authoritative owner of capability semantics. Most
 #                  `characteristic_capabilities` entries below are
 #                  intentionally generic developmental narrative, not a

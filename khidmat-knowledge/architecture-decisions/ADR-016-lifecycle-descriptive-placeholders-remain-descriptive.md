@@ -22,6 +22,6 @@ The descriptive strings in lifecycle-stages.yaml must not be treated as a shadow
 Once Case Management and Support Delivery are active and the core entity structures are locked, a refactoring sprint should formalize these references.
 
 ## Related Documents
-- shared/human-model/lifecycle-stages.yaml
+- shared/human-model/taxonomy/lifecycle-stages.yaml
 - knowledge_layer_inventory.md
 - ontology_authority_matrix.md

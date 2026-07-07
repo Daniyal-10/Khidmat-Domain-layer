@@ -139,24 +139,24 @@ values:
 referenced_contributors:
 
 hazard_category:
-ownership: shared/risk/hazard-categories.yaml
+ownership: shared/risk/taxonomy/hazard-categories.yaml
 description: >
   Qualitative classification of the type of harm under consideration.
 
 exposure:
-ownership: shared/risk/exposure.yaml
+ownership: shared/risk/ontology/exposure.yaml
 description: >
   Relationship between a person, family, or household and a hazard
   category describing the degree to which they may encounter it.
 
 vulnerability:
-ownership: shared/risk/vulnerability.yaml
+ownership: shared/risk/ontology/vulnerability.yaml
 description: >
   Standing susceptibility to harm resulting from vulnerability
   conditions and capacity limitations.
 
 household_resilience:
-ownership: shared/risk/household-resilience.yaml
+ownership: shared/risk/ontology/household-resilience.yaml
 description: >
   Household-level capacity to absorb disruption, adapt to changing
   circumstances, and recover from adversity.

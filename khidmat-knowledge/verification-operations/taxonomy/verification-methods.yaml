@@ -205,7 +205,7 @@ design_notes:
   - decision: Seven methods, not an exhaustive list
     rationale: >
       Mirrors the pattern established in
-      shared/risk/hazard-categories.yaml (example_hazard_types are
+      shared/risk/taxonomy/hazard-categories.yaml (example_hazard_types are
       illustrative, not exhaustive) — methods here are the
       representative set NGOs use in humanitarian field operations.
       New methods may be added under this taxonomy without

@@ -13,7 +13,7 @@ purpose: >
 
 imports:
   - shared/taxonomy/persons.yaml        # gender, minor
-  - shared/human-model/capabilities.yaml # capability_levels
+  - shared/human-model/taxonomy/capabilities.yaml # capability_levels
   - shared/taxonomy/locations.yaml      # location precision and stability
   - shared/taxonomy/document-types.yaml # documentation_status reference
   - registration/taxonomy/actors.yaml   # registrant_type, claim_basis
@@ -166,7 +166,7 @@ beneficiary:
   functional_capacity:
     type: enum
     required: false
-    values_ref: shared/human-model/capabilities.yaml#capability_levels
+    values_ref: shared/human-model/taxonomy/capabilities.yaml#capability_levels
     values: [full, functional, partial, minimal]
     notes: >
       The beneficiary's capacity to manage daily tasks independently.
@@ -329,7 +329,7 @@ household_member:
   functional_capacity:
     type: enum
     required: false
-    values_ref: shared/human-model/capabilities.yaml#capability_levels
+    values_ref: shared/human-model/taxonomy/capabilities.yaml#capability_levels
     values: [full, functional, partial, minimal]
     notes: >
       Only record when different from full. Ask only when the member

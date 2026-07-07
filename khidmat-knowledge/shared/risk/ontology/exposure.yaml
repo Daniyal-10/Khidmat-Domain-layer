@@ -20,9 +20,9 @@ status: "Phase 3.0 — Active"
 #                 (vulnerability.yaml).
 # Governing ADRs: ADR-007, ADR-008
 # Cross-references:
-#   shared/risk/hazard-categories.yaml
+#   shared/risk/taxonomy/hazard-categories.yaml
 #     Exposure always relates to a hazard_category_ref defined there.
-#   shared/risk/vulnerability.yaml
+#   shared/risk/ontology/vulnerability.yaml
 #     Vulnerability and Exposure are deliberately separate. A household can
 #     have high exposure and low vulnerability (a well-resourced household
 #     next to a flood-prone river) or low exposure and high vulnerability

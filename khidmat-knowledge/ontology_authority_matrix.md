@@ -55,22 +55,22 @@ this file.
 
 ### Lifecycle Stage Concepts
 
-**Authoritative file:** `shared/human-model/lifecycle-stages.yaml`
+**Authoritative file:** `shared/human-model/taxonomy/lifecycle-stages.yaml`
 **Owner domain:** Shared Human Model
 **Introduced:** Phase 2.0
 **Governing ADRs:** ADR-007, ADR-008
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| `infant` | Infant | `shared/human-model/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
-| `toddler` | Toddler | `shared/human-model/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
-| `early_childhood` | Early Childhood | `shared/human-model/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
-| `school_age_child` | School-Age Child | `shared/human-model/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
-| `adolescent` | Adolescent | `shared/human-model/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
-| `young_adult` | Young Adult | `shared/human-model/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
-| `adult` | Adult | `shared/human-model/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
-| `older_adult` | Older Adult | `shared/human-model/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
-| `elderly` | Elderly | `shared/human-model/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| `infant` | Infant | `shared/human-model/taxonomy/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| `toddler` | Toddler | `shared/human-model/taxonomy/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| `early_childhood` | Early Childhood | `shared/human-model/taxonomy/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| `school_age_child` | School-Age Child | `shared/human-model/taxonomy/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| `adolescent` | Adolescent | `shared/human-model/taxonomy/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| `young_adult` | Young Adult | `shared/human-model/taxonomy/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| `adult` | Adult | `shared/human-model/taxonomy/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| `older_adult` | Older Adult | `shared/human-model/taxonomy/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| `elderly` | Elderly | `shared/human-model/taxonomy/lifecycle-stages.yaml` | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
 
 **What these concepts cover:**
 Each lifecycle stage concept owns its complete definition including:
@@ -85,47 +85,47 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 
 ### Capability Concepts
 
-**Authoritative file:** shared/human-model/capabilities.yaml
+**Authoritative file:** shared/human-model/taxonomy/capabilities.yaml
 **Owner domain:** Shared Human Model
 **Introduced:** Phase 2.0
 **Governing ADRs:** ADR-008
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| capability | Capability | shared/human-model/capabilities.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| capability | Capability | shared/human-model/taxonomy/capabilities.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
 
 ### Dependency Concepts
 
-**Authoritative file:** shared/human-model/dependency.yaml
+**Authoritative file:** shared/human-model/taxonomy/dependency.yaml
 **Owner domain:** Shared Human Model
 **Introduced:** Phase 2.0
 **Governing ADRs:** ADR-008
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| dependency | Dependency | shared/human-model/dependency.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| dependency | Dependency | shared/human-model/taxonomy/dependency.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
 
 ### Family Structure Concepts
 
-**Authoritative file:** shared/human-model/family-structure.yaml
+**Authoritative file:** shared/human-model/ontology/family-structure.yaml
 **Owner domain:** Shared Human Model
 **Introduced:** Phase 2.0
 **Governing ADRs:** ADR-008
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| amily_structure | Family Structure | shared/human-model/family-structure.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| amily_structure | Family Structure | shared/human-model/ontology/family-structure.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
 
 ### Health Condition Concepts
 
-**Authoritative file:** shared/human-model/health-conditions.yaml
+**Authoritative file:** shared/human-model/taxonomy/health-conditions.yaml
 **Owner domain:** Shared Human Model
 **Introduced:** Phase 2.0
 **Governing ADRs:** ADR-008
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| health_condition | Health Condition | shared/human-model/health-conditions.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| health_condition | Health Condition | shared/human-model/taxonomy/health-conditions.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
 
 ---
 
@@ -137,29 +137,29 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| `hazard_category` | Hazard Category | `shared/risk/hazard-categories.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `exposure` | Exposure | `shared/risk/exposure.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `vulnerability` | Vulnerability | `shared/risk/vulnerability.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `financial_buffer` | Financial Buffer | `shared/risk/protective-factors.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `livelihood_diversity` | Livelihood Diversity | `shared/risk/protective-factors.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `treatment_continuity_active` | Treatment Continuity Active | `shared/risk/protective-factors.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `household_resilience` | Household Resilience | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `absorptive_capacity` | Absorptive Capacity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `adaptive_capacity` | Adaptive Capacity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `recovery_capacity` | Recovery Capacity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `support_redundancy` | Support Redundancy | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `role_substitution_capacity` | Role Substitution Capacity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `buffering_capacity` | Buffering Capacity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `recovery_resources` | Recovery Resources | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `caregiving_continuity` | Caregiving Continuity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `decision_continuity` | Decision Continuity | `shared/risk/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `risk` | Risk | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `risk_composition` | Risk Composition | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `risk_characterization` | Risk Characterization | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `risk_profile` | Risk Profile | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `risk_horizon` | Risk Horizon | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `risk_trend` | Risk Trend | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
-| `risk_state` | Risk State | `shared/risk/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `hazard_category` | Hazard Category | `shared/risk/taxonomy/hazard-categories.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `exposure` | Exposure | `shared/risk/ontology/exposure.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `vulnerability` | Vulnerability | `shared/risk/ontology/vulnerability.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `financial_buffer` | Financial Buffer | `shared/risk/taxonomy/protective-factors.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `livelihood_diversity` | Livelihood Diversity | `shared/risk/taxonomy/protective-factors.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `treatment_continuity_active` | Treatment Continuity Active | `shared/risk/taxonomy/protective-factors.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `household_resilience` | Household Resilience | `shared/risk/ontology/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `absorptive_capacity` | Absorptive Capacity | `shared/risk/ontology/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `adaptive_capacity` | Adaptive Capacity | `shared/risk/ontology/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `recovery_capacity` | Recovery Capacity | `shared/risk/ontology/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `support_redundancy` | Support Redundancy | `shared/risk/ontology/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `role_substitution_capacity` | Role Substitution Capacity | `shared/risk/ontology/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `buffering_capacity` | Buffering Capacity | `shared/risk/ontology/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `recovery_resources` | Recovery Resources | `shared/risk/ontology/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `caregiving_continuity` | Caregiving Continuity | `shared/risk/ontology/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `decision_continuity` | Decision Continuity | `shared/risk/ontology/household-resilience.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk` | Risk | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_composition` | Risk Composition | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_characterization` | Risk Characterization | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_profile` | Risk Profile | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_horizon` | Risk Horizon | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_trend` | Risk Trend | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `risk_state` | Risk State | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 ## Verification Operations Domain
 
 **Authoritative file:** `verification-operations/verification-operations.yaml`
@@ -304,7 +304,7 @@ future domain designers do not create silent drift.
 
 | Item | Detail |
 |---|---|
-| Existing location | `shared/human-model/lifecycle-stages.yaml` |
+| Existing location | `shared/human-model/taxonomy/lifecycle-stages.yaml` |
 | Concept | Dependency type labels (physiological, developmental, medical, safety, nutritional, protective, educational, situational, health, economic, physical, social, legal) |
 | Situation | These type labels appear in `characteristic_dependencies` entries throughout lifecycle-stages.yaml. They are descriptive, not definitional — they describe the nature of each stage's dependencies without formally owning the dependency type vocabulary. |
 | Risk | When `dependency.yaml` is created, it will formally own the dependency type taxonomy. The labels used in lifecycle-stages.yaml must align with that taxonomy. |
@@ -315,7 +315,7 @@ future domain designers do not create silent drift.
 
 | Item | Detail |
 |---|---|
-| Existing location | `shared/human-model/lifecycle-stages.yaml` |
+| Existing location | `shared/human-model/taxonomy/lifecycle-stages.yaml` |
 | Concept | Health condition labels used descriptively (SAM, MAM, chronic illness, cognitive decline, frailty, polypharmacy) |
 | Situation | These appear in `characteristic_vulnerabilities` entries as descriptive references. They are not defined here — they are named as examples of vulnerabilities characteristic to each stage. |
 | Risk | When `health-conditions.yaml` is created, it will own the authoritative vocabulary for these conditions. The descriptive references in lifecycle-stages.yaml should remain consistent with that vocabulary. |
@@ -326,7 +326,7 @@ future domain designers do not create silent drift.
 
 | Item | Detail |
 |---|---|
-| Existing location | `shared/human-model/lifecycle-stages.yaml` |
+| Existing location | `shared/human-model/taxonomy/lifecycle-stages.yaml` |
 | Concept | Capability descriptions in `characteristic_capabilities` entries (e.g., independent mobility, emergent language, literacy, full economic productive capacity) |
 | Situation | These are descriptive profiles of what each stage can do. They anticipate the capability vocabulary that `capabilities.yaml` will formally define. |
 | Risk | When `capabilities.yaml` is created, the capability vocabulary it establishes must be consistent with the capability descriptions already recorded in lifecycle-stages.yaml. |

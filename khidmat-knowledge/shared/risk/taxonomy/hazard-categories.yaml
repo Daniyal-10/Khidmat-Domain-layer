@@ -17,7 +17,7 @@ status: "Phase 3.0 — Active"
 #                 is explicitly out of scope. See boundary_note below.
 # Governing ADRs: ADR-007, ADR-008, ADR-013
 # Cross-references:
-#   shared/risk/exposure.yaml
+#   shared/risk/ontology/exposure.yaml
 #     Exposure relates a person/household to a hazard category by
 #     hazard_category_ref. This file owns the category; exposure.yaml owns
 #     the relationship.

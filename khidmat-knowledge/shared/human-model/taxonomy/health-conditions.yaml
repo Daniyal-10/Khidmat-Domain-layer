@@ -16,19 +16,19 @@ status: "Phase 2.4 — Active"
 #          It does not answer "what should the system do about it?"
 # Governing ADRs: ADR-007, ADR-008
 # Cross-references:
-#   shared/human-model/capabilities.yaml
+#   shared/human-model/taxonomy/capabilities.yaml
 #     Capability domains are referenced by domain_ref in affected_capability_domains.
 #     This file defines the conditions that modify capabilities; capabilities.yaml
 #     defines the capability concepts themselves.
-#   shared/human-model/dependency.yaml
+#   shared/human-model/taxonomy/dependency.yaml
 #     Dependency types are referenced by dependency_ref in triggered_dependency_types.
 #     This file defines the conditions that create dependencies; dependency.yaml
 #     defines the dependency relationship concepts.
-#   shared/human-model/lifecycle-stages.yaml
+#   shared/human-model/taxonomy/lifecycle-stages.yaml
 #     Lifecycle stages are referenced by stage_ref in characteristic_lifecycle_manifestations.
 #     This file describes how conditions manifest at each stage; lifecycle-stages.yaml
 #     owns the stage definitions.
-#   shared/human-model/family-structure.yaml
+#   shared/human-model/ontology/family-structure.yaml
 #     Family support roles are referenced by role_ref in family_role_impact.
 #     This file describes how conditions affect family roles; family-structure.yaml
 #     owns the role definitions.

@@ -306,7 +306,7 @@ external_references:
     description: >
       Present only when reverification_trigger_type includes
       risk_escalation. References risk_trend: deteriorating from
-      shared/risk/risk.yaml by value, per
+      shared/risk/ontology/risk.yaml by value, per
       reverification-triggers.yaml. Verification Operations does not
       redefine risk_trend or any Risk Domain concept.
 

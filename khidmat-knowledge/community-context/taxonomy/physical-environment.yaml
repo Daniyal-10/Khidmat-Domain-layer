@@ -99,5 +99,5 @@ concepts:
 
 
 alignment_notes:
-  - constraint: "This taxonomy models the physical reality, NOT the hazard. 'Riverine' is a terrain; 'Flood' is a hazard. 'Mountainous' is terrain; 'Landslide' or 'Earthquake' is a hazard. Hazards remain strictly in `shared/risk/hazard-categories.yaml`."
+  - constraint: "This taxonomy models the physical reality, NOT the hazard. 'Riverine' is a terrain; 'Flood' is a hazard. 'Mountainous' is terrain; 'Landslide' or 'Earthquake' is a hazard. Hazards remain strictly in `shared/risk/taxonomy/hazard-categories.yaml`."
   - constraint: "C2 remediation: The `logistics_constraints` category was removed to eliminate semantic duplication with `accessibility.yaml#physical_accessibility`. `physical-environment.yaml` now strictly owns pure physical geography (terrain, climate, water, land use, remoteness), while `accessibility.yaml` canonically owns access mode classifications and physical access constraints."
