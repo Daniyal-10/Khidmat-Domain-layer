@@ -1,0 +1,9 @@
+version: "1.0.0"
+domain: registration
+file: registration/ontology/lifecycle-constraints.yaml
+status: placeholder
+
+# This file will contain descriptive lifecycle semantics, keyed by entity.
+# No lifecycle semantics defined yet.
+
+lifecycle_constraints: {}

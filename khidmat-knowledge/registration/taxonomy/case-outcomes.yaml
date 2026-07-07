@@ -1,6 +1,7 @@
-version: "1.0"
+version: "1.0.0"
 domain: registration
-file: taxonomy/case-outcomes.yaml
+file: registration/taxonomy/case-outcomes.yaml
+status: active
 
 purpose: >
   Classification of case status values at registration close.

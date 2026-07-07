@@ -1,7 +1,7 @@
-version: "1.1"
+version: "1.1.0"
 domain: registration
-file: taxonomy/evidence.yaml
-status: Level_1
+file: registration/taxonomy/evidence.yaml
+status: active
 
 purpose: >
   Classification of evidence types used during registration to support claims.

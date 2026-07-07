@@ -1,6 +1,6 @@
-version: "1.0"
+version: "1.0.0"
 domain: registration
-file: taxonomy/support-interventions.yaml
+file: registration/taxonomy/support-interventions.yaml
 status: placeholder
 
 purpose: >

@@ -1,6 +1,7 @@
-version: "1.0"
+version: "1.0.0"
 domain: registration
-file: taxonomy/referral-sources.yaml
+file: registration/taxonomy/referral-sources.yaml
+status: active
 
 purpose: >
   Classifies how the beneficiary came to register.

@@ -9,7 +9,7 @@ dashboard_and_more = """# Repository Architecture Improvement Program
 
 ## Executive Dashboard
 
-| Metric | Status / Value |
+| Metric | Status / Value | 
 |--------|----------------|
 | **Repository Health** | ⚠️ Needs Remediation |
 | **Current Architecture Status** | Conceptually strong, mechanically inconsistent |

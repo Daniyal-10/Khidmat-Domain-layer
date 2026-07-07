@@ -1,6 +1,7 @@
-version: "1.0"
+version: "1.0.0"
 domain: registration
-file: taxonomy/lead-statuses.yaml
+file: registration/taxonomy/lead-statuses.yaml
+status: active
 
 purpose: >
   Classification of lead status values during the intake and review phases.

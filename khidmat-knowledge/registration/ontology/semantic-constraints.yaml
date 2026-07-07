@@ -1,0 +1,9 @@
+version: "1.0.0"
+domain: registration
+file: registration/ontology/semantic-constraints.yaml
+status: placeholder
+
+# This file will contain registration's structural constraints / graph invariants.
+# Populated in Phase 3-4 of Registration_Migration_Plan.md.
+
+constraints: []

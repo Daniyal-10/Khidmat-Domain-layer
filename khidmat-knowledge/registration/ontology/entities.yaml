@@ -1,6 +1,7 @@
-version: "1.1"
+version: "1.1.0"
 domain: registration
-file: ontology/entities.yaml
+file: registration/ontology/entities.yaml
+status: active
 
 entities:
 

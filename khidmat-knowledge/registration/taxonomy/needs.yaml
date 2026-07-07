@@ -1,6 +1,7 @@
-version: "1.1"
+version: "1.1.0"
 domain: registration
-file: taxonomy/needs.yaml
+file: registration/taxonomy/needs.yaml
+status: active
 
 purpose: >
   Classification of needs identified during registration.

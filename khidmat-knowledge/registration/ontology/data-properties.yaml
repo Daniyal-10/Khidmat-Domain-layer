@@ -1,0 +1,9 @@
+version: "1.0.0"
+domain: registration
+file: registration/ontology/data-properties.yaml
+status: placeholder
+
+# This file will contain registration's datatype/value properties.
+# Populated in Phase 4 of Registration_Migration_Plan.md (attribute decomposition).
+
+data_properties: []
