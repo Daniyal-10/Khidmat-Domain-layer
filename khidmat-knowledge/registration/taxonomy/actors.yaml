@@ -1,7 +1,7 @@
 version: "1.1.0"
 domain: registration
 file: registration/taxonomy/actors.yaml
-status: active
+status: draft
 imports: shared/taxonomy/persons.yaml
 
 purpose: >
@@ -10,93 +10,106 @@ purpose: >
   who participate in registration conversations.
   Person base vocabulary is in shared/taxonomy/persons.yaml.
 
-registrant_types:
-  - id: beneficiary
-    label: Self-Registering Beneficiary
+schemes:
+  - id: registrant_types
     description: >
-      The beneficiary is conducting the registration themselves.
-      All claims are first-hand unless explicitly stated otherwise.
-    default_claim_basis: first_hand
-    questioning_note: >
-      May be reluctant to disclose full situation due to shame or distrust.
-      Approach with patience. Establish trust before asking sensitive questions.
+      DESCRIPTION PENDING — no authoritative source text exists in the legacy
+      registration taxonomy for this scheme/concept. A domain-knowledgeable author
+      must supply this description before the file's status can move from draft
+      to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+      Gap clarification.
+    concepts:
+      - id: beneficiary
+        label: Self-Registering Beneficiary
+        description: >
+          The beneficiary is conducting the registration themselves.
+          All claims are first-hand unless explicitly stated otherwise.
+        default_claim_basis: first_hand
+        questioning_note: >
+          May be reluctant to disclose full situation due to shame or distrust.
+          Approach with patience. Establish trust before asking sensitive questions.
 
-  - id: proxy
-    label: Proxy
-    description: >
-      A person registering on behalf of a beneficiary who is not present
-      or cannot register themselves.
-    subtypes:
+      - id: proxy
+        label: Proxy
+        description: >
+          A person registering on behalf of a beneficiary who is not present
+          or cannot register themselves.
+        questioning_note: >
+          Confirm the proxy's relationship to the beneficiary early.
+          Identify which claims are first-hand versus relayed.
+          Ask whether the beneficiary is aware of and consenting to registration.
+
       - id: family_member
         label: Family Member
         description: A relative of the beneficiary, likely with household knowledge
         default_claim_basis: first_hand
+        parent: proxy
       - id: community_member
         label: Community Member
         description: >
           A neighbour or community contact. May have incomplete household knowledge.
         default_claim_basis: second_hand
+        parent: proxy
       - id: professional_advocate
         label: Professional Advocate
         description: >
           A social worker, NGO caseworker, or formal representative.
           May have assessed the situation before registering.
         default_claim_basis: second_hand
-    questioning_note: >
-      Confirm the proxy's relationship to the beneficiary early.
-      Identify which claims are first-hand versus relayed.
-      Ask whether the beneficiary is aware of and consenting to registration.
+        parent: proxy
 
-  - id: volunteer
-    label: Volunteer
+      - id: volunteer
+        label: Volunteer
+        description: >
+          A Khidmat field worker registering a beneficiary after direct interaction.
+          Has observational knowledge and may have conducted an informal assessment.
+        default_claim_basis: observational
+        questioning_note: >
+          Volunteer registrations are often richer in observational detail.
+          Ask what was directly observed versus what was reported by the beneficiary.
+
+  - id: claim_basis
     description: >
-      A Khidmat field worker registering a beneficiary after direct interaction.
-      Has observational knowledge and may have conducted an informal assessment.
-    default_claim_basis: observational
-    questioning_note: >
-      Volunteer registrations are often richer in observational detail.
-      Ask what was directly observed versus what was reported by the beneficiary.
+      The epistemic relationship between the registrant and the claim they make.
+      Determines verification weight and follow-up questioning approach.
+    concepts:
+      - id: first_hand
+        label: First-Hand
+        description: Registrant has direct personal knowledge of this fact
+        verification_weight: standard
+      - id: second_hand
+        label: Second-Hand
+        description: Registrant was told this by another person
+        verification_weight: elevated
+        questioning_note: Ask who told them and whether that person can be contacted
+      - id: observational
+        label: Observational
+        description: Registrant observed this directly during a visit or interaction
+        verification_weight: reduced
+        questioning_note: Document what was observed and when
+      - id: inferred
+        label: Inferred
+        description: >
+          Registrant is concluding this from other information rather than
+          stating it as direct knowledge
+        verification_weight: elevated
+        questioning_note: Surface the basis for the inference explicitly
 
-claim_basis:
-  # The epistemic relationship between the registrant and the claim they make.
-  # Determines verification weight and follow-up questioning approach.
-  values:
-    - id: first_hand
-      label: First-Hand
-      description: Registrant has direct personal knowledge of this fact
-      verification_weight: standard
-    - id: second_hand
-      label: Second-Hand
-      description: Registrant was told this by another person
-      verification_weight: elevated
-      questioning_note: Ask who told them and whether that person can be contacted
-    - id: observational
-      label: Observational
-      description: Registrant observed this directly during a visit or interaction
-      verification_weight: reduced
-      questioning_note: Document what was observed and when
-    - id: inferred
-      label: Inferred
-      description: >
-        Registrant is concluding this from other information rather than
-        stating it as direct knowledge
-      verification_weight: elevated
-      questioning_note: Surface the basis for the inference explicitly
-
-proxy_consent:
-  # Whether the beneficiary is aware of and has consented to registration
-  values:
-    - id: confirmed
-      label: Confirmed
-      description: Beneficiary is aware and has consented
-    - id: unable_to_obtain
-      label: Unable to Obtain
-      description: >
-        Beneficiary cannot consent (incapacitated, minor, unreachable)
-        and a responsible adult is acting on their behalf
-    - id: not_yet_obtained
-      label: Not Yet Obtained
-      description: Registrant has not confirmed consent — follow up required
-    - id: not_applicable
-      label: Not Applicable
-      description: Registrant is the beneficiary
+  - id: proxy_consent
+    description: >
+      Whether the beneficiary is aware of and has consented to registration
+    concepts:
+      - id: confirmed
+        label: Confirmed
+        description: Beneficiary is aware and has consented
+      - id: unable_to_obtain
+        label: Unable to Obtain
+        description: >
+          Beneficiary cannot consent (incapacitated, minor, unreachable)
+          and a responsible adult is acting on their behalf
+      - id: not_yet_obtained
+        label: Not Yet Obtained
+        description: Registrant has not confirmed consent — follow up required
+      - id: not_applicable
+        label: Not Applicable
+        description: Registrant is the beneficiary

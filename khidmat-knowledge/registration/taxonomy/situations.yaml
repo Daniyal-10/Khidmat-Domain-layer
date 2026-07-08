@@ -1,7 +1,7 @@
 version: "1.1.0"
 domain: registration
 file: registration/taxonomy/situations.yaml
-status: active
+status: draft
 
 purpose: >
   Classifies the circumstances that create or sustain vulnerability.
@@ -10,136 +10,188 @@ purpose: >
   trajectory, affected domains, and trigger event.
   These are not alternatives — all three apply simultaneously.
 
-trajectory:
-  # How the situation developed over time
-  values:
-    - id: structural
-      label: Structural
-      description: >
-        Long-standing condition predating any specific event.
-        Chronic poverty, congenital disability, or persistent exclusion.
-      temporal_note: Onset is distant or indeterminate
-    - id: crisis_triggered
-      label: Crisis-Triggered
-      description: >
-        A specific event caused or significantly worsened the situation.
-        The event can be identified and dated.
-      temporal_note: Onset corresponds to the triggering event
-    - id: progressive
-      label: Progressive
-      description: >
-        The situation has been deteriorating gradually over time
-        with no single identifiable event as cause.
-      temporal_note: Onset is approximate, trajectory is downward
-    - id: acute
-      label: Acute
-      description: >
-        Sudden onset requiring immediate response.
-        Distinguished from crisis_triggered by severity and time-pressure,
-        not by the presence of an event.
-      temporal_note: Onset is recent, response window is narrow
+schemes:
+  - id: trajectory
+    description: >
+      How the situation developed over time
+    concepts:
+      - id: structural
+        label: Structural
+        description: >
+          Long-standing condition predating any specific event.
+          Chronic poverty, congenital disability, or persistent exclusion.
+        temporal_note: Onset is distant or indeterminate
+      - id: crisis_triggered
+        label: Crisis-Triggered
+        description: >
+          A specific event caused or significantly worsened the situation.
+          The event can be identified and dated.
+        temporal_note: Onset corresponds to the triggering event
+      - id: progressive
+        label: Progressive
+        description: >
+          The situation has been deteriorating gradually over time
+          with no single identifiable event as cause.
+        temporal_note: Onset is approximate, trajectory is downward
+      - id: acute
+        label: Acute
+        description: >
+          Sudden onset requiring immediate response.
+          Distinguished from crisis_triggered by severity and time-pressure,
+          not by the presence of an event.
+        temporal_note: Onset is recent, response window is narrow
 
-trigger_events:
-  # The specific event that caused or significantly worsened the situation.
-  # Only applies when trajectory is crisis_triggered or acute.
-  values:
-    - id: bereavement
-      label: Death of Income Earner or Guardian
-      inference_note: >
-        If the deceased was the head of household or primary earner,
-        infer economic vulnerability factor as likely present
-        even if registrant has not mentioned income loss.
-    - id: job_loss
-      label: Job Loss or Business Failure
-    - id: accident_or_injury
-      label: Accident or Sudden Injury
-      inference_note: >
-        If injury affects working-age adult, infer livelihood need as likely.
-        If injury affects child, infer education disruption as possible.
-    - id: illness_onset
-      label: Serious Illness Diagnosis
-      inference_note: >
-        Infer medical need as present.
-        If primary earner is affected, infer economic vulnerability.
-    - id: displacement
-      label: Displacement or Forced Relocation
-      inference_note: >
-        Infer documentation gap as likely.
-        Infer shelter need as present.
-        Raise safety flag for assessment.
-    - id: domestic_violence
-      label: Domestic Violence or Family Breakdown
-      inference_note: >
-        Raise safety flag immediately.
-        Do not ask for perpetrator details.
-        Ask only whether it is safe to visit.
-    - id: natural_disaster
-      label: Natural Disaster or Environmental Event
-    - id: legal_crisis
-      label: Arrest, Detention, or Legal Crisis
-      inference_note: >
-        Infer documentation gap as likely.
-        Infer economic disruption if primary earner is affected.
+  - id: trigger_events
+    description: >
+      The specific event that caused or significantly worsened the situation.
+      Only applies when trajectory is crisis_triggered or acute.
+    concepts:
+      - id: bereavement
+        label: Death of Income Earner or Guardian
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+        inference_note: >
+          If the deceased was the head of household or primary earner,
+          infer economic vulnerability factor as likely present
+          even if registrant has not mentioned income loss.
+      - id: job_loss
+        label: Job Loss or Business Failure
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+      - id: accident_or_injury
+        label: Accident or Sudden Injury
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+        inference_note: >
+          If injury affects working-age adult, infer livelihood need as likely.
+          If injury affects child, infer education disruption as possible.
+      - id: illness_onset
+        label: Serious Illness Diagnosis
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+        inference_note: >
+          Infer medical need as present.
+          If primary earner is affected, infer economic vulnerability.
+      - id: displacement
+        label: Displacement or Forced Relocation
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+        inference_note: >
+          Infer documentation gap as likely.
+          Infer shelter need as present.
+          Raise safety flag for assessment.
+      - id: domestic_violence
+        label: Domestic Violence or Family Breakdown
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+        inference_note: >
+          Raise safety flag immediately.
+          Do not ask for perpetrator details.
+          Ask only whether it is safe to visit.
+      - id: natural_disaster
+        label: Natural Disaster or Environmental Event
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+      - id: legal_crisis
+        label: Arrest, Detention, or Legal Crisis
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+        inference_note: >
+          Infer documentation gap as likely.
+          Infer economic disruption if primary earner is affected.
 
-affected_domains:
-  # The areas of life the situation impacts.
-  # Multiple domains may be affected simultaneously.
-  # These are not mutually exclusive.
-  values:
-    - id: economic
-      label: Economic
-      description: Income, employment, debt, or financial capacity
-      indicators:
-        - no_income
-        - irregular_income
-        - unmanageable_debt
-        - unable_to_meet_basic_expenses
-    - id: health
-      label: Health
-      description: Physical health, mental health, or disability
-      indicators:
-        - chronic_illness
-        - acute_illness
-        - disability
-        - malnutrition
-        - mental_health_condition
-        - post_surgery_recovery
-    - id: social
-      label: Social
-      description: Isolation, bereavement, family structure, community standing
-      indicators:
-        - widowed
-        - orphaned
-        - abandoned
-        - socially_isolated
-        - no_family_support
-    - id: environmental
-      label: Environmental
-      description: Housing, utilities, safety of living conditions
-      indicators:
-        - inadequate_shelter
-        - overcrowding
-        - unsafe_structure
-        - no_utilities
-        - disaster_affected
-    - id: dependent_load
-      label: Dependent Load
-      description: >
-        Disproportionate number of dependents relative to adults
-        with earning or caregiving capacity
-      indicators:
-        - many_young_children
-        - elderly_dependents
-        - disabled_dependents
-        - single_parent
-    - id: legal_and_documentation
-      label: Legal and Documentation
-      description: Identity documents, legal status, or rights
-      indicators:
-        - no_identity_documents
-        - uncertain_legal_status
-        - displaced_without_papers
-        - pending_legal_matter
+  - id: affected_domains
+    description: >
+      The areas of life the situation impacts.
+      Multiple domains may be affected simultaneously.
+      These are not mutually exclusive.
+    concepts:
+      - id: economic
+        label: Economic
+        description: Income, employment, debt, or financial capacity
+        indicators:
+          - no_income
+          - irregular_income
+          - unmanageable_debt
+          - unable_to_meet_basic_expenses
+      - id: health
+        label: Health
+        description: Physical health, mental health, or disability
+        indicators:
+          - chronic_illness
+          - acute_illness
+          - disability
+          - malnutrition
+          - mental_health_condition
+          - post_surgery_recovery
+      - id: social
+        label: Social
+        description: Isolation, bereavement, family structure, community standing
+        indicators:
+          - widowed
+          - orphaned
+          - abandoned
+          - socially_isolated
+          - no_family_support
+      - id: environmental
+        label: Environmental
+        description: Housing, utilities, safety of living conditions
+        indicators:
+          - inadequate_shelter
+          - overcrowding
+          - unsafe_structure
+          - no_utilities
+          - disaster_affected
+      - id: dependent_load
+        label: Dependent Load
+        description: >
+          Disproportionate number of dependents relative to adults
+          with earning or caregiving capacity
+        indicators:
+          - many_young_children
+          - elderly_dependents
+          - disabled_dependents
+          - single_parent
+      - id: legal_and_documentation
+        label: Legal and Documentation
+        description: Identity documents, legal status, or rights
+        indicators:
+          - no_identity_documents
+          - uncertain_legal_status
+          - displaced_without_papers
+          - pending_legal_matter
 
 # safety_flag is an attribute of the situation entity, not a classification type.
 # Its definition, triggering rules, and questioning guidance are in:

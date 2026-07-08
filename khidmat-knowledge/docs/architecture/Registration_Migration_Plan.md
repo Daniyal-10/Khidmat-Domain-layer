@@ -1,33 +1,98 @@
 # Registration Domain — Migration Implementation Plan
 
-> **Audience:** the executing agent (Sonnet). **Status:** awaiting approval — no
-> repository files may be modified until Phase 0 decisions are ratified.
+> **Audience:** the executing agent (Sonnet). **Status:** Phase 1 complete; Phase 2
+> paused — a Content Completion Gate is open (see Registration Content Gap Log below).
 > **Authorities:** `Canonical_Ontology_Schema.md`, `Canonical_Taxonomy_Schema.md`
-> (frozen). **Companion:** `Registration_Domain_Audit.md` (findings + architect
-> corrections).
+> (frozen structural contracts) and `Repository_Migration_Methodology.md` (frozen
+> process contract — governs *how* this plan is executed; this plan states only
+> what is specific to registration). **Companion:** `Registration_Domain_Audit.md`
+> (findings + architect corrections).
 >
 > **Design intent of this plan:** once Phase 0 is approved, every later phase is
-> **mechanical**. Sonnet makes **no architectural decisions** — it applies the rules
-> fixed here. Every semantic choice is resolved in Phase 0 with a recommended default;
-> the reviewer confirms or overrides each, and the confirmed value is written into
-> this plan's decision table before execution begins.
+> **mechanical**, under the principles and source-authority rules
+> `Repository_Migration_Methodology.md` defines once for every domain. This document
+> contains only registration-specific facts: which files are affected, which concepts
+> exist, which domain-specific decisions (D1–D6) had to be made, and the current
+> Content Gap Log. It does not restate general migration policy — see the methodology
+> document for that.
 
 ---
 
 ## How to use this plan
 
-1. **Phase 0 is a human gate.** Sonnet does not execute Phases 1–5 until the Decision
-   Table (§Phase 0) is filled with approved values. Each decision has a recommended
-   default; approval may accept all defaults in one pass.
-2. **Phases run in order.** Each phase lists explicit *preconditions*. Do not start a
-   phase whose preconditions are unmet.
-3. **Phase 5 is externally blocked** (manifest / Finding C-2 / cross-domain target
+This plan follows `Repository_Migration_Methodology.md` §1 (principles), §10
+(approval gates), and §9 (stopping criteria) exactly; only registration-specific
+sequencing notes are repeated here:
+
+1. **Phase 0 is a human gate** (methodology §10, Gate 0). Sonnet does not execute
+   Phases 1–5 until the Decision Table (§Phase 0) is filled with approved values.
+2. **Phases run in order**, each with explicit preconditions (methodology §10,
+   per-phase gate).
+3. **Phase 2 is additionally gated by the Content Completion Gate** (methodology
+   §6/§10): it cannot be marked complete while the Registration Content Gap Log
+   below is non-empty.
+4. **Phase 5 is externally blocked** (manifest / Finding C-2 / cross-domain target
    migration). Registration reaches "canonical up to the CURIE boundary" after Phase 4
    and "fully canonical" only after Phase 5 unblocks. This is expected and acceptable.
-4. **Validation after every phase.** Each phase has a checklist; all items must pass
-   before the next phase. A failing item halts and returns to review.
-5. **One phase = one reviewable commit** (or one per file where noted), never a mixed
-   mechanical+semantic change in a single commit.
+
+---
+
+## Registration Content Gap Log
+
+Per `Repository_Migration_Methodology.md` §5/§6: these records were checked
+exhaustively against every governed registration file, every other domain's
+governed files (via the canonical ownership registry), and — before that
+registry check was known to be the correct test — against general repository
+documentation (confirmed **not** a valid source per methodology §2). Nineteen
+records were confirmed as genuine content gaps (one of which, `registrant_types`,
+has an incidental match in `GLOSSARY.md`, which is documentation, not a governed
+file, and is therefore correctly excluded, not "recovered," to keep the domain's
+gap handling uniform).
+
+**Phase 2 does not complete until every row below is closed** by a
+domain-knowledgeable author writing the real `description` directly into the
+governed source file (methodology §6). No placeholder text and no `status`
+change are written by the migration process for any of these.
+
+| Status | File | Scheme / concept |
+|---|---|---|
+| OPEN | `actors.yaml` | `registrant_types` (scheme) |
+| OPEN | `needs.yaml` | `need_categories` (scheme) |
+| OPEN | `needs.yaml` | `need_duration` (scheme) |
+| OPEN | `needs.yaml` | `need_severity` (scheme) |
+| OPEN | `needs.yaml` | `need_severity.critical` |
+| OPEN | `needs.yaml` | `need_severity.high` |
+| OPEN | `needs.yaml` | `need_severity.medium` |
+| OPEN | `needs.yaml` | `need_severity.low` |
+| OPEN | `claims.yaml` | `claim_types` (scheme) |
+| OPEN | `evidence.yaml` | `evidence_types` (scheme) |
+| OPEN | `evidence.yaml` | `availability_classifications` (scheme) |
+| OPEN | `situations.yaml` | `trigger_events.bereavement` |
+| OPEN | `situations.yaml` | `trigger_events.job_loss` |
+| OPEN | `situations.yaml` | `trigger_events.accident_or_injury` |
+| OPEN | `situations.yaml` | `trigger_events.illness_onset` |
+| OPEN | `situations.yaml` | `trigger_events.displacement` |
+| OPEN | `situations.yaml` | `trigger_events.domestic_violence` |
+| OPEN | `situations.yaml` | `trigger_events.natural_disaster` |
+| OPEN | `situations.yaml` | `trigger_events.legal_crisis` |
+
+**Known carry-over requiring correction before Phase 2 resumes:** the working
+tree currently contains, in `actors.yaml`, `needs.yaml`, `claims.yaml`,
+`evidence.yaml`, and `situations.yaml`, placeholder description text and a
+`status: draft` change written under a since-superseded draft of Phase 2 rule
+10 (before this methodology was adopted). Two distinct corrections are needed
+once Phase 2 resumes, and they are independent of each other:
+- The fabricated placeholder text on the nineteen records above must be
+  **removed**, leaving those specific `description` fields absent (accurately
+  reflecting an open genuine gap, per methodology §5), while the surrounding
+  *structural* conversion those files already received (the `schemes:`/
+  `concepts:` shape, `parent`-expressed hierarchy, extension-field
+  preservation) is **not** undone — that part remains valid, mechanical work.
+- Each file's `status` must be **reverted to `active`** (its Phase 1 value) —
+  not because the content is complete, but because status is never inferred
+  from content completeness in the first place (methodology principle 1).
+This correction is **not** performed now; no domain files are modified by this
+update.
 
 ---
 
@@ -122,11 +187,14 @@ four-key header; the ontology module physically contains all five canonical file
 
 ---
 
-# PHASE 2 — Taxonomy Re-serialization (mechanical, gated by D2/D5)
+# PHASE 2 — Taxonomy Re-serialization (mechanical, gated by D2/D5, gated by Content Completion Gate)
 
 **Objective.** Convert all 9 taxonomy files to the canonical `schemes:` → `concepts:`
 list shape. **Mechanical/Semantic:** Mechanical (rules fixed by D2/D5).
-**Preconditions:** Phase 1 done; D2 and D5 approved.
+**Preconditions:** Phase 1 done; D2 and D5 approved; the Registration Content Gap
+Log above is **empty** (`Repository_Migration_Methodology.md` §6/§10, Content
+Completion Gate) — Phase 2 cannot be marked complete while it is not, and the
+known carry-over (above) must be corrected first.
 
 **Files affected:** all `registration/taxonomy/*.yaml`.
 
@@ -156,28 +224,49 @@ list shape. **Mechanical/Semantic:** Mechanical (rules fixed by D2/D5).
    `status: placeholder` + no `schemes:` (or empty); move the planning prose
    (`concepts_this_file_will_own`, `do_not_implement_until`) into `purpose:`.
 8. **`needs.yaml` (D5):** add the local `need_severity` scheme (`critical`/`high`/
-   `medium`/`low`) with the reconciliation `references` note.
-9. Cross-references stay as-is this phase (`imports:` untouched) — they are converted
-   in Phase 4/5. Do not invent CURIEs here.
+   `medium`/`low`). The `needs-assessment/taxonomy.yaml#need_severity` dependency
+   is a duplicated-content case (`Repository_Migration_Methodology.md` §3): no
+   `references:` entry is created and no CURIE is invented; the dependency is
+   recorded only as a plain `#` comment above the scheme, pending Phase 5.
+9. Cross-references stay as-is this phase (`imports:` untouched) — they are
+   converted in Phase 4/5, per the same methodology §3 rule.
+10. **Content-gap handling** (methodology §5/§6) applies to every scheme/concept
+    listed in the Registration Content Gap Log above. Phase 2 does not write
+    placeholder text or infer a `status` change for these records — see the
+    Content Gap Log for the current, authoritative list and the required
+    carry-over correction.
 
 **Expected output.** Nine taxonomy files, each a header + `schemes:` list of
 `id`-keyed scheme records containing `concepts:` lists with `parent`-expressed
-hierarchy; no `values:` wrappers, no embedded `subtypes`, no `type: enum`.
+hierarchy; no `values:` wrappers, no embedded `subtypes`, no `type: enum`. Every
+record listed in the Content Gap Log has its `description` field genuinely
+absent (not fabricated) until closed by content authoring; every other record
+has its real, migrated description.
 
 ### Phase 2 validation checklist
 - [ ] Every taxonomy file's payload root is a `schemes:` list; no root scheme-keys
       remain.
-- [ ] Every scheme has an explicit `id`; every concept has `id` + `description`.
+- [ ] Every scheme/concept not on the Content Gap Log has `id` + a real
+      `description`; every scheme/concept on the log has no fabricated text in
+      its place (methodology §5/§8).
 - [ ] No `subtypes`/`allowed_subtypes` remains; all hierarchy is `parent` within one
       scheme.
 - [ ] No `values:` wrapper and no `type: enum` remains anywhere.
 - [ ] Concept `id`s are unchanged from the originals (no renames — frozen ids,
       Taxonomy §3).
 - [ ] All extension fields still present, unmodified.
-- [ ] `claim_evidence_matrix` no longer resides in `evidence.yaml`.
-- [ ] `need_severity` scheme present in `needs.yaml` with reconciliation note (D5).
+- [ ] `claim_evidence_matrix` no longer resides in `evidence.yaml`; no `references:`
+      entry was created for `need_severity` (methodology §3).
+- [ ] `need_severity` scheme present in `needs.yaml` with a plain-comment Phase 5
+      pointer, not a `references:` entry.
+- [ ] No file's `status` was changed as an inference from content completeness
+      (methodology principle 1).
+- [ ] The Registration Content Gap Log is empty (Content Completion Gate,
+      methodology §10) — otherwise Phase 2 is not complete, regardless of how
+      much structural conversion has already been done.
 - [ ] YAML parses; concept counts per scheme equal the pre-migration counts
-      (+ the promoted subtypes, which were already present as children).
+      (+ the promoted subtypes, which were already present as children, + the
+      4 new `need_severity` concepts authorized by D5).
 
 ---
 
@@ -247,11 +336,13 @@ same-domain `taxonomy_ref`; finish entity cleanup. **Mechanical/Semantic:** Mech
 `registration/ontology/entities.yaml` (add D6 sub-entities; remove
 `key_attributes`/`attributes_ref`); delete `registration/ontology/attributes.yaml`.
 
-**Step 4.0 — N-R1 reconciliation (gate).** For every `gap_type`/`gap_condition` in
-`attributes.yaml`, confirm the same detection exists in
-`reasoning/gap-detection-rules.yaml`. Produce a diff list. Conditions already covered
-→ **drop** during decomposition. Conditions owned **only** by `attributes.yaml` → move
-to `gap-detection-rules.yaml` first. Do not proceed until the diff is empty.
+**Step 4.0 — N-R1 reconciliation (gate).** An application of
+`Repository_Migration_Methodology.md` §8's "verify before drop" validation
+requirement: for every `gap_type`/`gap_condition` in `attributes.yaml`, confirm
+the same detection exists in `reasoning/gap-detection-rules.yaml`. Produce a
+diff list. Conditions already covered → **drop** during decomposition.
+Conditions owned **only** by `attributes.yaml` → move to
+`gap-detection-rules.yaml` first. Do not proceed until the diff is empty.
 
 **Rules (deterministic):**
 1. **Scalar properties → `data-properties.yaml`** (Ontology §5) as a

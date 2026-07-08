@@ -1,7 +1,7 @@
 version: "1.1.0"
 domain: registration
 file: registration/taxonomy/needs.yaml
-status: active
+status: draft
 
 purpose: >
   Classification of needs identified during registration.
@@ -10,37 +10,45 @@ purpose: >
   Subtypes describe qualitative differences in need type, not duration.
   Duration is captured via the need_duration attribute separately.
 
-need_source:
-  # Whether the need was expressed by the registrant or assessed by the AI
-  values:
-    - id: expressed
-      label: Expressed
-      description: >
-        The registrant explicitly asked for this type of assistance.
-        Record verbatim what was requested.
-    - id: assessed
-      label: Assessed
-      description: >
-        The situation indicates this need is likely present even if
-        the registrant did not explicitly state it.
-        The AI inferred this from other information.
-    - id: both
-      label: Expressed and Assessed
-      description: >
-        The registrant expressed this need and the situation independently
-        supports its presence.
+schemes:
+  - id: need_source
+    description: >
+      Whether the need was expressed by the registrant or assessed by the AI
+    concepts:
+      - id: expressed
+        label: Expressed
+        description: >
+          The registrant explicitly asked for this type of assistance.
+          Record verbatim what was requested.
+      - id: assessed
+        label: Assessed
+        description: >
+          The situation indicates this need is likely present even if
+          the registrant did not explicitly state it.
+          The AI inferred this from other information.
+      - id: both
+        label: Expressed and Assessed
+        description: >
+          The registrant expressed this need and the situation independently
+          supports its presence.
 
-need_categories:
-
-  - id: food
-    label: Food
-    description: Insufficient access to adequate nutrition for household members
-    subtypes:
+  - id: need_categories
+    description: >
+      DESCRIPTION PENDING — no authoritative source text exists in the legacy
+      registration taxonomy for this scheme/concept. A domain-knowledgeable author
+      must supply this description before the file's status can move from draft
+      to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+      Gap clarification.
+    concepts:
+      - id: food
+        label: Food
+        description: Insufficient access to adequate nutrition for household members
       - id: general_food_supply
         label: General Food Supply
         description: >
           The household lacks access to sufficient food for normal sustenance.
           This is the default food need subtype.
+        parent: food
       - id: therapeutic_nutrition
         label: Therapeutic Nutrition
         description: >
@@ -53,23 +61,26 @@ need_categories:
           If therapeutic nutrition is identified, link to the specific
           household member it concerns. A medical claim will also be needed
           to support the prescription.
+        parent: food
 
-  - id: medical
-    label: Medical
-    description: Healthcare needs including treatment, medication, and rehabilitation
-    subtypes:
+      - id: medical
+        label: Medical
+        description: Healthcare needs including treatment, medication, and rehabilitation
       - id: surgical_treatment
         label: Surgical Treatment
         description: A procedure requiring hospitalisation or surgery
         requires_linked_member: true
+        parent: medical
       - id: ongoing_medication
         label: Ongoing Medication
         description: Recurring prescription medication
         requires_linked_member: true
+        parent: medical
       - id: rehabilitation
         label: Rehabilitation
         description: Post-injury or post-surgery recovery support
         requires_linked_member: true
+        parent: medical
       - id: assistive_device
         label: Assistive Device
         description: >
@@ -77,107 +88,167 @@ need_categories:
           Note: if the primary purpose is enabling return to work,
           also record a livelihood need.
         requires_linked_member: true
+        parent: medical
       - id: diagnostic_assessment
         label: Diagnostic Assessment
         description: >
           Clinical assessment has not yet occurred and is itself the need.
           The beneficiary has symptoms but no confirmed diagnosis.
         requires_linked_member: true
+        parent: medical
 
-  - id: shelter
-    label: Shelter
-    description: Housing instability or inadequate living conditions
-    subtypes:
+      - id: shelter
+        label: Shelter
+        description: Housing instability or inadequate living conditions
       - id: emergency_housing
         label: Emergency Housing
         description: >
           No current safe place to sleep. Immediate intervention required.
+        parent: shelter
       - id: rent_support
         label: Rent Support
         description: Unable to pay rent, at risk of eviction
+        parent: shelter
       - id: shelter_repair
         label: Shelter Repair
         description: Current shelter is structurally unsafe or environmentally inadequate
+        parent: shelter
 
-  - id: education
-    label: Education
-    description: Barriers to accessing education for a household member
-    requires_linked_member: true
-    subtypes:
+      - id: education
+        label: Education
+        description: Barriers to accessing education for a household member
+        requires_linked_member: true
       - id: school_fees
         label: School Fees
         description: Cannot afford tuition or enrollment fees
+        parent: education
       - id: educational_supplies
         label: Educational Supplies
         description: Lacks books, uniform, stationery, or required materials
+        parent: education
       - id: re_enrollment_support
         label: Re-Enrollment Support
         description: >
           Child is out of school and requires active assistance
           to re-enroll — not merely fee payment
+        parent: education
 
-  - id: livelihood
-    label: Livelihood
-    description: Inability to earn income or sustain economic activity
-    subtypes:
+      - id: livelihood
+        label: Livelihood
+        description: Inability to earn income or sustain economic activity
       - id: income_support
         label: Income Support
         description: >
           Temporary financial support while unable to work.
           Distinct from emergency cash — implies a trajectory toward
           restored income capacity.
+        parent: livelihood
       - id: equipment_or_tools
         label: Equipment or Tools
         description: Requires specific tools or equipment to resume work
+        parent: livelihood
       - id: skills_development
         label: Skills Development
         description: >
           Requires training, certification, or skills acquisition
           to access employment or restart economic activity
+        parent: livelihood
 
-  - id: psychosocial
-    label: Psychosocial
-    description: >
-      Mental health, emotional wellbeing, or social support needs.
-      Subtypes describe the nature of the need, not the response type.
-    subtypes:
+      - id: psychosocial
+        label: Psychosocial
+        description: >
+          Mental health, emotional wellbeing, or social support needs.
+          Subtypes describe the nature of the need, not the response type.
       - id: grief_and_bereavement
         label: Grief and Bereavement
         description: >
           Loss of a family member, particularly the primary caregiver or earner.
           Often co-occurs with economic and dependent-load vulnerability.
+        parent: psychosocial
       - id: trauma_response
         label: Trauma Response
         description: >
           Acute psychological distress following a specific event.
           Examples: disaster, violence, accident, displacement.
+        parent: psychosocial
       - id: chronic_stress_and_isolation
         label: Chronic Stress and Isolation
         description: >
           Persistent psychological burden from structural vulnerability
           with no single triggering event.
+        parent: psychosocial
       - id: caregiver_burden
         label: Caregiver Burden
         description: >
           The needs of a person who is the sole caregiver for a dependent
           with high support requirements.
+        parent: psychosocial
       - id: domestic_violence_aftermath
         label: Domestic Violence Aftermath
         description: >
           Psychological support needs following exposure to domestic violence.
           Safety flag must be assessed before this need can be addressed.
+        parent: psychosocial
 
-need_duration:
-  values:
-    - id: one_time
-      label: One-Time
-      description: A single intervention will resolve the need
-    - id: short_term
-      label: Short-Term
-      description: Support required for days to a few weeks
-    - id: recurring
-      label: Recurring
-      description: Support required on a regular cycle (weekly or monthly)
-    - id: long_term
-      label: Long-Term
-      description: Ongoing chronic need with no foreseeable resolution
+  - id: need_duration
+    description: >
+      DESCRIPTION PENDING — no authoritative source text exists in the legacy
+      registration taxonomy for this scheme/concept. A domain-knowledgeable author
+      must supply this description before the file's status can move from draft
+      to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+      Gap clarification.
+    concepts:
+      - id: one_time
+        label: One-Time
+        description: A single intervention will resolve the need
+      - id: short_term
+        label: Short-Term
+        description: Support required for days to a few weeks
+      - id: recurring
+        label: Recurring
+        description: Support required on a regular cycle (weekly or monthly)
+      - id: long_term
+        label: Long-Term
+        description: Ongoing chronic need with no foreseeable resolution
+
+  # Local placeholder pending Phase 5 reconciliation with
+  # needs-assessment/taxonomy.yaml#need_severity (D5; see
+  # Registration_Migration_Plan.md Phase 5). No references: entry is created
+  # here — needs-assessment is cross-domain, not manifest-ready, and Phase 2
+  # rule 9 forbids inventing a CURIE in this phase.
+  - id: need_severity
+    description: >
+      DESCRIPTION PENDING — no authoritative source text exists in the legacy
+      registration taxonomy for this scheme/concept. A domain-knowledgeable author
+      must supply this description before the file's status can move from draft
+      to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+      Gap clarification.
+    concepts:
+      - id: critical
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+      - id: high
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+      - id: medium
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.
+      - id: low
+        description: >
+          DESCRIPTION PENDING — no authoritative source text exists in the legacy
+          registration taxonomy for this scheme/concept. A domain-knowledgeable author
+          must supply this description before the file's status can move from draft
+          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+          Gap clarification.

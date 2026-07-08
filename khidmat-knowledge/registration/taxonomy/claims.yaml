@@ -1,7 +1,7 @@
 version: "1.1.0"
 domain: registration
 file: registration/taxonomy/claims.yaml
-status: active
+status: draft
 
 purpose: >
   Classification of assertions made during registration.
@@ -9,86 +9,96 @@ purpose: >
   Information quality is assessed along two independent dimensions:
   sufficiency (how much do we know) and consistency (does it hold together).
 
-claim_types:
-  - id: identity_claim
-    label: Identity Claim
+schemes:
+  - id: claim_types
     description: >
-      An assertion about who the beneficiary is and where they are.
-      Examples: name, age, location, relationship to registrant.
-    verification_approach: >
-      Physical presence at stated location.
-      Identity document if available.
-      Community reference if no document.
+      DESCRIPTION PENDING — no authoritative source text exists in the legacy
+      registration taxonomy for this scheme/concept. A domain-knowledgeable author
+      must supply this description before the file's status can move from draft
+      to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
+      Gap clarification.
+    concepts:
+      - id: identity_claim
+        label: Identity Claim
+        description: >
+          An assertion about who the beneficiary is and where they are.
+          Examples: name, age, location, relationship to registrant.
+        verification_approach: >
+          Physical presence at stated location.
+          Identity document if available.
+          Community reference if no document.
 
-  - id: situation_claim
-    label: Situation Claim
+      - id: situation_claim
+        label: Situation Claim
+        description: >
+          An assertion about the circumstances creating vulnerability.
+          Examples: husband died two months ago, we were displaced by the flood,
+          I lost my job when the factory closed.
+        verification_approach: >
+          Documentary evidence where available.
+          Observable conditions at visit.
+          Community or institutional reference.
+
+      - id: need_claim
+        label: Need Claim
+        description: >
+          An assertion that a specific need exists at the stated severity.
+          Examples: we have not eaten in three days, the child requires surgery,
+          we will be evicted at the end of this week.
+        verification_approach: >
+          Physical observation.
+          Medical documentation for health needs.
+          Institutional confirmation for education and livelihood needs.
+
+      - id: household_claim
+        label: Household Claim
+        description: >
+          An assertion about household composition, relationships, and dependents.
+          Examples: I have four children all under twelve,
+          my elderly father also lives with us,
+          there is no other adult in the home.
+        verification_approach: >
+          Observation of members present at visit.
+          Cross-reference with stated household size.
+          Birth or school records for children if available.
+
+  - id: information_sufficiency
     description: >
-      An assertion about the circumstances creating vulnerability.
-      Examples: husband died two months ago, we were displaced by the flood,
-      I lost my job when the factory closed.
-    verification_approach: >
-      Documentary evidence where available.
-      Observable conditions at visit.
-      Community or institutional reference.
+      How much do we know about this claim?
+      Governs whether more questioning is needed.
+    concepts:
+      - id: complete
+        label: Complete
+        description: All key information for this claim is present
+      - id: partial
+        label: Partial
+        description: >
+          Some information is present but important detail is missing.
+          Follow-up questions required.
+      - id: missing
+        label: Missing
+        description: >
+          The claim type is identified but almost no information has been provided.
+          Substantive questioning required.
 
-  - id: need_claim
-    label: Need Claim
+  - id: information_consistency
     description: >
-      An assertion that a specific need exists at the stated severity.
-      Examples: we have not eaten in three days, the child requires surgery,
-      we will be evicted at the end of this week.
-    verification_approach: >
-      Physical observation.
-      Medical documentation for health needs.
-      Institutional confirmation for education and livelihood needs.
-
-  - id: household_claim
-    label: Household Claim
-    description: >
-      An assertion about household composition, relationships, and dependents.
-      Examples: I have four children all under twelve,
-      my elderly father also lives with us,
-      there is no other adult in the home.
-    verification_approach: >
-      Observation of members present at visit.
-      Cross-reference with stated household size.
-      Birth or school records for children if available.
-
-information_sufficiency:
-  # How much do we know about this claim?
-  # Governs whether more questioning is needed.
-  values:
-    - id: complete
-      label: Complete
-      description: All key information for this claim is present
-    - id: partial
-      label: Partial
-      description: >
-        Some information is present but important detail is missing.
-        Follow-up questions required.
-    - id: missing
-      label: Missing
-      description: >
-        The claim type is identified but almost no information has been provided.
-        Substantive questioning required.
-
-information_consistency:
-  # Does the information hold together internally?
-  # Independent of sufficiency — a claim can be complete but contradictory.
-  values:
-    - id: consistent
-      label: Consistent
-      description: No internal contradictions detected
-    - id: ambiguous
-      label: Ambiguous
-      description: >
-        Information is present but open to more than one interpretation.
-        Clarifying question required.
-    - id: contradictory
-      label: Contradictory
-      description: >
-        Two or more statements about this claim conflict with each other.
-        Gentle challenge required before proceeding.
+      Does the information hold together internally?
+      Independent of sufficiency — a claim can be complete but contradictory.
+    concepts:
+      - id: consistent
+        label: Consistent
+        description: No internal contradictions detected
+      - id: ambiguous
+        label: Ambiguous
+        description: >
+          Information is present but open to more than one interpretation.
+          Clarifying question required.
+      - id: contradictory
+        label: Contradictory
+        description: >
+          Two or more statements about this claim conflict with each other.
+          Gentle challenge required before proceeding.
 
 # verifiable and evidence_available are boolean attributes of the claim entity.
 # They are defined in registration/ontology/attributes.yaml under the claim section.

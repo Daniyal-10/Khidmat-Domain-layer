@@ -8,55 +8,61 @@ purpose: >
   Referral source affects what the AI can reasonably assume
   is already known at the start of the conversation.
 
-referral_types:
-  - id: self_initiated
-    label: Self-Initiated
+schemes:
+  - id: referral_types
     description: >
-      Beneficiary or proxy chose to register without external direction.
-    contextual_prior: >
-      No prior assessment assumed.
-      Begin with open situational questions.
+      Classifies how the beneficiary came to register.
+      Referral source affects what the AI can reasonably assume
+      is already known at the start of the conversation.
+    concepts:
+      - id: self_initiated
+        label: Self-Initiated
+        description: >
+          Beneficiary or proxy chose to register without external direction.
+        contextual_prior: >
+          No prior assessment assumed.
+          Begin with open situational questions.
 
-  - id: community_referral
-    label: Community Referral
-    description: >
-      A neighbour, religious leader, or community contact directed
-      the beneficiary to register.
-    contextual_prior: >
-      Community member likely has some knowledge of the situation.
-      Ask what the referrer told them was needed.
+      - id: community_referral
+        label: Community Referral
+        description: >
+          A neighbour, religious leader, or community contact directed
+          the beneficiary to register.
+        contextual_prior: >
+          Community member likely has some knowledge of the situation.
+          Ask what the referrer told them was needed.
 
-  - id: institutional_referral
-    label: Institutional Referral
-    description: >
-      A hospital, school, NGO, mosque, or government office referred
-      the beneficiary. Referring institution may have an existing assessment.
-    contextual_prior: >
-      Ask the name of the institution and whether they provided any paperwork.
-      An existing assessment may reduce the information burden on the registrant.
-    referring_organisation_types:
-      - hospital_or_clinic
-      - school_or_madrasa
-      - mosque_or_religious_institution
-      - ngo_or_charity
-      - government_office
+      - id: institutional_referral
+        label: Institutional Referral
+        description: >
+          A hospital, school, NGO, mosque, or government office referred
+          the beneficiary. Referring institution may have an existing assessment.
+        contextual_prior: >
+          Ask the name of the institution and whether they provided any paperwork.
+          An existing assessment may reduce the information burden on the registrant.
+        referring_organisation_types:
+          - hospital_or_clinic
+          - school_or_madrasa
+          - mosque_or_religious_institution
+          - ngo_or_charity
+          - government_office
 
-  - id: volunteer_identification
-    label: Volunteer Identification
-    description: >
-      A Khidmat volunteer identified the beneficiary during field work
-      and is now registering them. This registration is likely being
-      conducted as a volunteer persona.
-    contextual_prior: >
-      Volunteer has observational knowledge.
-      Registration will have higher evidence quality for observable claims.
+      - id: volunteer_identification
+        label: Volunteer Identification
+        description: >
+          A Khidmat volunteer identified the beneficiary during field work
+          and is now registering them. This registration is likely being
+          conducted as a volunteer persona.
+        contextual_prior: >
+          Volunteer has observational knowledge.
+          Registration will have higher evidence quality for observable claims.
 
-  - id: repeat_registration
-    label: Repeat Registration
-    description: >
-      The beneficiary has registered before.
-      This registration is an update, change-of-situation, or new need.
-    contextual_prior: >
-      Previous case record should be located before proceeding.
-      Ask what has changed since the last registration.
-    requires: previous_case_id
+      - id: repeat_registration
+        label: Repeat Registration
+        description: >
+          The beneficiary has registered before.
+          This registration is an update, change-of-situation, or new need.
+        contextual_prior: >
+          Previous case record should be located before proceeding.
+          Ask what has changed since the last registration.
+        requires: previous_case_id

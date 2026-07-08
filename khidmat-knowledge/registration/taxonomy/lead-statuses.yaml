@@ -7,35 +7,40 @@ purpose: >
   Classification of lead status values during the intake and review phases.
   Governs the lead state machine prior to promotion to Case.
 
-lead_statuses:
-  - id: draft
-    label: Draft
-    description: Registration intake conversation is currently in progress.
+schemes:
+  - id: lead_statuses
+    description: >
+      Classification of lead status values during the intake and review phases.
+      Governs the lead state machine prior to promotion to Case.
+    concepts:
+      - id: draft
+        label: Draft
+        description: Registration intake conversation is currently in progress.
 
-  - id: submitted
-    label: Submitted
-    description: Conversation is complete, metadata extracted, and ready for review.
+      - id: submitted
+        label: Submitted
+        description: Conversation is complete, metadata extracted, and ready for review.
 
-  - id: assigned_for_review
-    label: Assigned for Review
-    description: Lead has been assigned to a volunteer for desk audit.
+      - id: assigned_for_review
+        label: Assigned for Review
+        description: Lead has been assigned to a volunteer for desk audit.
 
-  - id: under_review
-    label: Under Review
-    description: Volunteer reviewer is actively inspecting the lead details.
+      - id: under_review
+        label: Under Review
+        description: Volunteer reviewer is actively inspecting the lead details.
 
-  - id: approved
-    label: Approved
-    description: Lead approved and promoted to Case / verified Beneficiary.
+      - id: approved
+        label: Approved
+        description: Lead approved and promoted to Case / verified Beneficiary.
 
-  - id: needs_clarification
-    label: Needs Clarification
-    description: The reviewer has sent the lead back to intake to resolve information gaps.
+      - id: needs_clarification
+        label: Needs Clarification
+        description: The reviewer has sent the lead back to intake to resolve information gaps.
 
-  - id: rejected
-    label: Rejected
-    description: Lead rejected (suspected fraud, duplicate, or ineligible).
+      - id: rejected
+        label: Rejected
+        description: Lead rejected (suspected fraud, duplicate, or ineligible).
 
-  - id: escalated
-    label: Escalated
-    description: Anomalies detected; flagged for supervisor override.
+      - id: escalated
+        label: Escalated
+        description: Anomalies detected; flagged for supervisor override.
