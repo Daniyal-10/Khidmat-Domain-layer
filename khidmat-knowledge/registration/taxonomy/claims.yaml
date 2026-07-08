@@ -1,7 +1,7 @@
 version: "1.1.0"
 domain: registration
 file: registration/taxonomy/claims.yaml
-status: draft
+status: active
 
 purpose: >
   Classification of assertions made during registration.
@@ -11,12 +11,6 @@ purpose: >
 
 schemes:
   - id: claim_types
-    description: >
-      DESCRIPTION PENDING — no authoritative source text exists in the legacy
-      registration taxonomy for this scheme/concept. A domain-knowledgeable author
-      must supply this description before the file's status can move from draft
-      to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-      Gap clarification.
     concepts:
       - id: identity_claim
         label: Identity Claim

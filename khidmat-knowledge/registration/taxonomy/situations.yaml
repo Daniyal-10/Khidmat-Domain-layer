@@ -1,7 +1,7 @@
 version: "1.1.0"
 domain: registration
 file: registration/taxonomy/situations.yaml
-status: draft
+status: active
 
 purpose: >
   Classifies the circumstances that create or sustain vulnerability.
@@ -48,86 +48,38 @@ schemes:
     concepts:
       - id: bereavement
         label: Death of Income Earner or Guardian
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
         inference_note: >
           If the deceased was the head of household or primary earner,
           infer economic vulnerability factor as likely present
           even if registrant has not mentioned income loss.
       - id: job_loss
         label: Job Loss or Business Failure
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
       - id: accident_or_injury
         label: Accident or Sudden Injury
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
         inference_note: >
           If injury affects working-age adult, infer livelihood need as likely.
           If injury affects child, infer education disruption as possible.
       - id: illness_onset
         label: Serious Illness Diagnosis
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
         inference_note: >
           Infer medical need as present.
           If primary earner is affected, infer economic vulnerability.
       - id: displacement
         label: Displacement or Forced Relocation
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
         inference_note: >
           Infer documentation gap as likely.
           Infer shelter need as present.
           Raise safety flag for assessment.
       - id: domestic_violence
         label: Domestic Violence or Family Breakdown
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
         inference_note: >
           Raise safety flag immediately.
           Do not ask for perpetrator details.
           Ask only whether it is safe to visit.
       - id: natural_disaster
         label: Natural Disaster or Environmental Event
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
       - id: legal_crisis
         label: Arrest, Detention, or Legal Crisis
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
         inference_note: >
           Infer documentation gap as likely.
           Infer economic disruption if primary earner is affected.

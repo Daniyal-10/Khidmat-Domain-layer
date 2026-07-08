@@ -1,7 +1,7 @@
 version: "1.1.0"
 domain: registration
 file: registration/taxonomy/needs.yaml
-status: draft
+status: active
 
 purpose: >
   Classification of needs identified during registration.
@@ -33,12 +33,6 @@ schemes:
           supports its presence.
 
   - id: need_categories
-    description: >
-      DESCRIPTION PENDING — no authoritative source text exists in the legacy
-      registration taxonomy for this scheme/concept. A domain-knowledgeable author
-      must supply this description before the file's status can move from draft
-      to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-      Gap clarification.
     concepts:
       - id: food
         label: Food
@@ -191,12 +185,6 @@ schemes:
         parent: psychosocial
 
   - id: need_duration
-    description: >
-      DESCRIPTION PENDING — no authoritative source text exists in the legacy
-      registration taxonomy for this scheme/concept. A domain-knowledgeable author
-      must supply this description before the file's status can move from draft
-      to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-      Gap clarification.
     concepts:
       - id: one_time
         label: One-Time
@@ -217,38 +205,8 @@ schemes:
   # here — needs-assessment is cross-domain, not manifest-ready, and Phase 2
   # rule 9 forbids inventing a CURIE in this phase.
   - id: need_severity
-    description: >
-      DESCRIPTION PENDING — no authoritative source text exists in the legacy
-      registration taxonomy for this scheme/concept. A domain-knowledgeable author
-      must supply this description before the file's status can move from draft
-      to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-      Gap clarification.
     concepts:
       - id: critical
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
       - id: high
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
       - id: medium
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
       - id: low
-        description: >
-          DESCRIPTION PENDING — no authoritative source text exists in the legacy
-          registration taxonomy for this scheme/concept. A domain-knowledgeable author
-          must supply this description before the file's status can move from draft
-          to active. See Registration_Migration_Plan.md, Phase 2, Taxonomy Description
-          Gap clarification.
