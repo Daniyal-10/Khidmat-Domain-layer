@@ -1,20 +1,24 @@
 # Canonical Ontology Authoring Contract
 
-> **Phase:** FREEZE — architecture specification, awaiting review and explicit approval.
-> **This document changes no ontology content.** No domain has been migrated. Community Context is
-> **not** yet a reference implementation. This specification becomes the source of truth *first*;
-> migration happens only after approval.
+> **Phase:** RATIFIED and in effect. **Status update:** the architecture specification below has
+> been approved and applied. **Registration**, not Community Context, became the first domain
+> migrated to this contract (Phases 1–4 of `Registration_Migration_Plan.md` are complete); the
+> sequencing originally proposed here has been superseded by that outcome. Community Context
+> remains built against the pre-canonical, legacy structure and is the next domain targeted for
+> migration.
 >
-> **Sequencing (do not skip a step):**
+> **Sequencing (historical — superseded by actual migration order):**
 > 1. ✅ Freeze architecture — *this document.*
-> 2. → Review architecture — reviewer ratifies or amends the rules below.
-> 3. → Migrate Community Context — first reference implementation, only after step 2.
-> 4. → Validate, then migrate remaining domains.
+> 2. ✅ Review architecture — ratified.
+> 3. ✅ Migrate Registration — first reference implementation (Phases 1–4 complete; Phase 5
+>    cross-domain CURIE linking blocked on a repository-wide manifest and ratified base IRI).
+> 4. → Migrate Community Context, then remaining domains.
 >
-> **Amendment pass (pre-Phase-4, Registration):** §§17–21 extend this contract with Value Objects,
-> Roles, the Runtime/Reasoning boundary, and Future Entity Candidate — proposed under the same
-> ratification process as the rest of this document (governing ADR: ADR-023). They add vocabulary;
-> they do not alter §§2, 4–9, 13–15. See §21 for amendment status.
+> **Amendment pass (Registration Phase 4):** §§17–21 extend this contract with Value Objects,
+> Roles, the Runtime/Reasoning boundary, and Future Entity Candidate (governing ADR: ADR-023,
+> status: Proposed). Registration's Phase 4 (Attribute Decomposition) has been executed against
+> this vocabulary. They add vocabulary; they do not alter §§2, 4–9, 13–15. See §21 for amendment
+> status.
 
 **Purpose:** the normative authoring contract that every current and future domain's `ontology/`
 module must follow. The repository is the source of truth; OWL, RDF, RDFS, SHACL, LPG/JSON-LD, and
@@ -508,15 +512,13 @@ syntax is chosen entirely by the generator implementation (Finding F-3).
 
 ## 16. Approval gate
 
-This specification is **not** in effect until explicitly approved. On approval:
-- §§2, 4–9, 13–15 (RATIFIED) become binding immediately.
-- §§3, 10–12 (PROPOSED) become binding as conventions; their open values are finalized in C-2 / R-3.
-- Repository-wide migration additionally waits on the peer **Canonical_Taxonomy_Schema.md** (§1,
-  R-4) reaching the same approval state.
-- Only then does Community Context migration (step 3 of the sequencing banner) begin, as the first
-  reference implementation validating this document.
-
-Until approval, no ontology YAML in any domain is modified.
+This specification has been approved and is in effect:
+- §§2, 4–9, 13–15 (RATIFIED) are binding.
+- §§3, 10–12 (PROPOSED) are binding as conventions; their open values remain to be finalized in
+  C-2 / R-3.
+- Registration, not Community Context, was the domain that first migrated onto this contract (see
+  the status banner at the top of this document). Community Context migration remains a future
+  step.
 
 ---
 
@@ -692,12 +694,8 @@ the same reviewer-approval process §16 already establishes for §§3, 10–12. 
 or renumber any `[RATIFIED]` section (§§2, 4–9, 13–15) — every existing Entity, Relationship,
 Cardinality, Constraint, and domain rule in this contract stands exactly as ratified.
 
-Until §§17–20 are ratified:
-- No domain may author a composite `fields:` row, a role-typed data property under §18, or a
-  `future_entity_candidate` annotation.
-- No domain may treat the Runtime/Reasoning boundary (§19) as license to drop content from an
-  existing attribute file — the boundary only fixes *where* reasoning-produced facts belong once the
-  peer Runtime/Instance-State Schema exists; it does not by itself relocate anything.
-- Registration's Phase 4 (Attribute Decomposition) remains paused pending this ratification, and D6
-  in `Registration_Migration_Plan.md` is superseded and must be re-authored against §§17–20 before
-  Phase 4 executes.
+Formal ratification of §§17–20 under §16's approval-gate process is still pending. In practice,
+Registration's Phase 4 (Attribute Decomposition) has already been executed against the D6-REV
+table in `Registration_Migration_Plan.md`, which applies this vocabulary. Any future domain
+migration relying on §§17–20 should note that formal ratification remains open, even though
+Registration's own migration has proceeded on this basis.

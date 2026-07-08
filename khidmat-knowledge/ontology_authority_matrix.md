@@ -332,3 +332,14 @@ future domain designers do not create silent drift.
 | Risk | When `capabilities.yaml` is created, the capability vocabulary it establishes must be consistent with the capability descriptions already recorded in lifecycle-stages.yaml. |
 | Resolution required | Cross-check capability vocabulary in `capabilities.yaml` against lifecycle-stages.yaml descriptive entries. Align terminology. |
 | Status | Resolved |
+
+### FLAG-005: household entity defined independently in two domains
+
+| Item | Detail |
+|---|---|
+| Existing location | `shared/ontology/entities.yaml` (`id: household`, `parent: subject`) **and** `registration/ontology/entities.yaml` (`id: household`, its own fuller description, `cardinality_in_case: exactly_one`) |
+| Concept | `household` |
+| Situation | Both files declare a full `household` entity independently. Neither declares the other as canonical; registration's definition is not expressed as a reference to the shared entity. |
+| Risk | This is a live single-ownership conflict under ADR-008, not merely a future risk — two authoritative-looking definitions of the same concept currently coexist. |
+| Resolution required | Architectural decision on which domain owns `household` (most likely `shared/ontology/entities.yaml`, given cross-domain use by risk, community-context, and beneficiary-lifecycle), followed by updating the non-owning file to reference it instead of redefining it. |
+| Status | Open — identified during documentation synchronization; not resolved here per this task's constraint against ontology content changes. |

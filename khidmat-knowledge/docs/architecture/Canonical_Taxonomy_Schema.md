@@ -1,19 +1,19 @@
 # Canonical Taxonomy Authoring Contract
 
-> **Phase:** FREEZE — architecture specification, awaiting review and explicit approval.
-> **This document changes no taxonomy content.** No taxonomy file has been migrated. It fixes
-> Finding **R-4** (*Repository_Architecture_Improvement_Program.md*, Phase 2) and closes the
-> dependency the peer **[Canonical_Ontology_Schema.md](Canonical_Ontology_Schema.md)** left open at
-> its §1 and §3: the taxonomy record shape, the taxonomy-concept identifier scope, and how
-> `taxonomy_ref` resolves through the same deterministic, manifest-based mechanism as ontology
-> cross-domain references — rather than as an arbitrary file path.
+> **Phase:** RATIFIED and in effect. It fixes Finding **R-4**
+> (*Repository_Architecture_Improvement_Program.md*, Phase 2) and closes the dependency the peer
+> **[Canonical_Ontology_Schema.md](Canonical_Ontology_Schema.md)** left open at its §1 and §3: the
+> taxonomy record shape, the taxonomy-concept identifier scope, and how `taxonomy_ref` resolves
+> through the same deterministic, manifest-based mechanism as ontology cross-domain references —
+> rather than as an arbitrary file path.
 >
-> **Sequencing (do not skip a step):**
+> **Sequencing (historical — superseded by actual migration order):**
 > 1. ✅ Freeze ontology architecture — `Canonical_Ontology_Schema.md`.
 > 2. ✅ Freeze taxonomy architecture — *this document.*
-> 3. → Review both architectures — reviewer ratifies or amends the rules in each.
-> 4. → Migrate Community Context — first reference implementation, only after step 3.
-> 5. → Validate, then migrate remaining domains.
+> 3. ✅ Review both architectures — ratified.
+> 4. ✅ Migrate Registration — first reference implementation (not Community Context, as originally
+>    sequenced here; see `Canonical_Ontology_Schema.md`'s status banner).
+> 5. → Migrate Community Context, then validate and migrate remaining domains.
 
 **Purpose:** the normative authoring contract that every current and future domain's `taxonomy/`
 module must follow. The repository is the source of truth; every downstream representation is
@@ -661,19 +661,15 @@ remains a later phase, out of scope for both this step and the audit step.
 
 ## 17. Approval gate
 
-This specification is **not** in effect until explicitly approved. On approval:
-- §§4–10, 13–15 become binding immediately as the taxonomy authoring contract.
-- §3 and §8 become binding as conventions; their open literal values (base IRI, per-domain
-  prefixes) are finalized in C-2, identically to the ontology contract's own open items.
-- Repository-wide migration proceeds only once **both** this document and
-  `Canonical_Ontology_Schema.md` have reached the same approval state (per the sequencing banner
-  at the top of this document and of the ontology contract).
-- Only then does Community Context migration begin, as the first reference implementation
-  validating both documents together.
+This specification has been approved and is in effect:
+- §§4–10, 13–15 are binding as the taxonomy authoring contract.
+- §3 and §8 are binding as conventions; their open literal values (base IRI, per-domain
+  prefixes) remain to be finalized in C-2, identically to the ontology contract's own open items.
+- Registration, not Community Context, was the first domain migrated onto both this document and
+  `Canonical_Ontology_Schema.md` together (Phases 1–4 of `Registration_Migration_Plan.md`).
+  Community Context migration remains a future step.
 - **`Canonical_Ontology_Schema.md` and this document together complete the architecture freeze for
   the knowledge layer.** Further work should be directed at repository conformance, ontology and
   taxonomy content completion, and knowledge quality — not at authoring additional architecture
   documents. Any genuinely new architectural concern discovered during the audit or completion
   phases is raised as an amendment to one of these two documents, not as a new one.
-
-Until approval, no taxonomy YAML in any domain is modified.

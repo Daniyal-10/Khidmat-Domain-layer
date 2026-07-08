@@ -21,13 +21,17 @@ The primary intelligence of the Khidmat AI system lives here.
 
 | Layer | Status |
 |---|---|
-| Registration Domain | Complete (Level 1) |
+| Registration Domain | Complete (Level 1) — canonical reference implementation (Phases 1–4 of its migration plan complete; Phase 5 blocked on a repository-wide manifest) |
 | Shared Domain — base taxonomy | Active |
-| Governance Layer | Complete (Phase 4.0) |
-| Shared Human Model | Complete (Phase 2.4) |
-| Risk Domain | Complete (Phase 3.0) |
-| Verification Operations Domain | Active / In Progress (Phase 4.0) |
-| All other placeholder domains | Level 2 — inactive |
+| Shared Human Model | Complete |
+| Risk Domain | Complete |
+| Verification Operations Domain | Complete (core ontology and reasoning) |
+| Needs Assessment Domain | Complete |
+| Case Management Domain | Complete |
+| Beneficiary Lifecycle Domain | Complete |
+| Community Context Domain | Active / In Progress — substantially built, pending canonical migration |
+| Governance Layer | Complete, including the frozen `docs/architecture/Canonical_Ontology_Schema.md` and `Canonical_Taxonomy_Schema.md` contracts and ADR-023 |
+| All other placeholder domains (Volunteer Operations, Support Delivery, Programs, Impact, Consent & Privacy) | Level 2 — inactive |
 
 Source of truth: `ontology_completion_checklist.md`, `knowledge_layer_roadmap.md`
 
@@ -35,9 +39,14 @@ Source of truth: `ontology_completion_checklist.md`, `knowledge_layer_roadmap.md
 
 # Current Phase
 
-**Phase 4.0 — Verification Operations (Active / In Progress)**
+**Repository Architecture Freeze — Canonical Migration (Active / In Progress)**
 
-The Risk Domain (including reasoning) is complete. The Verification Operations core ontology (verification-operations.yaml) is complete. Operational verification models remain pending.
+The Risk Domain, Verification Operations, Needs Assessment, Case Management, and
+Beneficiary Lifecycle domains are complete. The canonical `ontology/`+`taxonomy/`
+authoring contract is frozen and Registration has been migrated onto it as the
+reference implementation. The current focus is completing the remaining registration
+content gaps (see `docs/architecture/Registration_Migration_Plan.md`'s Content Gap
+Log) and migrating Community Context onto the same canonical structure.
 
 Completed:
 
@@ -54,6 +63,8 @@ Completed:
 - risk.yaml
 - compound-risk-detection.yaml
 - verification-operations.yaml
+- registration/ontology/{entities,data-properties,relationships,semantic-constraints,lifecycle-constraints}.yaml
+  (canonical structure; supersedes the retired `attributes.yaml`)
 
 Governance completed:
 
@@ -64,27 +75,27 @@ Governance completed:
 - shared/human-model/governance.md
 - shared/risk/governance.md
 - verification-operations/verification-operations.yaml (Core Ontology)
+- docs/architecture/Canonical_Ontology_Schema.md, Canonical_Taxonomy_Schema.md,
+  Repository_Migration_Methodology.md (frozen structural and process contracts)
+- architecture-decisions/ADR-023 (ontology vocabulary extension: Value Objects, Roles,
+  Runtime/Reasoning Objects, Future Entity Candidate)
 
 Current objective:
 
-Verification Operations is now the active / in progress architecture target.
+Close registration's remaining Content Gap Log entries (genuine content gaps requiring
+a domain-knowledgeable author, per `docs/architecture/Repository_Migration_Methodology.md`
+§6) and begin Community Context's migration to the canonical structure.
 
-No Case Management implementation should begin until architecture review and Human Owner approval.
-
-| File | Purpose |
-|---|---|
-| `verification-operations.yaml` | Declares core Verification Operations ontology concepts and relationships |
+No new domain activation should begin until architecture review and Human Owner approval.
 
 ---
 
 # Immediate Objective
 
-Verification Operations is now the active / in progress architecture target.
-
-**Stage 1 Dependency Anomaly Note:**
-The Verification Operations core ontology is completed. However, there is a recognized Stage 1 dependency anomaly: the Support Intervention Taxonomy, Evidence Taxonomy, and Evidence attributes in the registration domain are incomplete.
-
-The immediate next priority is to reconcile these missing Stage 1 requirements to support the physical integration of Verification Operations without causing schema mismatch on Evidence.
+Community Context is the next domain targeted for canonical migration, following
+Registration's completed reference implementation. The Support Intervention Taxonomy
+in the registration domain remains a genuine content gap — it is blocked on an
+operational intervention catalogue from programme staff, not on architecture.
 
 ---
 

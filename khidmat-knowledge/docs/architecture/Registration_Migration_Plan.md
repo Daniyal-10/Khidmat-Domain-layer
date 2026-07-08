@@ -1,7 +1,11 @@
 # Registration Domain — Migration Implementation Plan
 
-> **Audience:** the executing agent (Sonnet). **Status:** Phase 1 complete; Phase 2
-> paused — a Content Completion Gate is open (see Registration Content Gap Log below).
+> **Audience:** the executing agent (Sonnet). **Status:** Phases 1–4 complete —
+> registration is canonical up to the CURIE boundary. Phase 5 remains blocked on
+> external dependencies (repository-wide manifest, ratified base IRI). The
+> Registration Content Gap Log below remains open and must be closed by a
+> domain-knowledgeable author before registration's content (as opposed to its
+> structure) is considered complete.
 > **Authorities:** `Canonical_Ontology_Schema.md`, `Canonical_Taxonomy_Schema.md`
 > (frozen structural contracts) and `Repository_Migration_Methodology.md` (frozen
 > process contract — governs *how* this plan is executed; this plan states only
@@ -17,13 +21,15 @@
 > document for that.
 >
 > **Amendment (post-Phase-3, pre-Phase-4):** `Canonical_Ontology_Schema.md` §§17–20 and
-> ADR-023 ratified an additive ontology-vocabulary extension — Value Object, Role,
+> ADR-023 introduced an additive ontology-vocabulary extension — Value Object, Role,
 > Runtime/Reasoning Object, Future Entity Candidate — as a fourth-and-fifth-and-sixth
 > citizen alongside Entity and Data Property. **D6 below is superseded by D6-REV.**
-> Phases 1–3 are unaffected and are not re-opened by this amendment. Only D6 (Phase 0)
-> and Phase 4 (Attribute Decomposition) are re-authored here; no other phase's text
-> changed. This amendment is planning-only — no `registration/` YAML has been modified
-> and Phase 4 has not executed.
+> Phases 1–3 are unaffected by this amendment. D6 (Phase 0) and Phase 4 (Attribute
+> Decomposition) were re-authored here and have since been **executed**: `attributes.yaml`
+> has been deleted, `data-properties.yaml` is populated (including the Value Object rows
+> below), and the `guardian_of` relationship row exists in `relationships.yaml`. The
+> D6-REV table and step-by-step checklist below are retained as the authoritative record
+> of what was done and why.
 
 ---
 
@@ -676,5 +682,6 @@ Registration is **fully canonical** when all hold:
 [ ] 6.  No action on O-R1/O-R5/O-R7/notes. Optional items only on explicit request.
 ```
 
-*End of plan. No repository files were modified in producing it. Awaiting approval of
-the Phase 0 Decision Table before any execution.*
+*End of plan. Phases 1–4 have been executed as described above; registration is
+canonical up to the CURIE boundary. Phase 5 remains parked pending its external
+preconditions (repository-wide manifest, ratified base IRI).*

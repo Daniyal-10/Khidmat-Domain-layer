@@ -2,12 +2,21 @@
 
 ## Current Active Phase
 
-Stage 4 — Verification Operations Domain (Active / In Progress)
+Repository Architecture Freeze — Canonical Ontology & Taxonomy Migration (Active / In Progress)
 
 Status:
 
 - Risk Domain complete (including core ontology and compound risk detection reasoning).
-- Verification Operations core ontology complete (Stage 1 dependency anomaly noted); operational verification models pending.
+- Verification Operations core ontology and reasoning complete.
+- Needs Assessment, Case Management, and Beneficiary Lifecycle domains complete (Level 1).
+- The canonical `ontology/`+`taxonomy/` authoring contract has been frozen
+  (`docs/architecture/Canonical_Ontology_Schema.md`, `docs/architecture/Canonical_Taxonomy_Schema.md`)
+  and ADR-023 extends it with Value Objects, Roles, and Runtime/Reasoning Objects.
+- Registration is the first domain migrated to the canonical structure
+  (Phases 1–4 complete per `docs/architecture/Registration_Migration_Plan.md`; Phase 5
+  cross-domain CURIE linking remains blocked on a repository-wide manifest).
+- Community Context is substantially built (12 taxonomy files, full ontology module)
+  but not yet migrated to the canonical structure.
 
 ## Domain Inventory
 
@@ -15,11 +24,13 @@ Status:
 |-------------------------|----------------|----------------------|
 | shared                  | Level 1        | Active               |
 | shared/risk             | Level 1        | Complete             |
-| registration            | Level 1        | Active               |
-| verification-operations | Level 1 (Core) | Active / In Progress |
+| registration            | Level 1        | Complete — canonical reference implementation |
+| community-context       | Level 1 (pre-canonical) | Active / In Progress |
+| verification-operations | Level 1        | Complete             |
 | needs-assessment        | Level 1        | Complete             |
 | case-management         | Level 1        | Complete             |
 | beneficiary-lifecycle   | Level 1        | Complete             |
+| consent-and-privacy     | Level 2   | Placeholder         |
 | volunteer-operations    | Level 2   | Placeholder         |
 | support-delivery        | Level 2   | Placeholder         |
 | programs                | Level 2   | Placeholder         |
@@ -98,11 +109,14 @@ Completed foundational layer:
 * Shared Human Model
 * Risk Domain
 * Needs Assessment Domain
+* Verification Operations Domain
+* Case Management Domain
+* Beneficiary Lifecycle Domain
 
 Upcoming layers:
 
-* Verification Operations (Current Active Target; core ontology complete, operational models pending)
-* Community Context Domain
+* Community Context Domain (built, pending canonical migration)
 * Outcome Measurement Layer
+* Level 2 placeholder domains (Volunteer Operations, Support Delivery, Programs, Impact, Consent & Privacy)
 
 These layers must activate according to knowledge_layer_roadmap.md dependencies.

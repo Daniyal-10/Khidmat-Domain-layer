@@ -560,23 +560,32 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
-### registration/ontology/attributes.yaml
+### registration/ontology/data-properties.yaml (supersedes retired `attributes.yaml`)
 
-**Purpose:** Defines the attribute schemas for all registration domain entities. The authoritative source for field names, types, constraints, and validation rules.
+**Purpose:** The canonical home for all datatype/value properties (and Value Object
+composite properties, per ADR-023 / `Canonical_Ontology_Schema.md` §17) for registration
+domain entities. Replaces the former `attributes.yaml`, which was deleted in Registration
+Migration Phase 4 (`docs/architecture/Registration_Migration_Plan.md`).
 
 **Concepts Owned:**
-- All attributes of: Beneficiary, Household, HouseholdMember, Need, Claim, Registrant, Situation, SupportIntervention, Case, Lead, VolunteerReview
+- All scalar and Value Object properties of: Beneficiary, Household, HouseholdMember, Need, Claim, Registrant, Situation, SupportIntervention, Case, Lead, VolunteerReview
+- Composite Value Object rows: `contact_point`, `location`, `income`, `treatment_plan` (flagged `future_entity_candidate`), `cost_estimate`, `requested_amount`, `non_resident_guardian`
 
-**Relationships Owned:** None. Structural relationships are in relationships.yaml.
+**Relationships Owned:** None. Structural relationships (including the ADR-023 `guardian_of` role relationship) are in `relationships.yaml`.
 
 **Maturity:** Mature and detailed. The most comprehensive file in the knowledge layer.
 
 **Known Gaps:**
-- Evidence entity attributes are absent despite Evidence being declared in entities.yaml.
 - `functional_capacity` on Beneficiary and HouseholdMember references shared taxonomy correctly but no inference rule operates on it. The attribute is fully defined but dormant.
-- Need.treatment_plan has `plan_known: boolean` but no model of what to do when plan_known is false beyond flagging a gap. The absence of a care pathway for a high-severity need should escalate severity classification, but no rule encodes this.
+- Need.treatment_plan has a `plan_known` field but no model of what to do when it is false beyond flagging a gap. The absence of a care pathway for a high-severity need should escalate severity classification, but no rule encodes this.
 
 **Overlap / Conflicts:** None.
+
+**Sibling canonical files (also part of this migration):** `registration/ontology/semantic-constraints.yaml`
+(target-neutral structural constraints, e.g. `beneficiary_age_validation`) and
+`registration/ontology/lifecycle-constraints.yaml` (placeholder — no lifecycle semantics
+authored yet). `registration/reasoning/evidence-rules.yaml` now holds the claim-evidence
+matrix relocated out of `evidence.yaml` per Migration Plan Decision D3.
 
 ---
 
@@ -904,6 +913,38 @@ dependency models are referenced by note pending those files' creation.
 
 ---
 
+## COMMUNITY CONTEXT DOMAIN
+
+---
+
+**Purpose:** Models the geographic, infrastructural, environmental, and social fabric
+a household sits inside — settlement type, accessibility, hazards, seasonal events,
+essential services, local organisations, livelihood patterns.
+
+**Files:** `community-context/taxonomy/*.yaml` (12 files: accessibility, community-assets,
+community-hazards, essential-services, geographic-hierarchy, infrastructure-types,
+livelihood-patterns, local-organizations, physical-environment, seasonal-events,
+settlement-types, transportation), plus a full `ontology/` module (`entities.yaml`,
+`relationships.yaml`, `lifecycle-constraints.yaml`, `semantic-constraints.yaml`), a
+governance document (`community-context-governance.md`), and a discovery report.
+
+**Maturity:** Substantially built, but authored against the pre-canonical structure —
+predates the frozen `docs/architecture/Canonical_Ontology_Schema.md` /
+`Canonical_Taxonomy_Schema.md` contract. It is the next domain targeted for migration
+onto that contract (see `docs/architecture/Repository_Migration_Methodology.md`).
+
+**Known Gaps:** No `data-properties.yaml`, no canonical four-key file header, taxonomy
+files use several incompatible legacy record shapes (documented in
+`docs/architecture/Canonical_Taxonomy_Schema.md` §2's audit). A leftover
+`_placeholder.yaml` still exists in the folder despite the domain being substantially
+built — a placeholder-hygiene item to resolve on migration.
+
+**Overlap / Conflicts:** None identified against other domains; internal boundary
+rules between its own taxonomy files are documented in
+`community-context-governance.md`.
+
+---
+
 ## PLACEHOLDER DOMAINS
 
 ---
@@ -1097,3 +1138,21 @@ through Full Humanitarian Knowledge Graph. Dependency graph summary
 and recommended file structure included.
 **Gap:** Must be updated when a stage is marked substantially complete
 or when a new domain is added to the planned sequence.
+
+---
+
+### docs/architecture/
+
+**Purpose:** Houses the frozen, ratified structural contracts every domain's
+`ontology/`+`taxonomy/` module must conform to (`Canonical_Ontology_Schema.md`,
+`Canonical_Taxonomy_Schema.md`), the reusable migration process
+(`Repository_Migration_Methodology.md`), the domain-specific migration plan for
+registration (`Registration_Migration_Plan.md`) and its companion conformance
+audit (`Registration_Domain_Audit.md`), and the architecture review documents that
+motivated the freeze (`Repository_Architecture_Report.md`,
+`Repository_Architecture_Improvement_Program.md`, `Registration_Content_Completion_Review.md`).
+**Assessment:** Complete and in effect for the two schema contracts and the migration
+methodology. Registration is the completed reference implementation under this
+contract; Community Context is the next domain to migrate.
+**Gap:** A repository-wide manifest (Finding R-1) and a ratified base IRI (Finding
+C-2) — both preconditions for Phase 5 of any domain's migration — do not yet exist.

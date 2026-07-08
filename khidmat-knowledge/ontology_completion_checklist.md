@@ -18,8 +18,11 @@
 ✓ Lead Statuses Taxonomy (`registration/taxonomy/lead-statuses.yaml`)
 ✓ Referral Sources Taxonomy (`registration/taxonomy/referral-sources.yaml`)
 ✓ Registration Entities Ontology (`registration/ontology/entities.yaml`)
-✓ Registration Attributes Ontology (`registration/ontology/attributes.yaml`)
+✓ Registration Data Properties Ontology (`registration/ontology/data-properties.yaml`) — supersedes retired `attributes.yaml` (Registration Migration Phase 4)
 ✓ Registration Relationships Ontology (`registration/ontology/relationships.yaml`)
+✓ Registration Semantic Constraints (`registration/ontology/semantic-constraints.yaml`)
+□ Registration Lifecycle Constraints (`registration/ontology/lifecycle-constraints.yaml`) — canonical placeholder, no lifecycle semantics authored yet
+✓ Registration Evidence Rules (`registration/reasoning/evidence-rules.yaml`) — claim-evidence matrix relocated from `evidence.yaml`
 ✓ Inference Rules (`registration/reasoning/inference-rules.yaml`)
 ✓ Severity Rules (`registration/reasoning/severity-rules.yaml`)
 ✓ Case Coherence Rules (`registration/reasoning/case-coherence-rules.yaml`)
@@ -37,6 +40,7 @@
 ✓ Organisation Types Taxonomy (`shared/taxonomy/organisations.yaml`)
 ✓ Location Taxonomy (`shared/taxonomy/locations.yaml`)
 ✓ Document Types Taxonomy (`shared/taxonomy/document-types.yaml`)
+✓ Time Taxonomy (`shared/taxonomy/time.yaml`)
 
 ### Architecture and Governance
 
@@ -103,6 +107,16 @@
 ✓ Case Management Ontology (`case-management/ontology.yaml`)
 ✓ Consent Placeholder (`consent-and-privacy/ontology.yaml`)
 
+### Repository Architecture Freeze (Complete — Registration Reference Implementation)
+
+✓ Canonical Ontology Authoring Contract (`docs/architecture/Canonical_Ontology_Schema.md`)
+✓ Canonical Taxonomy Authoring Contract (`docs/architecture/Canonical_Taxonomy_Schema.md`)
+✓ Repository Migration Methodology (`docs/architecture/Repository_Migration_Methodology.md`)
+✓ ADR-023 — Ontology Vocabulary Extension (Value Objects, Roles, Runtime/Reasoning Objects, Future Entity Candidate)
+✓ Registration Migration Phases 1–4 (`docs/architecture/Registration_Migration_Plan.md`) — canonical to the CURIE boundary
+□ Registration Migration Phase 5 (cross-domain CURIE layer) — blocked on repository-wide manifest and ratified base IRI
+□ Registration Content Gap Log (19 records) — genuine content gaps requiring a domain-knowledgeable author; see `docs/architecture/Registration_Migration_Plan.md`
+
 ---
 
 ## IN PROGRESS
@@ -114,23 +128,25 @@
   Blocker: Requires operational intervention catalogue confirmed with programme staff.
 
 □ Evidence Taxonomy (`registration/taxonomy/evidence.yaml`)
-  Status: Placeholder declared. Dependency on shared/taxonomy/document-types.yaml declared.
-  Blocker: Requires registration domain to need structured evidence classification beyond document type labels.
+  Status: Structurally migrated to the canonical `schemes:`/`concepts:` shape and `status: active`;
+  the Evidence entity's attributes are fully populated in `registration/ontology/data-properties.yaml`.
+  Blocker: Two schemes (`evidence_types`, `availability_classifications`) still lack a
+  domain-authored `description` — a genuine content gap, not a structural one (see the
+  Registration Content Gap Log in `docs/architecture/Registration_Migration_Plan.md`).
 
-### Shared Domain — In Progress
+### Community Context Domain — In Progress
 
-□ Time Taxonomy (`shared/taxonomy/time.yaml`)
-  Status: Placeholder declared. Will formalise duration bands and onset recency vocabulary.
-  Blocker: Requires cross-domain reporting to make consistent time vocabulary necessary.
+□ Canonical Migration (`community-context/ontology/*.yaml`, `community-context/taxonomy/*.yaml`)
+  Status: Domain content substantially built (12 taxonomy files, full ontology module) but
+  authored against the pre-canonical structure.
+  Blocker: None architectural — next in the migration queue after Registration's completed
+  reference implementation. See `docs/architecture/Repository_Migration_Methodology.md`.
 
 ---
 
 ## MISSING
 
 ### Registration Domain — Known Gaps Not Yet Addressed
-
-□ Evidence Entity Attributes
-  Gap: `registration/ontology/attributes.yaml` declares an evidence entity in entities.yaml but has no attribute block for it. Evidence entity attributes must be added before verification operations can function.
 
 □ Compound Situation Inference Rules
   Gap: All inference rules are single-trigger. No rule models the compounding of multiple simultaneous triggers. A bereavement + displacement compound is qualitatively different from either alone.
@@ -143,24 +159,34 @@
 
 ### Shared Layer — Missing Entities
 
-□ Person Entity (Shared, Persistent)
-  Gap: No cross-domain persistent Person entity exists. `shared/ontology/entities.yaml` is a placeholder. The promotion from registration Beneficiary (snapshot) to Person (persistent) has no structural seam.
+□ Person Entity (Shared) — Integration Gap Remains
+  Status: `shared/ontology/entities.yaml` is no longer a placeholder (`status: active`) and
+  already declares a `person` entity (id: `person`, parent: `subject`).
+  Remaining gap: the entity is a bare label with no attribute model, and no relationship
+  wires it to registration's `Beneficiary` (a per-case snapshot). The promotion seam from
+  Beneficiary snapshot to a persistent, cross-case Person still does not exist.
 
-□ Community Entity
-  Gap: No community context model. Location is for volunteer dispatch only.
+□ Community Entity — Now Exists, Pending Canonical Migration
+  Status: `community-context/ontology/entities.yaml` already declares a `community` entity
+  and related entities (`geographic_area`, `built_infrastructure`, `natural_resource`,
+  `transportation_network_asset`, `local_collective`). This closes the "no community
+  context model" gap. Remaining work is the domain's canonical migration (see the
+  Community Context section above), which will also need to resolve a dangling
+  `attributes_ref: ontology/attributes.yaml#community` reference — no such file exists
+  in `community-context/ontology/` under the canonical (or legacy) structure.
 
-□ Household Entity
+□ Household Entity — Ownership Reconciliation Needed
 
-Gap:
-The system currently models beneficiaries and family members but does not yet define a first-class household entity.
+Note: a first-class `household` entity now exists in **both**
+`shared/ontology/entities.yaml` (declared authoritative, inherits from `subject`) and
+`registration/ontology/entities.yaml` (an independent, fuller description, not
+declared as a reference to the shared entity). This is a dual-definition that
+`ontology_authority_matrix.md` and ADR-008's single-ownership rule are designed to
+prevent. Flagged here for architectural review — not resolved by this documentation
+pass, per this task's constraint against ontology/taxonomy content changes.
 
-Required for:
-
-- household vulnerability assessment
-- livelihood modelling
-- family dependency chains
-- seasonal risk analysis
-- community-level planning
+Remains required for: household vulnerability assessment, livelihood modelling,
+family dependency chains, seasonal risk analysis, community-level planning.
 
 ### New Domains Required — Not Yet Placeholdered
 
@@ -169,11 +195,13 @@ Required for:
 □ Outcome Indicator Vocabulary
   No outcome model exists. The system ends at case closure. Outcome indicators must be in shared vocabulary before beneficiary lifecycle, programs, or impact domains can measure change.
 
-□ Health Condition Taxonomy
-  Medical needs reference no health condition vocabulary. There is no chronic disease classification, no disability model beyond the three-value functional capacity enum, no malnutrition staging (SAM/MAM), no mental health condition vocabulary.
-
-□ Seasonal and Environmental Risk Model
-  No seasonal calendar. No environmental risk profile per geographic area. The damaged-roof-before-rainy-season reasoning scenario is entirely unsupported.
+Note: Health Condition Taxonomy and Seasonal/Environmental Risk Model, previously
+listed here as missing, are now substantially built and have been moved to COMPLETED
+and to the Community Context section above respectively:
+`shared/human-model/taxonomy/health-conditions.yaml` (chronic disease, disability,
+malnutrition staging including SAM/MAM, mental health conditions) and
+`community-context/taxonomy/{seasonal-events,community-hazards,geographic-hierarchy}.yaml`.
+Community Context's remaining work is canonical migration, not content authoring.
 
 ---
 
@@ -195,8 +223,9 @@ Required for:
 
 ### Future Knowledge Graph Domains (Not Yet Placeholdered)
 
-□ Community Context Domain
-  Owner: Shared or dedicated domain. Covers geographic area profiles, service access maps, seasonal risk calendars, community social capital indicators.
+Note: Community Context, previously listed here as not yet placeholdered, is now a
+substantially built domain (`community-context/`) — see the Community Context section
+above and the "In Progress" entry for its remaining canonical-migration work.
 
 □ Donor Matching Domain
   Future. Requires: Intervention taxonomy, program taxonomy, donor profile model.
@@ -231,9 +260,9 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Completed | 44+ files | Registration, Shared Human Model, Risk Domain, Beneficiary Lifecycle, and Verification Operations core established |
-| In Progress | 2 items | Evidence taxonomy, time taxonomy |
-| Missing (registration) | 3 items | Advanced reasoning and evidence modelling gaps |
-| Missing (shared) | 6 items | Person, Household, Community and governance entities |
-| Future (placeholder) | 4 domains | Planned operational domains (Stage 1 dependency anomaly noted; Verification Operations core complete but operational models pending) |
+| Completed | 50+ files | Registration (canonical reference implementation), Shared Human Model, Risk Domain, Needs Assessment, Case Management, Beneficiary Lifecycle, and Verification Operations all complete; repository architecture frozen (Canonical Ontology/Taxonomy Schemas, ADR-023) |
+| In Progress | 3 items | Support intervention taxonomy content (registration), evidence taxonomy content gaps (registration), Community Context canonical migration |
+| Missing (registration) | 2 items | Compound/lifecycle-stage-aware inference rules, medical severity + treatment plan interaction |
+| Missing (shared) | 2 items + 1 flagged conflict | Person entity lacks attributes and a Beneficiary integration seam; Outcome Indicator vocabulary does not yet exist; Household is defined in both `shared/` and `registration/` and needs an ownership decision (flagged, not resolved, by this pass) |
+| Future (placeholder) | 5 domains | Volunteer Operations, Support Delivery, Programs, Impact, Consent & Privacy — all Level 2, inactive |
 | Future (new) | 6 domains | Knowledge graph expansion domains |

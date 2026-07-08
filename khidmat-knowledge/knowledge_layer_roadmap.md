@@ -41,8 +41,12 @@ Placeholder Domains [DECLARED, NOT ACTIVE]
 
 Missing Entirely
 
-├── Community context
 └── Outcome indicators
+
+Built, Pending Canonical Migration
+
+└── Community Context (12 taxonomy files, full ontology module — built against the
+    pre-canonical structure; not yet migrated to the frozen ontology/taxonomy contract)
 
 Current Active Phase
 
@@ -279,6 +283,11 @@ are complete and stable.
 ---
 
 ## Stage 8 — Community Context Domain
+
+**Note:** Substantial Community Context content already exists (`community-context/taxonomy/*`,
+12 files, and a full `ontology/` module) but was authored against the pre-canonical structure.
+Its remaining work is migration to the frozen `Canonical_Ontology_Schema.md` /
+`Canonical_Taxonomy_Schema.md` contract, not authoring from scratch.
 
 **What this stage produces:**
 - Geographic area profiles (district, block, village with environmental and service access attributes)
