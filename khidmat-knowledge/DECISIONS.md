@@ -9,6 +9,12 @@ If a decision is reversed, a new entry is added explaining the reversal.
 
 **Note:** The formal Architecture Decision Record (ADR) system is now maintained in the `architecture-decisions/` directory. The contents of this file have been migrated to individual ADR documents.
 
+**Scope of this file:** This log mirrors **ADR-001 through ADR-014 only**, as a
+historical convenience. **ADR-015 onward exist only in `architecture-decisions/`**
+and are not, and will not be, duplicated here. For the complete, authoritative
+record of all decisions (including ADR-015–023) and their current status, see
+`architecture-decisions/README.md`'s ADR index.
+
 ---
 
 ## ADR-001: Verification Brief is a Projection, Not an Entity

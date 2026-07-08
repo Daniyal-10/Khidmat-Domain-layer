@@ -32,6 +32,29 @@ vocabulary — not two.
 
 ---
 
+## Table of Contents
+
+- [0. How to read this document — ratification status](#0-how-to-read-this-document--ratification-status)
+- [1. Scope](#1-scope)
+- [2. Audit — what currently exists, and why it blocks deterministic generation](#2-audit--what-currently-exists-and-why-it-blocks-deterministic-generation)
+- [3. Identifier uniqueness, scope & concept-addressing granularity](#3-identifier-uniqueness-scope--concept-addressing-granularity--proposed)
+- [4. Taxonomy file header](#4-taxonomy-file-header--ratified-by-reference-to-the-ontology-contract)
+- [5. Concept-scheme record — `schemes:`](#5-concept-scheme-record--schemes--proposed)
+- [6. Concept record — `concepts:`](#6-concept-record--concepts--proposed)
+- [7. Hierarchy within a scheme](#7-hierarchy-within-a-scheme--ratified-by-reference-to-the-ontology-contract)
+- [8. Cross-reference conventions](#8-cross-reference-conventions--proposed-form-only-values-ratified-in-c-2)
+- [9. Taxonomy concept ownership](#9-taxonomy-concept-ownership--ratified-by-reference-to-adr-008)
+- [10. Naming conventions](#10-naming-conventions--proposed)
+- [11. Localization strategy](#11-localization-strategy--proposed-explicitly-minimal)
+- [12. Structural invariants](#12-structural-invariants--proposed-definition-of-conformance-only-not-a-validator-spec)
+- [13. Taxonomy file template](#13-taxonomy-file-template--ratified-shape)
+- [14. Illustrative example](#14-illustrative-example--not-applied-to-any-domain)
+- [15. Conformance summary](#15-conformance-summary-what-an-approved-generator-may-assume)
+- [16. Future work](#16-future-work)
+- [17. Approval gate](#17-approval-gate)
+
+---
+
 ## 0. How to read this document — ratification status
 
 Each section is tagged so the reviewer can see what is already agreed versus newly proposed:

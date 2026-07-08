@@ -212,22 +212,54 @@ This checklist exists to prevent future AI systems from closing a task without c
 
 # Repository Authority Order
 
-When governance files disagree, authority is resolved in the following order:
+This repository has two distinct kinds of governance, and a file disagreement is
+resolved differently depending on which kind it is. Do not apply one order to a
+question the other kind governs.
+
+## A. Concept Ownership Governance
+
+Governs *what a domain may model* — which concept exists, who owns it, whether a
+domain is allowed to activate. When files in this list disagree:
 
 1. Human Owner decisions
-2. DECISIONS.md (accepted ADRs)
-3. ARCHITECTURE.md
-4. knowledge_layer_roadmap.md
-5. ontology_authority_matrix.md
-6. knowledge_layer_inventory.md
-7. ontology_completion_checklist.md
-8. GLOSSARY.md
+2. The ADR log (`architecture-decisions/` — the complete, authoritative record;
+   `DECISIONS.md` mirrors only ADR-001–014 and is not itself a second source of
+   truth for those — see `DECISIONS.md`'s own note)
+3. `ARCHITECTURE.md`
+4. `knowledge_layer_roadmap.md`
+5. `ontology_authority_matrix.md`
+6. `knowledge_layer_inventory.md`
+7. `ontology_completion_checklist.md`
+8. `GLOSSARY.md`
 
-Lower-ranked files must be updated to align with higher-ranked files.
+## B. Canonical File-Shape Governance
 
-Conflicts must not be resolved by silent modification of a lower-ranked file if doing so contradicts a higher-ranked file. When a genuine conflict exists between two files at different authority levels, it should be surfaced and resolved through a new ADR rather than resolved silently.
+Governs *how a domain's `ontology/`/`taxonomy/` files must be structured* —
+header shape, entity/property/relationship serialization, constraint format.
+When a file's shape and a domain's actual YAML disagree, or when applying a
+migration:
 
-This order becomes essential as the repository grows and multiple AI sessions operate across the same governance layer.
+1. Human Owner decisions
+2. `docs/architecture/Canonical_Ontology_Schema.md` and
+   `docs/architecture/Canonical_Taxonomy_Schema.md` (frozen and ratified — "when
+   this document and a domain file disagree, this document wins")
+3. `docs/architecture/Repository_Migration_Methodology.md` (governs *how* a
+   domain migrates onto the two contracts above; never overrides them)
+4. A domain's own migration plan (e.g. `docs/architecture/Registration_Migration_Plan.md`)
+
+A domain's ontology/taxonomy content (what it means) is never decided by order B —
+that is always order A's concern. Order B only decides the shape a already-approved
+concept is serialized into.
+
+Lower-ranked files, in either order, must be updated to align with higher-ranked
+files. Conflicts must not be resolved by silent modification of a lower-ranked file
+if doing so contradicts a higher-ranked one. When a genuine conflict exists between
+two files at different authority levels, it should be surfaced and resolved through
+a new ADR (for order A) or a documented amendment to the relevant contract (for
+order B) rather than resolved silently.
+
+This order becomes essential as the repository grows and multiple AI sessions
+operate across the same governance layer.
 
 ---
 
@@ -277,25 +309,32 @@ Governed by ADR-009: Dependency-Driven Domain Activation, and knowledge_layer_ro
 
 # Current Priority
 
-**Current focus: shared/human-model/**
+**Current focus: Repository Architecture Freeze — Canonical Migration**
 
-The Shared Human Model is the active design and implementation priority. It is Stage 2 of the knowledge_layer_roadmap.md and is a prerequisite for every subsequent stage.
+The Shared Human Model, Risk Domain, Verification Operations, Needs Assessment, Case
+Management, and Beneficiary Lifecycle domains are all complete. The knowledge layer's
+active priority has moved on from domain content to repository-wide structural
+conformance:
 
-**Planned files:**
-
-| File | Concepts |
-|---|---|
-| `lifecycle-stages.yaml` | Lifecycle stages from infant to elderly; reasoning-level developmental contexts |
-| `capabilities.yaml` | Human capabilities as strengths and assets; not deficit-only |
-| `dependency.yaml` | Dependency relationships: developmental, physical, financial, emotional, legal |
-| `family-structure.yaml` | Family as a social unit; distinct from household; internal relationships |
-| `health-conditions.yaml` | Health condition vocabulary; chronic disease; disability; malnutrition staging |
+- The canonical `ontology/`+`taxonomy/` authoring contract is frozen
+  (`docs/architecture/Canonical_Ontology_Schema.md`, `docs/architecture/Canonical_Taxonomy_Schema.md`),
+  extended by ADR-023 (Value Objects, Roles, Runtime/Reasoning Objects, Future Entity
+  Candidate).
+- **Registration is canonical through Phase 4** of its migration plan
+  (`docs/architecture/Registration_Migration_Plan.md`) — `attributes.yaml` has been
+  deleted and replaced by the canonical `entities.yaml` / `data-properties.yaml` /
+  `relationships.yaml` / `semantic-constraints.yaml` / `lifecycle-constraints.yaml` set.
+  Phase 5 (cross-domain CURIE linking) remains blocked on a repository-wide manifest.
+- **Community Context is the next domain targeted for canonical migration**, following
+  Registration as the reference pattern (`docs/architecture/Repository_Migration_Methodology.md`).
 
 **Governance constraint:**
 
-No Risk Domain work begins until the Shared Human Model design is complete and approved.
-
-The Risk Domain (Stage 3) depends on lifecycle stage and capability concepts from the Shared Human Model. Proceeding without those foundations causes the Risk Domain to invent person concepts it does not own, violating ADR-007 and ADR-008.
+No new domain concept is authored ahead of the canonical file-shape contracts.
+Registration's own remaining Content Gap Log entries (genuine content gaps, not
+structural ones) must be closed by a domain-knowledgeable author before Registration's
+migration is considered fully complete — see
+`docs/architecture/Registration_Migration_Plan.md`.
 
 ---
 

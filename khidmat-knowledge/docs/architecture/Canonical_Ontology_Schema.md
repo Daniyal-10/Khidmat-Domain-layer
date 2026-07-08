@@ -20,6 +20,34 @@
 > this vocabulary. They add vocabulary; they do not alter §§2, 4–9, 13–15. See §21 for amendment
 > status.
 
+## Table of Contents
+
+- [0. How to read this document — ratification status](#0-how-to-read-this-document--ratification-status)
+- [1. Scope](#1-scope)
+- [2. Repository & module layout](#2-repository--module-layout--ratified)
+- [3. Identifier uniqueness, scope & CURIE stability](#3-identifier-uniqueness-scope--curie-stability--proposed)
+- [4. `entities.yaml` — classes](#4-entitiesyaml--classes--ratified)
+- [5. `data-properties.yaml` — datatype / value properties](#5-data-propertiesyaml--datatype--value-properties--ratified)
+- [6. `relationships.yaml` — reusable object properties](#6-relationshipsyaml--reusable-object-properties--ratified)
+- [7. Cardinality model](#7-cardinality-model--ratified)
+- [8. Class hierarchy](#8-class-hierarchy--ratified)
+- [9. Constraints files](#9-constraints-files--ratified)
+- [10. Namespace & cross-domain resolution conventions](#10-namespace--cross-domain-resolution-conventions--proposed-form-only-values-ratified-in-c-2)
+- [11. Reusable predicate ownership](#11-reusable-predicate-ownership--proposed)
+- [12. Metadata / file-header conventions](#12-metadata--file-header-conventions--proposed-shape-only-policy-ratified-in-r-3)
+- [13. Domain template](#13-domain-template--ratified-shape-proposed-headers-per-12)
+- [14. Illustrative example](#14-illustrative-example--not-applied-to-any-domain)
+- [15. Conformance summary](#15-conformance-summary-what-an-approved-generator-may-assume)
+- [Appendix A — Non-normative generation notes](#appendix-a--non-normative-generation-notes)
+- [16. Approval gate](#16-approval-gate)
+- [17. Value Objects (ADR-023, Amendment A1)](#17-value-objects--proposed--amendment-a1-adr-023)
+- [18. Roles (ADR-023, Amendment A2)](#18-roles--proposed--amendment-a2-adr-023)
+- [19. Runtime / Reasoning Objects (ADR-023, Amendment A3)](#19-runtime--reasoning-objects--proposed--amendment-a3-adr-023)
+- [20. Future Entity Candidate (ADR-023, Amendment A4)](#20-future-entity-candidate--proposed--amendment-a4-adr-023)
+- [21. Amendment status](#21-amendment-status)
+
+---
+
 **Purpose:** the normative authoring contract that every current and future domain's `ontology/`
 module must follow. The repository is the source of truth; OWL, RDF, RDFS, SHACL, LPG/JSON-LD, and
 every other representation are *generated from* it, never authored *into* it. This document exists

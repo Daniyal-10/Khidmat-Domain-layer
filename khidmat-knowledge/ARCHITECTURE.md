@@ -1,5 +1,17 @@
 # Khidmat Knowledge Architecture
 
+## Table of Contents
+
+- [Current Active Phase](#current-active-phase)
+- [Domain Inventory](#domain-inventory)
+- [Knowledge Governance Files](#knowledge-governance-files)
+- [Dependency Rules](#dependency-rules)
+- [Shared Human Model](#shared-human-model)
+- [Maturity Levels](#maturity-levels)
+- [Future Domain Layers](#future-domain-layers)
+
+---
+
 ## Current Active Phase
 
 Repository Architecture Freeze — Canonical Ontology & Taxonomy Migration (Active / In Progress)

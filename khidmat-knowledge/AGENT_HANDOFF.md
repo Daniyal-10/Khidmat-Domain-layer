@@ -101,12 +101,12 @@ operational intervention catalogue from programme staff, not on architecture.
 
 # What Must Not Be Done
 
-- Do not activate placeholder domains
-- Do not create Case Management files
+- Do not activate the remaining Level 2 placeholder domains (Volunteer Operations, Support Delivery, Programs, Impact, Consent & Privacy)
 - Do not redefine concepts already owned by the shared layer
 - Do not bypass `ontology_authority_matrix.md`
 - Do not create ontology concepts without architectural review and Human Owner approval
 - Do not modify operational software
+- Do not author ontology or taxonomy YAML off the canonical file-shape contracts (`docs/architecture/Canonical_Ontology_Schema.md`, `Canonical_Taxonomy_Schema.md`)
 
 ---
 
@@ -118,12 +118,19 @@ Review these files before beginning any ontology work:
 |---|---|
 | `AI_WORKFLOW.md` | Who does what; mandatory workflow; authority order |
 | `ARCHITECTURE.md` | Domain inventory; dependency rules; maturity levels |
-| `DECISIONS.md` | Architectural Decision Log (ADR-001 through ADR-009) |
+| `docs/architecture/Canonical_Ontology_Schema.md` | Frozen file-shape contract every domain's `ontology/` module must follow |
+| `docs/architecture/Canonical_Taxonomy_Schema.md` | Frozen file-shape contract every domain's `taxonomy/` module must follow |
+| `docs/architecture/Repository_Migration_Methodology.md` | The process by which a legacy domain is brought into conformance with the two contracts above |
+| `DECISIONS.md` | Architectural Decision Log — mirrors ADR-001 through ADR-014 only; ADR-015 onward exist only in `architecture-decisions/` |
 | `GLOSSARY.md` | Authoritative term definitions by ownership boundary |
 | `knowledge_layer_inventory.md` | Every file's ownership, maturity, and known gaps |
 | `ontology_authority_matrix.md` | Single-owner concept registry |
 | `ontology_completion_checklist.md` | What is done, in progress, missing, and future |
 | `knowledge_layer_roadmap.md` | Stage-by-stage dependency and activation order |
+
+For general onboarding and reading order, `README.md` is the canonical guide — this
+table is scoped specifically to what to check before an ontology change, not a full
+onboarding path.
 
 ---
 
@@ -141,10 +148,17 @@ without prior architectural review.
 
 # Current Next Step
 
-Phase 4.0 — Verification Operations (Active / In Progress)
+Repository Architecture Freeze — Canonical Migration (Active / In Progress)
 
-Recent completion: verification-operations/verification-operations.yaml
+Recent completion: Registration's canonical migration through Phase 4
+(`docs/architecture/Registration_Migration_Plan.md`) — `registration/ontology/attributes.yaml`
+has been deleted and replaced by the canonical `entities.yaml` / `data-properties.yaml` /
+`relationships.yaml` / `semantic-constraints.yaml` / `lifecycle-constraints.yaml` set.
 
 Next active implementation target:
-1. Address the missing Stage 1 prerequisites (specifically `Evidence` attribute schema in registration/ontology/attributes.yaml and registration/taxonomy/evidence.yaml).
-2. Plan and implement Verification Operations reasoning rules and operational models (e.g., assignment, field visit, claim confirmation).
+1. Close the remaining entries in the Registration Content Gap Log
+   (`docs/architecture/Registration_Migration_Plan.md`) — genuine content gaps requiring a
+   domain-knowledgeable author, not architecture work.
+2. Begin Community Context's migration onto the canonical `ontology/`+`taxonomy/` structure
+   (`docs/architecture/Canonical_Ontology_Schema.md`, `Canonical_Taxonomy_Schema.md`,
+   `Repository_Migration_Methodology.md`), following Registration as the reference pattern.

@@ -23,6 +23,47 @@ Khidmat AI agent, service, or reasoning engine is expected to be built on top of
 
 ---
 
+## Quick Start
+
+New to this repository? Do these four things, in order, before reading anything else:
+
+1. **Read this README fully** (10 minutes) — vision, status, structure, architecture.
+2. **Skim [`ARCHITECTURE.md`](ARCHITECTURE.md)** — the current Domain Inventory table
+   tells you exactly which domains are safe to treat as stable references and which
+   are placeholders or in-migration.
+3. **Pick one domain folder that matches what you're working on** and read its
+   `README.md` — every domain directory has one, with Purpose / Scope / Owns / Does
+   Not Own / Directory Structure / Related Documents in the same shape.
+4. **Before touching any ontology or taxonomy file**, read
+   [`docs/architecture/Canonical_Ontology_Schema.md`](docs/architecture/Canonical_Ontology_Schema.md)
+   or [`Canonical_Taxonomy_Schema.md`](docs/architecture/Canonical_Taxonomy_Schema.md)
+   (whichever applies) and [`AI_WORKFLOW.md`](AI_WORKFLOW.md) — this repository is
+   governed, and undeclared concepts or off-contract file shapes will be rejected in
+   review.
+
+**This repository contains no executable code.** There is nothing to install, build,
+or run — every file is either Markdown (documentation/governance) or YAML
+(ontology/taxonomy/reasoning declarations) meant to be *read*, by humans and,
+eventually, by a reasoning engine that does not yet exist in this repository.
+
+## Reading Order for First-Time Reviewers
+
+| Order | Document | Why |
+|---|---|---|
+| 1 | [`README.md`](README.md) (this file) | Orientation: vision, status, structure |
+| 2 | [`KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md`](KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md) | The business vision everything else serves |
+| 3 | [`ARCHITECTURE.md`](ARCHITECTURE.md) | Domain inventory, maturity levels, dependency rules |
+| 4 | [`GLOSSARY.md`](GLOSSARY.md) | Ubiquitous language — skim once, reference often |
+| 5 | A domain `README.md` matching your task | Purpose/Scope/Owns/Does-Not-Own for that domain |
+| 6 | [`docs/architecture/Canonical_Ontology_Schema.md`](docs/architecture/Canonical_Ontology_Schema.md) + [`Canonical_Taxonomy_Schema.md`](docs/architecture/Canonical_Taxonomy_Schema.md) + [`Repository_Migration_Methodology.md`](docs/architecture/Repository_Migration_Methodology.md) | The frozen file-shape contracts and the process for migrating a domain onto them, before editing any YAML |
+| 7 | [`architecture-decisions/README.md`](architecture-decisions/README.md) | The ADR index — the "why" behind every non-obvious decision |
+| 8 | [`AI_WORKFLOW.md`](AI_WORKFLOW.md) / [`AGENT_HANDOFF.md`](AGENT_HANDOFF.md) | Governance process, roles, and current phase, before proposing a change |
+
+If you only have 10 minutes: stop after step 3. That's enough to understand the
+vision, the current maturity of every domain, and where your task's domain sits.
+
+---
+
 ## Repository Purpose
 
 This repository defines, for the humanitarian domain Khidmat operates in:
@@ -126,6 +167,28 @@ scope statement and an explicit concept-ownership boundary, but no taxonomy or
 ontology content is authored until the domain is activated per
 `knowledge_layer_roadmap.md`.
 
+### Folder Purpose Table
+
+Every domain follows a similar internal shape. This is what each subfolder means,
+wherever you see it (not every domain has every subfolder):
+
+| Folder | Purpose |
+|---|---|
+| `ontology/` | Entities, relationships, and structural constraints — what exists and how it connects |
+| `taxonomy/` | Controlled vocabularies used to classify entities (categories, statuses, types) |
+| `reasoning/` | Deterministic inference, severity, gap-detection, and coherence rules — consumes ontology/taxonomy, defines no concepts of its own |
+| `questioning/` | Conversational strategy and question templates for an AI-driven registration interview |
+| `readiness/` | Conditions under which a case is considered complete enough to progress |
+| `verification/` | Definitions of derived/projected artifacts (e.g. the Verification Brief) — not stored entities |
+| `gaps/` | Vocabulary of information-gap types and their severity |
+| `docs/architecture/` | Repository-wide structural contracts, migration methodology, and architecture audits (not domain-specific) |
+| `architecture-decisions/` | The ADR log — one immutable record per significant design decision |
+
+**Important:** `reasoning/*.yaml` files are declarative rule descriptions, not
+executable code — there is no rules engine in this repository that runs them
+today. They exist to be *read and later implemented* by a runtime layer that has
+not yet been built (see [Architecture](#architecture)).
+
 ---
 
 ## Architecture
@@ -133,18 +196,42 @@ ontology content is authored until the domain is activated per
 The knowledge layer is built in dependency order, from business reality down to a
 form an AI agent can reason over:
 
+```mermaid
+flowchart TD
+    A["Business Blueprint<br/>(KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md)"] --> B["Ontology<br/>what exists, and how it relates<br/>(entities, relationships)"]
+    B --> C["Taxonomy<br/>controlled vocabularies for classifying it"]
+    C --> D["Reasoning<br/>deterministic inference, severity,<br/>gap, and coherence rules"]
+    D --> E["Knowledge Graph<br/>the composed, cross-domain semantic model"]
+    E --> F["AI Agents<br/>(not yet built in this repository)<br/>the runtime that consumes this layer"]
+
+    style F fill:#00000000,stroke-dasharray: 5 5
 ```
-Business Blueprint (KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md)
-        ↓
-     Ontology            — what exists, and how it relates (entities, relationships)
-        ↓
-     Taxonomy            — controlled vocabularies for classifying it
-        ↓
-     Reasoning           — deterministic inference, severity, gap, and coherence rules
-        ↓
-   Knowledge Graph       — the composed, cross-domain semantic model
-        ↓
-    AI Agents            — the (not-yet-built) runtime that consumes this layer
+
+*(Note: this repository stops at the Knowledge Graph layer — the "AI Agents" box is
+shown only to complete the picture and does not exist here yet; see the note below.)*
+
+### Domain Dependency Order
+
+Domains activate in the order `knowledge_layer_roadmap.md` defines — a domain does
+not activate until the domains it depends on are substantially complete
+(ADR-009). This is the current state, not a plan for a single future release:
+
+```mermaid
+flowchart LR
+    Shared["shared/<br/>(base taxonomy, Human Model, Risk)"] --> Registration["registration/<br/>✅ canonical reference"]
+    Shared --> Verification["verification-operations/<br/>✅ complete"]
+    Registration --> Verification
+    Verification --> NeedsAssessment["needs-assessment/<br/>✅ complete"]
+    Shared --> CaseManagement["case-management/<br/>✅ complete"]
+    NeedsAssessment --> CaseManagement
+    Shared --> BeneficiaryLifecycle["beneficiary-lifecycle/<br/>✅ complete"]
+    CaseManagement --> BeneficiaryLifecycle
+    Shared --> CommunityContext["community-context/<br/>🚧 built, pre-canonical"]
+    BeneficiaryLifecycle --> CommunityContext
+    CaseManagement --> SupportDelivery["support-delivery/<br/>⬜ placeholder"]
+    CommunityContext --> VolunteerOps["volunteer-operations/<br/>⬜ placeholder"]
+    BeneficiaryLifecycle --> Impact["impact/<br/>⬜ placeholder"]
+    CaseManagement --> Programs["programs/<br/>⬜ placeholder"]
 ```
 
 Every domain's `ontology/` module follows one fixed, frozen file contract —
@@ -166,29 +253,23 @@ is stable.
 
 ## Documentation Guide
 
-Start here, in order:
+This repository's single canonical onboarding path is the
+[Reading Order for First-Time Reviewers](#reading-order-for-first-time-reviewers)
+table above — start there rather than re-deriving a reading order from any other
+document. Other documents in this repository (`AGENT_HANDOFF.md`, `ARCHITECTURE.md`)
+intentionally point back to that table instead of maintaining their own.
 
-1. [`KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md`](KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md)
-   — the business vision this repository exists to serve.
-2. [`ARCHITECTURE.md`](ARCHITECTURE.md) — domain inventory, dependency rules,
-   maturity levels.
-3. [`docs/architecture/Canonical_Ontology_Schema.md`](docs/architecture/Canonical_Ontology_Schema.md)
-   and [`docs/architecture/Canonical_Taxonomy_Schema.md`](docs/architecture/Canonical_Taxonomy_Schema.md)
-   — the normative, frozen authoring contracts every domain's ontology/taxonomy
-   module must conform to.
-4. [`docs/architecture/Repository_Migration_Methodology.md`](docs/architecture/Repository_Migration_Methodology.md)
-   — the general process by which a legacy domain is brought into conformance with
-   the two contracts above (used by, e.g., `docs/architecture/Registration_Migration_Plan.md`).
-5. [`architecture-decisions/`](architecture-decisions/) — the ADR log (ADR-001
-   through ADR-023) recording every significant design decision and its rationale.
-6. [`GLOSSARY.md`](GLOSSARY.md) — the ubiquitous language, organised by ownership
-   boundary.
+Beyond that reading path:
 
-For day-to-day governance mechanics — who owns what, how a change is proposed and
-reviewed, and what must never be done — see [`AI_WORKFLOW.md`](AI_WORKFLOW.md) and
-[`AGENT_HANDOFF.md`](AGENT_HANDOFF.md). For what exists, what's in progress, and
-what's missing, see `knowledge_layer_inventory.md`, `ontology_authority_matrix.md`,
-`ontology_completion_checklist.md`, and `knowledge_layer_roadmap.md`.
+- For day-to-day governance mechanics — who owns what, how a change is proposed and
+  reviewed, and what must never be done — see [`AI_WORKFLOW.md`](AI_WORKFLOW.md) and
+  [`AGENT_HANDOFF.md`](AGENT_HANDOFF.md).
+- For what exists, what's in progress, and what's missing, see
+  `knowledge_layer_inventory.md`, `ontology_authority_matrix.md`,
+  `ontology_completion_checklist.md`, and `knowledge_layer_roadmap.md`.
+- The ADR log (`architecture-decisions/`, ADR-001 through ADR-023) records every
+  significant design decision and its rationale; `architecture-decisions/README.md`
+  has a full index.
 
 ---
 
