@@ -78,3 +78,15 @@ coherence_rules:
       an existing need in the case.
     failure_action: >
       Internal validation — remove or re-link the intervention.
+
+  - id: case_safety_flag_denormalization_alignment
+    description: >
+      case.safety_flag is denormalised from situation.safety_flag for fast
+      case-level filtering and status gating. The authoritative safety
+      assessment and notes remain on the situation entity.
+    check: >
+      case.safety_flag == true IF AND ONLY IF any situation in the case
+      has safety_flag == true.
+    failure_action: >
+      Internal validation — recompute case.safety_flag from the case's
+      situations; do not set it directly.

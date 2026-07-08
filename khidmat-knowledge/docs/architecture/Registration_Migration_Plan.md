@@ -15,6 +15,15 @@
 > exist, which domain-specific decisions (D1–D6) had to be made, and the current
 > Content Gap Log. It does not restate general migration policy — see the methodology
 > document for that.
+>
+> **Amendment (post-Phase-3, pre-Phase-4):** `Canonical_Ontology_Schema.md` §§17–20 and
+> ADR-023 ratified an additive ontology-vocabulary extension — Value Object, Role,
+> Runtime/Reasoning Object, Future Entity Candidate — as a fourth-and-fifth-and-sixth
+> citizen alongside Entity and Data Property. **D6 below is superseded by D6-REV.**
+> Phases 1–3 are unaffected and are not re-opened by this amendment. Only D6 (Phase 0)
+> and Phase 4 (Attribute Decomposition) are re-authored here; no other phase's text
+> changed. This amendment is planning-only — no `registration/` YAML has been modified
+> and Phase 4 has not executed.
 
 ---
 
@@ -115,24 +124,59 @@ confirmation.
 | **D3** | Destination of `evidence.yaml` `claim_evidence_matrix` (a claim-type→allowed-evidence mapping — not a vocabulary). | Taxonomy §5 (not taxonomy content); Ontology §9 constraint-type vocabulary is **closed** (`cardinality`/`disjoint`/`required_if`/`mutually_exclusive`) and does not include an "allowed-values matrix" type. | **Relocate to a new `registration/reasoning/evidence-rules.yaml`** (the `reasoning/` layer is un-governed by the contracts and may hold domain validation tables). Do **not** force it into `semantic-constraints.yaml` (no matching closed constraint type without amending a frozen contract). | ☑ Approved (default) |
 | **D4** | Ownership of the registrant-role vocabulary shared between `registration/taxonomy/actors.yaml` (`registrant_types`) and `shared/taxonomy/persons.yaml` (`person_roles`). | Taxonomy §9 / ADR-008 (one owning scheme; cross-domain use is a `references` link, never redefinition). `persons.yaml` comment already says roles are "declared here, detailed in registration." | **`shared` owns the role identities; `registration/taxonomy/actors.yaml` keeps only the registration-specific epistemic detail (`default_claim_basis`, `questioning_note`, `proxy` sub-roles) and links via `references: {relation: extends, scheme: <persons person_roles>}`.** (CURIE finalized in Phase 5.) | ☑ Approved (default) |
 | **D5** | Ownership of `need_severity` (referenced from un-migrated `needs-assessment/taxonomy.yaml`, also inlined in registration). | Taxonomy §9; Ontology §5. Target domain is not migrated and is non-conformant. | **Registration temporarily owns a local `need_severity` scheme** in `registration/taxonomy/needs.yaml` (`critical/high/medium/low`), with a `references` note to reconcile with `needs-assessment` when that domain migrates. Unblocks registration now; defers the cross-domain merge to its proper governance step. | ☑ Approved (default) |
-| **D6** | How nested-object attributes are modeled (the flat `data-properties` model has no object/list datatype). | Ontology §5 (a data property has exactly one `datatype`/`taxonomy_ref`; no nested objects). | **Promote each nested object to its own entity + a relationship from the owner; its scalar fields become that entity's data-properties.** Mapping table below. Deterministic once approved. *(This is the highest-review-value decision — it grows the entity graph. Override here if a different granularity is wanted.)* | ☑ Approved (default) |
+| **D6** | ~~How nested-object attributes are modeled.~~ **SUPERSEDED by D6-REV below.** | Ontology §5 (superseded default). | ~~Promote each nested object to its own entity.~~ | ☒ Superseded — see D6-REV |
 
-**D6 nested-object → entity mapping (applies only if D6 default approved):**
+### D6-REV — Nested-object classification under ADR-023 (replaces D6)
 
-| Owner.attribute (in `attributes.yaml`) | New entity | Owner→entity relationship (cardinality) |
-|---|---|---|
-| `beneficiary.contact`, `registrant.contact` | `contact_point` | `has_contact` (0..1 each) |
-| `beneficiary.location` | `location` | `has_location` (1..1) |
-| `household.guardian_status` | `guardian` | `has_guardian` (0..1) |
-| `household.total_income` | `income` | `has_income` (0..1) |
-| `need.treatment_plan` | `treatment_plan` | `has_treatment_plan` (0..1) |
-| `need.cost_estimate` | `cost_estimate` | `has_cost_estimate` (0..1) |
-| `support_intervention.requested_amount` | `requested_amount` | `has_requested_amount` (0..1) |
-| `case.open_gaps` (list) | `open_gap` | `has_open_gap` (0..unbounded) |
+**Contract basis:** `Canonical_Ontology_Schema.md` §17 (Value Objects), §18 (Roles), §19
+(Runtime/Reasoning Objects), §20 (Future Entity Candidate); ADR-023. **Decision:** each
+nested attribute is classified individually against the §17 four-part promotion test —
+*not* defaulted to Entity. No nested object in registration's current attribute set
+meets the §17 promotion-to-Entity bar (none is referenced from elsewhere, none has
+distinguishable multiplicity, none needs a lifecycle independent of its owner) — the
+promotion test's role here is to make that explicit and falsifiable, not to declare it
+by fiat.
 
-*Note (future, not this migration): `income`, `cost_estimate`, `requested_amount`
-share an amount/currency shape and could later consolidate into a shared monetary
-value — deliberately **not** done now to avoid a cross-domain promotion decision.*
+| Owner.attribute (in `attributes.yaml`) | Classification | Target shape | Cardinality | Relationship rows added |
+|---|---|---|---|---|
+| `registrant.contact`, `beneficiary.contact` | **Value Object** (§17) | One composite `data-properties.yaml` row, `id: contact_point`, `domain: [registrant, beneficiary]`, `fields: [phone, whatsapp, in_person_contact, contact_notes]` (§17 reuse-via-domain-list) | `{min: 0, max: 1}` | none |
+| `beneficiary.location` | **Value Object** (§17) | Composite row `id: location`, `domain: beneficiary`, `fields: [address_text, area, landmark, precision (taxonomy_ref), stability (taxonomy_ref)]` | `{min: 1, max: 1}` | none |
+| `household.guardian_status` → `guardian_name` / `guardian_relationship` / `guardian_present_in_household` | **Role** (§18), conditional on `guardian_present_in_household` | **(a)** `true`: relationship row `household_member --guardian_of--> household_member` (from: guardian member, to: minor member). **(b)** `false`/unknown: Value Object `id: non_resident_guardian`, `domain: household`, `fields: [guardian_name, guardian_relationship]` | (a) `{min: 0, max: unbounded}` on `to`; (b) `{min: 0, max: 1}` | (a) adds `guardian_of` row (optional inverse `is_guarded_by`); (b) adds none |
+| `household.guardian_status.safeguarding_flag` | **Runtime Object** (§19) | Not authored in the ontology at all | — | none — already `gap_type: guardian_gap` in `reasoning/gap-detection-rules.yaml` / `gaps/gap-types.yaml`; confirm via Step 4.0, do not re-add as a field |
+| `household.total_income` | **Value Object** (§17), shared `money` shape | Composite row `id: income`, `domain: household`, `fields: [amount (xsd:decimal), currency (xsd:string or taxonomy_ref), basis (xsd:string, optional)]` | `{min: 0, max: 1}` | none |
+| `need.treatment_plan` | **Value Object** (§17) **+ Future Entity Candidate** (§20) | Composite row `id: treatment_plan`, `domain: need`, `fields:` per existing attribute detail; `future_entity_candidate: true`; `future_entity_note: "Promote to Entity when Support Delivery / Outcome Tracking must reference and update a specific plan across time, independent of the originating need."` | `{min: 0, max: 1}` | none |
+| `need.cost_estimate` | **Value Object** (§17), shared `money` shape | Composite row `id: cost_estimate`, `domain: need`, same `money` fields as `income` | `{min: 0, max: 1}` | none |
+| `support_intervention.requested_amount` | **Value Object** (§17), shared `money` shape | Composite row `id: requested_amount`, `domain: support_intervention`, same `money` fields as `income` | `{min: 0, max: 1}` | none |
+| `case.open_gaps` (list) | **Runtime Object** (§19) | Not authored in `entities.yaml` or `data-properties.yaml` at all | — | none — `case` gets a `notes:`-only pointer (not a field) to `reasoning/gap-detection-rules.yaml` + `gaps/gap-types.yaml`, pending the future Runtime/Instance-State Schema named in §19 |
+
+**Consolidated notes:**
+- `income`, `cost_estimate`, and `requested_amount` are authored as **the same `money`
+  field shape** (amount/currency/basis) on three different owners — this is the
+  reuse §17 anticipates, done now at zero extra cost, rather than deferred as three
+  divergent one-off shapes. It remains domain-local (registration-only) authoring;
+  promoting `money` to a **shared, cross-domain** Value Object type (per §17's
+  cross-domain rule, mirroring §11) is explicitly deferred until a second domain
+  (e.g. a future Donor Matching or Support Delivery domain) needs the same shape —
+  not decided here.
+- `beneficiary.location`'s VO fields (address_text/area/landmark/precision/stability)
+  answer "how do we find this specific beneficiary" and are a **distinct concept**
+  from any shared geographic-hierarchy entity (`shared/taxonomy/locations.yaml`,
+  or a future `community-context` `geographic_area` entity). Phase 4 must not merge
+  their field sets or imply a relationship between them — no such relationship is in
+  scope for this migration.
+- The `guardian_of` relationship (path (a) above) is an ordinary §6 relationship row
+  using already-existing entities (`household_member` → `household_member`); it
+  requires no new ontology vocabulary beyond what §6 already ratifies. It is the only
+  relationship row this revised D6 adds, versus the eight `has_*` rows the superseded
+  D6 would have added.
+- No entity is added to `entities.yaml` by D6-REV. This is the direct, falsifiable
+  consequence of applying §17's promotion test instead of a blanket default.
+
+*(D1–D5 above are unaffected by this amendment and remain approved as originally
+recorded — ADR-023 introduces vocabulary for nested-object classification only; it
+does not touch verification-brief disposition (D1), taxonomy hierarchy (D2),
+claim-evidence-matrix relocation (D3), registrant-role ownership (D4), or
+need-severity ownership (D5).)*
 
 ### Phase 0 validation checklist
 - [ ] Every decision D1–D6 has an approved value (default or override).
@@ -324,84 +368,140 @@ new `registration/reasoning/evidence-rules.yaml` (D3 relocation target).
 ---
 
 # PHASE 4 — Attribute Decomposition (mechanical + gated semantic, largest phase)
+*(Re-authored under ADR-023 / `Canonical_Ontology_Schema.md` §§17–20; supersedes the
+prior D6-based version of this phase in full. Phases 1–3 are unaffected.)*
 
 **Objective.** Drain `attributes.yaml` into the canonical surfaces and delete it; wire
-same-domain `taxonomy_ref`; finish entity cleanup. **Mechanical/Semantic:** Mechanical
-**after** D6/N-R1 are settled (Phase 0 + the N-R1 reconciliation step below).
-**Preconditions:** Phases 1–3 done; D6 approved; N-R1 reconciliation complete.
+same-domain `taxonomy_ref`; finish entity cleanup; classify every nested attribute per
+D6-REV instead of defaulting to Entity promotion. **Mechanical/Semantic:** Mechanical
+**after** D6-REV/N-R1 are settled (Phase 0 + the N-R1 reconciliation step below).
+**Preconditions:** Phases 1–3 done; D6-REV approved (above); N-R1 reconciliation
+complete.
 
-**Files affected:** new `registration/ontology/data-properties.yaml` (fill);
-`registration/ontology/semantic-constraints.yaml` (fill);
-`registration/ontology/relationships.yaml` (add D6 sub-entity relationships);
-`registration/ontology/entities.yaml` (add D6 sub-entities; remove
-`key_attributes`/`attributes_ref`); delete `registration/ontology/attributes.yaml`.
+**Files affected:** new `registration/ontology/data-properties.yaml` (fill, including
+composite Value Object rows per §17); `registration/ontology/semantic-constraints.yaml`
+(fill); `registration/ontology/relationships.yaml` (add **one** conditional row —
+`guardian_of`, D6-REV path (a) — no other relationship rows are added by this phase);
+`registration/ontology/entities.yaml` (remove `key_attributes`/`attributes_ref`; add a
+`notes:`-only Runtime Object pointer on `case` for open-gap findings; **no new entity
+is added**); delete `registration/ontology/attributes.yaml`.
 
-**Step 4.0 — N-R1 reconciliation (gate).** An application of
-`Repository_Migration_Methodology.md` §8's "verify before drop" validation
-requirement: for every `gap_type`/`gap_condition` in `attributes.yaml`, confirm
-the same detection exists in `reasoning/gap-detection-rules.yaml`. Produce a
-diff list. Conditions already covered → **drop** during decomposition.
-Conditions owned **only** by `attributes.yaml` → move to
+**Step 4.0 — N-R1 reconciliation (gate, unchanged in method, widened in scope).** An
+application of `Repository_Migration_Methodology.md` §8's "verify before drop"
+validation requirement: for every `gap_type`/`gap_condition` in `attributes.yaml` —
+**including `household.guardian_status.safeguarding_flag` and `case.open_gaps`, both
+now classified as Runtime Objects (§19) rather than deferred as an open question** —
+confirm the same detection exists in `reasoning/gap-detection-rules.yaml` /
+`gaps/gap-types.yaml`. Produce a diff list. Conditions already covered → **drop**
+during decomposition. Conditions owned **only** by `attributes.yaml` → move to
 `gap-detection-rules.yaml` first. Do not proceed until the diff is empty.
 
 **Rules (deterministic):**
 1. **Scalar properties → `data-properties.yaml`** (Ontology §5) as a
    `data_properties:` list keyed by `id`. Each row: `id`, `domain` (owning entity id),
-   `cardinality {min, max}`, and exactly one of `datatype`/`taxonomy_ref`.
+   `cardinality {min, max}`, and exactly one of `datatype`/`taxonomy_ref`. Unchanged.
 2. **Datatype mapping (Ontology §5):** `type: string`→`xsd:string`;
    `integer`→`xsd:integer`; `boolean`→`xsd:boolean`; `date`→`xsd:date`;
    `datetime`→`xsd:dateTime`; `number`→`xsd:decimal`; `float`→`xsd:float`.
-   `type: enum` → **no `datatype`**; instead `taxonomy_ref` (rule 4).
+   `type: enum` → **no `datatype`**; instead `taxonomy_ref` (rule 4). Unchanged.
 3. **Cardinality mapping:** `required: true`→`{min: 1, max: 1}`;
    `required: false`→`{min: 0, max: 1}`; `type: list`→`{min: 0..1, max: unbounded}`
    (use `minimum:` if present for `min`); `required: conditional` →`{min: 0, max: 1}`
-   **plus** a `required_if` constraint (rule 5).
+   **plus** a `required_if` constraint (rule 5). Unchanged.
 4. **`taxonomy_ref` (same-domain only, unblocked):** every `values_ref:` pointing at
    `registration/taxonomy/*` becomes `taxonomy_ref: <bare scheme id>` (Taxonomy §3 —
    same-domain refs use the bare scheme id). **Drop the inline `values:` list** after
    confirming it equals the scheme's concept ids (C-R5 equality check; verified matches
    include `need_category`, `case.status`, `gender`). **Cross-domain** `values_ref:`
    (`shared/*`, `needs-assessment/*`) are **left as a TODO marker** for Phase 5 — do
-   not invent a CURIE.
+   not invent a CURIE. Unchanged.
 5. **Constraints → `semantic-constraints.yaml`** (Ontology §9) as target-neutral rows
    (`id`/`type`/`property`/`entities`/`parameters`). Map: `required_when: X` →
    `type: required_if`; `validation: expr` → `type: cardinality`/domain rule as the
    closed vocab allows; `derivation:` and `coherence_rule:` → if expressible in the
    closed §9 type set, add a row; otherwise move to `reasoning/` (do not invent a new
-   constraint `type` — the vocab is closed).
-6. **Gap logic** (`gap_type`, `gap_condition`) → **dropped** (owned by
-   `reasoning/gap-detection-rules.yaml` per Step 4.0). Prose `notes:` → drop or fold
-   into the property's `label`/an adjacent reasoning file; do not carry free-text
+   constraint `type` — the vocab is closed). Unchanged. (`case.safety_flag`'s
+   `derivation:` is an ordinary structural derivation over `situation.safety_flag`, not
+   a reasoning-module finding — it is a plain data property under this rule, not a
+   Runtime Object under rule 7; it is unaffected by this amendment.)
+6. **Gap logic** (`gap_type`, `gap_condition`, `safeguarding_flag`) → **dropped**
+   (owned by `reasoning/gap-detection-rules.yaml` / `gaps/gap-types.yaml` per Step
+   4.0, and formally classified as Runtime Objects, §19). Prose `notes:` → drop or
+   fold into the property's `label`/an adjacent reasoning file; do not carry free-text
    guidance into `data-properties.yaml`.
-7. **D6 nested objects:** for each mapping-table row, add the new entity to
-   `entities.yaml`, add its scalar fields as `data-properties` (rules 1–5), and add the
-   owner→entity relationship to `relationships.yaml` with the stated cardinality.
+7. **Nested-object classification (replaces the old "D6 sub-entities" rule) — apply
+   D6-REV per row:**
+   - **Value Object rows** (`contact_point`, `location`, `income`, `treatment_plan`,
+     `cost_estimate`, `requested_amount`, `non_resident_guardian`): author as a
+     composite row in `data-properties.yaml` per `Canonical_Ontology_Schema.md` §17
+     — `id`, `domain`, `fields: [...]` (each field itself `id` + one of
+     `datatype`/`taxonomy_ref` + `cardinality`), and an outer `cardinality`. Do **not**
+     add an `entities.yaml` row and do **not** add a relationship row for any of
+     these.
+   - **`treatment_plan` additionally carries** `future_entity_candidate: true` and
+     `future_entity_note` per §20, worded exactly as given in the D6-REV table above.
+     Log this flag in `ontology_authority_matrix.md`'s Flagged Boundary Cases section
+     once written (governance record, not a generation-affecting change).
+   - **Role row** (`household.guardian_status`, non-flag fields): author path (a) as a
+     single new `relationships.yaml` row `household_member --guardian_of--> household_member`
+     with `cardinality {min: 0, max: unbounded}` on `to` (per §18(b)); author path (b)
+     as the `non_resident_guardian` Value Object on `household` (per §18(a), applied
+     to the case where no existing entity instance can be pointed at). Both paths may
+     coexist across different cases; neither mints a `guardian` entity.
+   - **Runtime Object rows** (`safeguarding_flag`, `case.open_gaps`): author **nothing**
+     in `entities.yaml` or `data-properties.yaml` per §19. On the `case` entity only,
+     add a `notes:` field (governance/documentation only, not a data property) stating
+     that open-gap findings are produced by `reasoning/gap-detection-rules.yaml`
+     against `gaps/gap-types.yaml` and are pending the Runtime/Instance-State Schema
+     named in §19 — mirroring the existing `case` entity's verification-brief-
+     projection note.
 8. **Entity cleanup (R-R2, now unblocked):** remove `key_attributes:` and
    `attributes_ref:` from every entity in `entities.yaml` (ownership now lives in
-   `data-properties.yaml` via each property's `domain`).
+   `data-properties.yaml` via each property's `domain`). Unchanged.
 9. **Delete `attributes.yaml`** once every field above has a confirmed destination.
+   Unchanged.
 
 **Expected output.** `attributes.yaml` gone; `data-properties.yaml` holds every scalar
-property with `xsd`/`taxonomy_ref` + `{min,max}`; `semantic-constraints.yaml` holds the
-relocated constraints; D6 sub-entities + relationships exist; entities carry no
-`key_attributes`/`attributes_ref`. Cross-domain refs bear explicit Phase-5 TODO
-markers.
+property (`xsd`/`taxonomy_ref` + `{min,max}`) **and** every Value Object as a composite
+`fields:` row; `semantic-constraints.yaml` holds the relocated constraints;
+`entities.yaml` gains **zero** new entities and carries a documented Runtime Object
+note on `case`; `relationships.yaml` gains **exactly one** new row (`guardian_of`,
+conditional path (a)); no field anywhere represents `safeguarding_flag` or
+`case.open_gaps`. Cross-domain refs bear explicit Phase-5 TODO markers.
 
 ### Phase 4 validation checklist
-- [ ] Step 4.0 diff is empty (no gap condition lost).
+- [ ] Step 4.0 diff is empty, including `safeguarding_flag` and `case.open_gaps`
+      (no gap condition lost; both confirmed present in the reasoning layer).
 - [ ] `attributes.yaml` no longer exists.
 - [ ] Every `data_properties` row has `id`, `domain`, `{min,max}`, and exactly one of
-      `datatype`(an `xsd:*` token)/`taxonomy_ref`.
+      `datatype`(an `xsd:*` token)/`taxonomy_ref`/`fields` (Value Object rows use
+      `fields`, never `datatype`+`fields` together).
 - [ ] No inline `values:` remains where a `taxonomy_ref`/`values_ref` exists;
       every dropped inline list was confirmed equal to its scheme.
 - [ ] Same-domain `taxonomy_ref` uses bare scheme ids that exist in
       `registration/taxonomy/*`.
 - [ ] Cross-domain refs carry a Phase-5 TODO marker (not a fabricated CURIE).
 - [ ] Every constraint row uses a closed §9 `type`; none is hand-authored OWL/SHACL.
-- [ ] All D6 sub-entities exist with their data-properties and owner relationships.
+- [ ] **Zero** new `entities.yaml` rows were added by this phase (D6-REV promotes
+      nothing to Entity).
+- [ ] `contact_point`, `location`, `income`, `treatment_plan`, `cost_estimate`,
+      `requested_amount`, and (if path (b) applies) `non_resident_guardian` exist as
+      composite `fields:` rows in `data-properties.yaml`, each with the correct
+      `domain` per the D6-REV table.
+- [ ] `treatment_plan` carries `future_entity_candidate: true` and a non-empty
+      `future_entity_note`.
+- [ ] `relationships.yaml` contains at most one new row (`guardian_of`); no
+      `has_contact`/`has_location`/`has_guardian`/`has_income`/`has_treatment_plan`/
+      `has_cost_estimate`/`has_requested_amount`/`has_open_gap` row exists anywhere.
+- [ ] No `guardian`, `open_gap`, or other D6-superseded entity exists in
+      `entities.yaml`.
+- [ ] `case.open_gaps` and `safeguarding_flag` are represented **only** as the
+      documented `notes:` pointer on `case` (open_gaps) or not represented at all
+      (safeguarding_flag) — never as a field.
 - [ ] No entity retains `key_attributes`/`attributes_ref`.
 - [ ] Every `data_properties.domain` names a real entity id; every `taxonomy_ref`
-      names a real scheme id.
+      names a real scheme id; every Value Object `fields[*].id` is unique within its
+      parent row.
 
 ---
 
@@ -465,8 +565,10 @@ Registration is **fully canonical** when all hold:
 2. `entities.yaml`: list of `id`-keyed classes; hierarchy via `parent` only; no
    `key_attributes`/`attributes_ref`/`subtypes`; entity-presence via
    `cardinality_in_case`.
-3. `data-properties.yaml`: property-centric list; each row has `domain`, one of
-   `datatype`(xsd)/`taxonomy_ref`, `{min,max}`.
+3. `data-properties.yaml`: property-centric list; each row has `domain`, and exactly
+   one of `datatype`(xsd)/`taxonomy_ref`/`fields` (Value Object composite row, per
+   `Canonical_Ontology_Schema.md` §17), plus `{min,max}`. No entity was added for a
+   nested attribute that fails the §17 promotion test (D6-REV, ADR-023).
 4. `relationships.yaml`: reusable-predicate edges with `{min,max}`; no `required`; no
    dangling targets.
 5. `semantic-constraints.yaml`: only closed-vocab target-neutral rows.
@@ -495,7 +597,7 @@ Registration is **fully canonical** when all hold:
 
 | Risk | Likelihood | Impact | Mitigation |
 |------|-----------|--------|------------|
-| **Wrong D6 granularity** → entity-graph rework | Med | High | Isolate D6 in Phase 0; conservative sub-entity default; Phase 4 is reversible per-entity. |
+| **Wrong nested-object classification** → entity-graph rework | Low (was Med) | High | Superseded by D6-REV (ADR-023): each nested attribute is classified individually against the §17 promotion test rather than defaulted to Entity; the default now adds zero entities, which is the safer direction to be wrong in (under-promotion is a cheap later fix — add an entity + relationship; over-promotion would have required removing entities and relationships already referenced elsewhere). |
 | **C-5 blind de-dup** where inline `values:` ≠ scheme → silent data loss | Med | High | Rule 4 equality check is mandatory before any drop; unverified/cross-domain refs excluded. |
 | **N-R1 gap loss** dropping a `gap_condition` owned only by attributes | Med | Med | Step 4.0 diff gate; move-before-drop. |
 | **Premature CURIE minting** in Phase 4 hard-codes values C-2 may change | Low | Med | Phase 4 leaves explicit TODO markers; CURIEs only in Phase 5. |
@@ -541,19 +643,34 @@ Registration is **fully canonical** when all hold:
 [ ] 3c. entities.yaml: bare cardinality: -> cardinality_in_case (case/lead/review).
 [ ] 3d. Create reasoning/evidence-rules.yaml; move claim_evidence_matrix there (D3).
 [ ] 3e. Run Phase 3 checklist. All pass? Else STOP.
-[ ] 4.0 Build gap_condition diff (attributes.yaml vs gap-detection-rules.yaml).
-        Move attributes-only conditions into gap-detection-rules.yaml. Diff empty?
+[ ] 4.0 Build gap_condition diff (attributes.yaml vs gap-detection-rules.yaml/
+        gap-types.yaml), INCLUDING safeguarding_flag and case.open_gaps (now
+        classified as Runtime Objects, §19 — not optional to check). Move
+        attributes-only conditions into gap-detection-rules.yaml. Diff empty?
         Else STOP.
 [ ] 4a. Scalar attrs -> data-properties.yaml (xsd datatypes; {min,max}).
 [ ] 4b. Same-domain values_ref -> taxonomy_ref bare id; drop inline values: after
         equality check. Cross-domain refs -> Phase-5 TODO marker.
 [ ] 4c. required_when/validation/derivation -> semantic-constraints.yaml (closed
-        §9 types only). Drop gap_type/gap_condition/notes.
-[ ] 4d. D6: add sub-entities + their data-properties + owner relationships.
+        §9 types only). Drop gap_type/gap_condition/safeguarding_flag/notes.
+[ ] 4d. D6-REV (ADR-023) — classify each nested attribute per the D6-REV table
+        (Phase 0, above), NOT by defaulting to Entity:
+        - contact_point, location, income, treatment_plan, cost_estimate,
+          requested_amount, non_resident_guardian -> composite `fields:` rows in
+          data-properties.yaml (§17). treatment_plan also gets
+          future_entity_candidate: true + future_entity_note (§20).
+        - guardian_status (non-flag fields) -> guardian_of relationship row (§18(b))
+          if guardian_present_in_household true, else non_resident_guardian VO
+          (§18(a)/(b) fallback).
+        - safeguarding_flag, case.open_gaps -> author NOTHING as a field (§19);
+          add the notes:-only Runtime Object pointer on the case entity only.
+        - Add ZERO new entities.yaml rows. Add at most ONE relationships.yaml row
+          (guardian_of).
 [ ] 4e. Remove key_attributes/attributes_ref from all entities.
 [ ] 4f. Delete attributes.yaml.
-[ ] 4g. Run Phase 4 checklist. All pass? -> registration is canonical to the CURIE
-        boundary. STOP here until Phase 5 unblocks.
+[ ] 4g. Run Phase 4 checklist (including the D6-REV-specific items). All pass? ->
+        registration is canonical to the CURIE boundary. STOP here until Phase 5
+        unblocks.
 [ ] 5.  (Blocked) Only when manifest + C-2 + cross-domain targets ready: convert
         TODO markers and imports: to CURIE references; run Phase 5 checklist.
 [ ] 6.  No action on O-R1/O-R5/O-R7/notes. Optional items only on explicit request.

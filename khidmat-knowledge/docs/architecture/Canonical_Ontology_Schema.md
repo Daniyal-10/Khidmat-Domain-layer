@@ -10,6 +10,11 @@
 > 2. → Review architecture — reviewer ratifies or amends the rules below.
 > 3. → Migrate Community Context — first reference implementation, only after step 2.
 > 4. → Validate, then migrate remaining domains.
+>
+> **Amendment pass (pre-Phase-4, Registration):** §§17–21 extend this contract with Value Objects,
+> Roles, the Runtime/Reasoning boundary, and Future Entity Candidate — proposed under the same
+> ratification process as the rest of this document (governing ADR: ADR-023). They add vocabulary;
+> they do not alter §§2, 4–9, 13–15. See §21 for amendment status.
 
 **Purpose:** the normative authoring contract that every current and future domain's `ontology/`
 module must follow. The repository is the source of truth; OWL, RDF, RDFS, SHACL, LPG/JSON-LD, and
@@ -512,3 +517,187 @@ This specification is **not** in effect until explicitly approved. On approval:
   reference implementation validating this document.
 
 Until approval, no ontology YAML in any domain is modified.
+
+---
+
+## 17. Value Objects — [PROPOSED — Amendment A1, ADR-023]
+
+Extends §5. This section exists because §5 currently has exactly one non-scalar affordance
+(`taxonomy_ref`) and no way to express a structured, single-valued, owner-scoped fact bundle without
+either flattening it into unrelated scalars or promoting it to a full Entity. Both of those are the
+failure modes ADR-023 documents; this section is the fix.
+
+A **Value Object** is a structured group of properties owned by exactly one entity, with no
+independent identity and no referenceability. It is the intermediate citizen between a scalar data
+property (§5) and an Entity (§4).
+
+**Promotion test (decides Entity vs. Value Object — replaces any "promote every nested object to an
+entity" default):** model a nested attribute group as a Value Object only if *all* of the following
+hold; if any fails, it is an Entity under §4 instead.
+
+1. No other entity will ever need a relationship `to:` (§6) this specific instance.
+2. Instances are not individually distinguishable once created — identical field values are the same
+   fact, not two different things that happen to agree.
+3. It has no `cardinality_in_case` (§4) of its own; it is created, updated, and removed exactly when
+   its owning entity is.
+4. It has no lifecycle independent of its owner — it cannot outlive, be reassigned from, or be shared
+   across owners as a distinct tracked thing.
+
+### Serialization
+
+No new file — the fixed five-file set in §2 is unchanged. A Value Object is a composite row in
+`data-properties.yaml`:
+
+| Field | Required | Meaning |
+|---|---|---|
+| `id` | yes | snake_case local name, unique per §3, exactly as any data property. |
+| `domain` | yes | Owning entity `id` (may be a list, per §5, when the same shape is reused by several entities in one domain). |
+| `datatype` | one-of, mutually exclusive with `fields` | Unchanged from §5 — present only on scalar rows. |
+| `taxonomy_ref` | one-of, mutually exclusive with `fields` | Unchanged from §5. |
+| `fields` | one-of, mutually exclusive with `datatype`/`taxonomy_ref` | A list of nested field records, each shaped like a `data-properties.yaml` row (`id`, exactly one of `datatype`/`taxonomy_ref`, `cardinality`) but scoped under the parent row — never independently addressable by a relationship `to:` or a cross-domain CURIE. |
+| `cardinality` | yes | `{min, max}` per §7, applying to the Value Object as a whole. |
+
+A row with `fields:` is a Value Object. A row with `datatype:` or `taxonomy_ref:` is an ordinary
+scalar data property, exactly as today — no existing row's shape or meaning changes.
+
+### Rules
+
+- A Value Object row is never a relationship `to:` target in `relationships.yaml` (§6). If a future
+  requirement needs to reference a specific instance, that is evidence the group was mis-classified —
+  reclassify it as an Entity (§4); do not add a relationship pointing at a Value Object as a
+  workaround.
+- A Value Object shape reused across two or more **domains** is promoted to a shared, reusable type
+  under the same governance §11 already establishes for reusable predicates: defined once in a
+  shared location, referenced by CURIE, never redefined per-domain.
+
+### Illustrative example — not applied to any domain
+
+```yaml
+data_properties:
+  - id: contact_point
+    domain: [registrant, beneficiary]
+    fields:
+      - id: phone
+        datatype: xsd:string
+        cardinality: { min: 0, max: 1 }
+      - id: whatsapp
+        datatype: xsd:string
+        cardinality: { min: 0, max: 1 }
+      - id: in_person_contact
+        datatype: xsd:string
+        cardinality: { min: 0, max: 1 }
+    cardinality: { min: 0, max: 1 }
+```
+
+---
+
+## 18. Roles — [PROPOSED — Amendment A2, ADR-023]
+
+Extends §4 and §6. A **Role** is a functional position an already-modeled Entity holds relative to
+another Entity or to a bounded context — guardian, primary earner, decision maker. A Role is never
+minted as its own Entity type, because it has no identity independent of the person holding it: two
+"guardian" facts about two different people are not the same kind of duplication problem §3 exists to
+prevent, but modeling "guardian" itself as an entity class *would* duplicate the person entity that
+already carries identity.
+
+### Rule
+
+When a concept names *what a person is to another person or unit* rather than *a new kind of thing*,
+it is expressed as one of:
+
+(a) a `taxonomy_ref` data property (§5) on the role-holding entity, valued from a controlled role
+    vocabulary, when the role is single-valued and does not need its own edge semantics; or
+(b) a relationship row (§6) from the role-holding entity to the entity the role is held for, when the
+    role is inherently relational and multiple such edges may coexist.
+
+A Role never receives its own `entities.yaml` row, its own `cardinality_in_case`, or a relationship
+row pointing *at* it.
+
+### Interaction with existing shared concepts
+
+Where a shared bounded context already owns a role vocabulary (e.g. `shared/human-model`'s kinship
+and support roles in `family-structure.yaml`, which already models `guardian` and `legal_guardian`
+this way), a domain references that vocabulary via `taxonomy_ref`/CURIE (§10) rather than defining a
+parallel role vocabulary or a competing entity for the same concept — per ADR-008 (Single Ownership)
+and `ARCHITECTURE.md`'s Reference-Not-Redefine rule. `shared/human-model` is the existing conformant
+example this section generalizes from; it requires no change.
+
+### Illustrative example — not applied to any domain
+
+```yaml
+data_properties:
+  - id: family_role
+    domain: household_member
+    taxonomy_ref: shared_human_model:kinship_role   # CURIE form is Phase-5-bound (§10); a bare
+                                                     # same-domain id is used pre-C-2 where applicable
+    cardinality: { min: 0, max: unbounded }
+```
+
+---
+
+## 19. Runtime / Reasoning Objects — [PROPOSED — Amendment A3, ADR-023]
+
+Extends §1 (Scope). Reasoning rules — severity, gap-detection, coherence, evidence, inference; the
+`reasoning/` module, already explicitly "unchanged by this spec" per §2 — produce **diagnostic
+findings about a specific case at a specific moment**: gaps, escalations, scores, flags. These
+findings are never modeled as Ontology entities, Value Objects (§17), or data properties on an
+Ontology entity, regardless of how important they are to the business, because they have no
+existence independent of a reasoning run against one case's instance data.
+
+**Delegated to a peer specification, not fixed by this document:** the authoritative shape for
+representing runtime/instance state — reasoning-produced findings, the current property values for
+one specific case, questioning-session state — is reserved for a **Runtime / Instance-State Schema**
+(not yet written), on the same footing §1 already reserves taxonomy record shape to
+`Canonical_Taxonomy_Schema.md` before that document existed. Until the peer document exists and is
+ratified:
+
+- No domain may author a reasoning-produced finding (a gap, escalation, flag, or score) as an
+  `entities.yaml` row or a `data-properties.yaml` row (scalar or Value Object).
+- A domain's `reasoning/*.yaml` files may continue to define their own working vocabularies about
+  *what reasoning can detect* (e.g. a gap-kinds list) — that is a reasoning-owned controlled
+  vocabulary, not ontology content, and needs no change under this amendment.
+- Where a case needs to reference "its currently open findings," that reference is deferred and
+  recorded as an open dependency (mirroring how §5/§10 already defer cross-domain CURIEs to Phase 5),
+  not resolved by inventing an ontology entity under schedule pressure.
+
+---
+
+## 20. Future Entity Candidate — [PROPOSED — Amendment A4, ADR-023]
+
+Extends §17. Some Value Objects are correctly modeled as Value Objects *today* but are plausible
+candidates for promotion to Entities once a dependent domain activates — for example, a value object
+with no independent identity at intake that a later domain will need to reference and update across
+time.
+
+### Rule
+
+A Value Object row **may** carry an optional, non-normative governance annotation:
+
+| Field | Required | Meaning |
+|---|---|---|
+| `future_entity_candidate` | optional, boolean | Marks that this Value Object's §17 promotion criteria may be met once a named dependent domain activates. Never affects generation. |
+| `future_entity_note` | required if `future_entity_candidate: true` | Free text naming the dependent domain/condition that would trigger reclassification. |
+
+This annotation creates no entity, relationship, or generation obligation. It exists so that keeping
+something a Value Object today is a recorded, deliberate, revisitable governance fact — logged in
+`ontology_authority_matrix.md`'s Flagged Boundary Cases section, using the pattern already
+established there — rather than a silent default rediscovered as a surprise later.
+
+---
+
+## 21. Amendment status
+
+§§17–20 are additive amendments to this authoring contract (governing ADR: ADR-023), proposed under
+the same reviewer-approval process §16 already establishes for §§3, 10–12. They do not alter, remove,
+or renumber any `[RATIFIED]` section (§§2, 4–9, 13–15) — every existing Entity, Relationship,
+Cardinality, Constraint, and domain rule in this contract stands exactly as ratified.
+
+Until §§17–20 are ratified:
+- No domain may author a composite `fields:` row, a role-typed data property under §18, or a
+  `future_entity_candidate` annotation.
+- No domain may treat the Runtime/Reasoning boundary (§19) as license to drop content from an
+  existing attribute file — the boundary only fixes *where* reasoning-produced facts belong once the
+  peer Runtime/Instance-State Schema exists; it does not by itself relocate anything.
+- Registration's Phase 4 (Attribute Decomposition) remains paused pending this ratification, and D6
+  in `Registration_Migration_Plan.md` is superseded and must be re-authored against §§17–20 before
+  Phase 4 executes.

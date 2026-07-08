@@ -142,3 +142,20 @@ rules:
       are receiving adequate food and whether there is enough income
       to care for all of them.
     confidence: medium
+
+  - id: derive_default_claim_basis_from_registrant_type
+    label: Default Claim Basis from Registrant Type
+    condition:
+      registrant.default_claim_basis: not explicitly set
+    derivation: >
+      Derived from registrant_type if not explicitly set:
+        beneficiary -> first_hand
+        proxy (family_member) -> first_hand
+        proxy (community_member) -> second_hand
+        proxy (professional_advocate) -> second_hand
+        volunteer -> observational
+      See registration/taxonomy/actors.yaml#registrant_types for the
+      authoritative default_claim_basis value on each concept.
+    action: >
+      Claims inherit this value unless explicitly overridden on the claim.
+    confidence: high

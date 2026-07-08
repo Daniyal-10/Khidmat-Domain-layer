@@ -1,9 +1,716 @@
-version: "1.0.0"
+version: 1.1.0
 domain: registration
 file: registration/ontology/data-properties.yaml
-status: placeholder
-
-# This file will contain registration's datatype/value properties.
-# Populated in Phase 4 of Registration_Migration_Plan.md (attribute decomposition).
-
-data_properties: []
+status: active
+data_properties:
+- id: name
+  domain:
+  - household_member
+  - beneficiary
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: age
+  domain:
+  - household_member
+  - beneficiary
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:integer
+- id: age_estimated
+  domain:
+  - household_member
+  - beneficiary
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:boolean
+- id: gender
+  domain:
+  - household_member
+  - beneficiary
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: '# TODO Phase 5'
+- id: minor
+  domain:
+  - household_member
+  - beneficiary
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:boolean
+- id: language
+  domain: beneficiary
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: documentation_status
+  domain: beneficiary
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: '# TODO Phase 5'
+- id: legal_status
+  domain: beneficiary
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: '# TODO Phase 5'
+- id: functional_capacity
+  domain:
+  - household_member
+  - beneficiary
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: '# TODO Phase 5'
+- id: size
+  domain: household
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:integer
+- id: head_of_household
+  domain: household
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: income_sources
+  domain: household
+  cardinality:
+    min: 0
+    max: unbounded
+  datatype: xsd:string
+- id: discrepancy_note
+  domain: household
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: member_id
+  domain: household_member
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: relationship_to_beneficiary
+  domain:
+  - household_member
+  - registrant
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: need_id
+  domain: need
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: need_category
+  domain: need
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: need_categories
+- id: need_subtype
+  domain: need
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: need_categories
+- id: need_source
+  domain: need
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: need_source
+- id: need_severity
+  domain: need
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: need_severity
+- id: need_duration
+  domain: need
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: need_duration
+- id: primary
+  domain: need
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:boolean
+- id: deadline
+  domain: need
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:date
+- id: urgency_timeline
+  domain: need
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: onset
+  domain:
+  - situation
+  - need
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: concerns_member
+  domain: need
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: claim_id
+  domain: claim
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: claim_type
+  domain: claim
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: claim_types
+- id: claim_text
+  domain: claim
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: information_sufficiency
+  domain: claim
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: information_sufficiency
+- id: information_consistency
+  domain: claim
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: information_consistency
+- id: claim_basis
+  domain: claim
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: claim_basis
+- id: verifiable
+  domain: claim
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:boolean
+- id: verifiable_note
+  domain: claim
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: evidence_available
+  domain: claim
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:boolean
+- id: linked_need_id
+  domain:
+  - claim
+  - support_intervention
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: registrant_type
+  domain:
+  - registrant
+  - case
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: registrant_types
+- id: default_claim_basis
+  domain: registrant
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: claim_basis
+- id: proxy_consent
+  domain: registrant
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: proxy_consent
+- id: situation_id
+  domain: situation
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: trajectory
+  domain: situation
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: trajectory
+- id: affected_domains
+  domain: situation
+  cardinality:
+    min: 1
+    max: unbounded
+  taxonomy_ref: affected_domains
+- id: trigger_event
+  domain: situation
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: trigger_events
+- id: duration
+  domain: situation
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: safety_flag
+  domain:
+  - situation
+  - case
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:boolean
+- id: safety_notes
+  domain: situation
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: intervention_id
+  domain: support_intervention
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: intervention_type
+  domain: support_intervention
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: requested_duration
+  domain: support_intervention
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: '# TODO Phase 5'
+- id: justification
+  domain: support_intervention
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: need_source_note
+  domain: support_intervention
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: case_id
+  domain: case
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: registration_channel
+  domain: case
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: '# TODO Phase 5'
+- id: referral_source
+  domain: case
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: referral_type
+  domain: case
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: referral_types
+- id: previous_registration
+  domain: case
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:boolean
+- id: previous_case_id
+  domain: case
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: re_registration_reason
+  domain: case
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: status
+  domain:
+  - lead
+  - case
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: case_statuses
+- id: created_at
+  domain:
+  - lead
+  - case
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:dateTime
+- id: updated_at
+  domain:
+  - lead
+  - case
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:dateTime
+- id: closed_at
+  domain: case
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:dateTime
+- id: lead_id
+  domain:
+  - lead
+  - volunteer_review
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: registrant_persona
+  domain: lead
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: '# TODO Phase 5'
+- id: raw_transcript
+  domain: lead
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: urgency_score
+  domain: lead
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:float
+- id: urgency_reason
+  domain: lead
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: lead_source
+  domain: lead
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: '# TODO Phase 5'
+- id: review_id
+  domain: volunteer_review
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: assigned_volunteer_id
+  domain: volunteer_review
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: decision
+  domain: volunteer_review
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: '# TODO Phase 5'
+- id: notes
+  domain: volunteer_review
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: completed_at
+  domain: volunteer_review
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:dateTime
+- id: evidence_id
+  domain: evidence
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: linked_claim_id
+  domain: evidence
+  cardinality:
+    min: 1
+    max: 1
+  datatype: xsd:string
+- id: evidence_type
+  domain: evidence
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: evidence_types
+- id: evidence_subtype
+  domain: evidence
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: '# TODO Phase 5'
+- id: availability
+  domain: evidence
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: availability_classifications
+- id: evidence_description
+  domain: evidence
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: issuing_authority
+  domain: evidence
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: issue_date
+  domain: evidence
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:date
+- id: expiry_date
+  domain: evidence
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:date
+- id: document_reference_number
+  domain: evidence
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: subject_member_id
+  domain: evidence
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: file_url
+  domain: evidence
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:string
+- id: contact_point
+  domain:
+  - registrant
+  - beneficiary
+  fields:
+  - id: phone
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: whatsapp
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: in_person_contact
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: contact_notes
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  cardinality:
+    min: 0
+    max: 1
+- id: location
+  domain: beneficiary
+  fields:
+  - id: address_text
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: area
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: landmark
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: precision
+    taxonomy_ref: '# TODO Phase 5'
+    cardinality:
+      min: 1
+      max: 1
+  - id: stability
+    taxonomy_ref: '# TODO Phase 5'
+    cardinality:
+      min: 0
+      max: 1
+  cardinality:
+    min: 1
+    max: 1
+- id: non_resident_guardian
+  domain: household
+  fields:
+  - id: guardian_name
+    datatype: xsd:string
+    cardinality:
+      min: 1
+      max: 1
+  - id: guardian_relationship
+    datatype: xsd:string
+    cardinality:
+      min: 1
+      max: 1
+  cardinality:
+    min: 0
+    max: 1
+  notes: "Whether a guardian is household-resident is not a stored field (per ADR-023 \xC2\xA718, Roles carry no independent\
+    \ state). It is inferred from which representation is populated for a given case: a `guardian_of` relationship row (relationships.yaml)\
+    \ means the guardian is an existing household_member; a populated non_resident_guardian row means they are not. Neither\
+    \ populated means no guardian is identified.\n"
+- id: income
+  domain: household
+  fields:
+  - id: amount
+    datatype: xsd:decimal
+    cardinality:
+      min: 0
+      max: 1
+  - id: currency
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: frequency
+    taxonomy_ref: '# TODO Phase 5'
+    cardinality:
+      min: 0
+      max: 1
+  cardinality:
+    min: 0
+    max: 1
+- id: treatment_plan
+  domain: need
+  fields:
+  - id: provider_name
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: plan_description
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: plan_known
+    datatype: xsd:boolean
+    cardinality:
+      min: 1
+      max: 1
+  cardinality:
+    min: 0
+    max: 1
+  future_entity_candidate: true
+  future_entity_note: Promote to Entity when Support Delivery / Outcome Tracking must reference and update a specific plan
+    across time, independent of the originating need.
+- id: cost_estimate
+  domain: need
+  fields:
+  - id: amount
+    datatype: xsd:decimal
+    cardinality:
+      min: 0
+      max: 1
+  - id: currency
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: basis
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: estimate_confidence
+    taxonomy_ref: '# TODO Phase 5'
+    cardinality:
+      min: 0
+      max: 1
+  cardinality:
+    min: 0
+    max: 1
+- id: requested_amount
+  domain: support_intervention
+  fields:
+  - id: amount
+    datatype: xsd:decimal
+    cardinality:
+      min: 0
+      max: 1
+  - id: currency
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  - id: unit
+    datatype: xsd:string
+    cardinality:
+      min: 0
+      max: 1
+  cardinality:
+    min: 0
+    max: 1

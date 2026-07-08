@@ -1,229 +1,106 @@
-version: "1.1.0"
+version: 1.1.0
 domain: registration
 file: registration/ontology/entities.yaml
 status: active
-
 entities:
+- id: registrant
+  label: Registrant
+  description: 'The person conducting the registration conversation. Not always the beneficiary. Has an epistemic relationship
+    to the information they provide, which affects claim weight.
 
-  - id: registrant
-    label: Registrant
-    description: >
-      The person conducting the registration conversation.
-      Not always the beneficiary. Has an epistemic relationship
-      to the information they provide, which affects claim weight.
-    required: true
-    cardinality_in_case: exactly_one
-    key_attributes:
-      - registrant_type         # from taxonomy/actors.yaml
-      - relationship_to_beneficiary
-      - claim_basis             # default claim basis for this registrant
-      - contact                 # registrant's own contact, distinct from beneficiary
-      - proxy_consent           # if proxy, whether beneficiary has consented
-    attributes_ref: ontology/attributes.yaml#registrant
+    '
+  required: true
+  cardinality_in_case: exactly_one
+- id: beneficiary
+  label: Beneficiary
+  description: 'The person whose need is being registered. May or may not be the same person as the registrant.
 
-  - id: beneficiary
-    label: Beneficiary
-    description: >
-      The person whose need is being registered.
-      May or may not be the same person as the registrant.
-    required: true
-    cardinality_in_case: exactly_one
-    key_attributes:
-      - name, age, gender, minor
-      - location, contact
-      - language
-      - documentation_status
-      - legal_status
-      - functional_capacity     # on beneficiary, not on situation
-    attributes_ref: ontology/attributes.yaml#beneficiary
+    '
+  required: true
+  cardinality_in_case: exactly_one
+- id: household
+  label: Household
+  description: 'The unit of people sharing living conditions and pooled resources. The primary context for assessing vulnerability
+    and need severity.
 
-  - id: household
-    label: Household
-    description: >
-      The unit of people sharing living conditions and pooled resources.
-      The primary context for assessing vulnerability and need severity.
-    required: true
-    cardinality_in_case: exactly_one
-    key_attributes:
-      - size
-      - members                 # list of HouseholdMember
-      - head_of_household
-      - guardian_status         # required when any member is minor
-      - income_sources
-      - total_income
-    attributes_ref: ontology/attributes.yaml#household
+    '
+  required: true
+  cardinality_in_case: exactly_one
+- id: household_member
+  label: Household Member
+  description: "An individual person within the household. Distinct from the beneficiary entity \xE2\u20AC\u201D the beneficiary\
+    \ is one member. Needs and evidence may be linked to specific members.\n"
+  required: true
+  cardinality_in_case: one_or_more
+  notes: 'The beneficiary is always a household member. Other members are recorded here with their relationship to the beneficiary.
 
-  - id: household_member
-    label: Household Member
-    description: >
-      An individual person within the household.
-      Distinct from the beneficiary entity — the beneficiary is one member.
-      Needs and evidence may be linked to specific members.
-    required: true
-    cardinality_in_case: one_or_more
-    key_attributes:
-      - name
-      - age
-      - gender
-      - relationship_to_beneficiary
-      - minor                   # derived from age
-      - functional_capacity     # if different from full
-    notes: >
-      The beneficiary is always a household member.
-      Other members are recorded here with their relationship to the beneficiary.
+    '
+- id: situation
+  label: Situation
+  description: 'A set of circumstances creating or sustaining vulnerability. A household may have more than one simultaneous
+    situation. Each situation is independent with its own trajectory and trigger.
 
-  - id: situation
-    label: Situation
-    description: >
-      A set of circumstances creating or sustaining vulnerability.
-      A household may have more than one simultaneous situation.
-      Each situation is independent with its own trajectory and trigger.
-    required: true
-    cardinality_in_case: one_or_more     # CORRECTED from one_to_one
-    key_attributes:
-      - trajectory              # from taxonomy/situations.yaml
-      - affected_domains        # list, from taxonomy/situations.yaml
-      - trigger_event           # from taxonomy/situations.yaml, null if structural
-      - onset
-      - duration
-      - safety_flag
-      - safety_notes
-    attributes_ref: ontology/attributes.yaml#situation
+    '
+  required: true
+  cardinality_in_case: one_or_more
+- id: need
+  label: Need
+  description: 'A specific, concrete gap between current state and a basic standard. Linked to one or more situations that
+    contextualise it. May concern a specific household member or the household as a whole.
 
-  - id: need
-    label: Need
-    description: >
-      A specific, concrete gap between current state and a basic standard.
-      Linked to one or more situations that contextualise it.
-      May concern a specific household member or the household as a whole.
-    required: true
-    cardinality_in_case: one_or_more
-    key_attributes:
-      - need_id
-      - need_category
-      - need_subtype
-      - need_source             # expressed | assessed | both
-      - need_severity
-      - need_duration
-      - primary                 # true for the most urgent need
-      - deadline                # NEW: when irreversible harm occurs
-      - urgency_timeline        # NEW: doctor instruction, eviction date, etc.
-      - onset                   # NEW: how long this need has existed
-      - treatment_plan          # required when need_category is medical
-      - cost_estimate           # required when medical or livelihood
-      - concerns_member         # NEW: household_member_id or null (null = whole household)
-    attributes_ref: ontology/attributes.yaml#need
+    '
+  required: true
+  cardinality_in_case: one_or_more
+- id: claim
+  label: Claim
+  description: 'An assertion made during registration requiring external confirmation. Claims are made by registrants. Every
+    need generates at least one claim.
 
-  - id: claim
-    label: Claim
-    description: >
-      An assertion made during registration requiring external confirmation.
-      Claims are made by registrants. Every need generates at least one claim.
-    required: true
-    cardinality_in_case: one_or_more
-    key_attributes:
-      - claim_id
-      - claim_type
-      - claim_text
-      - information_sufficiency # CORRECTED: replaces single information_quality
-      - information_consistency # CORRECTED: new independent dimension
-      - claim_basis             # inherited from registrant unless explicitly different
-      - verifiable
-      - evidence_available
-      - linked_need_id
-    attributes_ref: ontology/attributes.yaml#claim
+    '
+  required: true
+  cardinality_in_case: one_or_more
+- id: evidence
+  label: Evidence
+  description: 'Material that may support or refute a claim. Identified during registration, confirmed during verification.
 
-  - id: evidence
-    label: Evidence
-    description: >
-      Material that may support or refute a claim.
-      Identified during registration, confirmed during verification.
-    required: false
-    cardinality_in_case: zero_or_more
-    key_attributes:
-      - evidence_id
-      - evidence_type
-      - evidence_subtype
-      - availability
-      - linked_claim_id
-    attributes_ref: ontology/attributes.yaml#evidence
+    '
+  required: false
+  cardinality_in_case: zero_or_more
+- id: support_intervention
+  label: Support Intervention
+  description: 'The type of assistance being requested to address a need. Describes what is needed, not how it will be delivered.
+    Delivery mechanism is determined post-verification.
 
-  - id: support_intervention
-    label: Support Intervention
-    description: >
-      The type of assistance being requested to address a need.
-      Describes what is needed, not how it will be delivered.
-      Delivery mechanism is determined post-verification.
-    required: true
-    cardinality_in_case: one_or_more
-    notes: >
-      At least one support intervention is required before case can close
-      as ready_for_verification. If registrant has not specified,
-      ask before closing.
-    key_attributes:
-      - intervention_id
-      - intervention_type
-      - requested_amount
-      - requested_duration
-      - linked_need_id
-      - justification
-      - need_source_note        # whether this was expressed or assessed
-    attributes_ref: ontology/attributes.yaml#support_intervention
+    '
+  required: true
+  cardinality_in_case: one_or_more
+  notes: 'At least one support intervention is required before case can close as ready_for_verification. If registrant has
+    not specified, ask before closing.
 
-  - id: case
-    label: Case
-    description: >
-      The structured record produced by a completed registration conversation.
-      The case is the primary domain entity. All other entities exist within it.
-    required: true
-    cardinality: one_per_registration_conversation
-    key_attributes:
-      - case_id
-      - registrant_type
-      - registration_channel
-      - referral_source
-      - referral_type
-      - previous_registration
-      - previous_case_id
-      - re_registration_reason
-      - status                  # from taxonomy/case-outcomes.yaml
-      - safety_flag
-      - open_gaps
-      - created_at
-    attributes_ref: ontology/attributes.yaml#case
-    notes: >
-      Verification Brief is NOT an entity. It is a projection of the Case.
-      See verification/verification-brief-projection.yaml.
+    '
+- id: case
+  label: Case
+  description: 'The structured record produced by a completed registration conversation. The case is the primary domain entity.
+    All other entities exist within it.
 
-  - id: lead
-    label: Lead
-    description: >
-      The initial unverified record representing a candidate's registration request.
-      Intake conversations write to this entity before promotion to a Case.
-    required: true
-    cardinality: one_per_registration_conversation
-    key_attributes:
-      - lead_id
-      - status
-      - registrant_persona
-      - raw_transcript
-      - urgency_score
-      - urgency_reason
-      - lead_source
-      - created_at
-    attributes_ref: ontology/attributes.yaml#lead
+    '
+  required: true
+  cardinality_in_case: exactly_one
+  notes: "Verification Brief is NOT an entity. It is a projection of the Case. See verification/verification-brief-projection.yaml.\n\
+    \nOpen-gap findings are produced by reasoning/gap-detection-rules.yaml against gaps/gap-types.yaml and are pending the\
+    \ Runtime/Instance-State Schema named in \xA719."
+- id: lead
+  label: Lead
+  description: 'The initial unverified record representing a candidate''s registration request. Intake conversations write
+    to this entity before promotion to a Case.
 
-  - id: volunteer_review
-    label: Volunteer Review
-    description: >
-      The record of the desk audit conducted by a volunteer on a submitted lead.
-    required: false
-    cardinality: zero_or_one
-    key_attributes:
-      - review_id
-      - lead_id
-      - assigned_volunteer_id
-      - decision
-      - notes
-      - completed_at
-    attributes_ref: ontology/attributes.yaml#volunteer_review
+    '
+  required: true
+  cardinality_in_case: exactly_one
+- id: volunteer_review
+  label: Volunteer Review
+  description: 'The record of the desk audit conducted by a volunteer on a submitted lead.
+
+    '
+  required: false
+  cardinality_in_case: zero_or_one
