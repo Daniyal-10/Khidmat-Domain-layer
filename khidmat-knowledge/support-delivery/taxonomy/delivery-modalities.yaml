@@ -1,0 +1,38 @@
+version: "1.0.0"
+domain: support_delivery
+file: taxonomy/delivery-modalities.yaml
+status: active
+
+purpose: >
+  Classifies the modalities and constraints of delivery.
+
+schemes:
+  - id: delivery_modality
+    label: Delivery Modality
+    description: >
+      The form the assistance takes during delivery.
+    concepts:
+      - id: physical_goods
+        label: Physical Goods
+        description: Tangible material items.
+      - id: cash_or_voucher
+        label: Cash or Voucher
+        description: Financial assistance instruments.
+      - id: service
+        label: Service
+        description: Intangible assistance (e.g., medical checkup).
+
+  - id: delivery_constraint
+    label: Delivery Constraint
+    description: >
+      Operational restrictions on how the delivery must be executed.
+    concepts:
+      - id: cold_chain
+        label: Cold Chain
+        description: Items must be temperature controlled.
+      - id: urgent
+        label: Urgent
+        description: Time-sensitive delivery.
+      - id: gender_matched_handover
+        label: Gender-Matched Handover
+        description: Delivery agent must match beneficiary's gender for dignity/safety.

@@ -1,0 +1,36 @@
+version: "1.0.0"
+domain: support_delivery
+file: ontology/entities.yaml
+status: active
+
+entities:
+  - id: delivery_event
+    label: Delivery Event
+    description: >
+      The fundamental unit of execution, representing a scheduled or actual
+      transfer of assistance (physical or service).
+    required: true
+
+  - id: physical_handover
+    label: Physical Handover
+    description: >
+      A Delivery Event involving the transfer of tangible goods or financial instruments.
+    parent: delivery_event
+
+  - id: service_fulfillment
+    label: Service Fulfillment
+    description: >
+      A Delivery Event involving the execution of an intangible service.
+    parent: delivery_event
+
+  - id: delivery_attempt
+    label: Delivery Attempt
+    description: >
+      A single effort to complete a delivery event, which may succeed or fail.
+    required: false
+
+  - id: proof_of_delivery
+    label: Proof of Delivery
+    description: >
+      Evidence verifying that a handover occurred and was accepted.
+    required: true

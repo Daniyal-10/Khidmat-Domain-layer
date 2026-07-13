@@ -1,0 +1,47 @@
+version: "1.0.0"
+domain: support_delivery
+file: ontology/relationships.yaml
+status: active
+
+namespaces:
+  case_management: case_management
+  volunteer_operations: volunteer_operations
+  registration: registration
+  community_context: community_context
+
+relationships:
+  - id: delivery_fulfills_plan
+    from: delivery_event
+    relationship: fulfills
+    to: case_management:case_plan
+    cardinality: { min: 1, max: unbounded }
+
+  - id: delivery_executed_by_assignment
+    from: delivery_event
+    relationship: executed_by
+    to: volunteer_operations:volunteer_assignment
+    cardinality: { min: 0, max: 1 }
+
+  - id: delivery_has_attempt
+    from: delivery_event
+    relationship: has_attempt
+    to: delivery_attempt
+    cardinality: { min: 1, max: unbounded }
+
+  - id: attempt_has_proof
+    from: delivery_attempt
+    relationship: secured_by
+    to: proof_of_delivery
+    cardinality: { min: 0, max: 1 }
+
+  - id: delivery_received_by_beneficiary
+    from: physical_handover
+    relationship: received_by
+    to: registration:beneficiary
+    cardinality: { min: 0, max: unbounded }
+
+  - id: delivery_occurs_at_location
+    from: delivery_event
+    relationship: occurs_at
+    to: community_context:location
+    cardinality: { min: 0, max: 1 }

@@ -1,0 +1,35 @@
+version: "1.0.0"
+domain: support_delivery
+file: ontology/data-properties.yaml
+status: active
+
+data_properties:
+  - id: event_status
+    domain: delivery_event
+    taxonomy_ref: delivery_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: modality
+    domain: delivery_event
+    taxonomy_ref: delivery_modality
+    cardinality: { min: 1, max: 1 }
+
+  - id: delivered_quantity
+    domain: physical_handover
+    datatype: xsd:integer
+    cardinality: { min: 0, max: 1 }
+
+  - id: exception_reason
+    domain: delivery_attempt
+    taxonomy_ref: delivery_exception_reason
+    cardinality: { min: 0, max: 1 }
+
+  - id: constraint
+    domain: delivery_event
+    taxonomy_ref: delivery_constraint
+    cardinality: { min: 0, max: unbounded }
+
+  - id: proof_quality_flag
+    domain: proof_of_delivery
+    datatype: xsd:boolean
+    cardinality: { min: 0, max: 1 }
