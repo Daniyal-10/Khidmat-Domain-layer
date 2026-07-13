@@ -25,6 +25,16 @@ authored until the domain activates (ADR-004, ADR-009).
 - The registrant-role label `volunteer` itself (owned by
   `shared/taxonomy/persons.yaml`; this domain owns the full profile behind that
   role, not the role label).
+- The `Actor` entity (owned by `shared/ontology/entities.yaml`; this domain
+  attaches the volunteer profile *behind* that reference, it never redefines the
+  actor).
+- The **assignment act** — issuing a verification assignment
+  (`VerificationAssignment`, owned by `verification-operations`) or a case
+  assignment (`CaseAssignment`, owned by `case-management`). This domain owns
+  *who is fit to be assigned* (qualification, availability, coverage, trust),
+  never *the assignment event itself*. This boundary is already stated from the
+  verification side (see `verification-operations/ontology/relationships.yaml`)
+  and recorded reciprocally as `FLAG-006` in `ontology_authority_matrix.md`.
 - Anything in registration, verification, or case management.
 
 ## Directory Structure
