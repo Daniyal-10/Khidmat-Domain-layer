@@ -1,0 +1,79 @@
+version: "1.0.0"
+domain: programs
+file: taxonomy/interventions.yaml
+status: active
+
+purpose: >
+  Classifies the modalities and catalogues of support offerings a program provides,
+  including conditionality and milestone structures.
+
+schemes:
+  - id: intervention_modality
+    label: Intervention Modality
+    description: >
+      The fundamental nature of the assistance provided.
+    concepts:
+      - id: unrestricted_cash
+        label: Unrestricted Cash
+        description: >
+          Direct monetary transfer with no spending constraints.
+      - id: restricted_voucher
+        label: Restricted Voucher
+        description: >
+          Value that can only be spent on specific goods or at specific merchants.
+      - id: in_kind_goods
+        label: In-Kind Goods
+        description: >
+          Physical items (e.g., food rations, blankets).
+      - id: service_delivery
+        label: Service Delivery
+        description: >
+          Professional services (e.g., medical treatment, legal aid, training).
+      - id: asset_transfer
+        label: Asset Transfer
+        description: >
+          Productive assets (e.g., livestock, sewing machines) for livelihood generation.
+          
+  - id: conditionality_types
+    label: Conditionality Types
+    description: >
+      Behavioral or external requirements that must be met to receive the intervention.
+    concepts:
+      - id: unconditional
+        label: Unconditional
+        description: >
+          Provided without any required action by the beneficiary.
+      - id: health_attendance
+        label: Health Attendance
+        description: >
+          Conditional on attending clinics (e.g., maternal health checkups).
+      - id: school_attendance
+        label: School Attendance
+        description: >
+          Conditional on children maintaining a minimum school attendance rate.
+      - id: public_works
+        label: Public Works
+        description: >
+          Conditional on participating in community labor (Cash-for-Work).
+          
+  - id: milestone_types
+    label: Milestone Types
+    description: >
+      Significant phases or achievements in a phased graduation program.
+    concepts:
+      - id: intake_consumption_support
+        label: Intake & Consumption Support
+        description: >
+          Initial phase providing basic survival needs.
+      - id: asset_selection
+        label: Asset Selection & Transfer
+        description: >
+          Phase where productive livelihood assets are provided.
+      - id: skill_certification
+        label: Skill Certification
+        description: >
+          Completion of required training.
+      - id: graduation_readiness
+        label: Graduation Readiness
+        description: >
+          Final evaluation phase before exiting the program.

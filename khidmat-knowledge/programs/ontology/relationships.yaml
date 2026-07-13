@@ -1,0 +1,128 @@
+version: "1.0.0"
+domain: programs
+file: ontology/relationships.yaml
+status: active
+
+namespaces:
+  shared_org: http://khidmat.org/ontology/shared/organisations
+  shared_human: http://khidmat.org/ontology/shared/human-model
+  community_ctx: http://khidmat.org/ontology/community-context
+  verif_ops: http://khidmat.org/ontology/verification-operations
+
+relationships:
+  - id: program_has_version
+    from: program
+    relationship: has_version
+    to: program_version
+    cardinality: { min: 1, max: unbounded }
+    inverse: version_belongs_to_program
+
+  - id: program_has_variant
+    from: program
+    relationship: has_variant
+    to: program_variant
+    cardinality: { min: 0, max: unbounded }
+    inverse: variant_belongs_to_program
+
+  - id: program_has_successor
+    from: program
+    relationship: has_successor
+    to: program
+    cardinality: { min: 0, max: 1 }
+    inverse: is_successor_of_program
+
+  - id: program_mutually_exclusive_with
+    from: program
+    relationship: mutually_exclusive_with
+    to: program
+    cardinality: { min: 0, max: unbounded }
+
+  - id: program_prerequisite_for
+    from: program
+    relationship: prerequisite_for
+    to: program
+    cardinality: { min: 0, max: unbounded }
+
+  - id: program_funded_by
+    from: program
+    relationship: funded_by
+    to: shared_org:organisation
+    cardinality: { min: 0, max: unbounded }
+
+  - id: program_implemented_by
+    from: program
+    relationship: implemented_by
+    to: shared_org:organisation
+    cardinality: { min: 0, max: unbounded }
+
+  - id: program_managed_by
+    from: program
+    relationship: managed_by
+    to: shared_human:person
+    cardinality: { min: 0, max: unbounded }
+
+  - id: variant_located_in
+    from: program_variant
+    relationship: located_in
+    to: community_ctx:geographic_area
+    cardinality: { min: 1, max: unbounded }
+
+  - id: version_has_eligibility_rule
+    from: program_version
+    relationship: has_eligibility_rule
+    to: eligibility_rule
+    cardinality: { min: 1, max: unbounded }
+
+  - id: version_has_intervention_offering
+    from: program_version
+    relationship: has_intervention_offering
+    to: intervention_offering
+    cardinality: { min: 1, max: unbounded }
+
+  - id: offering_verified_by
+    from: intervention_offering
+    relationship: verified_by
+    to: verif_ops:verification_activity
+    cardinality: { min: 0, max: unbounded }
+
+  - id: enrollment_belongs_to_version
+    from: enrollment
+    relationship: belongs_to_version
+    to: program_version
+    cardinality: { min: 1, max: 1 }
+
+  - id: enrollment_belongs_to_variant
+    from: enrollment
+    relationship: belongs_to_variant
+    to: program_variant
+    cardinality: { min: 0, max: 1 }
+
+  - id: enrollment_for_beneficiary
+    from: enrollment
+    relationship: covers_beneficiary
+    to: shared_human:person
+    cardinality: { min: 1, max: 1 }
+
+  - id: enrollment_for_household
+    from: enrollment
+    relationship: covers_household
+    to: shared_human:household
+    cardinality: { min: 0, max: 1 }
+
+  - id: override_approves_enrollment
+    from: humanitarian_override
+    relationship: approves_enrollment
+    to: enrollment
+    cardinality: { min: 1, max: 1 }
+
+  - id: appeal_challenges_enrollment
+    from: appeal
+    relationship: challenges_enrollment
+    to: enrollment
+    cardinality: { min: 1, max: 1 }
+
+  - id: checkpoint_audits_program
+    from: compliance_checkpoint
+    relationship: audits_program
+    to: program
+    cardinality: { min: 1, max: 1 }

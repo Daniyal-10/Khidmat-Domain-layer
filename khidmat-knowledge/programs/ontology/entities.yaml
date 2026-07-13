@@ -1,0 +1,60 @@
+version: "1.0.0"
+domain: programs
+file: ontology/entities.yaml
+status: active
+
+entities:
+  - id: program
+    label: Program
+    description: >
+      The core structural initiative (e.g., Emergency Flood Response, National Pension Scheme) 
+      through which assistance is funded, governed, and bounded.
+    required: true
+
+  - id: program_version
+    label: Program Version
+    description: >
+      A specific iteration or amendment of a program's structure and rules over time.
+    required: false
+
+  - id: program_variant
+    label: Program Variant
+    description: >
+      A geographically or operationally localized child program inheriting from a master framework.
+    required: false
+
+  - id: eligibility_rule
+    label: Eligibility Rule
+    description: >
+      A discrete criterion evaluated against a beneficiary's profile to determine qualification.
+    required: false
+
+  - id: intervention_offering
+    label: Intervention Offering
+    description: >
+      A specific support modality and conditionality defined within the program's catalogue.
+    required: false
+
+  - id: enrollment
+    label: Enrollment
+    description: >
+      The macro-state and historical record of a beneficiary's participation in a program.
+    required: false
+
+  - id: humanitarian_override
+    label: Humanitarian Override
+    description: >
+      A formalized exception granting enrollment outside standard eligibility rules.
+    required: false
+
+  - id: appeal
+    label: Appeal
+    description: >
+      A formal challenge by a beneficiary against an enrollment rejection or termination.
+    required: false
+
+  - id: compliance_checkpoint
+    label: Compliance Checkpoint
+    description: >
+      A mandatory audit, reporting period, or verification event required by the program's governance.
+    required: false

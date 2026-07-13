@@ -1,0 +1,82 @@
+version: "1.0.0"
+domain: programs
+file: taxonomy/structure.yaml
+status: active
+
+purpose: >
+  Classifies the structural topology and thematic categorization of programs.
+
+schemes:
+  - id: program_topology
+    label: Program Topology
+    description: >
+      The architectural design of how the program is rolled out.
+    concepts:
+      - id: standalone
+        label: Standalone
+        description: >
+          A single program entity with no child implementations.
+      - id: master_framework
+        label: Master Framework
+        description: >
+          A parent program that defines rules but delegates execution to child variants.
+      - id: localized_variant
+        label: Localized Variant
+        description: >
+          A child program inheriting from a master framework, adapted for a specific region.
+          
+  - id: thematic_sectors
+    label: Thematic Sectors
+    description: >
+      The humanitarian or development sector the program addresses.
+    concepts:
+      - id: wash
+        label: WASH
+        description: >
+          Water, Sanitation, and Hygiene.
+      - id: food_security
+        label: Food Security
+        description: >
+          Ensuring access to sufficient, safe, and nutritious food.
+      - id: health_and_nutrition
+        label: Health and Nutrition
+        description: >
+          Medical care, public health, and malnutrition treatment.
+      - id: shelter
+        label: Shelter
+        description: >
+          Housing and non-food item distributions for living spaces.
+      - id: education
+        label: Education
+        description: >
+          Schooling, vocational training, and early childhood development.
+      - id: livelihood
+        label: Livelihood
+        description: >
+          Economic empowerment, cash-for-work, and asset transfers.
+      - id: protection
+        label: Protection
+        description: >
+          Safeguarding individuals from violence, coercion, and abuse.
+      - id: social_protection
+        label: Social Protection
+        description: >
+          Government welfare, pensions, and direct benefit transfers.
+          
+  - id: implementing_partner_roles
+    label: Implementing Partner Roles
+    description: >
+      The specific function an organization serves within a program's structure.
+    concepts:
+      - id: prime_recipient
+        label: Prime Recipient
+        description: >
+          The organization receiving the primary grant and holding overall accountability.
+      - id: executing_agency
+        label: Executing Agency
+        description: >
+          The organization directly delivering the services on the ground.
+      - id: technical_advisor
+        label: Technical Advisor
+        description: >
+          An organization providing specialized expertise but not direct delivery.

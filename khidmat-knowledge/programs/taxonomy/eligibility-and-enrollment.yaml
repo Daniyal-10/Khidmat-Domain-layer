@@ -1,0 +1,136 @@
+version: "1.0.0"
+domain: programs
+file: taxonomy/eligibility-and-enrollment.yaml
+status: active
+
+purpose: >
+  Classifies the rules for eligibility, enrollment states, outcomes, and graduation.
+
+schemes:
+  - id: eligibility_categories
+    label: Eligibility Categories
+    description: >
+      The broad type of criteria used to target beneficiaries.
+    concepts:
+      - id: demographic_categorical
+        label: Demographic Categorical
+        description: >
+          Based on inherent traits like age, gender, or disability.
+      - id: means_tested
+        label: Means-Tested
+        description: >
+          Based on income, assets, or economic capacity.
+      - id: geographic
+        label: Geographic
+        description: >
+          Based solely on residence in a specific location or disaster zone.
+      - id: vulnerability_scored
+        label: Vulnerability-Scored
+        description: >
+          Based on a composite risk or vulnerability score crossing a threshold.
+          
+  - id: eligibility_operators
+    label: Eligibility Operators
+    description: >
+      Logical operators used in eligibility rule definitions.
+    concepts:
+      - id: equals
+        label: Equals
+        description: >
+          Must perfectly match the target value.
+      - id: greater_than
+        label: Greater Than
+        description: >
+          Numeric or ordinal value must be strictly higher.
+      - id: less_than
+        label: Less Than
+        description: >
+          Numeric or ordinal value must be strictly lower.
+      - id: in_set
+        label: In Set
+        description: >
+          Value must be one of the specified allowed values.
+          
+  - id: enrollment_status
+    label: Enrollment Status
+    description: >
+      The state of a beneficiary's relationship with the program.
+    concepts:
+      - id: applied
+        label: Applied
+        description: >
+          Application received but not yet evaluated.
+      - id: waitlisted
+        label: Waitlisted
+        description: >
+          Eligible, but program capacity is currently full.
+      - id: enrolled_active
+        label: Enrolled (Active)
+        description: >
+          Currently receiving interventions.
+      - id: enrolled_suspended
+        label: Enrolled (Suspended)
+        description: >
+          Enrollment is temporarily paused (e.g., pending compliance check).
+      - id: exited
+        label: Exited
+        description: >
+          No longer in the program.
+          
+  - id: enrollment_outcome
+    label: Enrollment Outcome
+    description: >
+      The final resolution of an enrollment when it reaches the exited state.
+    concepts:
+      - id: graduated
+        label: Graduated
+        description: >
+          Successfully completed the program and achieved its objectives.
+      - id: terminated
+        label: Terminated
+        description: >
+          Removed from the program before completion (e.g., fraud, moved away).
+      - id: transitioned
+        label: Transitioned
+        description: >
+          Moved to a successor or different program.
+          
+  - id: termination_reasons
+    label: Termination Reasons
+    description: >
+      Why an enrollment was terminated prematurely.
+    concepts:
+      - id: loss_of_eligibility
+        label: Loss of Eligibility
+        description: >
+          The beneficiary no longer meets the criteria (e.g., aged out, income rose).
+      - id: beneficiary_withdrawal
+        label: Beneficiary Withdrawal
+        description: >
+          The beneficiary voluntarily opted out.
+      - id: fraud_or_misrepresentation
+        label: Fraud or Misrepresentation
+        description: >
+          The enrollment was based on false claims.
+      - id: unreachable
+        label: Unreachable
+        description: >
+          The beneficiary cannot be located for an extended period.
+          
+  - id: waitlist_priority
+    label: Waitlist Priority
+    description: >
+      The method used to rank applicants on a waitlist.
+    concepts:
+      - id: first_come_first_served
+        label: First-Come, First-Served
+        description: >
+          Ranked strictly by application date.
+      - id: highest_vulnerability_first
+        label: Highest Vulnerability First
+        description: >
+          Ranked by a computed risk or vulnerability score.
+      - id: lottery
+        label: Lottery
+        description: >
+          Randomized selection from the eligible pool.
