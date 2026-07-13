@@ -250,6 +250,48 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 | `CaseAssignment` | Case Assignment | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
 | `CaseNote` | Case Note | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
 
+---
+
+## Volunteer Operations Domain
+
+**Authoritative files:** `volunteer-operations/ontology/*.yaml`, `volunteer-operations/taxonomy/*.yaml`
+**Owner domain:** Volunteer Operations
+**Introduced:** Foundational authoring (ADR-024 — *Canonical (Foundational) — Operational Deferred*)
+**Governing ADRs:** ADR-024, ADR-004, ADR-008, ADR-018, ADR-023
+
+Foundational (Tier 1) concepts only. The operational/runtime layer (Tier 2 —
+scheduling, dispatch, workload, trust/performance scoring, the assignment act,
+per-instance assignment/training history) is deferred to the Stage-9 activation
+trigger and is intentionally absent from this table until authored.
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `volunteer_profile` | Volunteer Profile | `volunteer-operations/ontology/entities.yaml` | Volunteer Operations | Attaches behind `shared:actor`; must not redefine the actor or the `volunteer` role. Must not be redefined elsewhere. |
+| `volunteer_team` | Volunteer Team | `volunteer-operations/ontology/entities.yaml` | Volunteer Operations | Structural grouping only; must not be redefined |
+| `volunteer_status` | Volunteer Status | `volunteer-operations/taxonomy/volunteer-classification.yaml` | Volunteer Operations | May be referenced by any domain; must not be redefined |
+| `volunteer_type` | Volunteer Type | `volunteer-operations/taxonomy/volunteer-classification.yaml` | Volunteer Operations | May be referenced by any domain; must not be redefined |
+| `skill_category` | Skill Category | `volunteer-operations/taxonomy/skills.yaml` | Volunteer Operations | May be referenced by any domain; must not be redefined |
+| `certification_type` | Certification Type | `volunteer-operations/taxonomy/certifications.yaml` | Volunteer Operations | May be referenced by any domain; must not be redefined |
+| `availability_type` | Availability Type | `volunteer-operations/taxonomy/availability.yaml` | Volunteer Operations | May be referenced by any domain; must not be redefined |
+| `assignment_type` | Assignment Type | `volunteer-operations/taxonomy/assignment-types.yaml` | Volunteer Operations | Eligibility classification only; must not be conflated with the assignment act (FLAG-006). Must not be redefined |
+| `coverage_type` | Coverage Type | `volunteer-operations/taxonomy/coverage.yaml` | Volunteer Operations | May be referenced by any domain; must not be redefined |
+| `language_proficiency` | Language Proficiency | `volunteer-operations/taxonomy/languages.yaml` | Volunteer Operations | Promotion candidate to Shared if a second domain needs it (VO-FLAG-B); must not be redefined |
+| `affiliation_type` | Affiliation Type | `volunteer-operations/taxonomy/affiliation.yaml` | Volunteer Operations | May be referenced by any domain; must not be redefined |
+| `training_status` | Training Status | `volunteer-operations/taxonomy/training.yaml` | Volunteer Operations | May be referenced by any domain; must not be redefined |
+
+**Relationships Owned (domain-local):**
+- `profile_of` (`volunteer_profile` → `shared:actor`)
+- `member_of` / `has_member` (`volunteer_profile` ↔ `volunteer_team`)
+- `affiliated_with` (`volunteer_profile` → `shared_org:organisation`)
+
+**Explicit References Only (Owned Elsewhere):**
+- `actor` (Shared Ontology)
+- `organisation` (Shared Taxonomy)
+- `volunteer` role label (Shared — `persons.yaml`)
+- `VerificationAssignment` (Verification Operations), `CaseAssignment` (Case Management) — the assignment act (FLAG-006)
+
+---
+
 ## Shared Time Domain
 
 **Authoritative files:** `shared/taxonomy/time.yaml`
@@ -353,4 +395,4 @@ future domain designers do not create silent drift.
 | Situation | `verification-operations/ontology/relationships.yaml` already states, one-directionally: *"Verification Operations does not define actor qualification, roles, or types — that remains a Volunteer Operations concern (Level 2 placeholder)."* `review-decisions.yaml` echoes it. `VerificationAssignment` and `CaseAssignment` own the *assignment event*; the `Actor` entity and the `volunteer` role are single-owned in Shared. Volunteer Operations (Stage 9 placeholder) will own the *profile behind the actor* — never the assignment act, the actor entity, or the role label. |
 | Risk | On Volunteer Operations activation, the domain must attach its profile *behind* the shared `Actor` reference (via a `references`/relationship link), not mint a second actor entity or redefine `VerificationAssignment`/`CaseAssignment`. Silent drift would produce a duplicate actor/assignment model. |
 | Resolution required | On activation: add a Volunteer Operations owned-concepts section here; author the profile-to-`shared:Actor` link; leave the assignment acts owned by their operational domains. See `docs/architecture/Volunteer_Operations_Migration_Plan.md` (Phase 4) and `Volunteer_Operations_Domain_Audit.md` (VO-6). |
-| Status | Boundary **recorded** (decided from the verification/case side; Volunteer Operations side activates in Stage 9). No YAML changed in this pass. |
+| Status | **Foundational side authored** (ADR-024). The Volunteer Operations owned-concepts section is added above; `volunteer_profile` attaches behind `shared:actor` via `profile_of` (`volunteer-operations/ontology/relationships.yaml`); eligibility is modeled as `eligible_assignment_type` (a data property), and the assignment **act** remains owned by `verification-operations` (`VerificationAssignment`) and `case-management` (`CaseAssignment`) — not duplicated. The boundary is now held reciprocally in authored YAML, not only in prose. The operational layer (trust/performance scoring, assignment history) stays deferred to Stage 9. |

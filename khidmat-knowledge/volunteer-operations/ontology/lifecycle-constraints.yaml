@@ -1,0 +1,55 @@
+version: "1.0.0"
+domain: volunteer_operations
+file: volunteer-operations/ontology/lifecycle-constraints.yaml
+status: active
+
+# Descriptive lifecycle semantics (Canonical_Ontology_Schema.md §9). Not a
+# generation surface. Foundational (Tier 1) only: how the foundational entities
+# come into being, mutate, and are retired. The OPERATIONAL lifecycle — duty
+# cycles, active-roster transitions, assignment history accrual, trust/performance
+# evolution — is Tier 2 and deferred (ADR-024).
+
+lifecycle_constraints:
+
+  - entity: volunteer_profile
+    creation_semantics: >
+      A volunteer_profile is instantiated when an individual becomes a recognized
+      operational resource of the organization, attaching behind an existing
+      shared Actor. Creation of the profile does not create the Actor or the
+      `volunteer` role label — those are referenced, owned in Shared.
+    mutability: >
+      Highly mutable in its qualification attributes over time (skills,
+      certifications, availability kinds, coverage mode, training standing evolve
+      as the volunteer develops). Its foundational identity (volunteer_id and the
+      Actor it profiles) remains constant.
+    deprecation_behavior: >
+      Soft deletion. A profile is never physically deleted; when a volunteer
+      exits, volunteer_status transitions to `exited` and the profile is retained
+      for historical integrity of any past participation referenced elsewhere.
+    identity_continuity: >
+      Retains its volunteer_id and its profile_of link to the same Actor across
+      all qualification changes and status transitions.
+    operational_lifecycle_note: >
+      Active-duty transitions, assignment-history accrual, and trust/performance
+      evolution are operational lifecycle concerns (Tier 2) and are intentionally
+      not modeled here (ADR-024).
+
+  - entity: volunteer_team
+    creation_semantics: >
+      A volunteer_team is instantiated when the organization recognizes a
+      persistent grouping of volunteers as a unit.
+    mutability: >
+      Highly mutable membership. The team's identity persists across member
+      turnover.
+    deprecation_behavior: >
+      Soft deletion. A disbanded team is deprecated, not physically deleted, so
+      historical membership references remain valid.
+    identity_continuity: >
+      Maintains identity as long as the unit is recognized, despite membership
+      changes.
+    cross_domain_boundary: >
+      volunteer_team and volunteer_profile must not own the shared Actor or the
+      `volunteer` role. No cascading delete propagates from a team to its member
+      profiles, nor from a profile to the Actor it references — deprecating a team
+      never deprecates its members, and deprecating a profile never deprecates the
+      shared Actor.

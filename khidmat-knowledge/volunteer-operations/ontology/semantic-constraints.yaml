@@ -1,0 +1,31 @@
+version: "1.0.0"
+domain: volunteer_operations
+file: volunteer-operations/ontology/semantic-constraints.yaml
+status: active
+
+# ====================================================================
+# Semantic Constraints (Ontology Invariants) — Foundational (Tier 1)
+# ====================================================================
+# Target-neutral structural facts only (Canonical_Ontology_Schema.md §9).
+# How each row renders into OWL/SHACL/LPG is a generator concern; no
+# hand-authored OWL functional syntax is stored here.
+#
+# Only structural invariants that hold across all humanitarian organizations are
+# authored. Operational invariants (a volunteer may hold at most N concurrent
+# assignments, availability must cover a scheduled slot, trust thresholds gate
+# eligibility, etc.) are Tier 2 — deferred to the Stage-9 operational trigger
+# (ADR-024). No such rule is invented here.
+
+constraints:
+
+  - id: volunteer_profile_requires_actor
+    type: cardinality
+    property: profile_of
+    entities: [volunteer_profile, actor]
+    parameters: { min: 1, max: 1 }
+    notes: >
+      Every volunteer_profile MUST attach to exactly one shared Actor. A profile
+      cannot exist in the graph without the actor it qualifies — this is the
+      structural expression of "the profile lives behind the Actor" (FLAG-006,
+      ADR-018, D-VO5). The reciprocal cardinality on the shared side is not
+      asserted here; this domain does not own the Actor entity.

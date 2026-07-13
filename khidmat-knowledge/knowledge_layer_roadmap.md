@@ -319,7 +319,7 @@ The system can also reason at the programme level: which geographic areas have c
 
 At this stage, Volunteer Operations, Support Delivery, Programs, and Impact can activate in sequence. Each has its prerequisites met.
 
-**Volunteer Operations:** Activates when a volunteer management workflow is defined with operations staff. Depends on volunteer profile requirements emerging from operational experience.
+**Volunteer Operations:** Its **foundational** (organization-invariant) ontology and taxonomy are **already authored** under ADR-024 — maturity *Canonical (Foundational) — Operational Deferred*. The Stage-9 trigger now gates **only the operational/runtime layer** (Tier 2): scheduling, dispatch, routing, workload balancing, optimization, trust/performance scoring, the assignment act, and per-instance assignment/training history. That layer activates when a volunteer management workflow is defined with operations staff and volunteer profile requirements emerge from operational experience.
 
 **Support Delivery:** Activates after Case Management is active and an intervention approval workflow exists. Depends on vendor relationships and payment mechanisms being defined.
 
@@ -503,7 +503,7 @@ khidmat-knowledge/
 ├── needs-assessment/                 [complete]
 ├── case-management/                  [activate in Stage 5]
 ├── beneficiary-lifecycle/            [activate in Stage 7]
-├── volunteer-operations/             [activate in Stage 9]
+├── volunteer-operations/             [foundational authored (ADR-024); operational layer activates in Stage 9]
 ├── support-delivery/                 [activate in Stage 9]
 ├── programs/                         [activate in Stage 9]
 ├── consent-and-privacy/              [activate in Stage 9]

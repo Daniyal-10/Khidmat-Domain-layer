@@ -1,0 +1,42 @@
+version: "1.0.0"
+domain: volunteer_operations
+file: volunteer-operations/taxonomy/affiliation.yaml
+status: active
+
+purpose: >
+  Owns the organization-invariant KIND of relationship a volunteer holds to the
+  organization (affiliation_type). The specific organisation a volunteer is
+  affiliated with is expressed by the affiliated_with relationship to
+  shared_org:organisation (ontology/relationships.yaml); this file does not own,
+  redefine, or duplicate the organisation vocabulary
+  (shared/taxonomy/organisations.yaml), nor any employment/contract terms
+  (out of scope for the knowledge layer).
+
+schemes:
+  - id: affiliation_type
+    label: Affiliation Type
+    description: >
+      The nature of a volunteer's affiliation with the organization.
+    concepts:
+      - id: organisation_staff
+        label: Organisation Staff
+        description: >
+          A member of the organization's own staff acting in a volunteer capacity.
+      - id: registered_volunteer
+        label: Registered Volunteer
+        description: >
+          A formally registered volunteer of the organization.
+      - id: partner_organisation_member
+        label: Partner Organisation Member
+        description: >
+          A volunteer affiliated through a partner organisation.
+      - id: community_volunteer
+        label: Community Volunteer
+        description: >
+          A community-based volunteer affiliated informally through their
+          community.
+      - id: ad_hoc_volunteer
+        label: Ad Hoc Volunteer
+        description: >
+          A volunteer engaged on an occasional or one-off basis without formal
+          registration.

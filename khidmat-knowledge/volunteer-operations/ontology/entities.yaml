@@ -1,0 +1,64 @@
+version: "1.0.0"
+domain: volunteer_operations
+file: volunteer-operations/ontology/entities.yaml
+status: active
+
+# Foundational (Tier 1) ontology, authored under ADR-024
+# (Foundational Layer Precedes Operational Activation). Only organization-invariant
+# concepts are declared here. The operational/runtime layer (scheduling, dispatch,
+# workload, trust/performance scoring, the assignment ACT, per-instance assignment
+# and training history) is Tier 2 and remains deferred to the Stage-9 activation
+# trigger — see governance.md and docs/architecture/Volunteer_Operations_Migration_Plan.md.
+
+namespaces:
+  # Cross-domain references (values are the pre-C-2 file-path placeholder form,
+  # matching community-context/ontology/*; CURIE prefixes await the C-2 finding).
+  shared_core: "shared/ontology/entities.yaml"
+  shared_org: "shared/taxonomy/organisations.yaml"
+
+entities:
+
+  - id: volunteer_profile
+    label: Volunteer Profile
+    description: >
+      The persistent, qualified operational record of an individual who acts on
+      behalf of the organization — the identity-of-capacity behind the `volunteer`
+      role. Holds what the volunteer is *fit for* (skills, certifications, spoken
+      languages, availability kinds, coverage mode, assignment-type eligibility,
+      affiliation, training standing). It is the profile attached *behind* the
+      shared Actor, not a second actor.
+    required: false
+    ownership_boundary: >
+      Owns the volunteer's qualification/capacity profile. Does NOT own the
+      `Actor` entity (shared/ontology/entities.yaml), the `volunteer` role label
+      (shared/taxonomy/persons.yaml), or the assignment ACT — issuing a
+      VerificationAssignment (verification-operations) or a CaseAssignment
+      (case-management). It owns *who is fit to be assigned*, never *the
+      assignment event*. Scheduling, dispatch, workload, and trust/performance
+      scoring are Tier 2 (deferred, ADR-024).
+    notes: >
+      Scalar/coded/value-object properties are authored in data-properties.yaml:
+      volunteer_id; volunteer_status; volunteer_type; skill; certification;
+      language_competency; availability_commitment; coverage_mode;
+      eligible_assignment_type; affiliation_type; training_status. The link to
+      the shared Actor is expressed in relationships.yaml
+      (volunteer_profile_profile_of_actor); it is not repeated here.
+
+  - id: volunteer_team
+    label: Volunteer Team
+    description: >
+      A named, persistent grouping of volunteer profiles that operate as a unit
+      (e.g. a field team or crew). A purely structural membership grouping — it
+      exists across humanitarian organizations that organize volunteers into
+      units.
+    required: false
+    ownership_boundary: >
+      Owns team identity and the structural membership grouping only. Does NOT
+      own team scheduling, rostering, leadership-assignment logic, workload
+      distribution, or dispatch — all Tier 2 (deferred, ADR-024). Team membership
+      is a structural fact; the operational behavior of a team is not modeled
+      here.
+    notes: >
+      Scalar properties are authored in data-properties.yaml: team_id. Membership
+      is expressed in relationships.yaml (volunteer_profile_member_of_team /
+      volunteer_team_has_member_profile); it is not repeated here.

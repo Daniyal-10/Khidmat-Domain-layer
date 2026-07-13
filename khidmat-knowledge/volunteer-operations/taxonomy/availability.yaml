@@ -1,0 +1,41 @@
+version: "1.0.0"
+domain: volunteer_operations
+file: volunteer-operations/taxonomy/availability.yaml
+status: active
+
+purpose: >
+  Owns the organization-invariant KINDS of availability a volunteer offers
+  (availability_type). This classifies the PATTERN of a volunteer's availability
+  commitment — not a concrete schedule, calendar, roster, time slot, or capacity
+  count. Actual scheduling, rota construction, and slot allocation are Tier 2
+  (deferred, ADR-024). Exclusion of mutable operational state mirrors the
+  Community Context governance precedent (immutable classification vs. mutable
+  instance state).
+
+schemes:
+  - id: availability_type
+    label: Availability Type
+    description: >
+      The pattern of availability a volunteer commits to. A stable classification,
+      not a timetable.
+    concepts:
+      - id: regular_scheduled
+        label: Regular Scheduled
+        description: >
+          Available on a recurring, predictable basis (e.g. set days each week).
+      - id: on_call
+        label: On Call
+        description: >
+          Available to be called on as needed, without a fixed recurring schedule.
+      - id: event_based
+        label: Event Based
+        description: >
+          Available for specific events, campaigns, or activities.
+      - id: seasonal
+        label: Seasonal
+        description: >
+          Available during particular seasons or periods of the year.
+      - id: emergency_surge
+        label: Emergency Surge
+        description: >
+          Available specifically for emergency or surge response.

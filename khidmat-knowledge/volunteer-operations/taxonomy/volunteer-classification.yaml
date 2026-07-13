@@ -1,0 +1,78 @@
+version: "1.0.0"
+domain: volunteer_operations
+file: volunteer-operations/taxonomy/volunteer-classification.yaml
+status: active
+
+purpose: >
+  Classifies a volunteer profile by engagement lifecycle STATE (volunteer_status)
+  and by engagement basis (volunteer_type). Owns only organization-invariant,
+  extensible classifications. Does NOT own the `volunteer` role label
+  (shared/taxonomy/persons.yaml#person_roles.volunteer), operational duty/roster
+  status, scheduling, or any workflow state — those are the assignment domains'
+  or Tier 2 operational concerns (ADR-024, ADR-008).
+
+schemes:
+  - id: volunteer_status
+    label: Volunteer Status
+    description: >
+      The engagement lifecycle state of a volunteer profile. A coarse,
+      organization-invariant standing — not an operational duty or roster status.
+    concepts:
+      - id: prospective
+        label: Prospective
+        description: >
+          Identified or applied but not yet onboarded as an active volunteer.
+      - id: onboarding
+        label: Onboarding
+        description: >
+          In the process of joining — completing intake, screening, or initial
+          training — but not yet fully active.
+      - id: active
+        label: Active
+        description: >
+          A currently engaged volunteer available to be considered for work.
+      - id: inactive
+        label: Inactive
+        description: >
+          Temporarily not engaged (e.g. on a break or dormant) while remaining on
+          record for possible return.
+      - id: suspended
+        label: Suspended
+        description: >
+          Engagement paused by the organization pending review. Distinct from
+          inactive, which is not a sanction.
+      - id: exited
+        label: Exited
+        description: >
+          No longer a volunteer. The profile is retained for historical integrity.
+
+  - id: volunteer_type
+    label: Volunteer Type
+    description: >
+      The basis on which a volunteer engages. Extensible: organizations add their
+      own engagement bases; these are the broadly-recognized starting families.
+    concepts:
+      - id: field_volunteer
+        label: Field Volunteer
+        description: >
+          Engages in person in the field (visits, verification, delivery support,
+          outreach).
+      - id: remote_volunteer
+        label: Remote Volunteer
+        description: >
+          Engages remotely (phone, online, back-office) without routine field
+          presence.
+      - id: professional_volunteer
+        label: Professional Volunteer
+        description: >
+          Contributes a licensed or specialist professional skill on a voluntary
+          or pro-bono basis (e.g. clinician, lawyer, engineer).
+      - id: community_based_volunteer
+        label: Community Based Volunteer
+        description: >
+          A community-native volunteer engaging within their own community.
+      - id: general_volunteer
+        label: General Volunteer
+        description: >
+          A volunteer engaging in general support tasks without a specialist or
+          community-specific basis.

@@ -1,0 +1,67 @@
+version: "1.0.0"
+domain: volunteer_operations
+file: volunteer-operations/taxonomy/skills.yaml
+status: active
+
+purpose: >
+  Owns the top-level, organization-invariant humanitarian skill families a
+  volunteer may hold (skill_category). These are broad competency domains, stable
+  across humanitarian organizations and extensible. This file does NOT own the
+  organization-specific catalogue of individual skills, any proficiency scale or
+  scoring, or the mapping of skills to tasks/assignments — all Tier 2, deferred to
+  operations staff (ADR-024, refining D-VO3). It does not redefine the Shared
+  Human Model capability vocabulary (shared/human-model/taxonomy/capabilities.yaml),
+  which classifies a person's functional capacity, not a volunteer's task skills.
+
+schemes:
+  - id: skill_category
+    label: Skill Category
+    description: >
+      A broad family of humanitarian volunteer skills. Top-level only — individual
+      skills within a family are an organization-specific decomposition authored on
+      operational activation.
+    concepts:
+      - id: health_and_medical
+        label: Health and Medical
+        description: >
+          Clinical, first-aid, nursing, and other health-service skills.
+      - id: psychosocial_and_counselling
+        label: Psychosocial and Counselling
+        description: >
+          Psychosocial support, counselling, and mental-health first-aid skills.
+      - id: protection_and_safeguarding
+        label: Protection and Safeguarding
+        description: >
+          Child protection, gender-based-violence response, and safeguarding
+          skills.
+      - id: logistics_and_transport
+        label: Logistics and Transport
+        description: >
+          Warehousing, distribution, fleet, driving, and supply-chain skills.
+      - id: language_and_interpretation
+        label: Language and Interpretation
+        description: >
+          Translation and interpretation skills. (Specific languages spoken are
+          recorded on the profile via language_competency, not here.)
+      - id: technical_and_engineering
+        label: Technical and Engineering
+        description: >
+          Water/sanitation, construction, electrical, mechanical, and ICT
+          technical skills.
+      - id: administration_and_coordination
+        label: Administration and Coordination
+        description: >
+          Administrative, coordination, finance, and office-management skills.
+      - id: community_mobilisation
+        label: Community Mobilisation
+        description: >
+          Community engagement, outreach, awareness, and mobilisation skills.
+      - id: data_and_information_management
+        label: Data and Information Management
+        description: >
+          Registration, data collection, monitoring, and information-management
+          skills.
+      - id: education_and_training
+        label: Education and Training
+        description: >
+          Teaching, facilitation, and training-delivery skills.
