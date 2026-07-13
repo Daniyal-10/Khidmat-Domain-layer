@@ -1,48 +1,30 @@
+version: "1.0.0"
+domain: community_context
+file: community-context/taxonomy/community-hazards.yaml
+status: active
+
 # ============================================================================
-# Domain: Community Context
-# Context: Taxonomy
-# File: community-hazards.yaml
-#
-# Purpose: Model the relatively stable, structural exposure of a geographic area 
+# Purpose: Model the relatively stable, structural exposure of a geographic area
 #          to environmental, geological, and anthropogenic hazard profiles.
-# Scope: This taxonomy classifies the *context of exposure* (e.g., a flood-prone 
-#        zone). It strictly does NOT model the hazard itself (e.g., a flood event), 
-#        which is owned exclusively by the Risk Domain. It also excludes dynamic 
+# Scope: This taxonomy classifies the *context of exposure* (e.g., a flood-prone
+#        zone). It strictly does NOT model the hazard itself (e.g., a flood event),
+#        which is owned exclusively by the Risk Domain. It also excludes dynamic
 #        vulnerability, disaster events, and operational responses.
 #
 # ADR Validation:
-# - ADR-008 (Single Ownership): Ensures pristine boundary with the Risk Domain. 
-#   Risk owns the hazard (`flood`). Community Context owns the environmental 
+# - ADR-008 (Single Ownership): Ensures pristine boundary with the Risk Domain.
+#   Risk owns the hazard (`flood`). Community Context owns the environmental
 #   trait that makes exposure likely (`flood_prone_lowland`).
-# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
+# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts
 #   rather than regional terms.
-#
-# Ontology Compatibility:
-# These values will serve as property ranges for `Area` and `Community` entities 
-# in `community-context/ontology.yaml` to denote persistent geographic risk exposure.
-#
-# Reasoning Compatibility:
-# Enables forward-chaining rules linking persistent geographic traits to temporal 
-# events. For example:
-# If [Area Exposure = `cyclone_exposed_region`] + 
-#    [Seasonal Event = `heavy_precipitation_season`] -> 
-# (Future Risk rule infers heightened acute exposure probability).
-#
-# RDF/OWL Compatibility:
-# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
-# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-domain: community_context
-taxonomy: community_hazards
-version: 1.0.0
-
-concepts:
-  hydrological_exposure_context:
-    description: Classification of geographic susceptibility to water-related extremes.
-    type: enum
-
-    values:
+schemes:
+  - id: hydrological_exposure_context
+    label: Hydrological Exposure Context
+    description: >
+      Classification of geographic susceptibility to water-related extremes.
+    concepts:
       - id: flood_prone_lowland
         label: "Flood Prone Lowland"
         description: "Geographic area subject to regular or seasonal inundation."
@@ -56,11 +38,11 @@ concepts:
         label: "Drought Sensitive Zone"
         description: "Area with low structural water security, highly susceptible to periods of low precipitation."
 
-  geological_exposure_context:
-    description: Classification of geographic susceptibility to earth and tectonic movements.
-    type: enum
-
-    values:
+  - id: geological_exposure_context
+    label: Geological Exposure Context
+    description: >
+      Classification of geographic susceptibility to earth and tectonic movements.
+    concepts:
       - id: earthquake_prone_fault_zone
         label: "Earthquake Prone Fault Zone"
         description: "Region situated on or near active tectonic fault lines with high historical seismicity."
@@ -74,11 +56,11 @@ concepts:
         label: "Volcanic Hazard Zone"
         description: "Area situated within the historical impact radius of active or dormant volcanoes."
 
-  climatological_exposure_context:
-    description: Classification of geographic susceptibility to extreme atmospheric and climatic conditions.
-    type: enum
-
-    values:
+  - id: climatological_exposure_context
+    label: Climatological Exposure Context
+    description: >
+      Classification of geographic susceptibility to extreme atmospheric and climatic conditions.
+    concepts:
       - id: cyclone_exposed_region
         label: "Cyclone Exposed Region"
         description: "Coastal or near-coastal area situated in the historical path of severe tropical cyclones/hurricanes."
@@ -92,11 +74,11 @@ concepts:
         label: "Wildfire Prone Interface"
         description: "Area where human habitation borders dense vegetation susceptible to uncontrolled fires."
 
-  anthropogenic_exposure_context:
-    description: Classification of geographic susceptibility to human-made or industrial hazards.
-    type: enum
-
-    values:
+  - id: anthropogenic_exposure_context
+    label: Anthropogenic Exposure Context
+    description: >
+      Classification of geographic susceptibility to human-made or industrial hazards.
+    concepts:
       - id: industrial_pollution_zone
         label: "Industrial Pollution Zone"
         description: "Area persistently exposed to severe air, water, or soil contamination from adjacent industry."

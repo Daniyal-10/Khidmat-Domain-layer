@@ -1,18 +1,21 @@
 # Canonical Ontology Authoring Contract
 
 > **Phase:** RATIFIED and in effect. **Status update:** the architecture specification below has
-> been approved and applied. **Registration**, not Community Context, became the first domain
-> migrated to this contract (Phases 1–4 of `Registration_Migration_Plan.md` are complete); the
-> sequencing originally proposed here has been superseded by that outcome. Community Context
-> remains built against the pre-canonical, legacy structure and is the next domain targeted for
-> migration.
+> been approved and applied. **Registration** became the first domain migrated to this contract
+> (Phases 1–4 of `Registration_Migration_Plan.md` are complete). **Community Context** is the
+> second, and the second to reach **Canonical (Content Pending)** status (Phases 1–4 of
+> `Community_Context_Migration_Plan.md` are complete — 17 of 18 `data-properties.yaml` rows
+> authored; 1 row remains a genuine content gap pending a new taxonomy scheme, tracked in that
+> plan's Content Gap Log; Phase 5 cross-domain CURIE linking is blocked on a repository-wide
+> manifest and ratified base IRI, same as Registration).
 >
 > **Sequencing (historical — superseded by actual migration order):**
 > 1. ✅ Freeze architecture — *this document.*
 > 2. ✅ Review architecture — ratified.
 > 3. ✅ Migrate Registration — first reference implementation (Phases 1–4 complete; Phase 5
 >    cross-domain CURIE linking blocked on a repository-wide manifest and ratified base IRI).
-> 4. → Migrate Community Context, then remaining domains.
+> 4. ✅ Migrate Community Context — second reference implementation (Phases 1–4 complete, 17/18
+>    content rows authored; Phase 5 blocked as above). → remaining domains next.
 >
 > **Amendment pass (Registration Phase 4):** §§17–21 extend this contract with Value Objects,
 > Roles, the Runtime/Reasoning boundary, and Future Entity Candidate (governing ADR: ADR-023,

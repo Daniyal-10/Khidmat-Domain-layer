@@ -1,48 +1,31 @@
+version: "1.0.0"
+domain: community_context
+file: community-context/taxonomy/essential-services.yaml
+status: active
+
 # ============================================================================
-# Domain: Community Context
-# Context: Taxonomy
-# File: essential-services.yaml
-#
-# Purpose: Model the stable, long-term essential services available within or 
+# Purpose: Model the stable, long-term essential services available within or
 #          structurally accessible to a community.
-# Scope: This taxonomy strictly classifies the *types of services* that exist 
-#        as community infrastructure (e.g., primary_healthcare, potable_water_supply). 
-#        It does NOT model humanitarian interventions, Khidmat support delivery, 
+# Scope: This taxonomy strictly classifies the *types of services* that exist
+#        as community infrastructure (e.g., primary_healthcare, potable_water_supply).
+#        It does NOT model humanitarian interventions, Khidmat support delivery,
 #        beneficiary needs, or operational workflows.
 #
 # ADR Validation:
-# - ADR-008 (Single Ownership): Community Context owns the persistent presence of 
-#   a service in a geography. Support Delivery / Programs owns the actual provision 
+# - ADR-008 (Single Ownership): Community Context owns the persistent presence of
+#   a service in a geography. Support Delivery / Programs owns the actual provision
 #   of aid. Needs Assessment owns the gap experienced by a beneficiary.
-# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
-#   (e.g., `primary_healthcare`) rather than region-specific program names 
+# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts
+#   (e.g., `primary_healthcare`) rather than region-specific program names
 #   (e.g., Ayushman Bharat, NHS).
-#
-# Ontology Compatibility:
-# These values will serve as property ranges for `ServiceInfrastructure` or 
-# `Community` entities in `community-context/ontology.yaml` to denote community 
-# capacity and resource availability.
-#
-# Reasoning Compatibility:
-# Enables forward-chaining rules linking community resources to vulnerability. 
-# For example: If [Area lacks `potable_water_supply`] -> 
-# (Future rule infers heightened baseline health vulnerability for all residents).
-#
-# RDF/OWL Compatibility:
-# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
-# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-domain: community_context
-taxonomy: essential_services
-version: 1.0.0
-
-concepts:
-  health_and_medical_services:
-    description: Classification of permanent health-related community services.
-    type: enum
-
-    values:
+schemes:
+  - id: health_and_medical_services
+    label: Health And Medical Services
+    description: >
+      Classification of permanent health-related community services.
+    concepts:
       - id: primary_healthcare
         label: "Primary Healthcare"
         description: "Basic, foundational health care including preventative services, immunizations, and general practitioner access."
@@ -62,11 +45,11 @@ concepts:
         label: "Pharmaceutical Dispensary"
         description: "Facilities providing access to essential medicines and medical supplies."
 
-  water_sanitation_and_hygiene:
-    description: Classification of critical WASH infrastructure services.
-    type: enum
-
-    values:
+  - id: water_sanitation_and_hygiene
+    label: Water Sanitation And Hygiene
+    description: >
+      Classification of critical WASH infrastructure services.
+    concepts:
       - id: potable_water_supply
         label: "Potable Water Supply"
         description: "Access to safe, treated, and reliable drinking water."
@@ -80,11 +63,11 @@ concepts:
         label: "Public Hygiene Facilities"
         description: "Accessible public toilets, bathing, or laundry facilities."
 
-  food_and_nutrition_security:
-    description: Classification of stable food access points and nutritional services.
-    type: enum
-
-    values:
+  - id: food_and_nutrition_security
+    label: Food And Nutrition Security
+    description: >
+      Classification of stable food access points and nutritional services.
+    concepts:
       - id: general_food_market
         label: "General Food Market"
         description: "Commercial access to diverse, staple, and fresh foods."
@@ -95,11 +78,11 @@ concepts:
         label: "Therapeutic Nutrition Center"
         description: "Specialized facilities treating acute malnutrition."
 
-  education_and_childcare:
-    description: Classification of formal and early childhood educational services.
-    type: enum
-
-    values:
+  - id: education_and_childcare
+    label: Education And Childcare
+    description: >
+      Classification of formal and early childhood educational services.
+    concepts:
       - id: early_childhood_care
         label: "Early Childhood Care"
         description: "Supervised developmental care and education for pre-school-aged children."
@@ -116,11 +99,11 @@ concepts:
         label: "Special Education Services"
         description: "Dedicated educational services accommodating severe physical or cognitive disabilities."
 
-  protection_and_legal_services:
-    description: Classification of services providing safety, rights enforcement, and safeguarding.
-    type: enum
-
-    values:
+  - id: protection_and_legal_services
+    label: Protection And Legal Services
+    description: >
+      Classification of services providing safety, rights enforcement, and safeguarding.
+    concepts:
       - id: law_enforcement_and_security
         label: "Law Enforcement And Security"
         description: "State-mandated police or community security forces."
@@ -137,11 +120,11 @@ concepts:
         label: "Civil Registration Services"
         description: "Administrative access for birth, death, marriage, and identity documentation."
 
-  financial_and_livelihood_services:
-    description: Classification of economic infrastructure and livelihood support.
-    type: enum
-
-    values:
+  - id: financial_and_livelihood_services
+    label: Financial And Livelihood Services
+    description: >
+      Classification of economic infrastructure and livelihood support.
+    concepts:
       - id: formal_banking_services
         label: "Formal Banking Services"
         description: "Access to regulated financial institutions for savings, credit, and transfers."
@@ -155,11 +138,11 @@ concepts:
         label: "Employment And Labor Exchanges"
         description: "Mechanisms connecting job seekers with local or regional labor demand."
 
-  shelter_and_community_infrastructure:
-    description: Classification of collective infrastructure and emergency refuge.
-    type: enum
-
-    values:
+  - id: shelter_and_community_infrastructure
+    label: Shelter And Community Infrastructure
+    description: >
+      Classification of collective infrastructure and emergency refuge.
+    concepts:
       - id: emergency_shelter_facilities
         label: "Emergency Shelter Facilities"
         description: "Designated safe spaces for temporary refuge during acute crises or weather events."

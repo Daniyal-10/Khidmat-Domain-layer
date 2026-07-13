@@ -1,46 +1,30 @@
+version: "1.0.0"
+domain: community_context
+file: community-context/taxonomy/livelihood-patterns.yaml
+status: active
+
 # ============================================================================
-# Domain: Community Context
-# Context: Taxonomy
-# File: livelihood-patterns.yaml
-#
-# Purpose: Model the dominant, persistent livelihood systems and economic 
+# Purpose: Model the dominant, persistent livelihood systems and economic
 #          activity patterns that define a community's macro-economy.
-# Scope: This taxonomy strictly classifies the *community-level economic base* 
-#        (e.g., `subsistence_agriculture`, `nomadic_pastoralism`). It explicitly 
-#        does NOT model an individual beneficiary's employment status, household 
+# Scope: This taxonomy strictly classifies the *community-level economic base*
+#        (e.g., `subsistence_agriculture`, `nomadic_pastoralism`). It explicitly
+#        does NOT model an individual beneficiary's employment status, household
 #        income, poverty levels, or individual commercial businesses.
 #
 # ADR Validation:
-# - ADR-008 (Single Ownership): Community Context owns the macro-economic pattern 
-#   of the area. The Registration and Shared Human Model domains own the specific 
+# - ADR-008 (Single Ownership): Community Context owns the macro-economic pattern
+#   of the area. The Registration and Shared Human Model domains own the specific
 #   employment status and income vulnerability of the individual household.
-# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
+# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts
 #   (e.g., `informal_retail_and_trading`) avoiding region-specific colloquialisms.
-#
-# Ontology Compatibility:
-# These values will serve as property ranges for `LivelihoodProfile` or 
-# `Community` entities in `community-context/ontology.yaml`.
-#
-# Reasoning Compatibility:
-# Enables powerful forward-chaining rules. For example, if a community is heavily 
-# reliant on `subsistence_agriculture` and a `drought_sensitive_zone` (from 
-# community-hazards), the AI can infer extreme baseline livelihood fragility.
-#
-# RDF/OWL Compatibility:
-# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
-# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-domain: community_context
-taxonomy: livelihood_patterns
-version: 1.0.0
-
-concepts:
-  primary_production_and_extraction:
-    description: Classification of livelihoods reliant on the direct extraction or cultivation of natural resources.
-    type: enum
-
-    values:
+schemes:
+  - id: primary_production_and_extraction
+    label: Primary Production And Extraction
+    description: >
+      Classification of livelihoods reliant on the direct extraction or cultivation of natural resources.
+    concepts:
       - id: subsistence_agriculture
         label: "Subsistence Agriculture"
         description: "Farming focused primarily on household consumption with minimal surplus for market."
@@ -66,11 +50,11 @@ concepts:
         label: "Foraging And Wildcrafting"
         description: "Reliance on gathering wild plants, timber, or non-timber forest products."
 
-  secondary_production_and_manufacturing:
-    description: Classification of livelihoods reliant on the processing or manufacturing of goods.
-    type: enum
-
-    values:
+  - id: secondary_production_and_manufacturing
+    label: Secondary Production And Manufacturing
+    description: >
+      Classification of livelihoods reliant on the processing or manufacturing of goods.
+    concepts:
       - id: traditional_artisan_production
         label: "Traditional Artisan Production"
         description: "Small-scale, often household-based, crafting of goods (e.g., textiles, pottery)."
@@ -81,11 +65,11 @@ concepts:
         label: "Formal Industrial Manufacturing"
         description: "Employment within regulated, large-scale industrial factories."
 
-  services_and_trade:
-    description: Classification of livelihoods reliant on commerce, transport, and service provision.
-    type: enum
-
-    values:
+  - id: services_and_trade
+    label: Services And Trade
+    description: >
+      Classification of livelihoods reliant on commerce, transport, and service provision.
+    concepts:
       - id: informal_retail_and_trading
         label: "Informal Retail And Trading"
         description: "Unregulated buying and selling of goods, often in street markets or informal structures."
@@ -102,11 +86,11 @@ concepts:
         label: "Domestic Or Care Labor"
         description: "Paid employment providing household, caretaking, or domestic services."
 
-  wage_labor_and_employment_patterns:
-    description: Classification of the structural nature of community labor engagement.
-    type: enum
-
-    values:
+  - id: wage_labor_and_employment_patterns
+    label: Wage Labor And Employment Patterns
+    description: >
+      Classification of the structural nature of community labor engagement.
+    concepts:
       - id: daily_or_casual_wage_labor
         label: "Daily Or Casual Wage Labor"
         description: "Heavy reliance on irregular, short-term, or day-to-day employment without job security."

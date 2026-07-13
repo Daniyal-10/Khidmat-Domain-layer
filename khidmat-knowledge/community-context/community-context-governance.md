@@ -42,3 +42,18 @@ These rules govern exactly what each taxonomy file in the Community Context Doma
 ### Pattern: Local Organizations to Shared Human Model
 **Description:** How individuals relate to community-native collectives.
 **Boundary Note:** `local-organizations.yaml` models the *type* of collective. The membership or leadership roles of specific individuals within those collectives belong to the Shared Human Model (or Registration), mapped via ontology relationships, never hardcoded into the taxonomy.
+
+---
+
+## Ontology Boundary Rules
+
+These rules govern what the `ontology/` module (entities, relationships) may not
+own or originate — the ontology-layer counterpart to the taxonomy boundary rules
+above. Relocated from `ontology/semantic-constraints.yaml` (`no_operational_workflows`
+row) per `docs/architecture/Community_Context_Migration_Plan.md` Decision D-CC2,
+since this is a governance boundary statement rather than a graph-structural fact
+about this domain's own entities.
+
+### 6. No Operational Workflow Ownership
+*   `community`, `built_infrastructure`, `natural_resource`, `transportation_network_asset`, and `local_collective` SHALL NOT directly own or originate operational workflows, case management lifecycles, or beneficiary status states.
+*   There are no outbound edges from these entities to Case Management or Support Delivery workflows. Community Context provides context that those domains consume; it does not model their process.

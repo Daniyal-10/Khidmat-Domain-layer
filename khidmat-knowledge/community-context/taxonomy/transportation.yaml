@@ -1,48 +1,31 @@
+version: "1.0.0"
+domain: community_context
+file: community-context/taxonomy/transportation.yaml
+status: active
+
 # ============================================================================
-# Domain: Community Context
-# Context: Taxonomy
-# File: transportation.yaml
-#
-# Purpose: Model the persistent transportation and mobility infrastructure that 
+# Purpose: Model the persistent transportation and mobility infrastructure that
 #          connects a community internally and to external regions.
-# Scope: This taxonomy strictly classifies the *physical networks and modalities* 
-#        of transport (e.g., `all_weather_paved_road`, `navigable_waterway`). 
-#        It does NOT model operational logistics, humanitarian delivery routes, 
+# Scope: This taxonomy strictly classifies the *physical networks and modalities*
+#        of transport (e.g., `all_weather_paved_road`, `navigable_waterway`).
+#        It does NOT model operational logistics, humanitarian delivery routes,
 #        transit schedules, or individual travel events.
 #
 # ADR Validation:
-# - ADR-008 (Single Ownership): This domain owns the structural presence of a 
-#   transport route. Support Delivery / Programs owns the utilization of that 
+# - ADR-008 (Single Ownership): This domain owns the structural presence of a
+#   transport route. Support Delivery / Programs owns the utilization of that
 #   route for aid distribution.
-# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
-#   (e.g., `primary_arterial_road`) rather than country-specific administrative 
+# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts
+#   (e.g., `primary_arterial_road`) rather than country-specific administrative
 #   designations (e.g., 'National Highway', 'Interstate').
-#
-# Ontology Compatibility:
-# These values will serve as property ranges for `TransportationRoute` or 
-# `MobilityInfrastructure` entities linked to an `Area` or `Community` in 
-# `community-context/ontology.yaml`.
-#
-# Reasoning Compatibility:
-# Enables forward-chaining rules. For example: If an area relies solely on a 
-# `dry_season_unpaved_track` and a `heavy_precipitation_season` begins, the AI 
-# can infer a high probability of impending logistical isolation.
-#
-# RDF/OWL Compatibility:
-# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
-# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-domain: community_context
-taxonomy: transportation
-version: 1.0.0
-
-concepts:
-  road_infrastructure:
-    description: Classification of the physical surface and structural reliability of vehicular pathways.
-    type: enum
-
-    values:
+schemes:
+  - id: road_infrastructure
+    label: Road Infrastructure
+    description: >
+      Classification of the physical surface and structural reliability of vehicular pathways.
+    concepts:
       - id: primary_arterial_road
         label: "Primary Arterial Road"
         description: "Major, high-capacity, paved multi-lane road connecting major regions or cities."
@@ -59,11 +42,11 @@ concepts:
         label: "Pedestrian Or Pack Animal Trail"
         description: "Narrow pathway impassable to standard motorized four-wheel vehicles."
 
-  water_transport_infrastructure:
-    description: Classification of navigable water routes and maritime connectivity.
-    type: enum
-
-    values:
+  - id: water_transport_infrastructure
+    label: Water Transport Infrastructure
+    description: >
+      Classification of navigable water routes and maritime connectivity.
+    concepts:
       - id: deep_water_maritime_route
         label: "Deep Water Maritime Route"
         description: "Oceanic or major coastal route capable of supporting large commercial vessels."
@@ -77,11 +60,11 @@ concepts:
         label: "Informal Water Crossing"
         description: "Unregulated point where a water body is routinely crossed by small boats or fording."
 
-  rail_and_air_infrastructure:
-    description: Classification of specialized, non-road mass transit and aviation connections.
-    type: enum
-
-    values:
+  - id: rail_and_air_infrastructure
+    label: Rail And Air Infrastructure
+    description: >
+      Classification of specialized, non-road mass transit and aviation connections.
+    concepts:
       - id: commercial_aviation_hub
         label: "Commercial Aviation Hub"
         description: "Major airport with paved runways and regular commercial domestic/international flights."
@@ -98,11 +81,11 @@ concepts:
         label: "Secondary Or Narrow Gauge Rail"
         description: "Light or localized railway infrastructure with limited capacity or connectivity."
 
-  connectivity_bottlenecks:
-    description: Classification of physical infrastructural choke points that dictate route viability.
-    type: enum
-
-    values:
+  - id: connectivity_bottlenecks
+    label: Connectivity Bottlenecks
+    description: >
+      Classification of physical infrastructural choke points that dictate route viability.
+    concepts:
       - id: high_capacity_bridge_crossing
         label: "High Capacity Bridge Crossing"
         description: "Engineered bridge capable of supporting heavy freight transport."
@@ -119,7 +102,8 @@ concepts:
         label: "Border Transit Corridor"
         description: "Designated infrastructure funneling transport through an international or administrative boundary."
 
-  transit_and_terminal_facilities:
+  - id: transit_and_terminal_facilities
+    label: Transit And Terminal Facilities
     description: >
       Classification of fixed point facilities that serve as origin, destination,
       or transfer nodes within the transportation network — as distinct from the
@@ -128,9 +112,7 @@ concepts:
       remediation sprint: these are transportation-network facilities, not
       general-purpose community infrastructure, and belong with the rest of
       the transport taxonomy under single ownership (ADR-008).
-    type: enum
-
-    values:
+    concepts:
       - id: transit_hub
         label: "Transit Hub"
         description: "Major station for buses, trains, or shared transport."

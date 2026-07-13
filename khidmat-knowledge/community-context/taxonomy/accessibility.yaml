@@ -1,8 +1,9 @@
+version: "1.0.0"
+domain: community_context
+file: community-context/taxonomy/accessibility.yaml
+status: active
+
 # ============================================================================
-# Domain: Community Context
-# Context: Taxonomy
-# File: accessibility.yaml
-#
 # Purpose: Model the accessibility characteristics of a geographic area and service location.
 # Scope: This taxonomy classifies access constraints and modes. It does not
 #        prescribe operational routing, volunteer assignments, or state transitions.
@@ -11,34 +12,26 @@
 #
 # ADR Validation:
 # - ADR-008 (Single Ownership): Concepts are natively owned by Community Context.
-#   Does not redefine `functional_capacity` (Shared Human Model) or 
+#   Does not redefine `functional_capacity` (Shared Human Model) or
 #   `vulnerability` (Risk Domain).
 # - ADR-022 (Regional Localization): Uses globally reusable canonical concepts.
 #   (e.g., `security_checkpoint` instead of region-specific authority names).
 #
 # Ontology Compatibility:
-# These values will be used as property ranges for `Area`, `ServiceLocation`, 
-# and `Community` entities in `community-context/ontology.yaml`.
+# These values are used as property ranges (taxonomy_ref) for `geographic_area`
+# and `built_infrastructure` entities in community-context/ontology/entities.yaml.
 #
 # Reasoning Compatibility:
 # Enables forward-chaining rules (e.g., if seasonal_accessibility = `seasonally_cut_off`,
 # infer `logistical_vulnerability` for services in that area).
-#
-# RDF/OWL Compatibility:
-# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
-# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-domain: community_context
-taxonomy: accessibility
-version: 1.0.0
-
-concepts:
-  physical_accessibility:
-    description: Classification of the physical terrain and pathway access to an area or location.
-    type: enum
-
-    values:
+schemes:
+  - id: physical_accessibility
+    label: Physical Accessibility
+    description: >
+      Classification of the physical terrain and pathway access to an area or location.
+    concepts:
       - id: paved_road_access
         label: "Paved Road Access"
         description: "Reachable via continuous paved roads suitable for all standard vehicles."
@@ -55,11 +48,11 @@ concepts:
         label: "Terrain Restricted Access"
         description: "Access requires navigating difficult terrain (e.g., steep mountains, dense forest)."
 
-  transportation_accessibility:
-    description: Classification of the availability of public or shared transportation options.
-    type: enum
-
-    values:
+  - id: transportation_accessibility
+    label: Transportation Accessibility
+    description: >
+      Classification of the availability of public or shared transportation options.
+    concepts:
       - id: frequent_public_transit
         label: "Frequent Public Transit"
         description: "Regular, scheduled public transportation is available throughout the day."
@@ -73,11 +66,11 @@ concepts:
         label: "No Transit Available"
         description: "No shared or public transportation options exist."
 
-  seasonal_accessibility:
-    description: Classification of how weather and seasons impact access over time.
-    type: enum
-
-    values:
+  - id: seasonal_accessibility
+    label: Seasonal Accessibility
+    description: >
+      Classification of how weather and seasons impact access over time.
+    concepts:
       - id: year_round_access
         label: "Year Round Access"
         description: "Location remains accessible regardless of seasonal changes."
@@ -91,12 +84,11 @@ concepts:
         label: "Unpredictable Disruption"
         description: "Access is subject to frequent, unpredictable weather-related closures."
 
-
-  communication_accessibility:
-    description: Classification of the ability to establish reliable communication with individuals in the area.
-    type: enum
-
-    values:
+  - id: communication_accessibility
+    label: Communication Accessibility
+    description: >
+      Classification of the ability to establish reliable communication with individuals in the area.
+    concepts:
       - id: pervasive_communication
         label: "Pervasive Communication"
         description: "Multiple reliable communication methods available (e.g., reliable post, multiple carriers)."
@@ -110,11 +102,11 @@ concepts:
         label: "Isolated"
         description: "No reliable means of remote communication exist."
 
-  digital_connectivity:
-    description: Classification of data network and internet availability.
-    type: enum
-
-    values:
+  - id: digital_connectivity
+    label: Digital Connectivity
+    description: >
+      Classification of data network and internet availability.
+    concepts:
       - id: high_capacity_data
         label: "High Capacity Data"
         description: "Reliable, high-bandwidth internet suitable for heavy data usage."
@@ -128,11 +120,11 @@ concepts:
         label: "Network Dead Zone"
         description: "No digital or cellular network coverage exists."
 
-  economic_accessibility:
-    description: Classification of the financial requirements to access a service or location.
-    type: enum
-
-    values:
+  - id: economic_accessibility
+    label: Economic Accessibility
+    description: >
+      Classification of the financial requirements to access a service or location.
+    concepts:
       - id: free_at_point_of_use
         label: "Free At Point Of Use"
         description: "No direct financial cost required for access."
@@ -143,11 +135,11 @@ concepts:
         label: "Prohibitive Commercial Cost"
         description: "Standard commercial costs apply, acting as a barrier to vulnerable populations."
 
-  accessibility_barrier:
-    description: Specific, identifiable obstacles that inhibit access to a location or service.
-    type: enum
-
-    values:
+  - id: accessibility_barrier
+    label: Accessibility Barrier
+    description: >
+      Specific, identifiable obstacles that inhibit access to a location or service.
+    concepts:
       - id: security_checkpoint
         label: "Security Checkpoint"
         description: "Access is controlled by military, police, or armed actors."
@@ -177,5 +169,5 @@ alignment_notes:
   - "The `accessibility_barrier: social_exclusion_boundary` aligns with the need to model exclusion without hardcoding specific country dynamics, adhering exactly to ADR-022."
   - "Do not conflate `physical_accessibility` (terrain) with `digital_connectivity` (networks). They represent separate dimensions of isolation."
   - "These concepts describe the environment, not the individual. An area with `pedestrian_only_access` presents a systemic barrier to everyone. An individual's personal inability to walk is modeled separately under the Shared Human Model (`capabilities.yaml`) and must not be duplicated here."
-  - "Operational availability of a service (e.g., `continuous_operation`, `emergency_only`) represents a mutable state rather than an immutable semantic classification. As such, it is excluded from this taxonomy and should be modeled as an attribute of the `ServiceInfrastructure` entity in `community-context/ontology/attributes.yaml`."
+  - "Operational availability of a service (e.g., `continuous_operation`, `emergency_only`) represents a mutable state rather than an immutable semantic classification. As such, it is excluded from this taxonomy and should be modeled as an attribute of the `built_infrastructure` entity in `community-context/ontology/data-properties.yaml`, once authored."
   - "C2 remediation: This file is the canonical owner of access-mode classification (`physical_accessibility`). Pure physical geography (terrain, land use) is strictly owned by `physical-environment.yaml`."

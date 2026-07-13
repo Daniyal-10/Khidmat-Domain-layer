@@ -1,68 +1,79 @@
+version: "1.0.0"
+domain: community_context
+file: community-context/taxonomy/settlement-types.yaml
+status: active
+
 # ============================================================================
-# Domain: Community Context
-# Context: Taxonomy
-# File: settlement-types.yaml
-#
-# Purpose: Model the persistent structural settlement patterns and spatial 
+# Purpose: Model the persistent structural settlement patterns and spatial
 #          arrangements in which communities reside.
-# Scope: This taxonomy classifies the physical and social morphology of a 
-#        settlement (e.g., urban density, dispersion, formality). It strictly 
-#        does NOT model land ownership, political governance, individual 
+# Scope: This taxonomy classifies the physical and social morphology of a
+#        settlement (e.g., urban density, dispersion, formality). It strictly
+#        does NOT model land ownership, political governance, individual
 #        beneficiary conditions, or acute risk states.
 #
 # ADR Validation:
-# - ADR-008 (Single Ownership): Settlement form is a property of the community 
-#   geography, isolated from individual household traits (Shared Human Model) 
+# - ADR-008 (Single Ownership): Settlement form is a property of the community
+#   geography, isolated from individual household traits (Shared Human Model)
 #   or disaster impacts (Risk Domain).
-# - ADR-022 (Regional Localization): Uses canonical, globally recognized 
-#   classifications (e.g., `informal_urban_settlement`) rather than regional 
+# - ADR-022 (Regional Localization): Uses canonical, globally recognized
+#   classifications (e.g., `informal_urban_settlement`) rather than regional
 #   terms (e.g., 'Favela', 'Slum', 'Basti').
-#
-# Ontology Compatibility:
-# These values will serve as property ranges for the `Community` or `Area` 
-# entities in `community-context/ontology.yaml`.
-#
-# Reasoning Compatibility:
-# Enables forward-chaining rules linking settlement types to systemic 
-# vulnerabilities (e.g., `informal_urban_settlement` implies baseline structural 
-# collapse risk and infrastructure deficit).
-#
-# RDF/OWL Compatibility:
-# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
-# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-settlement_types:
-  urbanization_density:
-    description: Classification of the settlement based on density and integration into urban networks.
-    values:
-      - metropolitan_center: "High-density, highly integrated core of a major city."
-      - secondary_urban_center: "Mid-sized city or significant regional urban hub."
-      - peri_urban_fringe: "Transition zone between urban and rural, often characterized by rapid, unplanned growth."
-      - nucleated_rural_village: "Clustered rural settlement surrounded by agricultural or natural land."
-      - dispersed_rural_settlement: "Isolated or widely scattered rural households with low density."
-      - remote_frontier_settlement: "Highly isolated settlement far from regional centers, characterized by difficult access."
+schemes:
+  - id: urbanization_density
+    label: Urbanization Density
+    description: >
+      Classification of the settlement based on density and integration into urban networks.
+    concepts:
+      - id: metropolitan_center
+        description: "High-density, highly integrated core of a major city."
+      - id: secondary_urban_center
+        description: "Mid-sized city or significant regional urban hub."
+      - id: peri_urban_fringe
+        description: "Transition zone between urban and rural, often characterized by rapid, unplanned growth."
+      - id: nucleated_rural_village
+        description: "Clustered rural settlement surrounded by agricultural or natural land."
+      - id: dispersed_rural_settlement
+        description: "Isolated or widely scattered rural households with low density."
+      - id: remote_frontier_settlement
+        description: "Highly isolated settlement far from regional centers, characterized by difficult access."
 
-  settlement_formality:
-    description: Classification of the settlement based on structural permanence and formal planning.
-    values:
-      - planned_formal_settlement: "Settlement constructed according to official zoning, planning, and building codes."
-      - informal_urban_settlement: "Dense, unplanned urban or peri-urban settlement lacking formal recognition or structural compliance."
-      - organized_displaced_settlement: "Formally planned camp or settlement established specifically for displaced populations (e.g., refugee camp)."
-      - spontaneous_displaced_settlement: "Unplanned, informal gathering of displaced populations without structural permanence."
-      - nomadic_or_mobile_settlement: "Temporary or mobile encampments moving seasonally or periodically."
+  - id: settlement_formality
+    label: Settlement Formality
+    description: >
+      Classification of the settlement based on structural permanence and formal planning.
+    concepts:
+      - id: planned_formal_settlement
+        description: "Settlement constructed according to official zoning, planning, and building codes."
+      - id: informal_urban_settlement
+        description: "Dense, unplanned urban or peri-urban settlement lacking formal recognition or structural compliance."
+      - id: organized_displaced_settlement
+        description: "Formally planned camp or settlement established specifically for displaced populations (e.g., refugee camp)."
+      - id: spontaneous_displaced_settlement
+        description: "Unplanned, informal gathering of displaced populations without structural permanence."
+      - id: nomadic_or_mobile_settlement
+        description: "Temporary or mobile encampments moving seasonally or periodically."
 
-  geographic_context_modifier:
-    description: Classification of the dominant geographic feature defining the settlement's character.
-    values:
-      - coastal_or_riverine_settlement: "Settlement heavily defined by its proximity to and reliance on major water bodies."
-      - mountain_or_highland_settlement: "Settlement situated at high elevation or rugged terrain, impacting access and agriculture."
-      - forest_settlement: "Settlement situated within or heavily dependent on dense forest ecosystems."
-      - arid_or_desert_settlement: "Settlement adapted to extremely low-precipitation environments."
-      - small_island_settlement: "Settlement on a constrained island landmass, highly dependent on maritime links."
+  - id: geographic_context_modifier
+    label: Geographic Context Modifier
+    description: >
+      Classification of the dominant geographic feature defining the settlement's character.
+    concepts:
+      - id: coastal_or_riverine_settlement
+        description: "Settlement heavily defined by its proximity to and reliance on major water bodies."
+      - id: mountain_or_highland_settlement
+        description: "Settlement situated at high elevation or rugged terrain, impacting access and agriculture."
+      - id: forest_settlement
+        description: "Settlement situated within or heavily dependent on dense forest ecosystems."
+      - id: arid_or_desert_settlement
+        description: "Settlement adapted to extremely low-precipitation environments."
+      - id: small_island_settlement
+        description: "Settlement on a constrained island landmass, highly dependent on maritime links."
 
 alignment_notes:
   - "The `settlement_formality` category describes physical and structural reality. It explicitly avoids legal land ownership classifications (which belong to a separate Legal/Tenure domain if created)."
   - "`informal_urban_settlement` is the globally canonical term replacing regional aliases like 'slum', 'favela', 'shanty town', or 'basti', maintaining ADR-022."
   - "An `organized_displaced_settlement` represents the physical camp infrastructure, NOT the individual's legal status as a 'refugee' or 'IDP' (which belongs to Registration/Shared Human Model). This maintains strict ADR-008 ownership boundaries."
   - "C3 remediation (this sprint): Confirmed as the sole canonical owner of settlement formality (e.g., informal settlements, displaced settlements, and camps). These concepts must not be duplicated as geographic hierarchy levels in `geographic-hierarchy.yaml` or as physical environment constraints, maintaining strict ADR-008 single-ownership boundaries."
+  - "Migration note: this file previously had no version/domain/file/status header at all, and each concept was an unlabeled list-of-single-key-map (`- some_id: \"prose\"`) with no explicit `id`/`description` field split — the single most parser-hostile shape in the repository's taxonomy audit (Canonical_Taxonomy_Schema.md T-5 shape 1). Converted to the canonical schemes:/concepts: shape with no content change; no `label` was fabricated where none existed."

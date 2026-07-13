@@ -1,47 +1,30 @@
+version: "1.0.0"
+domain: community_context
+file: community-context/taxonomy/seasonal-events.yaml
+status: active
+
 # ============================================================================
-# Domain: Community Context
-# Context: Taxonomy
-# File: seasonal-events.yaml
-#
-# Purpose: Model recurring seasonal and cyclical phenomena that influence 
+# Purpose: Model recurring seasonal and cyclical phenomena that influence
 #          community life, livelihoods, accessibility, and service delivery.
-# Scope: This taxonomy strictly classifies cyclical environmental and socio-economic 
-#        events. It does NOT model hazards, sudden disasters, individual risk, 
+# Scope: This taxonomy strictly classifies cyclical environmental and socio-economic
+#        events. It does NOT model hazards, sudden disasters, individual risk,
 #        or operational responses.
 #
 # ADR Validation:
-# - ADR-008 (Single Ownership): Ensures clear separation from the Risk domain. 
-#   A "heavy precipitation season" is an expected seasonal event here, while a 
+# - ADR-008 (Single Ownership): Ensures clear separation from the Risk domain.
+#   A "heavy precipitation season" is an expected seasonal event here, while a
 #   "flood" is a hazard owned by Risk.
-# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
-#   (e.g., `primary_harvest_season`) rather than regional terminology (e.g., 
+# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts
+#   (e.g., `primary_harvest_season`) rather than regional terminology (e.g.,
 #   Kharif/Rabi, Boro/Aman).
-#
-# Ontology Compatibility:
-# These values will serve as property ranges for `SeasonalEvent` or temporal 
-# attributes linked to `Community` and `Area` entities in `ontology.yaml`.
-#
-# Reasoning Compatibility:
-# Enables powerful forward-chaining rules without embedding logic. For example:
-# If [Seasonal Event = `heavy_precipitation_season`] + 
-#    [Accessibility = `seasonally_cut_off`] -> 
-# (Future rule infers `logistical_vulnerability`).
-#
-# RDF/OWL Compatibility:
-# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
-# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-domain: community_context
-taxonomy: seasonal_events
-version: 1.0.0
-
-concepts:
-  climatic_phase:
-    description: Classification of recurring meteorological and climatic seasons.
-    type: enum
-
-    values:
+schemes:
+  - id: climatic_phase
+    label: Climatic Phase
+    description: >
+      Classification of recurring meteorological and climatic seasons.
+    concepts:
       - id: heavy_precipitation_season
         label: "Heavy Precipitation Season"
         description: "Period characterized by prolonged or intense rainfall (e.g., monsoon, wet season)."
@@ -55,11 +38,11 @@ concepts:
         label: "Transitional Season"
         description: "Shoulder periods between major climatic phases (e.g., spring thaw, autumn)."
 
-  agricultural_cycle:
-    description: Classification of the recurring phases of agrarian economies.
-    type: enum
-
-    values:
+  - id: agricultural_cycle
+    label: Agricultural Cycle
+    description: >
+      Classification of the recurring phases of agrarian economies.
+    concepts:
       - id: land_preparation_and_planting
         label: "Land Preparation And Planting"
         description: "Period of intensive agricultural labor involving tilling, sowing, and planting."
@@ -76,11 +59,11 @@ concepts:
         label: "Post Harvest Processing"
         description: "Period focused on storage, processing, and market selling."
 
-  socio_economic_cycle:
-    description: Classification of recurring societal and economic shifts tied to the calendar.
-    type: enum
-
-    values:
+  - id: socio_economic_cycle
+    label: Socio Economic Cycle
+    description: >
+      Classification of recurring societal and economic shifts tied to the calendar.
+    concepts:
       - id: labor_migration_departure
         label: "Labor Migration Departure"
         description: "Period when community members leave for seasonal or circular wage labor elsewhere."
@@ -100,11 +83,11 @@ concepts:
         label: "Major Cultural Or Religious Season"
         description: "Period of significant observance affecting labor availability, markets, and household expenditure."
 
-  hydrological_phase:
-    description: Classification of recurring changes in water bodies and ground saturation.
-    type: enum
-
-    values:
+  - id: hydrological_phase
+    label: Hydrological Phase
+    description: >
+      Classification of recurring changes in water bodies and ground saturation.
+    concepts:
       - id: peak_water_level
         label: "Peak Water Level"
         description: "Period when rivers, lakes, and ground saturation are at their highest."

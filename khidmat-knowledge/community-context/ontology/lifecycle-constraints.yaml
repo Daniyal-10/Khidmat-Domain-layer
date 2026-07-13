@@ -1,6 +1,7 @@
-version: "1.0"
+version: "1.0.0"
 domain: community_context
-file: ontology/lifecycle-constraints.yaml
+file: community-context/ontology/lifecycle-constraints.yaml
+status: active
 
 lifecycle_constraints:
 
@@ -75,3 +76,12 @@ lifecycle_constraints:
       The entity is deprecated but never physically deleted, as historical decisions or actions taken by the collective remain legally or socially significant.
     identity_continuity: >
       Maintains identity as long as the core function and community recognition remain intact, despite individual member turnover.
+    cross_domain_boundary: >
+      local_collective must not own shared_human:person entities. It may only
+      reference them via the composed_of relationship (relationships.yaml).
+      No cascading deletes or ownership lifecycle propagates from local_collective
+      to shared_human:person — deleting or deprecating a collective never
+      deletes or deprecates its member persons. (Relocated from
+      ontology/semantic-constraints.yaml's collective_human_reference row,
+      Migration Plan D-CC2 — this is lifecycle semantics, not a structural
+      graph constraint.)

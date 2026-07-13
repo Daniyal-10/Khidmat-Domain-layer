@@ -1,17 +1,16 @@
-# Khidmat Knowledge Layer — Community Context Taxonomy
-# Domain: Community Context
-# File: infrastructure-types.yaml
+version: "1.0.1"
+domain: community_context
+file: community-context/taxonomy/infrastructure-types.yaml
+status: active
+
 # Purpose: Defines the canonical classification of physical and institutional infrastructure present in a community.
 
-domain: community_context
-taxonomy: infrastructure_types
-version: 1.0.1
-
-concepts:
-  infrastructure_category:
-    description: "The primary domain or sector of the infrastructure."
-    type: enum
-    values:
+schemes:
+  - id: infrastructure_category
+    label: Infrastructure Category
+    description: >
+      The primary domain or sector of the infrastructure.
+    concepts:
       - id: healthcare
         label: "Healthcare"
         description: "Facilities providing medical, dental, or mental health services."
@@ -52,10 +51,14 @@ concepts:
         label: "Agricultural & Productive Infrastructure"
         description: "Physical assets that directly support economic, agricultural, or livestock output."
 
-  infrastructure_type:
-    description: "Specific types of infrastructure within the broader categories."
-    type: enum
-    values:
+  - id: infrastructure_type
+    label: Infrastructure Type
+    description: >
+      Specific types of infrastructure within the broader categories. Each
+      concept's `category` field is an extension field naming its sibling
+      `infrastructure_category` concept id (a cross-scheme tag, not embedded
+      hierarchy — Migration Plan D-CC4).
+    concepts:
       # Healthcare
       - id: primary_health_clinic
         label: "Primary Health Clinic"

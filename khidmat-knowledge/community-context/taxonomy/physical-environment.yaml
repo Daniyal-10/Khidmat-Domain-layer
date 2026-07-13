@@ -1,17 +1,16 @@
-# Khidmat Knowledge Layer — Community Context Taxonomy
-# Domain: Community Context
-# File: physical-environment.yaml
+version: "1.0.0"
+domain: community_context
+file: community-context/taxonomy/physical-environment.yaml
+status: active
+
 # Purpose: Defines the physical and environmental baseline of a geographic area, supporting logistics and risk reasoning without defining the risks themselves.
 
-domain: community_context
-taxonomy: physical_environment
-version: 1.0.0
-
-concepts:
-  terrain:
-    description: "The primary physical geography and topography of the area."
-    type: enum
-    values:
+schemes:
+  - id: terrain
+    label: Terrain
+    description: >
+      The primary physical geography and topography of the area.
+    concepts:
       - id: flat_plains
         label: "Flat Plains"
         description: "Level or gently rolling land."
@@ -31,10 +30,11 @@ concepts:
         label: "Arid / Desert"
         description: "Extremely dry land with sparse natural vegetation."
 
-  climate_zone:
-    description: "The long-term weather pattern characteristic of the area."
-    type: enum
-    values:
+  - id: climate_zone
+    label: Climate Zone
+    description: >
+      The long-term weather pattern characteristic of the area.
+    concepts:
       - id: tropical
         label: "Tropical"
         description: "Consistently warm with high humidity and heavy rainfall."
@@ -48,10 +48,11 @@ concepts:
         label: "Alpine / Highland"
         description: "Cool to cold temperatures characteristic of high altitudes."
 
-  water_availability:
-    description: "The natural baseline of surface and groundwater presence."
-    type: enum
-    values:
+  - id: water_availability
+    label: Water Availability
+    description: >
+      The natural baseline of surface and groundwater presence.
+    concepts:
       - id: abundant
         label: "Abundant"
         description: "Readily available surface water or high water table year-round."
@@ -62,10 +63,11 @@ concepts:
         label: "Scarce"
         description: "Chronically limited natural water resources requiring deep extraction or importation."
 
-  land_use:
-    description: "The primary human modification and utilization of the land."
-    type: enum
-    values:
+  - id: land_use
+    label: Land Use
+    description: >
+      The primary human modification and utilization of the land.
+    concepts:
       - id: dense_urban
         label: "Dense Urban"
         description: "Highly built-up area with minimal open space."
@@ -79,10 +81,11 @@ concepts:
         label: "Forested / Wild"
         description: "Primarily natural vegetation with minimal settlement footprint."
 
-  remoteness:
-    description: "The degree of geographical isolation relative to major hubs."
-    type: enum
-    values:
+  - id: remoteness
+    label: Remoteness
+    description: >
+      The degree of geographical isolation relative to major hubs.
+    concepts:
       - id: highly_connected
         label: "Highly Connected"
         description: "Immediate access to major transportation arteries and urban hubs."
@@ -95,8 +98,6 @@ concepts:
       - id: remote
         label: "Remote / Hard-to-Reach"
         description: "Extreme isolation, requiring specialized transport or multi-day travel."
-
-
 
 alignment_notes:
   - constraint: "This taxonomy models the physical reality, NOT the hazard. 'Riverine' is a terrain; 'Flood' is a hazard. 'Mountainous' is terrain; 'Landslide' or 'Earthquake' is a hazard. Hazards remain strictly in `shared/risk/taxonomy/hazard-categories.yaml`."

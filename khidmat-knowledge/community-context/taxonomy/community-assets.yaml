@@ -1,14 +1,15 @@
+version: "1.0.0"
+domain: community_context
+file: community-context/taxonomy/community-assets.yaml
+status: active
+
 # ============================================================================
-# Domain: Community Context
-# Context: Taxonomy
-# File: community-assets.yaml
-#
-# Purpose: Model the persistent physical, natural, and structural resources 
+# Purpose: Model the persistent physical, natural, and structural resources
 #          that exist as shared assets within a community.
-# Scope: This taxonomy classifies the *physical objects and natural spaces* that 
-#        support a community (e.g., `community_well`, `grazing_land`). 
-#        It explicitly does NOT model the *services* provided (which belong in 
-#        `essential-services.yaml`), individual beneficiary possessions, or 
+# Scope: This taxonomy classifies the *physical objects and natural spaces* that
+#        support a community (e.g., `community_well`, `grazing_land`).
+#        It explicitly does NOT model the *services* provided (which belong in
+#        `essential-services.yaml`), individual beneficiary possessions, or
 #        humanitarian interventions.
 #        As of the C1 final remediation, it also does NOT model permanent
 #        built infrastructure already owned by `infrastructure-types.yaml`
@@ -19,39 +20,22 @@
 #        Community Assets is scoped strictly to genuine natural resources and shared natural spaces.
 #
 # ADR Validation:
-# - ADR-008 (Single Ownership): Assets belong to the community geography. They 
-#   are distinct from individual household assets (which would belong to 
+# - ADR-008 (Single Ownership): Assets belong to the community geography. They
+#   are distinct from individual household assets (which would belong to
 #   Registration/Needs) and from operational interventions (Support Delivery).
 #   Built infrastructure with an existing canonical owner elsewhere in
 #   Community Context is referenced, not redefined, here (see C1 remediation
 #   note below).
-# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts 
+# - ADR-022 (Regional Localization): Uses globally recognized, canonical concepts
 #   (e.g., `communal_storage_facility`) avoiding regional terminology.
-#
-# Ontology Compatibility:
-# These values will serve as property ranges or classifications for `PhysicalAsset` 
-# or `NaturalResource` entities linked to a `Community` in `community-context/ontology.yaml`.
-#
-# Reasoning Compatibility:
-# Enables reasoning about baseline community resilience. For example:
-# If [Community has `communal_storage_facility`] -> 
-# (Future rule infers higher `absorptive_capacity` during `lean_season`).
-#
-# RDF/OWL Compatibility:
-# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
-# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-domain: community_context
-taxonomy: community_assets
-version: 1.0.0
-
-concepts:
-  natural_resources:
-    description: Classification of shared, naturally occurring environmental assets utilized by the community.
-    type: enum
-
-    values:
+schemes:
+  - id: natural_resources
+    label: Natural Resources
+    description: >
+      Classification of shared, naturally occurring environmental assets utilized by the community.
+    concepts:
       - id: surface_water_body
         label: "Surface Water Body"
         description: "Lakes, rivers, ponds, or streams utilized for drinking, agriculture, or livelihood."
@@ -71,11 +55,11 @@ concepts:
         label: "Coastal Or Marine Fishing Ground"
         description: "Accessible waters utilized for fishing or aquaculture."
 
-  civic_and_social_infrastructure:
-    description: Classification of physical structures dedicated to community gathering and administration.
-    type: enum
-
-    values:
+  - id: civic_and_social_infrastructure
+    label: Civic And Social Infrastructure
+    description: >
+      Classification of physical structures dedicated to community gathering and administration.
+    concepts:
       - id: recreational_space
         label: "Recreational Space"
         description: "Parks, sports fields, or designated areas for leisure."

@@ -1,0 +1,363 @@
+version: "1.0.0"
+domain: community_context
+file: community-context/ontology/data-properties.yaml
+status: active
+
+# Authored under Phase 4 of docs/architecture/Community_Context_Migration_Plan.md
+# (Decision D-CC6, below). Every row wires an existing entities.yaml key_attribute
+# to a scheme that already exists in this domain's own taxonomy/ files — no new
+# taxonomy concept or scheme was invented to populate this file
+# (Repository_Migration_Methodology.md §2/§4: the property name and its source
+# taxonomy file were already present as an adjacent comment on each entity in
+# entities.yaml before this file existed).
+#
+# D-CC6 (mechanical decomposition rule): where a single key_attribute's comment
+# named a taxonomy *file* that contains more than one independent scheme
+# (e.g. `livelihood_pattern # from taxonomy/livelihood-patterns.yaml`, a file with
+# four schemes), one data property is authored per scheme rather than forcing an
+# ontology data property's single `taxonomy_ref` (Canonical_Ontology_Schema.md §5:
+# "exactly one of datatype or taxonomy_ref") to point at several schemes at once.
+# Two distinct multiplicities appear, decided per-property from the entity's own
+# description (not invented per-scheme):
+#   (a) Cumulative dimensions — the underlying real-world fact is genuinely
+#       multi-valued and multi-scheme at once (a geographic_area simultaneously
+#       has a terrain, a climate, a water-availability profile, etc.; a community
+#       can simultaneously run several livelihood patterns; an area can be
+#       concurrently exposed to several hazard categories and several seasonal
+#       cycles). Each scheme's property is `{min:0, max:unbounded}`.
+#   (b) Mutually-exclusive alternatives — the entity's own description says it is
+#       exactly one kind of thing drawn from a family of sibling schemes (a
+#       transportation_network_asset is a road segment OR a water route OR a
+#       rail/air asset OR a bottleneck OR a terminal — never more than one; a
+#       local_collective is exactly one type of body). Each scheme's property is
+#       `{min:0, max:1}`, and a `mutually_exclusive` row in
+#       semantic-constraints.yaml (the closed §9 vocabulary already has this type)
+#       states that at most one of the sibling properties may be populated per
+#       instance — this is the "not invented" cardinality tool: the closed-vocab
+#       constraint type already covers what was previously an unstated assumption.
+#
+# See docs/architecture/Community_Context_Migration_Plan.md Content Gap Log for
+# the one property NOT authored here (transportation_network_asset.surface_condition)
+# and why.
+
+data_properties:
+
+  # ---------------------------------------------------------------------------
+  # community
+  # ---------------------------------------------------------------------------
+
+  - id: community_id
+    domain: community
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: primary_production_pattern
+    domain: community
+    taxonomy_ref: primary_production_and_extraction
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      One of four sibling properties decomposing the former `livelihood_pattern`
+      key_attribute (D-CC6a — cumulative). Source scheme:
+      taxonomy/livelihood-patterns.yaml.
+
+  - id: secondary_production_pattern
+    domain: community
+    taxonomy_ref: secondary_production_and_manufacturing
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of primary_production_pattern (D-CC6a)."
+
+  - id: services_and_trade_pattern
+    domain: community
+    taxonomy_ref: services_and_trade
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of primary_production_pattern (D-CC6a)."
+
+  - id: wage_labor_pattern
+    domain: community
+    taxonomy_ref: wage_labor_and_employment_patterns
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of primary_production_pattern (D-CC6a)."
+
+  - id: settlement_form
+    domain: community
+    taxonomy_ref: settlement_formality
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Source scheme: taxonomy/settlement-types.yaml#settlement_formality (name
+      match; the file's other two schemes, urbanization_density and
+      geographic_context_modifier, are not part of this property — no
+      key_attribute named them).
+
+  - id: climatic_phase_events
+    domain: community
+    taxonomy_ref: climatic_phase
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      One of four sibling properties decomposing the former `seasonal_events`
+      key_attribute (D-CC6a — cumulative). Source scheme:
+      taxonomy/seasonal-events.yaml.
+
+  - id: agricultural_cycle_events
+    domain: community
+    taxonomy_ref: agricultural_cycle
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of climatic_phase_events (D-CC6a)."
+
+  - id: socio_economic_cycle_events
+    domain: community
+    taxonomy_ref: socio_economic_cycle
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of climatic_phase_events (D-CC6a)."
+
+  - id: hydrological_phase_events
+    domain: community
+    taxonomy_ref: hydrological_phase
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of climatic_phase_events (D-CC6a)."
+
+  # ---------------------------------------------------------------------------
+  # geographic_area
+  # ---------------------------------------------------------------------------
+
+  - id: area_id
+    domain: geographic_area
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: geographic_level
+    domain: geographic_area
+    taxonomy_ref: geographic_level
+    cardinality: { min: 1, max: 1 }
+    notes: "Every geographic_area occupies exactly one hierarchy level (entities.yaml: required: true)."
+
+  - id: terrain
+    domain: geographic_area
+    taxonomy_ref: terrain
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      One of five sibling properties decomposing the former `physical_environment`
+      key_attribute (D-CC6a — cumulative). Source: taxonomy/physical-environment.yaml.
+
+  - id: climate_zone
+    domain: geographic_area
+    taxonomy_ref: climate_zone
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of terrain (D-CC6a)."
+
+  - id: water_availability
+    domain: geographic_area
+    taxonomy_ref: water_availability
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of terrain (D-CC6a)."
+
+  - id: land_use
+    domain: geographic_area
+    taxonomy_ref: land_use
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of terrain (D-CC6a)."
+
+  - id: remoteness
+    domain: geographic_area
+    taxonomy_ref: remoteness
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of terrain (D-CC6a)."
+
+  - id: physical_accessibility
+    domain: geographic_area
+    taxonomy_ref: physical_accessibility
+    cardinality: { min: 0, max: 1 }
+    notes: "Source scheme: taxonomy/accessibility.yaml#physical_accessibility (direct name match)."
+
+  - id: hydrological_hazard_exposure
+    domain: geographic_area
+    taxonomy_ref: hydrological_exposure_context
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      One of four sibling properties decomposing the former `hazards`
+      key_attribute (D-CC6a — cumulative). Source: taxonomy/community-hazards.yaml.
+
+  - id: geological_hazard_exposure
+    domain: geographic_area
+    taxonomy_ref: geological_exposure_context
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of hydrological_hazard_exposure (D-CC6a)."
+
+  - id: climatological_hazard_exposure
+    domain: geographic_area
+    taxonomy_ref: climatological_exposure_context
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of hydrological_hazard_exposure (D-CC6a)."
+
+  - id: anthropogenic_hazard_exposure
+    domain: geographic_area
+    taxonomy_ref: anthropogenic_exposure_context
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of hydrological_hazard_exposure (D-CC6a)."
+
+  # ---------------------------------------------------------------------------
+  # built_infrastructure
+  # ---------------------------------------------------------------------------
+
+  - id: infrastructure_id
+    domain: built_infrastructure
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: infrastructure_type
+    domain: built_infrastructure
+    taxonomy_ref: infrastructure_type
+    cardinality: { min: 1, max: 1 }
+    notes: "Source scheme: taxonomy/infrastructure-types.yaml#infrastructure_type (direct name match)."
+
+  - id: health_and_medical_service
+    domain: built_infrastructure
+    taxonomy_ref: health_and_medical_services
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      One of seven sibling properties decomposing the former `essential_service`
+      key_attribute (D-CC6a — cumulative: one facility may provide services
+      spanning more than one essential-services scheme, e.g. a multi-purpose
+      community facility). Source: taxonomy/essential-services.yaml.
+
+  - id: wash_service
+    domain: built_infrastructure
+    taxonomy_ref: water_sanitation_and_hygiene
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of health_and_medical_service (D-CC6a)."
+
+  - id: food_and_nutrition_service
+    domain: built_infrastructure
+    taxonomy_ref: food_and_nutrition_security
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of health_and_medical_service (D-CC6a)."
+
+  - id: education_and_childcare_service
+    domain: built_infrastructure
+    taxonomy_ref: education_and_childcare
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of health_and_medical_service (D-CC6a)."
+
+  - id: protection_and_legal_service
+    domain: built_infrastructure
+    taxonomy_ref: protection_and_legal_services
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of health_and_medical_service (D-CC6a)."
+
+  - id: financial_and_livelihood_service
+    domain: built_infrastructure
+    taxonomy_ref: financial_and_livelihood_services
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of health_and_medical_service (D-CC6a)."
+
+  - id: shelter_and_community_service
+    domain: built_infrastructure
+    taxonomy_ref: shelter_and_community_infrastructure
+    cardinality: { min: 0, max: unbounded }
+    notes: "Sibling of health_and_medical_service (D-CC6a)."
+
+  # ---------------------------------------------------------------------------
+  # natural_resource
+  # ---------------------------------------------------------------------------
+
+  - id: resource_id
+    domain: natural_resource
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: resource_type
+    domain: natural_resource
+    taxonomy_ref: natural_resources
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Source scheme: taxonomy/community-assets.yaml#natural_resources (name
+      match; the file's other scheme, civic_and_social_infrastructure, is not
+      part of this property).
+
+  # ---------------------------------------------------------------------------
+  # transportation_network_asset
+  # ---------------------------------------------------------------------------
+
+  - id: asset_id
+    domain: transportation_network_asset
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: road_type
+    domain: transportation_network_asset
+    taxonomy_ref: road_infrastructure
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      One of five sibling properties decomposing the former `asset_type`
+      key_attribute (D-CC6b — mutually exclusive: entities.yaml describes this
+      entity as "a hub, terminal, route, or crossing point," i.e. exactly one
+      kind per instance). Source: taxonomy/transportation.yaml. See the
+      `transportation_asset_type_exclusive` row in semantic-constraints.yaml.
+
+  - id: water_transport_type
+    domain: transportation_network_asset
+    taxonomy_ref: water_transport_infrastructure
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of road_type (D-CC6b)."
+
+  - id: rail_or_air_type
+    domain: transportation_network_asset
+    taxonomy_ref: rail_and_air_infrastructure
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of road_type (D-CC6b)."
+
+  - id: connectivity_bottleneck_type
+    domain: transportation_network_asset
+    taxonomy_ref: connectivity_bottlenecks
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of road_type (D-CC6b)."
+
+  - id: terminal_facility_type
+    domain: transportation_network_asset
+    taxonomy_ref: transit_and_terminal_facilities
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of road_type (D-CC6b)."
+
+  # surface_condition: NOT authored — genuine content gap, see Content Gap Log
+  # in docs/architecture/Community_Context_Migration_Plan.md. No taxonomy scheme
+  # anywhere in taxonomy/transportation.yaml (or elsewhere in this domain)
+  # enumerates surface-condition concepts (e.g. "passable"/"degraded"/"washed_out")
+  # — unlike every other property above, there is no existing scheme to wire this
+  # to. Authoring one requires inventing new taxonomy concepts, which is content
+  # authoring, not mechanical inference (Repository_Migration_Methodology.md §5).
+
+  # ---------------------------------------------------------------------------
+  # local_collective
+  # ---------------------------------------------------------------------------
+
+  - id: collective_id
+    domain: local_collective
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: civic_governance_type
+    domain: local_collective
+    taxonomy_ref: civic_and_governance_bodies
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      One of four sibling properties decomposing the former `collective_type`
+      key_attribute (D-CC6b — mutually exclusive: a given collective is exactly
+      one type of body). Source: taxonomy/local-organizations.yaml. See the
+      `local_collective_type_exclusive` row in semantic-constraints.yaml.
+
+  - id: economic_livelihood_collective_type
+    domain: local_collective
+    taxonomy_ref: economic_and_livelihood_collectives
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of civic_governance_type (D-CC6b)."
+
+  - id: social_demographic_group_type
+    domain: local_collective
+    taxonomy_ref: social_and_demographic_groups
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of civic_governance_type (D-CC6b)."
+
+  - id: mutual_aid_welfare_group_type
+    domain: local_collective
+    taxonomy_ref: mutual_aid_and_welfare_groups
+    cardinality: { min: 0, max: 1 }
+    notes: "Sibling of civic_governance_type (D-CC6b)."

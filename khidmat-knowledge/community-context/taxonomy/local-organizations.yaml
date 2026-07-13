@@ -1,47 +1,31 @@
+version: "1.0.0"
+domain: community_context
+file: community-context/taxonomy/local-organizations.yaml
+status: active
+
 # ============================================================================
-# Domain: Community Context
-# Context: Taxonomy
-# File: local-organizations.yaml
-#
-# Purpose: Model the persistent collective institutions and organizational 
+# Purpose: Model the persistent collective institutions and organizational
 #          types that exist natively within a community.
-# Scope: This taxonomy strictly classifies the *types* of local civic, cultural, 
-#        and economic bodies (e.g., `agricultural_cooperative`, `council_of_elders`). 
-#        It does NOT model operational humanitarian teams, state government 
+# Scope: This taxonomy strictly classifies the *types* of local civic, cultural,
+#        and economic bodies (e.g., `agricultural_cooperative`, `council_of_elders`).
+#        It does NOT model operational humanitarian teams, state government
 #        departments, or specific individuals/beneficiaries.
 #
 # ADR Validation:
-# - ADR-008 (Single Ownership): Community Context owns the persistent civic 
-#   structure of the community. Volunteer Operations owns the Khidmat-specific 
+# - ADR-008 (Single Ownership): Community Context owns the persistent civic
+#   structure of the community. Volunteer Operations owns the Khidmat-specific
 #   teams operating there. Support Delivery owns the programs implemented.
-# - ADR-022 (Regional Localization): Uses canonical, globally recognized 
-#   classifications (e.g., `micro_savings_and_credit_collective`) rather than 
+# - ADR-022 (Regional Localization): Uses canonical, globally recognized
+#   classifications (e.g., `micro_savings_and_credit_collective`) rather than
 #   regional terms (e.g., 'Self Help Group', 'Chama', 'Stokvel').
-#
-# Ontology Compatibility:
-# These values will serve as property ranges for `LocalOrganization` or 
-# `CommunityInstitution` entities linked to a `Community` in `community-context/ontology.yaml`.
-#
-# Reasoning Compatibility:
-# Enables forward-chaining rules linking community resources to operational 
-# strategy (e.g., if a community has a `traditional_leadership_body`, an AI 
-# can infer that mediated communication or community-level consent may be required).
-#
-# RDF/OWL Compatibility:
-# Designed as flat enumerations to map perfectly to `owl:NamedIndividual` or 
-# standard literal enums, preserving Directed Acyclic Graph (DAG) integrity.
 # ============================================================================
 
-domain: community_context
-taxonomy: local_organizations
-version: 1.0.0
-
-concepts:
-  civic_and_governance_bodies:
-    description: Classification of local bodies that mediate community affairs, disputes, and consensus.
-    type: enum
-
-    values:
+schemes:
+  - id: civic_and_governance_bodies
+    label: Civic And Governance Bodies
+    description: >
+      Classification of local bodies that mediate community affairs, disputes, and consensus.
+    concepts:
       - id: traditional_leadership_body
         label: "Traditional Leadership Body"
         description: "Institution rooted in historical, customary, or tribal authority rather than formal state law."
@@ -55,11 +39,11 @@ concepts:
         label: "Neighborhood Watch Or Security Group"
         description: "Community-organized collective focused on local safety and dispute mediation."
 
-  economic_and_livelihood_collectives:
-    description: Classification of groups organized primarily for shared economic benefit and resource management.
-    type: enum
-
-    values:
+  - id: economic_and_livelihood_collectives
+    label: Economic And Livelihood Collectives
+    description: >
+      Classification of groups organized primarily for shared economic benefit and resource management.
+    concepts:
       - id: agricultural_or_producer_cooperative
         label: "Agricultural Or Producer Cooperative"
         description: "Collective of farmers or producers pooling resources for processing, marketing, or purchasing."
@@ -73,11 +57,11 @@ concepts:
         label: "Resource Management Committee"
         description: "Body formed specifically to manage a shared asset (e.g., water user association, forestry committee)."
 
-  social_and_demographic_groups:
-    description: Classification of organizations formed around shared identity, demographics, or advocacy.
-    type: enum
-
-    values:
+  - id: social_and_demographic_groups
+    label: Social And Demographic Groups
+    description: >
+      Classification of organizations formed around shared identity, demographics, or advocacy.
+    concepts:
       - id: womens_collective
         label: "Womens Collective"
         description: "Group dedicated to advancing the economic, social, or political interests of women in the community."
@@ -94,11 +78,11 @@ concepts:
         label: "Faith Based Organization"
         description: "Local civic or charitable group explicitly tied to a religious institution or identity."
 
-  mutual_aid_and_welfare_groups:
-    description: Classification of bodies dedicated to internal community support and charity.
-    type: enum
-
-    values:
+  - id: mutual_aid_and_welfare_groups
+    label: Mutual Aid And Welfare Groups
+    description: >
+      Classification of bodies dedicated to internal community support and charity.
+    concepts:
       - id: burial_or_bereavement_society
         label: "Burial Or Bereavement Society"
         description: "Collective pooling funds specifically to support members during family deaths."
