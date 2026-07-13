@@ -1,0 +1,45 @@
+version: "1.0.0"
+domain: support_delivery
+file: taxonomy/delivery-proofs.yaml
+status: active
+
+purpose: >
+  Classifies proof types and quality. Derived from Business Architecture Sec 13.
+
+schemes:
+  - id: proof_type
+    label: Proof Type
+    description: Types of proof of delivery.
+    concepts:
+      - id: signature
+        label: Signature
+        description: Handwritten sign.
+      - id: thumbprint
+        label: Thumbprint
+        description: Ink thumbprint.
+      - id: photograph
+        label: Photograph
+        description: Image of handover.
+      - id: pin_code
+        label: PIN Code
+        description: Digital or verbal code.
+      - id: api_receipt
+        label: API Receipt
+        description: Telco success ping.
+      - id: community_attestation
+        label: Community Attestation
+        description: Witnessed by leader.
+        
+  - id: proof_quality
+    label: Proof Quality
+    description: Assessment of the evidence.
+    concepts:
+      - id: blurry_photo
+        label: Blurry Photo
+        description: Unusable photo.
+      - id: illegible_signature
+        label: Illegible Signature
+        description: Signature cannot be verified.
+      - id: worn_fingerprint_biometric_failure
+        label: Worn Fingerprint Biometric Failure
+        description: Manual labor wore out print.

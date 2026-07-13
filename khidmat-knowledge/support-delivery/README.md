@@ -2,42 +2,35 @@
 
 ## Purpose
 
-Governs how an approved intervention is physically delivered — vendor
-relationships, delivery logistics, payment processing, and proof of delivery.
-Entirely separate from registration: registration describes *what* is needed;
-this domain describes *how* it is provided.
+Governs how an approved intervention is physically delivered — bridging the gap between an approved, abstract Case Plan and the real-world handover to a vulnerable human being. It models the logistics, constraints, attempts, proofs, and accountability loops required to safely, fairly, and securely execute assistance.
 
 ## Scope
 
-**Level 2 placeholder.** Scope is declared; no taxonomy or ontology content is
-authored until the domain activates (ADR-004, ADR-009).
+This domain is structurally active. It models the execution of assistance.
 
-## Owns (concepts this domain will own, per its placeholder declaration)
+## Owns
 
-- `delivery_task`
-- `vendor`
-- `payment_instruction`
-- `delivery_proof`
-- `escrow` (if a financial mechanism is used)
+- `delivery_event`
+- `delivery_window`
+- `delivery_attempt`
+- `proof_of_delivery`
+- `custody_transfer`
+- `accountability_record`
+- `operational_observation`
+- `community_representative`
+- `custodian`
 
 ## Does Not Own
 
-- Support request *types* — what is needed (owned by
-  `registration/taxonomy/support-interventions.yaml`). This domain owns only how
-  an approved request is fulfilled.
-- Case orchestration or approval workflow (owned by `case-management/`).
+- Support request *types* — what is needed (owned by Registration/Needs Assessment).
+- Case orchestration or approval workflow (owned by Case Management).
+- Volunteer matching (owned by Volunteer Operations).
 
 ## Directory Structure
 
 ```
 support-delivery/
-└── _placeholder.yaml    # scope, owned concepts, activation condition
+├── ontology/
+├── taxonomy/
+└── Support_Delivery_Business_Architecture.md
 ```
-
-## Related Documents
-
-- `_placeholder.yaml` — this domain's formal scope declaration
-- `ARCHITECTURE.md` — Level 2 maturity definition
-- `knowledge_layer_roadmap.md` — Stage 9 (activates once Case Management is
-  active and an intervention approval workflow exists)
-- `architecture-decisions/ADR-004` — Placeholder Domain Strategy

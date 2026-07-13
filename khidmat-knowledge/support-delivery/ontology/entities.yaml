@@ -7,30 +7,59 @@ entities:
   - id: delivery_event
     label: Delivery Event
     description: >
-      The fundamental unit of execution, representing a scheduled or actual
-      transfer of assistance (physical or service).
+      The fundamental unit of execution, representing the grouping, timing, scheduling, 
+      and occurrence of a delivery. May resolve one Case Plan or batch multiple plans.
     required: true
 
-  - id: physical_handover
-    label: Physical Handover
+  - id: delivery_window
+    label: Delivery Window
     description: >
-      A Delivery Event involving the transfer of tangible goods or financial instruments.
-    parent: delivery_event
-
-  - id: service_fulfillment
-    label: Service Fulfillment
-    description: >
-      A Delivery Event involving the execution of an intangible service.
-    parent: delivery_event
+      The valid timeframe for a delivery to occur, encompassing safe access windows,
+      curfews, weather constraints, seasonal constraints, and appointments.
+    required: true
 
   - id: delivery_attempt
     label: Delivery Attempt
     description: >
-      A single effort to complete a delivery event, which may succeed or fail.
+      An individual effort to complete a Delivery Event. Tracks friction and exceptions.
     required: false
 
   - id: proof_of_delivery
     label: Proof of Delivery
     description: >
-      Evidence verifying that a handover occurred and was accepted.
+      Evidence collected during the handover.
     required: true
+
+  - id: operational_observation
+    label: Operational Observation
+    description: >
+      An observation of the environment or beneficiary condition made by the delivery agent 
+      during handover. Not a needs assessment.
+    required: false
+
+  - id: accountability_record
+    label: Accountability Record
+    description: >
+      Captures beneficiary confirmation, operational feedback, complaints, or protected grievances 
+      related strictly to the delivery event.
+    required: false
+
+  - id: custody_transfer
+    label: Custody Transfer
+    description: >
+      A single link in the Chain of Custody, tracking the transfer of goods between custodians 
+      before reaching the final beneficiary.
+    required: false
+
+  - id: community_representative
+    label: Community Representative
+    description: >
+      A local leader receiving community-level assets.
+    required: false
+
+  - id: custodian
+    label: Custodian
+    description: >
+      An intermediate handler in the chain of custody.
+    required: false
+

@@ -4,35 +4,31 @@ file: taxonomy/delivery-modalities.yaml
 status: active
 
 purpose: >
-  Classifies the modalities and constraints of delivery.
+  Classifies modalities. Derived from Business Architecture Sec 4.
 
 schemes:
   - id: delivery_modality
     label: Delivery Modality
-    description: >
-      The form the assistance takes during delivery.
+    description: The physical, financial, or service form the delivery takes.
     concepts:
       - id: physical_goods
         label: Physical Goods
-        description: Tangible material items.
-      - id: cash_or_voucher
-        label: Cash or Voucher
-        description: Financial assistance instruments.
-      - id: service
-        label: Service
-        description: Intangible assistance (e.g., medical checkup).
-
-  - id: delivery_constraint
-    label: Delivery Constraint
-    description: >
-      Operational restrictions on how the delivery must be executed.
-    concepts:
-      - id: cold_chain
-        label: Cold Chain
-        description: Items must be temperature controlled.
-      - id: urgent
-        label: Urgent
-        description: Time-sensitive delivery.
-      - id: gender_matched_handover
-        label: Gender-Matched Handover
-        description: Delivery agent must match beneficiary's gender for dignity/safety.
+        description: Tangible items (food, blankets).
+      - id: digital_cash_voucher
+        label: Digital Cash / Vouchers
+        description: Financial instruments transferred via digital means.
+      - id: physical_cash_voucher
+        label: Physical Cash / Vouchers
+        description: Handover of paper money or tokens.
+      - id: medical_service
+        label: Medical Service
+        description: Clinical privacy, bio-waste protocols.
+      - id: education_service
+        label: Education Service
+        description: Longitudinal attendance, child-safe.
+      - id: livelihood_service
+        label: Livelihood Service
+        description: Asset verification, skills assessment.
+      - id: protection_legal_psychosocial_service
+        label: Protection / Legal / Psychosocial Service
+        description: Extreme privacy, anonymized handovers.

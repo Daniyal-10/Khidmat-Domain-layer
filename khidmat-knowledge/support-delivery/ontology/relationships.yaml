@@ -8,40 +8,109 @@ namespaces:
   volunteer_operations: volunteer_operations
   registration: registration
   community_context: community_context
+  needs_assessment: needs_assessment
+  verification_operations: verification_operations
 
 relationships:
-  - id: delivery_fulfills_plan
+  - id: delivery_fulfills_case_plan
     from: delivery_event
     relationship: fulfills
-    to: case_management:case_plan
+    to: case_management:CasePlan
     cardinality: { min: 1, max: unbounded }
+    notes: Multiple case plans allow Compound Assistance.
 
-  - id: delivery_executed_by_assignment
+  - id: delivery_executed_by_agent
     from: delivery_event
     relationship: executed_by
-    to: volunteer_operations:volunteer_assignment
-    cardinality: { min: 0, max: 1 }
-
-  - id: delivery_has_attempt
-    from: delivery_event
-    relationship: has_attempt
-    to: delivery_attempt
-    cardinality: { min: 1, max: unbounded }
-
-  - id: attempt_has_proof
-    from: delivery_attempt
-    relationship: secured_by
-    to: proof_of_delivery
+    to: volunteer_operations:volunteer_profile
     cardinality: { min: 0, max: 1 }
 
   - id: delivery_received_by_beneficiary
-    from: physical_handover
+    from: delivery_event
     relationship: received_by
     to: registration:beneficiary
+    cardinality: { min: 0, max: unbounded }
+
+  - id: delivery_received_by_proxy
+    from: delivery_event
+    relationship: received_by_proxy
+    to: registration:registrant
     cardinality: { min: 0, max: unbounded }
 
   - id: delivery_occurs_at_location
     from: delivery_event
     relationship: occurs_at
     to: community_context:location
+    cardinality: { min: 0, max: 1 }
+
+  - id: delivery_has_window
+    from: delivery_event
+    relationship: has_window
+    to: delivery_window
+    cardinality: { min: 1, max: unbounded }
+
+  - id: delivery_has_attempt
+    from: delivery_event
+    relationship: has_attempt
+    to: delivery_attempt
+    cardinality: { min: 0, max: unbounded }
+
+  - id: attempt_yields_proof
+    from: delivery_attempt
+    relationship: yields_proof
+    to: proof_of_delivery
+    cardinality: { min: 0, max: 1 }
+
+  - id: event_yields_accountability
+    from: delivery_event
+    relationship: generates_accountability
+    to: accountability_record
+    cardinality: { min: 0, max: unbounded }
+
+  - id: attempt_yields_observation
+    from: delivery_attempt
+    relationship: yields_observation
+    to: operational_observation
+    cardinality: { min: 0, max: unbounded }
+
+  - id: custody_transfer_of_event
+    from: delivery_event
+    relationship: has_custody_transfer
+    to: custody_transfer
+    cardinality: { min: 0, max: unbounded }
+
+  - id: delivery_received_by_community_rep
+    from: delivery_event
+    relationship: received_by_community_representative
+    to: community_representative
+    cardinality: { min: 0, max: unbounded }
+
+  - id: custody_transfer_executed_by
+    from: custody_transfer
+    relationship: executed_by_custodian
+    to: custodian
+    cardinality: { min: 1, max: 1 }
+
+  - id: observation_escalates_to_assessment
+    from: operational_observation
+    relationship: escalates_to
+    to: needs_assessment:Assessment
+    cardinality: { min: 0, max: unbounded }
+
+  - id: observation_escalates_to_case_management
+    from: operational_observation
+    relationship: escalates_to
+    to: case_management:Case
+    cardinality: { min: 0, max: unbounded }
+
+  - id: observation_escalates_to_verification
+    from: operational_observation
+    relationship: escalates_to
+    to: verification_operations:core:VerificationActivity
+    cardinality: { min: 0, max: unbounded }
+
+  - id: accountability_escalates_to_case_management
+    from: accountability_record
+    relationship: escalates_to
+    to: case_management:Case
     cardinality: { min: 0, max: 1 }
