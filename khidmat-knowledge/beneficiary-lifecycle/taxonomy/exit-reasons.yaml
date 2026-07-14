@@ -1,0 +1,25 @@
+version: "1.0.0"
+domain: beneficiary_lifecycle
+file: taxonomy/exit-reasons.yaml
+status: active
+
+schemes:
+  - id: exit_reason
+    label: Exit Reason
+    description: "The specific justification for manually transitioning a subject to the Exited stage."
+    concepts:
+      - id: graduated
+        label: Graduated
+        description: "Subject achieved self-sufficiency and no longer requires support."
+      - id: deceased
+        label: Deceased
+        description: "Subject has passed away."
+      - id: relocated_out_of_region
+        label: Relocated Out Of Region
+        description: "Subject permanently moved outside the operational region."
+      - id: requested_removal
+        label: Requested Removal
+        description: "Subject voluntarily withdrew from the ecosystem."
+      - id: code_of_conduct_violation
+        label: Code Of Conduct Violation
+        description: "Subject was permanently removed due to severe behavioral violations."

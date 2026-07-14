@@ -1,0 +1,13 @@
+version: "1.0.0"
+domain: beneficiary_lifecycle
+file: ontology/semantic-constraints.yaml
+status: active
+
+constraints:
+  - id: manual_exit_policy
+    type: required_if
+    property: exit_reason
+    entities: [lifecycle_transition]
+    parameters:
+      condition_property: new_stage
+      condition_value: exited

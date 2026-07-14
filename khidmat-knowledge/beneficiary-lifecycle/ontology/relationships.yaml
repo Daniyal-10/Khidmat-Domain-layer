@@ -1,0 +1,71 @@
+version: "1.0.0"
+domain: beneficiary_lifecycle
+file: ontology/relationships.yaml
+status: active
+
+namespaces:
+  shared_ontology: "shared_ontology"
+  registration: "registration"
+  verification_operations: "verification_operations"
+  shared_risk: "shared_risk"
+
+relationships:
+  - id: beneficiary_lifecycle_tracks_journey_of_subject
+    from: beneficiary_lifecycle
+    relationship: tracks_journey_of
+    to: shared_ontology:subject
+    cardinality: { min: 1, max: 1 }
+    inverse: subject_has_beneficiary_lifecycle
+    notes: "Links the lifecycle instance to the independent human or household subject."
+
+  - id: beneficiary_lifecycle_has_transition_history_lifecycle_transition
+    from: beneficiary_lifecycle
+    relationship: has_transition_history
+    to: lifecycle_transition
+    cardinality: { min: 0, max: unbounded }
+    inverse: lifecycle_transition_part_of_lifecycle
+    notes: "The immutable chronological log of state changes for this lifecycle."
+
+  - id: beneficiary_lifecycle_followed_by_beneficiary_lifecycle
+    from: beneficiary_lifecycle
+    relationship: followed_by
+    to: beneficiary_lifecycle
+    cardinality: { min: 0, max: 1 }
+    inverse: beneficiary_lifecycle_preceded_by_beneficiary_lifecycle
+    notes: "References a subsequent lifecycle instance if a subject re-enters the ecosystem after exiting."
+
+  - id: lifecycle_transition_triggered_by_registration_case_case
+    from: lifecycle_transition
+    relationship: triggered_by_registration_case
+    to: registration:case
+    cardinality: { min: 0, max: 1 }
+    notes: "Transition triggered by the completion of a registration."
+
+  - id: lifecycle_transition_triggered_by_verification_finding_verification_finding
+    from: lifecycle_transition
+    relationship: triggered_by_verification_finding
+    to: verification_operations:verification_finding
+    cardinality: { min: 0, max: 1 }
+    notes: "Transition triggered by a verification outcome."
+
+  - id: lifecycle_transition_triggered_by_risk_characterization_risk_characterization
+    from: lifecycle_transition
+    relationship: triggered_by_risk_characterization
+    to: shared_risk:risk_characterization
+    cardinality: { min: 0, max: 1 }
+    notes: "Transition triggered by a risk assessment threshold."
+
+  - id: lifecycle_transition_triggered_by_case_decision_case
+    from: lifecycle_transition
+    relationship: triggered_by_case_decision
+    to: registration:case
+    cardinality: { min: 0, max: 1 }
+    notes: "Transition triggered by a manual case decision."
+
+  - id: lifecycle_transition_part_of_lifecycle_beneficiary_lifecycle
+    from: lifecycle_transition
+    relationship: part_of_lifecycle
+    to: beneficiary_lifecycle
+    cardinality: { min: 1, max: 1 }
+    inverse: beneficiary_lifecycle_has_transition_history_lifecycle_transition
+    notes: "The lifecycle to which this transition belongs."

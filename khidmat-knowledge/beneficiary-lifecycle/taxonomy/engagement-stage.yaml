@@ -1,0 +1,40 @@
+version: "1.0.0"
+domain: beneficiary_lifecycle
+file: taxonomy/engagement-stage.yaml
+status: active
+
+schemes:
+  - id: engagement_stage
+    label: Engagement Stage
+    description: "The macro-level state of a beneficiary's continuous journey within the Khidmat ecosystem."
+    concepts:
+      - id: identified
+        label: Identified
+        description: "First contact made; formal registration has not begun."
+      - id: registration_initiated
+        label: Registration Initiated
+        description: "Data collection is underway."
+      - id: registered
+        label: Registered
+        description: "Registration data is complete; awaiting formal verification."
+      - id: verification_pending
+        label: Verification Pending
+        description: "Identity or eligibility claims actively being verified."
+      - id: active
+        label: Active
+        description: "Fully verified and in good standing, eligible for assessment or enrollment."
+      - id: engaged
+        label: Engaged
+        description: "The subject is actively engaged with one or more humanitarian services, programs, or interventions within the Khidmat ecosystem."
+      - id: monitored
+        label: Monitored
+        description: "Active intervention has ended; being monitored for sustainability or impact."
+      - id: suspended
+        label: Suspended
+        description: "Ecosystem engagement is paused, often due to a flagged risk."
+      - id: review_required
+        label: Review Required
+        description: "Triggered by inactivity or alerts; pending a human decision on continuation vs. exit."
+      - id: exited
+        label: Exited
+        description: "Relationship concluded manually (e.g., graduation, permanent relocation)."

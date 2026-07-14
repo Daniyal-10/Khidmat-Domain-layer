@@ -1,0 +1,13 @@
+version: "1.0.0"
+domain: beneficiary_lifecycle
+file: ontology/lifecycle-constraints.yaml
+status: active
+
+entities:
+  beneficiary_lifecycle:
+    - "A Person or Household can have at most one active beneficiary_lifecycle instance at a time (current_stage != 'exited')."
+    - "Re-activating an exited subject generates a brand new beneficiary_lifecycle instance, linked to the previous via the 'followed_by' relationship."
+    - "Household lifecycles and Individual lifecycles are tracked independently and do not overwrite each other."
+  
+  lifecycle_transition:
+    - "Historical LifecycleTransitions are immutable records and cannot be modified or deleted."

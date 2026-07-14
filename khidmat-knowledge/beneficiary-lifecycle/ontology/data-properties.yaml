@@ -1,0 +1,68 @@
+version: "1.0.0"
+domain: beneficiary_lifecycle
+file: ontology/data-properties.yaml
+status: active
+
+namespaces:
+  beneficiary_lifecycle: "beneficiary_lifecycle"
+
+data_properties:
+  - id: lifecycle_id
+    domain: beneficiary_lifecycle
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+    description: "Unique identifier for the lifecycle."
+
+  - id: current_stage
+    domain: beneficiary_lifecycle
+    taxonomy_ref: beneficiary_lifecycle:engagement_stage
+    cardinality: { min: 1, max: 1 }
+    description: "The current macro-level state of a beneficiary's continuous journey."
+
+  - id: stage_entered_timestamp
+    domain: beneficiary_lifecycle
+    datatype: xsd:dateTime
+    cardinality: { min: 1, max: 1 }
+    description: "The timestamp when the current stage was entered."
+
+  - id: transition_id
+    domain: lifecycle_transition
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+    description: "Unique identifier for the transition."
+
+  - id: transition_timestamp
+    domain: lifecycle_transition
+    datatype: xsd:dateTime
+    cardinality: { min: 1, max: 1 }
+    description: "The timestamp when the transition occurred."
+
+  - id: prior_stage
+    domain: lifecycle_transition
+    taxonomy_ref: beneficiary_lifecycle:engagement_stage
+    cardinality: { min: 0, max: 1 }
+    description: "The engagement stage before the transition."
+
+  - id: new_stage
+    domain: lifecycle_transition
+    taxonomy_ref: beneficiary_lifecycle:engagement_stage
+    cardinality: { min: 1, max: 1 }
+    description: "The engagement stage after the transition."
+
+  - id: exit_reason
+    domain: lifecycle_transition
+    taxonomy_ref: beneficiary_lifecycle:exit_reason
+    cardinality: { min: 0, max: 1 }
+    description: "The specific justification for manually transitioning a subject to the Exited stage."
+
+  - id: suspension_reason
+    domain: lifecycle_transition
+    taxonomy_ref: beneficiary_lifecycle:suspension_reason
+    cardinality: { min: 0, max: 1 }
+    description: "The justification for pausing a subject's active engagement in the ecosystem."
+
+  - id: review_trigger
+    domain: lifecycle_transition
+    taxonomy_ref: beneficiary_lifecycle:review_trigger
+    cardinality: { min: 0, max: 1 }
+    description: "Events or conditions that transition a subject to the Review Required stage."
