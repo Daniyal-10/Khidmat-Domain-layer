@@ -1,0 +1,24 @@
+version: "1.0.0"
+domain: impact
+file: data-properties.yaml
+status: active
+data_properties:
+  - id: outcome_indicator
+    domain: measurement
+    taxonomy_ref: outcome_indicator
+    cardinality: { min: 1, max: 1 }
+  - id: epistemic_type
+    domain: measurement
+    taxonomy_ref: epistemic_type
+    cardinality: { min: 1, max: 1 }
+  # impact_score has been removed as it is a reasoning-derived score,
+  # which makes it a Runtime/Reasoning object under ADR-023 §19.
+  # It is intentionally deferred to the future Runtime/Instance-State Schema.
+  - id: proxy_bias
+    domain: measurement
+    datatype: xsd:string
+    cardinality: { min: 0, max: 1 }
+  - id: persistence_horizon
+    domain: impact_evaluation
+    taxonomy_ref: persistence_horizon
+    cardinality: { min: 0, max: 1 }

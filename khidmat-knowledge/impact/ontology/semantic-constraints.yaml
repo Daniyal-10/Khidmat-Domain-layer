@@ -1,0 +1,35 @@
+version: "1.0.0"
+domain: impact
+file: semantic-constraints.yaml
+status: active
+constraints:
+  - id: measurement_requires_indicator
+    type: cardinality
+    property: outcome_indicator
+    entities: [measurement]
+    parameters: { min: 1, max: 1 }
+  - id: evaluation_requires_measurement
+    type: cardinality
+    property: contains
+    entities: [impact_evaluation, measurement]
+    parameters: { min: 1, max: unbounded }
+  - id: baseline_uniqueness
+    type: cardinality
+    property: has_baseline_measurement
+    entities: [impact_evaluation, measurement]
+    parameters: { min: 0, max: 1 }
+  - id: endline_uniqueness
+    type: cardinality
+    property: has_endline_measurement
+    entities: [impact_evaluation, measurement]
+    parameters: { min: 0, max: 1 }
+  - id: irreversible_impact_requires_longitudinal
+    type: required_if
+    property: persistence_horizon
+    entities: [impact_evaluation]
+    parameters: { required_value: irreversible, condition_property: has_longitudinal_measurement, condition_min: 1 }
+  - id: proxy_measurement_requires_bias
+    type: required_if
+    property: proxy_bias
+    entities: [measurement]
+    parameters: { condition_property: epistemic_type, condition_value: proxy }

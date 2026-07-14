@@ -1,0 +1,13 @@
+version: "1.0.0"
+domain: impact
+file: entities.yaml
+status: active
+entities:
+  - id: impact_evaluation
+    label: Impact Evaluation
+    description: A structured assessment of the overall change in a beneficiary's or community's situation over time. Tracks the longitudinal change, holding the state and the collection of measurements.
+    required: true
+  - id: measurement
+    label: Measurement
+    description: An immutable recording of a specific indicator at a specific point in time.
+    required: false

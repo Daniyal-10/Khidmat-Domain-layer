@@ -1,0 +1,50 @@
+version: "1.0.0"
+domain: impact
+file: taxonomy/indicators.yaml
+status: active
+
+purpose: >
+  Classifies the types, hierarchies, and specific indicators used to measure impact.
+  Maintains the distinction between objective, subjective, proxy, and composite metrics,
+  aligning with ADR-008 boundaries on epistemic validity.
+
+schemes:
+  - id: indicator_category
+    label: Indicator Category
+    description: >
+      Broad domains or categories of outcomes being measured (not specific metric definitions).
+    concepts:
+      - id: health_status
+        description: Measured changes in physical or mental health.
+      - id: economic_stability
+        description: Measured changes in household income or financial resilience.
+      - id: social_cohesion
+        description: Measured changes in community trust and relationships.
+      - id: education_access
+        description: Measured changes in access to and quality of schooling.
+
+  - id: indicator_type
+    label: Indicator Type
+    description: >
+      The structural and epistemological nature of the indicator used.
+    concepts:
+      - id: objective
+        description: Observable, factual metrics (e.g., school attendance records).
+      - id: subjective
+        description: Self-reported perceptions of wellbeing (e.g., feeling safer).
+      - id: proxy
+        description: Indirect metrics used when direct measurement is impossible.
+      - id: composite
+        description: An aggregated score derived from multiple underlying metrics.
+
+  - id: indicator_hierarchy
+    label: Indicator Hierarchy
+    description: >
+      The level at which the indicator is standardized and applied.
+    concepts:
+      - id: global_standard
+        description: Universally recognized indicator (e.g., UN SDGs).
+      - id: program_standard
+        description: Standardized across a specific Khidmat program.
+      - id: local_metric
+        description: Context-specific indicator created for a single community.

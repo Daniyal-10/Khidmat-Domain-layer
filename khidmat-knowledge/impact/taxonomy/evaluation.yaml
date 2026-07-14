@@ -1,0 +1,76 @@
+version: "1.0.0"
+domain: impact
+file: taxonomy/evaluation.yaml
+status: active
+
+purpose: >
+  Classifies the evaluation processes, lifecycle, and authority for impact assessments.
+  Focuses on the governance and state of the evaluation itself rather than the measured values.
+  Maintains ADR-008 single-ownership boundary by avoiding case management statuses.
+
+schemes:
+  - id: evaluation_lifecycle
+    label: Evaluation Lifecycle
+    description: >
+      Stages in the lifecycle of an impact evaluation.
+    concepts:
+      - id: in_progress
+        description: Evaluation is currently underway.
+      - id: completed
+        description: Evaluation is finished and results are recorded.
+      - id: abandoned
+        description: Evaluation was formally ended before completion.
+
+  - id: impact_status
+    label: Impact Status
+    description: >
+      High-level summary of the overall impact achieved.
+    concepts:
+      - id: positive_impact
+        description: Intervention resulted in a net positive outcome.
+      - id: negative_impact
+        description: Intervention resulted in iatrogenic harm or net negative outcome.
+      - id: neutral_impact
+        description: No discernible change from the baseline.
+
+  - id: evaluation_finding
+    label: Evaluation Finding
+    description: >
+      Categorical conclusions drawn from an evaluation.
+    concepts:
+      - id: target_met
+        description: The intended outcomes were fully achieved.
+      - id: target_partially_met
+        description: Some but not all intended outcomes were achieved.
+      - id: target_missed
+        description: The intended outcomes were not achieved.
+      - id: inconclusive
+        description: Data was insufficient to draw a conclusion.
+
+  - id: evaluation_authority
+    label: Evaluation Authority
+    description: >
+      The entity or role responsible for conducting the evaluation.
+    concepts:
+      - id: independent_evaluator
+        description: An evaluator who is completely independent from the delivery team.
+      - id: internal_auditor
+        description: An internal staff member not directly involved in the case.
+      - id: delivery_volunteer
+        description: The volunteer who delivered the intervention (high risk of bias).
+      - id: beneficiary
+        description: The beneficiary themselves acting as the evaluator (self-reporting).
+
+  - id: evaluation_modality
+    label: Evaluation Modality
+    description: >
+      The method used to conduct the evaluation.
+    concepts:
+      - id: in_person_survey
+        description: Face-to-face interview or survey.
+      - id: remote_survey
+        description: Survey conducted via phone or digital means.
+      - id: direct_observation
+        description: Evaluator physically observes the outcome.
+      - id: data_analysis
+        description: Impact derived entirely from secondary data sources.
