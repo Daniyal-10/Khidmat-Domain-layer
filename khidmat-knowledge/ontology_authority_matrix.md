@@ -44,8 +44,8 @@ this file.
 | `subject` | Subject | `shared/ontology/entities.yaml` | Shared Ontology | Semantic parent for Person/Household. Owns no demographic data. Must not be redefined. |
 | `person` | Person | `shared/ontology/entities.yaml` | Shared Ontology | Authoritative concept for individuals. Must not be redefined. |
 | `household` | Household | `shared/ontology/entities.yaml` | Shared Ontology | Authoritative concept for households. Must not be redefined. |
-| `assessment_tool` | AssessmentTool | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Needs Assessment. Must not be redefined. |
-| `humanitarian_sector` | HumanitarianSector | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Needs Assessment. Must not be redefined. |
+| `assessment_tool` | AssessmentTool | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Needs Assessment — resolved via `needs_assessment:assessment_instrument` (`parent: shared:assessment_tool`). Must not be redefined. |
+| `humanitarian_sector` | HumanitarianSector | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Needs Assessment. Still unresolved: `needs_assessment:thematic_sector` currently sources its vocabulary from `programs_tax:thematic_sectors` instead. Reassignment to this placeholder is pending a Shared-promotion ADR (see `needs-assessment/Needs_Assessment_Canonical_Migration_Plan.md` §10.1) — not implemented. Must not be redefined. |
 | `intervention_type` | InterventionType | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Case Management. Must not be redefined. |
 | `actor` | Actor | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for an operational participant. Must not be redefined. |
 
@@ -114,7 +114,7 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| amily_structure | Family Structure | shared/human-model/ontology/family-structure.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
+| `family_structure` | Family Structure | shared/human-model/ontology/family-structure.yaml | Shared Human Model | May be referenced by any domain; must not be redefined elsewhere |
 
 ### Health Condition Concepts
 
@@ -162,69 +162,122 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 | `risk_state` | Risk State | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 ## Verification Operations Domain
 
-**Authoritative file:** `verification-operations/verification-operations.yaml`
+**Authoritative files:** `verification-operations/ontology/`, `verification-operations/taxonomy/`
 **Owner domain:** Verification Operations
-**Introduced:** Phase 4.0
+**Introduced:** Phase 4.0 (canonically migrated)
 **Governing ADRs:** ADR-008
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| `verification_subject` | Verification Subject | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
-| `verification_activity` | Verification Activity | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
-| `field_observation` | Field Observation | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
-| `verification_finding` | Verification Finding | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
-| `reverification_trigger` | Reverification Trigger | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
-| `human_review` | Human Review | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
-| `verification_assignment` | Verification Assignment | `verification-operations/verification-operations.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `verification_subject` | Verification Subject | `verification-operations/ontology/entities.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `verification_activity` | Verification Activity | `verification-operations/ontology/entities.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `field_observation` | Field Observation | `verification-operations/ontology/entities.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `verification_finding` | Verification Finding | `verification-operations/ontology/entities.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `reverification_trigger` | Reverification Trigger | `verification-operations/ontology/entities.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `human_review` | Human Review | `verification-operations/ontology/entities.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
+| `verification_assignment` | Verification Assignment | `verification-operations/ontology/entities.yaml` | Verification Operations | May be referenced by any domain; must not be redefined |
 
 ---
 
 ## Beneficiary Lifecycle Domain
 
-**Authoritative files:** `beneficiary-lifecycle/taxonomy.yaml`, `beneficiary-lifecycle/ontology.yaml`
+**Authoritative files:** `beneficiary-lifecycle/taxonomy/`, `beneficiary-lifecycle/ontology/`
 **Owner domain:** Beneficiary Lifecycle
 **Introduced:** Phase 4.x
 **Governing ADRs:** ADR-008
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| `engagement_stage` | Engagement Stage | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
-| `exit_reason` | Exit Reason | `beneficiary-lifecycle/taxonomy.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
-**Authoritative files:** `needs-assessment/taxonomy.yaml`, `needs-assessment/ontology.yaml`
+| `engagement_stage` | Engagement Stage | `beneficiary-lifecycle/taxonomy/engagement-stage.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
+| `exit_reason` | Exit Reason | `beneficiary-lifecycle/taxonomy/exit-reasons.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
+
+## Needs Assessment Domain
+
+**Authoritative files (canonical):** `needs-assessment/ontology/entities.yaml`,
+`needs-assessment/ontology/relationships.yaml`,
+`needs-assessment/ontology/data-properties.yaml`,
+`needs-assessment/ontology/lifecycle-constraints.yaml`,
+`needs-assessment/ontology/semantic-constraints.yaml`,
+`needs-assessment/taxonomy/evidence.yaml`, `needs-assessment/taxonomy/finding.yaml`,
+`needs-assessment/taxonomy/session.yaml`, `needs-assessment/taxonomy/governance.yaml`
 **Owner domain:** Needs Assessment
 **Introduced:** Phase 4.5
 **Governing ADRs:** ADR-008
 
+**Note — legacy monolith not yet retired:** `needs-assessment/ontology.yaml` and
+`needs-assessment/taxonomy.yaml` remain present on disk and are superseded by the
+canonical files above. They are pending deletion under Phase 7 of
+`needs-assessment/Needs_Assessment_Canonical_Migration_Plan.md` and are not deleted by
+this synchronization pass.
+
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| `assessment_depth` | Assessment Depth | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
-| `assessment_urgency` | Assessment Urgency | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
-| `assessment_scope` | Assessment Scope | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
-| `assessment_status` | Assessment Status | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
-| `assessment_methodology` | Assessment Methodology | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
-| `finding_confidence` | Finding Confidence | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
-| `need_severity` | Need Severity | `needs-assessment/taxonomy.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
-| `Assessment` | Assessment | `needs-assessment/ontology.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
-| `AssessmentFinding` | Assessment Finding | `needs-assessment/ontology.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
-| `IdentifiedNeed` | Identified Need | `needs-assessment/ontology.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessment_instrument` | Assessment Instrument | `needs-assessment/ontology/entities.yaml` | Needs Assessment | Specializes `shared:assessment_tool` (`parent`). May be referenced by any domain; must not be redefined |
+| `assessment_indicator` | Assessment Indicator | `needs-assessment/ontology/entities.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessment_session` | Assessment Session | `needs-assessment/ontology/entities.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `observation` | Observation | `needs-assessment/ontology/entities.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `need_assertion` | Need Assertion (Finding) | `needs-assessment/ontology/entities.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `finding_consensus` | Finding Consensus | `needs-assessment/ontology/entities.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `supervisor_review` | Supervisor Review | `needs-assessment/ontology/entities.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessor_calibration` | Assessor Calibration | `needs-assessment/ontology/entities.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `reassessment_trigger` | Reassessment Trigger | `needs-assessment/ontology/entities.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `session_status` | Session Status | `needs-assessment/taxonomy/session.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessment_modality` | Assessment Modality | `needs-assessment/taxonomy/session.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `missing_data_reason` | Missing Data Reason | `needs-assessment/taxonomy/session.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessment_depth` | Assessment Depth | `needs-assessment/taxonomy/session.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessment_urgency` | Assessment Urgency | `needs-assessment/taxonomy/session.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `assessment_methodology` | Assessment Methodology | `needs-assessment/taxonomy/session.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `evidence_type` | Evidence Type | `needs-assessment/taxonomy/evidence.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `confidence_level` | Confidence Level | `needs-assessment/taxonomy/evidence.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `conflict_status` | Conflict Status | `needs-assessment/taxonomy/evidence.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `finding_status` | Finding Status | `needs-assessment/taxonomy/finding.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `invalidation_reason` | Invalidation Reason | `needs-assessment/taxonomy/finding.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `need_urgency` | Need Urgency | `needs-assessment/taxonomy/finding.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `review_status` | Review Status | `needs-assessment/taxonomy/governance.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `rejection_reason` | Rejection Reason | `needs-assessment/taxonomy/governance.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `calibration_status` | Calibration Status | `needs-assessment/taxonomy/governance.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `calibration_outcome` | Calibration Outcome | `needs-assessment/taxonomy/governance.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `consensus_status` | Consensus Status | `needs-assessment/taxonomy/governance.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `consensus_outcome` | Consensus Outcome | `needs-assessment/taxonomy/governance.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `trigger_status` | Trigger Status | `needs-assessment/taxonomy/governance.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+| `trigger_type` | Trigger Type | `needs-assessment/taxonomy/governance.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
+
+**Legacy concepts (`needs-assessment/ontology.yaml`, `needs-assessment/taxonomy.yaml`,
+not yet retired):** `Assessment`, `AssessmentFinding`, `IdentifiedNeed`, `assessment_scope`,
+`assessment_status`, `finding_confidence`, `need_severity`. Superseded by the canonical
+concepts above; see `needs-assessment/Needs_Assessment_Canonical_Migration_Plan.md` for
+the full mapping.
 
 **Relationships Owned:**
-- `assesses`
-- `produces`
-- `belongs_to`
-- `synthesizes_into`
-- `synthesized_from`
-- `based_on_claim`
-- `based_on_verified_fact`
-- `affects`
-- `superseded_by`
+- `session_uses_instrument`
+- `instrument_contains_indicator`
+- `session_evaluates_person`
+- `session_evaluates_household`
+- `session_evaluates_community`
+- `session_conducted_by_person`
+- `session_conducted_by_actor`
+- `session_yields_observation`
+- `observation_evaluates_indicator`
+- `observation_synthesizes_into`
+- `observation_based_on_claim`
+- `need_assertion_based_on_verified_fact`
+- `consensus_resolves_finding`
+- `consensus_reviews_observation`
+- `session_supersedes_assertion`
+- `review_audits_session`
+- `calibration_audits_assessor`
+- `trigger_initiates_session`
 
 **Explicit References Only (Owned Elsewhere):**
-- `Subject` (Shared)
-- `HumanitarianSector` (Shared)
-- `AssessmentTool` (Shared)
-- `RegistrationClaim` (Registration)
-- `VerificationFinding` (Verification)
+- `person`, `household`, `actor`, `assessment_tool` (Shared)
+- `geographic_area` (Community Context)
+- `claim` (Registration)
+- `verification_finding` (Verification Operations)
+- `thematic_sectors` (Programs) — **open item, not a ratified ownership assignment.**
+  `thematic_sector` currently draws its vocabulary from `programs_tax:thematic_sectors`.
+  The reserved long-term owner is `shared:humanitarian_sector` (see Shared Ontology
+  section above); reassignment is pending a Shared-promotion ADR and is documented,
+  not implemented, in this pass.
 
 ---
 
@@ -237,18 +290,17 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| `case_status` | Case Status | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
-| `priority_level` | Priority Level | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
-| `referral_status` | Referral Status | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
-| `case_origin` | Case Origin | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
-| `case_outcome` | Case Outcome | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
-| `administrative_closure_reason` | Administrative Closure Reason | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
-| `Case` | Case | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
-| `CasePlan` | Case Plan | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
-| `Referral` | Referral | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
-| `FollowUp` | Follow Up | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
-| `CaseAssignment` | Case Assignment | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
-| `CaseNote` | Case Note | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
+| `case_status` | Case Status | `case-management/taxonomy/case_status.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `priority_level` | Priority Level | `case-management/taxonomy/priority_level.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `referral_status` | Referral Status | `case-management/taxonomy/referral_status.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `case_origin` | Case Origin | `case-management/taxonomy/case_origin.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `closure_reason` | Closure Reason | `case-management/taxonomy/closure_reason.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `case` | Case | `case-management/ontology/entities.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `case_plan` | Case Plan | `case-management/ontology/entities.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `referral` | Referral | `case-management/ontology/entities.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `follow_up` | Follow Up | `case-management/ontology/data-properties.yaml` (nested field of the `case_timeline` Value Object) | Case Management | May be referenced by any domain; must not be redefined |
+| `case_note` | Case Note | `case-management/ontology/data-properties.yaml` (nested field of the `case_timeline` Value Object) | Case Management | May be referenced by any domain; must not be redefined |
+| `case_assignment` | Case Assignment | Not yet implemented — named in discovery docs and README only; no `entities.yaml` row exists | Case Management | Reserved; declare an authoritative file here once authored |
 
 ---
 
@@ -288,7 +340,7 @@ trigger and is intentionally absent from this table until authored.
 - `actor` (Shared Ontology)
 - `organisation` (Shared Taxonomy)
 - `volunteer` role label (Shared — `persons.yaml`)
-- `VerificationAssignment` (Verification Operations), `CaseAssignment` (Case Management) — the assignment act (FLAG-006)
+- `verification_assignment` (Verification Operations), `CaseAssignment` (Case Management) — the assignment act (FLAG-006)
 
 ---
 
@@ -390,9 +442,9 @@ future domain designers do not create silent drift.
 
 | Item | Detail |
 |---|---|
-| Existing locations | `shared/ontology/entities.yaml` (`id: actor`, "Placeholder for an operational participant"); `shared/taxonomy/persons.yaml` (`person_roles.volunteer`); `verification-operations/ontology/entities.yaml` (`VerificationAssignment`) and `relationships.yaml` (`activity_conducted_by_actor`); `case-management/ontology/` (`CaseAssignment`) |
+| Existing locations | `shared/ontology/entities.yaml` (`id: actor`, "Placeholder for an operational participant"); `shared/taxonomy/persons.yaml` (`person_roles.volunteer`); `verification-operations/ontology/entities.yaml` (`verification_assignment`) and `relationships.yaml` (`verification_activity_conducted_by_actor`); `case-management/ontology/` (`CaseAssignment`) |
 | Concept | The boundary between a volunteer's **qualification / fitness to be assigned** (skills, certifications, availability, geographic coverage, trust, training) and the **assignment act** itself |
-| Situation | `verification-operations/ontology/relationships.yaml` already states, one-directionally: *"Verification Operations does not define actor qualification, roles, or types — that remains a Volunteer Operations concern (Level 2 placeholder)."* `review-decisions.yaml` echoes it. `VerificationAssignment` and `CaseAssignment` own the *assignment event*; the `Actor` entity and the `volunteer` role are single-owned in Shared. Volunteer Operations (Stage 9 placeholder) will own the *profile behind the actor* — never the assignment act, the actor entity, or the role label. |
-| Risk | On Volunteer Operations activation, the domain must attach its profile *behind* the shared `Actor` reference (via a `references`/relationship link), not mint a second actor entity or redefine `VerificationAssignment`/`CaseAssignment`. Silent drift would produce a duplicate actor/assignment model. |
+| Situation | `verification-operations/ontology/relationships.yaml` already states, one-directionally: *"Verification Operations does not define actor qualification, roles, or types — that remains a Volunteer Operations concern (Level 2 placeholder)."* `review-decisions.yaml` echoes it. `verification_assignment` and `CaseAssignment` own the *assignment event*; the `Actor` entity and the `volunteer` role are single-owned in Shared. Volunteer Operations (Stage 9 placeholder) will own the *profile behind the actor* — never the assignment act, the actor entity, or the role label. |
+| Risk | On Volunteer Operations activation, the domain must attach its profile *behind* the shared `Actor` reference (via a `references`/relationship link), not mint a second actor entity or redefine `verification_assignment`/`CaseAssignment`. Silent drift would produce a duplicate actor/assignment model. |
 | Resolution required | On activation: add a Volunteer Operations owned-concepts section here; author the profile-to-`shared:Actor` link; leave the assignment acts owned by their operational domains. See `docs/architecture/Volunteer_Operations_Migration_Plan.md` (Phase 4) and `Volunteer_Operations_Domain_Audit.md` (VO-6). |
-| Status | **Foundational side authored** (ADR-024). The Volunteer Operations owned-concepts section is added above; `volunteer_profile` attaches behind `shared:actor` via `profile_of` (`volunteer-operations/ontology/relationships.yaml`); eligibility is modeled as `eligible_assignment_type` (a data property), and the assignment **act** remains owned by `verification-operations` (`VerificationAssignment`) and `case-management` (`CaseAssignment`) — not duplicated. The boundary is now held reciprocally in authored YAML, not only in prose. The operational layer (trust/performance scoring, assignment history) stays deferred to Stage 9. |
+| Status | **Foundational side authored** (ADR-024). The Volunteer Operations owned-concepts section is added above; `volunteer_profile` attaches behind `shared:actor` via `profile_of` (`volunteer-operations/ontology/relationships.yaml`); eligibility is modeled as `eligible_assignment_type` (a data property), and the assignment **act** remains owned by `verification-operations` (`verification_assignment`) and `case-management` (`CaseAssignment`) — not duplicated. The boundary is now held reciprocally in authored YAML, not only in prose. The operational layer (trust/performance scoring, assignment history) stays deferred to Stage 9. |

@@ -2,46 +2,78 @@
 
 ## Purpose
 
-A synthesis layer: turns registration claims and verification findings into
-`IdentifiedNeed`s with explicit, structured confidence — decoupled from case
-orchestration so that "what does this person need, and how confident are we"
-is answered independently of "what are we doing about it."
+A synthesis layer: assessment sessions yield raw observations, which are
+synthesized into need assertions with explicit, structured confidence —
+decoupled from case orchestration so that "what does this person need, and
+how confident are we" is answered independently of "what are we doing about
+it." A governance layer (supervisor review, assessor calibration, finding
+consensus, reassessment triggers) wraps this synthesis process to catch bias,
+resolve disputes, and mandate reassessment.
 
 ## Scope
 
-Assessment events, the findings they produce, and the needs synthesized from
-those findings. Covers assessment depth, urgency, scope, status, methodology, and
-finding confidence.
+Assessment instruments and their indicators, assessment sessions, the
+observations they yield, the need assertions synthesized from those
+observations, and the quality-assurance processes governing all of the
+above. Covers assessment depth, urgency, methodology, and modality; evidence
+type, confidence, and conflict status; finding status, invalidation, and
+need urgency; and review/calibration/consensus/trigger status and outcomes.
 
 ## Owns
 
-- **Taxonomy:** `assessment_depth`, `assessment_urgency`, `assessment_scope`,
-  `assessment_status`, `assessment_methodology`, `finding_confidence`,
-  `need_severity` (`taxonomy.yaml`)
-- **Entities:** `Assessment`, `AssessmentFinding`, `IdentifiedNeed`
-  (`ontology.yaml`)
-- **Relationships:** `assesses`, `produces`, `belongs_to`, `synthesizes_into`,
-  `synthesized_from`, `based_on_claim`, `based_on_verified_fact`, `affects`,
-  `superseded_by`
+- **Ontology** (`ontology/`): entities (`assessment_instrument`,
+  `assessment_indicator`, `assessment_session`, `observation`,
+  `need_assertion`, `finding_consensus`, `supervisor_review`,
+  `assessor_calibration`, `reassessment_trigger`), their relationships,
+  data properties, lifecycle constraints, and semantic constraints.
+- **Taxonomy** (`taxonomy/`):
+  - `evidence.yaml` — `evidence_type`, `confidence_level`, `conflict_status`
+  - `finding.yaml` — `finding_status`, `invalidation_reason`, `need_urgency`
+  - `session.yaml` — `session_status`, `assessment_modality`,
+    `missing_data_reason`, `assessment_depth`, `assessment_urgency`,
+    `assessment_methodology`
+  - `governance.yaml` — `review_status`, `rejection_reason`,
+    `calibration_status`, `calibration_outcome`, `consensus_status`,
+    `consensus_outcome`, `trigger_status`, `trigger_type`
 
 ## Does Not Own
 
-- `Subject`, `HumanitarianSector`, `AssessmentTool` — referenced from the Shared
-  domain, not redefined here.
-- `RegistrationClaim` — referenced from `registration/`.
-- `VerificationFinding` — referenced from `verification-operations/`.
+- `person`, `household`, `actor`, `assessment_tool` — referenced from the
+  Shared domain (`shared:`), not redefined here. `assessment_instrument`
+  specializes `shared:assessment_tool` via `parent`.
+- `geographic_area` — referenced from `community-context/`.
+- `claim` — referenced from `registration/`.
+- `verification_finding` — referenced from `verification-operations/`.
 - Case orchestration or intervention selection (owned by `case-management/`).
+- **Open item:** `humanitarian_sector` is reserved for this domain in
+  `shared/ontology/entities.yaml` (see `ontology_authority_matrix.md`), but
+  `thematic_sector` currently sources its vocabulary from
+  `programs_tax:thematic_sectors` instead. Reassignment to the Shared
+  placeholder is pending a Shared-promotion ADR and is not yet implemented
+  — see `Needs_Assessment_Canonical_Migration_Plan.md` §10.1.
 
 ## Directory Structure
 
 ```
 needs-assessment/
-├── taxonomy.yaml                              # assessment_depth, urgency, scope, ...
-├── ontology.yaml                              # Assessment, AssessmentFinding, IdentifiedNeed
-├── needs_assessment_discovery_report.md       # boundary/architecture discovery
-├── needs_assessment_taxonomy_review.md        # taxonomy validation
-└── needs_assessment_ontology_review.md        # ontology validation
+├── ontology/
+│   ├── entities.yaml
+│   ├── relationships.yaml
+│   ├── data-properties.yaml
+│   ├── lifecycle-constraints.yaml
+│   └── semantic-constraints.yaml
+├── taxonomy/
+│   ├── evidence.yaml
+│   ├── finding.yaml
+│   ├── session.yaml
+│   └── governance.yaml
+├── ontology.yaml                              # legacy monolith — superseded, pending retirement
+├── taxonomy.yaml                              # legacy monolith — superseded, pending retirement
+├── Needs_Assessment_Canonical_Migration_Plan.md
+└── Needs_Assessment_Canonical_Migration_Plan_VALIDATION_REPORT.md
 ```
+
+No `reasoning/` directory exists for this domain yet.
 
 ## Related Documents
 
@@ -49,4 +81,6 @@ needs-assessment/
 - `knowledge_layer_roadmap.md` — prerequisites (Verification Operations) and what
   this domain enables downstream (Case Management, Support Delivery, Programs)
 - `ontology_authority_matrix.md` — Needs Assessment concept ownership
+- `Needs_Assessment_Canonical_Migration_Plan.md` — legacy-to-canonical mapping,
+  architectural decisions (D1–D14), and open items
 - `GLOSSARY.md` — Outcome Terms section

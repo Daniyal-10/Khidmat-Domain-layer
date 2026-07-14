@@ -19,7 +19,9 @@ Repository Architecture Freeze — Canonical Ontology & Taxonomy Migration (Acti
 Status:
 
 - Risk Domain complete (including core ontology and compound risk detection reasoning).
-- Verification Operations core ontology and reasoning complete.
+- Verification Operations core ontology and reasoning complete, and canonically
+  migrated (Canonical_Ontology_Schema.md / Canonical_Taxonomy_Schema.md); the
+  pre-canonical core-ontology monolith has been retired.
 - Needs Assessment, Case Management, and Beneficiary Lifecycle domains complete (Level 1).
 - The canonical `ontology/`+`taxonomy/` authoring contract has been frozen
   (`docs/architecture/Canonical_Ontology_Schema.md`, `docs/architecture/Canonical_Taxonomy_Schema.md`)
@@ -27,8 +29,14 @@ Status:
 - Registration is the first domain migrated to the canonical structure
   (Phases 1–4 complete per `docs/architecture/Registration_Migration_Plan.md`; Phase 5
   cross-domain CURIE linking remains blocked on a repository-wide manifest).
-- Community Context is substantially built (12 taxonomy files, full ontology module)
-  but not yet migrated to the canonical structure.
+- Community Context has completed Phases 1–4 of its canonical migration
+  (`docs/architecture/Community_Context_Migration_Plan.md`); Phase 5 cross-domain CURIE
+  linking remains blocked on a repository-wide manifest, same as Registration.
+- Programs, Impact, and Support Delivery have each been migrated to the canonical
+  `ontology/`+`taxonomy/` structure.
+- Volunteer Operations has authored its foundational (Tier 1) canonical `ontology/`+`taxonomy/`
+  structure under ADR-024; its operational/runtime layer (Tier 2 — scheduling, dispatch,
+  trust/performance scoring) remains deferred to the Stage-9 activation trigger.
 
 ## Domain Inventory
 
@@ -37,16 +45,16 @@ Status:
 | shared                  | Level 1        | Active               |
 | shared/risk             | Level 1        | Complete             |
 | registration            | Level 1        | Complete — canonical reference implementation |
-| community-context       | Level 1 (pre-canonical) | Active / In Progress |
+| community-context       | Level 1        | Canonical (Phases 1–4 complete; Phase 5 CURIE linking blocked) |
 | verification-operations | Level 1        | Complete             |
-| needs-assessment        | Level 1        | Complete             |
+| needs-assessment        | Level 1        | Complete (canonical `ontology/`+`taxonomy/` authored; `humanitarian_sector` placeholder reassignment pending ADR — see `ontology_authority_matrix.md`) |
 | case-management         | Level 1        | Complete             |
 | beneficiary-lifecycle   | Level 1        | Complete             |
-| consent-and-privacy     | Level 2   | Placeholder         |
-| volunteer-operations    | Level 2   | Placeholder         |
-| support-delivery        | Level 2   | Placeholder         |
-| programs                | Level 2   | Placeholder         |
-| impact                  | Level 2   | Placeholder         |
+| programs                | Level 1        | Complete             |
+| impact                  | Level 1        | Complete             |
+| support-delivery        | Level 1        | Complete             |
+| volunteer-operations    | Level 1 (foundational) | Foundational complete — operational layer deferred to Stage 9 |
+| consent-and-privacy     | Level 2        | Placeholder          |
 
 ## Knowledge Governance Files
 
@@ -124,11 +132,15 @@ Completed foundational layer:
 * Verification Operations Domain
 * Case Management Domain
 * Beneficiary Lifecycle Domain
+* Community Context Domain (Phases 1–4 complete; Phase 5 CURIE linking blocked)
+* Programs Domain
+* Impact Domain
+* Support Delivery Domain
+* Volunteer Operations Domain (foundational layer only; operational layer deferred to Stage 9)
 
 Upcoming layers:
 
-* Community Context Domain (built, pending canonical migration)
 * Outcome Measurement Layer
-* Level 2 placeholder domains (Volunteer Operations, Support Delivery, Programs, Impact, Consent & Privacy)
+* Consent & Privacy Domain (Level 2 placeholder)
 
 These layers must activate according to knowledge_layer_roadmap.md dependencies.

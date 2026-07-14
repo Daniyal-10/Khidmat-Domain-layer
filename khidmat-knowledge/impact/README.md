@@ -8,16 +8,16 @@ Lifecycle to compare before/after states.
 
 ## Scope
 
-**Level 2 placeholder.** Scope is declared; no taxonomy or ontology content is
-authored until the domain activates (ADR-004, ADR-009).
+**Canonical — complete.** Full `ontology/`+`taxonomy/` structure authored per
+`docs/architecture/Canonical_Ontology_Schema.md` / `Canonical_Taxonomy_Schema.md`.
 
-## Owns (concepts this domain will own, per its placeholder declaration)
+## Owns
 
-- `outcome_indicator`
-- `measurement_event`
-- `baseline` (pre-intervention state)
-- `endline` (post-intervention state)
-- `change_assessment`
+- **Entities:** `impact_evaluation`, `measurement` (`ontology/entities.yaml`)
+- **Taxonomy:** attribution and contribution (`attribution.yaml`), evaluation
+  lifecycle and findings (`evaluation.yaml`), indicator categories and hierarchy
+  (`indicators.yaml`), measurement classification, timing, and confidence
+  (`measurement.yaml`), outcome type, persistence, and decay (`outcomes.yaml`)
 
 ## Does Not Own
 
@@ -34,13 +34,15 @@ authored until the domain activates (ADR-004, ADR-009).
 
 ```
 impact/
-└── _placeholder.yaml    # scope, owned concepts, activation condition
+├── ontology/     # entities, data-properties, relationships, constraints
+└── taxonomy/     # attribution, evaluation, indicators, measurement, outcomes
 ```
 
 ## Related Documents
 
-- `_placeholder.yaml` — this domain's formal scope declaration
-- `ARCHITECTURE.md` — Level 2 maturity definition
+- `ARCHITECTURE.md` — domain maturity and inventory
 - `knowledge_layer_roadmap.md` — Stage 6 (Outcome Indicator Vocabulary,
-  prerequisite) and Stage 9 (this domain's activation)
-- `architecture-decisions/ADR-004` — Placeholder Domain Strategy
+  prerequisite) and Stage 9 context
+- `ontology_authority_matrix.md` — Impact concept ownership
+- `architecture-decisions/ADR-004` — Placeholder Domain Strategy (historical — domain
+  has since been migrated to canonical structure)

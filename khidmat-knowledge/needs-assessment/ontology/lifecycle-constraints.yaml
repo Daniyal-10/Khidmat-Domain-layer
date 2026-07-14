@@ -1,5 +1,5 @@
 version: "1.0.0"
-domain: needs-assessment
+domain: needs_assessment
 file: ontology/lifecycle-constraints.yaml
 status: active
 
@@ -49,6 +49,15 @@ lifecycle:
   - state: initiated
     transitions_to: [under_review, resolved]
   - state: under_review
+    transitions_to: [resolved]
+  - state: resolved
+    transitions_to: []
+
+entity: assessor_calibration
+lifecycle:
+  - state: initiated
+    transitions_to: [in_progress, resolved]
+  - state: in_progress
     transitions_to: [resolved]
   - state: resolved
     transitions_to: []

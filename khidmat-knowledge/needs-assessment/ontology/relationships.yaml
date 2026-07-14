@@ -1,12 +1,13 @@
 version: "1.0.0"
-domain: needs-assessment
+domain: needs_assessment
 file: ontology/relationships.yaml
 status: active
 
 namespaces:
-  shared_human: http://khidmat.org/ontology/shared/human-model
   community_ctx: http://khidmat.org/ontology/community-context
-  shared_org: http://khidmat.org/ontology/shared/organisations
+  shared: http://khidmat.org/ontology/shared
+  registration: http://khidmat.org/ontology/registration
+  verification_operations: http://khidmat.org/ontology/verification-operations
 
 relationships:
   - id: session_uses_instrument
@@ -16,16 +17,23 @@ relationships:
     cardinality: { min: 1, max: 1 }
     inverse: instrument_used_in_session
 
+  - id: instrument_contains_indicator
+    from: assessment_instrument
+    relationship: contains_indicator
+    to: assessment_indicator
+    cardinality: { min: 1, max: unbounded }
+    inverse: indicator_belongs_to_instrument
+
   - id: session_evaluates_person
     from: assessment_session
     relationship: evaluates_person
-    to: shared_human:person
+    to: shared:person
     cardinality: { min: 0, max: 1 }
 
   - id: session_evaluates_household
     from: assessment_session
     relationship: evaluates_household
-    to: shared_human:household
+    to: shared:household
     cardinality: { min: 0, max: 1 }
 
   - id: session_evaluates_community
@@ -37,13 +45,13 @@ relationships:
   - id: session_conducted_by_person
     from: assessment_session
     relationship: conducted_by
-    to: shared_human:person
+    to: shared:person
     cardinality: { min: 0, max: unbounded }
 
-  - id: session_conducted_by_org
+  - id: session_conducted_by_actor
     from: assessment_session
-    relationship: conducted_by_org
-    to: shared_org:organisation
+    relationship: conducted_by_actor
+    to: shared:actor
     cardinality: { min: 0, max: unbounded }
 
   - id: session_yields_observation
@@ -66,6 +74,18 @@ relationships:
     to: need_assertion
     cardinality: { min: 1, max: unbounded }
     inverse: assertion_synthesized_from
+
+  - id: observation_based_on_claim
+    from: observation
+    relationship: based_on_claim
+    to: registration:claim
+    cardinality: { min: 0, max: unbounded }
+
+  - id: need_assertion_based_on_verified_fact
+    from: need_assertion
+    relationship: based_on_verified_fact
+    to: verification_operations:verification_finding
+    cardinality: { min: 0, max: unbounded }
 
   - id: consensus_resolves_finding
     from: finding_consensus
@@ -96,7 +116,7 @@ relationships:
   - id: calibration_audits_assessor
     from: assessor_calibration
     relationship: audits_assessor
-    to: shared_human:person
+    to: shared:person
     cardinality: { min: 1, max: 1 }
 
   - id: trigger_initiates_session

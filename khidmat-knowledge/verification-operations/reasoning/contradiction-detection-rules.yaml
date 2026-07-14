@@ -15,12 +15,12 @@ governance:
     - ADR-010
 
 inputs:
-  - entity: core:VerificationFinding
-  - entity: core:VerificationActivity
+  - entity: verification_finding
+  - entity: verification_activity
   - concept: taxonomy:verification-findings.yaml#contradiction_type
 
 outputs:
-  - entity: core:VerificationFinding
+  - entity: verification_finding
     property: contradiction_type
 
 reasoning_rules:
@@ -28,7 +28,7 @@ reasoning_rules:
     description: A field observation conflicts with the original registration claim.
     condition: >
       finding.finding_status in [contradicted, refuted] AND
-      activity.method == field_visit AND
+      activity.verification_method == home_visit AND
       activity.field_observation.observation_alignment in [contradicts_claim, refutes_claim]
     outcome:
       contradiction_type: observation_vs_claim
@@ -53,7 +53,7 @@ reasoning_rules:
     description: A community reference or institution disputes the claim.
     condition: >
       finding.finding_status in [contradicted, refuted] AND
-      activity.method in [community_reference, institutional_verification] AND
+      activity.verification_method in [community_reference, institutional_visit] AND
       activity.field_observation.observation_alignment in [contradicts_claim, refutes_claim]
     outcome:
       contradiction_type: third_party_dispute

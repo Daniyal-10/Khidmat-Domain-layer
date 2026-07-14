@@ -1,7 +1,10 @@
 version: "1.0.0"
-domain: needs-assessment
+domain: needs_assessment
 file: ontology/entities.yaml
 status: active
+
+namespaces:
+  shared: http://khidmat.org/ontology/shared
 
 entities:
   - id: assessment_instrument
@@ -9,6 +12,7 @@ entities:
     description: >
       The formalized tool, questionnaire, or matrix defining the structure of the evaluation.
     required: true
+    parent: shared:assessment_tool
 
   - id: assessment_indicator
     label: Assessment Indicator

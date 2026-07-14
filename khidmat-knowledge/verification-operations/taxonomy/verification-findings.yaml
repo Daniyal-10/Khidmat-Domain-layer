@@ -1,8 +1,7 @@
-metadata:
-  file: verification-findings.yaml
-  domain: Verification Operations
-  layer: verification-operations/taxonomy
-  status: Phase 4.1
+version: "1.0.0"
+domain: verification_operations
+file: taxonomy/verification-findings.yaml
+status: active
 
 purpose: >
   Defines the controlled vocabulary for the conclusion reached by a
@@ -23,9 +22,8 @@ out_of_scope: >
   verification-confidence.yaml), does not define what triggers
   escalation on a given finding_status (see escalation-reasons.yaml),
   and does not define the verification_finding entity's structure —
-  that remains owned by
-  verification-operations/verification-operations.yaml. This file
-  also does not define claim.information_consistency
+  that remains owned by ontology/entities.yaml. This file also does
+  not define claim.information_consistency
   (registration/taxonomy/claims.yaml) — that classifies internal
   coherence of the registrant's statements at registration time;
   finding_status classifies the outcome of an external verification
@@ -35,132 +33,148 @@ governance:
   governing_adr:
     - ADR-008
 
-cross_references:
-  - registration/taxonomy/claims.yaml#claim_types
+namespaces:
+  registration: registration
+  needs_assessment: needs_assessment
+  beneficiary_lifecycle: beneficiary_lifecycle
+
+schemes:
+  - id: finding_status
+    label: Finding Status
+    description: >
+      The classification of what a completed verification_activity
+      established about the verification_subject it evaluated. Only
+      activities with verification_status: completed produce a
+      finding_status other than not_applicable; a could_not_complete or
+      cancelled activity does not produce a finding.
+    concepts:
+      - id: confirmed
+        label: Confirmed
+        description: >
+          The verification activity independently established that the
+          claim is true as stated. All material elements of the claim
+          are supported by direct observation, documentary evidence, or
+          corroborated third-party confirmation.
+
+      - id: partially_confirmed
+        label: Partially Confirmed
+        description: >
+          Some material elements of the claim were confirmed and others
+          were not, or the confirmed elements differ in degree from
+          what was claimed (e.g., household size confirmed but
+          composition differs from what was stated).
+        note: >
+          A partially_confirmed finding should record which specific
+          elements were confirmed and which were not at the instance
+          level; that detail belongs to the ontology entity, not this
+          taxonomy file.
+
+      - id: unable_to_confirm
+        label: Unable to Confirm
+        description: >
+          The verification activity completed but did not produce
+          enough information, in either direction, to confirm or refute
+          the claim. This is distinct from could_not_complete: the
+          activity happened, but the evidence obtained was
+          inconclusive.
+
+      - id: contradicted
+        label: Contradicted
+        description: >
+          A field_observation or other verification input conflicts
+          with the claim on one or more material elements, without
+          fully refuting the claim's central assertion. See
+          contradiction_type below for classification of the nature of
+          the conflict.
+
+      - id: refuted
+        label: Refuted
+        description: >
+          The verification activity established that the claim's
+          central assertion is false. Refuted is the strongest negative
+          classification and should be reserved for cases where the
+          core of the claim, not a peripheral detail, does not hold.
+        note: >
+          A refuted finding on a priority_1 requirement or an identity
+          claim should be routed to human_review via escalation_reason:
+          contradictory_findings or suspected_fraud_pattern as
+          appropriate (see escalation-reasons.yaml). This taxonomy file
+          does not itself trigger that routing.
+
+      - id: not_applicable
+        label: Not Applicable
+        description: >
+          The verification_activity did not reach completed status
+          (could_not_complete or cancelled). No finding_status applies.
+          Recorded for completeness so that every activity has an
+          explicit, queryable outcome value rather than a null field.
+
+  - id: contradiction_type
+    label: Contradiction Type
+    description: >
+      Classifies the nature of a disagreement when finding_status is
+      contradicted or refuted. Distinguishes a conflict between a field
+      observation and the original claim from a conflict between two
+      separate verification findings. See
+      ontology/semantic-constraints.yaml
+      (finding_requires_contradiction_type_when_disputed) for the
+      structural encoding of this scoping.
+    concepts:
+      - id: observation_vs_claim
+        label: Observation Contradicts Original Claim
+        description: >
+          A field_observation or other verification input directly
+          conflicts with what was stated in the original registration
+          claim.
+
+      - id: finding_vs_finding
+        label: Finding Contradicts a Prior Finding
+        description: >
+          Two separate verification_activity instances — potentially
+          using different methods, potentially conducted by different
+          actors — produced findings that conflict with each other on
+          the same verification_subject.
+        note: >
+          This is the classification that most directly warrants
+          escalation_reason: contradictory_findings and human_review,
+          since it indicates either a change in circumstance, an error
+          in one of the verification activities, or an attempt at
+          deception, and a human reviewer must determine which.
+
+      - id: third_party_dispute
+        label: Third-Party Account Disputes Claim
+        description: >
+          A community reference, institutional contact, or other third
+          party disputes the claim independently of any direct field
+          observation.
+
+references:
+  - scheme: registration:claim_types
+    relation: informs
+    note: >
       A verification_finding always resolves a verification_subject
-      derived from a claim of one of the types owned there. This file
-      does not redefine claim types.
-  - registration/verification/verification-requirements.yaml
-      Findings resolve verification_requirements derived there. This
+      derived from a claim of one of the types owned in
+      registration/taxonomy/claims.yaml. This file does not redefine
+      claim types.
+  - scheme: registration:verification_requirement
+    relation: informs
+    note: >
+      Findings resolve verification_requirements derived in
+      registration/verification/verification-requirements.yaml. This
       file does not redefine derivation logic or priority.
-  - needs-assessment/ontology.yaml#AssessmentFinding
-      AssessmentFinding.based_on_verified_fact references a
-      verification_finding using this file's finding_status
-      vocabulary as part of its epistemic basis. Needs Assessment
-      does not redefine finding_status.
-  - beneficiary-lifecycle/ontology.yaml#LifecycleTransition
-      triggeredByVerificationOutcome references a verification_finding.
-      A confirmed finding is the typical trigger for progression
-      toward the active engagement_stage. Beneficiary Lifecycle does
-      not redefine finding_status.
-
-finding_status:
-  description: >
-    The classification of what a completed verification_activity
-    established about the verification_subject it evaluated. Only
-    activities with verification_status: completed produce a
-    finding_status other than not_applicable; a could_not_complete or
-    cancelled activity does not produce a finding.
-
-  values:
-
-    - id: confirmed
-      label: Confirmed
-      description: >
-        The verification activity independently established that the
-        claim is true as stated. All material elements of the claim
-        are supported by direct observation, documentary evidence, or
-        corroborated third-party confirmation.
-
-    - id: partially_confirmed
-      label: Partially Confirmed
-      description: >
-        Some material elements of the claim were confirmed and others
-        were not, or the confirmed elements differ in degree from
-        what was claimed (e.g., household size confirmed but
-        composition differs from what was stated).
-      note: >
-        A partially_confirmed finding should record which specific
-        elements were confirmed and which were not at the instance
-        level; that detail belongs to the ontology entity, not this
-        taxonomy file.
-
-    - id: unable_to_confirm
-      label: Unable to Confirm
-      description: >
-        The verification activity completed but did not produce
-        enough information, in either direction, to confirm or refute
-        the claim. This is distinct from could_not_complete: the
-        activity happened, but the evidence obtained was
-        inconclusive.
-
-    - id: contradicted
-      label: Contradicted
-      description: >
-        A field_observation or other verification input conflicts
-        with the claim on one or more material elements, without
-        fully refuting the claim's central assertion. See
-        contradiction_type below for classification of the nature of
-        the conflict.
-
-    - id: refuted
-      label: Refuted
-      description: >
-        The verification activity established that the claim's
-        central assertion is false. Refuted is the strongest negative
-        classification and should be reserved for cases where the
-        core of the claim, not a peripheral detail, does not hold.
-      note: >
-        A refuted finding on a priority_1 requirement or an identity
-        claim should be routed to human_review via escalation_reason:
-        contradictory_findings or suspected_fraud_pattern as
-        appropriate (see escalation-reasons.yaml). This taxonomy file
-        does not itself trigger that routing.
-
-    - id: not_applicable
-      label: Not Applicable
-      description: >
-        The verification_activity did not reach completed status
-        (could_not_complete or cancelled). No finding_status applies.
-        Recorded for completeness so that every activity has an
-        explicit, queryable outcome value rather than a null field.
-
-contradiction_type:
-  description: >
-    Classifies the nature of a disagreement when finding_status is
-    contradicted or refuted. Distinguishes a conflict between a field
-    observation and the original claim from a conflict between two
-    separate verification findings.
-
-  values:
-
-    - id: observation_vs_claim
-      label: Observation Contradicts Original Claim
-      description: >
-        A field_observation or other verification input directly
-        conflicts with what was stated in the original registration
-        claim.
-
-    - id: finding_vs_finding
-      label: Finding Contradicts a Prior Finding
-      description: >
-        Two separate verification_activity instances — potentially
-        using different methods, potentially conducted by different
-        actors — produced findings that conflict with each other on
-        the same verification_subject.
-      note: >
-        This is the classification that most directly warrants
-        escalation_reason: contradictory_findings and human_review,
-        since it indicates either a change in circumstance, an error
-        in one of the verification activities, or an attempt at
-        deception, and a human reviewer must determine which.
-
-    - id: third_party_dispute
-      label: Third-Party Account Disputes Claim
-      description: >
-        A community reference, institutional contact, or other third
-        party disputes the claim independently of any direct field
-        observation.
+  - scheme: needs_assessment:need_assertion
+    relation: supplies_values_for
+    note: >
+      need_assertion's evidentiary basis references a verification_finding
+      using this file's finding_status vocabulary as part of its
+      epistemic basis. Needs Assessment does not redefine finding_status.
+  - scheme: beneficiary_lifecycle:lifecycle_transition
+    relation: informs
+    note: >
+      A lifecycle_transition may reference a verification_finding as a
+      trigger. A confirmed finding is the typical trigger for
+      progression toward the active engagement_stage. Beneficiary
+      Lifecycle does not redefine finding_status.
 
 design_notes:
   - decision: Six-value finding_status including not_applicable

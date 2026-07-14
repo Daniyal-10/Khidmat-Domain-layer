@@ -1,0 +1,52 @@
+version: "1.0.0"
+domain: verification_operations
+file: ontology/lifecycle-constraints.yaml
+status: active
+
+# Descriptive lifecycle semantics keyed by entity (Canonical_Ontology_Schema.md
+# §9). Not a generation surface. Every rule below already existed as prose
+# in the taxonomy layer or entity notes before this migration; nothing here
+# was invented — this file only relocates that descriptive content to its
+# canonical home. A file of this name ("ontology/lifecycle.yaml") was
+# referenced by several notes elsewhere in this domain but had never
+# actually been authored; those references now resolve here.
+
+lifecycle_constraints:
+
+  verification_activity:
+    status_property: verification_status
+    transitions: >
+      scheduled -> in_progress -> completed is the expected path.
+      scheduled -> in_progress -> could_not_complete and
+      scheduled -> cancelled are the recognised exception paths. A
+      could_not_complete or cancelled activity does not by itself close
+      the underlying verification_requirement; a new verification_activity
+      is typically scheduled unless the case itself is closed for another
+      reason.
+    source: verification-operations/taxonomy/verification-status.yaml#status_transition_note
+
+  verification_finding:
+    status_property: verification_confidence
+    resolution_note: >
+      Indeterminate confidence means "not yet judged"; low means "judged,
+      and found weak." An indeterminate confidence should not persist
+      past human_review.
+    source: verification-operations/taxonomy/verification-confidence.yaml#indeterminate
+
+  human_review:
+    status_property: review_decision
+    immutability_note: >
+      Every review_decision, once recorded, is permanent; disagreement
+      produces a new event under escalation_reason: reviewer_disagreement,
+      never a silent revision of the original review_decision.
+    source: verification-operations/taxonomy/review-decisions.yaml#reviewer_disagreement_note
+
+  verification_assignment:
+    status_property: assignment_status
+    note: >
+      The assignment_status transition model was referenced throughout
+      this domain's pre-migration files as pending authorship in
+      "ontology/lifecycle.yaml" but the concrete states and transitions
+      were never specified. This is a genuine, pre-existing content gap
+      carried forward unchanged, not resolved during this structural
+      migration.

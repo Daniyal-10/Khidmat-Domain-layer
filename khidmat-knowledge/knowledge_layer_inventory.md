@@ -848,9 +848,9 @@ matrix relocated out of `evidence.yaml` per Migration Plan Decision D3.
 
 ---
 
-### verification-operations/verification-operations.yaml
+### verification-operations/ontology/entities.yaml
 
-**Purpose:** Defines the first-class ontology concepts owned by the Verification Operations domain. Verification Operations is responsible for producing verification knowledge from verification activities performed against registration outputs.
+**Purpose:** Defines the first-class entities owned by the Verification Operations domain. Verification Operations is responsible for producing verification knowledge from verification activities performed against registration outputs. Canonically migrated (Canonical_Ontology_Schema.md) — consolidates what was previously split between a pre-canonical core-ontology monolith (`verification-operations/verification-operations.yaml`, now retired) and this folder.
 
 **Concepts Owned:**
 - `verification_subject`
@@ -861,47 +861,43 @@ matrix relocated out of `evidence.yaml` per Migration Plan Decision D3.
 - `human_review`
 - `verification_assignment`
 
-**Relationships Owned:**
-- Declared in `ontology/relationships.yaml`
-
-**Maturity:** Complete (Phase 4.0).
+**Maturity:** Complete (Phase 4.0, canonical).
 
 **Known Gaps / Notes:** None.
 
 ---
 
-### verification-operations/taxonomy/*.yaml
+### verification-operations/ontology/data-properties.yaml
 
-**Purpose:** Authoritative vocabularies for verification operations (escalation reasons, review decisions, verification confidence, findings, methods, roles, status, triggers).
-**Maturity:** Complete.
-
----
-
-### verification-operations/ontology/entities.yaml
-
-**Purpose:** Semantic model of Verification Operations entities.
-**Concepts Owned:** VerificationSubject, VerificationActivity, FieldObservation, VerificationFinding, HumanReview, ReverificationTrigger, VerificationAssignment.
+**Purpose:** Datatype and coded properties for each Verification Operations entity.
 **Maturity:** Complete.
 
 ---
 
 ### verification-operations/ontology/relationships.yaml
 
-**Purpose:** Structural relationships between verification entities.
+**Purpose:** Structural relationships between verification entities, and semantic references to Registration, Case Management, Shared Ontology, Shared Risk, and Shared Time.
 **Maturity:** Complete.
 
 ---
 
-### verification-operations/ontology/lifecycle.yaml
+### verification-operations/ontology/semantic-constraints.yaml
 
-**Purpose:** State machines and lifecycle constraints for verification entities.
+**Purpose:** Target-neutral structural constraints (conditional-requirement facts already stated in the taxonomy layer's prose, e.g. could_not_complete_reason required when verification_status is could_not_complete).
 **Maturity:** Complete.
 
 ---
 
-### verification-operations/ontology/constraints.yaml
+### verification-operations/ontology/lifecycle-constraints.yaml
 
-**Purpose:** Semantic invariants and cardinality constraints.
+**Purpose:** Descriptive lifecycle semantics for verification_activity, verification_finding, human_review, and verification_assignment (status transition notes, indeterminate-confidence resolution, review-decision immutability).
+**Maturity:** Complete.
+
+---
+
+### verification-operations/taxonomy/*.yaml
+
+**Purpose:** Authoritative vocabularies for verification operations (escalation reasons, review decisions, verification confidence, findings, methods, status, triggers). Canonically migrated to the `schemes:`/`concepts:` shape (Canonical_Taxonomy_Schema.md).
 **Maturity:** Complete.
 
 ---
@@ -928,16 +924,12 @@ settlement-types, transportation), plus a full `ontology/` module (`entities.yam
 `relationships.yaml`, `lifecycle-constraints.yaml`, `semantic-constraints.yaml`), a
 governance document (`community-context-governance.md`), and a discovery report.
 
-**Maturity:** Substantially built, but authored against the pre-canonical structure —
-predates the frozen `docs/architecture/Canonical_Ontology_Schema.md` /
-`Canonical_Taxonomy_Schema.md` contract. It is the next domain targeted for migration
-onto that contract (see `docs/architecture/Repository_Migration_Methodology.md`).
+**Maturity:** Canonical — Phases 1–4 of `docs/architecture/Community_Context_Migration_Plan.md`
+are complete (canonical four-key headers, full `ontology/` module including
+`data-properties.yaml`, `schemes:`/`concepts:` taxonomy shape). Phase 5 (cross-domain CURIE
+linking) remains blocked on a repository-wide manifest, same as Registration.
 
-**Known Gaps:** No `data-properties.yaml`, no canonical four-key file header, taxonomy
-files use several incompatible legacy record shapes (documented in
-`docs/architecture/Canonical_Taxonomy_Schema.md` §2's audit). A leftover
-`_placeholder.yaml` still exists in the folder despite the domain being substantially
-built — a placeholder-hygiene item to resolve on migration.
+**Known Gaps:** Phase 5 cross-domain CURIE linking pending the repository-wide manifest.
 
 **Overlap / Conflicts:** None identified against other domains; internal boundary
 rules between its own taxonomy files are documented in
@@ -945,7 +937,7 @@ rules between its own taxonomy files are documented in
 
 ---
 
-## PLACEHOLDER DOMAINS
+## OTHER DOMAINS
 
 ---
 
@@ -953,7 +945,7 @@ rules between its own taxonomy files are documented in
 
 **Purpose:** Authoritative vocabulary for the Case Management domain.
 **Concepts Owned:**
-- `case_status`, `priority_level`, `referral_status`, `case_origin`, `case_outcome`, `administrative_closure_reason`
+- `case_status`, `priority_level`, `referral_status`, `case_origin`, `closure_reason`, `case_plan_status`, `delegation_status`, `objective_status`, `referral_type`, `suspension_reason`
 **Relationships Owned:** None.
 **Maturity:** Complete (Level 1).
 **Known Gaps:** None.
@@ -965,16 +957,16 @@ rules between its own taxonomy files are documented in
 
 **Purpose:** Semantic model of Case Management orchestration concepts and their relationships.
 **Concepts Owned:**
-- `Case`, `CasePlan`, `Referral`, `FollowUp`, `CaseAssignment`, `CaseNote`
+- `case`, `case_plan`, `referral` (entities); `follow_up`, `case_note` (nested Value Object fields on `case`)
 **Relationships Owned:**
-- `has_case_plan`, `has_referral`, `has_follow_up`, `has_case_assignment`, `has_case_note`, `has_case_outcome`
+- `case_has_case_plan`, `case_has_referral`, `case_superseded_by_case`, `case_has_primary_subject`, `case_plan_references_need_assertion`, `referral_references_consent`, `case_has_lead_coordinator`, `case_has_statutory_owner`
 **Maturity:** Complete (Level 1).
-**Known Gaps:** None.
+**Known Gaps:** `case_assignment` is named in discovery documents but not yet an authored entity.
 **Overlap / Conflicts:** Correctly references Subject, BeneficiaryLifecycle, NeedsAssessment without redefining them.
 
 ---
 
-### beneficiary-lifecycle/taxonomy.yaml
+### beneficiary-lifecycle/taxonomy/
 
 **Purpose:** Classifies the concepts governing the macro-state of a beneficiary's engagement (lifecycle stages, transition reasons, exit and suspension reasons, and review triggers).
 **Concepts Owned:** 
@@ -989,51 +981,52 @@ rules between its own taxonomy files are documented in
 
 ---
 
-### beneficiary-lifecycle/ontology.yaml
+### beneficiary-lifecycle/ontology/
 
-**Purpose:** Models the authoritative lifecycle record (BeneficiaryLifecycle) and its event-sourced transitions (LifecycleTransition) for a Person or Household over time.
+**Purpose:** Models the authoritative lifecycle record (`beneficiary_lifecycle`) and its event-sourced transitions (`lifecycle_transition`) for a Person or Household over time.
 **Concepts Owned:**
-- `BeneficiaryLifecycle`
-- `LifecycleTransition`
+- `beneficiary_lifecycle`
+- `lifecycle_transition`
 **Relationships Owned:**
-- `tracksJourneyOf`
-- `hasTransitionHistory`
-- `followedBy`
-- `triggeredByRegistrationCompletion`
-- `triggeredByVerificationOutcome`
-- `triggeredByRiskAssessment`
-- `triggeredByCaseDecision`
+- `tracks_journey_of`
+- `has_transition_history`
+- `followed_by`
+- `triggered_by_registration_case`
+- `triggered_by_verification_finding`
+- `triggered_by_risk_characterization`
+- `triggered_by_case_decision`
+- `part_of_lifecycle`
 **Maturity:** Complete (Level 1).
 **Known Gaps:** None.
 **Overlap / Conflicts:** References Registration, Shared Risk, Verification Operations, and Shared Human Model without redefining their concepts.
 
 ---
 
-### volunteer-operations/_placeholder.yaml
+### volunteer-operations/ontology/, volunteer-operations/taxonomy/
 
-**Status:** Level 2 placeholder.
-**Assessment:** Well-scoped. Correctly notes that volunteer full profile lives here, not in registration.
-
----
-
-### support-delivery/_placeholder.yaml
-
-**Status:** Level 2 placeholder.
-**Assessment:** Clean boundary between what is needed (registration) and how it is delivered (this domain). Correctly deferred.
+**Status:** Foundational (Tier 1) canonical structure complete, per ADR-024. Operational/runtime layer (scheduling, dispatch, trust/performance scoring) deferred to Stage 9.
+**Assessment:** Well-scoped. Correctly notes that volunteer full profile lives here, not in registration. `volunteer-operations/_placeholder.yaml` remains present alongside the canonical folders as a leftover from the pre-migration state.
 
 ---
 
-### programs/_placeholder.yaml
+### support-delivery/ontology/, support-delivery/taxonomy/
 
-**Status:** Level 2 placeholder.
-**Assessment:** Well-scoped. Correctly defers until a structured program distinct from ad-hoc case-by-case assistance is defined by the client.
+**Status:** Canonical `ontology/`+`taxonomy/` structure complete.
+**Assessment:** Clean boundary between what is needed (registration) and how it is delivered (this domain).
 
 ---
 
-### impact/_placeholder.yaml
+### programs/ontology/, programs/taxonomy/
 
-**Status:** Level 2 placeholder.
-**Assessment:** Correctly notes that impact measurement requires longitudinal data from beneficiary lifecycle. Will not function without outcome indicators defined in shared.
+**Status:** Canonical `ontology/`+`taxonomy/` structure complete.
+**Assessment:** Well-scoped. `programs/_placeholder.yaml` remains present alongside the canonical folders as a leftover from the pre-migration state.
+
+---
+
+### impact/ontology/, impact/taxonomy/
+
+**Status:** Canonical `ontology/`+`taxonomy/` structure complete.
+**Assessment:** Correctly notes that impact measurement requires longitudinal data from beneficiary lifecycle. `impact/_placeholder.yaml` remains present alongside the canonical folders as a leftover from the pre-migration state.
 
 ---
 

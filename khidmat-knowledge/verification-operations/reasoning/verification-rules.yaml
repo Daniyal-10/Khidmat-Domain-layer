@@ -16,12 +16,12 @@ governance:
     - ADR-010
 
 inputs:
-  - entity: core:VerificationActivity
-  - entity: core:FieldObservation
+  - entity: verification_activity
+  - entity: field_observation
   - concept: taxonomy:verification-findings.yaml#finding_status
 
 outputs:
-  - entity: core:VerificationFinding
+  - entity: verification_finding
     property: finding_status
 
 reasoning_rules:

@@ -15,7 +15,7 @@ relationships:
   - id: delivery_fulfills_case_plan
     from: delivery_event
     relationship: fulfills
-    to: case_management:CasePlan
+    to: case_management:case_plan
     cardinality: { min: 1, max: unbounded }
     notes: Multiple case plans allow Compound Assistance.
 
@@ -94,23 +94,23 @@ relationships:
   - id: observation_escalates_to_assessment
     from: operational_observation
     relationship: escalates_to
-    to: needs_assessment:Assessment
+    to: needs_assessment:assessment_session
     cardinality: { min: 0, max: unbounded }
 
   - id: observation_escalates_to_case_management
     from: operational_observation
     relationship: escalates_to
-    to: case_management:Case
+    to: case_management:case
     cardinality: { min: 0, max: unbounded }
 
   - id: observation_escalates_to_verification
     from: operational_observation
     relationship: escalates_to
-    to: verification_operations:core:VerificationActivity
+    to: verification_operations:verification_activity
     cardinality: { min: 0, max: unbounded }
 
   - id: accountability_escalates_to_case_management
     from: accountability_record
     relationship: escalates_to
-    to: case_management:Case
+    to: case_management:case
     cardinality: { min: 0, max: 1 }

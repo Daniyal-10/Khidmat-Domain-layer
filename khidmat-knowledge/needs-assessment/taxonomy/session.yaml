@@ -1,10 +1,11 @@
 version: "1.0.0"
-domain: needs-assessment
+domain: needs_assessment
 file: taxonomy/session.yaml
 status: active
 
 purpose: >
-  Classifies the states, modalities, and missing data reasons of an assessment session.
+  Classifies the states, modalities, missing data reasons, depth, urgency,
+  and methodology of an assessment session.
 
 schemes:
   - id: session_status
@@ -69,3 +70,71 @@ schemes:
       - id: not_applicable
         label: Not Applicable
         description: The section logically does not apply.
+
+  - id: assessment_depth
+    label: Assessment Depth
+    description: >
+      The granularity and duration of the assessment event.
+    concepts:
+      - id: rapid
+        label: Rapid
+        description: >
+          A quick, lower-granularity evaluation conducted to gauge
+          macro-level needs over a short duration.
+      - id: detailed
+        label: Detailed
+        description: >
+          A comprehensive, in-depth evaluation conducted to formulate
+          long-term recovery plans.
+
+  - id: assessment_urgency
+    label: Assessment Urgency
+    description: >
+      The operational context and triage pressure driving the assessment.
+    concepts:
+      - id: routine
+        label: Routine
+        description: >
+          Conducted as part of standard operations without immediate acute
+          threat to life.
+      - id: emergency
+        label: Emergency
+        description: >
+          An immediate, focused assessment triggered by an acute threat to
+          life or safety.
+
+  - id: assessment_methodology
+    label: Assessment Methodology
+    description: >
+      The broad methodological approach or class of the evaluation.
+    concepts:
+      - id: structured
+        label: Structured
+        description: >
+          A standardized evaluation using fixed questions and predefined
+          quantitative metrics.
+      - id: semi_structured
+        label: Semi-Structured
+        description: >
+          An evaluation combining standard questions with open-ended
+          qualitative exploration.
+      - id: observational
+        label: Observational
+        description: >
+          An evaluation primarily relying on direct field observation of
+          conditions.
+      - id: participatory
+        label: Participatory
+        description: >
+          An evaluation actively involving the community or subject in the
+          analytical process.
+      - id: clinical
+        label: Clinical
+        description: >
+          An evaluation involving medical, psychological, or specialized
+          technical measurements.
+      - id: mixed_method
+        label: Mixed Method
+        description: >
+          An evaluation explicitly combining two or more distinct
+          methodological classes.

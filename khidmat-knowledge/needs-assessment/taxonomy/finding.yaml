@@ -1,5 +1,5 @@
 version: "1.0.0"
-domain: needs-assessment
+domain: needs_assessment
 file: taxonomy/finding.yaml
 status: active
 

@@ -74,7 +74,7 @@ Governance completed:
 - knowledge_layer_roadmap.md
 - shared/human-model/governance.md
 - shared/risk/governance.md
-- verification-operations/verification-operations.yaml (Core Ontology)
+- verification-operations/ontology/ (canonical Core Ontology)
 - docs/architecture/Canonical_Ontology_Schema.md, Canonical_Taxonomy_Schema.md,
   Repository_Migration_Methodology.md (frozen structural and process contracts)
 - architecture-decisions/ADR-023 (ontology vocabulary extension: Value Objects, Roles,

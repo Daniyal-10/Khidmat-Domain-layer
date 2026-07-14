@@ -8,8 +8,8 @@ purpose: >
   and the quality of evidence.
 
 scope: >
-  Assigns a verification_confidence level (high, medium, low, none) to a
-  VerificationFinding.
+  Assigns a verification_confidence level (high, moderate, low, indeterminate)
+  to a verification_finding.
 
 governance:
   governing_adr:
@@ -17,67 +17,93 @@ governance:
     - ADR-010
 
 inputs:
-  - entity: core:VerificationFinding
-  - entity: core:VerificationActivity
+  - entity: verification_finding
+  - entity: verification_activity
   - concept: taxonomy:verification-methods.yaml#verification_method
   - concept: taxonomy:verification-confidence.yaml#verification_confidence
 
 outputs:
-  - entity: core:VerificationFinding
+  - entity: verification_finding
     property: verification_confidence
 
 reasoning_rules:
   - rule_id: confidence_high_direct_observation
-    description: High confidence via direct field observation by an authorized actor.
+    description: High confidence via direct field observation.
     condition: >
-      activity.method == field_visit AND
-      activity.actor.role == trained_verifier AND
+      activity.verification_method == home_visit AND
       finding.finding_status in [confirmed, refuted]
     outcome:
       verification_confidence: high
     semantic_rationale: >
-      Direct observation by a trained verification actor is the gold standard for
+      Direct observation by a verification actor is the gold standard for
       verifying physical reality (e.g., household composition, shelter condition).
+    notes: >
+      The original condition also required activity.actor.role ==
+      trained_verifier. No such property exists anywhere in this domain's
+      ontology or in shared/ontology/entities.yaml#actor — actor
+      qualification is explicitly out of scope for Verification Operations
+      (relationships.yaml: "does not define actor qualification, roles, or
+      types — that remains a Volunteer Operations concern"). The clause is
+      removed rather than left pointing at an undefined property; it should
+      be reinstated once Volunteer Operations exposes a qualification/
+      eligibility signal on shared:actor (see
+      ontology_authority_matrix.md FLAG-006) that this rule can reference
+      without inventing a new property here.
 
   - rule_id: confidence_high_corroborated_institutional
     description: High confidence via official institutional records.
     condition: >
-      activity.method == institutional_verification AND
-      activity.evidence.source_type == official_institution AND
-      activity.evidence.tamper_evident == true
+      activity.verification_method == institutional_visit AND
+      activity.field_observation.evidence.source_type == official_institution AND
+      activity.field_observation.evidence.tamper_evident == true
     outcome:
       verification_confidence: high
     semantic_rationale: >
       Official, tamper-evident records from recognized institutions (e.g., medical
       facility, government registry) provide high certainty for documentary claims.
+    notes: >
+      Evidence is reachable only via field_observation
+      (field_observation_corroborated_by_evidence, relationships.yaml) — there
+      is no direct verification_activity-to-evidence edge. The condition now
+      traverses that path instead of a non-existent activity.evidence
+      shortcut.
 
-  - rule_id: confidence_medium_uncorroborated_remote
-    description: Medium confidence via a remote interview without physical evidence.
+  - rule_id: confidence_moderate_uncorroborated_remote
+    description: Moderate confidence via a remote method without physical evidence.
     condition: >
-      activity.method in [remote_interview, phone_verification] AND
-      count(activity.evidence) == 0
+      activity.verification_method in [document_verification, phone_verification] AND
+      count(activity.field_observation.evidence) == 0
     outcome:
-      verification_confidence: medium
+      verification_confidence: moderate
     semantic_rationale: >
-      Remote interviews provide useful signals but carry inherent identity and
+      Remote methods provide useful signals but carry inherent identity and
       presence risks compared to physical visits.
+    notes: >
+      Outcome value corrected from the non-existent medium to the canonical
+      moderate concept (verification-confidence.yaml). remote_interview is not
+      a verification_methods concept; document_verification is the closest
+      canonical remote method to the rule's original intent and is used here
+      alongside the already-valid phone_verification.
 
   - rule_id: confidence_low_single_community_reference
     description: Low confidence via a single informal community reference.
     condition: >
-      activity.method == community_reference AND
-      count(activity.evidence) == 0
+      activity.verification_method == community_reference AND
+      count(activity.field_observation.evidence) == 0
     outcome:
       verification_confidence: low
     semantic_rationale: >
-      A single community reference without corroborating physical evidence is prone 
+      A single community reference without corroborating physical evidence is prone
       to bias or lack of full context. It yields low operational trust.
 
-  - rule_id: confidence_none_unverifiable
-    description: No confidence for unable_to_confirm findings.
+  - rule_id: confidence_indeterminate_unverifiable
+    description: Indeterminate confidence for unable_to_confirm findings.
     condition: >
       finding.finding_status == unable_to_confirm
     outcome:
-      verification_confidence: none
+      verification_confidence: indeterminate
     semantic_rationale: >
-      If the conclusion itself could not be reached, there is no confidence to measure.
+      If the conclusion itself could not be reached, no reasoned confidence
+      judgement has been composed. indeterminate (verification-confidence.yaml)
+      is the honest placeholder for this case, not a fifth confidence level;
+      the non-existent none value is retired.

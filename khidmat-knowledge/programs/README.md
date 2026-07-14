@@ -8,17 +8,19 @@ requirements — as distinct from ad-hoc, case-by-case assistance.
 
 ## Scope
 
-**Level 2 placeholder.** Scope is declared; no taxonomy or ontology content is
-authored until the domain activates (ADR-004, ADR-009).
+**Canonical — complete.** Full `ontology/`+`taxonomy/` structure authored per
+`docs/architecture/Canonical_Ontology_Schema.md` / `Canonical_Taxonomy_Schema.md`.
 
-## Owns (concepts this domain will own, per its placeholder declaration)
+## Owns
 
-- `program_definition`
-- `eligibility_criteria`
-- `program_cycle`
-- `beneficiary_enrollment_in_program`
-- `program_budget`
-- `program_reporting`
+- **Entities:** `program`, `program_version`, `program_variant`, `eligibility_rule`,
+  `intervention_offering`, `enrollment`, `humanitarian_override`, `appeal`,
+  `compliance_checkpoint` (`ontology/entities.yaml`)
+- **Taxonomy:** eligibility and enrollment status (`eligibility-and-enrollment.yaml`),
+  funding sources and compliance (`funding-and-compliance.yaml`), override/appeal
+  governance (`governance-and-exceptions.yaml`), intervention modalities
+  (`interventions.yaml`), program lifecycle and status (`lifecycle-and-status.yaml`),
+  program topology and thematic sectors (`structure.yaml`)
 
 ## Does Not Own
 
@@ -30,13 +32,15 @@ authored until the domain activates (ADR-004, ADR-009).
 
 ```
 programs/
-└── _placeholder.yaml    # scope, owned concepts, activation condition
+├── ontology/     # entities, data-properties, relationships, constraints
+└── taxonomy/     # eligibility-and-enrollment, funding-and-compliance,
+                  # governance-and-exceptions, interventions, lifecycle-and-status, structure
 ```
 
 ## Related Documents
 
-- `_placeholder.yaml` — this domain's formal scope declaration
-- `ARCHITECTURE.md` — Level 2 maturity definition
-- `knowledge_layer_roadmap.md` — Stage 9 (activates when a structured program
-  distinct from ad-hoc assistance is defined by the client)
-- `architecture-decisions/ADR-004` — Placeholder Domain Strategy
+- `ARCHITECTURE.md` — domain maturity and inventory
+- `knowledge_layer_roadmap.md` — dependency order and activation sequencing
+- `ontology_authority_matrix.md` — Programs concept ownership
+- `architecture-decisions/ADR-004` — Placeholder Domain Strategy (historical — domain
+  has since been migrated to canonical structure)

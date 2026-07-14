@@ -188,7 +188,7 @@ are complete and stable.
 **STATUS: COMPLETED** (Stage 1 Dependency Anomaly Noted)
 
 **What this stage produces:**
-- ✓ Verification Operations core ontology (`verification-operations/verification-operations.yaml`) [Complete]
+- ✓ Verification Operations core ontology (`verification-operations/ontology/`) [Complete, canonical]
 - ✓ Volunteer assignment model [Complete]
 - ✓ Field visit outcome model [Complete]
 - ✓ Claim confirmation model (result of a verification requirement) [Complete]
@@ -268,8 +268,8 @@ are complete and stable.
 **STATUS: COMPLETED**
 
 **Completed:**
-- ✓ Beneficiary Lifecycle taxonomy (`beneficiary-lifecycle/taxonomy.yaml`)
-- ✓ Beneficiary Lifecycle ontology (`beneficiary-lifecycle/ontology.yaml`)
+- ✓ Beneficiary Lifecycle taxonomy (`beneficiary-lifecycle/taxonomy/`)
+- ✓ Beneficiary Lifecycle ontology (`beneficiary-lifecycle/ontology/`)
 - □ Persistent Person entity in `shared/ontology/entities.yaml` (promoted from beneficiary snapshot) [Pending]
 
 **Prerequisites:**

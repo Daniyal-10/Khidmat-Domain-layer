@@ -3,51 +3,64 @@ domain: case_management
 file: ontology/relationships.yaml
 status: active
 
+namespaces:
+  shared: shared
+  needs_assessment: needs_assessment
+  consent_and_privacy: consent_and_privacy
+
 relationships:
-  - id: has_case_plan
-    source: case
-    target: case_plan
-    cardinality: one_to_many
-    description: Associates a Case with its current and historical Case Plans.
+  - id: case_has_case_plan
+    from: case
+    relationship: has
+    to: case_plan
+    cardinality: { min: 0, max: unbounded }
+    notes: Associates a Case with its current and historical Case Plans.
 
-  - id: has_referral
-    source: case
-    target: referral
-    cardinality: one_to_many
-    description: Associates a Case with external or internal Referrals.
+  - id: case_has_referral
+    from: case
+    relationship: has
+    to: referral
+    cardinality: { min: 0, max: unbounded }
+    notes: Associates a Case with external or internal Referrals.
 
-  - id: superseded_by
-    source: case
-    target: case
-    cardinality: many_to_one
-    description: Links a Case administratively closed as a duplicate or merge to the surviving authoritative Case.
+  - id: case_superseded_by_case
+    from: case
+    relationship: superseded_by
+    to: case
+    cardinality: { min: 0, max: 1 }
+    notes: Links a Case administratively closed as a duplicate or merge to the surviving authoritative Case.
 
-  - id: case_primary_subject
-    source: case
-    target: shared_human_model:subject
-    cardinality: many_to_one
-    description: References the authoritative Subject serving as the Primary Subject of the Case.
+  - id: case_has_primary_subject
+    from: case
+    relationship: has_primary_subject
+    to: shared:subject
+    cardinality: { min: 0, max: 1 }
+    notes: References the authoritative Subject serving as the Primary Subject of the Case.
 
-  - id: references_assessment
-    source: case_plan
-    target: needs_assessment:assessment_finding
-    cardinality: one_to_many
-    description: Linked from case_plan to needs_assessment:assessment_finding.
+  - id: case_plan_references_need_assertion
+    from: case_plan
+    relationship: references
+    to: needs_assessment:need_assertion
+    cardinality: { min: 0, max: unbounded }
+    notes: Linked from case_plan to needs_assessment:need_assertion.
 
-  - id: references_consent
-    source: referral
-    target: shared:consent
-    cardinality: one_to_one
-    description: Linked from referral to shared:consent.
+  - id: referral_references_consent
+    from: referral
+    relationship: references
+    to: consent_and_privacy:consent
+    cardinality: { min: 0, max: 1 }
+    notes: Linked from referral to consent_and_privacy:consent.
 
-  - id: has_lead_coordinator
-    source: case
-    target: shared:actor
-    cardinality: many_to_one
-    description: Role representing the lead coordinator for the case.
+  - id: case_has_lead_coordinator
+    from: case
+    relationship: has_lead_coordinator
+    to: shared:actor
+    cardinality: { min: 0, max: 1 }
+    notes: Role representing the lead coordinator for the case.
 
-  - id: has_statutory_owner
-    source: case
-    target: shared:actor
-    cardinality: many_to_one
-    description: Role representing the statutory owner of the case.
+  - id: case_has_statutory_owner
+    from: case
+    relationship: has_statutory_owner
+    to: shared:actor
+    cardinality: { min: 0, max: 1 }
+    notes: Role representing the statutory owner of the case.

@@ -1,8 +1,7 @@
-metadata:
-  file: escalation-reasons.yaml
-  domain: Verification Operations
-  layer: verification-operations/taxonomy
-  status: Phase 4.1
+version: "1.0.0"
+domain: verification_operations
+file: taxonomy/escalation-reasons.yaml
+status: active
 
 purpose: >
   Defines the controlled vocabulary of reasons a verification_finding,
@@ -31,116 +30,134 @@ governance:
   governing_adr:
     - ADR-008
 
-cross_references:
-  - verification-confidence.yaml#verification_confidence
+namespaces:
+  registration: registration
+
+schemes:
+  - id: escalation_reason
+    label: Escalation Reason
+    description: >
+      The named condition under which a verification outcome must be
+      reviewed by a human actor before the underlying verification
+      requirement is treated as closed. Every escalation carries
+      exactly one primary reason; if more than one condition applies
+      simultaneously, the most operationally significant reason is
+      recorded as primary and the others are recorded as contributing
+      context at the instance level.
+    concepts:
+      - id: low_confidence
+        label: Low Confidence
+        description: >
+          A finding was reached with verification_confidence: low on a
+          requirement whose priority classification warrants human
+          judgement before the finding is relied upon.
+        typical_use: >
+          A confirmed or partially_confirmed finding on a priority_1
+          requirement, reached through a single uncorroborated remote
+          source.
+
+      - id: contradictory_findings
+        label: Contradictory Findings
+        description: >
+          A finding_status of contradicted or refuted was reached, or
+          two verification_finding instances on the same subject
+          conflict with each other per contradiction_type:
+          finding_vs_finding.
+
+      - id: safety_concern_at_visit
+        label: Safety Concern at Visit
+        description: >
+          A verification_activity was withdrawn due to
+          unsafe_conditions_at_arrival, or a safety concern was
+          otherwise identified during an in-progress or completed
+          activity.
+        note: >
+          This escalation reason must always be raised when
+          could_not_complete_reason: unsafe_conditions_at_arrival is
+          recorded (see verification-status.yaml). It must never be
+          silently closed without human review, consistent with the
+          registration domain's existing treatment of safety_flag in
+          registration/ontology/ and ADR-006's precedent (safety flags
+          trigger mandatory assessment, not automatic closure).
+
+      - id: suspected_fraud_pattern
+        label: Suspected Fraud Pattern
+        description: >
+          A structural or behavioural pattern across one or more
+          verification activities suggests the claim, the
+          registration, or the registrant may not be genuine.
+        note: >
+          This reason routes to human_review only. It must never itself
+          cause a claim to be rejected, a case to be closed, or a
+          beneficiary to be denied support. The detection logic that
+          would raise this reason is explicitly out of scope for this
+          taxonomy layer and is deferred to a dedicated,
+          governance-reviewed reasoning effort given the harm risk of a
+          false positive against a vulnerable household.
+
+      - id: reviewer_disagreement
+        label: Reviewer Disagreement
+        description: >
+          A human_review decision disagreed with the field actor's
+          proposed finding, and the disagreement itself requires a
+          further, higher-level review before being treated as
+          settled.
+        typical_use: >
+          A supervisor's review_decision of overridden or
+          sent_back_for_reverification is itself contested by the
+          original field actor or a second reviewer.
+
+      - id: registrant_or_third_party_dispute
+        label: Registrant or Third-Party Dispute
+        description: >
+          The registrant, beneficiary, or a relevant third party
+          formally disputes a verification finding after it has been
+          recorded.
+        typical_use: >
+          A beneficiary contests a refuted finding, asserting the
+          verification activity itself was in error (wrong address
+          visited, wrong household member observed).
+
+references:
+  - scheme: verification_confidence
+    relation: informs
+    note: >
       low_confidence escalation reasons reference the confidence
       level defined there. This file does not redefine confidence
       levels.
-  - verification-findings.yaml#contradiction_type
+  - scheme: contradiction_type
+    relation: informs
+    note: >
       contradictory_findings escalation reasons reference the
-      contradiction classification defined there. This file does not
-      redefine contradiction types.
-  - verification-status.yaml#could_not_complete_reason
+      contradiction classification defined in verification-findings.yaml.
+      This file does not redefine contradiction types.
+  - scheme: could_not_complete_reason
+    relation: informs
+    note: >
       safety_concern_at_visit escalation is the mandatory routing
       target for unsafe_conditions_at_arrival, per the note recorded
-      in that file. This file does not redefine the underlying reason
-      vocabulary for could-not-complete activities.
-  - registration/questioning/questioning-strategy.yaml#sensitive_topic_rules
+      in verification-status.yaml. This file does not redefine the
+      underlying reason vocabulary for could-not-complete activities.
+  - scheme: registration:sensitive_topic_rules
+    relation: informs
+    note: >
       Registration's existing domestic-violence and safeguarding
-      protocols are the upstream source of safety concern for many
-      cases reaching this domain. This file does not redefine those
+      protocols (registration/questioning/questioning-strategy.yaml)
+      are the upstream source of safety concern for many cases
+      reaching this domain. This file does not redefine those
       protocols; it defines the escalation reason a verification-time
       safety concern is recorded under.
-  - registration/verification/verification-requirements.yaml#priority_classification
+  - scheme: registration:priority_classification
+    relation: informs
+    note: >
       Escalation likelihood is informed by a requirement's priority
-      classification (priority_1/2/3) defined there. This file does
-      not redefine priority classification.
-
-escalation_reason:
-  description: >
-    The named condition under which a verification outcome must be
-    reviewed by a human actor before the underlying verification
-    requirement is treated as closed. Every escalation carries
-    exactly one primary reason; if more than one condition applies
-    simultaneously, the most operationally significant reason is
-    recorded as primary and the others are recorded as contributing
-    context at the instance level.
-
-  values:
-
-    - id: low_confidence
-      label: Low Confidence
-      description: >
-        A finding was reached with verification_confidence: low on a
-        requirement whose priority classification warrants human
-        judgement before the finding is relied upon.
-      typical_use: >
-        A confirmed or partially_confirmed finding on a priority_1
-        requirement, reached through a single uncorroborated remote
-        source.
-
-    - id: contradictory_findings
-      label: Contradictory Findings
-      description: >
-        A finding_status of contradicted or refuted was reached, or
-        two verification_finding instances on the same subject
-        conflict with each other per contradiction_type:
-        finding_vs_finding.
-
-    - id: safety_concern_at_visit
-      label: Safety Concern at Visit
-      description: >
-        A verification_activity was withdrawn due to
-        unsafe_conditions_at_arrival, or a safety concern was
-        otherwise identified during an in-progress or completed
-        activity.
-      note: >
-        This escalation reason must always be raised when
-        could_not_complete_reason: unsafe_conditions_at_arrival is
-        recorded (see verification-status.yaml). It must never be
-        silently closed without human review, consistent with the
-        registration domain's existing treatment of safety_flag in
-        registration/ontology/attributes.yaml#situation and ADR-006's
-        precedent (safety flags trigger mandatory assessment, not
-        automatic closure).
-
-    - id: suspected_fraud_pattern
-      label: Suspected Fraud Pattern
-      description: >
-        A structural or behavioural pattern across one or more
-        verification activities suggests the claim, the
-        registration, or the registrant may not be genuine.
-      note: >
-        This reason routes to human_review only. It must never itself
-        cause a claim to be rejected, a case to be closed, or a
-        beneficiary to be denied support. The detection logic that
-        would raise this reason is explicitly out of scope for this
-        taxonomy layer and is deferred to a dedicated,
-        governance-reviewed reasoning effort given the harm risk of a
-        false positive against a vulnerable household.
-
-    - id: reviewer_disagreement
-      label: Reviewer Disagreement
-      description: >
-        A human_review decision disagreed with the field actor's
-        proposed finding, and the disagreement itself requires a
-        further, higher-level review before being treated as
-        settled.
-      typical_use: >
-        A supervisor's review_decision of overridden or
-        sent_back_for_reverification is itself contested by the
-        original field actor or a second reviewer.
-
-    - id: registrant_or_third_party_dispute
-      label: Registrant or Third-Party Dispute
-      description: >
-        The registrant, beneficiary, or a relevant third party
-        formally disputes a verification finding after it has been
-        recorded.
-      typical_use: >
-        A beneficiary contests a refuted finding, asserting the
-        verification activity itself was in error (wrong address
-        visited, wrong household member observed).
+      classification (priority_1/2/3) defined in
+      registration/verification/verification-requirements.yaml. This
+      file does not redefine priority classification. This is the
+      currently authoritative reference for this concept; see
+      ontology/data-properties.yaml's namespaces note for why it is not
+      yet a Canonical_Taxonomy_Schema.md-conformant scheme (an upstream
+      Registration-domain dependency, not resolved here).
 
 design_notes:
   - decision: Six named reasons, each independently recorded

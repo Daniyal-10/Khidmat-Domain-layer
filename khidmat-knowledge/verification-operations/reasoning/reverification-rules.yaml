@@ -16,33 +16,38 @@ governance:
     - ADR-010
 
 inputs:
-  - entity: core:VerificationFinding
-  - entity: case_management:Case
-  - entity: registration:Evidence
+  - entity: verification_finding
+  - entity: case_management:case
+  - entity: registration:evidence
   - concept: taxonomy:reverification-triggers.yaml#reverification_trigger_type
   - concept: taxonomy:time.yaml#waiting_and_grace_periods
 
 outputs:
-  - entity: core:ReverificationTrigger
+  - entity: reverification_trigger
 
 reasoning_rules:
   - rule_id: trigger_evidence_expiring
     description: Evidence supporting a confirmed finding is expiring or expired.
     condition: >
       finding.finding_status in [confirmed, partially_confirmed] AND
-      finding.evidence.temporal_status in [expiring_soon, expired]
+      finding.field_observation.evidence.temporal_status in [expiring_soon, expired]
     outcome:
       reverification_trigger_type: evidence_expiring
     semantic_rationale: >
       Verification tied to time-limited evidence must be renewed when that
       evidence loses validity.
+    notes: >
+      Corrected traversal: verification_finding has no direct evidence edge.
+      Evidence is reachable only via field_observation
+      (verification_finding_derived_from_field_observation, then
+      field_observation_corroborated_by_evidence — relationships.yaml).
 
   - rule_id: trigger_risk_escalation
     description: Household risk trend deteriorated since last verification.
     condition: >
       finding.finding_status in [confirmed, partially_confirmed] AND
       case.risk_trend == deteriorating AND
-      case.risk_trend.updated_at > finding.created_at
+      case.risk_trend.updated_at > finding.recorded_at
     outcome:
       reverification_trigger_type: risk_escalation
     semantic_rationale: >
@@ -52,7 +57,7 @@ reasoning_rules:
   - rule_id: trigger_periodic_reassessment
     description: Standard time elapsed requiring routine reverification.
     condition: >
-      current_date > (finding.created_at + reassessment_window)
+      current_date > (finding.recorded_at + reassessment_window)
     outcome:
       reverification_trigger_type: periodic_reassessment
     semantic_rationale: >
@@ -60,15 +65,23 @@ reasoning_rules:
       does not silently drift from reality.
 
   - rule_id: trigger_case_updated_after_issuance
-    description: The registration case was updated after a VerificationBrief was generated.
+    description: The registration case was updated after a Verification Brief was generated.
     condition: >
       activity.verification_status in [scheduled, in_progress] AND
-      case.updated_at > activity.brief_issued_at
+      case.updated_at > activity.verification_assignment.brief_issued_at
     outcome:
       reverification_trigger_type: case_updated_after_issuance
     semantic_rationale: >
       The verifier in the field may be working from stale instructions. The brief
       must be re-issued or the activity reassessed.
+    notes: >
+      Corrected ownership: the issuance moment belongs to
+      verification_assignment (brief_issued_at, data-properties.yaml), not
+      verification_activity — per relationships.yaml, "an assignment is
+      always created in the context of a brief projected at a point in
+      time." Traverses activity -> verification_assignment via
+      verification_activity_part_of_verification_assignment
+      (relationships.yaml) rather than a duplicate timestamp on activity.
 
   - rule_id: trigger_contradiction_detected
     description: A new contradiction was flagged on a previously settled claim.

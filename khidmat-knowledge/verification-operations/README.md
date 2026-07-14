@@ -19,10 +19,15 @@ Management's concern).
 
 - **Entities:** `verification_subject`, `verification_activity`,
   `field_observation`, `verification_finding`, `reverification_trigger`,
-  `human_review`, `verification_assignment`
-  (`verification-operations.yaml`, `ontology/entities.yaml`)
-- **Relationships:** structural relationships between the entities above
-  (`ontology/relationships.yaml`)
+  `human_review`, `verification_assignment` (`ontology/entities.yaml`)
+- **Data Properties:** scalar/coded properties for each entity above
+  (`ontology/data-properties.yaml`)
+- **Relationships:** structural relationships between the entities above,
+  and semantic references to Registration, Case Management, Shared
+  Ontology, Shared Risk, and Shared Time (`ontology/relationships.yaml`)
+- **Constraints:** conditional-requirement structural facts
+  (`ontology/semantic-constraints.yaml`) and descriptive lifecycle
+  semantics (`ontology/lifecycle-constraints.yaml`)
 - **Taxonomy:** escalation reasons, reverification triggers, review decisions,
   verification confidence, verification findings, verification methods,
   verification status (`taxonomy/`)
@@ -44,10 +49,12 @@ Management's concern).
 
 ```
 verification-operations/
-├── verification-operations.yaml   # core ontology concepts and relationships
 ├── ontology/
 │   ├── entities.yaml
-│   └── relationships.yaml
+│   ├── data-properties.yaml
+│   ├── relationships.yaml
+│   ├── semantic-constraints.yaml
+│   └── lifecycle-constraints.yaml
 ├── taxonomy/
 │   ├── escalation-reasons.yaml
 │   ├── reverification-triggers.yaml

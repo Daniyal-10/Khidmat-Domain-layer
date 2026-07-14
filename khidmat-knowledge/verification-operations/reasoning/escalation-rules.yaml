@@ -15,8 +15,8 @@ governance:
     - ADR-010
 
 inputs:
-  - entity: core:VerificationFinding
-  - entity: core:VerificationActivity
+  - entity: verification_finding
+  - entity: verification_activity
   - concept: taxonomy:escalation-reasons.yaml#escalation_reason
 
 outputs:
@@ -57,7 +57,7 @@ reasoning_rules:
       human_review_required: true
     semantic_rationale: >
       Priority 1 requirements (e.g., identity, vulnerability) require at least
-      medium confidence. Low confidence warrants review to authorize reverification
+      moderate confidence. Low confidence warrants review to authorize reverification
       or override.
 
   - rule_id: escalate_third_party_dispute

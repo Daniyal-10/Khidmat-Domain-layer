@@ -1,17 +1,15 @@
-version: "1.0"
-domain: verification-operations
+version: "1.0.0"
+domain: verification_operations
 file: ontology/relationships.yaml
-maturity: level_4_ontology
-status: Phase 4.2
+status: active
 
 purpose: >
-  Defines all relationships among entities declared in
-  ontology/entities.yaml, and all semantic references from those
-  entities to concepts owned by other bounded contexts. Internal
-  relationships never cross a domain boundary. External references
-  follow the Reference-Not-Redefine and Semantic Reference rules in
-  ARCHITECTURE.md and never restate the structure of the referenced
-  concept.
+  Defines all relationships among entities declared in entities.yaml,
+  and all semantic references from those entities to concepts owned by
+  other bounded contexts. Internal relationships never cross a domain
+  boundary. External references follow the Reference-Not-Redefine and
+  Semantic Reference rules in ARCHITECTURE.md and never restate the
+  structure of the referenced concept.
 
 governance:
   governing_adr:
@@ -21,92 +19,89 @@ governance:
     - ADR-006
     - ADR-021
 
-internal:
+namespaces:
+  registration: registration
+  case_management: case_management
+  shared: shared
+  shared_risk: shared_risk
+  shared_time: shared_time
 
-  - id: subject_participates_in_activity
-    from: core:VerificationSubject
+relationships:
+  # -----------------------------------------------------------------
+  # Internal relationships
+  # -----------------------------------------------------------------
+
+  - id: verification_subject_participates_in_verification_activity
+    from: verification_subject
     relationship: participates_in
-    to: core:VerificationActivity
-    cardinality: one_to_many
-    inverse_of: evaluates_subject
-    already_declared_in: verification-operations/verification-operations.yaml#relationships.verification_subject.participates_in
+    to: verification_activity
+    cardinality: { min: 0, max: unbounded }
+    inverse: verification_activity_evaluates_verification_subject
 
-  - id: activity_evaluates_subject
-    from: core:VerificationActivity
+  - id: verification_activity_evaluates_verification_subject
+    from: verification_activity
     relationship: evaluates
-    to: core:VerificationSubject
-    cardinality: many_to_one
-    required: true
-    inverse_of: subject_participates_in_activity
-    already_declared_in: verification-operations/verification-operations.yaml#relationships.verification_activity.evaluates
+    to: verification_subject
+    cardinality: { min: 1, max: 1 }
+    inverse: verification_subject_participates_in_verification_activity
 
-  - id: activity_produces_observation
-    from: core:VerificationActivity
+  - id: verification_activity_produces_field_observation
+    from: verification_activity
     relationship: produces
-    to: core:FieldObservation
-    cardinality: one_to_many
-    required: false
-    inverse_of: observation_recorded_during_activity
-    already_declared_in: verification-operations/verification-operations.yaml#relationships.verification_activity.produces
+    to: field_observation
+    cardinality: { min: 0, max: unbounded }
+    inverse: field_observation_recorded_during_verification_activity
     notes: >
       Zero observations is valid for a could_not_complete or cancelled
-      activity (see ontology/lifecycle.yaml).
+      activity (see lifecycle-constraints.yaml).
 
-  - id: observation_recorded_during_activity
-    from: core:FieldObservation
+  - id: field_observation_recorded_during_verification_activity
+    from: field_observation
     relationship: recorded_during
-    to: core:VerificationActivity
-    cardinality: many_to_one
-    required: true
-    inverse_of: activity_produces_observation
+    to: verification_activity
+    cardinality: { min: 1, max: 1 }
+    inverse: verification_activity_produces_field_observation
 
-  - id: activity_produces_finding
-    from: core:VerificationActivity
+  - id: verification_activity_produces_verification_finding
+    from: verification_activity
     relationship: produces
-    to: core:VerificationFinding
-    cardinality: one_to_one
-    required: false
-    inverse_of: finding_produced_by_activity
-    already_declared_in: verification-operations/verification-operations.yaml#relationships.verification_activity.produces
+    to: verification_finding
+    cardinality: { min: 0, max: 1 }
+    inverse: verification_finding_produced_by_verification_activity
     notes: >
       Present only when verification_status is completed. A
       could_not_complete or cancelled activity produces no finding —
       see verification-status.yaml.
 
-  - id: finding_produced_by_activity
-    from: core:VerificationFinding
+  - id: verification_finding_produced_by_verification_activity
+    from: verification_finding
     relationship: produced_by
-    to: core:VerificationActivity
-    cardinality: one_to_one
-    required: true
-    inverse_of: activity_produces_finding
+    to: verification_activity
+    cardinality: { min: 1, max: 1 }
+    inverse: verification_activity_produces_verification_finding
 
-  - id: finding_derived_from_observation
-    from: core:VerificationFinding
+  - id: verification_finding_derived_from_field_observation
+    from: verification_finding
     relationship: derived_from
-    to: core:FieldObservation
-    cardinality: many_to_many
-    required: false
-    inverse_of: observation_informs_finding
-    already_declared_in: verification-operations/verification-operations.yaml#relationships.verification_finding.derived_from
+    to: field_observation
+    cardinality: { min: 0, max: unbounded }
+    inverse: field_observation_informs_verification_finding
     notes: >
       Zero observations is valid only when finding_status is
       not_applicable (see verification-findings.yaml).
 
-  - id: observation_informs_finding
-    from: core:FieldObservation
+  - id: field_observation_informs_verification_finding
+    from: field_observation
     relationship: informs
-    to: core:VerificationFinding
-    cardinality: many_to_many
-    required: false
-    inverse_of: finding_derived_from_observation
+    to: verification_finding
+    cardinality: { min: 0, max: unbounded }
+    inverse: verification_finding_derived_from_field_observation
 
-  - id: finding_resolves_subject
-    from: core:VerificationFinding
+  - id: verification_finding_resolves_verification_subject
+    from: verification_finding
     relationship: resolves
-    to: core:VerificationSubject
-    cardinality: many_to_one
-    required: true
+    to: verification_subject
+    cardinality: { min: 1, max: 1 }
     notes: >
       A subject may accumulate more than one finding over time (e.g. a
       contradicted finding followed by a later confirmed finding after
@@ -114,240 +109,217 @@ internal:
       authoritative but earlier findings are preserved, consistent with
       the append-only pattern used throughout this knowledge layer.
 
-  - id: finding_reviewed_by_human_review
-    from: core:VerificationFinding
+  - id: verification_finding_reviewed_by_human_review
+    from: verification_finding
     relationship: reviewed_by
-    to: core:HumanReview
-    cardinality: one_to_many
-    required: false
-    inverse_of: human_review_reviews_finding
+    to: human_review
+    cardinality: { min: 0, max: unbounded }
+    inverse: human_review_reviews_verification_finding
     notes: >
       Zero reviews is valid — most findings never require escalation.
-      One finding may accumulate more than one HumanReview record over
+      One finding may accumulate more than one human_review record over
       time under escalation_reason: reviewer_disagreement (see
       review-decisions.yaml#reviewer_disagreement_note); each is a new,
       permanent, append-only record.
 
-  - id: human_review_reviews_finding
-    from: core:HumanReview
+  - id: human_review_reviews_verification_finding
+    from: human_review
     relationship: reviews
-    to: core:VerificationFinding
-    cardinality: many_to_one
-    required: true
-    inverse_of: finding_reviewed_by_human_review
+    to: verification_finding
+    cardinality: { min: 1, max: 1 }
+    inverse: verification_finding_reviewed_by_human_review
 
   - id: human_review_supersedes_human_review
-    from: core:HumanReview
+    from: human_review
     relationship: supersedes
-    to: core:HumanReview
-    cardinality: zero_to_one
-    required: false
+    to: human_review
+    cardinality: { min: 0, max: 1 }
     notes: >
       Links a review_decision of escalated_further, or a review that is
       itself the subject of escalation_reason: reviewer_disagreement, to
-      the prior HumanReview it follows. Mirrors the immutable,
-      append-only chain pattern used for CaseNote and IdentifiedNeed
-      elsewhere in this knowledge layer. The prior HumanReview is never
-      edited or removed.
+      the prior human_review it follows. Mirrors the immutable,
+      append-only chain pattern used elsewhere in this knowledge layer.
+      The prior human_review is never edited or removed. The reviewer
+      recorded on a human_review must be a different actor than the
+      actor referenced by verification_activity_conducted_by_actor for
+      the activity whose finding is under review (reviewer_role_constraint,
+      review-decisions.yaml) — this cross-relationship distinctness rule
+      has no closed semantic-constraints.yaml `type` that fits it (it is
+      not cardinality, disjoint, required_if, or mutually_exclusive), so
+      per the precedent already established in
+      community-context/ontology/semantic-constraints.yaml (geographic_area
+      anti-recursion), it is recorded here as a note rather than invented
+      as new constraint-type vocabulary.
 
-  - id: trigger_may_be_created_from_finding
-    from: core:ReverificationTrigger
+  - id: reverification_trigger_may_be_created_from_verification_finding
+    from: reverification_trigger
     relationship: may_be_created_from
-    to: core:VerificationFinding
-    cardinality: many_to_one
-    required: false
-    already_declared_in: verification-operations/verification-operations.yaml#relationships.reverification_trigger.may_be_created_from
+    to: verification_finding
+    cardinality: { min: 0, max: 1 }
     notes: >
       Optional because a periodic_reassessment or
       registrant_or_third_party_request trigger
       (reverification-triggers.yaml) may be raised independent of any
       specific finding.
 
-  - id: trigger_raised_for_subject
-    from: core:ReverificationTrigger
+  - id: reverification_trigger_raised_for_verification_subject
+    from: reverification_trigger
     relationship: raised_for
-    to: core:VerificationSubject
-    cardinality: many_to_one
-    required: true
+    to: verification_subject
+    cardinality: { min: 1, max: 1 }
 
-  - id: assignment_has_activity
-    from: core:VerificationAssignment
+  - id: verification_assignment_has_activity_verification_activity
+    from: verification_assignment
     relationship: has_activity
-    to: core:VerificationActivity
-    cardinality: one_to_many
-    required: true
-    minimum: 1
+    to: verification_activity
+    cardinality: { min: 1, max: unbounded }
     notes: >
       An assignment may accumulate more than one activity when the
-      first attempt reaches could_not_complete and a subsequent
-      activity is scheduled against the same assignment, per
+      first attempt reaches could_not_complete and a subsequent activity
+      is scheduled against the same assignment, per
       verification-status.yaml#status_transition_note.
 
-  - id: activity_part_of_assignment
-    from: core:VerificationActivity
+  - id: verification_activity_part_of_verification_assignment
+    from: verification_activity
     relationship: part_of
-    to: core:VerificationAssignment
-    cardinality: many_to_one
-    required: true
-    inverse_of: assignment_has_activity
+    to: verification_assignment
+    cardinality: { min: 1, max: 1 }
+    inverse: verification_assignment_has_activity_verification_activity
 
-external_references:
+  # -----------------------------------------------------------------
+  # External / cross-domain references
+  # -----------------------------------------------------------------
 
-  - id: subject_derived_from_claim
-    from: core:VerificationSubject
+  - id: verification_subject_derived_from_claim
+    from: verification_subject
     relationship: derived_from
-    to: registration:Claim
-    domain: Registration
-    cardinality: many_to_one
-    required: true
-    description: >
-      Every current VerificationSubject wraps exactly one Claim, per
-      the examples already declared in the Phase 4.0 core ontology.
+    to: registration:claim
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Every current verification_subject wraps exactly one Claim, per
+      the examples already declared for verification_subject.
       Verification Operations does not redefine claim_type, claim_text,
       information_sufficiency, or information_consistency — all remain
-      owned by registration/ontology/attributes.yaml and
-      registration/taxonomy/claims.yaml.
+      owned by registration/ontology/ and registration/taxonomy/claims.yaml.
 
-  - id: observation_corroborated_by_evidence
-    from: core:FieldObservation
+  - id: field_observation_corroborated_by_evidence
+    from: field_observation
     relationship: corroborated_by
-    to: registration:Evidence
-    domain: Registration
-    cardinality: many_to_many
-    required: false
-    description: >
-      A field observation may confirm, add to, or reference an
-      Evidence record. Verification Operations never defines a
-      competing evidence entity or evidence_type/evidence_subtype
-      vocabulary — both remain owned by
-      registration/ontology/attributes.yaml#evidence and
+    to: registration:evidence
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      A field observation may confirm, add to, or reference an Evidence
+      record. Verification Operations never defines a competing
+      evidence entity or evidence_type/evidence_subtype vocabulary —
+      both remain owned by registration/ontology/ and
       registration/taxonomy/evidence.yaml. This relationship is the
       complete implementation of the "Evidence collection model"
       pending item in knowledge_layer_roadmap.md Stage 4: collection is
       modelled as a reference from the observation that collected it,
       not as a new owned entity.
 
-  - id: assignment_verifies_case
-    from: core:VerificationAssignment
+  - id: verification_assignment_verifies_case
+    from: verification_assignment
     relationship: verifies
-    to: case_management:Case
-    domain: Case Management
-    cardinality: many_to_one
-    required: true
-    description: >
-      References the Case whose open Verification Subjects the
+    to: case_management:case
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      References the Case whose open verification_subjects the
       assignment covers. Per ADR-021, the Case entity is canonical and
       persists across the Registration-to-Case-Management phase
       handoff; this reference targets that single canonical Case
       regardless of which phase it currently occupies, and Verification
       Operations does not redefine case_status in either vocabulary.
 
-  - id: assignment_issued_from_brief_context
-    from: core:VerificationAssignment
-    relationship: issued_from_brief_context
-    to: registration:VerificationBrief
-    domain: Registration
-    cardinality: one_to_one
-    required: true
-    description: >
-      Per ADR-001, the Verification Brief is a projection, not a
-      stored entity, so this is not a foreign-key relationship to a
-      persisted record — it documents that an assignment is always
-      created in the context of a brief projected at a point in time.
-      Re-issuance after a Case update is tracked structurally through
-      ReverificationTrigger.reverification_trigger_type:
-      case_updated_after_issuance
+  - id: verification_assignment_issued_from_brief_context_of_case
+    from: verification_assignment
+    relationship: issued_from_brief_context_of
+    to: registration:case
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Per ADR-001, the Verification Brief is a projection, not a stored
+      entity — it has no entity id a relationship `to:` field can
+      resolve to. This row therefore targets the Case the brief
+      projects from (the only persisted entity the brief is ever a
+      snapshot of), preserving the original relationship's meaning
+      ("an assignment is always created in the context of a brief
+      projected at a point in time") without pointing at a non-existent
+      entity. Re-issuance after a Case update is tracked structurally
+      through reverification_trigger_type: case_updated_after_issuance
       (reverification-triggers.yaml), not by this relationship.
 
-  - id: activity_conducted_by_actor
-    from: core:VerificationActivity
+  - id: verification_activity_conducted_by_actor
+    from: verification_activity
     relationship: conducted_by
-    to: shared:Actor
-    domain: Shared Ontology
-    cardinality: many_to_one
-    required: true
-    description: >
-      References the authoritative Actor forward-declared in
+    to: shared:actor
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      References the authoritative Actor declared in
       shared/ontology/entities.yaml. Verification Operations does not
       define actor qualification, roles, or types — that remains a
-      Volunteer Operations concern (Level 2 placeholder).
+      Volunteer Operations concern.
 
-  - id: assignment_assigned_to_actor
-    from: core:VerificationAssignment
+  - id: verification_assignment_assigned_to_actor
+    from: verification_assignment
     relationship: assigned_to
-    to: shared:Actor
-    domain: Shared Ontology
-    cardinality: many_to_one
-    required: true
-    description: References the authoritative Actor an assignment is issued to.
+    to: shared:actor
+    cardinality: { min: 1, max: 1 }
+    notes: References the authoritative Actor an assignment is issued to.
 
-  - id: human_review_reviewer_is_actor
-    from: core:HumanReview
+  - id: human_review_reviewed_by_actor
+    from: human_review
     relationship: reviewed_by
-    to: shared:Actor
-    domain: Shared Ontology
-    cardinality: many_to_one
-    required: true
-    description: >
+    to: shared:actor
+    cardinality: { min: 1, max: 1 }
+    notes: >
       References the authoritative Actor acting as reviewer. Subject to
       the reviewer_role_constraint in review-decisions.yaml: this Actor
       must differ from the Actor referenced by
-      activity_conducted_by_actor on the VerificationActivity whose
-      resulting VerificationFinding is under review. See
-      ontology/constraints.yaml.
+      verification_activity_conducted_by_actor on the
+      verification_activity whose resulting verification_finding is
+      under review (see the note on human_review_supersedes_human_review
+      above for why this is recorded as a note, not a
+      semantic-constraints.yaml row).
 
-  - id: trigger_informed_by_risk_trend
-    from: core:ReverificationTrigger
+  - id: reverification_trigger_informed_by_risk_characterization
+    from: reverification_trigger
     relationship: informed_by
-    to: shared_risk:RiskCharacterization
-    domain: Risk Domain
-    cardinality: zero_to_one
-    required: false
-    description: >
+    to: shared_risk:risk_characterization
+    cardinality: { min: 0, max: 1 }
+    notes: >
       Present only when reverification_trigger_type includes
       risk_escalation. References risk_trend: deteriorating from
       shared/risk/ontology/risk.yaml by value, per
       reverification-triggers.yaml. Verification Operations does not
       redefine risk_trend or any Risk Domain concept.
 
-  - id: assignment_scheduled_window
-    from: core:VerificationAssignment
-    relationship: scheduled_within
-    to: shared_time:waiting_and_grace_periods
-    domain: Shared Taxonomy (Time)
-    cardinality: zero_to_one
-    required: false
-    description: >
-      References the scheduling window vocabulary owned by
-      shared/taxonomy/time.yaml. Not redefined here.
-
-
-
 cross_domain_references:
   - registration: >
-      References Claim and Evidence. Never redefines claim
-      types, evidence types, or case status vocabulary. Treats
-      Verification Requirement and Verification Brief as derived
-      projections per ADR-001, never as stored entities to hold a
-      foreign key against.
-  - shared-ontology: >
+      References Claim and Evidence. Never redefines claim types,
+      evidence types, or case status vocabulary. Treats Verification
+      Requirement and Verification Brief as derived projections per
+      ADR-001, never as stored entities to hold a foreign key against —
+      the brief reference targets the underlying Case instead (see
+      verification_assignment_issued_from_case).
+  - shared: >
       References Actor as the participant in verification activities,
       assignments, and human review. Never redefines actor
       qualification or role.
-  - shared-risk: >
-      References risk_trend as an optional informing signal for
-      risk_escalation reverification triggers. Never redefines Risk
+  - shared_risk: >
+      References risk_characterization as an optional informing signal
+      for risk_escalation reverification triggers. Never redefines Risk
       Domain concepts.
-  - shared-taxonomy-time: >
+  - shared_time: >
       References evidence_freshness and waiting_and_grace_periods by
-      value throughout the taxonomy layer this file's entities carry.
-      Never redefines temporal vocabulary.
-
-  - case-management: >
-      VerificationAssignment.verifies references the canonical Case per
-      ADR-021. Case Management remains the eventual canonical owner of
-      Case once the Registration-phase handoff occurs; Verification
-      Operations does not redefine case_status in either vocabulary and
-      does not require Case Management's ontology.yaml to be modified
-      to receive this reference, since the reference direction runs
-      from Verification Operations outward.
+      value throughout the taxonomy layer this file's entities carry
+      (waiting_and_grace_periods is carried as the scheduled_window data
+      property in data-properties.yaml, not as a relationship). Never
+      redefines temporal vocabulary.
+  - case_management: >
+      verification_assignment_verifies_case references the canonical
+      Case per ADR-021. Case Management remains the eventual canonical
+      owner of Case once the Registration-phase handoff occurs;
+      Verification Operations does not redefine case_status in either
+      vocabulary and does not require Case Management's ontology to be
+      modified to receive this reference, since the reference direction
+      runs from Verification Operations outward.

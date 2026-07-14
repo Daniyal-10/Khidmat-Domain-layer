@@ -16,19 +16,22 @@ coordination record that persists across referrals and follow-ups.
 ## Owns
 
 - **Taxonomy:** `case_status`, `priority_level`, `referral_status`,
-  `case_origin`, `case_outcome`, `administrative_closure_reason`
-  (`taxonomy.yaml`)
-- **Entities:** `Case`, `CasePlan`, `Referral`, `FollowUp`, `CaseAssignment`,
-  `CaseNote` (`ontology.yaml`)
-- **Relationships:** `has_case_plan`, `has_referral`, `has_follow_up`,
-  `has_case_assignment`, `has_case_note`, `has_case_outcome`
+  `case_origin`, `closure_reason`, `case_plan_status`, `delegation_status`,
+  `objective_status`, `referral_type`, `suspension_reason`
+  (`taxonomy/`)
+- **Entities:** `case`, `case_plan`, `referral`; `follow_up` and `case_note`
+  are nested Value Object fields on `case` (`ontology/`)
+- **Relationships:** `case_has_case_plan`, `case_has_referral`,
+  `case_superseded_by_case`, `case_has_primary_subject`,
+  `case_plan_references_need_assertion`, `referral_references_consent`,
+  `case_has_lead_coordinator`, `case_has_statutory_owner`
 
 ## Does Not Own
 
 - `Subject` — referenced from the Shared domain.
 - `BeneficiaryLifecycle` — referenced from `beneficiary-lifecycle/`.
 - `NeedsAssessment` output — referenced from `needs-assessment/`, not redefined.
-- Intervention delivery mechanics (owned by the `support-delivery/` placeholder).
+- Intervention delivery mechanics (owned by `support-delivery/`).
 - Registration-time case data — the intake `Case` entity belongs to
   `registration/`.
 
@@ -36,8 +39,8 @@ coordination record that persists across referrals and follow-ups.
 
 ```
 case-management/
-├── taxonomy.yaml     # case_status, priority_level, referral_status, ...
-└── ontology.yaml      # Case, CasePlan, Referral, FollowUp, CaseAssignment, CaseNote
+├── taxonomy/     # case_status, priority_level, referral_status, ...
+└── ontology/     # case, case_plan, referral, and their data properties/relationships
 ```
 
 ## Related Documents

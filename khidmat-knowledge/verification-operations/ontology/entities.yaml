@@ -1,24 +1,19 @@
-version: "1.0"
-domain: verification-operations
+version: "1.0.0"
+domain: verification_operations
 file: ontology/entities.yaml
-maturity: level_4_ontology
-status: Phase 4.2
-introduced: Phase 4.2
+status: active
 
 purpose: >
-  Defines the operational entity layer of the Verification Operations
-  domain: the instance-bearing concepts that carry the controlled
-  vocabularies already established in verification-operations/taxonomy/
-  and the conceptual roles already declared in
-  verification-operations/verification-operations.yaml (the Phase 4.0
-  core ontology). This file implements the "Operational Verification
-  Models" identified as pending in knowledge_layer_roadmap.md Stage 4
-  (Volunteer assignment model, Field visit outcome model, Claim
-  confirmation model, Evidence collection model, Re-verification
-  trigger model). It does not redefine, rename, or restructure any
-  concept already declared authoritative in
-  verification-operations/verification-operations.yaml; it gives those
-  declared concepts entity-level attribute and cardinality structure.
+  Defines the first-class entities owned by the Verification Operations
+  domain: the concepts that carry the controlled vocabularies established
+  in verification-operations/taxonomy/. Verification Operations is
+  responsible for producing verification knowledge from verification
+  activities performed against registration outputs. This file
+  consolidates the domain's core ontology and its operational entity
+  layer (previously split between a pre-canonical core-ontology file and
+  this folder) into the single canonical entities.yaml required by
+  Canonical_Ontology_Schema.md §2. No entity, description, or ownership
+  decision changed during consolidation — only the serialization shape.
 
 governance:
   governing_adr:
@@ -26,158 +21,46 @@ governance:
     - ADR-001
     - ADR-006
     - ADR-017
-  supersedes: []
-  extends:
-    - verification-operations/verification-operations.yaml
 
-namespaces:
-  core: "khidmat:verification-operations:core"
-  taxonomy: "khidmat:verification-operations:taxonomy"
-  shared: "khidmat:shared:core"
-  shared_time: "khidmat:shared:time"
-  shared_risk: "khidmat:shared:risk"
-  registration: "khidmat:registration:core"
-  registration_taxonomy: "khidmat:registration:taxonomy"
-  case_management: "khidmat:case-management:core"
-
-imports:
-  - shared-ontology            # shared/ontology/entities.yaml (Actor, Subject)
-  - shared-taxonomy-time        # shared/taxonomy/time.yaml (evidence_freshness, waiting_and_grace_periods)
-  - shared-risk                 # shared/risk/ontology/risk.yaml (risk_trend, referenced only)
-  - registration-ontology       # registration/ontology/entities.yaml (Claim, Evidence)
-  - case-management-ontology    # case-management/ontology/ (Case)
-  - registration-taxonomy       # registration/taxonomy/claims.yaml, evidence.yaml
-  - registration-verification   # registration/verification/verification-requirements.yaml (derived, not stored)
-  - verification-operations-core       # verification-operations/verification-operations.yaml
-  - verification-operations-taxonomy   # verification-operations/taxonomy/*.yaml
-
-ownership:
-  owned_here:
-    - core:VerificationSubject
-    - core:VerificationActivity
-    - core:FieldObservation
-    - core:VerificationFinding
-    - core:HumanReview
-    - core:ReverificationTrigger
-    - core:VerificationAssignment
-  owned_upstream_referenced_only:
-    - case_management:Case
-    - registration:Claim
-    - registration:Evidence
-    - registration:VerificationRequirement   # derived/computed, never stored — see notes on VerificationSubject below
-    - registration:VerificationBrief         # projection, never stored — see ADR-001
-    - shared:Actor
-    - shared:Subject
-    - shared_risk:RiskCharacterization
-  reference_rule: >
-    Every relationship in ontology/relationships.yaml that targets an
-    owned_upstream_referenced_only concept is a semantic reference
-    (per ARCHITECTURE.md Dependency Rules) and must never be treated as
-    a redefinition. This file does not restate the structure of those
-    upstream concepts beyond the minimum needed to declare the
-    reference itself.
+ownership_rules: >
+  Registration owns claims, evidence, needs, situations, readiness,
+  verification requirements, and verification briefs. Shared Human Model
+  owns lifecycle, capability, dependency, family, and health concepts.
+  Risk Domain owns risk concepts. Verification Operations owns
+  verification knowledge generated after verification begins, and must
+  not redefine any upstream concept.
 
 entities:
-
-  VerificationSubject:
-    id: core:VerificationSubject
+  - id: verification_subject
     label: Verification Subject
     description: >
       The target of a verification activity. Wraps a single assertion
       requiring external confirmation — in the current taxonomy this is
-      always a claim made during registration, per the examples already
-      declared in verification-operations/verification-operations.yaml
-      (claim, identity_assertion, household_composition_assertion,
+      always a claim made during registration (claim,
+      identity_assertion, household_composition_assertion,
       medical_assertion, residence_assertion). Distinct from the Claim
       it wraps: the Claim is the registration-owned assertion; the
       Verification Subject is the verification-owned unit of work
       derived from it, decoupled so a future subject type need not
       originate from a Claim.
-    type: core_entity
-    already_declared_in: verification-operations/verification-operations.yaml#ontology_hierarchy.verification_subject
-    properties:
-      subject_id:
-        type: identifier
-        cardinality: "1"
-        description: Unique identifier for the verification subject instance.
-      subject_role:
-        type: string
-        cardinality: "1"
-        description: >
-          The informal role category drawn from the examples list
-          already declared in the Phase 4.0 core ontology (e.g.
-          identity_assertion, household_composition_assertion,
-          medical_assertion, residence_assertion). Not a controlled
-          taxonomy vocabulary in its own right — it mirrors
-          registration:claim_type and must not diverge from it.
-      requirement_priority:
-        type: "registration_taxonomy:priority_classification"
-        cardinality: "0..1"
-        description: >
-          Mirrors the priority_classification computed by Registration
-          at Verification Brief projection time
-          (registration/verification/verification-requirements.yaml).
-          This is a read-only echo of a derived value, not an
-          independently owned attribute — Registration remains
-          authoritative for requirement derivation and priority.
-          Recorded here only so that queue_management and scheduling
-          reasoning can order work without re-deriving priority.
-    notes: >
+    required: true
+    ownership_boundary: >
       Verification Requirement (registration/verification/verification-requirements.yaml)
       is explicitly not a stored entity — it is computed from Claims at
       Verification Brief projection time. Verification Subject is
       therefore linked to the Claim it wraps, never to a stored
       "VerificationRequirement" record, because none exists.
 
-  VerificationActivity:
-    id: core:VerificationActivity
+  - id: verification_activity
     label: Verification Activity
     description: >
       A verification event performed against a Verification Subject.
-      Time-bounded, evidence-generating, and repeatable, per the
-      characteristics already declared in the Phase 4.0 core ontology.
-      Implements the "Field visit outcome model" identified as pending
-      in knowledge_layer_roadmap.md Stage 4.
-    type: event_entity
-    already_declared_in: verification-operations/verification-operations.yaml#ontology_hierarchy.verification_activity
-    properties:
-      activity_id:
-        type: identifier
-        cardinality: "1"
-        description: Unique identifier for the verification activity instance.
-      verification_method:
-        type: "taxonomy:verification_methods"
-        cardinality: "1"
-        description: >
-          The method used, from verification-methods.yaml. Selected at
-          scheduling time; may differ from the method originally
-          planned if a could_not_complete_reason forces a method
-          substitution on a subsequent attempt.
-      verification_status:
-        type: "taxonomy:verification_status"
-        cardinality: "1"
-        description: >
-          The activity's own lifecycle state, from
-          verification-status.yaml. See ontology/lifecycle.yaml for the
-          transition model.
-      could_not_complete_reason:
-        type: "taxonomy:could_not_complete_reason"
-        cardinality: "0..1"
-        description: >
-          Required when verification_status is could_not_complete;
-          absent otherwise, from verification-status.yaml.
-      scheduled_at:
-        type: "xsd:dateTime"
-        cardinality: "0..1"
-      started_at:
-        type: "xsd:dateTime"
-        cardinality: "0..1"
-      completed_at:
-        type: "xsd:dateTime"
-        cardinality: "0..1"
+      Time-bounded, evidence-generating, and repeatable. Classified by
+      verification_method. Implements the "Field visit outcome model"
+      identified as pending in knowledge_layer_roadmap.md Stage 4.
+    required: true
 
-  FieldObservation:
-    id: core:FieldObservation
+  - id: field_observation
     label: Field Observation
     description: >
       A direct observation recorded during a Verification Activity.
@@ -187,34 +70,9 @@ entities:
       observation corroborates or is corroborated by a document, it
       references the Evidence entity Registration already owns rather
       than defining a competing evidence concept.
-    type: observational_fact_entity
-    already_declared_in: verification-operations/verification-operations.yaml#ontology_hierarchy.field_observation
-    properties:
-      observation_id:
-        type: identifier
-        cardinality: "1"
-        description: Unique identifier for the field observation instance.
-      observation_summary:
-        type: string
-        cardinality: "1"
-        description: >
-          A concise, factual record of what was directly observed
-          (e.g. "beneficiary present", "damaged roof observed"),
-          consistent with the examples already declared in the Phase
-          4.0 core ontology. Observational only — carries no
-          conclusion; conclusions belong to VerificationFinding.
-      observation_alignment:
-        type: string # Enum: supports_claim, partially_supports_claim, contradicts_claim, refutes_claim, inconclusive
-        cardinality: "1"
-        description: >
-          The semantic alignment of this observation with the underlying claim.
-          Exposes the result of the observation for purely semantic reasoning.
-      observed_at:
-        type: "xsd:dateTime"
-        cardinality: "1"
+    required: false
 
-  VerificationFinding:
-    id: core:VerificationFinding
+  - id: verification_finding
     label: Verification Finding
     description: >
       A verification conclusion derived from field observations and
@@ -222,111 +80,34 @@ entities:
       model" identified as pending in knowledge_layer_roadmap.md Stage
       4 — the classification of what verification established about a
       Verification Subject.
-    type: derived_conclusion_entity
-    already_declared_in: verification-operations/verification-operations.yaml#ontology_hierarchy.verification_finding
-    properties:
-      finding_id:
-        type: identifier
-        cardinality: "1"
-        description: Unique identifier for the verification finding instance.
-      finding_status:
-        type: "taxonomy:finding_status"
-        cardinality: "1"
-        description: From verification-findings.yaml.
-      contradiction_type:
-        type: "taxonomy:contradiction_type"
-        cardinality: "0..1"
-        description: >
-          Present only when finding_status is contradicted or refuted,
-          from verification-findings.yaml.
-      verification_confidence:
-        type: "taxonomy:verification_confidence"
-        cardinality: "1"
-        description: >
-          From verification-confidence.yaml. Every finding carries a
-          confidence value from creation; indeterminate is the honest
-          placeholder before a reasoned judgement is composed. See
-          ontology/lifecycle.yaml for the expected resolution path out
-          of indeterminate.
-    notes: >
+    required: true
+    ownership_boundary: >
       finding_status answers "what did we conclude"; verification_confidence
       answers "how sure are we of that conclusion." The two are
       structurally independent per verification-confidence.yaml and
       must never be collapsed into a single scale.
 
-  HumanReview:
-    id: core:HumanReview
+  - id: human_review
     label: Human Review
     description: >
       The record of a human reviewer examining a Verification Finding
-      that was routed to review under an escalation_reason. This
-      entity was referenced by name (human_review) throughout the
-      already-completed taxonomy layer (escalation-reasons.yaml,
-      review-decisions.yaml, verification-status.yaml) but had not yet
-      been given entity-level structure. This file supplies that
-      structure; it does not redefine escalation_reason or
-      review_decision, both of which remain fully owned by their
-      taxonomy files.
-    type: workflow_entity
-    already_declared_in: null
-    forward_referenced_in:
-      - verification-operations/taxonomy/escalation-reasons.yaml
-      - verification-operations/taxonomy/review-decisions.yaml
-      - verification-operations/taxonomy/verification-status.yaml
-    properties:
-      review_id:
-        type: identifier
-        cardinality: "1"
-        description: Unique identifier for the human review instance.
-      escalation_reason:
-        type: "taxonomy:escalation_reason"
-        cardinality: "1"
-        description: >
-          The reason this finding required human review, from
-          escalation-reasons.yaml. A review always has exactly one
-          primary reason; contributing reasons are recorded at the
-          instance level per that file's description.
-      review_decision:
-        type: "taxonomy:review_decision"
-        cardinality: "0..1"
-        description: >
-          The reviewer's decision, from review-decisions.yaml. Absent
-          while the review is open; present and immutable once
-          recorded. Never overwritten — see constraints.yaml and
-          ontology/lifecycle.yaml.
-      decided_at:
-        type: "xsd:dateTime"
-        cardinality: "0..1"
-        description: Present only once review_decision is recorded.
+      that was routed to review under an escalation_reason. Referenced
+      by name throughout the taxonomy layer (escalation-reasons.yaml,
+      review-decisions.yaml, verification-status.yaml) before being
+      given entity-level structure here; does not redefine
+      escalation_reason or review_decision, both of which remain fully
+      owned by their taxonomy files.
+    required: false
 
-  ReverificationTrigger:
-    id: core:ReverificationTrigger
+  - id: reverification_trigger
     label: Reverification Trigger
     description: >
       A condition indicating that future verification should occur.
       Implements the "Re-verification trigger model" identified as
       pending in knowledge_layer_roadmap.md Stage 4.
-    type: signal_entity
-    already_declared_in: verification-operations/verification-operations.yaml#ontology_hierarchy.reverification_trigger
-    properties:
-      trigger_id:
-        type: identifier
-        cardinality: "1"
-        description: Unique identifier for the reverification trigger instance.
-      reverification_trigger_type:
-        type: "taxonomy:reverification_trigger_type"
-        cardinality: "1..N"
-        description: >
-          From reverification-triggers.yaml. Multiple simultaneous
-          trigger types are recorded independently per that file's
-          description — this is a to-many cardinality by design, not
-          an oversight.
-      raised_at:
-        type: "xsd:dateTime"
-        cardinality: "1"
+    required: false
 
-  VerificationAssignment:
-    id: core:VerificationAssignment
+  - id: verification_assignment
     label: Verification Assignment
     description: >
       The operational association between a Verification Subject (or
@@ -335,64 +116,31 @@ entities:
       Activities against it. Implements the "Volunteer assignment
       model" identified as pending in knowledge_layer_roadmap.md Stage
       4, and gives instance structure to the assignment, scheduling,
-      and queue_management workflow_concepts already declared as
-      Verification-Operations-owned in
-      verification-operations/verification-operations.yaml.
-    type: workflow_entity
-    already_declared_in: verification-operations/verification-operations.yaml#workflow_concepts
-    properties:
-      assignment_id:
-        type: identifier
-        cardinality: "1"
-        description: Unique identifier for the verification assignment instance.
-      assignment_status:
-        type: "core:assignment_status"
-        cardinality: "1"
-        description: >
-          The assignment's own lifecycle state. This is a minimal,
-          structural workflow vocabulary defined in
-          ontology/lifecycle.yaml, not a humanitarian-domain taxonomy —
-          it exists solely to give the already-declared assignment
-          workflow_concept a queryable state, consistent with the
-          minimum-change principle governing this implementation. See
-          ontology/lifecycle.yaml#assignment_status.
-      queue_priority:
-        type: "registration_taxonomy:priority_classification"
-        cardinality: "0..1"
-        description: >
-          Echoes the highest requirement_priority among the
-          VerificationSubjects covered by this assignment, for queue
-          ordering. Read-only derivation, not an independently owned
-          value — see VerificationSubject.requirement_priority note.
-      scheduled_window:
-        type: "shared_time:waiting_and_grace_periods"
-        cardinality: "0..1"
-        description: >
-          References the scheduling window vocabulary already owned by
-          shared/taxonomy/time.yaml. Not redefined here.
+      and queue_management workflow concepts already recognised as
+      Verification-Operations-owned.
+    required: true
 
 design_notes:
   - decision: >
-      HumanReview and VerificationAssignment are new entities not
-      present in the Phase 4.0 core ontology's authoritative_concepts
-      list.
+      human_review and verification_assignment were forward-referenced
+      by name in the taxonomy layer and in workflow_concepts before
+      being given entity-level structure.
     rationale: >
       Both were already forward-referenced by name in the completed
       taxonomy layer (human_review throughout escalation-reasons.yaml
       and review-decisions.yaml; assignment/scheduling/queue_management
-      as declared workflow_concepts in
-      verification-operations/verification-operations.yaml) and are
-      explicitly named as pending operational models in
-      knowledge_layer_roadmap.md Stage 4. Defining them here closes an
-      existing forward reference rather than inventing new domain
-      scope. Per ADR-008, ownership of both is unambiguous:
-      Verification Operations, and only Verification Operations, is
-      the domain that produces verification knowledge and routes it
-      through human review.
+      as declared workflow concepts) and are explicitly named as
+      pending operational models in knowledge_layer_roadmap.md Stage 4.
+      Defining them here closes an existing forward reference rather
+      than inventing new domain scope. Per ADR-008, ownership of both
+      is unambiguous: Verification Operations, and only Verification
+      Operations, is the domain that produces verification knowledge
+      and routes it through human review.
   - decision: >
-      VerificationSubject.requirement_priority and
-      VerificationAssignment.queue_priority are read-only echoes of a
-      Registration-derived value, not independently owned attributes.
+      verification_subject.requirement_priority and
+      verification_assignment.queue_priority (data-properties.yaml) are
+      read-only echoes of a Registration-derived value, not
+      independently owned attributes.
     rationale: >
       registration/verification/verification-requirements.yaml
       explicitly declares verification requirements as computed, not
@@ -401,13 +149,10 @@ design_notes:
       creating a second source of truth for priority). These
       properties exist purely so operational queue ordering has
       something to sort on without duplicating derivation logic.
-  - decision: >
-      Evidence is referenced, never redefined, from FieldObservation.
+  - decision: Evidence is referenced, never redefined, from field_observation.
     rationale: >
-      verification-operations/verification-operations.yaml already
-      declares evidence as registration_owned under
-      architectural_exclusions. The "Evidence collection model" pending
-      item in the roadmap is satisfied by FieldObservation's reference
-      relationship to registration:Evidence (see
-      ontology/relationships.yaml), not by a new VO-owned evidence
-      entity.
+      Evidence is registration-owned. The "Evidence collection model"
+      pending item in the roadmap is satisfied by field_observation's
+      reference relationship to registration:evidence (see
+      relationships.yaml), not by a new Verification-Operations-owned
+      evidence entity.

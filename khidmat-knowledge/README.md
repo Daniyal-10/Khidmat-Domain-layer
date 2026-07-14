@@ -101,8 +101,10 @@ AI reasoning layer (not yet built in this repository — see
 | Shared Domain (base taxonomy, Human Model, Risk) | ✅ Stable |
 | Needs Assessment, Case Management, Beneficiary Lifecycle Domains | ✅ Complete (Level 1) |
 | Verification Operations Domain | ✅ Core ontology and reasoning complete |
-| Community Context Domain | 🚧 Substantially built (12 taxonomy files, full ontology module) — not yet migrated to the canonical structure |
-| Volunteer Operations, Support Delivery, Programs, Impact, Consent & Privacy | 🚧 Level 2 placeholders — scope declared, not yet active |
+| Community Context Domain | ✅ Canonical (Phases 1–4 complete; Phase 5 cross-domain CURIE linking blocked on a repository-wide manifest) |
+| Support Delivery, Programs, Impact Domains | ✅ Complete (Level 1) |
+| Volunteer Operations Domain | ✅ Foundational (Tier 1) complete per ADR-024 — operational/runtime layer deferred to Stage 9 |
+| Consent & Privacy | 🚧 Level 2 placeholder — scope declared, not yet active |
 
 For the authoritative, continuously-updated view of what is done, in progress, and
 missing, see `ontology_completion_checklist.md` and `knowledge_layer_roadmap.md` —
@@ -121,10 +123,10 @@ khidmat-knowledge/
 ├── needs-assessment/          # Synthesizes claims + verified facts into identified needs
 ├── case-management/           # Case orchestration: plans, referrals, follow-ups, assignments
 ├── beneficiary-lifecycle/     # Macro-state tracking of a beneficiary's engagement over time
-├── support-delivery/          # (placeholder) How an approved intervention is actually delivered
-├── programs/                  # (placeholder) Structured, multi-case programmatic assistance
-├── impact/                    # (placeholder) Longitudinal outcome and impact measurement
-├── volunteer-operations/      # (placeholder) Volunteer profile, capacity, and dispatch
+├── support-delivery/          # How an approved intervention is actually delivered
+├── programs/                  # Structured, multi-case programmatic assistance
+├── impact/                    # Longitudinal outcome and impact measurement
+├── volunteer-operations/      # Volunteer profile, capacity, and dispatch (foundational layer)
 ├── consent-and-privacy/       # (placeholder) Consent, minimal today, required by Case Management
 ├── architecture-decisions/    # ADR-001 … ADR-023 — the authoritative decision log
 └── docs/architecture/         # Canonical schema contracts, migration methodology, audits
@@ -145,8 +147,8 @@ domain migrations.
 
 **community-context/** — Models the geographic, infrastructural, environmental, and
 social fabric a household sits inside (settlement type, accessibility, hazards,
-seasonal events, local organisations). Built out extensively but still pending
-migration to the canonical structure.
+seasonal events, local organisations). Canonical migration Phases 1–4 complete; Phase 5
+cross-domain CURIE linking remains blocked on a repository-wide manifest.
 
 **verification-operations/** — Produces verification knowledge (field observations,
 findings, confidence, escalation, reverification triggers) from activities performed
@@ -161,11 +163,16 @@ tracking once a case exists: case plans, referrals, follow-ups, and the
 macro-lifecycle (lead → registration → verification → beneficiary → support →
 outcome) a person moves through over time.
 
-**support-delivery/**, **programs/**, **impact/**, **volunteer-operations/**,
-**consent-and-privacy/** — Declared Level 2 placeholders (ADR-004). Each has a
-scope statement and an explicit concept-ownership boundary, but no taxonomy or
-ontology content is authored until the domain is activated per
-`knowledge_layer_roadmap.md`.
+**support-delivery/**, **programs/**, **impact/** — Canonical `ontology/`+`taxonomy/`
+structure complete.
+
+**volunteer-operations/** — Foundational (Tier 1) canonical `ontology/`+`taxonomy/`
+structure complete per ADR-024; the operational/runtime layer (scheduling, dispatch,
+trust/performance scoring) remains deferred to the Stage 9 activation trigger.
+
+**consent-and-privacy/** — Declared Level 2 placeholder (ADR-004). Has a scope
+statement and an explicit concept-ownership boundary, but no taxonomy or ontology
+content is authored until the domain is activated per `knowledge_layer_roadmap.md`.
 
 ### Folder Purpose Table
 
@@ -226,12 +233,12 @@ flowchart LR
     NeedsAssessment --> CaseManagement
     Shared --> BeneficiaryLifecycle["beneficiary-lifecycle/<br/>✅ complete"]
     CaseManagement --> BeneficiaryLifecycle
-    Shared --> CommunityContext["community-context/<br/>🚧 built, pre-canonical"]
+    Shared --> CommunityContext["community-context/<br/>✅ canonical (Phase 5 CURIE linking pending)"]
     BeneficiaryLifecycle --> CommunityContext
-    CaseManagement --> SupportDelivery["support-delivery/<br/>⬜ placeholder"]
-    CommunityContext --> VolunteerOps["volunteer-operations/<br/>⬜ placeholder"]
-    BeneficiaryLifecycle --> Impact["impact/<br/>⬜ placeholder"]
-    CaseManagement --> Programs["programs/<br/>⬜ placeholder"]
+    CaseManagement --> SupportDelivery["support-delivery/<br/>✅ complete"]
+    CommunityContext --> VolunteerOps["volunteer-operations/<br/>✅ foundational (ADR-024)"]
+    BeneficiaryLifecycle --> Impact["impact/<br/>✅ complete"]
+    CaseManagement --> Programs["programs/<br/>✅ complete"]
 ```
 
 Every domain's `ontology/` module follows one fixed, frozen file contract —
@@ -277,15 +284,17 @@ Beyond that reading path:
 
 Registration is the completed reference implementation for the canonical
 architecture. The Shared Human Model, Risk Domain, Verification Operations, Needs
-Assessment, Case Management, and Beneficiary Lifecycle domains are substantively
-complete. Remaining work is migrating the older domains (Community Context and the
-other Level 1 domains built before the canonical contract was frozen) onto the same
-structure, closing the small number of genuine content gaps recorded in each
-domain's own migration plan (e.g. registration's support-intervention taxonomy,
-which depends on an operational intervention catalogue from programme staff), and
-then activating the remaining Level 2 placeholder domains in the dependency order
-`knowledge_layer_roadmap.md` defines. Internal migration task lists live in
-`docs/architecture/` and the domain-specific migration plans, not here.
+Assessment, Case Management, Beneficiary Lifecycle, Community Context, Support
+Delivery, Programs, and Impact domains are substantively complete; Volunteer
+Operations has its foundational (Tier 1) layer complete. Remaining work is closing
+the small number of genuine content gaps recorded in each domain's own migration
+plan (e.g. registration's support-intervention taxonomy, which depends on an
+operational intervention catalogue from programme staff; Community Context's Phase 5
+cross-domain CURIE linking, blocked on a repository-wide manifest), and then
+activating the remaining Consent & Privacy placeholder and Volunteer Operations'
+operational layer in the dependency order `knowledge_layer_roadmap.md` defines.
+Internal migration task lists live in `docs/architecture/` and the domain-specific
+migration plans, not here.
 
 ---
 

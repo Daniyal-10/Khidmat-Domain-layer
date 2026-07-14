@@ -1,8 +1,7 @@
-metadata:
-  file: verification-status.yaml
-  domain: Verification Operations
-  layer: verification-operations/taxonomy
-  status: Phase 4.1
+version: "1.0.0"
+domain: verification_operations
+file: taxonomy/verification-status.yaml
+status: active
 
 purpose: >
   Defines the lifecycle status of a verification_activity — whether
@@ -13,8 +12,8 @@ purpose: >
   not "what did we learn."
 
 scope: >
-  The controlled vocabulary for verification_activity.status and,
-  where an activity could not complete, the reason vocabulary
+  The controlled vocabulary for verification_activity.verification_status
+  and, where an activity could not complete, the reason vocabulary
   explaining why.
 
 out_of_scope: >
@@ -23,144 +22,151 @@ out_of_scope: >
   (verification-confidence.yaml), or verification_assignment status
   (the assignment's own lifecycle is a distinct workflow concern — an
   assignment may still be open even after one of its constituent
-  activities reaches could_not_complete).
+  activities reaches could_not_complete). The status_transition_note
+  descriptive model previously carried here now lives in
+  ontology/lifecycle-constraints.yaml, per Canonical_Ontology_Schema.md §9.
 
 governance:
   governing_adr:
     - ADR-008
 
-cross_references:
-  - verification-operations/verification-operations.yaml#verification_activity
+namespaces:
+  shared_time: shared_time
+
+schemes:
+  - id: verification_status
+    label: Verification Status
+    description: >
+      The current state of a verification_activity in its own
+      operational lifecycle. Every activity passes through this
+      vocabulary regardless of what verification_method was used or
+      what was ultimately found.
+    concepts:
+      - id: scheduled
+        label: Scheduled
+        description: >
+          The verification activity has been assigned to an actor and
+          a time or window has been set, but the activity has not yet
+          begun.
+
+      - id: in_progress
+        label: In Progress
+        description: >
+          The verifier has begun the activity — travel has commenced, a
+          call has been placed, or a document review has started — but
+          the activity has not yet concluded.
+
+      - id: completed
+        label: Completed
+        description: >
+          The verification activity was carried out to its intended
+          conclusion. Completion describes that the activity occurred,
+          not that the claim was confirmed — a completed activity may
+          still produce a finding of unable_to_confirm or contradicted.
+
+      - id: could_not_complete
+        label: Could Not Complete
+        description: >
+          The verifier attempted the activity but was unable to carry
+          it out to conclusion. A reason must be recorded from
+          could_not_complete_reason below.
+        note: >
+          could_not_complete is not a finding. It carries no conclusion
+          about the underlying claim — it means the attempt itself
+          failed. A could_not_complete activity typically produces a
+          reverification_trigger rather than a verification_finding.
+
+      - id: cancelled
+        label: Cancelled
+        description: >
+          The verification activity was called off before being
+          attempted, typically because the underlying requirement was
+          superseded, the case was withdrawn, or a prerequisite
+          condition changed.
+
+  - id: could_not_complete_reason
+    label: Could Not Complete Reason
+    description: >
+      Required when verification_status is could_not_complete.
+      Distinguishes why the attempt failed, since the operational and
+      safety implications differ substantially by reason. See
+      ontology/semantic-constraints.yaml
+      (activity_requires_reason_when_could_not_complete) for the
+      structural encoding of this requirement.
+    concepts:
+      - id: registrant_or_beneficiary_unreachable
+        label: Registrant or Beneficiary Unreachable
+        description: >
+          The verifier could not make contact through any available
+          channel within the attempt window.
+
+      - id: unsafe_conditions_at_arrival
+        label: Unsafe Conditions at Arrival
+        description: >
+          The verifier assessed that proceeding would pose a safety
+          risk to themselves, the beneficiary, or both, and withdrew.
+        note: >
+          Any activity carrying this reason must be routed to
+          human_review via escalation_reason: safety_concern_at_visit
+          (see escalation-reasons.yaml). It must never be silently
+          closed.
+
+      - id: beneficiary_declined
+        label: Beneficiary Declined
+        description: >
+          The beneficiary or registrant was reached but declined to
+          proceed with the verification activity.
+
+      - id: location_not_found
+        label: Location Not Found
+        description: >
+          The verifier was unable to locate the stated address or
+          institution using the information available in the case.
+        note: >
+          Repeated occurrences of this reason across a case's
+          verification history are a relevant input to reverification
+          and, in aggregate across cases, to a future suspicious-pattern
+          reasoning concern — that reasoning is explicitly out of scope
+          for this taxonomy file.
+
+      - id: institution_unresponsive
+        label: Institution Unresponsive
+        description: >
+          For institutional_visit or document_verification methods, the
+          relevant institution did not respond or could not produce the
+          needed confirmation within the attempt window.
+
+      - id: other
+        label: Other
+        description: >
+          The attempt failed for a reason not captured above. Free-text
+          detail is expected to be recorded alongside this value at the
+          instance level; instance-level recording is outside the scope
+          of this taxonomy file.
+
+references:
+  - scheme: verification_activity
+    relation: supplies_values_for
+    note: >
       This file supplies the controlled status vocabulary for the
-      verification_activity concept already declared there. It does
-      not redefine verification_activity itself.
-  - shared/taxonomy/time.yaml#waiting_and_grace_periods
-      response_window and follow_up_window inform how long a
-      scheduled or in_progress activity may remain open before
-      operational follow-up is warranted. This file does not define
-      those windows.
-  - escalation-reasons.yaml#escalation_reason
-      unsafe_conditions_at_arrival below has a mandatory routing
-      relationship to escalation_reason: safety_concern_at_visit
-      defined there. This file does not redefine escalation reasons.
-
-verification_status:
-  description: >
-    The current state of a verification_activity in its own
-    operational lifecycle. Every activity passes through this
-    vocabulary regardless of what verification_method was used or
-    what was ultimately found.
-
-  values:
-
-    - id: scheduled
-      label: Scheduled
-      description: >
-        The verification activity has been assigned to an actor and
-        a time or window has been set, but the activity has not yet
-        begun.
-
-    - id: in_progress
-      label: In Progress
-      description: >
-        The verifier has begun the activity — travel has commenced, a
-        call has been placed, or a document review has started — but
-        the activity has not yet concluded.
-
-    - id: completed
-      label: Completed
-      description: >
-        The verification activity was carried out to its intended
-        conclusion. Completion describes that the activity occurred,
-        not that the claim was confirmed — a completed activity may
-        still produce a finding of unable_to_confirm or contradicted.
-
-    - id: could_not_complete
-      label: Could Not Complete
-      description: >
-        The verifier attempted the activity but was unable to carry
-        it out to conclusion. A reason must be recorded from
-        could_not_complete_reason below.
-      note: >
-        could_not_complete is not a finding. It carries no conclusion
-        about the underlying claim — it means the attempt itself
-        failed. A could_not_complete activity typically produces a
-        reverification_trigger rather than a verification_finding.
-
-    - id: cancelled
-      label: Cancelled
-      description: >
-        The verification activity was called off before being
-        attempted, typically because the underlying requirement was
-        superseded, the case was withdrawn, or a prerequisite
-        condition changed.
-
-  status_transition_note: >
-    scheduled -> in_progress -> completed is the expected path.
-    scheduled -> in_progress -> could_not_complete and
-    scheduled -> cancelled are the recognised exception paths. A
-    could_not_complete or cancelled activity does not by itself close
-    the underlying verification_requirement; a new
-    verification_activity is typically scheduled unless the case
-    itself is closed for another reason.
-
-could_not_complete_reason:
-  description: >
-    Required when verification_status is could_not_complete.
-    Distinguishes why the attempt failed, since the operational and
-    safety implications differ substantially by reason.
-
-  values:
-
-    - id: registrant_or_beneficiary_unreachable
-      label: Registrant or Beneficiary Unreachable
-      description: >
-        The verifier could not make contact through any available
-        channel within the attempt window.
-
-    - id: unsafe_conditions_at_arrival
-      label: Unsafe Conditions at Arrival
-      description: >
-        The verifier assessed that proceeding would pose a safety
-        risk to themselves, the beneficiary, or both, and withdrew.
-      note: >
-        Any activity carrying this reason must be routed to
-        human_review via escalation_reason: safety_concern_at_visit
-        (see escalation-reasons.yaml). It must never be silently
-        closed.
-
-    - id: beneficiary_declined
-      label: Beneficiary Declined
-      description: >
-        The beneficiary or registrant was reached but declined to
-        proceed with the verification activity.
-
-    - id: location_not_found
-      label: Location Not Found
-      description: >
-        The verifier was unable to locate the stated address or
-        institution using the information available in the case.
-      note: >
-        Repeated occurrences of this reason across a case's
-        verification history are a relevant input to reverification
-        and, in aggregate across cases, to a future suspicious-pattern
-        reasoning concern — that reasoning is explicitly out of scope
-        for this taxonomy file.
-
-    - id: institution_unresponsive
-      label: Institution Unresponsive
-      description: >
-        For institutional_visit or document_verification methods, the
-        relevant institution did not respond or could not produce the
-        needed confirmation within the attempt window.
-
-    - id: other
-      label: Other
-      description: >
-        The attempt failed for a reason not captured above. Free-text
-        detail is expected to be recorded alongside this value at the
-        instance level; instance-level recording is outside the scope
-        of this taxonomy file.
+      verification_activity concept declared in ontology/entities.yaml.
+      It does not redefine verification_activity itself. (Target is an
+      ontology entity, not a taxonomy scheme; §8's scheme-only reference
+      model is used here as the closest fit, per this domain's existing
+      practice of referencing ontology concepts from taxonomy files.)
+  - scheme: shared_time:waiting_and_grace_periods
+    relation: informs
+    note: >
+      response_window and follow_up_window inform how long a scheduled
+      or in_progress activity may remain open before operational
+      follow-up is warranted. This file does not define those windows.
+  - scheme: escalation_reason
+    relation: constrains
+    note: >
+      unsafe_conditions_at_arrival has a mandatory routing relationship
+      to escalation_reason: safety_concern_at_visit defined in
+      escalation-reasons.yaml. This file does not redefine escalation
+      reasons.
 
 design_notes:
   - decision: Status and finding are strictly separate vocabularies

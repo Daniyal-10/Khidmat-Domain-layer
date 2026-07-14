@@ -1,5 +1,5 @@
 version: "1.0.0"
-domain: needs-assessment
+domain: needs_assessment
 file: ontology/data-properties.yaml
 status: active
 
@@ -21,6 +21,21 @@ data_properties:
   - id: session_date
     domain: assessment_session
     datatype: xsd:dateTime
+    cardinality: { min: 1, max: 1 }
+
+  - id: assessment_depth
+    domain: assessment_session
+    taxonomy_ref: assessment_depth
+    cardinality: { min: 1, max: 1 }
+
+  - id: assessment_urgency
+    domain: assessment_session
+    taxonomy_ref: assessment_urgency
+    cardinality: { min: 1, max: 1 }
+
+  - id: assessment_methodology
+    domain: assessment_session
+    taxonomy_ref: assessment_methodology
     cardinality: { min: 1, max: 1 }
 
   # Observation Properties
@@ -84,4 +99,47 @@ data_properties:
   - id: consensus_date
     domain: finding_consensus
     datatype: xsd:dateTime
+    cardinality: { min: 1, max: 1 }
+
+  - id: consensus_status
+    domain: finding_consensus
+    taxonomy_ref: consensus_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: consensus_outcome
+    domain: finding_consensus
+    taxonomy_ref: consensus_outcome
+    cardinality: { min: 0, max: 1 }
+
+  # Supervisor Review Properties
+  - id: review_status
+    domain: supervisor_review
+    taxonomy_ref: review_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: rejection_reason
+    domain: supervisor_review
+    taxonomy_ref: rejection_reason
+    cardinality: { min: 0, max: 1 }
+
+  # Assessor Calibration Properties
+  - id: calibration_status
+    domain: assessor_calibration
+    taxonomy_ref: calibration_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: calibration_outcome
+    domain: assessor_calibration
+    taxonomy_ref: calibration_outcome
+    cardinality: { min: 0, max: 1 }
+
+  # Reassessment Trigger Properties
+  - id: trigger_status
+    domain: reassessment_trigger
+    taxonomy_ref: trigger_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: trigger_type
+    domain: reassessment_trigger
+    taxonomy_ref: trigger_type
     cardinality: { min: 1, max: 1 }

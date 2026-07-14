@@ -18,7 +18,7 @@ between stages.
 
 - **Taxonomy:** `engagement_stage`, `exit_reason`, `suspension_reason`, `review_trigger` (in `taxonomy/`)
 - **Entities:** `beneficiary_lifecycle`, `lifecycle_transition` (in `ontology/`)
-- **Relationships:** `tracks_journey_of`, `has_transition_history`, `followed_by`, `triggered_by_registration_completion`, `triggered_by_verification_outcome`, `triggered_by_risk_assessment`, `triggered_by_case_decision`
+- **Relationships:** `tracks_journey_of`, `has_transition_history`, `followed_by`, `triggered_by_registration_case`, `triggered_by_verification_finding`, `triggered_by_risk_characterization`, `triggered_by_case_decision`, `part_of_lifecycle`
 
 ## Does Not Own
 

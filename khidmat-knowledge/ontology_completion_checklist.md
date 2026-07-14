@@ -76,14 +76,16 @@
 ✓ Risk (`shared/risk/ontology/risk.yaml`)
 ✓ Compound Risk Detection (`shared/risk/reasoning/compound-risk-detection.yaml`)
 
-### Phase 4.0 — Verification Operations (Complete)
+### Phase 4.0 — Verification Operations (Complete, canonically migrated)
 
-✓ Verification Operations Core Ontology (`verification-operations/verification-operations.yaml`)
-✓ Verification Taxonomy (`verification-operations/taxonomy/*.yaml`)
-✓ Verification Ontology Entities (`verification-operations/ontology/entities.yaml`)
+✓ Verification Ontology Entities (`verification-operations/ontology/entities.yaml`) — consolidates the
+  retired pre-canonical core-ontology monolith (`verification-operations.yaml`) and the prior
+  operational-entity folder into one canonical five-file module.
+✓ Verification Ontology Data Properties (`verification-operations/ontology/data-properties.yaml`)
 ✓ Verification Ontology Relationships (`verification-operations/ontology/relationships.yaml`)
-✓ Verification Lifecycle Constraints (`verification-operations/ontology/lifecycle.yaml`)
-✓ Verification Constraints (`verification-operations/ontology/constraints.yaml`)
+✓ Verification Semantic Constraints (`verification-operations/ontology/semantic-constraints.yaml`)
+✓ Verification Lifecycle Constraints (`verification-operations/ontology/lifecycle-constraints.yaml`)
+✓ Verification Taxonomy (`verification-operations/taxonomy/*.yaml`) — canonical `schemes:`/`concepts:` shape
 ✓ Verification Reasoning (`verification-operations/reasoning/*.yaml`)
 
 ### Phase 4.5 — Needs Assessment Domain (Complete)
@@ -98,8 +100,8 @@
 
 ### Phase 4.x — Beneficiary Lifecycle (Complete)
 
-✓ Beneficiary Lifecycle Taxonomy (`beneficiary-lifecycle/taxonomy.yaml`)
-✓ Beneficiary Lifecycle Ontology (`beneficiary-lifecycle/ontology.yaml`)
+✓ Beneficiary Lifecycle Taxonomy (`beneficiary-lifecycle/taxonomy/`)
+✓ Beneficiary Lifecycle Ontology (`beneficiary-lifecycle/ontology/`)
 
 ### Phase 5.0 — Case Management Domain (Complete)
 
@@ -207,19 +209,19 @@ Community Context's remaining work is canonical migration, not content authoring
 
 ## FUTURE
 
-### Domains to Activate (from Architecture.md Placeholders)
+### Domains Migrated to Canonical Structure (formerly listed as Architecture.md Placeholders)
 
-□ Volunteer Operations Domain
-  Prerequisite: Volunteer profile requirements defined with operations staff.
+✓ Support Delivery Domain — canonical `ontology/`+`taxonomy/` complete.
+✓ Programs Domain — canonical `ontology/`+`taxonomy/` complete.
+✓ Impact Domain — canonical `ontology/`+`taxonomy/` complete.
+✓ Volunteer Operations Domain — foundational (Tier 1) canonical `ontology/`+`taxonomy/` complete
+  per ADR-024; operational/runtime layer (Tier 2 — scheduling, dispatch, trust/performance
+  scoring) remains deferred to the Stage 9 activation trigger.
 
-□ Support Delivery Domain
-  Prerequisite: Case Management Domain active + Intervention Taxonomy complete.
+### Domains to Activate
 
-□ Programs Domain
-  Prerequisite: Structured program distinct from ad-hoc assistance defined by client.
-
-□ Impact Domain
-  Prerequisite: Beneficiary Lifecycle Domain active + Outcome Indicator vocabulary.
+□ Consent & Privacy Domain
+  Prerequisite: none beyond current minimal placeholder; awaiting active development scope.
 
 ### Future Knowledge Graph Domains (Not Yet Placeholdered)
 
@@ -260,7 +262,7 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Completed | 50+ files | Registration (canonical reference implementation), Shared Human Model, Risk Domain, Needs Assessment, Case Management, Beneficiary Lifecycle, and Verification Operations all complete; repository architecture frozen (Canonical Ontology/Taxonomy Schemas, ADR-023) |
+| Completed | 50+ files | Registration (canonical reference implementation), Shared Human Model, Risk Domain, Needs Assessment, Case Management, Beneficiary Lifecycle, Verification Operations, Community Context (Phases 1–4), Support Delivery, Programs, and Impact all complete; Volunteer Operations foundational layer complete (ADR-024); repository architecture frozen (Canonical Ontology/Taxonomy Schemas, ADR-023) |
 | In Progress | 3 items | Support intervention taxonomy content (registration), evidence taxonomy content gaps (registration), Community Context canonical migration |
 | Missing (registration) | 2 items | Compound/lifecycle-stage-aware inference rules, medical severity + treatment plan interaction |
 | Missing (shared) | 2 items + 1 flagged conflict | Person entity lacks attributes and a Beneficiary integration seam; Outcome Indicator vocabulary does not yet exist; Household is defined in both `shared/` and `registration/` and needs an ownership decision (flagged, not resolved, by this pass) |

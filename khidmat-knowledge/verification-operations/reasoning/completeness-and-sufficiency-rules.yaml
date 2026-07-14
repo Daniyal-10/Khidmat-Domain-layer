@@ -8,7 +8,7 @@ purpose: >
 
 scope: >
   Evaluates aggregate verification quality and completeness for a given
-  VerificationSubject.
+  verification_subject.
 
 governance:
   governing_adr:
@@ -16,10 +16,10 @@ governance:
     - ADR-010
 
 inputs:
-  - entity: core:VerificationAssignment
-  - entity: core:VerificationSubject
-  - entity: core:VerificationFinding
-  - entity: registration:Evidence (via case_management:Case)
+  - entity: verification_assignment
+  - entity: verification_subject
+  - entity: verification_finding
+  - entity: registration:evidence (via case_management:case)
 
 outputs:
   - insight: evidence_sufficiency
@@ -52,12 +52,12 @@ reasoning_rules:
       More corroborating evidence is required.
 
   - rule_id: determine_sufficient_verification
-    description: All priority subjects have medium or high confidence findings.
+    description: All priority subjects have moderate or high confidence findings.
     condition: >
       FOR ALL subject IN case.subjects WHERE subject.requirement_priority == priority_1:
         EXISTS finding WHERE finding.subject == subject AND
         finding.finding_status == confirmed AND
-        finding.verification_confidence in [medium, high]
+        finding.verification_confidence in [moderate, high]
     outcome:
       evidence_sufficiency: sufficient
       verification_completeness: complete
