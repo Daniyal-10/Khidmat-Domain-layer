@@ -1,0 +1,106 @@
+version: "1.0.0"
+domain: needs-assessment
+file: ontology/relationships.yaml
+status: active
+
+namespaces:
+  shared_human: http://khidmat.org/ontology/shared/human-model
+  community_ctx: http://khidmat.org/ontology/community-context
+  shared_org: http://khidmat.org/ontology/shared/organisations
+
+relationships:
+  - id: session_uses_instrument
+    from: assessment_session
+    relationship: uses_instrument
+    to: assessment_instrument
+    cardinality: { min: 1, max: 1 }
+    inverse: instrument_used_in_session
+
+  - id: session_evaluates_person
+    from: assessment_session
+    relationship: evaluates_person
+    to: shared_human:person
+    cardinality: { min: 0, max: 1 }
+
+  - id: session_evaluates_household
+    from: assessment_session
+    relationship: evaluates_household
+    to: shared_human:household
+    cardinality: { min: 0, max: 1 }
+
+  - id: session_evaluates_community
+    from: assessment_session
+    relationship: evaluates_community
+    to: community_ctx:geographic_area
+    cardinality: { min: 0, max: 1 }
+
+  - id: session_conducted_by_person
+    from: assessment_session
+    relationship: conducted_by
+    to: shared_human:person
+    cardinality: { min: 0, max: unbounded }
+
+  - id: session_conducted_by_org
+    from: assessment_session
+    relationship: conducted_by_org
+    to: shared_org:organisation
+    cardinality: { min: 0, max: unbounded }
+
+  - id: session_yields_observation
+    from: assessment_session
+    relationship: yields_observation
+    to: observation
+    cardinality: { min: 1, max: unbounded }
+    inverse: observation_from_session
+
+  - id: observation_evaluates_indicator
+    from: observation
+    relationship: evaluates_indicator
+    to: assessment_indicator
+    cardinality: { min: 1, max: 1 }
+    inverse: indicator_evaluated_by_observation
+
+  - id: observation_synthesizes_into
+    from: observation
+    relationship: synthesizes_into
+    to: need_assertion
+    cardinality: { min: 1, max: unbounded }
+    inverse: assertion_synthesized_from
+
+  - id: consensus_resolves_finding
+    from: finding_consensus
+    relationship: resolves_finding
+    to: need_assertion
+    cardinality: { min: 1, max: unbounded }
+    inverse: finding_resolved_by
+
+  - id: consensus_reviews_observation
+    from: finding_consensus
+    relationship: reviews_observation
+    to: observation
+    cardinality: { min: 1, max: unbounded }
+
+  - id: session_supersedes_assertion
+    from: assessment_session
+    relationship: supersedes_assertion
+    to: need_assertion
+    cardinality: { min: 0, max: unbounded }
+    inverse: assertion_superseded_by_session
+
+  - id: review_audits_session
+    from: supervisor_review
+    relationship: audits_session
+    to: assessment_session
+    cardinality: { min: 1, max: 1 }
+
+  - id: calibration_audits_assessor
+    from: assessor_calibration
+    relationship: audits_assessor
+    to: shared_human:person
+    cardinality: { min: 1, max: 1 }
+
+  - id: trigger_initiates_session
+    from: reassessment_trigger
+    relationship: initiates_session
+    to: assessment_session
+    cardinality: { min: 1, max: unbounded }

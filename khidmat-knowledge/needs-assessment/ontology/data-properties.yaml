@@ -1,0 +1,87 @@
+version: "1.0.0"
+domain: needs-assessment
+file: ontology/data-properties.yaml
+status: active
+
+namespaces:
+  programs_tax: http://khidmat.org/ontology/programs/taxonomy
+
+data_properties:
+  # Assessment Session Properties
+  - id: session_status
+    domain: assessment_session
+    taxonomy_ref: session_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: assessment_modality
+    domain: assessment_session
+    taxonomy_ref: assessment_modality
+    cardinality: { min: 1, max: 1 }
+
+  - id: session_date
+    domain: assessment_session
+    datatype: xsd:dateTime
+    cardinality: { min: 1, max: 1 }
+
+  # Observation Properties
+  - id: observation_value
+    domain: observation
+    datatype: xsd:string
+    cardinality: { min: 0, max: 1 }
+
+  - id: evidence_type
+    domain: observation
+    taxonomy_ref: evidence_type
+    cardinality: { min: 1, max: 1 }
+
+  - id: confidence_level
+    domain: [observation, need_assertion]
+    taxonomy_ref: confidence_level
+    cardinality: { min: 1, max: 1 }
+
+  - id: conflict_status
+    domain: [observation, need_assertion]
+    taxonomy_ref: conflict_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: missing_data_reason
+    domain: observation
+    taxonomy_ref: missing_data_reason
+    cardinality: { min: 0, max: 1 }
+
+  - id: requires_case_escalation
+    domain: observation
+    datatype: xsd:boolean
+    cardinality: { min: 0, max: 1 }
+
+  # Need Assertion Properties
+  - id: finding_status
+    domain: need_assertion
+    taxonomy_ref: finding_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: invalidation_reason
+    domain: need_assertion
+    taxonomy_ref: invalidation_reason
+    cardinality: { min: 0, max: 1 }
+
+  - id: need_urgency
+    domain: need_assertion
+    taxonomy_ref: need_urgency
+    cardinality: { min: 1, max: 1 }
+
+  - id: thematic_sector
+    domain: need_assertion
+    taxonomy_ref: programs_tax:thematic_sectors
+    cardinality: { min: 1, max: unbounded }
+
+  - id: validity_window_end
+    domain: need_assertion
+    datatype: xsd:dateTime
+    cardinality: { min: 0, max: 1 }
+
+  # Finding Consensus Properties
+  - id: consensus_date
+    domain: finding_consensus
+    datatype: xsd:dateTime
+    cardinality: { min: 1, max: 1 }

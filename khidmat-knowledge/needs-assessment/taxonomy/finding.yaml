@@ -1,0 +1,68 @@
+version: "1.0.0"
+domain: needs-assessment
+file: taxonomy/finding.yaml
+status: active
+
+purpose: >
+  Classifies the status, severity, and invalidation rules for synthesized need assertions.
+
+schemes:
+  - id: finding_status
+    label: Finding Status
+    description: >
+      The governance state of a Need Assertion.
+    concepts:
+      - id: provisional
+        label: Provisional
+        description: Drafted by assessor, awaiting supervisor review.
+      - id: under_review
+        label: Under Review
+        description: Currently being audited or peer-reviewed.
+      - id: disputed
+        label: Disputed
+        description: Challenged by another assessor or agency.
+      - id: authoritative
+        label: Authoritative (Consensus Reached)
+        description: Accepted as the canonical truth.
+      - id: expired
+        label: Expired
+        description: Naturally aged out of its validity window.
+      - id: invalidated
+        label: Invalidated
+        description: Forcefully retired due to external events.
+
+  - id: invalidation_reason
+    label: Invalidation Reason
+    description: >
+      Why an authoritative finding was forcibly retired before expiry.
+    concepts:
+      - id: mass_disaster
+        label: Mass Disaster Event
+        description: Catastrophe changed the baseline reality.
+      - id: superseded
+        label: Superseded
+        description: Replaced by a newer reassessment session.
+      - id: fraud_detected
+        label: Fraud Detected
+        description: Original evidence found to be maliciously altered.
+
+  - id: need_urgency
+    label: Need Urgency
+    description: >
+      The severity of the deficit or vulnerability.
+    concepts:
+      - id: critical
+        label: Critical
+        description: Immediate threat to life or severe protection risk.
+      - id: severe
+        label: Severe
+        description: Major degradation of living conditions.
+      - id: moderate
+        label: Moderate
+        description: Struggling but surviving; requires eventual support.
+      - id: mild
+        label: Mild
+        description: Minor vulnerability; coping mechanisms intact.
+      - id: none
+        label: None
+        description: No vulnerability detected.

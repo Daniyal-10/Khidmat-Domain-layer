@@ -1,0 +1,71 @@
+version: "1.0.0"
+domain: needs-assessment
+file: taxonomy/session.yaml
+status: active
+
+purpose: >
+  Classifies the states, modalities, and missing data reasons of an assessment session.
+
+schemes:
+  - id: session_status
+    label: Session Status
+    description: >
+      The execution state of a specific assessment session.
+    concepts:
+      - id: scheduled
+        label: Scheduled
+        description: Planned but not yet started.
+      - id: in_progress
+        label: In Progress
+        description: Currently being conducted.
+      - id: completed
+        label: Completed
+        description: All sections applied and finalized.
+      - id: partially_completed
+        label: Partially Completed
+        description: Some sections applied, finalized without full completion.
+      - id: interrupted
+        label: Interrupted
+        description: Stopped abruptly by external events (e.g., security incident).
+      - id: abandoned
+        label: Abandoned
+        description: Stopped abruptly and will not be resumed.
+
+  - id: assessment_modality
+    label: Assessment Modality
+    description: >
+      The method by which the session is conducted.
+    concepts:
+      - id: in_person_interview
+        label: In-Person Interview
+        description: Face-to-face questionnaire.
+      - id: remote_phone
+        label: Remote Phone Survey
+        description: Conducted via voice call.
+      - id: direct_observation
+        label: Direct Observation
+        description: Assessor evaluates without interacting with a respondent.
+      - id: digital_self_service
+        label: Digital Self-Service
+        description: The subject fills out the instrument themselves.
+
+  - id: missing_data_reason
+    label: Missing Data Reason
+    description: >
+      Why a specific observation or finding was not gathered.
+    concepts:
+      - id: beneficiary_refusal
+        label: Beneficiary Refusal
+        description: The subject declined to answer.
+      - id: safety_risk
+        label: Safety / Protection Risk
+        description: Assessor skipped due to risk to the subject (e.g., abuser present).
+      - id: language_barrier
+        label: Language Barrier
+        description: Question could not be translated or understood.
+      - id: session_interrupted
+        label: Session Interrupted
+        description: Event stopped before reaching this point.
+      - id: not_applicable
+        label: Not Applicable
+        description: The section logically does not apply.
