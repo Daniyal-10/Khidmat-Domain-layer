@@ -45,7 +45,7 @@ imports:
   - shared-taxonomy-time        # shared/taxonomy/time.yaml (evidence_freshness, waiting_and_grace_periods)
   - shared-risk                 # shared/risk/ontology/risk.yaml (risk_trend, referenced only)
   - registration-ontology       # registration/ontology/entities.yaml (Claim, Evidence)
-  - case-management-ontology    # case-management/ontology.yaml (Case)
+  - case-management-ontology    # case-management/ontology/ (Case)
   - registration-taxonomy       # registration/taxonomy/claims.yaml, evidence.yaml
   - registration-verification   # registration/verification/verification-requirements.yaml (derived, not stored)
   - verification-operations-core       # verification-operations/verification-operations.yaml

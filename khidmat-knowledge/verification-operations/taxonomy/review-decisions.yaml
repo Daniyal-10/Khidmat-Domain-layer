@@ -43,7 +43,7 @@ cross_references:
   - registration/verification/verification-requirements.yaml
       An approved finding closes the verification_requirement it
       resolves. This file does not redefine requirement derivation.
-  - case-management/ontology.yaml#CaseNote
+  - case-management/ontology/#CaseNote
       The append-only, addendum-only pattern for case notes (never
       replace, always add a new record) is the precedent this file's
       immutability treatment of review decisions follows. This file
@@ -153,7 +153,7 @@ design_notes:
   - decision: review_decision is immutable and append-only
     rationale: >
       Direct application of the pattern already established for
-      CaseNote (case-management/ontology.yaml) and IdentifiedNeed
+      CaseNote (case-management/ontology/) and IdentifiedNeed
       (needs-assessment/ontology.yaml#IdentifiedNeed.superseded_by).
       A humanitarian audit trail must never allow a decision to be
       quietly rewritten; disagreement is itself data, not noise to be

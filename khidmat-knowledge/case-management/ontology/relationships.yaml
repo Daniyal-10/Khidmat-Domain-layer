@@ -1,0 +1,53 @@
+version: "1.0.0"
+domain: case_management
+file: ontology/relationships.yaml
+status: active
+
+relationships:
+  - id: has_case_plan
+    source: case
+    target: case_plan
+    cardinality: one_to_many
+    description: Associates a Case with its current and historical Case Plans.
+
+  - id: has_referral
+    source: case
+    target: referral
+    cardinality: one_to_many
+    description: Associates a Case with external or internal Referrals.
+
+  - id: superseded_by
+    source: case
+    target: case
+    cardinality: many_to_one
+    description: Links a Case administratively closed as a duplicate or merge to the surviving authoritative Case.
+
+  - id: case_primary_subject
+    source: case
+    target: shared_human_model:subject
+    cardinality: many_to_one
+    description: References the authoritative Subject serving as the Primary Subject of the Case.
+
+  - id: references_assessment
+    source: case_plan
+    target: needs_assessment:assessment_finding
+    cardinality: one_to_many
+    description: Linked from case_plan to needs_assessment:assessment_finding.
+
+  - id: references_consent
+    source: referral
+    target: shared:consent
+    cardinality: one_to_one
+    description: Linked from referral to shared:consent.
+
+  - id: has_lead_coordinator
+    source: case
+    target: shared:actor
+    cardinality: many_to_one
+    description: Role representing the lead coordinator for the case.
+
+  - id: has_statutory_owner
+    source: case
+    target: shared:actor
+    cardinality: many_to_one
+    description: Role representing the statutory owner of the case.

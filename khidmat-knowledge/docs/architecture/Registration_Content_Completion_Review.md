@@ -25,7 +25,7 @@
    `relationships.yaml`, and, for cross-checking meaning (not copying), the
    registration reasoning files (`severity-rules.yaml`, `gap-detection-rules.yaml`).
 6. Repository consistency — cross-checked against `shared/taxonomy/persons.yaml`,
-   `case-management/taxonomy.yaml`, `gaps/gap-types.yaml` specifically to rule out
+   `case-management/taxonomy/`, `gaps/gap-types.yaml` specifically to rule out
    duplicate meaning (detailed per record below).
 
 ---
@@ -176,7 +176,7 @@ current risks needing response now, versus longer-horizon future risks — the
 four severity levels are registration's operational translation of that
 urgency spectrum at intake.
 
-**Duplicate-meaning check:** cross-checked against `case-management/taxonomy.yaml#priority_level`,
+**Duplicate-meaning check:** cross-checked against `case-management/taxonomy/#priority_level`,
 which uses the identical value labels (`critical`/`high`/`medium`/`low`) but
 is a **different concept** — that scheme's own description already states it
 is "independent of vulnerability, risk, and need severity" (operational

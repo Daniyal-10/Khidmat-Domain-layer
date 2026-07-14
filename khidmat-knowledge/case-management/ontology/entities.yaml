@@ -1,0 +1,17 @@
+version: "1.0.0"
+domain: case_management
+file: ontology/entities.yaml
+status: active
+
+entities:
+  - id: case
+    description: >
+      The central, long-lived operational container coordinating holistic support for a Subject.
+
+  - id: case_plan
+    description: >
+      The structured, approved operational strategy guiding the coordination of interventions for a Case.
+
+  - id: referral
+    description: >
+      A formal request for a specialized service provided by an internal or external party.

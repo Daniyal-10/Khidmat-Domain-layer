@@ -1,0 +1,17 @@
+version: "1.0.0"
+domain: case_management
+file: taxonomy/referral_type.yaml
+status: active
+
+purpose: >
+  Classifies whether a Referral is internal or external.
+
+schemes:
+  - id: referral_type
+    description: >
+      Classifies whether a Referral is internal or external.
+    concepts:
+      - id: internal
+        description: Internal referral.
+      - id: external
+        description: External referral.

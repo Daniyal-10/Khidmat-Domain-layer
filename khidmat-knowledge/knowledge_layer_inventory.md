@@ -949,7 +949,7 @@ rules between its own taxonomy files are documented in
 
 ---
 
-### case-management/taxonomy.yaml
+### case-management/taxonomy/
 
 **Purpose:** Authoritative vocabulary for the Case Management domain.
 **Concepts Owned:**
@@ -961,7 +961,7 @@ rules between its own taxonomy files are documented in
 
 ---
 
-### case-management/ontology.yaml
+### case-management/ontology/
 
 **Purpose:** Semantic model of Case Management orchestration concepts and their relationships.
 **Concepts Owned:**

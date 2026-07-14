@@ -230,25 +230,25 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 
 ## Case Management Domain
 
-**Authoritative files:** `case-management/taxonomy.yaml`, `case-management/ontology.yaml`
+**Authoritative files:** `case-management/taxonomy/`, `case-management/ontology/`
 **Owner domain:** Case Management
 **Introduced:** Phase 5.0
 **Governing ADRs:** ADR-008
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
-| `case_status` | Case Status | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `priority_level` | Priority Level | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `referral_status` | Referral Status | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `case_origin` | Case Origin | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `case_outcome` | Case Outcome | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `administrative_closure_reason` | Administrative Closure Reason | `case-management/taxonomy.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `Case` | Case | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `CasePlan` | Case Plan | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `Referral` | Referral | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `FollowUp` | Follow Up | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `CaseAssignment` | Case Assignment | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `CaseNote` | Case Note | `case-management/ontology.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `case_status` | Case Status | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
+| `priority_level` | Priority Level | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
+| `referral_status` | Referral Status | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
+| `case_origin` | Case Origin | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
+| `case_outcome` | Case Outcome | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
+| `administrative_closure_reason` | Administrative Closure Reason | `case-management/taxonomy/` | Case Management | May be referenced by any domain; must not be redefined |
+| `Case` | Case | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
+| `CasePlan` | Case Plan | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
+| `Referral` | Referral | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
+| `FollowUp` | Follow Up | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
+| `CaseAssignment` | Case Assignment | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
+| `CaseNote` | Case Note | `case-management/ontology/` | Case Management | May be referenced by any domain; must not be redefined |
 
 ---
 
@@ -390,7 +390,7 @@ future domain designers do not create silent drift.
 
 | Item | Detail |
 |---|---|
-| Existing locations | `shared/ontology/entities.yaml` (`id: actor`, "Placeholder for an operational participant"); `shared/taxonomy/persons.yaml` (`person_roles.volunteer`); `verification-operations/ontology/entities.yaml` (`VerificationAssignment`) and `relationships.yaml` (`activity_conducted_by_actor`); `case-management/ontology.yaml` (`CaseAssignment`) |
+| Existing locations | `shared/ontology/entities.yaml` (`id: actor`, "Placeholder for an operational participant"); `shared/taxonomy/persons.yaml` (`person_roles.volunteer`); `verification-operations/ontology/entities.yaml` (`VerificationAssignment`) and `relationships.yaml` (`activity_conducted_by_actor`); `case-management/ontology/` (`CaseAssignment`) |
 | Concept | The boundary between a volunteer's **qualification / fitness to be assigned** (skills, certifications, availability, geographic coverage, trust, training) and the **assignment act** itself |
 | Situation | `verification-operations/ontology/relationships.yaml` already states, one-directionally: *"Verification Operations does not define actor qualification, roles, or types — that remains a Volunteer Operations concern (Level 2 placeholder)."* `review-decisions.yaml` echoes it. `VerificationAssignment` and `CaseAssignment` own the *assignment event*; the `Actor` entity and the `volunteer` role are single-owned in Shared. Volunteer Operations (Stage 9 placeholder) will own the *profile behind the actor* — never the assignment act, the actor entity, or the role label. |
 | Risk | On Volunteer Operations activation, the domain must attach its profile *behind* the shared `Actor` reference (via a `references`/relationship link), not mint a second actor entity or redefine `VerificationAssignment`/`CaseAssignment`. Silent drift would produce a duplicate actor/assignment model. |

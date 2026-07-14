@@ -1,0 +1,27 @@
+version: "1.0.0"
+domain: case_management
+file: taxonomy/case_status.yaml
+status: active
+
+purpose: >
+  The operational lifecycle state of a Case.
+
+schemes:
+  - id: case_status
+    description: >
+      The operational lifecycle state of a Case.
+    concepts:
+      - id: opened
+        description: Case is opened.
+      - id: planning
+        description: Case is in planning stage.
+      - id: active
+        description: Case is currently active.
+      - id: suspended
+        description: Case is suspended.
+      - id: closed
+        description: Case is closed.
+      - id: graduated
+        description: Case has successfully graduated.
+      - id: reopened
+        description: Case has been reopened.

@@ -1,0 +1,21 @@
+version: "1.0.0"
+domain: case_management
+file: taxonomy/priority_level.yaml
+status: active
+
+purpose: >
+  The operational priority assigned to a Case for workload management and response sequencing.
+
+schemes:
+  - id: priority_level
+    description: >
+      The operational priority assigned to a Case for workload management and response sequencing. Independent of vulnerability, risk, and need severity.
+    concepts:
+      - id: critical
+        description: Critical priority.
+      - id: high
+        description: High priority.
+      - id: medium
+        description: Medium priority.
+      - id: low
+        description: Low priority.

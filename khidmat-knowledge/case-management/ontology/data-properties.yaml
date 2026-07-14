@@ -1,0 +1,54 @@
+version: "1.0.0"
+domain: case_management
+file: ontology/data-properties.yaml
+status: active
+
+data_properties:
+  - id: status
+    domain: case
+    taxonomy_ref: case_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: priority
+    domain: case
+    taxonomy_ref: priority_level
+    cardinality: { min: 1, max: 1 }
+
+  - id: origin
+    domain: case
+    taxonomy_ref: case_origin
+    cardinality: { min: 1, max: 1 }
+
+  - id: closure_reason
+    domain: case
+    taxonomy_ref: closure_reason
+    cardinality: { min: 0, max: 1 }
+
+  - id: case_timeline
+    domain: case
+    description: A composite Value Object holding timeline events.
+    cardinality: { min: 1, max: 1 }
+    fields:
+      - id: case_note
+        description: A chronological observational record preserving the operational history of a Case.
+        cardinality: { min: 0, max: unconstrained }
+        type: string
+      - id: follow_up
+        description: A scheduled case-level interaction, review, or monitoring activity.
+        cardinality: { min: 0, max: unconstrained }
+        type: string
+
+  - id: plan_status
+    domain: case_plan
+    taxonomy_ref: case_plan_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: ref_status
+    domain: referral
+    taxonomy_ref: referral_status
+    cardinality: { min: 1, max: 1 }
+
+  - id: ref_type
+    domain: referral
+    taxonomy_ref: referral_type
+    cardinality: { min: 1, max: 1 }

@@ -1,0 +1,21 @@
+version: "1.0.0"
+domain: case_management
+file: taxonomy/suspension_reason.yaml
+status: active
+
+purpose: >
+  Reason for suspending a case.
+
+schemes:
+  - id: suspension_reason
+    description: >
+      Reason for suspending a case.
+    concepts:
+      - id: subject_unavailable
+        description: Subject is temporarily unavailable.
+      - id: resource_constraint
+        description: Lack of resources to continue.
+      - id: safety_concern
+        description: Suspended due to safety concerns.
+      - id: pending_external_action
+        description: Waiting on an external action.

@@ -1,0 +1,30 @@
+version: "1.0.0"
+domain: case_management
+file: ontology/semantic-constraints.yaml
+status: active
+
+constraints:
+  - id: case_requires_primary_subject
+    description: A Case requires exactly one Subject acting in the Primary Subject role.
+    rule: >
+      For any case C, there exists exactly one shared_human_model:subject S where C.case_primary_subject = S.
+
+  - id: external_referrals_require_consent
+    description: External Referrals require a referenced Consent record.
+    rule: >
+      For any referral R, if R.ref_type == external, then R.references_consent must be instantiated.
+
+  - id: internal_referrals_no_consent
+    description: Internal Referrals do not reference Consent.
+    rule: >
+      For any referral R, if R.ref_type == internal, then R.references_consent must not be instantiated.
+
+  - id: exactly_one_current_case_plan
+    description: Exactly one CasePlan per Case may carry a case_plan_status of current.
+    rule: >
+      For any case C, exactly one associated case_plan P (via has_case_plan) has P.plan_status == current.
+
+  - id: merged_case_requires_superseded_by
+    description: A Case whose closure_reason is duplicate or merged must reference its surviving counterpart.
+    rule: >
+      For any case C, if C.closure_reason in [duplicate, merged], then C.superseded_by must be instantiated.

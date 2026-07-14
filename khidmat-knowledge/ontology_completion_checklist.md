@@ -103,8 +103,8 @@
 
 ### Phase 5.0 — Case Management Domain (Complete)
 
-✓ Case Management Taxonomy (`case-management/taxonomy.yaml`)
-✓ Case Management Ontology (`case-management/ontology.yaml`)
+✓ Case Management Taxonomy (`case-management/taxonomy/`)
+✓ Case Management Ontology (`case-management/ontology/`)
 ✓ Consent Placeholder (`consent-and-privacy/ontology.yaml`)
 
 ### Repository Architecture Freeze (Complete — Registration Reference Implementation)
