@@ -1,0 +1,83 @@
+version: "1.0.0"
+domain: verification_operations
+file: taxonomy/field-observation.yaml
+status: active
+
+purpose: >
+  Defines the controlled vocabulary for how a field_observation semantically
+  aligns with the registration claim it was recorded against. This is
+  observation-level classification — what a single field_observation
+  appears to show — distinct from finding_status
+  (verification-findings.yaml), which is the conclusion reached about the
+  verification_subject as a whole after all observations from a completed
+  verification_activity are considered. Formalizes the five values already
+  named, and already in active use by reasoning/verification-rules.yaml,
+  in ontology/data-properties.yaml's observation_alignment property
+  description prior to this scheme's authoring. No new value or business
+  meaning is introduced here.
+
+governance:
+  governing_adr:
+    - ADR-008
+
+schemes:
+  - id: observation_alignment
+    label: Observation Alignment
+    description: >
+      The semantic relationship between a single field_observation and the
+      claim it was recorded to check.
+    concepts:
+      - id: supports_claim
+        label: Supports Claim
+        description: >
+          The observation directly corroborates the claim, with no
+          discrepancy identified.
+
+      - id: partially_supports_claim
+        label: Partially Supports Claim
+        description: >
+          The observation supports the core of the claim but differs from
+          it in scale, composition, or another peripheral detail.
+
+      - id: contradicts_claim
+        label: Contradicts Claim
+        description: >
+          The observation conflicts with one or more material elements of
+          the claim, without disproving the claim's central assertion.
+
+      - id: refutes_claim
+        label: Refutes Claim
+        description: >
+          The observation establishes that the central assertion of the
+          claim is false.
+
+      - id: inconclusive
+        label: Inconclusive
+        description: >
+          The observation was recorded but does not, by itself, provide
+          enough information in either direction to support or dispute the
+          claim.
+
+references:
+  - scheme: finding_status
+    relation: informs
+    note: >
+      observation_alignment across the field_observations produced by a
+      verification_activity is a primary input reasoning/verification-rules.yaml
+      composes into the activity's resulting finding_status
+      (verification-findings.yaml). This file does not redefine
+      finding_status and does not itself determine it — see the reasoning
+      layer for the composition logic.
+
+design_notes:
+  - decision: This scheme was authored to formalize an existing, already-used vocabulary, not to invent one
+    rationale: >
+      Prior to this file, observation_alignment was declared in
+      ontology/data-properties.yaml as free text (xsd:string) with a
+      description listing these same five values as "not yet a formal
+      taxonomy scheme... a documented content gap." The same five values,
+      with the same meanings, were already load-bearing in every rule of
+      reasoning/verification-rules.yaml via strict string equality. This
+      file closes that gap by giving the already-agreed vocabulary a
+      canonical home; it does not change what the values mean or add a
+      sixth value.

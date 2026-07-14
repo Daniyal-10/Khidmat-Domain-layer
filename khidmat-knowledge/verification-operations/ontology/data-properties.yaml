@@ -142,16 +142,13 @@ data_properties:
 
   - id: observation_alignment
     domain: field_observation
-    datatype: xsd:string
+    taxonomy_ref: observation_alignment
     cardinality: { min: 1, max: 1 }
     label: Observation Alignment
     description: >
       The semantic alignment of this observation with the underlying
       claim. Exposes the result of the observation for purely semantic
-      reasoning. Expected values (not yet a formal taxonomy scheme in
-      the source material — carried forward as a documented content
-      gap, not invented here): supports_claim, partially_supports_claim,
-      contradicts_claim, refutes_claim, inconclusive.
+      reasoning. Values are defined in taxonomy/field-observation.yaml.
 
   - id: observed_at
     domain: field_observation

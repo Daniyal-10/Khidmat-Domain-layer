@@ -51,22 +51,33 @@ reasoning_rules:
       without inventing a new property here.
 
   - rule_id: confidence_high_corroborated_institutional
-    description: High confidence via official institutional records.
+    description: High confidence via an institutional visit corroborated by evidence.
     condition: >
       activity.verification_method == institutional_visit AND
-      activity.field_observation.evidence.source_type == official_institution AND
-      activity.field_observation.evidence.tamper_evident == true
+      count(activity.field_observation.evidence) > 0
     outcome:
       verification_confidence: high
     semantic_rationale: >
-      Official, tamper-evident records from recognized institutions (e.g., medical
-      facility, government registry) provide high certainty for documentary claims.
+      Direct co-presence at a relevant institution (verification-methods.yaml),
+      combined with at least one corroborating evidence record obtained during
+      that visit, provides high certainty for the claim being checked.
     notes: >
-      Evidence is reachable only via field_observation
-      (field_observation_corroborated_by_evidence, relationships.yaml) — there
-      is no direct verification_activity-to-evidence edge. The condition now
-      traverses that path instead of a non-existent activity.evidence
-      shortcut.
+      Freeze-audit fix: the original condition referenced
+      evidence.source_type == official_institution and
+      evidence.tamper_evident == true. Neither property exists on
+      registration:evidence (registration/ontology/data-properties.yaml) —
+      that entity's properties are evidence_id, linked_claim_id,
+      evidence_type, evidence_subtype, availability, evidence_description,
+      issuing_authority, issue_date, expiry_date, document_reference_number,
+      subject_member_id, file_url. No existing registration:evidence
+      property carries an equivalent official/tamper-evident distinction
+      without inventing one, and this domain does not modify Registration's
+      ontology. The condition is corrected to use the existing
+      field_observation_corroborated_by_evidence relationship
+      (relationships.yaml) — evidence presence, not an unsupported
+      source-authenticity property — as the corroborating signal, consistent
+      with how confidence_moderate_uncorroborated_remote below already uses
+      the same relationship's absence.
 
   - rule_id: confidence_moderate_uncorroborated_remote
     description: Moderate confidence via a remote method without physical evidence.
