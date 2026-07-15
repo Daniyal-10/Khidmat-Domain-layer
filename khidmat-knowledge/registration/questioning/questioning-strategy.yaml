@@ -103,7 +103,7 @@ conversation_sequence:
       - What has happened / what is the situation?
       - When did this start?
       - Has anything changed recently?
-    opens_entities: [situation, household]
+    opens_entities: [situation, household_snapshot]
     note: >
       Do not move to needs until at least one situation is established.
       Probing for needs without situational context produces shallow cases.
@@ -117,7 +117,7 @@ conversation_sequence:
       - Who else lives with you?
       - Are there any children? How old are they?
       - Is there another adult in the household?
-    opens_entities: [household, household_member]
+    opens_entities: [household_snapshot, household_member]
 
   - phase: 4
     label: Need Identification
@@ -192,7 +192,7 @@ sensitive_topic_rules:
   - topic: minor_without_guardian
     trigger: >
       any household_member.minor is true
-      AND household.guardian_status is null
+      AND household_snapshot.guardian_status is null
     rules:
       - Ask who the responsible adult is for the child
       - If no adult can be identified, flag for safeguarding review

@@ -4,8 +4,14 @@ file: community-context/ontology/relationships.yaml
 status: active
 
 namespaces:
-  shared_org: "shared/taxonomy/organisations.yaml"
+  shared_org: "shared/ontology/entities.yaml"
   shared_human: "shared/human-model/ontology/entities.yaml"
+
+# shared_org retargeted per Phase 1.1A Canonical Semantic Foundation: Organisation
+# is now a canonical entity in shared/ontology/entities.yaml (Shared Core), not
+# merely a classification scheme in shared/taxonomy/organisations.yaml. The
+# organisation-type classification remains owned by the taxonomy file; this
+# namespace resolves to the entity relationships below actually reference.
 
 relationships:
 

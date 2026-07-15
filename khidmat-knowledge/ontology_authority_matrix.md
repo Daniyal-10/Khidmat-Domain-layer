@@ -48,6 +48,7 @@ this file.
 | `humanitarian_sector` | HumanitarianSector | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Needs Assessment. Still unresolved: `needs_assessment:thematic_sector` currently sources its vocabulary from `programs_tax:thematic_sectors` instead. Reassignment to this placeholder is pending a Shared-promotion ADR (see `needs-assessment/Needs_Assessment_Canonical_Migration_Plan.md` §10.1) — not implemented. Must not be redefined. |
 | `intervention_type` | InterventionType | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Case Management. Must not be redefined. |
 | `actor` | Actor | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for an operational participant. Must not be redefined. |
+| `organisation` | Organisation | `shared/ontology/entities.yaml` | Shared Ontology | Introduced per the Phase 1.1A Canonical Semantic Foundation. Authoritative concept for any government body, NGO, institution, or partner that funds, implements, operates infrastructure for, affiliates volunteers with, or receives a Referral. Referenced by Community Context (`built_infrastructure_operated_by_organization`), Programs (`program_funded_by`, `program_implemented_by`), Volunteer Operations (`volunteer_profile_affiliated_with_organisation`), and Case Management (`referral_targets_organisation`). Distinct from `shared/taxonomy/organisations.yaml`, which classifies organisation *types* and remains a separate, non-conflicting scheme. Must not be redefined. |
 
 ---
 
@@ -298,7 +299,7 @@ the full mapping.
 | `case` | Case | `case-management/ontology/entities.yaml` | Case Management | May be referenced by any domain; must not be redefined |
 | `case_plan` | Case Plan | `case-management/ontology/entities.yaml` | Case Management | May be referenced by any domain; must not be redefined |
 | `referral` | Referral | `case-management/ontology/entities.yaml` | Case Management | May be referenced by any domain; must not be redefined |
-| `follow_up` | Follow Up | `case-management/ontology/data-properties.yaml` (nested field of the `case_timeline` Value Object) | Case Management | May be referenced by any domain; must not be redefined |
+| `follow_up` | Follow Up | `case-management/ontology/entities.yaml` | Case Management | Introduced per the Phase 1.1A Canonical Semantic Foundation, promoted from a nested string field of the `case_timeline` Value Object to its own entity (status, due date, assignee, outcome). May be referenced by any domain; must not be redefined. |
 | `case_note` | Case Note | `case-management/ontology/data-properties.yaml` (nested field of the `case_timeline` Value Object) | Case Management | May be referenced by any domain; must not be redefined |
 | `case_assignment` | Case Assignment | Not yet implemented — named in discovery docs and README only; no `entities.yaml` row exists | Case Management | Reserved; declare an authoritative file here once authored |
 
@@ -427,16 +428,16 @@ future domain designers do not create silent drift.
 | Resolution required | Cross-check capability vocabulary in `capabilities.yaml` against lifecycle-stages.yaml descriptive entries. Align terminology. |
 | Status | Resolved |
 
-### FLAG-005: household entity defined independently in two domains
+### FLAG-005: household entity defined independently in two domains — RESOLVED
 
 | Item | Detail |
 |---|---|
-| Existing location | `shared/ontology/entities.yaml` (`id: household`, `parent: subject`) **and** `registration/ontology/entities.yaml` (`id: household`, its own fuller description, `cardinality_in_case: exactly_one`) |
+| Prior location | `shared/ontology/entities.yaml` (`id: household`, `parent: subject`) **and** `registration/ontology/entities.yaml` (`id: household`, its own fuller description, `cardinality_in_case: exactly_one`) |
 | Concept | `household` |
-| Situation | Both files declare a full `household` entity independently. Neither declares the other as canonical; registration's definition is not expressed as a reference to the shared entity. |
-| Risk | This is a live single-ownership conflict under ADR-008, not merely a future risk — two authoritative-looking definitions of the same concept currently coexist. |
-| Resolution required | Architectural decision on which domain owns `household` (most likely `shared/ontology/entities.yaml`, given cross-domain use by risk, community-context, and beneficiary-lifecycle), followed by updating the non-owning file to reference it instead of redefining it. |
-| Status | Ownership decided — directional resolution recorded in the Final V1 Architecture Reconciliation, governed by ADR-018 (Subject supertype: "Household remains authoritative for households" in Shared) and ADR-008 (reference-not-redefine). `shared/ontology/entities.yaml` is the **sole owner** of `household`; `registration/ontology/entities.yaml` must be converted from an independent definition to a case-scoped **reference** (retaining only `cardinality_in_case: exactly_one` as a case participation constraint). The ownership question is closed; the repository conformance migration is **pending** (scheduled with Registration's canonical CURIE phase / Community Context migration). No YAML changed in this pass. |
+| Situation (prior) | Both files declared a full `household` entity independently. Neither declared the other as canonical; registration's definition was not expressed as a reference to the shared entity. |
+| Risk (prior) | This was a live single-ownership conflict under ADR-008 — two authoritative-looking definitions of the same concept coexisted. |
+| Resolution implemented | Per the Phase 1.1A Canonical Semantic Foundation ratification: `shared/ontology/entities.yaml` remains the **sole owner** of `household` (now with an `household_id` identifier, added in `shared/ontology/data-properties.yaml`). `registration/ontology/entities.yaml`'s conflicting `id: household` entity was renamed to `household_snapshot` — the intake-time view of a household's composition and attributes for one case — and a new relationship `household_snapshot_observes_household` (`registration/ontology/relationships.yaml`) links every snapshot to exactly one canonical Household. All registration relationships, data properties, semantic constraints, and reasoning-rule field-path references (`readiness-rules.yaml`, `questioning-strategy.yaml`, `case-coherence-rules.yaml`, `gap-detection-rules.yaml`, `inference-rules.yaml`) were updated to `household_snapshot`. |
+| Status | **Resolved and implemented.** No further conformance migration pending. |
 
 ### FLAG-006: actor qualification vs. the assignment act (Volunteer Operations boundary)
 

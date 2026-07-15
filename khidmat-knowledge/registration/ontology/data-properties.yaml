@@ -1,4 +1,4 @@
-version: 1.1.0
+version: 1.2.0
 domain: registration
 file: registration/ontology/data-properties.yaml
 status: active
@@ -70,25 +70,25 @@ data_properties:
     max: 1
   taxonomy_ref: '# TODO Phase 5'
 - id: size
-  domain: household
+  domain: household_snapshot
   cardinality:
     min: 1
     max: 1
   datatype: xsd:integer
 - id: head_of_household
-  domain: household
+  domain: household_snapshot
   cardinality:
     min: 0
     max: 1
   datatype: xsd:string
 - id: income_sources
-  domain: household
+  domain: household_snapshot
   cardinality:
     min: 0
     max: unbounded
   datatype: xsd:string
 - id: discrepancy_note
-  domain: household
+  domain: household_snapshot
   cardinality:
     min: 0
     max: 1
@@ -603,7 +603,7 @@ data_properties:
     min: 1
     max: 1
 - id: non_resident_guardian
-  domain: household
+  domain: household_snapshot
   fields:
   - id: guardian_name
     datatype: xsd:string
@@ -623,7 +623,7 @@ data_properties:
     \ means the guardian is an existing household_member; a populated non_resident_guardian row means they are not. Neither\
     \ populated means no guardian is identified.\n"
 - id: income
-  domain: household
+  domain: household_snapshot
   fields:
   - id: amount
     datatype: xsd:decimal

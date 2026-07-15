@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: case_management
 file: ontology/data-properties.yaml
 status: active
@@ -33,10 +33,12 @@ data_properties:
         description: A chronological observational record preserving the operational history of a Case.
         cardinality: { min: 0, max: unconstrained }
         type: string
-      - id: follow_up
-        description: A scheduled case-level interaction, review, or monitoring activity.
-        cardinality: { min: 0, max: unconstrained }
-        type: string
+    notes: >
+      The follow_up field previously declared here was promoted to its own
+      entity, follow_up, per the Phase 1.1A Canonical Semantic Foundation — a
+      scheduled/trackable activity requires status, an assignee, a due date,
+      and an outcome, which a string field cannot carry. See follow_up's own
+      data properties below and case_has_follow_up in relationships.yaml.
 
   - id: plan_status
     domain: case_plan
@@ -52,3 +54,31 @@ data_properties:
     domain: referral
     taxonomy_ref: referral_type
     cardinality: { min: 1, max: 1 }
+
+  - id: follow_up_status
+    domain: follow_up
+    taxonomy_ref: follow_up_status
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Taxonomy scheme follow_up_status is not yet authored (out of scope for
+      this ontology implementation pass — taxonomy authoring is a separate
+      Phase 1 workstream). This declares the ontology-level binding only.
+
+  - id: follow_up_due_date
+    domain: follow_up
+    cardinality: { min: 1, max: 1 }
+    datatype: xsd:date
+
+  - id: follow_up_completed_at
+    domain: follow_up
+    cardinality: { min: 0, max: 1 }
+    datatype: xsd:dateTime
+
+  - id: follow_up_outcome_notes
+    domain: follow_up
+    cardinality: { min: 0, max: 1 }
+    datatype: xsd:string
+    notes: >
+      Freeform outcome record. Kept as a plain string rather than a second new
+      taxonomy scheme, consistent with this pass's scope (ontology only, no
+      taxonomy design).

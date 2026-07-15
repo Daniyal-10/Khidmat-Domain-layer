@@ -37,8 +37,8 @@ blocking_gap_clearance:
     - id: household_size_known
       gap_type: household_gap
       condition: >
-        household.size is not null
-        AND count(household.members) >= 1
+        household_snapshot.size is not null
+        AND count(household_snapshot.members) >= 1
       failure_label: Household composition unknown
 
     - id: need_severity_classified
@@ -71,7 +71,7 @@ blocking_gap_clearance:
       gap_type: guardian_gap
       condition: >
         if any household_member.minor is true:
-          household.guardian_status is not null
+          household_snapshot.guardian_status is not null
       failure_label: Minor household member with no identified guardian
 
     - id: situation_linked_to_need

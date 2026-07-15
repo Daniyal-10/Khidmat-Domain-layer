@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: shared
 file: shared/ontology/entities.yaml
 status: active
@@ -58,4 +58,18 @@ entities:
     label: Actor
     description: >
       A placeholder for an operational participant (e.g., volunteer, partner organization, AI agent).
-      Forward-declared for Case Management and other operational domains.
+      Forward-declared for Case Management and other operational domains.
+
+  - id: organisation
+    label: Organisation
+    description: >
+      A government body, NGO, institution, or partner that funds, implements,
+      operates infrastructure for, affiliates volunteers with, or receives a
+      Referral on behalf of Khidmat's operations. Distinct from Actor: an
+      Organisation does not itself conduct verification activities, assessments,
+      or deliveries — the people who do so are represented as Actors (see
+      Volunteer Profile), optionally affiliated with an Organisation.
+      Authoritative entity for organisations; the classification of organisation
+      types remains owned by shared/taxonomy/organisations.yaml.
+    required: false
+    cardinality_in_case: zero_or_more

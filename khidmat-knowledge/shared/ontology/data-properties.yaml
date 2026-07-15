@@ -1,9 +1,47 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: shared
 file: shared/ontology/data-properties.yaml
-status: placeholder
+status: active
 
-# This file will contain datatype/value properties shared across two or more domains.
-# No shared data properties are defined at current maturity.
+# This file contains datatype/value properties shared across two or more domains.
+# Identifier properties for the persistent Subject specializations (Person,
+# Household) and for Organisation are declared here per the Phase 1.1A
+# Canonical Semantic Foundation ratification. Case Management's Case is
+# intentionally excluded pending the ADR-021 / Phase 1.1A reconciliation
+# review (see ADR_RECONCILIATION_CASE.md).
 
-data_properties: []
+data_properties:
+  - id: person_id
+    domain: person
+    cardinality: { min: 1, max: 1 }
+    datatype: xsd:string
+    notes: >
+      Durable identifier for a Person, stable across every Registration
+      Beneficiary snapshot, Household membership, and Case that observes
+      this Person over time. This is the identifier that makes "the same
+      human being recognised across multiple registrations" (Blueprint
+      §5.1) representable.
+
+  - id: household_id
+    domain: household
+    cardinality: { min: 1, max: 1 }
+    datatype: xsd:string
+    notes: >
+      Durable identifier for the canonical Household, stable across
+      reconfiguration of its membership and across every Registration
+      household_snapshot that observes it over time.
+
+  - id: organisation_id
+    domain: organisation
+    cardinality: { min: 1, max: 1 }
+    datatype: xsd:string
+    notes: >
+      Durable identifier for an Organisation, referenced identically by
+      every domain that funds, implements, operates infrastructure for,
+      affiliates volunteers with, or receives a Referral on behalf of an
+      Organisation.
+
+  - id: organisation_name
+    domain: organisation
+    cardinality: { min: 1, max: 1 }
+    datatype: xsd:string

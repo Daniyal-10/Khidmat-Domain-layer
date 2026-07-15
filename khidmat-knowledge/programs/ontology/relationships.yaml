@@ -4,7 +4,11 @@ file: ontology/relationships.yaml
 status: active
 
 namespaces:
-  shared_org: http://khidmat.org/ontology/shared/organisations
+  # Retargeted per Phase 1.1A Canonical Semantic Foundation: Organisation is now
+  # a canonical entity in shared/ontology/entities.yaml (Shared Core). The
+  # organisation-type classification remains separately owned by
+  # shared/taxonomy/organisations.yaml.
+  shared_org: http://khidmat.org/ontology/shared/entities
   shared_human: http://khidmat.org/ontology/shared/human-model
   community_ctx: http://khidmat.org/ontology/community-context
   verif_ops: http://khidmat.org/ontology/verification-operations

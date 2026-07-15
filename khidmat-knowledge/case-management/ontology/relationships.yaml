@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: case_management
 file: ontology/relationships.yaml
 status: active
@@ -9,6 +9,38 @@ namespaces:
   consent_and_privacy: consent_and_privacy
 
 relationships:
+  - id: case_has_follow_up
+    from: case
+    relationship: has
+    to: follow_up
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      Per the Phase 1.1A Canonical Semantic Foundation. Associates a Case with its
+      scheduled and completed Follow-ups.
+
+  - id: follow_up_assigned_to_actor
+    from: follow_up
+    relationship: assigned_to
+    to: shared:actor
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      References the authoritative Actor (see shared/ontology/entities.yaml)
+      responsible for conducting the Follow-up. Case Management does not define
+      actor qualification or role.
+
+  - id: referral_targets_organisation
+    from: referral
+    relationship: targets
+    to: shared:organisation
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Per the Phase 1.1A Canonical Semantic Foundation. Every Referral targets
+      exactly one Organisation (see shared/ontology/entities.yaml), representing
+      where the referral was sent — the government body, NGO, or institution
+      expected to provide the specialized service. Case Management does not
+      redefine Organisation or its type classification (owned by
+      shared/taxonomy/organisations.yaml).
+
   - id: case_has_case_plan
     from: case
     relationship: has

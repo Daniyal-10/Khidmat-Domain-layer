@@ -1,8 +1,37 @@
-version: 1.1.0
+version: 1.2.0
 domain: registration
 file: registration/ontology/relationships.yaml
 status: active
+
+namespaces:
+  shared: shared
+
 relationships:
+- id: beneficiary_observes_person
+  from: beneficiary
+  relationship: observes
+  to: shared:person
+  cardinality:
+    min: 1
+    max: 1
+  notes: 'Per the Phase 1.1A Canonical Semantic Foundation. Every Beneficiary snapshot
+    observes exactly one persistent Person; a Person may be observed by many
+    Beneficiary snapshots over time (returning registrations). This is the
+    relationship that makes longitudinal beneficiary reasoning representable.
+
+    '
+- id: household_snapshot_observes_household
+  from: household_snapshot
+  relationship: observes
+  to: shared:household
+  cardinality:
+    min: 1
+    max: 1
+  notes: 'Per the Phase 1.1A Canonical Semantic Foundation. Every household_snapshot
+    observes exactly one canonical Household; a Household may be observed by many
+    household_snapshots over time (re-registration, household reconfiguration).
+
+    '
 - id: registrant_conducts_case
   from: registrant
   relationship: conducts
@@ -27,7 +56,7 @@ relationships:
 - id: case_has_household
   from: case
   relationship: has
-  to: household
+  to: household_snapshot
   cardinality:
     min: 1
     max: 1
@@ -72,12 +101,12 @@ relationships:
 - id: beneficiary_is_member_of_household
   from: beneficiary
   relationship: is_member_of
-  to: household
+  to: household_snapshot
   cardinality:
     min: 1
     max: 1
 - id: household_has_members
-  from: household
+  from: household_snapshot
   relationship: has_members
   to: household_member
   cardinality:

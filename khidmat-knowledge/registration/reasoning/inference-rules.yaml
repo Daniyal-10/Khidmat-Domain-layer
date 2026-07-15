@@ -95,7 +95,7 @@ rules:
     label: Safeguarding from Minor Without Guardian
     condition:
       beneficiary.minor: true
-      household.guardian_status: absent
+      household_snapshot.guardian_status: absent
     inference: >
       A minor with no identified guardian is a safeguarding concern.
       This is a blocking condition that must be resolved before case closure.

@@ -11,7 +11,11 @@ status: active
 
 namespaces:
   shared_core: "shared/ontology/entities.yaml"
-  shared_org: "shared/taxonomy/organisations.yaml"
+  # Retargeted per Phase 1.1A Canonical Semantic Foundation: Organisation is now
+  # a canonical entity in shared/ontology/entities.yaml (Shared Core), same file
+  # as shared_core above. The organisation-type classification remains
+  # separately owned by shared/taxonomy/organisations.yaml.
+  shared_org: "shared/ontology/entities.yaml"
 
 relationships:
 

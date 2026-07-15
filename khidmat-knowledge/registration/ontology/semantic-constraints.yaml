@@ -1,4 +1,4 @@
-version: 1.1.0
+version: 1.2.0
 domain: registration
 file: registration/ontology/semantic-constraints.yaml
 status: active
@@ -14,7 +14,7 @@ constraints:
   type: cardinality
   property: size
   entities:
-  - household
+  - household_snapshot
   parameters:
     expression: size >= 1
 - id: need_concerns_member_required_if

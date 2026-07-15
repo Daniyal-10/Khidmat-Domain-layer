@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: case_management
 file: ontology/entities.yaml
 status: active
@@ -15,3 +15,15 @@ entities:
   - id: referral
     description: >
       A formal request for a specialized service provided by an internal or external party.
+
+  - id: follow_up
+    description: >
+      A scheduled or completed case-level review or monitoring activity revisiting a
+      beneficiary's situation after initial support, with its own status, assigned
+      Actor, due date, and outcome. Distinct from Referral: a Follow-up is Case
+      Management acting on its own Case and targets no external Organisation.
+    notes: >
+      Introduced per the Phase 1.1A Canonical Semantic Foundation, promoted from a
+      string field (case_timeline.follow_up) to its own entity, matching the Case
+      Manager's "plans, referrals, follow-ups" responsibility named alongside Case
+      Plan and Referral in the Business Blueprint §4.

@@ -1,4 +1,4 @@
-version: 1.1.0
+version: 1.2.0
 domain: registration
 file: registration/ontology/entities.yaml
 status: active
@@ -18,14 +18,30 @@ entities:
     '
   required: true
   cardinality_in_case: exactly_one
-- id: household
-  label: Household
-  description: 'The unit of people sharing living conditions and pooled resources. The primary context for assessing vulnerability
-    and need severity.
+  notes: 'Per the Phase 1.1A Canonical Semantic Foundation, Beneficiary is a case-scoped
+    snapshot observing exactly one shared:person — it carries this case''s claims
+    about the person (name, age, documentation status, etc.) without redefining
+    Person''s durable identity. See beneficiary_observes_person in relationships.yaml.
+
+    '
+- id: household_snapshot
+  label: Household Snapshot
+  description: 'The intake-time view of a household''s composition and attributes for
+    this case — size, head of household, income, non-resident guardian. The primary
+    context for assessing vulnerability and need severity within this registration.
 
     '
   required: true
   cardinality_in_case: exactly_one
+  notes: 'Per the Phase 1.1A Canonical Semantic Foundation, this entity does not redefine
+    the canonical Household (shared:household, owned by Shared Core, per
+    ontology_authority_matrix.md). It is the case-scoped snapshot of that persistent
+    unit''s composition at intake time, always referencing exactly one canonical
+    Household. See household_snapshot_observes_household in relationships.yaml.
+    Renamed from `household` to resolve the prior duplicate-id conflict with
+    shared:household.
+
+    '
 - id: household_member
   label: Household Member
   description: "An individual person within the household. Distinct from the beneficiary entity \xE2\u20AC\u201D the beneficiary\

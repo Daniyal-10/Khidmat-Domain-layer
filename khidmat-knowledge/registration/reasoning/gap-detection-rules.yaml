@@ -20,7 +20,7 @@ detection_rules:
 
   - gap_type: household_gap
     detection_condition: >
-      household.size is null OR household.members is empty
+      household_snapshot.size is null OR household_snapshot.members is empty
     blocking: true
 
   - gap_type: severity_gap
@@ -60,7 +60,7 @@ detection_rules:
 
   - gap_type: guardian_gap
     detection_condition: >
-      any household_member.minor is true AND household.guardian_status is null
+      any household_member.minor is true AND household_snapshot.guardian_status is null
     blocking: true
 
   - gap_type: situation_need_traceability_gap

@@ -39,7 +39,7 @@ coherence_rules:
       The stated household size must match the number of recorded members
       or the AI must have explicitly noted why they differ.
     check: >
-      household.size == count(household.members)
+      household_snapshot.size == count(household_snapshot.members)
       OR a discrepancy_note is present explaining the difference.
     failure_action: >
       Ask to confirm the household size and who is included.
@@ -51,7 +51,7 @@ coherence_rules:
       cannot be marked ready_for_verification without a safeguarding note.
     check: >
       If any member.minor is true:
-        household.guardian_status must be present OR absent with safeguarding_flag.
+        household_snapshot.guardian_status must be present OR absent with safeguarding_flag.
     failure_action: >
       Ask who the responsible adult is for the minor.
       If none, flag for safeguarding review.
