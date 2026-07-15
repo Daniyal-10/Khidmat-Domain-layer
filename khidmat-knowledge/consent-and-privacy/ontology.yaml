@@ -5,9 +5,11 @@ status: placeholder
 # ("Planned, not yet delivered"). This pass makes the existing placeholder
 # internally consistent and addressable — it does not build out new Consent
 # capability, which stays out of Phase 1 scope.
-
-namespaces:
-  core: "khidmat:consent-and-privacy:core"
+#
+# The `core` namespace alias previously declared here was removed per Phase
+# 1.5 Repository Cleanup: the entity id below is bare (`consent`, not
+# `core:consent`) and nothing in this file or its consumers ever used the
+# `core:` prefix.
 
 entities:
   - id: consent

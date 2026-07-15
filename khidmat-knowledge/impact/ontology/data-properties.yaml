@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: impact
 file: data-properties.yaml
 status: active
@@ -7,6 +7,14 @@ data_properties:
     domain: measurement
     taxonomy_ref: outcome_indicator
     cardinality: { min: 1, max: 1 }
+    notes: >
+      Deferred at Phase 1.4 Canonical Taxonomy Completion. The
+      outcome-indicator vocabulary itself is explicitly listed as "Planned
+      (declared and sequenced, not yet delivered)" in
+      KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md §16 — authoring it now would
+      mean inventing business-specific outcome categories ahead of the
+      Blueprint's own sequencing, the same reason
+      registration/taxonomy/support-interventions.yaml remains empty.
   - id: epistemic_type
     domain: measurement
     taxonomy_ref: epistemic_type

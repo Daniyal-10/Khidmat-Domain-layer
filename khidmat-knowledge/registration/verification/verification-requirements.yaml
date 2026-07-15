@@ -1,4 +1,4 @@
-version: "1.0"
+version: "1.1"
 domain: registration
 file: verification/verification-requirements.yaml
 
@@ -76,28 +76,41 @@ derivation_rules:
 # are linked to. This section defines the mapping.
 # ─────────────────────────────────────────────────────────────────
 
-priority_classification:
-
-  - id: priority_1
-    label: Must Verify
+# Normalized into the canonical schemes: shape per Phase 1.4 Canonical
+# Taxonomy Completion (previously a flat, unwrapped list — same content,
+# not a redesign). This resolves the two unresolved taxonomy_ref values
+# `registration:priority_classification` in
+# verification-operations/ontology/data-properties.yaml
+# (verification_subject.requirement_priority, verification_assignment.queue_priority),
+# both of which already stated in their own descriptions that this scheme
+# is the value they mirror.
+schemes:
+  - id: priority_classification
+    label: Priority Classification
     description: >
-      Linked to a critical need, or linked to a claim whose failure
-      would materially change the case outcome.
-      Volunteer must attempt to verify this requirement before
-      any other action.
+      Verification requirements inherit priority from the need they are
+      linked to. This scheme classifies that inherited priority.
+    concepts:
+      - id: priority_1
+        label: Must Verify
+        description: >
+          Linked to a critical need, or linked to a claim whose failure
+          would materially change the case outcome.
+          Volunteer must attempt to verify this requirement before
+          any other action.
 
-  - id: priority_2
-    label: Should Verify
-    description: >
-      Linked to a high-severity need, or a claim where the basis
-      was second_hand or inferred.
-      Volunteer should verify this if time and access permit.
+      - id: priority_2
+        label: Should Verify
+        description: >
+          Linked to a high-severity need, or a claim where the basis
+          was second_hand or inferred.
+          Volunteer should verify this if time and access permit.
 
-  - id: priority_3
-    label: Verify If Possible
-    description: >
-      Non-blocking verification. Linked to medium-severity needs
-      or claims where information is partial but consistent.
+      - id: priority_3
+        label: Verify If Possible
+        description: >
+          Non-blocking verification. Linked to medium-severity needs
+          or claims where information is partial but consistent.
 
 
 # ─────────────────────────────────────────────────────────────────

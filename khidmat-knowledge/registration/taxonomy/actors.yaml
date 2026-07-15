@@ -1,4 +1,4 @@
-version: "1.1.0"
+version: "1.2.0"
 domain: registration
 file: registration/taxonomy/actors.yaml
 status: active
@@ -107,3 +107,93 @@ schemes:
       - id: not_applicable
         label: Not Applicable
         description: Registrant is the beneficiary
+
+  # Added per Phase 1.4 Canonical Taxonomy Completion. Resolves the
+  # '# TODO Phase 5' placeholder previously on beneficiary.gender,
+  # beneficiary.documentation_status, beneficiary.legal_status, and
+  # case.registration_channel in registration/ontology/data-properties.yaml.
+  - id: gender
+    label: Gender
+    description: >
+      The beneficiary's or household member's gender, as self-reported or
+      reported by the registrant.
+    concepts:
+      - id: female
+        label: Female
+      - id: male
+        label: Male
+      - id: other
+        label: Other
+        description: Gender identity outside the male/female binary, as self-described.
+      - id: prefer_not_to_say
+        label: Prefer Not to Say
+        description: Beneficiary declined to state gender.
+
+  - id: documentation_status
+    label: Documentation Status
+    description: >
+      Whether the beneficiary possesses identity documentation, independent of
+      which specific document type they hold (see shared/taxonomy/document-types.yaml
+      for document type classification).
+    concepts:
+      - id: fully_documented
+        label: Fully Documented
+        description: Beneficiary holds valid, current identity documentation.
+      - id: partially_documented
+        label: Partially Documented
+        description: Beneficiary holds some but not all typically-expected documentation.
+      - id: undocumented
+        label: Undocumented
+        description: Beneficiary holds no identity documentation.
+      - id: documentation_lost
+        label: Documentation Lost
+        description: >
+          Beneficiary previously held documentation that has since been lost,
+          destroyed, or confiscated (e.g. during displacement).
+
+  - id: legal_status
+    label: Legal Status
+    description: >
+      The beneficiary's legal status in their current location of residence.
+      Country-neutral vocabulary; does not presume any specific jurisdiction's
+      legal categories.
+    concepts:
+      - id: citizen
+        label: Citizen
+      - id: resident
+        label: Resident
+        description: Legally resident but not a citizen.
+      - id: refugee
+        label: Refugee
+      - id: asylum_seeker
+        label: Asylum Seeker
+      - id: stateless
+        label: Stateless
+      - id: undocumented_migrant
+        label: Undocumented Migrant
+      - id: unknown
+        label: Unknown
+        description: Legal status not established or not disclosed.
+
+  - id: registration_channel
+    label: Registration Channel
+    description: >
+      The medium through which the registration conversation took place.
+      Distinct from referral_types (registration/taxonomy/referral-sources.yaml),
+      which classifies why the registration occurred, not how contact was made.
+    concepts:
+      - id: in_person
+        label: In Person
+      - id: phone
+        label: Phone
+      - id: whatsapp
+        label: WhatsApp
+      - id: walk_in
+        label: Walk-In
+        description: Beneficiary or registrant came directly to a Khidmat location.
+      - id: home_visit
+        label: Home Visit
+        description: A volunteer conducted the registration during a home visit.
+      - id: outreach_event
+        label: Outreach Event
+        description: Registration occurred during a community outreach event.

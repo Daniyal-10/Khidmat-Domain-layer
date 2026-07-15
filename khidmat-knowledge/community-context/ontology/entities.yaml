@@ -1,12 +1,14 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: community_context
 file: community-context/ontology/entities.yaml
 status: active
 
-namespaces:
-  # Upstream definitions imported for cross-domain boundaries
-  shared_org: "shared/taxonomy/organisations.yaml"
-  shared_human: "shared/human-model/ontology/entities.yaml"
+# The shared_org/shared_human namespace declarations previously here were
+# removed per Phase 1.5 Repository Cleanup: this file's own entities never
+# used them (no entity here declares a cross-domain parent), and the same
+# aliases are already correctly declared and used in
+# community-context/ontology/relationships.yaml, where the actual
+# cross-domain references live.
 
 entities:
 

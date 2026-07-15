@@ -1,4 +1,4 @@
-version: "1.1.0"
+version: "1.2.0"
 domain: case_management
 file: ontology/data-properties.yaml
 status: active
@@ -60,9 +60,8 @@ data_properties:
     taxonomy_ref: follow_up_status
     cardinality: { min: 1, max: 1 }
     notes: >
-      Taxonomy scheme follow_up_status is not yet authored (out of scope for
-      this ontology implementation pass — taxonomy authoring is a separate
-      Phase 1 workstream). This declares the ontology-level binding only.
+      Taxonomy scheme follow_up_status authored at Phase 1.4 Canonical
+      Taxonomy Completion (case-management/taxonomy/follow_up_status.yaml).
 
   - id: follow_up_due_date
     domain: follow_up

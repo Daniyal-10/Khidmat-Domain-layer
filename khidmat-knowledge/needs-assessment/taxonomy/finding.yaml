@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: needs_assessment
 file: taxonomy/finding.yaml
 status: active
@@ -7,8 +7,19 @@ purpose: >
   Classifies the status, severity, and invalidation rules for synthesized need assertions.
 
 schemes:
-  - id: finding_status
-    label: Finding Status
+  # Renamed from finding_status to need_assertion_status per Phase 1.4
+  # Canonical Taxonomy Completion: this scheme id collided with
+  # verification-operations/taxonomy/verification-findings.yaml's own
+  # finding_status scheme, which classifies a different real-world concept
+  # (what a completed verification_activity established about a claim, not
+  # a need_assertion's governance state). The two were never the same
+  # concept, only the same generic name; this rename disambiguates without
+  # changing either scheme's content. The one consuming taxonomy_ref
+  # (needs-assessment/ontology/data-properties.yaml#finding_status, the
+  # need_assertion property — property id unchanged, only its taxonomy_ref
+  # value updated) was updated to match.
+  - id: need_assertion_status
+    label: Need Assertion Status
     description: >
       The governance state of a Need Assertion.
     concepts:

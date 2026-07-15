@@ -5,11 +5,16 @@ status: active
 
 namespaces:
   shared_ontology: "shared_ontology"
-  registration: "registration"
   case_management: "case_management"
   verification_operations: "verification_operations"
   shared_risk: "shared_risk"
 
+# The registration namespace alias was removed per Phase 1.5 Repository
+# Cleanup: it became unused when this file's two case-referencing
+# relationships were retargeted from registration:case to
+# case_management:case at Phase 1.3A, and nothing else in this file ever
+# used it.
+#
 # case_management namespace added per Phase 1.3A Ownership Conflict Resolution,
 # implementing the determination already recorded in ADR-021 and
 # ADR_RECONCILIATION_CASE.md: the Case entity is canonical to Case Management

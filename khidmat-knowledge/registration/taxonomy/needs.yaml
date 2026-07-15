@@ -1,4 +1,4 @@
-version: "1.2.0"
+version: "1.3.0"
 domain: registration
 file: registration/taxonomy/needs.yaml
 status: active
@@ -198,6 +198,26 @@ schemes:
       - id: long_term
         label: Long-Term
         description: Ongoing chronic need with no foreseeable resolution
+
+  # Added per Phase 1.4 Canonical Taxonomy Completion. Resolves the
+  # '# TODO Phase 5' placeholder previously on household_snapshot.income.frequency
+  # in registration/ontology/data-properties.yaml.
+  - id: income_frequency
+    label: Income Frequency
+    description: How often a household's stated income source is received.
+    concepts:
+      - id: daily
+        label: Daily
+      - id: weekly
+        label: Weekly
+      - id: monthly
+        label: Monthly
+      - id: seasonal
+        label: Seasonal
+        description: Tied to an agricultural or seasonal labour cycle.
+      - id: irregular
+        label: Irregular
+        description: No predictable frequency.
 
   # Reconciled per Phase 1.3A Ownership Conflict Resolution (previously a
   # local placeholder pending reconciliation with the legacy
