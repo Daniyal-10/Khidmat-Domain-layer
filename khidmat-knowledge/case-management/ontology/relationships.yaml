@@ -1,4 +1,4 @@
-version: "1.2.0"
+version: "1.3.0"
 domain: case_management
 file: ontology/relationships.yaml
 status: active
@@ -8,6 +8,7 @@ namespaces:
   needs_assessment: needs_assessment
   consent_and_privacy: consent_and_privacy
   shared_human_model: "shared/human-model/ontology/family-structure.yaml"
+  programs: programs
 
 relationships:
   - id: case_informed_by_family
@@ -50,14 +51,43 @@ relationships:
     from: referral
     relationship: targets
     to: shared:organisation
-    cardinality: { min: 1, max: 1 }
+    cardinality: { min: 0, max: 1 }
     notes: >
-      Per the Phase 1.1A Canonical Semantic Foundation. Every Referral targets
-      exactly one Organisation (see shared/ontology/entities.yaml), representing
-      where the referral was sent — the government body, NGO, or institution
-      expected to provide the specialized service. Case Management does not
-      redefine Organisation or its type classification (owned by
-      shared/taxonomy/organisations.yaml).
+      Per the Phase 1.1A Canonical Semantic Foundation, cardinality relaxed
+      from {min:1,max:1} to {min:0,max:1} per Phase 1.6A Operational Blocker
+      Resolution. An external Referral (ref_type: external — see
+      taxonomy/referral_type.yaml) targets exactly one Organisation,
+      representing the government body, NGO, or institution expected to
+      provide the specialized service. An internal Referral instead targets
+      a Program (see referral_targets_program below); the two are mutually
+      exclusive per ref_type, enforced by
+      external_referral_requires_organisation_target and
+      internal_referral_requires_program_target in
+      semantic-constraints.yaml, mirroring the existing
+      external_referrals_require_consent /
+      internal_referrals_no_consent pattern already in that file. Case
+      Management does not redefine Organisation or its type classification
+      (owned by shared/taxonomy/organisations.yaml).
+
+  - id: referral_targets_program
+    from: referral
+    relationship: targets
+    to: programs:program
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Added per Phase 1.6A Operational Blocker Resolution, resolving the
+      Business Validation's Cross-Program Referral gap. taxonomy/referral_type.yaml
+      already distinguished internal/external referrals, and
+      semantic-constraints.yaml already had internal/external rules for the
+      Consent dimension (external_referrals_require_consent,
+      internal_referrals_no_consent) — the Blueprint and existing ontology
+      already anticipated an internal referral pathway distinct from
+      external; only the target relationship for the internal case was
+      missing. An internal Referral (ref_type: internal) targets exactly one
+      Program (see programs/ontology/entities.yaml), representing the Khidmat
+      program a beneficiary is being referred to. Case Management does not
+      redefine Program or its eligibility/enrollment structure (owned by
+      programs/ontology/).
 
   - id: case_has_case_plan
     from: case

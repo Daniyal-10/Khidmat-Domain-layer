@@ -1,15 +1,39 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: shared
 file: shared/ontology/relationships.yaml
-status: placeholder
+status: active
 
-# This file will contain relationship definitions shared across two or more domains.
-# No cross-domain relationships are defined at current maturity.
+# This file contains relationship definitions among concepts owned by Shared
+# Core itself (household_succeeded_by_household below is between two
+# household instances, both owned here — it is not a cross-domain
+# relationship in the sense the prior placeholder note below describes, so
+# the "wait for two consuming domains" gate does not apply to it).
 #
-# Candidate future entries:
+# Candidate future entries (unchanged from before, still gated):
 #   - organisation employs person (volunteer-operations + programs)
 #   - beneficiary enrolled_in program (beneficiary-lifecycle + programs)
 #
-# Do not add entries here until at least two active domains require the same relationship.
+# Do not add cross-domain entries here until at least two active domains
+# require the same relationship.
 
-relationships: []
+relationships:
+  - id: household_succeeded_by_household
+    from: household
+    relationship: succeeded_by
+    to: household
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      Added per Phase 1.6A Operational Blocker Resolution, mirroring
+      case_superseded_by_case (case-management/ontology/relationships.yaml)
+      — the same succession pattern already accepted for Case, applied here
+      to Household. A single relationship type covers every household
+      topology change named in the Phase 1.6 Business Validation:
+      succession/evolution (one household row, min:0 max:1 in practice),
+      split (one household succeeded_by many), and merge (many households
+      each succeeded_by the same one). No new entity is introduced; this is
+      an edge between two existing household instances. Household migration
+      (a person retaining ties to both an origin and a destination
+      household) is addressed separately by relaxing
+      registration:beneficiary_is_member_of_household's cardinality, not by
+      this relationship, since migration is a Beneficiary-to-Household
+      change, not a Household-to-Household one.

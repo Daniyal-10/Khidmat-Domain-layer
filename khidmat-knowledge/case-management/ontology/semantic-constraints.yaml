@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: case_management
 file: ontology/semantic-constraints.yaml
 status: active
@@ -18,6 +18,24 @@ constraints:
     description: Internal Referrals do not reference Consent.
     rule: >
       For any referral R, if R.ref_type == internal, then R.references_consent must not be instantiated.
+
+  - id: external_referral_requires_organisation_target
+    description: >
+      External Referrals target an Organisation, not a Program. Added per
+      Phase 1.6A Operational Blocker Resolution, mirroring
+      external_referrals_require_consent above.
+    rule: >
+      For any referral R, if R.ref_type == external, then R.targets_organisation
+      must be instantiated and R.targets_program must not be instantiated.
+
+  - id: internal_referral_requires_program_target
+    description: >
+      Internal Referrals target a Program, not an Organisation. Added per
+      Phase 1.6A Operational Blocker Resolution, mirroring
+      internal_referrals_no_consent above.
+    rule: >
+      For any referral R, if R.ref_type == internal, then R.targets_program
+      must be instantiated and R.targets_organisation must not be instantiated.
 
   - id: exactly_one_current_case_plan
     description: Exactly one CasePlan per Case may carry a case_plan_status of current.
