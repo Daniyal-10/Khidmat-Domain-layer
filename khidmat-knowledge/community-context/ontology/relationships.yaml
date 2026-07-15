@@ -5,13 +5,21 @@ status: active
 
 namespaces:
   shared_org: "shared/ontology/entities.yaml"
-  shared_human: "shared/human-model/ontology/entities.yaml"
+  shared_human: "shared/ontology/entities.yaml"
 
 # shared_org retargeted per Phase 1.1A Canonical Semantic Foundation: Organisation
 # is now a canonical entity in shared/ontology/entities.yaml (Shared Core), not
 # merely a classification scheme in shared/taxonomy/organisations.yaml. The
 # organisation-type classification remains owned by the taxonomy file; this
 # namespace resolves to the entity relationships below actually reference.
+#
+# shared_human retargeted per Phase 1.2 domain completion pass: the canonical
+# Person and Household entities live in shared/ontology/entities.yaml (Shared
+# Core), not shared/human-model/ontology/entities.yaml, which does not exist —
+# local_collective_composed_of_members below was an unresolvable reference
+# until this retarget. The rich Human Model content (lifecycle stages,
+# capabilities, dependency, family structure) remains owned by
+# shared/human-model/, referenced separately where needed.
 
 relationships:
 

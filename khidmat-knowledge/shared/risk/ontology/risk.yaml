@@ -11,6 +11,37 @@ purpose: >
   composed, interpreted, represented, and expressed as a qualitative
   risk assessment.
 
+# Additive canonical entity index, added per Phase 1.2 domain completion pass.
+# This does not redefine or restructure the prose model below (risk_composition,
+# risk_characterization, risk_profile, etc. keep their existing definitions and
+# relationships as authored) — it exists solely to make `risk` and
+# `risk_characterization` addressable by id, since two existing cross-domain
+# relationships (beneficiary-lifecycle's lifecycle_transition_triggered_by_
+# risk_characterization_risk_characterization, and verification-operations'
+# reverification_trigger_informed_by_risk_characterization) reference
+# shared_risk:risk_characterization and could not previously resolve to
+# anything with a declared `id`. Full canonicalization of this file's richer
+# structure (risk_composition, risk_profile, risk_attributes, etc. as their
+# own addressable entities) remains a larger, separate migration, consistent
+# with what was already flagged as a non-canonical-schema gap prior to this
+# pass — not undertaken here to avoid restructuring content beyond the
+# concrete, resolver-verified gap.
+entities:
+  - id: risk
+    label: Risk
+    description: >
+      A qualitative, forward-looking assessment of the likelihood and
+      potential severity of harm to a specific person, family, or household.
+      See the `risk` prose definition below for its full composition model
+      (emerges_from, described_by).
+
+  - id: risk_characterization
+    label: Risk Characterization
+    description: >
+      The qualitative interpretation of a risk composition describing the
+      nature, pattern, and overall expression of risk at the point of
+      assessment. See the `risk_characterization` prose definition below.
+
 ontology_hierarchy:
 
 referenced_contributors:

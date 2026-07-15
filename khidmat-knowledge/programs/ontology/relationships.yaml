@@ -8,8 +8,17 @@ namespaces:
   # a canonical entity in shared/ontology/entities.yaml (Shared Core). The
   # organisation-type classification remains separately owned by
   # shared/taxonomy/organisations.yaml.
-  shared_org: http://khidmat.org/ontology/shared/entities
-  shared_human: http://khidmat.org/ontology/shared/human-model
+  # Both retargeted per Phase 1.2 domain completion pass to the domain-name-only
+  # IRI convention already used by community_ctx/verif_ops below (by
+  # convention, resolves to shared/ontology/entities.yaml, mirroring how
+  # community_ctx resolves to community-context/ontology/*). Organisation is
+  # now a canonical entity in Shared Core, not a taxonomy scheme; Person and
+  # Household are Shared Core entities, not a shared/human-model entities
+  # file, which does not exist. program_funded_by, program_implemented_by,
+  # program_managed_by, enrollment_for_beneficiary, and enrollment_for_household
+  # below were unresolvable references until this retarget.
+  shared_org: http://khidmat.org/ontology/shared
+  shared_human: http://khidmat.org/ontology/shared
   community_ctx: http://khidmat.org/ontology/community-context
   verif_ops: http://khidmat.org/ontology/verification-operations
 

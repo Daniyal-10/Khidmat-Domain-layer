@@ -40,8 +40,16 @@ relationships:
   - id: delivery_occurs_at_location
     from: delivery_event
     relationship: occurs_at
-    to: community_context:location
+    to: community_context:geographic_area
     cardinality: { min: 0, max: 1 }
+    notes: >
+      Retargeted per Phase 1.2 domain completion pass: community-context owns
+      the spatial entity Geographic Area; there is no separate `location`
+      entity. Location precision/stability (how well a beneficiary's
+      whereabouts is known) is a distinct property vocabulary owned by
+      shared/taxonomy/locations.yaml and is not what this relationship
+      represents — this relationship is specifically where a delivery
+      physically occurred.
 
   - id: delivery_has_window
     from: delivery_event

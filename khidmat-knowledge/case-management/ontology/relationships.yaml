@@ -1,4 +1,4 @@
-version: "1.1.0"
+version: "1.2.0"
 domain: case_management
 file: ontology/relationships.yaml
 status: active
@@ -7,8 +7,26 @@ namespaces:
   shared: shared
   needs_assessment: needs_assessment
   consent_and_privacy: consent_and_privacy
+  shared_human_model: "shared/human-model/ontology/family-structure.yaml"
 
 relationships:
+  - id: case_informed_by_family
+    from: case
+    relationship: informed_by
+    to: shared_human_model:family
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Added per Phase 1.2 domain completion pass, per Blueprint §6 (Family
+      Model) and family-structure.yaml's own boundary note that "reasoning
+      must reference families." Optional because not every Case has an
+      identified family distinct from its primary Subject's household
+      context. Case Management does not redefine Family or any of its
+      kinship/support-role vocabulary — both remain owned by
+      shared/human-model/ontology/family-structure.yaml. This relationship
+      adds a new edge to the existing Case entity; it does not reopen or
+      modify the Case/Registration-Record identity question governed by
+      ADR-021 and ADR_RECONCILIATION_CASE.md.
+
   - id: case_has_follow_up
     from: case
     relationship: has

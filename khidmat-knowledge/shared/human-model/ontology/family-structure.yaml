@@ -1,7 +1,7 @@
 # =============================================================================
 # Khidmat Shared Human Model — Family Structure Ontology
 # =============================================================================
-ontology_version: "1.0"
+ontology_version: "1.1"
 authority: "shared/human-model/"
 owner_domain: "Shared Human Model"
 status: "Phase 2.3 — Active"
@@ -40,6 +40,40 @@ status: "Phase 2.3 — Active"
 #     registration-specific attribute. This file owns primary_earner and
 #     related family responsibility concepts — these are distinct.
 # =============================================================================
+
+# -----------------------------------------------------------------------------
+# Additive canonical entity index, added per Phase 1.2 domain completion pass.
+# This does not redefine or restructure the rich model below (family_entity,
+# family_member, kinship_roles, support_roles, etc. keep their existing
+# definitions exactly as authored) — it exists solely to make `family` and
+# `family_member` addressable by id, so that other domains can reference this
+# concept via a relationship, closing the gap this file's own boundary_notes
+# describe ("reasoning must reference families") but which, prior to this
+# pass, no relationship in the repository did. Full canonicalization of this
+# file's richer structure (kinship_roles, support_roles,
+# family_responsibility_concepts, etc. as their own addressable entities)
+# remains a larger, separate migration, not undertaken here.
+# -----------------------------------------------------------------------------
+
+entities:
+  - id: family
+    label: Family
+    description: >
+      The primary social unit within which humanitarian need is generated,
+      absorbed, and transmitted — the network of persons connected through
+      kinship, caregiving, marriage, guardianship, or recognised
+      relationships. Distinct from Household: a family spans households,
+      persists through displacement and loss, and is defined by
+      relationships and obligations, not co-residence. See family_entity
+      below for the full structural model.
+
+  - id: family_member
+    label: Family Member
+    description: >
+      An individual person who is a member of a family, carrying a kinship
+      role, one or more support roles, and a lifecycle stage. References the
+      persistent Person (shared:person) via its person_reference attribute —
+      see family_member below.
 
 # -----------------------------------------------------------------------------
 # FOUNDATIONAL DISTINCTION: FAMILY VS HOUSEHOLD

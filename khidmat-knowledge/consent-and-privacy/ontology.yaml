@@ -1,10 +1,24 @@
 domain: consent-and-privacy
 status: placeholder
 
+# Consent & Privacy remains a minimal Phase 1 placeholder per Blueprint §16
+# ("Planned, not yet delivered"). This pass makes the existing placeholder
+# internally consistent and addressable — it does not build out new Consent
+# capability, which stays out of Phase 1 scope.
+
 namespaces:
   core: "khidmat:consent-and-privacy:core"
 
 entities:
-  Consent:
+  - id: consent
+    label: Consent
     description: >
       A minimal placeholder declaration for Consent, required for Case Management to reference.
+    notes: >
+      Converted from a non-canonical dict entity (`Consent`, PascalCase key) to
+      the canonical entities-list shape used across the repository, and the id
+      lowercased to `consent`, per Phase 1.2 domain completion pass. Case
+      Management's referral_references_consent relationship (see
+      case-management/ontology/relationships.yaml) already referenced
+      consent_and_privacy:consent (lowercase) and was unresolvable until this
+      fix.
