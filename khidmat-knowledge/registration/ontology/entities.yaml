@@ -1,4 +1,4 @@
-version: 1.2.0
+version: 1.3.0
 domain: registration
 file: registration/ontology/entities.yaml
 status: active
@@ -104,7 +104,19 @@ entities:
   cardinality_in_case: exactly_one
   notes: "Verification Brief is NOT an entity. It is a projection of the Case. See verification/verification-brief-projection.yaml.\n\
     \nOpen-gap findings are produced by reasoning/gap-detection-rules.yaml against gaps/gap-types.yaml and are pending the\
-    \ Runtime/Instance-State Schema named in \xA719."
+    \ Runtime/Instance-State Schema named in \xA719.\n\
+    \nOwnership (Phase 1.3A): per ADR-021, this is not a second, independent Case\
+    \ entity. It is the pre-operational-phase view of the single canonical Case,\
+    \ which is owned by Case Management (case-management/ontology/entities.yaml).\
+    \ Registration's case_statuses (registration/taxonomy/case-outcomes.yaml)\
+    \ describe the registration-phase states of that same Case; when a case\
+    \ completes the registration phase, it undergoes a phase transition into\
+    \ the Case Management lifecycle, typically starting at status: opened.\
+    \ No new entity is created at that handoff and none is created here —\
+    \ this entry exists so that Registration's ontology can express\
+    \ case_has_registrant, case_has_beneficiary, etc. during the registration\
+    \ phase, before the Case Management-owned lifecycle begins. See\
+    \ ADR_RECONCILIATION_CASE.md for the full determination."
 - id: lead
   label: Lead
   description: 'The initial unverified record representing a candidate''s registration request. Intake conversations write

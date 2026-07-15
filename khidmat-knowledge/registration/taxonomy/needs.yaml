@@ -1,4 +1,4 @@
-version: "1.1.0"
+version: "1.2.0"
 domain: registration
 file: registration/taxonomy/needs.yaml
 status: active
@@ -199,11 +199,15 @@ schemes:
         label: Long-Term
         description: Ongoing chronic need with no foreseeable resolution
 
-  # Local placeholder pending Phase 5 reconciliation with
-  # needs-assessment/taxonomy.yaml#need_severity (D5; see
-  # Registration_Migration_Plan.md Phase 5). No references: entry is created
-  # here — needs-assessment is cross-domain, not manifest-ready, and Phase 2
-  # rule 9 forbids inventing a CURIE in this phase.
+  # Reconciled per Phase 1.3A Ownership Conflict Resolution (previously a
+  # local placeholder pending reconciliation with the legacy
+  # needs-assessment/ontology.yaml#IdentifiedNeed.need_severity monolith,
+  # since retired). needs-assessment/ontology/data-properties.yaml's
+  # need_assertion.need_severity now references this scheme cross-domain
+  # (registration_tax:need_severity) as its own synthesized/verified
+  # severity classification, distinct from this scheme's role here as
+  # Registration's claimed severity at intake. Both domains share this one
+  # scheme; neither duplicates it.
   - id: need_severity
     concepts:
       - id: critical

@@ -1,4 +1,4 @@
-version: "1.1.0"
+version: "1.2.0"
 domain: case_management
 file: ontology/entities.yaml
 status: active
@@ -7,6 +7,15 @@ entities:
   - id: case
     description: >
       The central, long-lived operational container coordinating holistic support for a Subject.
+    notes: >
+      Ownership (Phase 1.3A): per ADR-021, this is the sole canonical Case
+      entity — Case Management is its owner. registration/ontology/entities.yaml
+      also declares an entry with id: case; that entry is not a second,
+      independent entity but the pre-operational-phase view of this same
+      canonical Case (see the notes on that entry, and
+      ADR_RECONCILIATION_CASE.md for the full determination). Registration's
+      case_statuses describe the pre-handoff phase; this domain's case_status
+      (taxonomy/case_status.yaml) describes the phase from handoff onward.
 
   - id: case_plan
     description: >

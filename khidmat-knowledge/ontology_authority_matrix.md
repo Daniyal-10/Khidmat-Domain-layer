@@ -205,11 +205,17 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 **Introduced:** Phase 4.5
 **Governing ADRs:** ADR-008
 
-**Note — legacy monolith not yet retired:** `needs-assessment/ontology.yaml` and
-`needs-assessment/taxonomy.yaml` remain present on disk and are superseded by the
-canonical files above. They are pending deletion under Phase 7 of
-`needs-assessment/Needs_Assessment_Canonical_Migration_Plan.md` and are not deleted by
-this synchronization pass.
+**Note — legacy monolith retired (Phase 1.3A):** `needs-assessment/ontology.yaml` and
+`needs-assessment/taxonomy.yaml` have been deleted. Their one piece of unique content not
+already superseded by the canonical files above — `need_severity` — was migrated to
+`needs-assessment/ontology/data-properties.yaml` (`need_assertion.need_severity`,
+referencing the existing `registration_tax:need_severity` scheme rather than duplicating
+it). Every other legacy concept (`Assessment`, `AssessmentFinding`, `IdentifiedNeed`,
+`assessment_scope`, `assessment_status`, `finding_confidence`) was confirmed already
+superseded in substance by the canonical concepts below and required no migration. See
+`needs-assessment/Needs_Assessment_Legacy_Migration_Dependency_Report.md` for the
+dependency analysis this retirement was conditioned on, and
+`PHASE1_3A_OWNERSHIP_CONFLICT_RESOLUTION.md` for the full determination.
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
@@ -243,11 +249,15 @@ this synchronization pass.
 | `trigger_status` | Trigger Status | `needs-assessment/taxonomy/governance.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
 | `trigger_type` | Trigger Type | `needs-assessment/taxonomy/governance.yaml` | Needs Assessment | May be referenced by any domain; must not be redefined |
 
-**Legacy concepts (`needs-assessment/ontology.yaml`, `needs-assessment/taxonomy.yaml`,
-not yet retired):** `Assessment`, `AssessmentFinding`, `IdentifiedNeed`, `assessment_scope`,
-`assessment_status`, `finding_confidence`, `need_severity`. Superseded by the canonical
-concepts above; see `needs-assessment/Needs_Assessment_Canonical_Migration_Plan.md` for
-the full mapping.
+**Formerly-legacy concepts, now retired (Phase 1.3A):** `Assessment` → superseded by
+`assessment_session`; `AssessmentFinding` → superseded by `observation` + `need_assertion`;
+`IdentifiedNeed` → superseded by `need_assertion`; `assessment_scope` → superseded by the
+`session_evaluates_person`/`_household`/`_community` relationship trio;
+`assessment_status` → superseded by `session_status` and the `assessment_session`
+lifecycle-constraints state machine; `finding_confidence` → superseded by
+`confidence_level`. `need_severity` had no canonical successor and was migrated (see the
+note above) rather than superseded — it is not owned by Needs Assessment; see "Explicit
+References Only" below.
 
 **Relationships Owned:**
 - `session_uses_instrument`
@@ -273,6 +283,8 @@ the full mapping.
 - `person`, `household`, `actor`, `assessment_tool` (Shared)
 - `geographic_area` (Community Context)
 - `claim` (Registration)
+- `need_severity` (Registration — `registration/taxonomy/needs.yaml`, referenced cross-domain
+  as `registration_tax:need_severity` by `need_assertion.need_severity`; added Phase 1.3A)
 - `verification_finding` (Verification Operations)
 - `thematic_sectors` (Programs) — **open item, not a ratified ownership assignment.**
   `thematic_sector` currently draws its vocabulary from `programs_tax:thematic_sectors`.

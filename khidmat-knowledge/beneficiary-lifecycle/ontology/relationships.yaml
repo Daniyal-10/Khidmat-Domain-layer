@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: beneficiary_lifecycle
 file: ontology/relationships.yaml
 status: active
@@ -6,8 +6,19 @@ status: active
 namespaces:
   shared_ontology: "shared_ontology"
   registration: "registration"
+  case_management: "case_management"
   verification_operations: "verification_operations"
   shared_risk: "shared_risk"
+
+# case_management namespace added per Phase 1.3A Ownership Conflict Resolution,
+# implementing the determination already recorded in ADR-021 and
+# ADR_RECONCILIATION_CASE.md: the Case entity is canonical to Case Management
+# and persists across the Registration-to-Case-Management phase handoff. The
+# two relationships below that previously targeted registration:case now
+# target case_management:case, matching how verification-operations already
+# references the same canonical Case (see verification_assignment_verifies_case
+# in verification-operations/ontology/relationships.yaml, which cites ADR-021
+# by name).
 
 relationships:
   - id: beneficiary_lifecycle_tracks_journey_of_subject
@@ -37,9 +48,14 @@ relationships:
   - id: lifecycle_transition_triggered_by_registration_case_case
     from: lifecycle_transition
     relationship: triggered_by_registration_case
-    to: registration:case
+    to: case_management:case
     cardinality: { min: 0, max: 1 }
-    notes: "Transition triggered by the completion of a registration."
+    notes: >
+      Transition triggered by the completion of a registration. Retargeted
+      from registration:case to case_management:case per Phase 1.3A: per
+      ADR-021, both names referred to the same canonical Case at different
+      lifecycle phases; this relationship now references it by its canonical
+      owner rather than its pre-handoff name.
 
   - id: lifecycle_transition_triggered_by_verification_finding_verification_finding
     from: lifecycle_transition
@@ -58,9 +74,13 @@ relationships:
   - id: lifecycle_transition_triggered_by_case_decision_case
     from: lifecycle_transition
     relationship: triggered_by_case_decision
-    to: registration:case
+    to: case_management:case
     cardinality: { min: 0, max: 1 }
-    notes: "Transition triggered by a manual case decision."
+    notes: >
+      Transition triggered by a manual case decision. Retargeted from
+      registration:case to case_management:case per Phase 1.3A, for the same
+      reason as lifecycle_transition_triggered_by_registration_case_case above
+      — a manual case decision is a Case Management-phase act.
 
   - id: lifecycle_transition_part_of_lifecycle_beneficiary_lifecycle
     from: lifecycle_transition
