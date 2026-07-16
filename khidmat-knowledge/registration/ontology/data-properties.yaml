@@ -327,6 +327,30 @@ data_properties:
     min: 0
     max: 1
   datatype: xsd:string
+- id: debt_source
+  domain: situation
+  cardinality:
+    min: 0
+    max: unbounded
+  taxonomy_ref: debt_source
+  notes: >
+    Added per Stage 5B Debt Structure & Typology. Populated only when the
+    economic affected_domain's unmanageable_debt indicator applies; records
+    each disclosed debt source independently (see
+    registration/taxonomy/situations.yaml#debt_source for the
+    mixed_multiple_sources exception).
+- id: debt_characteristic
+  domain: situation
+  cardinality:
+    min: 0
+    max: 1
+  taxonomy_ref: debt_characteristic
+  notes: >
+    Added per Stage 5B Debt Structure & Typology. A single overall
+    humanitarian characterisation of the household's debt situation
+    (manageable / burdensome / high_risk / exploitative) — not a
+    monetary figure, balance, or interest calculation. See
+    registration/taxonomy/situations.yaml#debt_characteristic.
 - id: safety_flag
   domain:
   - situation

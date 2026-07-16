@@ -98,6 +98,12 @@ schemes:
           - irregular_income
           - unmanageable_debt
           - unable_to_meet_basic_expenses
+        unmanageable_debt_elaboration: >
+          Added per Stage 5B Debt Structure & Typology. When the
+          unmanageable_debt indicator applies, debt_source and
+          debt_characteristic below record the humanitarian detail behind
+          it — this indicator remains the trigger flag; the two schemes
+          elaborate on it without replacing it.
       - id: health
         label: Health
         description: Physical health, mental health, or disability
@@ -144,6 +150,155 @@ schemes:
           - uncertain_legal_status
           - displaced_without_papers
           - pending_legal_matter
+
+  # ---------------------------------------------------------------------
+  # Added per Stage 5B Debt Structure & Typology, closing the Stage 5A
+  # Livelihood Audit's one confirmed gap: unmanageable_debt (above) was
+  # previously a flat, undifferentiated flag. Debt source and debt
+  # characteristic are deliberately modelled as two independent schemes,
+  # not one combined scheme, because a household's relationship to a
+  # formal-institution loan and to an informal moneylender's loan can
+  # carry the same characteristic (e.g. both burdensome) or very
+  # different ones (a formal loan is rarely exploitative; an informal
+  # moneylender loan more often is) — collapsing source and
+  # characteristic into a single value would force an assumption that
+  # does not hold in every case. This mirrors the existing dimension-
+  # independence pattern already used for trajectory / affected_domains /
+  # trigger_events in this same file: each answers a different question
+  # and all may apply simultaneously.
+  # Explicitly excludes loan balances, interest rates, EMI schedules, and
+  # any other financial-accounting detail — this taxonomy classifies the
+  # humanitarian shape of a debt situation for need/severity reasoning,
+  # not the debt's financial mechanics, which belong to whichever
+  # financial institution or product actually holds the debt, not to
+  # Khidmat's knowledge layer.
+  # ---------------------------------------------------------------------
+
+  - id: debt_source
+    label: Debt Source
+    description: >
+      Who or what a household's debt is owed to. A household may report
+      debt from more than one source; record each disclosed source
+      independently rather than forcing a single choice, except where
+      the household describes owing multiple parties without being able
+      or willing to distinguish them, in which case use
+      mixed_multiple_sources.
+    concepts:
+      - id: formal_financial_institution
+        label: Formal Financial Institution
+        description: >
+          A bank or regulated lender. Formal debt is usually subject to
+          documented terms and some regulatory protection, though it can
+          still be burdensome relative to household income.
+      - id: self_help_group_or_cooperative
+        label: Self-Help Group or Cooperative
+        description: >
+          A community savings-and-credit collective (see
+          community-context/taxonomy/local-organizations.yaml#micro_savings_and_credit_collective).
+          Typically carries social accountability alongside the debt
+          obligation, which can be protective or can itself add pressure
+          depending on the household's standing in the group.
+      - id: government_supported_credit
+        label: Government-Supported Credit
+        description: >
+          A subsidised or state-backed credit scheme. Terms are usually
+          more favourable than open-market borrowing, but eligibility and
+          disbursement conditions can themselves be a source of
+          household stress.
+      - id: employer_advance
+        label: Employer Advance
+        description: >
+          An advance on wages or a loan from a current or former
+          employer. Carries a distinct risk: repayment is often tied to
+          continued employment or deducted directly from wages, so job
+          loss and debt distress can compound simultaneously.
+      - id: family_or_relatives
+        label: Family or Relatives
+        description: >
+          Debt owed to family members. Rarely carries market interest,
+          but can carry significant relational and social obligation
+          that a purely financial view of the debt would miss.
+      - id: friends_or_community
+        label: Friends or Community
+        description: >
+          Debt owed to friends or community members outside the
+          household's family network. Similar relational dynamic to
+          family_or_relatives, with typically less durable social
+          obligation.
+      - id: shopkeeper_or_vendor_credit
+        label: Shopkeeper or Vendor Credit
+        description: >
+          Informal running credit with a local shop or vendor, usually
+          incurred gradually for daily necessities rather than as a
+          single borrowing event. Often the first and most normalised
+          form of debt a household accumulates, and frequently
+          under-disclosed because it is not perceived as "real" debt.
+      - id: informal_moneylender
+        label: Informal Moneylender
+        description: >
+          An individual lender operating outside formal or community
+          credit structures. The source most associated with
+          exploitative terms and debt-trap dynamics; its presence
+          alongside a debt_characteristic of high_risk or exploitative
+          warrants particular attention.
+      - id: mixed_multiple_sources
+        label: Mixed / Multiple Sources
+        description: >
+          The household reports owing money to more than one type of
+          source and cannot, or has not yet, distinguished them
+          individually. Use this value only when the disclosure itself
+          is undifferentiated; where distinct sources are each named,
+          record each source separately instead.
+
+  - id: debt_characteristic
+    label: Debt Characteristic
+    description: >
+      The humanitarian significance of a household's debt situation as a
+      whole — what the debt is doing to the household's capacity to
+      cope, not its monetary size. Deliberately excludes monetary
+      thresholds, balances, interest rates, or repayment schedules;
+      those are financial-accounting detail with no fixed humanitarian
+      meaning across contexts (a given loan amount may be trivial for
+      one household and catastrophic for another). Assessed as a single
+      overall characterisation of the household's current debt
+      situation, informed by how the debt is being serviced and what it
+      is displacing, not by its face value.
+    concepts:
+      - id: manageable
+        label: Manageable
+        description: >
+          The household services the debt without resorting to further
+          borrowing, asset sale, or reduction in essential consumption.
+          The debt is a stable feature of the household's economy, not a
+          source of ongoing strain.
+      - id: burdensome
+        label: Burdensome
+        description: >
+          Servicing the debt requires real sacrifice — reduced
+          consumption, deferred needs, or consistent strain on
+          household finances — but the household is not being pushed
+          toward further debt or distress asset sales to keep up with
+          it.
+      - id: high_risk
+        label: High-Risk
+        description: >
+          The household is servicing this debt by taking on further
+          debt, selling productive assets, or adopting other coping
+          strategies that erode its future capacity — a debt-trap
+          trajectory is active or imminent even if not yet total.
+      - id: exploitative
+        label: Exploitative
+        description: >
+          The terms, collection practice, or relationship attached to
+          the debt itself is a source of harm — terms the household did
+          not meaningfully consent to, coercive collection, or a
+          relationship of control tied to the debt. Where this
+          characteristic co-occurs with signs of restricted movement,
+          third-party control, or coercion, also consider whether
+          shared/risk/taxonomy/protection-indicators.yaml#exploitation_and_coercion_indicators
+          applies — the two are related but not the same: a debt can be
+          exploitative without the household member's exploitation or
+          coercion indicators being present, and vice versa.
 
 # safety_flag is an attribute of the situation entity, not a classification type.
 # Its definition, triggering rules, and questioning guidance are in:

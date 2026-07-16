@@ -37,9 +37,11 @@ are owned by later domains.
 - **Structural constraints:** e.g. age and household-size validation
   (`ontology/semantic-constraints.yaml`)
 - **Taxonomy:** registrant/actor roles and claim basis, need categories and
-  severity, situation triggers and trajectory, claim types and quality dimensions,
-  case outcomes, lead statuses, referral sources, evidence types, support
-  intervention types (placeholder — see below)
+  severity, situation triggers and trajectory, debt source and debt
+  characteristic (elaborating the economic domain's unmanageable_debt
+  indicator), claim types and quality dimensions, case outcomes, lead
+  statuses, referral sources, evidence types, support intervention types
+  (placeholder — see below)
 - **Reasoning:** inference rules, severity rules, case-coherence rules,
   gap-detection rules, evidence rules (`reasoning/`)
 - **Gaps:** the gap-type vocabulary and severity classification (`gaps/`)

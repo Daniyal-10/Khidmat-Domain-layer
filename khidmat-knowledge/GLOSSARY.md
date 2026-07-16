@@ -36,6 +36,17 @@ a caregiver_burden need). Added per Stage 2A Canonical Needs Assessment
 Enrichment; mirrored at the synthesized-finding level in the Needs
 Assessment domain as assertion_influences_assertion.
 
+**Debt Source and Debt Characteristic**
+Two independent classifications elaborating a situation's unmanageable_debt
+indicator. Debt source records who or what the debt is owed to (formal
+institution, self-help group/cooperative, government-supported credit,
+employer advance, family/relatives, friends/community, shopkeeper/vendor
+credit, informal moneylender, or mixed/multiple sources). Debt
+characteristic records the humanitarian shape of the debt situation as a
+whole — manageable, burdensome, high_risk, or exploitative — never a
+monetary threshold, balance, or interest calculation. Added per Stage 5B
+Debt Structure & Typology.
+
 **Claim**
 An assertion made during registration that requires external confirmation.
 Claims are made by registrants. Needs generate claims. Claims require verification.
