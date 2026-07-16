@@ -53,6 +53,9 @@ The Risk Domain owns the following concept areas:
   the point of assessment
 - **Compound Risk** — concentration compounding and interaction compounding
   between co-occurring risk factors
+- **Protection Indicator** — a closed vocabulary of specific, observable
+  exploitation and coercion signals belonging under the social_protection
+  hazard category (added Stage 3B)
 
 These concepts may be referenced by future domains but are defined only
 here. No other domain may redefine them.
@@ -123,6 +126,7 @@ shared/risk/
 ├── hazard-categories.yaml             (Hazard Category taxonomy — concept layer only)
 ├── exposure.yaml                      (Exposure — first-class relationship concept)
 ├── protective-factors.yaml            (Protective Factor taxonomy)
+├── protection-indicators.yaml          (Protection Indicator taxonomy — added Stage 3B)
 ├── vulnerability.yaml                 (Vulnerability concept + composition model)
 ├── household-resilience.yaml          (Resilience concept + composition model)
 ├── risk.yaml                          (Risk concept, Risk Trend, Compound Risk)

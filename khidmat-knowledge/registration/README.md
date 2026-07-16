@@ -26,7 +26,9 @@ are owned by later domains.
 - **Attributes / Value Objects:** all scalar and composite properties of the
   entities above, including the ADR-023 Value Objects (`contact_point`,
   `location`, `income`, `treatment_plan`, `cost_estimate`, `requested_amount`,
-  `non_resident_guardian`) (`ontology/data-properties.yaml`)
+  `non_resident_guardian`), and `situation.protection_indicators_observed` —
+  referencing the Risk Domain's `exploitation_and_coercion_indicators`
+  vocabulary rather than authoring a parallel one (`ontology/data-properties.yaml`)
 - **Relationships:** registrant↔case, case↔beneficiary/household/situation/need/
   claim/evidence/support-intervention, the `guardian_of` role relationship, and
   `need_influences_need` — a diagnosed relationship (contributes_to / blocks /

@@ -89,3 +89,17 @@ constraints:
   - evidence
   parameters:
     condition: availability is provided_digitally
+- id: protection_indicator_requires_safety_flag
+  type: required_if
+  property: safety_flag
+  entities:
+  - situation
+  parameters:
+    condition: count(protection_indicators_observed) >= 1
+    expression: safety_flag == true
+  notes: >
+    Added per Stage 3B Canonical Protection Indicator Enrichment. Mirrors
+    the existing pattern (e.g. situation_safety_notes_required_if) rather
+    than introducing a new constraint shape: any recorded protection
+    indicator makes the situation a safety concern by definition, exactly
+    as domestic_violence already does for trigger_event.

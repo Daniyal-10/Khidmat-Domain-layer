@@ -10,6 +10,7 @@ status: active
 namespaces:
   shared: shared
   needs_assessment: needs_assessment
+  shared_risk: http://khidmat.org/ontology/shared/risk/taxonomy
 
 data_properties:
 - id: name
@@ -340,6 +341,26 @@ data_properties:
     min: 0
     max: 1
   datatype: xsd:string
+- id: protection_indicators_observed
+  domain: situation
+  cardinality:
+    min: 0
+    max: unbounded
+  taxonomy_ref: shared_risk:exploitation_and_coercion_indicators
+  notes: >
+    Added per Stage 3B Canonical Protection Indicator Enrichment. References
+    shared/risk/taxonomy/protection-indicators.yaml#exploitation_and_coercion_indicators
+    rather than authoring a parallel vocabulary — the Risk Domain owns the
+    indicator concept layer; this property records, per the "concept and
+    instance are separate" principle (shared/risk/README.md), which of
+    those indicators were actually observed in this case. Recording any
+    value here requires safety_flag to be true (see
+    protection_indicator_requires_safety_flag in semantic-constraints.yaml)
+    — an observed indicator is, by definition, a safety concern, consistent
+    with how domestic_violence already sets safety_flag automatically.
+    This property does not itself conclude exploitation, trafficking, or
+    coercion; it is the recorded observation that a safeguarding referral
+    judgement should be made against.
 - id: intervention_id
   domain: support_intervention
   cardinality:

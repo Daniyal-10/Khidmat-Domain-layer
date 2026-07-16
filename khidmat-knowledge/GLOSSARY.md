@@ -186,6 +186,17 @@ The relationship between a person/household and a hazard category describing the
 **Risk Horizon**
 The qualitative timeframe within which harm may occur if current conditions persist.
 
+**Protection Indicator (Exploitation and Coercion Indicators)**
+A specific, independently observable behavioural or circumstantial signal —
+such as coached testimony, an evasive travel or work account, inability to
+confirm a claimed relationship, an age/document mismatch, third-party
+control of documents or earnings, or restricted movement — that experienced
+officers recognise as warranting closer attention and possible safeguarding
+referral. An indicator is a prompt for care, not a conclusion that
+exploitation, trafficking, or coercion has occurred. Owned by the Risk
+Domain under the social_protection hazard category; recorded, when
+observed in a specific case, on Registration's situation entity.
+
 **Risk Trend**
 A qualitative assessment of whether risk appears to be improving, stable, deteriorating, or uncertain at the point of assessment.
 

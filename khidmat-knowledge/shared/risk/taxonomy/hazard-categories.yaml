@@ -149,6 +149,14 @@ hazard_categories:
       - self-advocacy and communication capability (capabilities.yaml)
       - lifecycle stage (adolescent stage carries the most pronounced
         gender-differentiated protection risk per lifecycle-stages.yaml)
+    indicator_vocabulary_ref: >
+      Added per Stage 3B (Registration Intelligence — Canonical Protection
+      Indicator Enrichment). A closed vocabulary of specific, observable
+      exploitation and coercion indicators belonging under this category is
+      owned by protection-indicators.yaml#exploitation_and_coercion_indicators
+      — that file is the authority for indicator content; this field is a
+      pointer only, consistent with how example_hazard_types above remains
+      this category's own illustrative (not indicator-level) list.
 
   # ---------------------------------------------------------------------------
   - id: legal_administrative
@@ -206,3 +214,16 @@ design_decisions:
       to reason "this hazard category tends to recur seasonally, and the
       conversation indicates the season is approaching" without requiring
       the geographic hierarchy that does not yet exist.
+
+  - decision: Protection indicators live in a separate, dedicated file
+    rationale: >
+      Added per Stage 3B. A closed, observable behavioural-indicator
+      vocabulary for exploitation and coercion (protection-indicators.yaml)
+      is a different concept from a hazard category — it answers "what
+      specific signal was observed" rather than "what kind of hazard is
+      this." Folding it into social_protection's example_hazard_types list
+      would blur an illustrative, category-level list with a closed,
+      instance-recognition vocabulary, and would repeat exactly the
+      conflation this file's own boundary_note exists to prevent. This
+      category references the new file by indicator_vocabulary_ref rather
+      than restating its content.

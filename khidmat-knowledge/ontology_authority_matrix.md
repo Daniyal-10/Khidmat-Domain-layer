@@ -161,6 +161,7 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 | `risk_horizon` | Risk Horizon | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 | `risk_trend` | Risk Trend | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
 | `risk_state` | Risk State | `shared/risk/ontology/risk.yaml` | Risk Domain | May be referenced by any domain; must not be redefined |
+| `exploitation_and_coercion_indicators` | Exploitation and Coercion Indicators | `shared/risk/taxonomy/protection-indicators.yaml` | Risk Domain | Added Stage 3B. May be referenced by any domain; must not be redefined. Referenced cross-domain as `shared_risk:exploitation_and_coercion_indicators` by Registration's `situation.protection_indicators_observed` (`registration/ontology/data-properties.yaml`) — the same reconciliation pattern as `need_severity`/`need_relationship_type` above: no parallel vocabulary authored in Registration. |
 ## Verification Operations Domain
 
 **Authoritative files:** `verification-operations/ontology/`, `verification-operations/taxonomy/`
