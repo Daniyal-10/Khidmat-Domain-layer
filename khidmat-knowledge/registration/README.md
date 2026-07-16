@@ -28,7 +28,9 @@ are owned by later domains.
   `location`, `income`, `treatment_plan`, `cost_estimate`, `requested_amount`,
   `non_resident_guardian`) (`ontology/data-properties.yaml`)
 - **Relationships:** registrant↔case, case↔beneficiary/household/situation/need/
-  claim/evidence/support-intervention, and the `guardian_of` role relationship
+  claim/evidence/support-intervention, the `guardian_of` role relationship, and
+  `need_influences_need` — a diagnosed relationship (contributes_to / blocks /
+  compounds) between two confirmed needs in the same case
   (`ontology/relationships.yaml`)
 - **Structural constraints:** e.g. age and household-size validation
   (`ontology/semantic-constraints.yaml`)

@@ -23,6 +23,19 @@ A specific, concrete gap between a household member's current state
 and a basic standard of wellbeing.
 Needs are contextualised by situations but are not synonymous with them.
 
+**Need Relationship (need_influences_need)**
+A diagnosed connection between two confirmed needs within the same case,
+distinct from a situation contextualising a need. Qualified by
+need_relationship_type: contributes_to (the source need drives or worsens
+the target need — e.g. income instability contributes_to food insecurity),
+blocks (the source need must be resolved before the target can be
+effectively addressed — e.g. a documentation gap blocks an income_support
+need), or compounds (the source need increases the target's severity
+whenever both are present, without causing it — e.g. a disability compounds
+a caregiver_burden need). Added per Stage 2A Canonical Needs Assessment
+Enrichment; mirrored at the synthesized-finding level in the Needs
+Assessment domain as assertion_influences_assertion.
+
 **Claim**
 An assertion made during registration that requires external confirmation.
 Claims are made by registrants. Needs generate claims. Claims require verification.

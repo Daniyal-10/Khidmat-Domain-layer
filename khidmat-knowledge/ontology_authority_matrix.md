@@ -278,6 +278,10 @@ References Only" below.
 - `review_audits_session`
 - `calibration_audits_assessor`
 - `trigger_initiates_session`
+- `assertion_influences_assertion` (added Stage 2A Canonical Needs Assessment
+  Enrichment — mirrors Registration's `need_influences_need` at the
+  synthesized-finding level; see `need_relationship_type` below for the
+  cross-domain taxonomy this relationship's qualifying property references)
 
 **Explicit References Only (Owned Elsewhere):**
 - `person`, `household`, `actor`, `assessment_tool` (Shared)
@@ -285,6 +289,12 @@ References Only" below.
 - `claim` (Registration)
 - `need_severity` (Registration — `registration/taxonomy/needs.yaml`, referenced cross-domain
   as `registration_tax:need_severity` by `need_assertion.need_severity`; added Phase 1.3A)
+- `need_relationship_type` (Registration — `registration/taxonomy/needs.yaml`, referenced
+  cross-domain as `registration_tax:need_relationship_type` by
+  `need_assertion_relationship_type`, the qualifying property of
+  `assertion_influences_assertion`; added Stage 2A Canonical Needs Assessment
+  Enrichment, same reconciliation pattern as `need_severity` immediately above —
+  no parallel scheme authored)
 - `verification_finding` (Verification Operations)
 - `thematic_sectors` (Programs) — **open item, not a ratified ownership assignment.**
   `thematic_sector` currently draws its vocabulary from `programs_tax:thematic_sectors`.

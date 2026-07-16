@@ -193,3 +193,36 @@ relationships:
   cardinality:
     min: 0
     max: unbounded
+- id: need_influences_need
+  from: need
+  relationship: influences
+  to: need
+  cardinality:
+    min: 0
+    max: unbounded
+  inverse: influenced_by_need
+  notes: 'Added per Stage 2A Canonical Needs Assessment Enrichment. Records a diagnosed
+    semantic relationship between two needs already established within the same
+    case — e.g. income instability influences (contributes_to) food insecurity,
+    documentation gap influences (blocks) an income_support need, disability
+    influences (compounds) a caregiver_burden need. The specific relationship is
+    carried by the need_relationship_type property (data-properties.yaml), qualified
+    from the single scheme registration/taxonomy/needs.yaml#need_relationship_type,
+    not by separate relationship ids per type — see that scheme''s design note.
+
+
+    A need must not be recorded as influencing itself (from and to must reference
+    distinct need instances); this is a case-authoring rule enforced by reasoning,
+    not a new semantic-constraints type, consistent with how other single-instance
+    invariants in this domain (e.g. household_snapshot cardinality) are enforced
+    without adding a bespoke constraint type for a one-off case.
+
+
+    Distinct from situation_contextualises_need (a situation explaining a need)
+    and need_addressed_by_intervention (a need resolved by a response) — this
+    relationship is the only one of the three that connects two instances of the
+    same entity, and is the direct closure of the gap identified in the
+    Humanitarian Needs Assessment Knowledge Audit (Stage 2): "it cannot represent
+    how one confirmed need relates to another confirmed need."
+
+    '

@@ -7,6 +7,11 @@ namespaces:
   programs_tax: http://khidmat.org/ontology/programs/taxonomy
   registration_tax: http://khidmat.org/ontology/registration/taxonomy
 
+# need_assertion_relationship_type (below) references
+# registration_tax:need_relationship_type — the same reconciliation pattern
+# already used by need_severity (see that property's own notes): no new
+# taxonomy scheme is authored here, and the scheme is not duplicated.
+
 data_properties:
   # Assessment Session Properties
   - id: session_status
@@ -118,6 +123,22 @@ data_properties:
     domain: need_assertion
     datatype: xsd:dateTime
     cardinality: { min: 0, max: 1 }
+
+  # Added per Stage 2A Canonical Needs Assessment Enrichment.
+  - id: need_assertion_relationship_type
+    domain: assertion_influences_assertion
+    taxonomy_ref: registration_tax:need_relationship_type
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Domain is the assertion_influences_assertion relationship
+      (ontology/relationships.yaml), not the need_assertion entity — this
+      property qualifies a specific edge between two need_assertion
+      instances. References registration_tax:need_relationship_type rather
+      than authoring a parallel scheme, per Single Ownership (ADR-008): the
+      relationship semantics (contributes_to / blocks / compounds) are a
+      single humanitarian concept regardless of whether the two connected
+      instances are Registration's intake-time needs or this domain's
+      synthesized need_assertions.
 
   # Finding Consensus Properties
   - id: consensus_date

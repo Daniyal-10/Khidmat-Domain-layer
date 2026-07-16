@@ -124,3 +124,23 @@ relationships:
     relationship: initiates_session
     to: assessment_session
     cardinality: { min: 1, max: unbounded }
+
+  # Added per Stage 2A Canonical Needs Assessment Enrichment, mirroring
+  # registration/ontology/relationships.yaml#need_influences_need at the
+  # synthesized-finding level. A need_assertion is the governed, confidence-
+  # rated conclusion this domain owns; once two need_assertions are both
+  # authoritative (or provisional) in the same session/case, this relationship
+  # records the same three humanitarian patterns the Registration-level
+  # relationship records for raw needs — causal contribution, structural
+  # blocking, and compounding. It does not duplicate need_influences_need:
+  # Registration's need is the intake-time claim, needs-assessment's
+  # need_assertion is the synthesized, evidence-weighted finding — the two
+  # entities are already distinct and separately owned (see this domain's
+  # README, "Does Not Own"), so the relationship between their respective
+  # instances is necessarily a separate relationship, not a re-declaration.
+  - id: assertion_influences_assertion
+    from: need_assertion
+    relationship: influences
+    to: need_assertion
+    cardinality: { min: 0, max: unbounded }
+    inverse: influenced_by_assertion

@@ -10,6 +10,18 @@ purpose: >
   Rules do not assert facts — they raise likelihoods that
   trigger questioning. The AI should explore, not assume.
 
+  Added per Stage 2A Canonical Needs Assessment Enrichment: where a rule's
+  inference is confirmed and results in a second need being recorded
+  alongside the one that triggered the rule, that rule's action should also
+  record a need_influences_need relationship (relationships.yaml) between
+  the two confirmed needs, qualified by need_relationship_type
+  (taxonomy/needs.yaml) — see relationship_to_record below where present.
+  This is deliberately not applied retroactively to every rule in this file:
+  only rules whose inference already connects two need-category outcomes are
+  extended. Rules that connect a situational trigger to a single need (e.g.
+  infer_shelter_from_displacement) are unaffected — there is no second need
+  yet to relate to.
+
 rules:
 
   - id: infer_economic_from_bereavement
@@ -90,6 +102,18 @@ rules:
       Ask whether all children in the household are still attending school
       and whether school fees are affordable.
     confidence: medium
+    relationship_to_record:
+      condition: >
+        Both a livelihood or income-related need and an education need are
+        confirmed for the same household as a result of this rule.
+      from_need_category: livelihood
+      need_relationship_type: contributes_to
+      to_need_category: education
+      note: >
+        Recorded once both needs are confirmed, not at the point of inference
+        alone — this rule raises a likelihood to question, it does not assert
+        the relationship until both sides are established. Worked example for
+        the need_influences_need pattern described in this file's purpose note.
 
   - id: infer_safeguarding_from_minor_without_guardian
     label: Safeguarding from Minor Without Guardian

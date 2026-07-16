@@ -234,3 +234,62 @@ schemes:
       - id: high
       - id: medium
       - id: low
+
+  # Added per Stage 2A Canonical Needs Assessment Enrichment. Closes the
+  # genuine Phase 1 gap identified in the Humanitarian Needs Assessment
+  # Knowledge Audit: the ontology could represent situations, needs,
+  # assessments, and interventions, but not how one confirmed need relates
+  # to another confirmed need (e.g. income instability contributing to
+  # food insecurity; a documentation gap blocking access to a support
+  # need; a disability compounding a caregiver's burden).
+  #
+  # Design note: modelled as a single controlled qualifier consumed by one
+  # generic relationship (need_influences_need in
+  # registration/ontology/relationships.yaml) rather than as several
+  # separately-named relationships (need_causes_need, need_blocks_need, ...).
+  # This mirrors the existing generic-relationship-plus-controlled-qualifier
+  # pattern already used in this knowledge layer for the same structural
+  # problem — see shared/human-model/ontology/family-structure.yaml's
+  # support_relationships (one relationship, qualified by support_type) —
+  # rather than introducing a new pattern. Three values are deliberately
+  # exhaustive of the humanitarian relationship patterns identified in the
+  # audit (causal cascade, structural block, compounding aggravation);
+  # directionality and depends_on-style inverses are expressed by the
+  # relationship's from/to direction, not by a fourth value, to avoid a
+  # redundant value that duplicates information already carried by the edge.
+  #
+  # Owned here (not in needs-assessment) because Need is a Registration
+  # concept; needs-assessment/ontology/data-properties.yaml's
+  # need_assertion_relationship_type references this scheme cross-domain
+  # as registration_tax:need_relationship_type, exactly as
+  # need_assertion.need_severity already references registration_tax:need_severity.
+  - id: need_relationship_type
+    label: Need Relationship Type
+    description: >
+      Classifies how one confirmed need influences another confirmed need
+      within the same case. Qualifies the need_influences_need relationship
+      (registration/ontology/relationships.yaml); it is not a property of
+      either need in isolation.
+    concepts:
+      - id: contributes_to
+        label: Contributes To
+        description: >
+          The source need is a driver of the target need — left unresolved,
+          it produces or worsens the target need over time. Example: income
+          instability contributes_to food insecurity; unsafe housing
+          contributes_to health risk.
+      - id: blocks
+        label: Blocks
+        description: >
+          The source need must be resolved before the target need can be
+          effectively addressed at all — the target is not merely worsened
+          but structurally inaccessible while the source persists. Example:
+          a documentation gap blocks access to a livelihood or income
+          support need.
+      - id: compounds
+        label: Compounds
+        description: >
+          The source need does not cause the target need but increases its
+          severity or the difficulty of meeting it whenever both are
+          present simultaneously. Example: a disability compounds a
+          caregiver_burden need; a high dependent load compounds a food need.

@@ -163,6 +163,25 @@ data_properties:
     min: 0
     max: 1
   taxonomy_ref: need_duration
+- id: need_relationship_type
+  domain: need_influences_need
+  notes: >
+    Added per Stage 2A Canonical Needs Assessment Enrichment. Domain is the
+    need_influences_need relationship (registration/ontology/relationships.yaml),
+    not the need entity — this property qualifies a specific edge between two
+    need instances, not either need in isolation. This is a deliberately narrow
+    extension of the domain field's existing list-of-entities usage (see e.g.
+    name/age above, domain: [household_member, beneficiary]) to a relationship
+    id, chosen over introducing a reified need_relationship entity: it is the
+    minimum addition that lets an edge carry a type without a new node, and it
+    is not a new mechanism — needs-assessment/ontology/data-properties.yaml's
+    confidence_level and conflict_status already show this file format
+    tolerating a domain value beyond a single canonical entity type; this
+    extends that same tolerance to a relationship id.
+  cardinality:
+    min: 1
+    max: 1
+  taxonomy_ref: need_relationship_type
 - id: primary
   domain: need
   cardinality:

@@ -24,8 +24,10 @@ need urgency; and review/calibration/consensus/trigger status and outcomes.
 - **Ontology** (`ontology/`): entities (`assessment_instrument`,
   `assessment_indicator`, `assessment_session`, `observation`,
   `need_assertion`, `finding_consensus`, `supervisor_review`,
-  `assessor_calibration`, `reassessment_trigger`), their relationships,
-  data properties, lifecycle constraints, and semantic constraints.
+  `assessor_calibration`, `reassessment_trigger`), their relationships —
+  including `assertion_influences_assertion`, the synthesized-finding
+  mirror of Registration's `need_influences_need` — data properties,
+  lifecycle constraints, and semantic constraints.
 - **Taxonomy** (`taxonomy/`):
   - `evidence.yaml` — `evidence_type`, `confidence_level`, `conflict_status`
   - `finding.yaml` — `finding_status`, `invalidation_reason`, `need_urgency`
