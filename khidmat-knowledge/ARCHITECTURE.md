@@ -37,6 +37,7 @@ Status:
 - Volunteer Operations has authored its foundational (Tier 1) canonical `ontology/`+`taxonomy/`
   structure under ADR-024; its operational/runtime layer (Tier 2 — scheduling, dispatch,
   trust/performance scoring) remains deferred to the Stage-9 activation trigger.
+- Donor & Resource domain is fully authored (identity, grants, resource classification) per ADR-025 through ADR-028.
 
 ## Domain Inventory
 
@@ -54,6 +55,7 @@ Status:
 | impact                  | Level 1        | Complete             |
 | support-delivery        | Level 1        | Complete             |
 | volunteer-operations    | Level 1 (foundational) | Foundational complete — operational layer deferred to Stage 9 |
+| donor-resource          | Level 1        | Complete             |
 | consent-and-privacy     | Level 2        | Placeholder          |
 
 ## Knowledge Governance Files
@@ -137,6 +139,7 @@ Completed foundational layer:
 * Impact Domain
 * Support Delivery Domain
 * Volunteer Operations Domain (foundational layer only; operational layer deferred to Stage 9)
+* Donor & Resource Domain
 
 Upcoming layers:
 

@@ -104,6 +104,7 @@ AI reasoning layer (not yet built in this repository — see
 | Community Context Domain | ✅ Canonical (Phases 1–4 complete; Phase 5 cross-domain CURIE linking blocked on a repository-wide manifest) |
 | Support Delivery, Programs, Impact Domains | ✅ Complete (Level 1) |
 | Volunteer Operations Domain | ✅ Foundational (Tier 1) complete per ADR-024 — operational/runtime layer deferred to Stage 9 |
+| Donor & Resource Domain | ✅ Complete — identity, grants, and resource classification |
 | Consent & Privacy | 🚧 Level 2 placeholder — scope declared, not yet active |
 
 For the authoritative, continuously-updated view of what is done, in progress, and
@@ -128,8 +129,9 @@ khidmat-knowledge/
 ├── impact/                    # Longitudinal outcome and impact measurement
 ├── volunteer-operations/      # Volunteer profile, capacity, and dispatch (foundational layer)
 ├── consent-and-privacy/       # (placeholder) Consent, minimal today, required by Case Management
-├── architecture-decisions/    # ADR-001 … ADR-023 — the authoritative decision log
-└── docs/architecture/         # Canonical schema contracts, migration methodology, audits
+├── donor-resource/            # Donor identity, grant tracking, and resource classification
+├── architecture-decisions/    # ADR-001 … ADR-028 — the authoritative decision log
+└── docs/architecture/         # Canonical schema contracts and migration methodology
 ```
 
 **shared/** — The single-ownership home for concepts used by two or more domains:
@@ -170,6 +172,9 @@ structure complete.
 structure complete per ADR-024; the operational/runtime layer (scheduling, dispatch,
 trust/performance scoring) remains deferred to the Stage 9 activation trigger.
 
+**donor-resource/** — Donor identity, grant tracking, and resource classification models
+(fully authored per ADR-025 through ADR-028).
+
 **consent-and-privacy/** — Declared Level 2 placeholder (ADR-004). Has a scope
 statement and an explicit concept-ownership boundary, but no taxonomy or ontology
 content is authored until the domain is activated per `knowledge_layer_roadmap.md`.
@@ -188,7 +193,7 @@ wherever you see it (not every domain has every subfolder):
 | `readiness/` | Conditions under which a case is considered complete enough to progress |
 | `verification/` | Definitions of derived/projected artifacts (e.g. the Verification Brief) — not stored entities |
 | `gaps/` | Vocabulary of information-gap types and their severity |
-| `docs/architecture/` | Repository-wide structural contracts, migration methodology, and architecture audits (not domain-specific) |
+| `docs/architecture/` | Repository-wide structural contracts and migration methodology (not domain-specific) |
 | `architecture-decisions/` | The ADR log — one immutable record per significant design decision |
 
 **Important:** `reasoning/*.yaml` files are declarative rule descriptions, not
@@ -274,7 +279,7 @@ Beyond that reading path:
 - For what exists, what's in progress, and what's missing, see
   `knowledge_layer_inventory.md`, `ontology_authority_matrix.md`,
   `ontology_completion_checklist.md`, and `knowledge_layer_roadmap.md`.
-- The ADR log (`architecture-decisions/`, ADR-001 through ADR-023) records every
+- The ADR log (`architecture-decisions/`, ADR-001 through ADR-028) records every
   significant design decision and its rationale; `architecture-decisions/README.md`
   has a full index.
 

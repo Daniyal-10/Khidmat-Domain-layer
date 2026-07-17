@@ -313,8 +313,7 @@ References Only" below.
 **Introduced:** Phase 1.0
 **Governing ADRs:** ADR-001 through ADR-006, ADR-021, ADR-023
 
-**Note — added per Stage 7B Repository Remediation, closing Major Finding M-6 of
-`HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md`:** Registration is the
+**Note — added per Stage 7B Repository Remediation:** Registration is the
 repository's original canonical reference implementation and one of its two
 largest domains, but had no dedicated section in this matrix — its concepts
 appeared only incidentally, as targets referenced *from* other domains'
@@ -351,8 +350,7 @@ ownership that was already true and already enforced in practice.
 **Introduced:** Phase 5.x
 **Governing ADRs:** ADR-008, ADR-017
 
-**Note — added per Stage 7B Repository Remediation, closing Major Finding M-6
-of `HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md`:** as with
+**Note — added per Stage 7B Repository Remediation:** as with
 Registration above, Programs is a large, mature, canonical domain that had no
 dedicated section in this matrix prior to this remediation pass.
 

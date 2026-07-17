@@ -30,7 +30,7 @@ The primary intelligence of the Khidmat AI system lives here.
 | Case Management Domain | Complete |
 | Beneficiary Lifecycle Domain | Complete |
 | Community Context Domain | Active / In Progress — substantially built, pending canonical migration |
-| Governance Layer | Complete, including the frozen `docs/architecture/Canonical_Ontology_Schema.md` and `Canonical_Taxonomy_Schema.md` contracts and ADR-023 |
+| Governance Layer | Complete, including the frozen `docs/architecture/Canonical_Ontology_Schema.md` and `Canonical_Taxonomy_Schema.md` contracts and ADR-028 |
 | All other placeholder domains (Volunteer Operations, Support Delivery, Programs, Impact, Consent & Privacy) | Level 2 — inactive |
 
 Source of truth: `ontology_completion_checklist.md`, `knowledge_layer_roadmap.md`
@@ -79,6 +79,7 @@ Governance completed:
   Repository_Migration_Methodology.md (frozen structural and process contracts)
 - architecture-decisions/ADR-023 (ontology vocabulary extension: Value Objects, Roles,
   Runtime/Reasoning Objects, Future Entity Candidate)
+- architecture-decisions/ADR-024 through ADR-028 (Volunteer operations, donor identity, resource model, grant ownership)
 
 Current objective:
 

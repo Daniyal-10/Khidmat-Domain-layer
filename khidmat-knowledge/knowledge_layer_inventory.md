@@ -553,7 +553,7 @@ dependency models are referenced by note pending those files' creation.
 **Maturity:** Mature. Well-structured.
 
 **Known Gaps:**
-- Evidence entity is declared but has no attribute detail (attributes_ref points to a section of attributes.yaml that does not currently exist for evidence). This is a latent gap.
+- Evidence entity is declared but has no attribute detail (attributes_ref points to a section of data-properties.yaml that does not currently exist for evidence). This is a latent gap.
 - VolunteerReview and Lead entities are declared here but their lifecycle is partially owned by lead-statuses.yaml. The authority boundary is not explicitly declared.
 
 **Overlap / Conflicts:** None.
@@ -599,7 +599,7 @@ matrix relocated out of `evidence.yaml` per Migration Plan Decision D3.
 **Maturity:** Mature. The one-to-one registrant-to-case cardinality is intentional and correct.
 
 **Known Gaps:**
-- The `need_concerns_member` relationship is declared as `zero_to_one` with `required: false` and a note that it becomes required for medical, education, and therapeutic nutrition needs. This conditional requirement is not enforced in the relationships file itself — it is declared as a note. The enforcement lives in attributes.yaml (required_when) and gap-detection-rules.yaml. This cross-file dependency should be explicitly documented.
+- The `need_concerns_member` relationship is declared as `zero_to_one` with `required: false` and a note that it becomes required for medical, education, and therapeutic nutrition needs. This conditional requirement is not enforced in the relationships file itself — it is declared as a note. The enforcement lives in data-properties.yaml (required_when) and gap-detection-rules.yaml. This cross-file dependency should be explicitly documented.
 
 **Overlap / Conflicts:** VerificationBrief appears in this file's relationships but is explicitly a projection, not an entity. The file correctly notes this. No conflict.
 
@@ -621,7 +621,7 @@ matrix relocated out of `evidence.yaml` per Migration Plan Decision D3.
 - Lifecycle-stage-aware inference is absent. An infant in a food-insecure household should trigger a developmental malnutrition risk flag distinct from the household food need. No such rule exists.
 - All rules are reactive (when X is stated, infer Y). No proactive rules exist (given profile attributes, flag Z before stated).
 
-**Overlap / Conflicts:** Inference rules operate on the same entities and attributes defined in ontology/attributes.yaml. No ownership conflict. Reasoning does not own the concepts it reasons about — correct.
+**Overlap / Conflicts:** Inference rules operate on the same entities and attributes defined in ontology/data-properties.yaml. No ownership conflict. Reasoning does not own the concepts it reasons about — correct.
 
 ---
 

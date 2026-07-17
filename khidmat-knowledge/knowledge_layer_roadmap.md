@@ -75,7 +75,7 @@ Already Created
 
 **What this stage completes:**
 - Support Intervention Taxonomy (`registration/taxonomy/support-interventions.yaml`)
-- Evidence Entity Attributes (`registration/ontology/attributes.yaml` — evidence section)
+- Evidence Entity Attributes (`registration/ontology/data-properties.yaml` — evidence section)
 - Evidence Taxonomy (`registration/taxonomy/evidence.yaml`)
 - Compound Inference Rules (extension of `registration/reasoning/inference-rules.yaml`)
 - Functional Capacity Inference Rules (extension of `registration/reasoning/inference-rules.yaml`)
@@ -331,13 +331,11 @@ At this stage, Volunteer Operations, Support Delivery, Programs, and Impact can 
 
 ## HKMP Stage 8 — Donor & Resource Domain (Distinct Numbering Track)
 
-**Numbering disambiguation:** this entry uses the "HKMP Stage N" numbering established by the
-`HKMP_STAGE6_*`/`HKMP_STAGE7_*` documents and continued by the Stage 8 discovery/architecture/
-implementation reports — a separate, later-established numbering track from this document's own
+**Numbering disambiguation:** this entry uses the "HKMP Stage N" numbering established during
+subsequent phases of development — a separate, later-established numbering track from this document's own
 "Stage 8: Community Context" / "Stage 9: Activate Remaining Placeholder Domains" above, which are
 unrelated and already complete. The two numbering tracks happen to collide at the digit 8 while
-referring to different work; see `HKMP_STAGE8_DONOR_RESOURCE_DOMAIN_DISCOVERY_REPORT.md` §7 for the
-original disambiguation.
+referring to different work.
 
 **HKMP Stage 8B — Donor & Funding Intelligence** (requires: Programs, Shared Ontology — both
 already active). Produces `donor_profile`, `grant`, `contribution`, the Islamic Giving taxonomy

@@ -280,7 +280,7 @@ Outcome indicators support lifecycle tracking, program evaluation, and impact me
 
 ## Needs Assessment Terms
 
-*Added per Stage 7B Repository Remediation, closing Major Finding M-4 of HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md — this domain previously had no Glossary coverage at all.*
+*Added per Stage 7B Repository Remediation — this domain previously had no Glossary coverage at all.*
 
 **Assessment Session**
 The episodic event of applying an assessment instrument to a person, household, or community at a specific time and location.

@@ -114,7 +114,8 @@
 ✓ Canonical Ontology Authoring Contract (`docs/architecture/Canonical_Ontology_Schema.md`)
 ✓ Canonical Taxonomy Authoring Contract (`docs/architecture/Canonical_Taxonomy_Schema.md`)
 ✓ Repository Migration Methodology (`docs/architecture/Repository_Migration_Methodology.md`)
-✓ ADR-023 — Ontology Vocabulary Extension (Value Objects, Roles, Runtime/Reasoning Objects, Future Entity Candidate)
+■ Canonical Taxonomy Schema (`Canonical_Taxonomy_Schema.md`)
+■ ADR-028 - Resource Model (and ADR-024 to ADR-027)
 ✓ Registration Migration Phases 1–4 (`docs/architecture/Registration_Migration_Plan.md`) — canonical to the CURIE boundary
 □ Registration Migration Phase 5 (cross-domain CURIE layer) — blocked on repository-wide manifest and ratified base IRI
 □ Registration Content Gap Log (19 records) — genuine content gaps requiring a domain-knowledgeable author; see `docs/architecture/Registration_Migration_Plan.md`
@@ -177,15 +178,9 @@
   `attributes_ref: ontology/attributes.yaml#community` reference — no such file exists
   in `community-context/ontology/` under the canonical (or legacy) structure.
 
-□ Household Entity — Ownership Reconciliation Needed
+☑ Household Entity — Ownership Reconciliation Resolved
 
-Note: a first-class `household` entity now exists in **both**
-`shared/ontology/entities.yaml` (declared authoritative, inherits from `subject`) and
-`registration/ontology/entities.yaml` (an independent, fuller description, not
-declared as a reference to the shared entity). This is a dual-definition that
-`ontology_authority_matrix.md` and ADR-008's single-ownership rule are designed to
-prevent. Flagged here for architectural review — not resolved by this documentation
-pass, per this task's constraint against ontology/taxonomy content changes.
+Note: The previous dual-definition issue has been resolved. Registration domain's entity was successfully renamed to `household_snapshot` to observe exactly one `shared:household`, complying with ADR-008's single-ownership rule.
 
 Remains required for: household vulnerability assessment, livelihood modelling,
 family dependency chains, seasonal risk analysis, community-level planning.
@@ -229,8 +224,8 @@ Note: Community Context, previously listed here as not yet placeholdered, is now
 substantially built domain (`community-context/`) — see the Community Context section
 above and the "In Progress" entry for its remaining canonical-migration work.
 
-□ Donor Matching Domain
-  Future. Requires: Intervention taxonomy, program taxonomy, donor profile model.
+☑ Donor & Resource Domain
+  Complete. Fully authored per ADR-025 through ADR-028.
 
 □ Resource Optimisation Domain
   Future. Requires: Intervention taxonomy, geographic data, volunteer capacity model.
@@ -262,9 +257,9 @@ Model the household's ability to absorb shocks, recover from crises, and maintai
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Completed | 50+ files | Registration (canonical reference implementation), Shared Human Model, Risk Domain, Needs Assessment, Case Management, Beneficiary Lifecycle, Verification Operations, Community Context (Phases 1–4), Support Delivery, Programs, and Impact all complete; Volunteer Operations foundational layer complete (ADR-024); repository architecture frozen (Canonical Ontology/Taxonomy Schemas, ADR-023) |
+| Completed | 50+ files | Registration (canonical reference implementation), Shared Human Model, Risk Domain, Needs Assessment, Case Management, Beneficiary Lifecycle, Verification Operations, Community Context (Phases 1–4), Support Delivery, Programs, Impact, and Donor & Resource all complete; Volunteer Operations foundational layer complete (ADR-024); repository architecture frozen (Canonical Ontology/Taxonomy Schemas, ADR-028) |
 | In Progress | 3 items | Support intervention taxonomy content (registration), evidence taxonomy content gaps (registration), Community Context canonical migration |
 | Missing (registration) | 2 items | Compound/lifecycle-stage-aware inference rules, medical severity + treatment plan interaction |
-| Missing (shared) | 2 items + 1 flagged conflict | Person entity lacks attributes and a Beneficiary integration seam; Outcome Indicator vocabulary does not yet exist; Household is defined in both `shared/` and `registration/` and needs an ownership decision (flagged, not resolved, by this pass) |
+| Missing (shared) | 1 item | Person entity lacks attributes and a Beneficiary integration seam; Outcome Indicator vocabulary does not yet exist |
 | Future (placeholder) | 5 domains | Volunteer Operations, Support Delivery, Programs, Impact, Consent & Privacy — all Level 2, inactive |
-| Future (new) | 6 domains | Knowledge graph expansion domains |
+| Future (new) | 5 domains | Knowledge graph expansion domains |

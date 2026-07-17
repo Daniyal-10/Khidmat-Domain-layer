@@ -12,7 +12,7 @@ If a decision is reversed, a new entry is added explaining the reversal.
 **Scope of this file:** This log mirrors **ADR-001 through ADR-014 only**, as a
 historical convenience. **ADR-015 onward exist only in `architecture-decisions/`**
 and are not, and will not be, duplicated here. For the complete, authoritative
-record of all decisions (including ADR-015–023) and their current status, see
+record of all decisions (including ADR-015–028) and their current status, see
 `architecture-decisions/README.md`'s ADR index.
 
 ---
