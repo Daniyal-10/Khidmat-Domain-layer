@@ -329,6 +329,44 @@ At this stage, Volunteer Operations, Support Delivery, Programs, and Impact can 
 
 ---
 
+## HKMP Stage 8 — Donor & Resource Domain (Distinct Numbering Track)
+
+**Numbering disambiguation:** this entry uses the "HKMP Stage N" numbering established by the
+`HKMP_STAGE6_*`/`HKMP_STAGE7_*` documents and continued by the Stage 8 discovery/architecture/
+implementation reports — a separate, later-established numbering track from this document's own
+"Stage 8: Community Context" / "Stage 9: Activate Remaining Placeholder Domains" above, which are
+unrelated and already complete. The two numbering tracks happen to collide at the digit 8 while
+referring to different work; see `HKMP_STAGE8_DONOR_RESOURCE_DOMAIN_DISCOVERY_REPORT.md` §7 for the
+original disambiguation.
+
+**HKMP Stage 8B — Donor & Funding Intelligence** (requires: Programs, Shared Ontology — both
+already active). Produces `donor_profile`, `grant`, `contribution`, the Islamic Giving taxonomy
+(zakat, sadaqah, sadaqah_jariyah, waqf, fidya, kaffarah, qurbani, and the eight zakat-eligible
+asnaf categories), and funding lifecycle vocabulary (grant status, contribution status, renewal,
+funding window, restriction reference).
+↓ enables: HKMP Stage 8C
+
+**HKMP Stage 8C — Material Resource & Logistics Intelligence** (requires: HKMP Stage 8B, Programs,
+Case Management, Shared Ontology — all already active; boundary held with Support Delivery at the
+custody/dispatch line). Produces `resource` (abstract) → `financial_resource`/`material_resource`,
+`inventory_item`, `storage_location`, `resource_allocation`, and their supporting taxonomies
+(resource classification, stock movement, storage, allocation).
+↓ enables: Support Delivery's `delivery_event_fulfilled_from_resource_allocation` reference row
+
+**HKMP Stage 8D — Governance Integration** (requires: HKMP Stage 8B + 8C complete). Ratifies
+ADR-025 through ADR-028, integrates the domain into `ontology_authority_matrix.md` and
+`GLOSSARY.md`, and authors the one Support Delivery-side reference row anticipated since Stage 8A's
+architecture design. **Complete** — see `donor-resource/` and ADR-025 through ADR-028.
+
+**Reasoning capability gained:** The system can now reason about who funds Khidmat's operations and
+under what restriction (including Islamic-giving-specific restrictions), and about what material
+and financial resources exist in stock and are committed to a program or case plan before delivery
+executes. A zakat-restricted grant's eligible-recipient categories are expressible and
+distinguishable from a Program's general eligibility rules; a delivery event can be traced back to
+the specific pre-delivery allocation decision that reserved the stock it fulfils.
+
+---
+
 ## Stage 10 — Full Humanitarian Knowledge Graph
 
 When Stages 1–9 are complete, the knowledge layer can reason simultaneously at:

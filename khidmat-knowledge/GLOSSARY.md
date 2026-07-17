@@ -384,6 +384,37 @@ The record of a volunteer's affiliation, skills, languages, certifications, trai
 **Assignment**
 The operational association between a volunteer and a task (a registration, a verification activity, a delivery event) they are responsible for carrying out.
 
+## Donor & Resource Terms
+
+*Added per HKMP Stage 8D Governance Integration, ratifying the Stage 8B/8C implementation.*
+
+**Donor Profile**
+The record of a person's or organisation's giving relationship with Khidmat — never an independent identity. Attaches behind an existing Person or Organisation record, mirroring how Volunteer Profile attaches behind the shared Actor (see Volunteer Profile, above).
+
+**Grant**
+A funding commitment instance issued by a Donor Profile, optionally funding one or more Programs. Distinct from, and additive to, a Program's existing direct funding-by-organisation relationship — a Program may be funded directly, via a Grant, or both.
+
+**Contribution**
+A single discrete act of giving: one gift, or one disbursement tranche of a Grant. Distinct from Grant itself — a Contribution records that one transfer occurred; a Grant represents the ongoing commitment.
+
+**Resource**
+An abstract kind of thing Khidmat holds and can allocate — financial or material. Not to be confused with **Recovery Resources** (Risk and Vulnerability Terms, above), which describes a household's own internally-mobilizable coping assets; this is an entirely distinct, unrelated concept describing humanitarian stock Khidmat itself holds. A Resource is never itself allocated or tracked with a quantity — see Inventory Item.
+
+**Inventory Item**
+The tracked instance of a Resource: a specific quantity, in a specific condition, at a specific Storage Location, right now. Never collapsed into Resource — Resource describes the kind; Inventory Item describes the tracked stock.
+
+**Storage Location**
+A physical space (warehouse, distribution center, cold-chain facility, temporary storage site, or mobile storage unit) holding Inventory Items. Not a software or database concept.
+
+**Resource Allocation**
+The decision that reserves or commits a specific Inventory Item to a Program or a Case Plan, before delivery. Distinct from delivery itself, which remains Support Delivery's Delivery Event — see `support-delivery/ontology/relationships.yaml#delivery_event_fulfilled_from_resource_allocation`.
+
+**Islamic Giving**
+Seven distinct, canonically defined charitable-giving forms recognized in this knowledge layer: Zakat, Sadaqah, Sadaqah Jariyah, Waqf, Fidya, Kaffarah, and Qurbani. Each has its own obligation basis and restriction shape; none is a synonym or regional alias for another. See `donor-resource/taxonomy/islamic-giving.yaml`.
+
+**Zakat-Eligible Category**
+One of the eight classical recipient categories (asnaf) to which Zakat funds may be distributed. A classification a Program's Eligibility Rule may reference when a Program is zakat-restricted — not a second eligibility engine.
+
 ## Governance Terms
 
 **Concept Ownership**

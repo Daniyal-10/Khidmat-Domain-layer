@@ -1,4 +1,4 @@
-version: "1.1.0"
+version: "1.2.0"
 domain: support_delivery
 file: taxonomy/delivery-modalities.yaml
 status: active
@@ -8,6 +8,7 @@ purpose: >
 
 namespaces:
   programs: programs
+  donor_resource: donor_resource
 
 # ---------------------------------------------------------------------
 # Added per Stage 7B Repository Remediation, closing Major Finding M-1 of
@@ -81,3 +82,19 @@ references:
       Program's thematic_sectors classification is unaffected by, and does
       not need to match one-to-one with, the delivery_modality recorded on
       any specific delivery_event fulfilling it.
+  - scheme: donor_resource:material_resource_category
+    relation: distinct_from
+    note: >
+      Added per HKMP Stage 8D Governance Integration, extending the two-way
+      note above to a three-way relationship
+      (HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md Part 5).
+      material_resource_category
+      (donor-resource/taxonomy/resource-classification.yaml) classifies WHAT
+      KIND of material stock exists in inventory before any delivery
+      decision is made (food, medicine, shelter_materials, ...).
+      delivery_modality classifies the handover requirements of a specific
+      delivery EVENT once dispatched. Neither scheme redefines the other,
+      and a single delivery_event's delivery_modality is not derived from,
+      or required to match one-to-one with, the material_resource_category
+      of the inventory_item(s) it was fulfilled_from
+      (ontology/relationships.yaml#delivery_event_fulfilled_from_resource_allocation).

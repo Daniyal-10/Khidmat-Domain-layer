@@ -1,0 +1,188 @@
+version: "1.0.0"
+domain: donor_resource
+file: taxonomy/islamic-giving.yaml
+status: active
+
+purpose: >
+  Classifies Islamic charitable-giving forms and the zakat-eligible recipient
+  categories, as canonical, non-regional humanitarian concepts. Every value in
+  this file is a distinct religious-legal category with its own obligation
+  basis, restriction shape, and (for zakat) recipient eligibility — not a
+  regional synonym or alias for a generic "charity" concept.
+
+  This file is deliberately NOT subject to ADR-022's regional-localization
+  normalization discipline (Canonical Concepts and Regional Localization
+  Strategy) in the sense that discipline is usually applied elsewhere in this
+  repository (e.g. collapsing "SHG"/"Chama"/"Stokvel" into
+  micro_savings_and_credit_collective, community-context/taxonomy/local-
+  organizations.yaml). Zakat, sadaqah, sadaqah_jariyah, waqf, fidya, kaffarah,
+  and qurbani are not regional aliases FOR one another or for a generic
+  giving concept — each is independently defined in Islamic jurisprudence
+  with its own obligation basis and rules, and collapsing them would destroy
+  humanitarian-operationally load-bearing distinctions (most importantly:
+  zakat's restricted recipient eligibility, which does not apply to sadaqah).
+  This note exists so a future auditor checking this file against ADR-022
+  does not mistake deliberate non-collapse for a localization-discipline
+  violation — see HKMP_STAGE8_DONOR_RESOURCE_DOMAIN_DISCOVERY_REPORT.md §6 for
+  the discovery-phase reasoning this file implements.
+
+schemes:
+  - id: islamic_giving_type
+    label: Islamic Giving Type
+    description: >
+      The specific Islamic charitable-giving form a grant or contribution
+      represents. Optional on both grant and contribution — a funding
+      instance not structured as Islamic giving simply leaves this property
+      unset; this scheme is additive to, not a replacement for,
+      donor_type/funding_source_type classification.
+    concepts:
+      - id: zakat
+        label: Zakat
+        description: >
+          Obligatory almsgiving: a fixed proportion of qualifying wealth held
+          above a minimum threshold (nisab) for a full lunar year, which an
+          eligible Muslim is religiously required to distribute. Zakat funds
+          are restricted-use: they must reach only recipients falling within
+          the zakat_eligible_category scheme below, and must not be
+          commingled with unrestricted giving. A grant or contribution tagged
+          zakat SHOULD also carry at least one zakat_eligible_category value
+          (enforced in semantic-constraints.yaml).
+      - id: sadaqah
+        label: Sadaqah
+        description: >
+          Voluntary charitable giving. Not obligatory, not fixed in
+          proportion, and not restricted to the zakat_eligible_category
+          recipient set — may be given to any person or cause in need, in any
+          amount, at any time. The general, unrestricted counterpart to
+          zakat's restricted obligation.
+      - id: sadaqah_jariyah
+        label: Sadaqah Jariyah
+        description: >
+          A subtype of sadaqah structured to produce a continuing, ongoing
+          benefit beyond the initial act of giving — e.g. funding a water
+          well, a school, or other durable infrastructure whose benefit
+          persists over time. Distinguished from ordinary sadaqah by this
+          durability of benefit, not by any difference in obligation basis
+          (both remain voluntary).
+      - id: waqf
+        label: Waqf
+        description: >
+          A permanent, typically irrevocable charitable endowment: an asset
+          (land, property, capital) is dedicated so that its usufruct or
+          income perpetually funds a charitable purpose, while the underlying
+          asset itself is not consumed, sold, or transferred. Structurally
+          distinct from sadaqah_jariyah: waqf is defined by the legal
+          permanence and inalienability of the endowed asset itself, not
+          merely by the durability of the resulting benefit.
+      - id: fidya
+        label: Fidya
+        description: >
+          A compensatory payment made in place of an obligatory religious act
+          (classically, fasting during Ramadan) that a person is genuinely
+          and durably unable to perform — e.g. due to chronic illness, frailty,
+          or old age. A fixed, per-instance compensatory payment, typically
+          directed toward feeding the needy. Distinguished from kaffarah by
+          its basis: fidya addresses genuine incapacity, not a culpable
+          breach.
+      - id: kaffarah
+        label: Kaffarah
+        description: >
+          An expiatory payment or act required to atone for the deliberate or
+          culpable breach of a specific religious obligation. Distinguished
+          from fidya by its basis: kaffarah addresses a culpable violation,
+          not an excused incapacity. Amounts and forms are specific to the
+          obligation breached and are not modeled generically here.
+      - id: qurbani
+        label: Qurbani
+        description: >
+          The ritual sacrifice of a permissible animal, performed during a
+          specified period (Eid al-Adha), with the resulting meat distributed
+          according to prescribed shares — including a mandatory share for
+          the poor and needy. Represents an in-kind (not purely financial)
+          Islamic giving form; its resulting distribution is a humanitarian
+          resource-distribution event in its own right, though the tracking
+          of the physical distribution itself is Stage 8C (Material Resource
+          & Logistics) territory, not authored here.
+
+  - id: zakat_eligible_category
+    label: Zakat-Eligible Category
+    description: >
+      The eight classical recipient categories (asnaf) to which zakat funds
+      may be distributed, as canonically enumerated. Referenced by grant and
+      contribution (data-properties.yaml) to record which category a
+      zakat-restricted funding instance is directed toward — NOT a second
+      eligibility-rule engine. This scheme is a classification a Program's
+      own eligibility_rule (programs/ontology/entities.yaml, referenced not
+      redefined) may draw on when a Program is zakat-restricted; it does not
+      itself evaluate beneficiary eligibility. See
+      PREPARED_GOVERNANCE_ADDITIONS.md for the drafted note on how Programs
+      would consume this scheme.
+    concepts:
+      - id: al_fuqara
+        label: Al-Fuqara (The Poor)
+        description: >
+          Those whose means fall short of covering their basic needs, but who
+          retain some resources — distinguished from al_masakin by relative
+          degree of deprivation, not by a different qualifying condition.
+      - id: al_masakin
+        label: Al-Masakin (The Destitute)
+        description: >
+          Those in a state of deprivation more severe than al_fuqara,
+          typically lacking any meaningful means of self-support.
+      - id: al_amilina_alayha
+        label: Al-'Amilina 'Alayha (Zakat Administrators)
+        description: >
+          Those employed or appointed to collect, manage, and distribute
+          zakat funds, compensated from the zakat itself for this
+          administrative role.
+      - id: al_muallafatu_qulubuhum
+        label: Al-Mu'allafatu Qulubuhum (Those Whose Hearts Are to Be Reconciled)
+        description: >
+          New or potential Muslims, or others whose support strengthens their
+          inclination toward, or the community's relationship with, the faith
+          community — a category oriented toward reconciliation and
+          relationship-building rather than material deprivation alone.
+      - id: fi_al_riqab
+        label: Fi al-Riqab (Freeing Those in Bondage)
+        description: >
+          Historically, the freeing of slaves or captives through zakat
+          funds; contemporarily understood by many scholars to extend to
+          analogous modern contexts of bondage, captivity, or human
+          trafficking. Recorded here as the canonical classical category,
+          without prescribing a single contemporary application.
+      - id: al_gharimin
+        label: Al-Gharimin (Those in Debt)
+        description: >
+          Persons burdened by debt incurred for legitimate, permissible
+          needs, who lack the means to repay it — distinct from
+          registration:debt_source / debt_characteristic
+          (registration/taxonomy/situations.yaml), which classify a
+          beneficiary's debt situation generally; this category classifies
+          zakat-eligibility on the basis of that debt, a narrower and
+          distinctly Islamic-legal determination referenced, not merged.
+      - id: fi_sabilillah
+        label: Fi Sabilillah (In the Cause of God)
+        description: >
+          Those striving in a righteous or charitable cause understood
+          broadly within Islamic jurisprudence — historically associated most
+          directly with those engaged in defending or serving the faith
+          community, and understood by many contemporary scholars to extend
+          to a wider range of communal welfare efforts.
+      - id: ibn_al_sabil
+        label: Ibn al-Sabil (The Wayfarer)
+        description: >
+          A traveler stranded or cut off from their own resources while away
+          from home, rendering them eligible for support during their journey
+          regardless of their wealth at their place of origin.
+
+references:
+  - scheme: programs:eligibility_rule
+    relation: distinct_from
+    note: >
+      zakat_eligible_category is a classification a Program's eligibility_rule
+      MAY reference when a Program is zakat-restricted. It is not a second
+      eligibility-evaluation mechanism, does not itself gate enrollment, and
+      does not redefine programs:eligibility_rule or
+      programs:eligibility_categories (programs/taxonomy/eligibility-and-
+      enrollment.yaml). The consuming reference, if authored, is added on the
+      Programs side in a future pass — see PREPARED_GOVERNANCE_ADDITIONS.md.

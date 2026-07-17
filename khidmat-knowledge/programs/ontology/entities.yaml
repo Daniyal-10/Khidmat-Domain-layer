@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: programs
 file: ontology/entities.yaml
 status: active
@@ -28,6 +28,15 @@ entities:
     description: >
       A discrete criterion evaluated against a beneficiary's profile to determine qualification.
     required: false
+    notes: >
+      Added per HKMP Stage 8D Governance Integration: when a Program is
+      zakat-restricted, an eligibility_rule instance may optionally reference
+      donor_resource:zakat_eligible_category
+      (donor-resource/taxonomy/islamic-giving.yaml) as the classification it
+      evaluates against. This is a documentation note only — no property or
+      relationship is added to eligibility_rule by this note, and
+      zakat_eligible_category remains a referenceable value Donor & Resource
+      owns, never a second eligibility-evaluation mechanism.
 
   - id: intervention_offering
     label: Intervention Offering

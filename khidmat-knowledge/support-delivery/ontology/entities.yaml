@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: support_delivery
 file: ontology/entities.yaml
 status: active
@@ -7,9 +7,19 @@ entities:
   - id: delivery_event
     label: Delivery Event
     description: >
-      The fundamental unit of execution, representing the grouping, timing, scheduling, 
+      The fundamental unit of execution, representing the grouping, timing, scheduling,
       and occurrence of a delivery. May resolve one Case Plan or batch multiple plans.
     required: true
+    notes: >
+      Added per HKMP Stage 8D Governance Integration: a delivery_event may
+      optionally be fulfilled_from one or more resource_allocation decisions
+      (donor_resource:resource_allocation, ontology/relationships.yaml#delivery_event_fulfilled_from_resource_allocation),
+      the Donor & Resource domain's pre-delivery reservation/commitment
+      record. This is a reference only — resource_allocation remains
+      exclusively owned by donor-resource/ontology/entities.yaml, and this
+      entity's own definition, required cardinality, and existing
+      relationships (fulfills case_plan, has_custody_transfer, etc.) are
+      unchanged.
 
   - id: delivery_window
     label: Delivery Window

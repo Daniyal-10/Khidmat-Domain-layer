@@ -468,6 +468,69 @@ trigger and is intentionally absent from this table until authored.
 
 ---
 
+## Donor & Resource Domain
+
+**Authoritative files:** `donor-resource/ontology/`, `donor-resource/taxonomy/`
+**Owner domain:** Donor & Resource
+**Introduced:** HKMP Stage 8B (Donor & Funding Intelligence); extended HKMP Stage 8C
+(Material Resource & Logistics Intelligence); integrated HKMP Stage 8D
+**Governing ADRs:** ADR-025, ADR-026, ADR-027, ADR-028
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `donor_profile` | Donor Profile | `donor-resource/ontology/entities.yaml` | Donor & Resource | Attaches behind `shared:person` or `shared:organisation` (never both); must not redefine either. Must not be redefined elsewhere. |
+| `grant` | Grant | `donor-resource/ontology/entities.yaml` | Donor & Resource | References `programs:funding_source_types` / `programs:funding_restrictions`; does not redefine them. Funds `programs:program` additively via `grant_funds_program`, coexisting with the untouched `programs:program_funded_by`. Must not be redefined elsewhere. |
+| `contribution` | Contribution | `donor-resource/ontology/entities.yaml` | Donor & Resource | Must not be redefined elsewhere. |
+| `resource` | Resource (abstract) | `donor-resource/ontology/entities.yaml` | Donor & Resource | Abstract supertype; owns no allocatable data. Never itself allocated or delivered. Must not be redefined elsewhere. |
+| `financial_resource`, `material_resource` | Resource Specializations | `donor-resource/ontology/entities.yaml` | Donor & Resource | `parent: resource`. Must not be redefined elsewhere. |
+| `inventory_item` | Inventory Item | `donor-resource/ontology/entities.yaml` | Donor & Resource | The tracked instance of a resource. Must not be collapsed into `resource`. Must not be redefined elsewhere. |
+| `storage_location` | Storage Location | `donor-resource/ontology/entities.yaml` | Donor & Resource | Physical storage concept only. Must not be redefined elsewhere. |
+| `resource_allocation` | Resource Allocation | `donor-resource/ontology/entities.yaml` | Donor & Resource | The pre-delivery reservation/commitment decision. Allocates `programs:program` or `case_management:case_plan` additively; referenced (not owned) by Support Delivery's `delivery_event_fulfilled_from_resource_allocation`. Must not reference `delivery_event`, `custody_transfer`, `custodian`, or `proof_of_delivery` directly. Must not be redefined elsewhere. |
+| `donor_type`, `donor_engagement_pattern`, `anonymity_level` | Donor Classification Taxonomy | `donor-resource/taxonomy/donor-classification.yaml` | Donor & Resource | `donor_type` is distinct from `programs:funding_source_types` — see that file's `distinct_from` reference block. Must not be redefined elsewhere. |
+| `islamic_giving_type`, `zakat_eligible_category` | Islamic Giving Taxonomy | `donor-resource/taxonomy/islamic-giving.yaml` | Donor & Resource | `zakat_eligible_category` is referenceable by, but does not redefine or supersede, `programs:eligibility_rule`. Not subject to ADR-022 regional-synonym collapse (see that file's purpose note). Must not be redefined elsewhere. |
+| `grant_status`, `contribution_status`, `renewal_status` | Funding Lifecycle Taxonomy | `donor-resource/taxonomy/funding.yaml` | Donor & Resource | Must not be redefined elsewhere. |
+| `material_resource_category`, `financial_resource_category`, `resource_condition` | Resource Classification Taxonomy | `donor-resource/taxonomy/resource-classification.yaml` | Donor & Resource | `material_resource_category` is distinct from `programs:intervention_modality` and `support_delivery:delivery_modality` — see that file's `distinct_from` reference block. Must not be redefined elsewhere. |
+| `stock_movement_type` | Stock Movement Taxonomy | `donor-resource/taxonomy/stock-movement.yaml` | Donor & Resource | Classification scheme only; no per-instance movement log entity exists at this maturity. Must not be redefined elsewhere. |
+| `storage_location_type` | Storage Taxonomy | `donor-resource/taxonomy/storage.yaml` | Donor & Resource | Must not be redefined elsewhere. |
+| `allocation_priority`, `allocation_status`, `reservation_state` | Allocation Taxonomy | `donor-resource/taxonomy/allocation.yaml` | Donor & Resource | Must not be redefined elsewhere. |
+
+**Relationships Owned:**
+- `donor_profile_of_person`, `donor_profile_of_organisation`
+- `grant_issued_by_donor_profile` / `donor_profile_issues_grant`
+- `contribution_given_by_donor_profile` / `donor_profile_gives_contribution`
+- `contribution_contributes_to_grant` / `grant_receives_contribution`
+- `grant_funds_program` (cross-domain, additive; no inverse authored in Programs)
+- `inventory_item_instance_of_resource` (polymorphic, domain-internal)
+- `inventory_item_stored_at_storage_location` / `storage_location_holds_inventory_item`
+- `resource_allocation_allocates_inventory_item`
+- `resource_allocation_allocated_to_program` (cross-domain, additive; no inverse authored in Programs)
+- `resource_allocation_allocated_to_case_plan` (cross-domain, additive; no inverse authored in Case Management)
+- `resource_allocation_funded_by_grant` / `resource_allocation_funded_by_contribution` (domain-internal)
+
+**Explicit References Only (Owned Elsewhere):**
+- `person`, `organisation` (Shared Ontology)
+- `program` (Programs)
+- `funding_source_types`, `funding_restrictions` (Programs)
+- `eligibility_rule` (Programs) — `zakat_eligible_category` is a referenceable value, not an owned
+  relationship into this concept
+- `case_plan` (Case Management)
+- `local-organizations` typology (Community Context) — referenced only when typing a
+  community/faith-based donor's underlying `organisation`, never authored as a relationship from
+  this domain
+
+**Explicitly Not Owned (Support Delivery, permanent exclusion):**
+- `custody_transfer`, `custodian`, `delivery_event`, `proof_of_delivery`, any dispatch workflow.
+  Inventory ends where custody begins. Support Delivery's own
+  `delivery_event_fulfilled_from_resource_allocation` relationship
+  (`support-delivery/ontology/relationships.yaml`) is the sole authorized reference in the reverse
+  direction, added per HKMP Stage 8D.
+
+**Explicitly Not Owned (Volunteer Operations, permanent exclusion):**
+- Any volunteer skill, certification, availability, capability, capacity, deployment, or assignment
+  concept. See ADR-026.
+
+---
+
 ## Flagged Boundary Cases
 
 The following are known areas where concept ownership requires future

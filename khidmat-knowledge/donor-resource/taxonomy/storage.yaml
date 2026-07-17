@@ -1,0 +1,51 @@
+version: "1.0.0"
+domain: donor_resource
+file: taxonomy/storage.yaml
+status: active
+
+purpose: >
+  Classifies the canonical KIND of physical storage a storage_location
+  represents. Software concepts (a database, an application, a tracking
+  system) are explicitly out of scope — this scheme classifies physical
+  space only. A single storage_location may carry more than one value (e.g.
+  a warehouse with a dedicated cold-chain section is both warehouse and
+  cold_chain_storage).
+
+schemes:
+  - id: storage_location_type
+    label: Storage Location Type
+    description: >
+      The physical kind of storage a location provides.
+    concepts:
+      - id: warehouse
+        label: Warehouse
+        description: >
+          A fixed, general-purpose storage facility for bulk stock.
+      - id: distribution_center
+        label: Distribution Center
+        description: >
+          A facility whose primary function is staging stock for near-term
+          onward distribution, distinct from long-term bulk warehousing.
+      - id: cold_chain_storage
+        label: Cold-Chain Storage
+        description: >
+          Temperature-controlled storage for stock requiring cold-chain
+          integrity (e.g. certain medicines, vaccines). An inventory_item
+          whose resource is material_resource with cold_chain_required true
+          MUST be stored_at a storage_location whose storage_location_type
+          includes this value (semantic-constraints.yaml#cold_chain_integrity_constraint).
+      - id: temporary_storage
+        label: Temporary Storage
+        description: >
+          A short-duration, often improvised storage site established for
+          an acute response, without the durability or capacity of a
+          warehouse.
+      - id: mobile_storage
+        label: Mobile Storage
+        description: >
+          Storage integral to a mobile unit (e.g. a stocked distribution
+          vehicle) prior to the stock entering the custody chain proper.
+          Distinct from the vehicle's own material_resource classification
+          (taxonomy/resource-classification.yaml#material_resource_category#vehicles)
+          when a vehicle is itself tracked as stock, rather than as a
+          storage location that holds stock.

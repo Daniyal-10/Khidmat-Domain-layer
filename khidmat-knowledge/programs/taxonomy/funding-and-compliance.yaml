@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: programs
 file: taxonomy/funding-and-compliance.yaml
 status: active
@@ -32,7 +32,7 @@ schemes:
         label: Public Donations
         description: >
           Crowdfunding or individual unrestricted giving.
-          
+
   - id: funding_restrictions
     label: Funding Restrictions
     description: >
@@ -130,3 +130,22 @@ schemes:
         label: Critical Violation
         description: >
           Severe breach (e.g., fraud) triggering suspension or termination.
+
+references:
+  - scheme: donor_resource:donor_type
+    relation: distinct_from
+    note: >
+      Added per HKMP Stage 8D Governance Integration. funding_source_types
+      above classifies a PROGRAM's funding category. donor_type
+      (donor-resource/taxonomy/donor-classification.yaml) classifies the
+      GIVING PARTY's own segment (individual, institutional, corporate,
+      government, foundation, faith_based, community, anonymous). Both may
+      be populated for the same funding relationship without duplication: a
+      grant (donor-resource/ontology/entities.yaml) from a
+      private_foundation-type donor_profile still separately carries a
+      funding_source_type value of private_foundation on itself for
+      continuity with this scheme, but neither redefines the other. This
+      file remains the sole owner of funding_source_types; Donor & Resource
+      references it by taxonomy_ref
+      (donor-resource/ontology/data-properties.yaml#funding_source_type) and
+      does not duplicate it.

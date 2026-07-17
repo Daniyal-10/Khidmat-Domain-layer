@@ -1,0 +1,437 @@
+version: "1.1.0"
+domain: donor_resource
+file: donor-resource/ontology/data-properties.yaml
+status: active
+
+namespaces:
+  programs_tax: programs
+
+# Namespace corrected from the file-path form
+# ("programs/taxonomy/funding-and-compliance.yaml") to the domain-name-only
+# form per HKMP Stage 8R Certification Remediation (optional cleanup,
+# HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5, finding 5.4): the file-path form
+# is the explicitly named anti-pattern in
+# Canonical_Ontology_Schema.md §10 and was inconsistent with this domain's
+# own relationships.yaml and taxonomy/*.yaml files, which already used the
+# domain-name-only convention.
+
+# Cross-domain taxonomy_ref properties (funding_source_type, funding_restriction)
+# reference the existing Programs schemes directly, per ADR-027 — no
+# parallel scheme is authored in this domain's own taxonomy/ files. This
+# mirrors the exact pattern already used by needs-assessment's need_severity
+# (needs-assessment/ontology/data-properties.yaml), which references
+# registration_tax:need_severity rather than duplicating it.
+#
+# Stage 8C addendum (Material Resource & Logistics, ADR-028): properties
+# for resource, financial_resource, material_resource, inventory_item,
+# storage_location, and resource_allocation are appended below the Stage 8B
+# properties (donor_profile, grant, contribution), which are unmodified.
+
+data_properties:
+
+  # ---------------------------------------------------------------------------
+  # donor_profile
+  # ---------------------------------------------------------------------------
+
+  - id: donor_id
+    domain: donor_profile
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: donor_type
+    domain: donor_profile
+    taxonomy_ref: donor_type
+    cardinality: { min: 1, max: unbounded }
+    notes: >
+      Source scheme: taxonomy/donor-classification.yaml#donor_type. A donor
+      may carry more than one value (e.g. a genuinely dual-natured
+      faith_based + institutional donor).
+
+  - id: donor_engagement_pattern
+    domain: donor_profile
+    taxonomy_ref: donor_engagement_pattern
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      Source scheme: taxonomy/donor-classification.yaml#donor_engagement_pattern.
+      Independent of donor_type — see that scheme's purpose note.
+
+  - id: anonymity_level
+    domain: donor_profile
+    taxonomy_ref: anonymity_level
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Source scheme: taxonomy/donor-classification.yaml#anonymity_level. The
+      profile's default disclosure posture. Per-gift override is not modeled
+      at this maturity (no concrete operational requirement for it yet).
+
+  # ---------------------------------------------------------------------------
+  # grant
+  # ---------------------------------------------------------------------------
+
+  - id: grant_id
+    domain: grant
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: grant_status
+    domain: grant
+    taxonomy_ref: grant_status
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Source scheme: taxonomy/funding.yaml#grant_status.
+
+  - id: funding_window
+    domain: grant
+    fields:
+      - id: window_start_date
+        datatype: xsd:date
+        cardinality: { min: 1, max: 1 }
+      - id: window_end_date
+        datatype: xsd:date
+        cardinality: { min: 0, max: 1 }
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      A Value Object (Canonical_Ontology_Schema.md §17): an owner-scoped
+      {window_start_date, window_end_date} bundle with no independent
+      identity. window_end_date is optional to allow open-ended commitments
+      whose end is not yet fixed at authoring time. Passes the §17 promotion
+      test: no entity references a specific funding window independently of
+      its owning grant. Mirrors the language_competency value-object pattern
+      already established in volunteer-operations/ontology/data-properties.yaml.
+
+  - id: renewal_status
+    domain: grant
+    taxonomy_ref: renewal_status
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Source scheme: taxonomy/funding.yaml#renewal_status.
+
+  - id: funding_source_type
+    domain: grant
+    taxonomy_ref: programs_tax:funding_source_types
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      References the existing scheme in
+      programs/taxonomy/funding-and-compliance.yaml#funding_source_types
+      directly — not duplicated here. Distinct from, and may be populated
+      alongside, the issuing donor_profile's own donor_type (see
+      donor-classification.yaml's reconciliation note): this property
+      classifies the funding instance; donor_type classifies the giving
+      party.
+
+  - id: funding_restriction
+    domain: grant
+    taxonomy_ref: programs_tax:funding_restrictions
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      References the existing scheme in
+      programs/taxonomy/funding-and-compliance.yaml#funding_restrictions
+      directly — not duplicated here. A grant may carry more than one
+      restriction simultaneously (e.g. earmarked_geographic AND
+      tied_procurement).
+
+  - id: grant_islamic_giving_type
+    domain: grant
+    taxonomy_ref: islamic_giving_type
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Source scheme: taxonomy/islamic-giving.yaml#islamic_giving_type. Unset
+      for grants not structured as Islamic giving. Named
+      grant_islamic_giving_type (entity-qualified) to stay distinct from
+      contribution_islamic_giving_type below, per this file's id-uniqueness
+      convention.
+
+  - id: zakat_eligible_category
+    domain: grant
+    taxonomy_ref: zakat_eligible_category
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      Source scheme: taxonomy/islamic-giving.yaml#zakat_eligible_category.
+      Required when grant_islamic_giving_type is zakat (enforced in
+      semantic-constraints.yaml#zakat_grant_requires_eligible_category); a
+      grant may name more than one eligible category if its zakat
+      distribution spans several asnaf.
+
+  # ---------------------------------------------------------------------------
+  # contribution
+  # ---------------------------------------------------------------------------
+
+  - id: contribution_id
+    domain: contribution
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: contribution_date
+    domain: contribution
+    datatype: xsd:date
+    cardinality: { min: 1, max: 1 }
+
+  - id: contribution_status
+    domain: contribution
+    taxonomy_ref: contribution_status
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Source scheme: taxonomy/funding.yaml#contribution_status.
+
+  - id: designated_purpose
+    domain: contribution
+    datatype: xsd:string
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      A free-text earmark note for a standalone contribution (one not tied to
+      a grant's own funding_restriction structure). Mirrors the repository's
+      established pattern of using xsd:string for genuinely free-text detail
+      rather than forcing an under-specified controlled vocabulary
+      (registration's `language` property follows the same discipline).
+
+  - id: contribution_islamic_giving_type
+    domain: contribution
+    taxonomy_ref: islamic_giving_type
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Source scheme: taxonomy/islamic-giving.yaml#islamic_giving_type. Set
+      independently of a related grant's own grant_islamic_giving_type when
+      the contribution stands alone (contributes_to unset) — e.g. a single
+      standalone sadaqah gift with no parent grant.
+
+  # ===========================================================================
+  # Material Resource & Logistics Intelligence (HKMP Stage 8C).
+  # Stage 8B properties above are unmodified.
+  # ===========================================================================
+
+  # ---------------------------------------------------------------------------
+  # resource
+  #
+  # No identity property is declared on the abstract `resource` entity
+  # itself. Corrected per HKMP Stage 8R Certification Remediation (Major
+  # finding, HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md §4.2 /
+  # HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5): `resource_id`/`resource_name`
+  # were previously declared here, contradicting both this entity's own
+  # stated "owns no allocatable/trackable data itself" design intent
+  # (entities.yaml) and the repository's own precedent for abstract-
+  # supertype/concrete-subtype identity placement — `shared:subject` (the
+  # structural model `resource` is explicitly built to mirror, per ADR-018)
+  # owns zero data properties; `person_id`, `household_id`, and
+  # `organisation_id`/`organisation_name` are each declared on their
+  # respective CONCRETE type only (shared/ontology/data-properties.yaml).
+  # Identity now lives on financial_resource and material_resource
+  # individually, below, matching that precedent exactly.
+  # ---------------------------------------------------------------------------
+
+  # ---------------------------------------------------------------------------
+  # financial_resource
+  # ---------------------------------------------------------------------------
+
+  - id: financial_resource_id
+    domain: financial_resource
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Added per HKMP Stage 8R Certification Remediation, replacing the
+      abstract-entity `resource_id` this domain previously (incorrectly)
+      declared — see the `resource` section note above.
+
+  - id: financial_resource_name
+    domain: financial_resource
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      A human-readable name for the financial resource kind (e.g.
+      "Unrestricted USD Cash Pool"). Free-text, per the established
+      repository discipline of xsd:string for genuinely free-text identity
+      fields rather than an under-specified controlled vocabulary (mirrors
+      contribution.designated_purpose above and registration's language
+      property). Added per HKMP Stage 8R Certification Remediation,
+      replacing the abstract-entity `resource_name` this domain previously
+      (incorrectly) declared — see the `resource` section note above.
+
+  - id: financial_resource_category
+    domain: financial_resource
+    taxonomy_ref: financial_resource_category
+    cardinality: { min: 1, max: unbounded }
+    notes: >
+      Source scheme: taxonomy/resource-classification.yaml#financial_resource_category.
+
+  - id: currency
+    domain: financial_resource
+    datatype: xsd:string
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      ISO 4217-style currency identifier as free text, mirroring the
+      repository's existing discipline of not maintaining a controlled
+      vocabulary for identifiers with an external, stable standard (the same
+      reasoning already applied to volunteer-operations' language
+      identifier).
+
+  # ---------------------------------------------------------------------------
+  # material_resource
+  # ---------------------------------------------------------------------------
+
+  - id: material_resource_id
+    domain: material_resource
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Added per HKMP Stage 8R Certification Remediation, replacing the
+      abstract-entity `resource_id` this domain previously (incorrectly)
+      declared — see the `resource` section note above.
+
+  - id: material_resource_name
+    domain: material_resource
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      A human-readable name for the material resource kind (e.g. "Fortified
+      Wheat Flour, 25kg bags"). Free-text, for the same reason as
+      financial_resource_name above. Added per HKMP Stage 8R Certification
+      Remediation, replacing the abstract-entity `resource_name` this domain
+      previously (incorrectly) declared — see the `resource` section note
+      above.
+
+  - id: material_resource_category
+    domain: material_resource
+    taxonomy_ref: material_resource_category
+    cardinality: { min: 1, max: unbounded }
+    notes: >
+      Source scheme: taxonomy/resource-classification.yaml#material_resource_category.
+
+  - id: cold_chain_required
+    domain: material_resource
+    datatype: xsd:boolean
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Whether this material_resource kind requires cold-chain storage.
+      Drives cold_chain_integrity_constraint (semantic-constraints.yaml):
+      an inventory_item instantiating a cold_chain_required material_resource
+      must be stored_at a storage_location whose storage_location_type
+      includes cold_chain_storage (taxonomy/storage.yaml).
+
+  # ---------------------------------------------------------------------------
+  # inventory_item
+  # ---------------------------------------------------------------------------
+
+  - id: inventory_item_id
+    domain: inventory_item
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: quantity_on_hand
+    domain: inventory_item
+    datatype: xsd:decimal
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Must be non-negative (semantic-constraints.yaml#inventory_quantity_non_negative).
+
+  - id: available_quantity
+    domain: inventory_item
+    datatype: xsd:decimal
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Added per HKMP Stage 8R Certification Remediation to resolve the
+      Major finding in HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md §4.3 /
+      HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5: the portion of
+      quantity_on_hand not currently held by a firm or committed
+      resource_allocation. Bounded by
+      semantic-constraints.yaml#inventory_item_available_quantity_bounds
+      (0 <= available_quantity <= quantity_on_hand) and is the field
+      allocated_quantity_not_exceed_available checks against, replacing the
+      prior direct check against quantity_on_hand, which could not detect
+      over-commitment across multiple concurrent resource_allocations. Like
+      quantity_on_hand itself, this is a declared, bounded fact the ontology
+      constrains — keeping it in sync with the sum of active allocations as
+      those allocations are created, cancelled, or fulfilled is a
+      reasoning/application-layer responsibility, not an ontology-authored
+      process (mirroring the ADR-023 §19 boundary already applied
+      throughout this domain, e.g. stock_movement_type's own purpose note).
+
+  - id: unit_of_measure
+    domain: inventory_item
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Free-text unit (kg, litre, unit, box, USD, ...), mirroring the
+      currency property's rationale above — no controlled vocabulary is
+      maintained for units of measure.
+
+  - id: resource_condition
+    domain: inventory_item
+    taxonomy_ref: resource_condition
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Source scheme: taxonomy/resource-classification.yaml#resource_condition.
+      Governs allocability — expired and quarantined inventory_items cannot
+      be allocated (semantic-constraints.yaml#expired_or_quarantined_resource_not_allocatable).
+
+  - id: expiry_date
+    domain: inventory_item
+    datatype: xsd:date
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Applicable to perishable material_resource stock; unset for
+      non-perishable material or financial resources.
+
+  - id: received_date
+    domain: inventory_item
+    datatype: xsd:date
+    cardinality: { min: 0, max: 1 }
+
+  # ---------------------------------------------------------------------------
+  # storage_location
+  # ---------------------------------------------------------------------------
+
+  - id: storage_location_id
+    domain: storage_location
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: storage_location_type
+    domain: storage_location
+    taxonomy_ref: storage_location_type
+    cardinality: { min: 1, max: unbounded }
+    notes: >
+      Source scheme: taxonomy/storage.yaml#storage_location_type. A location
+      may carry more than one value (e.g. a warehouse with a dedicated
+      cold-chain section).
+
+  # ---------------------------------------------------------------------------
+  # resource_allocation
+  # ---------------------------------------------------------------------------
+
+  - id: resource_allocation_id
+    domain: resource_allocation
+    datatype: xsd:string
+    cardinality: { min: 1, max: 1 }
+
+  - id: allocated_quantity
+    domain: resource_allocation
+    datatype: xsd:decimal
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Must not exceed the referenced inventory_item's quantity_on_hand
+      (semantic-constraints.yaml#allocated_quantity_not_exceed_available).
+
+  - id: allocation_priority
+    domain: resource_allocation
+    taxonomy_ref: allocation_priority
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Source scheme: taxonomy/allocation.yaml#allocation_priority.
+
+  - id: allocation_status
+    domain: resource_allocation
+    taxonomy_ref: allocation_status
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Source scheme: taxonomy/allocation.yaml#allocation_status.
+
+  - id: reservation_state
+    domain: resource_allocation
+    taxonomy_ref: reservation_state
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Source scheme: taxonomy/allocation.yaml#reservation_state.
+
+  - id: allocation_date
+    domain: resource_allocation
+    datatype: xsd:date
+    cardinality: { min: 1, max: 1 }

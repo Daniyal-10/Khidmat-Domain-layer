@@ -1,0 +1,321 @@
+version: "1.1.0"
+domain: donor_resource
+file: donor-resource/ontology/relationships.yaml
+status: active
+
+# All cross-domain rows below are authored FROM this domain's own entities
+# OUTWARD, referencing target entities by CURIE. No row is authored into, and
+# no file belonging to, shared/ontology, programs, case-management,
+# support-delivery, volunteer-operations, or community-context. This is the
+# same discipline
+# already used by volunteer_profile_affiliated_with_organisation
+# (volunteer-operations/ontology/relationships.yaml) and by
+# case_plan_addressed_by_intervention (case-management/ontology/relationships.yaml):
+# the domain that owns the "from" entity authors and owns the edge; the
+# referenced domain's files are read, never written.
+
+namespaces:
+  shared: shared
+  programs: programs
+  case_management: case_management
+
+relationships:
+
+  # -------------------------------------------------------------------------
+  # Donor identity attachment (ADR-025) — the single most important
+  # boundary in this domain.
+  # -------------------------------------------------------------------------
+
+  - id: donor_profile_of_person
+    from: donor_profile
+    relationship: profile_of_person
+    to: shared:person
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Attaches an individual donor's giving profile BEHIND the shared Person
+      entity. Mirrors volunteer_profile_profile_of_actor
+      (volunteer-operations/ontology/relationships.yaml), applied to Person
+      instead of Actor. Cardinality is 0..1, not 1..1: a donor_profile with
+      neither this relationship nor donor_profile_of_organisation populated
+      represents a genuinely untraceable donor (ADR-025). Mutually
+      exclusive with donor_profile_of_organisation on the same instance — see
+      semantic-constraints.yaml. No inverse row is authored: the reverse edge
+      would live in shared/ontology/relationships.yaml, which this domain
+      does not own or modify.
+
+      Verb renamed from shared `profile_of` to `profile_of_person` per HKMP
+      Stage 8R Certification Remediation (Critical finding, Stage 8E §4.1 /
+      Stage 8F §4), following the precedent already established by
+      needs-assessment/ontology/relationships.yaml's `evaluates_person` /
+      `evaluates_household` / `evaluates_community` (sibling relationships
+      each given a distinct verb rather than sharing one), so
+      `Canonical_Ontology_Schema.md` §9's "canonical reusable property name
+      ... never a per-row relationship id" rule is satisfiable without
+      ambiguity. No semantic change: target and cardinality unchanged.
+
+  - id: donor_profile_of_organisation
+    from: donor_profile
+    relationship: profile_of_organisation
+    to: shared:organisation
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Attaches an institutional, corporate, government, foundation, or
+      faith-based/community donor's giving profile BEHIND the shared
+      Organisation entity. Cardinality is 0..1 for the same reason as
+      donor_profile_of_person above. Mutually exclusive with
+      donor_profile_of_person on the same instance — see
+      semantic-constraints.yaml. No inverse row is authored, for the same
+      reason as above.
+
+      Verb renamed from shared `profile_of` to `profile_of_organisation`
+      per HKMP Stage 8R — see the sibling row's note above for full
+      rationale. No semantic change.
+
+  # -------------------------------------------------------------------------
+  # Internal domain relationships (funding chain)
+  # -------------------------------------------------------------------------
+
+  - id: grant_issued_by_donor_profile
+    from: grant
+    relationship: issued_by
+    to: donor_profile
+    cardinality: { min: 1, max: 1 }
+    inverse: donor_profile_issues_grant
+    notes: >
+      Every grant traces to exactly one donor_profile (which may itself be
+      unattached to any person/organisation, for an untraceable-but-grant-
+      structured funder — rare, but not excluded by this cardinality).
+
+  - id: donor_profile_issues_grant
+    from: donor_profile
+    relationship: issues
+    to: grant
+    cardinality: { min: 0, max: unbounded }
+    inverse: grant_issued_by_donor_profile
+    notes: >
+      Inverse of grant_issued_by_donor_profile. A donor_profile may issue zero
+      or more grants over time.
+
+  - id: contribution_given_by_donor_profile
+    from: contribution
+    relationship: given_by
+    to: donor_profile
+    cardinality: { min: 1, max: 1 }
+    inverse: donor_profile_gives_contribution
+    notes: >
+      Every contribution traces to exactly one donor_profile — including a
+      donor_profile with no person/organisation attachment, for fully
+      untraceable giving (e.g. an unattributed cash-collection-box gift).
+      There is no contribution with no donor_profile at all: even anonymous
+      giving is represented as SOME donor_profile instance (ADR-025),
+      never as a contribution floating free of any giving-party record.
+
+  - id: donor_profile_gives_contribution
+    from: donor_profile
+    relationship: gives
+    to: contribution
+    cardinality: { min: 0, max: unbounded }
+    inverse: contribution_given_by_donor_profile
+    notes: >
+      Inverse of contribution_given_by_donor_profile.
+
+  - id: contribution_contributes_to_grant
+    from: contribution
+    relationship: contributes_to
+    to: grant
+    cardinality: { min: 0, max: 1 }
+    inverse: grant_receives_contribution
+    notes: >
+      Optional: a contribution is a disbursement tranche of a grant when
+      populated, or a standalone one-off gift when not (ADR-027). A
+      contribution never contributes_to more than one grant.
+
+  - id: grant_receives_contribution
+    from: grant
+    relationship: receives
+    to: contribution
+    cardinality: { min: 0, max: unbounded }
+    inverse: contribution_contributes_to_grant
+    notes: >
+      Inverse of contribution_contributes_to_grant. A grant is disbursed
+      across zero (not yet drawn down) or more contribution tranches.
+
+  # -------------------------------------------------------------------------
+  # Cross-domain reference (funding target) — additive only, per
+  # ADR-027. Coexists with, and does not replace or modify,
+  # programs:program_funded_by (programs/ontology/relationships.yaml),
+  # which remains untouched and continues to serve direct/informal/
+  # unrestricted organisation-to-program funding.
+  # -------------------------------------------------------------------------
+
+  - id: grant_funds_program
+    from: grant
+    relationship: funds
+    to: programs:program
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      A grant may fund one or more programs (a single institutional grant
+      commonly funds several program variants); a program may in turn be
+      funded by more than one grant. Authored entirely within this domain's
+      own file, referencing programs:program by CURIE — no row is added to
+      or modified in programs/ontology/relationships.yaml. This is a
+      deliberate, more conservative resolution of ADR-027's illustrative
+      "program_funded_by_grant" naming: authoring the edge from grant's side
+      achieves the identical graph connectivity (per the direction-agnostic
+      traversal principle already noted in HKMP_STAGE7C's review of
+      case_plan_addressed_by_intervention, §1) while requiring zero
+      modification to Programs' certified relationship file. No inverse row
+      is authored in programs/ontology/relationships.yaml for the same
+      reason volunteer_profile_affiliated_with_organisation and
+      case_plan_addressed_by_intervention author no inverse in the domain
+      they reference.
+
+  # ===========================================================================
+  # Material Resource & Logistics Intelligence (HKMP Stage 8C). Implements
+  # ADR-028. Stage 8B relationships above are unmodified. All rows below
+  # are authored FROM this domain's entities OUTWARD, per this file's own
+  # header discipline — including the two cross-domain rows into Programs and
+  # Case Management, neither of which receives any new row in its own files.
+  # ===========================================================================
+
+  - id: inventory_item_instance_of_resource
+    from: inventory_item
+    relationship: instance_of
+    to: resource
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Every inventory_item instantiates exactly one resource (in practice,
+      one of resource's concrete specializations — financial_resource or
+      material_resource). Polymorphic reference to the abstract supertype
+      mirrors the established repository precedent of
+      beneficiary_lifecycle_tracks_journey_of_subject
+      (beneficiary-lifecycle/ontology/relationships.yaml), which targets
+      shared:subject directly rather than requiring a separate row per
+      concrete subtype. This is the type/instance split ADR-028
+      requires: resource describes the kind; inventory_item describes the
+      tracked stock.
+
+  - id: inventory_item_stored_at_storage_location
+    from: inventory_item
+    relationship: stored_at
+    to: storage_location
+    cardinality: { min: 1, max: 1 }
+    inverse: storage_location_holds_inventory_item
+    notes: >
+      Every inventory_item is stored at exactly one storage_location at a
+      time. Once dispatched into the custody chain, the item leaves
+      inventory tracking entirely — this domain does not model in-transit
+      location (Support Delivery's custody_transfer/delivery_event owns
+      movement; see governance.md Rule 9, Support Delivery boundary).
+
+  - id: storage_location_holds_inventory_item
+    from: storage_location
+    relationship: holds
+    to: inventory_item
+    cardinality: { min: 0, max: unbounded }
+    inverse: inventory_item_stored_at_storage_location
+    notes: >
+      Inverse of inventory_item_stored_at_storage_location. A storage
+      location holds zero or more inventory items.
+
+  - id: resource_allocation_allocates_inventory_item
+    from: resource_allocation
+    relationship: allocates
+    to: inventory_item
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Every resource_allocation allocates exactly one inventory_item (one
+      line-item decision). An allocation spanning several distinct inventory
+      items is authored as several resource_allocation instances, not one
+      instance with multiple targets — keeping allocated_quantity
+      unambiguous per the semantic constraint that it cannot exceed the
+      single referenced inventory_item's quantity_on_hand
+      (semantic-constraints.yaml).
+
+  - id: resource_allocation_allocated_to_program
+    from: resource_allocation
+    relationship: allocated_to_program
+    to: programs:program
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Authored entirely within this domain's own file, referencing
+      programs:program by CURIE — no row is added to or modified in
+      programs/ontology/relationships.yaml, the same discipline already used
+      for grant_funds_program (Stage 8B). Mutually exclusive with
+      resource_allocation_allocated_to_case_plan on the same instance — see
+      semantic-constraints.yaml. Both may be unpopulated for an allocation
+      that is reserved but not yet assigned to a specific program or case
+      plan (allocation_status#reserved, taxonomy/allocation.yaml).
+
+      Verb renamed from shared `allocated_to` to `allocated_to_program` per
+      HKMP Stage 8R Certification Remediation (Critical finding, Stage 8E
+      §4.1 / Stage 8F §4) — same rationale as `profile_of_person` above.
+      No semantic change.
+
+  - id: resource_allocation_allocated_to_case_plan
+    from: resource_allocation
+    relationship: allocated_to_case_plan
+    to: case_management:case_plan
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Authored entirely within this domain's own file, referencing
+      case_management:case_plan by CURIE — no row is added to or modified in
+      case-management/ontology/relationships.yaml. Mutually exclusive with
+      resource_allocation_allocated_to_program on the same instance — see
+      semantic-constraints.yaml.
+
+      Verb renamed from shared `allocated_to` to `allocated_to_case_plan`
+      per HKMP Stage 8R — see the sibling row's note above. No semantic
+      change.
+
+  - id: resource_allocation_funded_by_grant
+    from: resource_allocation
+    relationship: funded_by_grant
+    to: grant
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Domain-internal reference (both entities are owned here) connecting
+      the Stage 8C allocation decision back to its Stage 8B funding source,
+      per the context diagram in
+      HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md Part 3. Optional: an
+      allocation drawn from general, non-grant-earmarked stock may leave
+      this unpopulated. Mutually exclusive with
+      resource_allocation_funded_by_contribution — see
+      semantic-constraints.yaml.
+
+      Verb renamed from shared `funded_by` to `funded_by_grant` per HKMP
+      Stage 8R Certification Remediation (Critical finding, Stage 8E §4.1 /
+      Stage 8F §4) — same rationale as `profile_of_person` above. No
+      semantic change.
+
+  - id: resource_allocation_funded_by_contribution
+    from: resource_allocation
+    relationship: funded_by_contribution
+    to: contribution
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Domain-internal reference, for an allocation drawn against a standalone
+      contribution not aggregated into any grant. Mutually exclusive with
+      resource_allocation_funded_by_grant — see semantic-constraints.yaml.
+
+      Verb renamed from shared `funded_by` to `funded_by_contribution` per
+      HKMP Stage 8R — see the sibling row's note above. No semantic change.
+
+# -------------------------------------------------------------------------
+# Deferred (beyond Stage 8C, NOT authored here):
+#   - delivery_event fulfilled_from resource_allocation — Support Delivery's
+#     own future reference row, authored on the Support Delivery side (not
+#     here), the same discipline already applied throughout this file: the
+#     domain owning the "from" entity authors the edge. Not authored by this
+#     pass; Support Delivery's own certified files remain untouched (§2 of
+#     HKMP_STAGE8C_IMPLEMENTATION_REPORT.md).
+#   - Any relationship referencing custody_transfer, delivery_event,
+#     proof_of_delivery, custodian, or dispatch workflow of any kind —
+#     explicitly excluded per the Support Delivery boundary. Inventory ends
+#     where custody begins; nothing here crosses that line.
+#   - Any volunteer-related relationship — explicitly excluded per
+#     ADR-026 (Volunteer Boundary), unchanged from Stage 8B.
+#   - zakat_eligible_category as a value consumed BY programs:eligibility_rule
+#     — a Programs-side authoring act, not authored here. See
+#     PREPARED_GOVERNANCE_ADDITIONS.md.
+# -------------------------------------------------------------------------
