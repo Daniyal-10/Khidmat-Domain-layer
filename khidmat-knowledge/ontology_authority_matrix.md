@@ -192,6 +192,7 @@ Case Management (Stage 5), and Outcome Measurement (Stage 6) respectively.
 |---|---|---|---|---|
 | `engagement_stage` | Engagement Stage | `beneficiary-lifecycle/taxonomy/engagement-stage.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
 | `exit_reason` | Exit Reason | `beneficiary-lifecycle/taxonomy/exit-reasons.yaml` | Beneficiary Lifecycle | May be referenced by any domain; must not be redefined |
+| `human_development_stage` | Human Development Stage | `beneficiary-lifecycle/taxonomy/engagement-stage.yaml` | Beneficiary Lifecycle | Added Stage 6. May be referenced by any domain; must not be redefined. Strictly independent of `engagement_stage` in the same file — the two must never be merged, collapsed, or used as proxies for one another (see the file's own design note). |
 
 ## Needs Assessment Domain
 

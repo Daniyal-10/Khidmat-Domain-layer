@@ -103,6 +103,18 @@ data_properties:
     taxonomy_ref: milestone_types
     cardinality: { min: 0, max: 1 }
 
+  - id: intervention_objective_category
+    domain: intervention_offering
+    taxonomy_ref: intervention_objective_category
+    cardinality: { min: 1, max: unbounded }
+    notes: >
+      Added per Stage 6 Canonical Implementation. Independent of
+      intervention_modality (delivery form) and thematic_sector (sector);
+      see taxonomy/interventions.yaml#intervention_objective_category for
+      the full design rationale. Cardinality allows more than one value
+      because an offering's purpose can genuinely be mixed (e.g. an asset
+      transfer that is both restoration and capacity_building).
+
   # Enrollment Properties
   - id: enrollment_status
     domain: enrollment
@@ -123,6 +135,20 @@ data_properties:
     domain: enrollment
     datatype: xsd:dateTime
     cardinality: { min: 1, max: 1 }
+
+  - id: readiness_level
+    domain: enrollment
+    taxonomy_ref: intervention_readiness_level
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Added per Stage 6 Canonical Implementation. Scoped to enrollment,
+      not intervention_offering, because readiness is a judgement about
+      a specific beneficiary or household's current context and capacity
+      relative to the specific offering(s) their enrollment covers — not
+      a static attribute of the offering as catalogued. See
+      taxonomy/eligibility-and-enrollment.yaml#intervention_readiness_level
+      for the full distinction from eligibility, vulnerability, and
+      capability.
 
   # Exceptions & Appeals
   - id: override_reason

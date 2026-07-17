@@ -16,11 +16,18 @@ requirements — as distinct from ad-hoc, case-by-case assistance.
 - **Entities:** `program`, `program_version`, `program_variant`, `eligibility_rule`,
   `intervention_offering`, `enrollment`, `humanitarian_override`, `appeal`,
   `compliance_checkpoint` (`ontology/entities.yaml`)
-- **Taxonomy:** eligibility and enrollment status (`eligibility-and-enrollment.yaml`),
-  funding sources and compliance (`funding-and-compliance.yaml`), override/appeal
-  governance (`governance-and-exceptions.yaml`), intervention modalities
-  (`interventions.yaml`), program lifecycle and status (`lifecycle-and-status.yaml`),
-  program topology and thematic sectors (`structure.yaml`)
+- **Taxonomy:** eligibility, enrollment status, and intervention readiness
+  (`eligibility-and-enrollment.yaml`), funding sources and compliance
+  (`funding-and-compliance.yaml`), override/appeal governance
+  (`governance-and-exceptions.yaml`), intervention modalities and objective
+  categories (`interventions.yaml`), program lifecycle and status
+  (`lifecycle-and-status.yaml`), program topology and thematic sectors
+  (`structure.yaml`)
+- **Relationships (added Stage 6):** `offering_prerequisite_for`,
+  `offering_mutually_exclusive_with`, `offering_reinforces`,
+  `offering_substitutes_for` — intervention-offering-level counterparts to the
+  existing program-level `program_prerequisite_for` /
+  `program_mutually_exclusive_with` (`ontology/relationships.yaml`)
 
 ## Does Not Own
 

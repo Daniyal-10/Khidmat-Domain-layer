@@ -134,3 +134,71 @@ schemes:
         label: Lottery
         description: >
           Randomized selection from the eligible pool.
+
+  # ---------------------------------------------------------------------
+  # Added per Stage 6 Canonical Implementation, closing the "Intervention
+  # Readiness" gap identified in
+  # STAGE6_INTERVENTION_ONTOLOGY_GAP_AUDIT.md.
+  #
+  # Deliberately distinct from three existing, adjacent concepts, none of
+  # which this scheme redefines or duplicates:
+  #   - eligibility_categories (this file): a categorical, rule-based
+  #     qualification question — does this beneficiary formally qualify
+  #     under the program's stated rules. A beneficiary can be fully
+  #     eligible and still not ready (a business grant applicant who
+  #     qualifies on means-tested criteria but has no confirmed market for
+  #     the proposed enterprise), or occasionally ready in practice before
+  #     formal eligibility is confirmed.
+  #   - shared/risk/ontology/vulnerability.yaml#vulnerability_level: a
+  #     latent susceptibility-to-harm judgement, describing the household
+  #     independent of any specific intervention.
+  #   - shared/human-model/taxonomy/capabilities.yaml capability levels: a
+  #     person's general ability in a capability domain, independent of
+  #     any specific intervention or current market/contextual conditions.
+  #     A person can have full vocational capability and still not be
+  #     ready for a specific business grant if the local market for that
+  #     specific enterprise is currently saturated.
+  # Readiness is the composed judgement that sits downstream of all
+  # three: given eligibility, vulnerability, and capability are already
+  # known, is the specific context and capacity actually in place for
+  # this specific intervention to succeed now. Reuses the qualitative,
+  # non-scored, four-level composition pattern already established for
+  # vulnerability_level and verification_confidence, rather than
+  # inventing a new scale shape.
+  # ---------------------------------------------------------------------
+  - id: intervention_readiness_level
+    label: Intervention Readiness Level
+    description: >
+      A structured, qualitative judgement of whether the actual context
+      and capacity for a specific intervention are currently in place for
+      a specific beneficiary or household — distinct from formal
+      eligibility, from general vulnerability, and from general
+      capability (see the design note above). Assessed per intervention,
+      not once per beneficiary, since readiness for one intervention type
+      does not imply readiness for another.
+    concepts:
+      - id: ready
+        label: Ready
+        description: >
+          The confirmed prerequisites and context for this specific
+          intervention are in place now; no further preparation is
+          required before proceeding.
+      - id: partially_ready
+        label: Partially Ready
+        description: >
+          Some, but not all, of the confirmed prerequisites and context
+          are in place; proceeding without addressing the remaining gap
+          carries a materially elevated risk of failure.
+      - id: not_ready
+        label: Not Ready
+        description: >
+          A confirmed prerequisite or contextual condition for this
+          intervention is absent; proceeding now would not be expected to
+          succeed.
+      - id: not_assessed
+        label: Not Assessed
+        description: >
+          Readiness for this specific intervention has not yet been
+          examined. Consistent with the open-world assumption applied
+          throughout this knowledge layer, absence of assessment is not
+          evidence of not_ready.

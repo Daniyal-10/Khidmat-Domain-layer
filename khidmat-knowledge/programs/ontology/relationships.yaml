@@ -98,6 +98,73 @@ relationships:
     to: verif_ops:verification_activity
     cardinality: { min: 0, max: unbounded }
 
+  # -------------------------------------------------------------------
+  # Added per Stage 6 Canonical Implementation, closing the
+  # "Intervention-Level Relationships" gap identified in
+  # STAGE6_INTERVENTION_ONTOLOGY_GAP_AUDIT.md. Deliberately mirrors the
+  # shape of program_prerequisite_for / program_mutually_exclusive_with
+  # above rather than importing the generic-relationship-plus-qualifier
+  # pattern used elsewhere in this knowledge layer (e.g. Registration's
+  # need_influences_need) — within this domain, the established
+  # convention for "one program relates to another in a specific way" is
+  # already a set of separately-named relationships, and extending that
+  # same convention one level down, to intervention_offering, keeps the
+  # file internally consistent rather than mixing two relationship
+  # design idioms in one domain. Four relationships, not one: prerequisite
+  # and incompatibility were already precedented at the program level
+  # above; reinforcement and substitution are new but follow the
+  # identical shape. All four are structural facts about intervention
+  # *types* in the catalogue (this offering, in general, depends on /
+  # precludes / reinforces / substitutes for that one) — not a
+  # household-specific or case-specific fact, which would belong to
+  # Case Management, not Programs.
+  # -------------------------------------------------------------------
+  - id: offering_prerequisite_for
+    from: intervention_offering
+    relationship: prerequisite_for
+    to: intervention_offering
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      This offering must ordinarily be completed, or its underlying need
+      resolved, before the target offering can be expected to succeed —
+      e.g. vocational training as prerequisite_for a matched employment
+      placement offering.
+
+  - id: offering_mutually_exclusive_with
+    from: intervention_offering
+    relationship: mutually_exclusive_with
+    to: intervention_offering
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      These two offerings should not ordinarily be provided to the same
+      beneficiary or household concurrently without an explicit,
+      documented rationale — e.g. unconditional cash assistance
+      mutually_exclusive_with a conditional public-works cash-for-work
+      offering targeting the same need.
+
+  - id: offering_reinforces
+    from: intervention_offering
+    relationship: reinforces
+    to: intervention_offering
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      These two offerings strengthen each other's effect when provided
+      together, without either being a strict prerequisite for the
+      other — e.g. a business grant offering reinforces, and is
+      reinforced by, a mentoring service_delivery offering.
+
+  - id: offering_substitutes_for
+    from: intervention_offering
+    relationship: substitutes_for
+    to: intervention_offering
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      These two offerings address the same underlying need through
+      different means, such that ordinarily only one, not both, would be
+      selected for a given beneficiary or household — e.g. an employment
+      placement offering substitutes_for a business grant offering
+      addressing the same livelihood need.
+
   - id: enrollment_belongs_to_version
     from: enrollment
     relationship: belongs_to_version

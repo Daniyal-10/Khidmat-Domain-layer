@@ -25,6 +25,33 @@ data_properties:
     cardinality: { min: 1, max: 1 }
     description: "The timestamp when the current stage was entered."
 
+  - id: human_development_stage
+    domain: beneficiary_lifecycle
+    taxonomy_ref: beneficiary_lifecycle:human_development_stage
+    cardinality: { min: 0, max: 1 }
+    description: >
+      Added per Stage 6 Canonical Implementation. The beneficiary's or
+      household's current position in the humanitarian developmental
+      trajectory (crisis through community_contribution) — a distinct
+      axis from current_stage (engagement_stage) above; see
+      taxonomy/engagement-stage.yaml#human_development_stage for the
+      mandatory distinction between the two. Optional (min: 0) because
+      this assessment may not yet have been made for every tracked
+      lifecycle, consistent with the open-world assumption applied
+      throughout this knowledge layer.
+
+  - id: human_development_stage_assessed_timestamp
+    domain: beneficiary_lifecycle
+    datatype: xsd:dateTime
+    cardinality: { min: 0, max: 1 }
+    description: >
+      Added per Stage 6 Canonical Implementation. The timestamp of the
+      most recent human_development_stage assessment, distinct from
+      stage_entered_timestamp above (which tracks engagement_stage).
+      Required alongside human_development_stage so that a stale
+      assessment can be distinguished from a current one; see the
+      staleness note in taxonomy/engagement-stage.yaml#human_development_stage.
+
   - id: transition_id
     domain: lifecycle_transition
     datatype: xsd:string

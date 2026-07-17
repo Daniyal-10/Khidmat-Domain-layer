@@ -77,3 +77,64 @@ schemes:
         label: Graduation Readiness
         description: >
           Final evaluation phase before exiting the program.
+
+  # ---------------------------------------------------------------------
+  # Added per Stage 6 Canonical Implementation, closing the "Intervention
+  # Objective Category" gap identified in
+  # STAGE6_INTERVENTION_ONTOLOGY_GAP_AUDIT.md. Deliberately independent of
+  # both intervention_modality (the delivery form — cash, voucher, in-kind,
+  # service, asset) and thematic_sectors (structure.yaml — the sector,
+  # e.g. WASH, livelihood, health). Two interventions can share a modality
+  # and sector (e.g. two asset_transfer, livelihood-sector interventions —
+  # a business grant and a business grant repeated after enterprise
+  # failure) while serving entirely different humanitarian purposes; this
+  # scheme names that third, independent axis. Six categories, not an
+  # exhaustive list — mirrors the "small, closed, illustrative" design
+  # discipline already used for hazard-categories.yaml and
+  # protection-indicators.yaml elsewhere in this knowledge layer.
+  # ---------------------------------------------------------------------
+  - id: intervention_objective_category
+    label: Intervention Objective Category
+    description: >
+      The underlying humanitarian purpose an intervention is intended to
+      serve, independent of its delivery modality and thematic sector.
+      Answers "what problem is this meant to solve," not "how is it
+      delivered" or "which sector does it belong to."
+    concepts:
+      - id: survival_and_stabilization
+        label: Survival and Stabilization
+        description: >
+          Preserves life, safety, or basic physiological function in the
+          near term. Does not address the underlying cause of the crisis.
+      - id: restoration
+        label: Restoration
+        description: >
+          Returns a person or household toward a prior functioning
+          baseline that was disrupted by a specific event or loss.
+      - id: capacity_building
+        label: Capacity Building
+        description: >
+          Builds a new skill, asset, or ability that did not previously
+          exist, or did not exist at a sufficient level, in the person or
+          household.
+      - id: protective
+        label: Protective
+        description: >
+          Reduces exposure to harm, exploitation, or a specific
+          identified safeguarding risk.
+      - id: connective
+        label: Connective
+        description: >
+          Links an already-capable person or household to an opportunity,
+          market, service, or entitlement they could not otherwise reach.
+      - id: resilience_building
+        label: Resilience Building
+        description: >
+          Builds capacity to absorb a future shock without falling back
+          into crisis, independent of any currently active crisis.
+    note: >
+      An intervention_offering may reasonably be assigned more than one
+      category where its purpose is genuinely mixed (see the
+      intervention_objective_category data property's cardinality in
+      programs/ontology/data-properties.yaml); the categories are not
+      mutually exclusive.

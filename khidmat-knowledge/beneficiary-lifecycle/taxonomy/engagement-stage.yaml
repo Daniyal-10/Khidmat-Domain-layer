@@ -38,3 +38,85 @@ schemes:
       - id: exited
         label: Exited
         description: "Relationship concluded manually (e.g., graduation, permanent relocation)."
+
+  # ---------------------------------------------------------------------
+  # Added per Stage 6 Canonical Implementation, closing the "Human
+  # Development Trajectory" gap identified in
+  # STAGE6_INTERVENTION_ONTOLOGY_GAP_AUDIT.md.
+  #
+  # STRICT DISTINCTION FROM engagement_stage ABOVE — READ BEFORE USE:
+  # engagement_stage describes the beneficiary's administrative
+  # relationship to the Khidmat ecosystem (has data collection started,
+  # is verification pending, is the case being monitored, has the
+  # relationship been manually exited). It is an operational/workflow
+  # axis. human_development_stage below describes a completely
+  # independent fact: the beneficiary's or household's own humanitarian
+  # developmental trajectory, independent of any organisation's
+  # involvement. A household can be at human_development_stage: crisis
+  # while engagement_stage: engaged (actively being helped), or at
+  # human_development_stage: resilience while engagement_stage: exited
+  # (help concluded because it worked) or even engagement_stage: active
+  # (formally verified but not yet receiving any intervention). Neither
+  # stage can be inferred from the other, and no engagement_stage value
+  # is assumed to correspond to any specific human_development_stage
+  # value. These two schemes must never be merged, collapsed into one
+  # property, or used as proxies for one another.
+  #
+  # This scheme states current developmental stage only. Historical
+  # transition tracking for this axis (mirroring lifecycle_transition's
+  # role for engagement_stage) is intentionally not introduced in this
+  # pass — a decades-durable classification of the stage concept itself
+  # is the scope of this enrichment; the reasoning and workflow logic
+  # governing when and how a household is judged to move between stages
+  # is explicitly deferred (see
+  # STAGE6_CANONICAL_IMPLEMENTATION_REPORT.md, Future Reasoning Concepts
+  # Explicitly Deferred).
+  # ---------------------------------------------------------------------
+  - id: human_development_stage
+    label: Human Development Stage
+    description: >
+      The beneficiary's or household's own position in the humanitarian
+      developmental trajectory from acute crisis toward the capacity to
+      contribute to others — independent of, and never to be conflated
+      with, engagement_stage (administrative relationship to Khidmat).
+    concepts:
+      - id: crisis
+        label: Crisis
+        description: >
+          Immediate survival, safety, or basic physiological needs are
+          not being met.
+      - id: stabilization
+        label: Stabilization
+        description: >
+          The acute threat has been addressed; the household is no
+          longer in immediate danger but has not yet returned to a
+          functioning baseline.
+      - id: recovery
+        label: Recovery
+        description: >
+          The household is returning toward its prior functioning
+          baseline following a specific disrupting event or loss.
+      - id: self_reliance
+        label: Self-Reliance
+        description: >
+          The household meets its own basic needs primarily through its
+          own means, without requiring external assistance for survival.
+      - id: resilience
+        label: Resilience
+        description: >
+          The household meets its own needs and has demonstrated or
+          credible capacity to absorb a moderate future shock without
+          falling back into an earlier stage.
+      - id: community_contribution
+        label: Community Contribution
+        description: >
+          The household, having achieved resilience, is now extending
+          support, resources, or capacity to others.
+    note: >
+      Stages are not assumed to be strictly linear or one-directional — a
+      household may move backward following a new shock, and may hold a
+      stage assessment that is stale relative to their current reality if
+      not recently reassessed. Consistent with the open-world assumption
+      applied throughout this knowledge layer, absence of a recorded
+      stage is not evidence of crisis; it is evidence only that the
+      developmental stage has not yet been assessed.

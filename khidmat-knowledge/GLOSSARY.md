@@ -197,6 +197,38 @@ The relationship between a person/household and a hazard category describing the
 **Risk Horizon**
 The qualitative timeframe within which harm may occur if current conditions persist.
 
+**Intervention Objective Category**
+The underlying humanitarian purpose an intervention serves (survival and
+stabilization, restoration, capacity building, protective, connective, or
+resilience building), independent of its delivery modality (cash, voucher,
+in-kind, service, asset) and its thematic sector (WASH, livelihood,
+health, etc.). Added per Stage 6 Canonical Implementation.
+
+**Intervention Readiness**
+A structured, qualitative judgement (ready / partially_ready / not_ready
+/ not_assessed) of whether the actual context and capacity for a
+specific intervention are currently in place for a specific beneficiary
+or household. Distinct from eligibility (categorical, rule-based
+qualification), vulnerability (latent susceptibility to harm), and
+capability (general ability independent of any specific intervention).
+Added per Stage 6 Canonical Implementation.
+
+**Intervention Relationship (prerequisite / mutually exclusive / reinforces / substitutes)**
+Four relationships between intervention offerings recording that one
+ordinarily precedes another, that two should not ordinarily be combined,
+that two strengthen each other without either being a strict
+prerequisite, or that two address the same underlying need such that
+ordinarily only one would be selected. Added per Stage 6 Canonical
+Implementation.
+
+**Human Development Stage**
+A beneficiary's or household's own position in the humanitarian
+developmental trajectory — crisis, stabilization, recovery,
+self-reliance, resilience, or community contribution — independent of,
+and never to be conflated with, Engagement Stage (the beneficiary's
+administrative relationship to Khidmat). Added per Stage 6 Canonical
+Implementation.
+
 **Protection Indicator (Exploitation and Coercion Indicators)**
 A specific, independently observable behavioural or circumstantial signal —
 such as coached testimony, an evasive travel or work account, inability to
