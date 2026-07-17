@@ -34,7 +34,8 @@ New to this repository? Do these four things, in order, before reading anything 
 3. **Pick one domain folder that matches what you're working on** and read its
    `README.md` — every domain directory has one, with Purpose / Scope / Owns / Does
    Not Own / Directory Structure / Related Documents in the same shape.
-4. **Before touching any ontology or taxonomy file**, read
+4. **Review `catalog.yaml`** at the repository root — this is the canonical machine-readable repository manifest, defining namespaces, module paths, and the dependency graph.
+5. **Before touching any ontology or taxonomy file**, read
    [`docs/architecture/Canonical_Ontology_Schema.md`](docs/architecture/Canonical_Ontology_Schema.md)
    or [`Canonical_Taxonomy_Schema.md`](docs/architecture/Canonical_Taxonomy_Schema.md)
    (whichever applies) and [`AI_WORKFLOW.md`](AI_WORKFLOW.md) — this repository is
