@@ -306,6 +306,71 @@ References Only" below.
 
 ---
 
+## Registration Domain
+
+**Authoritative files:** `registration/taxonomy/`, `registration/ontology/`
+**Owner domain:** Registration
+**Introduced:** Phase 1.0
+**Governing ADRs:** ADR-001 through ADR-006, ADR-021, ADR-023
+
+**Note — added per Stage 7B Repository Remediation, closing Major Finding M-6 of
+`HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md`:** Registration is the
+repository's original canonical reference implementation and one of its two
+largest domains, but had no dedicated section in this matrix — its concepts
+appeared only incidentally, as targets referenced *from* other domains'
+sections. This section does not change any ownership decision; it records
+ownership that was already true and already enforced in practice.
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `registrant` | Registrant | `registration/ontology/entities.yaml` | Registration | May be referenced by any domain; must not be redefined |
+| `beneficiary` | Beneficiary | `registration/ontology/entities.yaml` | Registration | Case-scoped snapshot observing exactly one `shared:person`; must not be redefined |
+| `household_snapshot` | Household Snapshot | `registration/ontology/entities.yaml` | Registration | Case-scoped snapshot observing exactly one `shared:household`; must not be redefined |
+| `household_member` | Household Member | `registration/ontology/entities.yaml` | Registration | May be referenced by any domain; must not be redefined |
+| `situation` | Situation | `registration/ontology/entities.yaml` | Registration | May be referenced by any domain; must not be redefined |
+| `need` | Need | `registration/ontology/entities.yaml` | Registration | May be referenced by any domain; must not be redefined |
+| `claim` | Claim | `registration/ontology/entities.yaml` | Registration | Already listed under Needs Assessment's "Explicit References Only" as owned here; must not be redefined |
+| `evidence` | Evidence | `registration/ontology/entities.yaml` | Registration | May be referenced by any domain; must not be redefined |
+| `support_intervention` | Support Intervention | `registration/ontology/entities.yaml` | Registration | Referenced cross-domain by `case_management:case_plan_addressed_by_intervention` (added Stage 7B); must not be redefined |
+| `case` (pre-handoff view) | Case | `registration/ontology/entities.yaml` | Registration | Per ADR-021, this is the pre-operational-phase view of the single canonical Case owned by Case Management, not a second entity; must not be redefined |
+| `lead` | Lead | `registration/ontology/entities.yaml` | Registration | May be referenced by any domain; must not be redefined |
+| `volunteer_review` | Volunteer Review | `registration/ontology/entities.yaml` | Registration | May be referenced by any domain; must not be redefined |
+| `need_categories`, `need_severity`, `need_duration`, `need_relationship_type` | Need Taxonomy | `registration/taxonomy/needs.yaml` | Registration | `need_severity` and `need_relationship_type` are referenced cross-domain as `registration_tax:need_severity` / `registration_tax:need_relationship_type` by Needs Assessment (see that section); must not be redefined |
+| `debt_source`, `debt_characteristic` | Debt Taxonomy | `registration/taxonomy/situations.yaml` | Registration | Added Stage 5B. May be referenced by any domain; must not be redefined |
+| `trajectory`, `trigger_events`, `affected_domains` | Situation Taxonomy | `registration/taxonomy/situations.yaml` | Registration | May be referenced by any domain; must not be redefined |
+| `claim_types`, `information_sufficiency`, `information_consistency` | Claim Taxonomy | `registration/taxonomy/claims.yaml` | Registration | May be referenced by any domain; must not be redefined |
+| `registrant_types`, `claim_basis`, `proxy_consent` | Actor Taxonomy | `registration/taxonomy/actors.yaml` | Registration | May be referenced by any domain; must not be redefined |
+| `evidence_types`, `availability_classifications` | Evidence Taxonomy | `registration/taxonomy/evidence.yaml` | Registration | May be referenced by any domain; must not be redefined |
+
+---
+
+## Programs Domain
+
+**Authoritative files:** `programs/taxonomy/`, `programs/ontology/`
+**Owner domain:** Programs
+**Introduced:** Phase 5.x
+**Governing ADRs:** ADR-008, ADR-017
+
+**Note — added per Stage 7B Repository Remediation, closing Major Finding M-6
+of `HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md`:** as with
+Registration above, Programs is a large, mature, canonical domain that had no
+dedicated section in this matrix prior to this remediation pass.
+
+| Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
+|---|---|---|---|---|
+| `program`, `program_version`, `program_variant` | Program Entities | `programs/ontology/entities.yaml` | Programs | May be referenced by any domain; must not be redefined |
+| `eligibility_rule` | Eligibility Rule | `programs/ontology/entities.yaml` | Programs | May be referenced by any domain; must not be redefined |
+| `intervention_offering` | Intervention Offering | `programs/ontology/entities.yaml` | Programs | Referenced cross-domain by `verif_ops:verification_activity` (via `offering_verified_by`); must not be redefined |
+| `enrollment` | Enrollment | `programs/ontology/entities.yaml` | Programs | May be referenced by any domain; must not be redefined |
+| `humanitarian_override`, `appeal`, `compliance_checkpoint` | Governance Entities | `programs/ontology/entities.yaml` | Programs | May be referenced by any domain; must not be redefined |
+| `intervention_modality`, `conditionality_types`, `milestone_types`, `intervention_objective_category` | Intervention Taxonomy | `programs/taxonomy/interventions.yaml` | Programs | `intervention_objective_category` added Stage 6. May be referenced by any domain; must not be redefined |
+| `eligibility_categories`, `enrollment_status`, `enrollment_outcome`, `termination_reasons`, `waitlist_priority`, `intervention_readiness_level` | Eligibility & Enrollment Taxonomy | `programs/taxonomy/eligibility-and-enrollment.yaml` | Programs | `intervention_readiness_level` added Stage 6. May be referenced by any domain; must not be redefined |
+| `program_topology`, `thematic_sectors`, `implementing_partner_roles` | Structure Taxonomy | `programs/taxonomy/structure.yaml` | Programs | `thematic_sectors` is the current sourcing scheme for `needs_assessment:thematic_sector` pending the still-open `shared:humanitarian_sector` promotion (see Needs Assessment section); must not be redefined |
+| `offering_prerequisite_for`, `offering_mutually_exclusive_with`, `offering_reinforces`, `offering_substitutes_for` | Intervention Offering Relationships | `programs/ontology/relationships.yaml` | Programs | Added Stage 6, reusing the `prerequisite_for`/`mutually_exclusive_with` predicates already domain-local to Programs at the Program level. Must not be redefined. |
+| `case_plan_addressed_by_intervention` | Case Plan → Intervention Relationship | `case-management/ontology/relationships.yaml` | Case Management (references `registration:support_intervention`, not a Programs concept) | Added Stage 7B; listed here only as a pointer, since it is the relationship that structurally connects a Case Plan to an intervention — see Registration and Case Management sections for the owned entities involved. |
+
+---
+
 ## Case Management Domain
 
 **Authoritative files:** `case-management/taxonomy/`, `case-management/ontology/`
@@ -320,6 +385,7 @@ References Only" below.
 | `referral_status` | Referral Status | `case-management/taxonomy/referral_status.yaml` | Case Management | May be referenced by any domain; must not be redefined |
 | `case_origin` | Case Origin | `case-management/taxonomy/case_origin.yaml` | Case Management | May be referenced by any domain; must not be redefined |
 | `closure_reason` | Closure Reason | `case-management/taxonomy/closure_reason.yaml` | Case Management | May be referenced by any domain; must not be redefined |
+| `objective_status` | Objective Status | `case-management/taxonomy/objective_status.yaml` | Case Management | Attached to `case_plan` per Stage 7B Repository Remediation (previously an orphaned taxonomy with no consuming entity or property — see Finding M-2); must not be redefined |
 | `case` | Case | `case-management/ontology/entities.yaml` | Case Management | May be referenced by any domain; must not be redefined |
 | `case_plan` | Case Plan | `case-management/ontology/entities.yaml` | Case Management | May be referenced by any domain; must not be redefined |
 | `referral` | Referral | `case-management/ontology/entities.yaml` | Case Management | May be referenced by any domain; must not be redefined |

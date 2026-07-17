@@ -9,6 +9,7 @@ namespaces:
   consent_and_privacy: consent_and_privacy
   shared_human_model: "shared/human-model/ontology/family-structure.yaml"
   programs: programs
+  registration: registration
 
 relationships:
   - id: case_informed_by_family
@@ -123,6 +124,35 @@ relationships:
     to: needs_assessment:need_assertion
     cardinality: { min: 0, max: unbounded }
     notes: Linked from case_plan to needs_assessment:need_assertion.
+
+  - id: case_plan_addressed_by_intervention
+    from: case_plan
+    relationship: addressed_by
+    to: registration:support_intervention
+    cardinality: { min: 0, max: unbounded }
+    notes: >
+      Added per Stage 7B Repository Remediation, closing Critical Finding
+      C-1 of HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md: case_plan's
+      own description ("the structured, approved operational strategy
+      guiding the coordination of interventions for a Case") had no
+      relationship to any intervention entity. Reuses the existing
+      support_intervention entity (registration/ontology/entities.yaml) and
+      the existing addressed_by predicate already used by
+      need_addressed_by_intervention (registration/ontology/relationships.yaml)
+      — no new entity, no new predicate. support_intervention was chosen
+      over programs:intervention_offering because it is the entity already
+      representing "what assistance is being provided" at case scope, and
+      is already the target of need_addressed_by_intervention; where a
+      support_intervention is in turn delivered through a formal Program,
+      that linkage already flows through the existing internal-Referral
+      pathway (referral_targets_program), which this relationship does not
+      duplicate. This is the completing edge for the
+      Needs -> Case Plan -> Intervention segment of the audited lifecycle
+      chain; Case Plan -> Support Delivery was already intact via
+      delivery_event fulfills case_plan (support-delivery/ontology/relationships.yaml).
+      Cardinality is { min: 0, max: unbounded } because a case_plan may be
+      approved before every intervention is finalised, and may coordinate
+      more than one.
 
   - id: referral_references_consent
     from: referral

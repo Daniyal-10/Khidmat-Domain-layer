@@ -29,7 +29,7 @@ still at `crisis`, or `exited` while at `resilience`). See
 - **Taxonomy:** `engagement_stage`, `human_development_stage`, `exit_reason`,
   `suspension_reason`, `review_trigger` (in `taxonomy/`)
 - **Entities:** `beneficiary_lifecycle`, `lifecycle_transition` (in `ontology/`)
-- **Relationships:** `tracks_journey_of`, `has_transition_history`, `followed_by`, `triggered_by_registration_case`, `triggered_by_verification_finding`, `triggered_by_risk_characterization`, `triggered_by_case_decision`, `part_of_lifecycle`
+- **Relationships:** `tracks_journey_of`, `has_transition_history`, `followed_by`, `triggered_by_registration_case`, `triggered_by_verification_finding`, `triggered_by_risk_characterization`, `triggered_by_case_decision`, `triggered_by_impact_evaluation` (added Stage 7B, closing the Impact → Beneficiary Lifecycle gap), `part_of_lifecycle`
 
 ## Does Not Own
 

@@ -14,6 +14,13 @@ Lifecycle to compare before/after states.
 ## Owns
 
 - **Entities:** `impact_evaluation`, `measurement` (`ontology/entities.yaml`)
+- **Relationships (Stage 7B):** `impact_evaluation` can now inform a
+  `beneficiary_lifecycle:lifecycle_transition` via that domain's own
+  `triggered_by_impact_evaluation` relationship (owned and defined in
+  `beneficiary-lifecycle/ontology/relationships.yaml`, not here) — closing
+  the previously missing Impact → Beneficiary Lifecycle link without this
+  domain gaining any ability to set `engagement_stage` or
+  `human_development_stage` directly.
 - **Taxonomy:** attribution and contribution (`attribution.yaml`), evaluation
   lifecycle and findings (`evaluation.yaml`), indicator categories and hierarchy
   (`indicators.yaml`), measurement classification, timing, and confidence

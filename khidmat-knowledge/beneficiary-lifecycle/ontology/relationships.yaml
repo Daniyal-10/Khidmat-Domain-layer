@@ -8,6 +8,7 @@ namespaces:
   case_management: "case_management"
   verification_operations: "verification_operations"
   shared_risk: "shared_risk"
+  impact: "impact"
 
 # The registration namespace alias was removed per Phase 1.5 Repository
 # Cleanup: it became unused when this file's two case-referencing
@@ -86,6 +87,32 @@ relationships:
       registration:case to case_management:case per Phase 1.3A, for the same
       reason as lifecycle_transition_triggered_by_registration_case_case above
       — a manual case decision is a Case Management-phase act.
+
+  - id: lifecycle_transition_triggered_by_impact_evaluation_impact_evaluation
+    from: lifecycle_transition
+    relationship: triggered_by_impact_evaluation
+    to: impact:impact_evaluation
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Added per Stage 7B Repository Remediation, closing Critical Finding
+      C-2 of HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md: no
+      structural path previously existed from a measured impact outcome to
+      engagement_stage or human_development_stage. Mirrors the existing
+      sibling pattern exactly (triggered_by_registration_case,
+      triggered_by_verification_finding, triggered_by_risk_characterization,
+      triggered_by_case_decision above) rather than introducing a new
+      relationship shape. Ownership is maintained per that same pattern:
+      Impact does not gain any ability to set or redefine engagement_stage
+      or human_development_stage — both remain exclusively owned and
+      transitioned by Beneficiary Lifecycle. This relationship only lets a
+      lifecycle_transition record that a specific impact_evaluation was the
+      fact that prompted it, exactly as a verification_finding or
+      risk_characterization already can. No lifecycle concept is
+      duplicated: Impact's own outcome_type / persistence_horizon / relapse
+      vocabulary (impact/taxonomy/outcomes.yaml) and Beneficiary Lifecycle's
+      human_development_stage (taxonomy/engagement-stage.yaml) remain two
+      separate, independently-owned classifications; this relationship
+      connects them without merging them.
 
   - id: lifecycle_transition_part_of_lifecycle_beneficiary_lifecycle
     from: lifecycle_transition

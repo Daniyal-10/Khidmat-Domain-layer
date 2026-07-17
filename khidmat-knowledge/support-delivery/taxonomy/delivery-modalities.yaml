@@ -1,10 +1,42 @@
-version: "1.0.0"
+version: "1.1.0"
 domain: support_delivery
 file: taxonomy/delivery-modalities.yaml
 status: active
 
 purpose: >
   Classifies modalities. Derived from Business Architecture Sec 4.
+
+namespaces:
+  programs: programs
+
+# ---------------------------------------------------------------------
+# Added per Stage 7B Repository Remediation, closing Major Finding M-1 of
+# HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md.
+#
+# delivery_modality answers a different question from the two Programs
+# schemes it was found to resemble, and this note exists precisely so a
+# reader does not mistake the resemblance for duplication:
+#   - programs/taxonomy/interventions.yaml#intervention_modality answers
+#     "what is the fundamental financial/delivery form of the assistance"
+#     (cash, voucher, in-kind, service, asset) at the level of the
+#     catalogued Program offering.
+#   - programs/taxonomy/structure.yaml#thematic_sectors answers "which
+#     humanitarian sector does this Program address" (WASH, health,
+#     livelihood, protection, ...).
+#   - delivery_modality below answers "what handling, custody, and
+#     protection requirements govern the physical act of handover for
+#     THIS delivery event" — a Support Delivery-scoped, execution-time
+#     concept. medical_service, education_service, livelihood_service, and
+#     protection_legal_psychosocial_service are retained here, not because
+#     they reclassify sector or intervention form (they do not), but
+#     because each carries distinct handover requirements (clinical
+#     privacy and bio-waste protocol; longitudinal, child-safe handling;
+#     asset/skills verification at handover; anonymised, extreme-privacy
+#     handover) that are a Support Delivery concern, not a Programs one.
+# No value in this scheme is redefined by, or redefines, intervention_modality
+# or thematic_sectors; this file does not own either, and neither owns
+# handover-requirement detail.
+# ---------------------------------------------------------------------
 
 schemes:
   - id: delivery_modality
@@ -32,3 +64,20 @@ schemes:
       - id: protection_legal_psychosocial_service
         label: Protection / Legal / Psychosocial Service
         description: Extreme privacy, anonymized handovers.
+
+references:
+  - scheme: programs:intervention_modality
+    relation: distinct_from
+    note: >
+      Both classify a form of assistance, at different scopes (catalogued
+      Program offering vs. individual delivery event) and for different
+      purposes (financial/delivery form vs. handover requirements). See the
+      design note above. Neither scheme redefines the other.
+  - scheme: programs:thematic_sectors
+    relation: distinct_from
+    note: >
+      delivery_modality's four service-named values describe handover
+      requirements for that kind of delivery, not sector membership. A
+      Program's thematic_sectors classification is unaffected by, and does
+      not need to match one-to-one with, the delivery_modality recorded on
+      any specific delivery_event fulfilling it.

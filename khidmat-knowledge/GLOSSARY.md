@@ -278,6 +278,112 @@ A derived concept representing the final verification decision; derived from ver
 A measurable signal used to assess whether an intervention produced meaningful change in a beneficiary, family, household, or community.
 Outcome indicators support lifecycle tracking, program evaluation, and impact measurement.
 
+## Needs Assessment Terms
+
+*Added per Stage 7B Repository Remediation, closing Major Finding M-4 of HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md — this domain previously had no Glossary coverage at all.*
+
+**Assessment Session**
+The episodic event of applying an assessment instrument to a person, household, or community at a specific time and location.
+
+**Observation**
+A raw, uninterpreted piece of evidence or data point gathered during an assessment session.
+
+**Need Assertion**
+The synthesized, evidence-weighted conclusion that a subject has a specific deficit, vulnerability, or capacity gap — distinct from Registration's Need, which is the intake-time claim it synthesizes.
+
+**Confidence Level**
+The degree of certainty attached to an observation or finding: high, medium, low, or highly uncertain.
+
+**Finding Consensus**
+The governance record that resolves conflicting findings or elevates a finding to authoritative status.
+
+## Case Management Terms
+
+*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
+
+**Case**
+The central, long-lived operational container coordinating holistic support for a subject, from handoff out of Registration onward.
+
+**Case Plan**
+The structured, approved operational strategy guiding the coordination of interventions for a Case. Addressed by one or more Support Interventions (see `case_plan_addressed_by_intervention`, added Stage 7B).
+
+**Referral**
+A formal request for a specialized service provided by an internal (Program) or external (Organisation) party.
+
+**Follow-Up**
+A scheduled or completed case-level review or monitoring activity revisiting a beneficiary's situation after initial support.
+
+## Beneficiary Lifecycle Terms
+
+*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
+
+**Engagement Stage**
+The beneficiary's administrative relationship to the Khidmat ecosystem (identified, registered, active, engaged, monitored, exited, etc.). Strictly distinct from Human Development Stage.
+
+**Human Development Stage**
+The beneficiary's or household's own position in the humanitarian developmental trajectory — crisis, stabilization, recovery, self-reliance, resilience, or community contribution. Never to be conflated with Engagement Stage. Added per Stage 6.
+
+**Lifecycle Transition**
+An immutable event representing a macro-state change within a beneficiary's lifecycle, optionally triggered by a registration case, a verification finding, a risk characterization, a case decision, or (added Stage 7B) an impact evaluation.
+
+## Programs Terms
+
+*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
+
+**Program**
+The core structural initiative through which assistance is funded, governed, and bounded.
+
+**Intervention Offering**
+A specific support modality and conditionality defined within a program's catalogue.
+
+**Enrollment**
+The macro-state and historical record of a beneficiary's participation in a program.
+
+**Intervention Objective Category**
+The underlying humanitarian purpose an intervention serves, independent of its delivery modality and thematic sector. Added per Stage 6.
+
+**Intervention Readiness**
+See Risk and Vulnerability Terms above.
+
+## Community Context Terms
+
+*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
+
+**Settlement Type**
+The classification of a community's physical settlement pattern (e.g., rural, peri-urban, informal urban).
+
+**Local Organisation**
+A persistent, community-native civic, economic, or mutual-aid institution (e.g., a micro-savings and credit collective, a women's collective), distinct from formally registered external organisations.
+
+**Livelihood Pattern**
+The dominant, persistent community-level economic activity base — a macro-economic classification, distinct from any individual household's own employment or enterprise status.
+
+## Support Delivery Terms
+
+*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
+
+**Delivery Event**
+The fundamental unit of execution, representing the grouping, timing, and occurrence of a delivery. Fulfills a Case Plan.
+
+**Delivery Modality**
+The physical, financial, or service form a delivery takes, and the handling/custody requirements that come with it — distinct from Programs' Intervention Modality and Thematic Sector (see the design note in `support-delivery/taxonomy/delivery-modalities.yaml`, added Stage 7B).
+
+**Proof of Delivery**
+Evidence collected during the handover confirming a delivery occurred.
+
+**Chain of Custody**
+The sequence of Custody Transfers tracking goods between custodians before reaching the final beneficiary.
+
+## Volunteer Operations Terms
+
+*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
+
+**Volunteer Profile**
+The record of a volunteer's affiliation, skills, languages, certifications, training, and availability.
+
+**Assignment**
+The operational association between a volunteer and a task (a registration, a verification activity, a delivery event) they are responsible for carrying out.
+
 ## Governance Terms
 
 **Concept Ownership**

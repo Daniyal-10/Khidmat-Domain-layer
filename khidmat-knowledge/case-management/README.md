@@ -23,7 +23,9 @@ coordination record that persists across referrals and follow-ups.
   are nested Value Object fields on `case` (`ontology/`)
 - **Relationships:** `case_has_case_plan`, `case_has_referral`,
   `case_superseded_by_case`, `case_has_primary_subject`,
-  `case_plan_references_need_assertion`, `referral_references_consent`,
+  `case_plan_references_need_assertion`, `case_plan_addressed_by_intervention`
+  (added Stage 7B — links to `registration:support_intervention`, closing the
+  Case Plan → Intervention lifecycle gap), `referral_references_consent`,
   `case_has_lead_coordinator`, `case_has_statutory_owner`
 
 ## Does Not Own

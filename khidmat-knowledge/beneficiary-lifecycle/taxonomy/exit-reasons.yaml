@@ -11,6 +11,17 @@ schemes:
       - id: graduated
         label: Graduated
         description: "Subject achieved self-sufficiency and no longer requires support."
+        note: >
+          Added per Stage 7B Repository Remediation (Major Finding M-3,
+          HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md). Scoped to
+          the beneficiary's entire ecosystem relationship — distinct from,
+          and not implied by, programs:enrollment_outcome#graduated
+          (programs/taxonomy/eligibility-and-enrollment.yaml), which
+          describes completion of one specific Program enrollment. A
+          beneficiary can graduate from a single program without this
+          exit_reason applying (they may remain engaged elsewhere), and
+          this exit_reason is not automatically triggered by any single
+          program's enrollment_outcome.
       - id: deceased
         label: Deceased
         description: "Subject has passed away."
