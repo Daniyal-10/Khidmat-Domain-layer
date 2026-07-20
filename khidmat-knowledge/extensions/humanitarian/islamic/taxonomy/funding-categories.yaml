@@ -1,0 +1,38 @@
+version: "1.0.0"
+domain: islamic_extension
+file: extensions/humanitarian/islamic/taxonomy/funding-categories.yaml
+status: active
+
+# =============================================================================
+# Islamic Extension — Funding Categories Taxonomy
+# =============================================================================
+# Purpose: Defines the canonical categories of Islamic humanitarian funding
+#          without encoding organizational or jurisprudential rules.
+# Origin: Added per RFC v1.0 Wave 6.
+# =============================================================================
+
+schemes:
+  - id: islamic_funding_category
+    label: Islamic Funding Category
+    description: >
+      A closed vocabulary of canonically prescribed Islamic funding instruments.
+    concepts:
+      - id: zakat
+        label: Zakat
+        description: Obligatory almsgiving based on accumulated wealth.
+
+      - id: sadaqah
+        label: Sadaqah
+        description: Voluntary charity given out of compassion or religious duty.
+
+      - id: zakat_al_fitr
+        label: Zakat al-Fitr
+        description: Obligatory charity given before the Eid al-Fitr prayer.
+
+      - id: waqf
+        label: Waqf
+        description: An inalienable religious endowment, typically yielding a charitable return.
+
+      - id: qurbani_udhiyah
+        label: Qurbani/Udhiyah
+        description: The sacrifice of an animal during Eid al-Adha for charitable distribution.

@@ -1,0 +1,25 @@
+version: "1.0.0"
+domain: islamic_extension
+file: extensions/humanitarian/islamic/ontology/entities.yaml
+status: active
+
+# =============================================================================
+# Islamic Extension — Entities
+# =============================================================================
+# Purpose: Defines the canonical entities for Islamic humanitarian financing
+#          without modifying the core Khidmat Knowledge Layer.
+# Origin: Added per RFC v1.0 Wave 6.
+# =============================================================================
+
+entities:
+  - id: nisab
+    description: >
+      The canonical threshold of wealth that an individual must possess before they
+      are liable to pay Zakat. Modelled strictly as a financial threshold concept,
+      without encoding jurisprudential calculation logic (which is deferred to execution engines).
+
+  - id: hawl
+    description: >
+      The canonical Islamic lunar year duration for which wealth must be held before
+      Zakat becomes due. Modelled strictly as a temporal concept, without encoding
+      date-math logic or specific religious rulings.

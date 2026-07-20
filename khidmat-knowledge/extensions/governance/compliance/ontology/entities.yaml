@@ -1,0 +1,24 @@
+version: "1.0.0"
+domain: compliance_extension
+file: extensions/governance/compliance/ontology/entities.yaml
+status: active
+
+# =============================================================================
+# Governance/Compliance Extension — Entities
+# =============================================================================
+# Purpose: Defines the canonical entities for organizational compliance checks
+#          without modifying the core Khidmat Knowledge Layer or encoding logic.
+# Origin: Added per RFC v1.0 Wave 6.
+# =============================================================================
+
+entities:
+  - id: compliance_evidence
+    description: >
+      A canonical record of artifacts or documentation establishing compliance with
+      regulatory or internal governance standards (e.g., KYC/AML documents).
+      Modelled as a passive record entity, not an execution engine state.
+
+  - id: audit_reference
+    description: >
+      A canonical linkage to external audit logs or verification events, asserting
+      that a specific compliance check was completed and certified.

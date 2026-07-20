@@ -1,0 +1,50 @@
+version: "1.0.0"
+domain: islamic_extension
+file: extensions/humanitarian/islamic/taxonomy/asnaf.yaml
+status: active
+
+# =============================================================================
+# Islamic Extension — Asnaf Taxonomy
+# =============================================================================
+# Purpose: Defines the canonical categories of eligible Zakat recipients (Asnaf)
+#          without encoding jurisprudential eligibility rules.
+# Origin: Added per RFC v1.0 Wave 6.
+# =============================================================================
+
+schemes:
+  - id: asnaf_category
+    label: Asnaf Category
+    description: >
+      The eight canonically prescribed categories of Zakat recipients.
+    concepts:
+      - id: al_fuqara
+        label: Al-Fuqara (The Poor)
+        description: Those without means of self-support.
+
+      - id: al_masakin
+        label: Al-Masakin (The Needy)
+        description: Those whose income does not meet their basic needs.
+
+      - id: al_amilin
+        label: Al-Amilin (The Administrators)
+        description: Those employed to collect and distribute Zakat.
+
+      - id: muallaf
+        label: Mu'allaf (Those Whose Hearts Are To Be Reconciled)
+        description: Those who have recently embraced Islam or require support to strengthen their faith.
+
+      - id: ar_riqab
+        label: Ar-Riqab (Those In Bondage)
+        description: Those seeking to free themselves from slavery or captivity.
+
+      - id: al_gharimin
+        label: Al-Gharimin (The Debtors)
+        description: Those overwhelmed by debts contracted in good faith and unable to repay them.
+
+      - id: fi_sabilillah
+        label: Fi Sabilillah (In the Cause of Allah)
+        description: Those striving in the path of Allah.
+
+      - id: ibn_as_sabil
+        label: Ibn As-Sabil (The Wayfarer)
+        description: Stranded travelers without access to their funds.
