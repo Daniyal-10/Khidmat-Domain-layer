@@ -139,3 +139,31 @@ data_properties:
     domain: volunteer_team
     datatype: xsd:string
     cardinality: { min: 1, max: 1 }
+
+  # ---------------------------------------------------------------------------
+  # volunteer_profile_member_of_team (Relationship properties)
+  # ---------------------------------------------------------------------------
+
+  - id: membership_status
+    domain: volunteer_profile_member_of_team
+    taxonomy_ref: membership_status
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Added per RFC v1.0 Wave 4 to track the temporal lifecycle state of a volunteer's 
+      membership within a specific team.
+
+  - id: start_date
+    domain: volunteer_profile_member_of_team
+    datatype: xsd:date
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      The objective timestamp when this specific team membership became active. 
+      Added per RFC v1.0 Wave 4.
+
+  - id: end_date
+    domain: volunteer_profile_member_of_team
+    datatype: xsd:date
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      The objective timestamp when this specific team membership concluded or was suspended.
+      Added per RFC v1.0 Wave 4.

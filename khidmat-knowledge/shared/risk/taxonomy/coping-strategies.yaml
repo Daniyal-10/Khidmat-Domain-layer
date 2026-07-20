@@ -1,0 +1,55 @@
+version: "1.0.0"
+domain: risk
+file: shared/risk/taxonomy/coping-strategies.yaml
+status: active
+
+# =============================================================================
+# Khidmat Risk Domain — Universal Coping Strategy Taxonomy
+# =============================================================================
+# Purpose: Defines universally recognized humanitarian coping strategies.
+#          Models the taxonomy of coping mechanisms without encoding
+#          scoring logic (e.g., CSI calculation algorithms).
+# Origin: Added per RFC v1.0 Wave 5.
+# =============================================================================
+
+schemes:
+  - id: coping_strategy
+    label: Universal Coping Strategy
+    description: >
+      A closed vocabulary of universally recognized behaviors or strategies adopted by households or individuals to manage deficits in basic needs.
+    concepts:
+      - id: rely_on_less_preferred_and_less_expensive_foods
+        label: Rely on less preferred and less expensive foods
+        description: A common dietary adjustment to stretch limited food resources.
+
+      - id: borrow_food_or_rely_on_help_from_friend_or_relative
+        label: Borrow food, or rely on help from a friend or relative
+        description: Utilizing social networks for basic food needs.
+
+      - id: limit_portion_size_at_mealtimes
+        label: Limit portion size at mealtimes
+        description: Reducing the quantity of food consumed per meal.
+
+      - id: restrict_consumption_by_adults_in_order_for_small_children_to_eat
+        label: Restrict consumption by adults in order for small children to eat
+        description: Intra-household reallocation of food favoring vulnerable members.
+
+      - id: reduce_number_of_meals_eaten_in_a_day
+        label: Reduce number of meals eaten in a day
+        description: Decreasing the frequency of food consumption.
+
+      - id: sell_household_assets
+        label: Sell household assets
+        description: Liquidating non-productive or productive assets to meet basic needs.
+
+      - id: incur_debt_for_basic_needs
+        label: Incur debt for basic needs
+        description: Borrowing money specifically to purchase food or other essentials.
+
+      - id: withdraw_children_from_school
+        label: Withdraw children from school
+        description: Removing children from education to save on costs or increase household labor.
+
+      - id: engage_in_risky_or_exploitative_labor
+        label: Engage in risky or exploitative labor
+        description: Accepting dangerous, illegal, or highly exploitative work conditions to generate income.

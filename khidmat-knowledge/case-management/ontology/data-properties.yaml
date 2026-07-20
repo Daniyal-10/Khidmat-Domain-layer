@@ -65,6 +65,54 @@ data_properties:
     taxonomy_ref: referral_type
     cardinality: { min: 1, max: 1 }
 
+  - id: response_due_date
+    domain: case
+    datatype: xsd:dateTime
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Objective timestamp indicating the canonical SLA target for an initial response.
+      Added per RFC v1.0 Wave 4 Temporal Semantics.
+
+  - id: resolution_due_date
+    domain: case
+    datatype: xsd:dateTime
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Objective timestamp indicating the canonical SLA target for case resolution.
+      Added per RFC v1.0 Wave 4 Temporal Semantics.
+
+  - id: referral_date
+    domain: referral
+    datatype: xsd:dateTime
+    cardinality: { min: 1, max: 1 }
+    notes: >
+      Objective timestamp indicating when the referral was generated.
+      Added per RFC v1.0 Wave 4 Temporal Semantics.
+
+  - id: acknowledgement_due_date
+    domain: referral
+    datatype: xsd:dateTime
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Objective timestamp indicating the SLA target for external or internal acknowledgement.
+      Added per RFC v1.0 Wave 4 Temporal Semantics.
+
+  - id: service_provision_due_date
+    domain: referral
+    datatype: xsd:dateTime
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Objective timestamp indicating the SLA target for the provision of the requested service.
+      Added per RFC v1.0 Wave 4 Temporal Semantics.
+
+  - id: completed_at
+    domain: referral
+    datatype: xsd:dateTime
+    cardinality: { min: 0, max: 1 }
+    notes: >
+      Objective timestamp indicating when the referral concluded.
+      Added per RFC v1.0 Wave 4 Temporal Semantics.
+
   - id: follow_up_status
     domain: follow_up
     taxonomy_ref: follow_up_status
