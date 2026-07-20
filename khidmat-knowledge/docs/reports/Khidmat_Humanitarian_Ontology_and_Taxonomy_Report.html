@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khidmat Humanitarian Ontology &amp; Taxonomy Report</title>
+<style>
+  /* ============================================================
+     A knowledge whitepaper, not an engineering report. Same
+     print-friendly, light-ground discipline as its companion
+     document, but its own palette (deep teal, not navy) so the
+     two are visually distinguishable as a two-part series.
+     ============================================================ */
+  :root{
+    --paper:      #ffffff;
+    --paper-alt:  #f6f8f7;
+    --paper-card: #fbfcfb;
+    --ink:        #1a2422;
+    --ink-soft:   #4a5b57;
+    --ink-faint:  #889691;
+    --line:       #e0e8e5;
+    --line-strong:#c3d0cb;
+    --accent:     #1f5f5b;
+    --accent-ink: #123634;
+    --accent-soft:#e8f2f0;
+    --gold:       #a17d2c;
+    --gold-soft:  #f7f0e0;
+    --good:       #2c7a4e;
+    --good-soft:  #e7f4ec;
+    --warn:       #a9720a;
+    --warn-soft:  #fbf1de;
+    --muted:      #6b7873;
+    --muted-soft: #edf1ef;
+
+    --font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    --shadow-card: 0 1px 2px rgba(18,54,52,0.05), 0 1px 12px rgba(18,54,52,0.05);
+    --radius: 6px;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper-alt:  #f2f5f4;
+      --paper-card: #ffffff;
+      --ink-faint:  #7c8b86;
+    }
+  }
+  :root[data-theme="dark"]{ --paper-alt:#f2f5f4; --paper-card:#ffffff; }
+  :root[data-theme="light"]{ --paper-alt:#f6f8f7; --paper-card:#fbfcfb; }
+
+  *{ box-sizing: border-box; }
+  html{ background: var(--paper); }
+  body{
+    margin:0; background: var(--paper); color: var(--ink);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4{ font-family: var(--font-display); color: var(--accent-ink); font-weight:600; text-wrap:balance; margin:0; }
+  p{ margin:0 0 1em 0; max-width: 70ch; }
+  p:last-child{ margin-bottom:0; }
+  strong{ color: var(--ink); }
+  em.ontology-note{ font-style: italic; color: var(--ink-soft); }
+
+  .wrap{ max-width: 1080px; margin:0 auto; padding: 0 32px; }
+
+  .eyebrow{
+    display:flex; align-items:center; gap:10px; font-size:0.72rem; letter-spacing:0.14em;
+    text-transform:uppercase; color: var(--accent); font-weight:700; margin-bottom:10px;
+  }
+  .eyebrow::before{ content:""; width:22px; height:2px; background: var(--accent); display:inline-block; }
+  .section{ padding: 72px 0; border-bottom:1px solid var(--line); }
+  .section:last-of-type{ border-bottom:none; }
+  .section-head{ margin-bottom:36px; }
+  .section-head h2{ font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.05rem); }
+  .section-head .dek{ color: var(--ink-soft); margin-top:10px; max-width:62ch; font-size:1.02rem; }
+
+  /* cover — title / subtitle / date / version ONLY */
+  .cover{ background: linear-gradient(180deg, var(--accent-ink) 0%, var(--accent) 100%); color:#eaf3f1; padding:120px 0 96px; }
+  .cover .wrap{ display:flex; flex-direction:column; gap:34px; align-items:flex-start; }
+  .cover .kicker{ font-size:0.8rem; text-transform:uppercase; letter-spacing:0.2em; color:rgba(234,243,241,0.75); font-weight:600; }
+  .cover h1{ color:#fff; font-size: clamp(2.2rem, 1.6rem + 2.6vw, 3.4rem); line-height:1.1; max-width: 16ch; }
+  .cover .sub{ font-size:1.2rem; color:rgba(234,243,241,0.88); max-width:44ch; font-weight:400; }
+  .cover-meta{ display:flex; gap:40px; border-top:1px solid rgba(234,243,241,0.25); padding-top:26px; margin-top:8px; }
+  .cover-meta .label{ font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:rgba(234,243,241,0.6); margin-bottom:4px; }
+  .cover-meta .value{ font-family: var(--font-display); font-size:1.1rem; color:#fff; }
+
+  .grid{ display:grid; gap:18px; }
+  .grid-2{ grid-template-columns:1fr 1fr; }
+  .grid-3{ grid-template-columns:repeat(3,1fr); }
+  .grid-4{ grid-template-columns:repeat(4,1fr); }
+  @media (max-width:880px){ .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr; } }
+
+  .card{ background: var(--paper-card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow: var(--shadow-card); }
+  .card h3{ font-size:1.05rem; margin-bottom:8px; }
+  .card h4{ font-size:0.95rem; margin-bottom:6px; color: var(--accent-ink); }
+
+  .callout{ background: var(--accent-soft); border-left:3px solid var(--accent); border-radius:0 var(--radius) var(--radius) 0; padding:18px 22px; }
+  .callout p{ color: var(--accent-ink); max-width:none; }
+  .callout.gold{ background: var(--gold-soft); border-color: var(--gold); }
+  .callout.gold p{ color:#5c4413; }
+
+  .domain-block{ border:1px solid var(--line); border-radius:var(--radius); padding:26px 26px; margin-bottom:20px; background: var(--paper-card); box-shadow: var(--shadow-card); }
+  .domain-block h3{ font-size:1.25rem; margin-bottom:4px; }
+  .domain-block .role{ font-size:0.85rem; color: var(--accent); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:16px; }
+  .domain-grid{ display:grid; grid-template-columns: 1.2fr 1fr; gap:24px; margin-top:14px; }
+  @media (max-width:760px){ .domain-grid{ grid-template-columns:1fr; } }
+  .concept-list{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+  .concept-list li{ font-size:0.82rem; background: var(--muted-soft); border:1px solid var(--line); color: var(--ink-soft); padding:4px 11px; border-radius:5px; }
+  .kv{ display:flex; flex-direction:column; gap:0; margin-top:10px; }
+  .kv .r{ display:flex; gap:14px; padding:9px 0; border-bottom:1px dashed var(--line); font-size:0.9rem; }
+  .kv .r:last-child{ border-bottom:none; }
+  .kv .k{ width:132px; flex-shrink:0; font-weight:600; color: var(--ink-soft); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em; padding-top:2px; }
+  .kv .v{ color: var(--ink); }
+
+  .stars{ font-size:1.05rem; color: var(--gold); letter-spacing:2px; }
+  .stars .dim{ color: var(--line-strong); }
+
+  .table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); }
+  table{ width:100%; border-collapse:collapse; font-size:0.92rem; min-width:640px; }
+  thead th{ text-align:left; background: var(--paper-alt); color: var(--ink-soft); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.06em; font-weight:700; padding:12px 16px; border-bottom:1px solid var(--line); }
+  tbody td{ padding:14px 16px; border-bottom:1px solid var(--line); vertical-align:top; }
+  tbody tr:last-child td{ border-bottom:none; }
+
+  .diagram{ width:100%; overflow-x:auto; }
+  .diagram svg{ display:block; min-width:640px; }
+
+  .fn{ font-size:0.82rem; color: var(--ink-faint); border-top:1px dashed var(--line-strong); margin-top:20px; padding-top:12px; }
+
+  .footer{ background: var(--accent-ink); color:rgba(234,243,241,0.7); padding:36px 0; font-size:0.85rem; text-align:center; }
+
+  @media print{
+    body{ font-size:12.5px; }
+    .section{ break-before:page; padding:24px 0; }
+    .cover{ break-before:avoid; }
+    .card,.callout,.table-wrap,.domain-block{ box-shadow:none; }
+    .footer{ break-before:page; }
+  }
+  ::selection{ background: var(--accent-soft); color: var(--accent-ink); }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- 1. COVER — title / subtitle / date / version only -->
+<!-- ============================================================ -->
+<header class="cover">
+  <div class="wrap">
+    <div class="kicker">Humanitarian Knowledge Model</div>
+    <h1>Khidmat Humanitarian<br>Ontology &amp; Taxonomy Report</h1>
+    <p class="sub">Knowledge Layer Progress Review — how much of the humanitarian domain has now
+    been formally modeled.</p>
+    <div class="cover-meta">
+      <div><div class="label">Date</div><div class="value">17 July 2026</div></div>
+      <div><div class="label">Version</div><div class="value">1.0.0</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================ -->
+<!-- 2. EXECUTIVE SUMMARY -->
+<!-- ============================================================ -->
+<section class="section" id="executive-summary">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Executive Summary</div>
+      <h2>Modeling the domain before building the system.</h2>
+    </div>
+
+    <p>Before any part of the Khidmat platform was implemented, work paused on a single question:
+    what, precisely, does the organisation need to understand about a person, a household, a
+    community, and a crisis, in order to respond well? That question cannot be answered by writing
+    software. It has to be answered by modeling — naming the concepts a humanitarian caseworker
+    already reasons with every day, defining how they relate to one another, and standardising the
+    vocabulary used to describe them, so that "household," "case," "need," and "risk" mean exactly
+    one thing across the entire organisation.</p>
+
+    <p>That modeling work is what this report reviews. It is not a report about software, folders,
+    or engineering process — it is a review of the humanitarian knowledge itself: the <strong>ontology</strong>
+    (the entities and relationships that represent humanitarian reality) and the <strong>taxonomy</strong>
+    (the controlled vocabularies that classify it consistently). Thirteen humanitarian domains have
+    now been modeled to this discipline, from the shape of a human life and a household's risk
+    exposure, through intake, verification, and needs assessment, to case management, community
+    context, programmes, donor and resource stewardship, and volunteer capacity.</p>
+
+    <p>An independent review of this knowledge model has since assessed it and found it substantially
+    sound, with specific, identified work still remaining before it is considered complete — reviewed
+    in full in §9 and §10 of this report. The purpose here is narrower and more fundamental: to show,
+    domain by domain, how much of humanitarian reality has actually been captured.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 3. HUMANITARIAN KNOWLEDGE MODEL -->
+<!-- ============================================================ -->
+<section class="section" id="knowledge-model">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Humanitarian Knowledge Model</div>
+      <h2>A model of humanitarian reality, not of software.</h2>
+      <div class="dek">Every concept below exists because a caseworker, verifier, or programme
+      officer already reasons with it — the model gives it a stable definition, not a new meaning.</div>
+    </div>
+
+    <p>At its centre sits a shared understanding of a <strong>person</strong> — their stage of life,
+    what they depend on, what they are capable of, their family relationships, and their health
+    conditions — and of the <strong>household</strong> they belong to. Around that centre, a
+    <strong>risk model</strong> describes how hazard, exposure, vulnerability, and resilience combine
+    into a qualitative picture of a household's situation. From there, the model follows the
+    humanitarian journey outward: a person is registered, their claims are verified, their needs are
+    assessed, a case is opened and managed, support is delivered, and change over time is tracked —
+    all set inside the community, programme, and resourcing context that makes a response possible.</p>
+
+    <div class="diagram" style="margin-top:28px;">
+      <svg viewBox="0 0 980 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Humanitarian knowledge model diagram">
+        <!-- centre: human + risk -->
+        <circle cx="490" cy="215" r="92" fill="#e8f2f0" stroke="#1f5f5b" stroke-width="1.6"/>
+        <text x="490" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#123634">Human &amp; Household</text>
+        <text x="490" y="218" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10.5" fill="#1a2422">Lifecycle · Capability · Family</text>
+        <text x="490" y="232" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10.5" fill="#1a2422">Hazard · Vulnerability · Resilience</text>
+
+        <!-- surrounding domains -->
+        <g font-family="-apple-system, sans-serif" font-size="11" fill="#1a2422">
+          <!-- Registration (top left) -->
+          <rect x="60" y="30" width="150" height="58" rx="6" fill="#fbfcfb" stroke="#e0e8e5"/>
+          <text x="135" y="55" text-anchor="middle" font-weight="700">Registration</text>
+          <text x="135" y="72" text-anchor="middle" font-size="9.5" fill="#4a5b57">Intake &amp; claims</text>
+          <!-- Verification (top right) -->
+          <rect x="770" y="30" width="150" height="58" rx="6" fill="#fbfcfb" stroke="#e0e8e5"/>
+          <text x="845" y="55" text-anchor="middle" font-weight="700">Verification</text>
+          <text x="845" y="72" text-anchor="middle" font-size="9.5" fill="#4a5b57">Field confirmation</text>
+          <!-- Needs Assessment (left) -->
+          <rect x="20" y="186" width="150" height="58" rx="6" fill="#fbfcfb" stroke="#e0e8e5"/>
+          <text x="95" y="211" text-anchor="middle" font-weight="700">Needs</text>
+          <text x="95" y="225" text-anchor="middle" font-weight="700">Assessment</text>
+          <text x="95" y="238" text-anchor="middle" font-size="9.5" fill="#4a5b57">Evidence synthesis</text>
+          <!-- Case Management (right) -->
+          <rect x="810" y="186" width="150" height="58" rx="6" fill="#fbfcfb" stroke="#e0e8e5"/>
+          <text x="885" y="211" text-anchor="middle" font-weight="700">Case</text>
+          <text x="885" y="225" text-anchor="middle" font-weight="700">Management</text>
+          <text x="885" y="238" text-anchor="middle" font-size="9.5" fill="#4a5b57">Plans &amp; referrals</text>
+          <!-- Beneficiary Lifecycle (bottom left) -->
+          <rect x="60" y="342" width="150" height="58" rx="6" fill="#fbfcfb" stroke="#e0e8e5"/>
+          <text x="135" y="366" text-anchor="middle" font-weight="700">Beneficiary</text>
+          <text x="135" y="380" text-anchor="middle" font-weight="700">Lifecycle</text>
+          <text x="135" y="393" text-anchor="middle" font-size="9.5" fill="#4a5b57">Change over time</text>
+          <!-- Support Delivery (bottom right) -->
+          <rect x="770" y="342" width="150" height="58" rx="6" fill="#fbfcfb" stroke="#e0e8e5"/>
+          <text x="845" y="366" text-anchor="middle" font-weight="700">Support</text>
+          <text x="845" y="380" text-anchor="middle" font-weight="700">Delivery</text>
+          <text x="845" y="393" text-anchor="middle" font-size="9.5" fill="#4a5b57">Custody &amp; proof</text>
+          <!-- Community Context (bottom centre-left) -->
+          <rect x="290" y="380" width="150" height="42" rx="6" fill="#f7f0e0" stroke="#a17d2c"/>
+          <text x="365" y="405" text-anchor="middle" font-weight="700" fill="#5c4413">Community Context</text>
+          <!-- Programs (bottom centre-right) -->
+          <rect x="540" y="380" width="150" height="42" rx="6" fill="#f7f0e0" stroke="#a17d2c"/>
+          <text x="615" y="405" text-anchor="middle" font-weight="700" fill="#5c4413">Programmes</text>
+          <!-- Donor & Resource (top centre-left) -->
+          <rect x="290" y="8" width="150" height="42" rx="6" fill="#f7f0e0" stroke="#a17d2c"/>
+          <text x="365" y="33" text-anchor="middle" font-weight="700" fill="#5c4413">Donor &amp; Resource</text>
+          <!-- Volunteer Operations (top centre-right) -->
+          <rect x="540" y="8" width="150" height="42" rx="6" fill="#f7f0e0" stroke="#a17d2c"/>
+          <text x="615" y="33" text-anchor="middle" font-weight="700" fill="#5c4413">Volunteer Operations</text>
+        </g>
+
+        <!-- connecting lines from centre to each -->
+        <g stroke="#c3d0cb" stroke-width="1.2" fill="none">
+          <line x1="420" y1="160" x2="180" y2="88"/>
+          <line x1="560" y1="160" x2="800" y2="88"/>
+          <line x1="410" y1="215" x2="170" y2="215"/>
+          <line x1="570" y1="215" x2="810" y2="215"/>
+          <line x1="420" y1="270" x2="180" y2="342"/>
+          <line x1="560" y1="270" x2="800" y2="342"/>
+          <line x1="450" y1="290" x2="365" y2="380"/>
+          <line x1="530" y1="290" x2="615" y2="380"/>
+          <line x1="450" y1="140" x2="365" y2="50"/>
+          <line x1="530" y1="140" x2="615" y2="50"/>
+        </g>
+        <text x="490" y="425" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9.5" fill="#889691">Teal = the humanitarian casework lifecycle · Gold = the surrounding operational and resourcing context</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 4. HUMANITARIAN DOMAIN COVERAGE -->
+<!-- ============================================================ -->
+<section class="section" id="domain-coverage">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Humanitarian Domain Coverage</div>
+      <h2>What has been captured, domain by domain.</h2>
+      <div class="dek">Not repository files — the humanitarian concepts, relationships, and
+      vocabulary each domain now formally represents.</div>
+    </div>
+
+    <h3 style="font-size:1.1rem; margin-bottom:16px; color:var(--accent-ink);">Foundational Human &amp; Risk Models</h3>
+
+    <div class="domain-block">
+      <h3>Shared Human Model</h3>
+      <div class="role">The person, independent of any single programme or case</div>
+      <p>Represents a human being the way humanitarian practice actually understands one: not as an
+      age number, but as a position in a developmental journey. Nine lifecycle stages — infant,
+      toddler, early childhood, school-age child, adolescent, young adult, adult, older adult, and
+      elderly — each carry their own characteristic dependencies, capabilities, and vulnerabilities,
+      so that a household's needs can be reasoned about differently depending on who is in it, not
+      merely how many people are. Family structure is modeled richly enough to represent a household
+      after bereavement — a deceased member remains a present structural fact, and a sole surviving
+      earner who is also the family's caregiver is recognised as its own, especially fragile
+      configuration. Capability, dependency, and health condition (including malnutrition staging and
+      chronic and mental health conditions) are modeled as their own first-class vocabularies, not as
+      side notes on a person record.</p>
+      <div class="domain-grid">
+        <div>
+          <div class="kv">
+            <div class="r"><div class="k">Modeled</div><div class="v">Lifecycle stage, capability, dependency type, family structure and kinship role, health condition</div></div>
+            <div class="r"><div class="k">Relationships</div><div class="v">Guardianship, kinship, support roles within a family unit</div></div>
+            <div class="r"><div class="k">Used by</div><div class="v">Every domain that reasons about a person or household</div></div>
+          </div>
+        </div>
+        <div>
+          <ul class="concept-list">
+            <li>Infant → Elderly (9 stages)</li><li>Full / functional / partial / minimal capability</li><li>13 dependency types</li><li>Guardian / legal guardian</li><li>SAM / MAM malnutrition staging</li><li>Widowhood as structural fact</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="domain-block">
+      <h3>Shared Risk Model</h3>
+      <div class="role">Why a household is vulnerable, and how vulnerability compounds</div>
+      <p>Models risk as a qualitative composition — hazard category, exposure, vulnerability, and
+      household resilience combine into a characterised risk profile with a horizon (when harm might
+      occur) and a trend (whether the picture is improving or deteriorating), deliberately kept free
+      of numeric scoring so the reasoning stays legible rather than falsely precise. Resilience itself
+      is modeled as seven distinct capacities — absorptive, adaptive, recovery, support redundancy,
+      role substitution, buffering, and decision continuity — because a household's ability to
+      withstand a shock is not one number, it is several different kinds of capacity that can each be
+      present or absent independently. A compound-risk reasoning capability goes further: it
+      recognises that an infant's vulnerability and an elderly person's frailty compound differently
+      depending on who is providing care, and that two hazards striking at once — a seasonal flood
+      during an economic crisis — is not simply the sum of two separate risks.</p>
+      <div class="domain-grid">
+        <div>
+          <div class="kv">
+            <div class="r"><div class="k">Modeled</div><div class="v">Hazard category, exposure, vulnerability, household resilience, risk characterization, risk trend/horizon</div></div>
+            <div class="r"><div class="k">Relationships</div><div class="v">Contributes-to, moderates, composes-into — how hazard/exposure/vulnerability/resilience combine into a risk profile</div></div>
+            <div class="r"><div class="k">Distinctive strength</div><div class="v">Genuine multi-factor, lifecycle-aware, forward-looking compound risk reasoning</div></div>
+          </div>
+        </div>
+        <div>
+          <ul class="concept-list">
+            <li>12 protective factors</li><li>7 resilience capacities</li><li>Risk horizon ≠ persistence</li><li>Compound / cascade risk</li><li>Exploitation &amp; coercion indicators</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.1rem; margin:36px 0 16px; color:var(--accent-ink);">The Casework Lifecycle</h3>
+
+    <div class="domain-block">
+      <h3>Registration</h3>
+      <div class="role">How a person's situation and needs first enter the system</div>
+      <p>Models the intake conversation as humanitarian practice actually runs it: a registrant
+      (who may be the beneficiary themselves, a family proxy, a community member, or a volunteer)
+      makes claims about a household's situation and needs, each claim carrying an epistemic basis
+      — first-hand, second-hand, observational, or inferred — that determines how much weight it can
+      bear. Claim quality is deliberately modeled along two independent axes: how complete the
+      information is, and whether it is internally consistent — because a claim that is thorough but
+      contradictory needs a different response than one that is consistent but incomplete. Situations
+      are classified by trajectory (a sudden crisis reads differently from a long-standing structural
+      condition) and by the specific event that triggered them — bereavement, job loss, injury,
+      illness, displacement, domestic violence, disaster, or legal crisis — so that the same
+      underlying need (food insecurity, say) is understood in the context that actually produced it.</p>
+      <div class="domain-grid">
+        <div>
+          <div class="kv">
+            <div class="r"><div class="k">Modeled</div><div class="v">Registrant, beneficiary, household snapshot, situation, need, claim, evidence, support intervention, case, lead</div></div>
+            <div class="r"><div class="k">Relationships</div><div class="v">Situation contextualises need; claim is evidenced by; household observes the shared Person/Household</div></div>
+            <div class="r"><div class="k">Reference implementation</div><div class="v">The first domain modeled to the repository's canonical discipline, later used as the template for every other domain</div></div>
+          </div>
+        </div>
+        <div>
+          <ul class="concept-list">
+            <li>6 need categories</li><li>4 claim basis types</li><li>4 situation trajectories</li><li>8 trigger events</li><li>Two-dimensional claim quality</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="domain-block">
+      <h3>Verification Operations</h3>
+      <div class="role">Turning a claim into a confirmed fact</div>
+      <p>Models what happens when a claim made at registration is checked against reality: a
+      verification activity produces field observations and findings, each carrying a confidence
+      level that can be composed from multiple observations rather than asserted as one number,
+      contradictions between what was claimed and what was found are explicitly detected rather than
+      silently overwritten, and specific conditions trigger re-verification when a case's
+      circumstances may have changed. A human review step exists for findings that verification alone
+      cannot resolve, and an escalation vocabulary distinguishes why a case needed human judgment.</p>
+      <div class="domain-grid">
+        <div>
+          <div class="kv">
+            <div class="r"><div class="k">Modeled</div><div class="v">Verification subject, verification activity, field observation, verification finding, reverification trigger, human review</div></div>
+            <div class="r"><div class="k">Relationships</div><div class="v">Verification activity confirms or contradicts a Registration claim; escalates to human review; conducted by an Actor</div></div>
+            <div class="r"><div class="k">Distinctive strength</div><div class="v">The most complete reasoning suite in the repository — confidence composition, contradiction detection, escalation, reverification</div></div>
+          </div>
+        </div>
+        <div>
+          <ul class="concept-list">
+            <li>Verification confidence scale</li><li>Could-not-complete reasons</li><li>Review decision vocabulary</li><li>Reverification triggers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="domain-block">
+      <h3>Needs Assessment</h3>
+      <div class="role">Synthesizing evidence into an assessed, confidence-scored need</div>
+      <p>Sits between raw findings and an actionable need: an assessment session (conducted by a
+      trained assessor, against a defined instrument and indicators) yields observations, which are
+      synthesized into need assertions carrying an explicit confidence level and, where evidence
+      conflicts, a conflict status rather than a silently resolved average. A calibration and
+      consensus layer exists specifically so that different assessors' judgments can be checked
+      against one another — an epistemic safeguard, not a data-entry convenience.</p>
+      <div class="domain-grid">
+        <div>
+          <div class="kv">
+            <div class="r"><div class="k">Modeled</div><div class="v">Assessment instrument, assessment session, observation, need assertion, finding consensus, assessor calibration, reassessment trigger</div></div>
+            <div class="r"><div class="k">Relationships</div><div class="v">Session evaluates a Person/Household/Community; observation is based on a Registration claim or Verification finding</div></div>
+            <div class="r"><div class="k">Distinctive strength</div><div class="v">Explicit epistemic governance — confidence, conflict, and consensus modeled as first-class concepts, not implicit</div></div>
+          </div>
+        </div>
+        <div>
+          <ul class="concept-list">
+            <li>Confidence level scale</li><li>Conflict status</li><li>Assessment depth &amp; urgency</li><li>Assessor calibration outcome</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="domain-block">
+      <h3>Case Management</h3>
+      <div class="role">Orchestrating the response to a verified, assessed need</div>
+      <p>Represents the case as the organising unit of the entire response: a case plan addresses
+      specific needs through specific interventions, a referral connects the case to another
+      organisation or service when Khidmat cannot meet a need directly, and a follow-up tracks
+      whether a commitment was actually carried out. Case status, priority, origin, and closure reason
+      are all modeled as controlled classifications rather than free text, so that every case can be
+      reasoned about consistently regardless of who opened it or why.</p>
+      <div class="domain-grid">
+        <div>
+          <div class="kv">
+            <div class="r"><div class="k">Modeled</div><div class="v">Case, case plan, referral, follow-up</div></div>
+            <div class="r"><div class="k">Relationships</div><div class="v">Case has a case plan and referrals; case plan addresses a need assertion via a support intervention; case has a lead coordinator</div></div>
+            <div class="r"><div class="k">Where the model is thinnest</div><div class="v">The concepts are fully represented, but the decision logic for what a verified need should trigger has not yet been built (see §7, §10)</div></div>
+          </div>
+        </div>
+        <div>
+          <ul class="concept-list">
+            <li>Case status &amp; priority level</li><li>Referral status &amp; type</li><li>Closure reason</li><li>Objective status</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="domain-block">
+      <h3>Beneficiary Lifecycle</h3>
+      <div class="role">A person's relationship with the system over time, not a single snapshot</div>
+      <p>Models the fact that a beneficiary's engagement is not one case, but a history: an engagement
+      stage (from first contact through active engagement to exit) and an event-sourced transition
+      record allow the system to recognise that a household returning for a third time has not
+      improved, or that a child enrolled in school at first registration is not enrolled at the
+      second. A separate human-development-stage vocabulary is deliberately kept independent of
+      engagement stage, so that a person's life stage is never confused with, or used as a proxy for,
+      their administrative status with the organisation.</p>
+      <div class="domain-grid">
+        <div>
+          <div class="kv">
+            <div class="r"><div class="k">Modeled</div><div class="v">Beneficiary lifecycle record, lifecycle transition</div></div>
+            <div class="r"><div class="k">Relationships</div><div class="v">Tracks the journey of a Person/Household; transitions triggered by a registration case, verification finding, risk characterization, or case decision</div></div>
+            <div class="r"><div class="k">Maturity</div><div class="v">Structurally clean; the smallest domain by content</div></div>
+          </div>
+        </div>
+        <div>
+          <ul class="concept-list">
+            <li>Engagement stage</li><li>Exit &amp; suspension reason</li><li>Review trigger</li><li>Human development stage (kept distinct)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.1rem; margin:36px 0 16px; color:var(--accent-ink);">The Surrounding Context</h3>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Community Context</h3>
+        <p style="font-size:0.9rem;">Represents the geographic, infrastructural, and social fabric a
+        household sits inside — settlement type and formality, a full geographic hierarchy,
+        environmental hazards distinct from the Risk Model's own hazard concepts, essential service
+        access, seasonal events (a flood season, an agricultural cycle, an examination period), local
+        organisations, and livelihood patterns. The most extensively classified domain in the
+        repository by vocabulary breadth — twelve distinct controlled vocabularies covering the
+        physical and social setting of a case.</p>
+      </div>
+      <div class="card">
+        <h3>Programmes</h3>
+        <p style="font-size:0.9rem;">Models a structured programme as distinct from ad-hoc,
+        case-by-case assistance: eligibility rules, intervention offerings with defined modality
+        (cash, voucher, in-kind, service, or asset) and objective category, enrollment status and
+        outcome, waitlist priority, and governance mechanisms — humanitarian overrides, appeals, and
+        compliance checkpoints — for when a rigid eligibility rule needs a documented exception.</p>
+      </div>
+      <div class="card">
+        <h3>Support Delivery</h3>
+        <p style="font-size:0.9rem;">Represents the moment support actually reaches a person: a
+        delivery event, the custody chain from Khidmat to the person receiving it, proof of delivery,
+        and an accountability record. A hard boundary is deliberately kept against the Donor &amp;
+        Resource domain — inventory ends and custody begins at a specific, modeled line, so a
+        resource that has been allocated is not confused with one that has actually been handed over.</p>
+      </div>
+      <div class="card">
+        <h3>Impact</h3>
+        <p style="font-size:0.9rem;">Provides the vocabulary for evaluation and measurement —
+        indicator category, type, and hierarchy, attribution, and outcome structures. The
+        thinnest domain in the model by content, appropriately, since it depends on longitudinal data
+        that only accumulates once Beneficiary Lifecycle and the interventions it measures have been
+        running in practice.</p>
+      </div>
+      <div class="card">
+        <h3>Volunteer Operations</h3>
+        <p style="font-size:0.9rem;">Models the volunteer as a profile of skill, certification,
+        availability, geographic coverage, language proficiency, and organisational affiliation,
+        deliberately kept independent of any one organisation's specific volunteer programme. By
+        design, it models only who a volunteer <em>is</em> and what they are qualified for — not the
+        act of assigning them to a task, which belongs to the domains that actually do the assigning.</p>
+      </div>
+      <div class="card">
+        <h3>Donor &amp; Resource</h3>
+        <p style="font-size:0.9rem;">Models donor identity (a person or an organisation, never
+        both at once), grants and contributions, and a resource model that distinguishes an abstract
+        resource type from a tracked inventory item and a pre-delivery allocation decision. Includes a
+        dedicated Islamic-giving vocabulary — zakat, sadaqah, sadaqah jariyah, waqf, fidya, kaffarah,
+        and qurbani, with the eight zakat-eligible recipient categories (asnaf) — reflecting a real
+        funding practice this organisation serves, modeled as its own controlled vocabulary rather than
+        folded into a generic "donation type" label.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 5. ONTOLOGY COVERAGE -->
+<!-- ============================================================ -->
+<section class="section" id="ontology-coverage">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ontology Coverage</div>
+      <h2>How deeply each domain represents its entities and their relationships.</h2>
+      <div class="dek">Ontology is the structural half of the model: what things exist, and how
+      they connect. This section demonstrates depth, not repository file counts.</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Domain</th><th>Core entities represented</th><th>What the relationships express</th><th>Cross-domain integration</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Shared Human Model</strong></td><td>Person, Household, family unit, kinship roles</td><td>Guardianship, kinship, support role within a family</td><td>Referenced by every domain that reasons about a person</td></tr>
+          <tr><td><strong>Shared Risk Model</strong></td><td>Risk, risk composition, risk characterization, household resilience</td><td>Hazard/exposure/vulnerability/resilience compose into a risk profile; protective factors moderate it</td><td>Referenced by Beneficiary Lifecycle, Verification Operations, Registration</td></tr>
+          <tr><td><strong>Registration</strong></td><td>Registrant, Beneficiary, Household Snapshot, Situation, Need, Claim, Evidence, Case, Lead</td><td>Situation contextualises need; claim inherits registrant's epistemic basis; household snapshot observes the shared Household</td><td>The reference structure every later domain's ontology was modeled against</td></tr>
+          <tr><td><strong>Verification Operations</strong></td><td>Verification Subject, Verification Activity, Field Observation, Verification Finding, Human Review</td><td>Verification activity confirms/contradicts a Registration claim; escalates to human review; references shared Risk characterization</td><td>Consumes Registration; feeds Needs Assessment and Case Management</td></tr>
+          <tr><td><strong>Needs Assessment</strong></td><td>Assessment Instrument, Assessment Session, Observation, Need Assertion, Finding Consensus</td><td>Session evaluates Person/Household/Community; assertion based on a verified fact or claim</td><td>Consumes Registration claims and Verification findings; feeds Case Management</td></tr>
+          <tr><td><strong>Case Management</strong></td><td>Case, Case Plan, Referral, Follow-Up</td><td>Case plan addresses a Need Assertion via a Support Intervention; referral targets an Organisation; case has a statutory owner</td><td>The orchestration point most other domains connect through</td></tr>
+          <tr><td><strong>Beneficiary Lifecycle</strong></td><td>Beneficiary Lifecycle record, Lifecycle Transition</td><td>Tracks the journey of a Person/Household; transition triggered by Registration, Verification, Risk, or a Case decision</td><td>The longitudinal record that Community Context and Impact both build on</td></tr>
+          <tr><td><strong>Community Context</strong></td><td>Community, Geographic Area, Built Infrastructure, Natural Resource, Local Collective</td><td>Community located in a geographic area; infrastructure operated by an Organisation</td><td>Underpins Programmes, Volunteer Operations, and Donor &amp; Resource's geographic reach</td></tr>
+          <tr><td><strong>Programmes</strong></td><td>Programme, Programme Version/Variant, Eligibility Rule, Intervention Offering, Enrollment</td><td>Programme funded/implemented by an Organisation; intervention offering verified by a Verification Activity</td><td>Referenced by Donor &amp; Resource's grant funding and Support Delivery's fulfilment</td></tr>
+          <tr><td><strong>Support Delivery</strong></td><td>Delivery Event, Custody Transfer, Proof of Delivery, Accountability Record</td><td>Delivery event fulfilled from a Resource Allocation; custody transfer to a Custodian</td><td>The single authorised link back into Donor &amp; Resource's allocation model</td></tr>
+          <tr><td><strong>Impact</strong></td><td>Impact Evaluation, Measurement</td><td>Impact evaluation contains a Measurement</td><td>Depends on Beneficiary Lifecycle for the longitudinal record it measures against</td></tr>
+          <tr><td><strong>Volunteer Operations</strong></td><td>Volunteer Profile, Volunteer Team</td><td>Volunteer profile attaches behind the shared Actor concept; affiliated with an Organisation</td><td>Referenced by Support Delivery and Impact wherever a volunteer is involved</td></tr>
+          <tr><td><strong>Donor &amp; Resource</strong></td><td>Donor Profile, Grant, Contribution, Resource, Inventory Item, Resource Allocation</td><td>Donor profile attaches behind a Person or Organisation; grant funds a Programme; allocation reserved for a Case Plan</td><td>Feeds Support Delivery at the allocation boundary; references Programmes' funding rules</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="fn">Every relationship in the table above is expressed as a directed, typed connection
+    between two named entities — not a free-text note. This is what allows the model to be reasoned
+    about consistently rather than interpreted differently by each reader.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 6. TAXONOMY COVERAGE -->
+<!-- ============================================================ -->
+<section class="section" id="taxonomy-coverage">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Taxonomy Coverage</div>
+      <h2>A standardised humanitarian vocabulary.</h2>
+      <div class="dek">Every classification below replaces what would otherwise be inconsistent
+      free text — the same situation described one way by one caseworker and another way by the next.</div>
+    </div>
+
+    <p>Where the ontology says <em>what exists</em>, the taxonomy says <em>which words are allowed
+    to describe it, and what each one means</em>. This is the layer that turns "the family is
+    struggling" into a specific, comparable classification — which need category, which severity,
+    which trigger event — so that two different caseworkers describing the same household arrive at
+    the same understanding, and so that patterns can be seen across cases rather than trapped in
+    individual narrative notes.</p>
+
+    <div class="grid grid-2" style="margin-top:28px;">
+      <div class="card">
+        <h4>Registration</h4>
+        <p style="font-size:0.9rem;">Standardises need categories (food, medical, shelter,
+        education, livelihood, psychosocial) and their severities and durations; the circumstances
+        that produce vulnerability (structural, crisis-triggered, progressive, or acute), the specific
+        events that trigger them, and which areas of life a situation affects; and — its most
+        distinctive contribution — a two-dimensional claim-quality vocabulary that separates how
+        <em>complete</em> information is from whether it is <em>internally consistent</em>, so the two
+        very different follow-up responses they require are never confused.</p>
+      </div>
+      <div class="card">
+        <h4>Verification Operations</h4>
+        <p style="font-size:0.9rem;">Standardises verification status and confidence, the reasons a
+        verification could not be completed, review decisions, and the conditions that trigger
+        re-verification — replacing what would otherwise be an unstructured note about "why the
+        volunteer couldn't confirm this" with a closed, comparable classification.</p>
+      </div>
+      <div class="card">
+        <h4>Needs Assessment</h4>
+        <p style="font-size:0.9rem;">Standardises evidence type, confidence level, and conflict
+        status; assessment modality, depth, and urgency; and a governance vocabulary for review,
+        rejection, and consensus outcomes — making an assessor's judgment auditable rather than a
+        private, undocumented call.</p>
+      </div>
+      <div class="card">
+        <h4>Community Context</h4>
+        <p style="font-size:0.9rem;">The broadest single vocabulary set in the model: settlement
+        type and formality, a full geographic hierarchy, environmental hazard exposure, essential
+        service access, seasonal events, transportation and infrastructure types, livelihood patterns,
+        and local organisation types — deliberately kept distinct from the Shared Risk Model's own
+        hazard vocabulary and from the generic Shared organisation-type list, each with an explicit
+        note on why the two do not overlap.</p>
+      </div>
+      <div class="card">
+        <h4>Programmes</h4>
+        <p style="font-size:0.9rem;">Standardises intervention modality (cash, voucher, in-kind,
+        service, asset), eligibility categories, enrollment status and outcome, termination reasons,
+        waitlist priority, and thematic sector — the last of these serving, for now, as the working
+        source for the sector vocabulary a future shared "humanitarian sector" concept is expected to
+        formalise (see §10).</p>
+      </div>
+      <div class="card">
+        <h4>Support Delivery</h4>
+        <p style="font-size:0.9rem;">Standardises delivery modality, the lifecycle a delivery
+        passes through, the reasons a delivery attempt can fail or be exempted, and the proof-of-delivery
+        and accountability vocabulary that keeps a custody chain auditable from allocation to
+        the person who actually received it.</p>
+      </div>
+      <div class="card">
+        <h4>Volunteer Operations</h4>
+        <p style="font-size:0.9rem;">Standardises volunteer status and type, skill category,
+        certification type, availability and geographic coverage type, language proficiency, and
+        training status — a complete qualification vocabulary, kept explicitly separate from the act
+        of assigning a volunteer to a task, which is not this domain's concern.</p>
+      </div>
+      <div class="card">
+        <h4>Donor &amp; Resource</h4>
+        <p style="font-size:0.9rem;">The most extensively cross-checked vocabulary in the model:
+        donor type and engagement pattern, anonymity level, funding lifecycle status, resource and
+        stock-movement classification, storage type, allocation priority and status — plus the
+        dedicated Islamic-giving vocabulary described in §4, deliberately exempted from regional
+        synonym-collapsing because these are canonical religious-giving terms, not regional dialect
+        variants of a generic concept.</p>
+      </div>
+    </div>
+
+    <div class="callout gold" style="margin-top:28px;">
+      <p>A recurring pattern across this vocabulary work is worth naming directly: several domains
+      discovered a near-duplicate concept already existing elsewhere and deliberately reconciled it
+      rather than quietly re-defining it — Needs Assessment renamed one of its own classifications to
+      avoid colliding with an identically-named one in Verification Operations; Beneficiary Lifecycle
+      and Programmes each explicitly distinguish their own use of the word "graduated"; Community
+      Context explains in its own governance notes exactly how its organisation vocabulary differs
+      from the generic Shared one. This is what a genuinely single, consistent humanitarian language
+      looks like in practice — not the absence of overlap risk, but overlap risk that gets caught and
+      resolved.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 7. KNOWLEDGE DEPTH ASSESSMENT -->
+<!-- ============================================================ -->
+<section class="section" id="depth-assessment">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Knowledge Depth Assessment</div>
+      <h2>An honest reading of semantic depth, domain by domain.</h2>
+      <div class="dek">Not "complete" or "incomplete" — how much genuine humanitarian nuance each
+      domain's ontology and taxonomy actually capture.</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Domain</th><th>Depth</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Shared Risk Model</strong></td><td class="stars">★★★★★</td><td>Seven distinct resilience capacities, twelve protective factors, and a compound-risk reasoning capability that is genuinely multi-factor and lifecycle-aware — the single deepest piece of reasoning in the model.</td></tr>
+          <tr><td><strong>Shared Human Model</strong></td><td class="stars">★★★★★</td><td>Nine developmental lifecycle stages each with their own characteristic vulnerabilities and reasoning implications, and a family model expressive enough to represent bereavement as a standing structural fact rather than an event that fades from the record.</td></tr>
+          <tr><td><strong>Registration</strong></td><td class="stars">★★★★<span class="dim">☆</span></td><td>The two-dimensional claim-quality model is genuinely sophisticated humanitarian epistemics. What holds it back from full depth: the inference layer built on top of these rich concepts still reasons on single triggers, one at a time, rather than on the combinations the underlying model could support.</td></tr>
+          <tr><td><strong>Verification Operations</strong></td><td class="stars">★★★★<span class="dim">☆</span></td><td>The most complete reasoning suite of any domain — confidence composition, contradiction detection, escalation. Held back from full depth by being domain-local: it does not yet draw on the lifecycle or risk models beneath it.</td></tr>
+          <tr><td><strong>Donor &amp; Resource</strong></td><td class="stars">★★★★<span class="dim">☆</span></td><td>The Islamic-giving vocabulary and the resource/inventory/allocation distinction are precise and genuinely reflect real funding practice; the domain's own cross-referencing discipline against Programmes and Support Delivery is exemplary.</td></tr>
+          <tr><td><strong>Community Context</strong></td><td class="stars">★★★★<span class="dim">☆</span></td><td>The broadest vocabulary coverage in the model — twelve distinct classification areas — giving a genuinely rich picture of the setting a household sits inside, though it does not yet have its own reasoning layer connecting that setting back to household risk.</td></tr>
+          <tr><td><strong>Programmes</strong></td><td class="stars">★★★★<span class="dim">☆</span></td><td>A complete eligibility, enrollment, and intervention-offering model, including governance mechanisms (override, appeal, compliance) for the exceptions real programmes always need.</td></tr>
+          <tr><td><strong>Needs Assessment</strong></td><td class="stars">★★★<span class="dim">☆☆</span></td><td>A well-formed synthesis and epistemic-governance model (confidence, conflict, consensus, calibration); has not yet grown a reasoning layer of its own.</td></tr>
+          <tr><td><strong>Case Management</strong></td><td class="stars">★★★<span class="dim">☆☆</span></td><td>The orchestration concepts — case, plan, referral, follow-up — are cleanly represented, but the domain that is meant to decide what happens in response to a verified need does not yet reason about that decision at all.</td></tr>
+          <tr><td><strong>Volunteer Operations</strong></td><td class="stars">★★★<span class="dim">☆☆</span></td><td>The qualification model (skill, certification, availability, coverage, language) is complete and precise; deliberately foundational only, with the operational deployment layer intentionally deferred.</td></tr>
+          <tr><td><strong>Beneficiary Lifecycle</strong></td><td class="stars">★★★<span class="dim">☆☆</span></td><td>A clean, event-sourced transition model with a real discipline (keeping engagement stage and human-development stage strictly separate); still the smallest domain by content.</td></tr>
+          <tr><td><strong>Support Delivery</strong></td><td class="stars">★★★<span class="dim">☆☆</span></td><td>The custody chain and accountability model is precise and well-bounded against Donor &amp; Resource; the vocabulary supporting it is comparatively thin.</td></tr>
+          <tr><td><strong>Impact</strong></td><td class="stars">★★<span class="dim">☆☆☆</span></td><td>Sound indicator and evaluation vocabulary for what it is; appropriately the shallowest domain, since it depends on longitudinal data that has not yet had time to accumulate.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 8. CROSS-DOMAIN KNOWLEDGE INTEGRATION -->
+<!-- ============================================================ -->
+<section class="section" id="cross-domain">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cross-Domain Knowledge Integration</div>
+      <h2>How the domains reason together.</h2>
+      <div class="dek">No domain owns its concepts in isolation — each one composes concepts owned
+      elsewhere rather than redefining them, which is what makes a single, coherent model possible
+      across thirteen separately developed domains.</div>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 980 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-domain integration diagram">
+        <defs>
+          <marker id="arrowh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#1f5f5b"/>
+          </marker>
+        </defs>
+        <!-- main lifecycle spine -->
+        <line x1="70" y1="70" x2="910" y2="70" stroke="#1f5f5b" stroke-width="1.6" marker-end="url(#arrowh)"/>
+        <g font-family="-apple-system, sans-serif" font-size="11" fill="#1a2422">
+          <circle cx="70" cy="70" r="6" fill="#1f5f5b"/><text x="70" y="48" text-anchor="middle" font-weight="700">Human Model</text>
+          <circle cx="210" cy="70" r="6" fill="#1f5f5b"/><text x="210" y="48" text-anchor="middle" font-weight="700">Registration</text>
+          <circle cx="350" cy="70" r="6" fill="#1f5f5b"/><text x="350" y="48" text-anchor="middle" font-weight="700">Verification</text>
+          <circle cx="490" cy="70" r="6" fill="#1f5f5b"/><text x="490" y="48" text-anchor="middle" font-weight="700">Needs Assessment</text>
+          <circle cx="640" cy="70" r="6" fill="#1f5f5b"/><text x="640" y="48" text-anchor="middle" font-weight="700">Case Management</text>
+          <circle cx="780" cy="70" r="6" fill="#1f5f5b"/><text x="780" y="48" text-anchor="middle" font-weight="700">Support Delivery</text>
+          <circle cx="910" cy="70" r="6" fill="#1f5f5b"/><text x="910" y="48" text-anchor="middle" font-weight="700">Impact</text>
+        </g>
+        <!-- side connections -->
+        <g stroke="#c3d0cb" stroke-width="1.1" fill="none" stroke-dasharray="3,3">
+          <line x1="70" y1="76" x2="70" y2="150"/>
+          <line x1="350" y1="76" x2="350" y2="150"/>
+          <line x1="640" y1="76" x2="640" y2="150"/>
+          <line x1="780" y1="76" x2="780" y2="150"/>
+          <line x1="490" y1="76" x2="490" y2="150"/>
+        </g>
+        <g font-family="-apple-system, sans-serif" font-size="10" fill="#5c4413">
+          <rect x="20" y="150" width="100" height="40" rx="5" fill="#f7f0e0" stroke="#a17d2c"/>
+          <text x="70" y="174" text-anchor="middle" font-weight="700">Risk Model</text>
+          <rect x="300" y="150" width="100" height="40" rx="5" fill="#f7f0e0" stroke="#a17d2c"/>
+          <text x="350" y="174" text-anchor="middle" font-weight="700">Community</text>
+          <rect x="440" y="150" width="100" height="40" rx="5" fill="#f7f0e0" stroke="#a17d2c"/>
+          <text x="490" y="174" text-anchor="middle" font-weight="700">Programmes</text>
+          <rect x="590" y="150" width="100" height="40" rx="5" fill="#f7f0e0" stroke="#a17d2c"/>
+          <text x="640" y="174" text-anchor="middle" font-weight="700">Volunteer Ops</text>
+          <rect x="730" y="150" width="100" height="40" rx="5" fill="#f7f0e0" stroke="#a17d2c"/>
+          <text x="780" y="174" text-anchor="middle" font-weight="700">Donor &amp; Resource</text>
+        </g>
+        <text x="490" y="225" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10.5" fill="#889691">Teal spine = the casework lifecycle a person moves through · Gold = the supporting domains each stage draws on</text>
+      </svg>
+    </div>
+
+    <p style="margin-top:8px;">A single person's path through the model illustrates the integration
+    directly. The Human Model supplies who they are; Registration captures their situation using that
+    same person definition; Verification checks the claims against reality, drawing on the Risk
+    Model's vocabulary when a safety concern is present; Needs Assessment synthesizes the confirmed
+    facts into an assessed need, aware of the Community Context the household sits in; Case
+    Management opens a plan that may draw on a Programme's eligibility rules, a Donor &amp; Resource
+    allocation, or a Volunteer's qualification; Support Delivery executes it with a custody chain back
+    to that same allocation; and Beneficiary Lifecycle and Impact together record whether the person's
+    situation actually changed. No step re-defines a concept another domain already owns — each one
+    references it.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 9. INDEPENDENT REVIEW SUMMARY -->
+<!-- ============================================================ -->
+<section class="section" id="independent-review">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Independent Review Summary</div>
+      <h2>What an outside review of this knowledge model concluded.</h2>
+    </div>
+
+    <p>An independent review of the full ontology and taxonomy has been completed, assessing it
+    against its own internal consistency rules rather than taking its completeness on faith. Its
+    conclusion, in knowledge terms rather than engineering ones:</p>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Current maturity</h3>
+        <p style="font-size:0.9rem;">The concepts and vocabulary across all thirteen domains are
+        internally consistent — the same term means the same thing everywhere it is used, with no
+        confirmed contradictions found across the model.</p>
+      </div>
+      <div class="card">
+        <h3>Major strengths</h3>
+        <p style="font-size:0.9rem;">The controlled-vocabulary layer is the strongest asset reviewed
+        — most domains actively identified and resolved near-duplicate concepts before they became
+        genuine confusion, evidence of a mature, disciplined modeling practice rather than an
+        accidental one.</p>
+      </div>
+      <div class="card">
+        <h3>Remaining knowledge work</h3>
+        <p style="font-size:0.9rem;">Two foundational models (Human Model, Risk Model) still need
+        restructuring into the same disciplined format the rest of the domains already follow;
+        Case Management's decision reasoning has not yet been built; and the full model has not yet
+        been exercised against one real, worked case end to end.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:24px;">In short: the review found a knowledge model that represents its
+    subject matter well, described with genuinely disciplined vocabulary, with clearly identified —
+    not vague — work remaining before it can be considered finished. §10 sets that remaining work out
+    directly.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 10. REMAINING ONTOLOGY & TAXONOMY WORK -->
+<!-- ============================================================ -->
+<section class="section" id="remaining-work">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Remaining Ontology &amp; Taxonomy Work</div>
+      <h2>What is left to finish, in knowledge terms.</h2>
+      <div class="dek">Not software work — the modeling and vocabulary work still required before
+      the knowledge layer can be considered complete.</div>
+    </div>
+
+    <div class="kv" style="border-top:1px solid var(--line); margin-top:6px;">
+      <div class="r" style="padding:16px 0;"><div class="k">Structural migration</div><div class="v">The Human Model and Risk Model — already rich in content, described above — still need to be re-expressed in the same disciplined structural format every other domain now follows, so their concepts can be referenced and reasoned about with the same consistency.</div></div>
+      <div class="r" style="padding:16px 0;"><div class="k">Semantic refinement</div><div class="v">A small number of concepts still need a cleaner formal link rather than a documented convention — most notably, the equivalence between the "case" concept as first opened at registration and the same case as later managed needs to be expressed as a direct semantic link, not only recorded as a governance decision.</div></div>
+      <div class="r" style="padding:16px 0;"><div class="k">Reasoning expansion</div><div class="v">Case Management — the domain that decides what happens in response to a verified need — does not yet reason about that decision. Extending the kind of multi-factor, lifecycle-aware reasoning already demonstrated in the Risk Model into Case Management is the single most valuable next step in reasoning depth.</div></div>
+      <div class="r" style="padding:16px 0;"><div class="k">Vocabulary tidying</div><div class="v">A handful of concepts in Registration's taxonomy are missing a written definition, and two residual cross-references still use an older citation style rather than the current one — small, already-identified corrections.</div></div>
+      <div class="r" style="padding:16px 0;"><div class="k">One worked scenario</div><div class="v">The model has not yet been exercised end to end against a single, real humanitarian case — from intake through to a delivered response — to demonstrate that the concepts described across this report actually cohere in practice, not only in specification.</div></div>
+      <div class="r" style="padding:16px 0;"><div class="k">Knowledge layer freeze</div><div class="v">Once the items above close, the knowledge model reaches a stable, frozen state — the point at which further changes to it become deliberate revisions rather than ongoing first-draft development.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 11. PLANNED KNOWLEDGE EXPANSION -->
+<!-- ============================================================ -->
+<section class="section" id="planned-expansion">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Planned Knowledge Expansion</div>
+      <h2>Future humanitarian domains — not overdue work.</h2>
+      <div class="dek">Presented separately and deliberately: these are the next domains planned for
+      the model, not gaps in what exists today.</div>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Stage 9 — Programme Intelligence</h3>
+        <p style="font-size:0.9rem;">A portfolio-level view above the single programme: how
+        programmes depend on one another, how they are monitored, the results chains that connect
+        activity to outcome, geographic coverage, and what makes a programme scalable and
+        sustainable once it moves beyond a pilot.</p>
+      </div>
+      <div class="card">
+        <h3>Stage 10 — Community Intelligence</h3>
+        <p style="font-size:0.9rem;">A deeper model of the community itself — resilience at the
+        community rather than household level, community assets, local markets, schools and health
+        facilities, local governance structures, conflict dynamics, and disaster exposure.</p>
+      </div>
+      <div class="card">
+        <h3>Stage 11 — Humanitarian Decision Intelligence</h3>
+        <p style="font-size:0.9rem;"><strong>This remains ontology — a vocabulary for decisions, not
+        a decision-making mechanism.</strong> It would model the professional concepts humanitarian
+        decision-making already runs on: decision context, objective, constraint, trade-off,
+        alternative, evidence, assumption, and uncertainty — giving future reasoning a vocabulary to
+        reason <em>in</em>.</p>
+      </div>
+      <div class="card">
+        <h3>Stage 12 — Longitudinal Human Development</h3>
+        <p style="font-size:0.9rem;">A long-horizon model of how a person's relationship to the
+        organisation can change over years, illustrated below.</p>
+      </div>
+    </div>
+
+    <div class="diagram" style="margin-top:30px;">
+      <svg viewBox="0 0 980 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Longitudinal human development model">
+        <defs><marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c3d0cb"/></marker></defs>
+        <line x1="55" y1="60" x2="925" y2="60" stroke="#c3d0cb" stroke-width="1.2" marker-end="url(#arrow3)"/>
+        <g font-family="-apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#1a2422">
+          <circle cx="55" cy="60" r="6" fill="#a9720a"/><text x="55" y="38" text-anchor="middle">Crisis</text>
+          <circle cx="180" cy="60" r="6" fill="#a9720a"/><text x="180" y="82" text-anchor="middle">Stabilization</text>
+          <circle cx="305" cy="60" r="6" fill="#a9720a"/><text x="305" y="38" text-anchor="middle">Recovery</text>
+          <circle cx="430" cy="60" r="6" fill="#2c7a4e"/><text x="430" y="82" text-anchor="middle">Self-Reliance</text>
+          <circle cx="555" cy="60" r="6" fill="#2c7a4e"/><text x="555" y="38" text-anchor="middle">Resilience</text>
+          <circle cx="695" cy="60" r="6" fill="#1f5f5b"/><text x="695" y="82" text-anchor="middle">Community Contribution</text>
+          <circle cx="820" cy="60" r="6" fill="#1f5f5b"/><text x="820" y="38" text-anchor="middle">Mentorship / Volunteerism</text>
+          <circle cx="925" cy="60" r="6" fill="#123634"/><text x="925" y="82" text-anchor="middle">Leadership / Donorship</text>
+        </g>
+      </svg>
+    </div>
+    <p style="font-size:0.9rem; color:var(--ink-soft); margin-top:6px;">The model would run in one
+    direction of intent — from receiving support in crisis, through stabilization and recovery, to
+    self-reliance and resilience, and onward to a person eventually giving back to the same system
+    that once supported them.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 12. COLLABORATION & NEXT STEPS -->
+<!-- ============================================================ -->
+<section class="section" id="collaboration">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Collaboration &amp; Next Steps</div>
+      <h2>A foundation worth testing against real practice.</h2>
+    </div>
+
+    <p>Thirteen humanitarian domains now share one consistent way of describing a person, a
+    household, a risk, a case, and the context around it. That is a genuine and substantial
+    foundation — but a model of humanitarian reality is only as good as its contact with humanitarian
+    reality, and that contact is exactly what this review is seeking before the remaining and future
+    work goes further.</p>
+
+    <p>Before extending into the planned domains described in §11, feedback from the people who
+    actually do this work would be invaluable — not to validate what has been built, but to find
+    what it has missed. In particular:</p>
+
+    <div class="grid grid-2" style="margin-top:20px;">
+      <div class="card"><p style="font-size:0.92rem; margin:0;">Are there humanitarian concepts, relationships, or considerations that experienced staff would expect to see represented, but do not yet appear anywhere in this model?</p></div>
+      <div class="card"><p style="font-size:0.92rem; margin:0;">Are there operational workflows — ways cases, referrals, or interventions actually unfold in practice — that the model should represent more explicitly?</p></div>
+      <div class="card"><p style="font-size:0.92rem; margin:0;">Are there classifications or terms already in everyday use — locally, regionally, or within specific programmes — that should be formally added to the taxonomy rather than left as informal shorthand?</p></div>
+      <div class="card"><p style="font-size:0.92rem; margin:0;">Of the four planned future domains in §11, which would deliver the most value first, based on how the organisation actually expects to grow?</p></div>
+    </div>
+
+    <p style="margin-top:28px;">The goal of everything in this report is a model that reflects real
+    humanitarian operations as faithfully as possible before implementation begins — and that is best
+    achieved in conversation with the people closest to that operational reality, not in isolation
+    from them.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  Khidmat Humanitarian Ontology &amp; Taxonomy Report — Knowledge Layer Progress Review — Version 1.0.0
+</footer>
+
+</body>
+</html>

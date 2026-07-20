@@ -46,22 +46,14 @@ data_properties:
     cardinality: { min: 1, max: 1 }
 
   - id: objective_status
-    domain: case_plan
+    domain: case_objective
     taxonomy_ref: objective_status
-    cardinality: { min: 0, max: 1 }
+    cardinality: { min: 1, max: 1 }
     notes: >
-      Added per Stage 7B Repository Remediation, closing Major Finding M-2
-      of HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md:
-      taxonomy/objective_status.yaml existed with no entity or property
-      anywhere consuming it. Attached to the existing case_plan entity
-      (no new Objective entity introduced) as the plan's own overall
-      progress state. Scope note: this property is deliberately coarse —
-      one status for the plan as a whole, distinct from plan_status above
-      (which tracks whether this plan is the current authoritative one vs.
-      a preserved historical one). A future, finer-grained per-objective
-      breakdown within a case_plan, if ever required, is out of scope for
-      this remediation pass and is not implied by this property's
-      cardinality of { min: 0, max: 1 }.
+      Domain migrated from case_plan to case_objective per RFC v1.0 Wave 2.
+      Previously, this served as a coarse status for the entire plan. With the
+      extraction of the explicit case_objective entity, this status now correctly
+      tracks the finer-grained progress of individual goals within a plan.
 
   - id: ref_status
     domain: referral

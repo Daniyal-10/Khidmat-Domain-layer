@@ -327,6 +327,12 @@ data_properties:
     min: 0
     max: 1
   datatype: xsd:string
+- id: situation_onset_date
+  domain: situation
+  cardinality:
+    min: 0
+    max: 1
+  datatype: xsd:date
 - id: debt_source
   domain: situation
   cardinality:
@@ -683,7 +689,9 @@ data_properties:
     min: 0
     max: 1
 - id: location
-  domain: beneficiary
+  domain:
+  - beneficiary
+  - household_snapshot
   fields:
   - id: address_text
     datatype: xsd:string

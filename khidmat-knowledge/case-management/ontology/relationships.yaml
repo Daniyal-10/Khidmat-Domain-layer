@@ -97,6 +97,15 @@ relationships:
     cardinality: { min: 0, max: unbounded }
     notes: Associates a Case with its current and historical Case Plans.
 
+  - id: case_plan_owns_objective
+    from: case_plan
+    relationship: owns
+    to: case_objective
+    cardinality: { min: 1, max: unbounded }
+    notes: >
+      A Case Plan comprises one or more actionable Case Objectives designed 
+      to address a specific need. Added per RFC v1.0 Wave 2.
+
   - id: case_has_referral
     from: case
     relationship: has
@@ -174,3 +183,10 @@ relationships:
     to: shared:actor
     cardinality: { min: 0, max: 1 }
     notes: Role representing the statutory owner of the case.
+
+  - id: referral_addresses_need
+    from: referral
+    relationship: addresses_need
+    to: needs_assessment:need_assertion
+    cardinality: { min: 1, max: unbounded }
+    notes: Explicitly identifies the specific need(s) that generated this referral.

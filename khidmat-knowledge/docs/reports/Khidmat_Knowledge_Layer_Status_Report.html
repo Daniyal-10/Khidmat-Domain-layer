@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khidmat AI — Knowledge Layer Architecture &amp; Domain Validation Review</title>
+<style>
+  /* ============================================================
+     TOKENS — deliberate light/print artifact (executive review,
+     intended for PDF export and client circulation). Background
+     stays white by design in both color-scheme contexts.
+     ============================================================ */
+  :root{
+    --paper:      #ffffff;
+    --paper-alt:  #f6f7f9;
+    --paper-card: #fbfbfd;
+    --ink:        #1b2230;
+    --ink-soft:   #4b5563;
+    --ink-faint:  #8891a0;
+    --line:       #e3e6ec;
+    --line-strong:#c7cdd7;
+    --accent:     #2c4a7c;
+    --accent-ink: #16294a;
+    --accent-soft:#eaf0fa;
+    --good:       #1f7a54;
+    --good-soft:  #e7f5ee;
+    --warn:       #a9720a;
+    --warn-soft:  #fbf1de;
+    --crit:       #b23b3b;
+    --crit-soft:  #fbeaea;
+    --muted:      #6b7280;
+    --muted-soft: #eef0f3;
+
+    --font-display: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Times New Roman', serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: 'SF Mono', 'Cascadia Code', 'Consolas', 'Liberation Mono', monospace;
+
+    --shadow-card: 0 1px 2px rgba(20,30,50,0.04), 0 1px 12px rgba(20,30,50,0.05);
+    --radius: 6px;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper-alt:  #f2f3f6;
+      --paper-card: #ffffff;
+      --ink-faint:  #7d8696;
+      --shadow-card: 0 1px 2px rgba(20,30,50,0.06), 0 1px 14px rgba(20,30,50,0.07);
+    }
+  }
+  :root[data-theme="dark"]{ --paper-alt:#f2f3f6; --paper-card:#ffffff; }
+  :root[data-theme="light"]{ --paper-alt:#f6f7f9; --paper-card:#fbfbfd; }
+
+  *{ box-sizing: border-box; }
+  html{ background: var(--paper); }
+  body{
+    margin:0; background: var(--paper); color: var(--ink);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,h4{ font-family: var(--font-display); color: var(--accent-ink); font-weight: 600; text-wrap: balance; margin: 0; }
+  p{ margin: 0 0 1em 0; max-width: 68ch; }
+  p:last-child{ margin-bottom: 0; }
+  a{ color: var(--accent); }
+  strong{ color: var(--ink); }
+  code{ font-family: var(--font-mono); }
+  .num{ font-variant-numeric: tabular-nums; }
+
+  .wrap{ max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+  .eyebrow{
+    display:flex; align-items:center; gap:10px; font-family: var(--font-body);
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin-bottom: 10px;
+  }
+  .eyebrow::before{ content:""; width: 22px; height: 2px; background: var(--accent); display:inline-block; }
+  .section{ padding: 64px 0; border-bottom: 1px solid var(--line); }
+  .section:last-of-type{ border-bottom: none; }
+  .section-head{ margin-bottom: 32px; }
+  .section-head h2{ font-size: clamp(1.4rem, 1.05rem + 1.3vw, 1.95rem); }
+  .section-head .dek{ color: var(--ink-soft); margin-top: 8px; max-width: 68ch; font-size: 0.98rem; }
+  .section-num{ font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-faint); }
+
+  /* ---------- TOC strip ---------- */
+  .toc{ background: var(--paper-alt); border-bottom:1px solid var(--line); padding: 16px 0; }
+  .toc .wrap{ display:flex; flex-wrap:wrap; gap: 6px 4px; align-items:center; }
+  .toc a{
+    font-size:0.76rem; color: var(--ink-soft); text-decoration:none; padding: 5px 11px;
+    border-radius: 999px; border:1px solid transparent; white-space:nowrap;
+  }
+  .toc a:hover{ border-color: var(--line-strong); color: var(--accent-ink); background: var(--paper-card); }
+  .toc .sep{ color: var(--line-strong); }
+
+  /* ---------- COVER ---------- */
+  .cover{ background: linear-gradient(180deg, var(--accent-ink) 0%, var(--accent) 100%); color: #eef2f9; padding: 80px 0 52px; }
+  .cover .wrap{ display:flex; flex-direction:column; gap: 44px; }
+  .cover-mark{ display:flex; align-items:center; gap: 12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; font-size: 0.8rem; color: rgba(238,242,249,0.85); }
+  .cover-mark .dot{ width:8px; height:8px; border-radius:50%; background:#eef2f9; }
+  .cover-title .kicker{ text-transform: uppercase; letter-spacing:0.18em; font-size: 0.78rem; color: rgba(238,242,249,0.72); margin-bottom: 16px; font-weight:600; }
+  .cover-title h1{ color: #ffffff; font-size: clamp(2.1rem, 1.6rem + 2.3vw, 3.3rem); line-height: 1.1; margin-bottom: 12px; }
+  .cover-title h1 em{ font-style: italic; color: #cfe0ff; }
+  .cover-title .sub{ font-size: 1.1rem; color: rgba(238,242,249,0.86); max-width: 54ch; font-weight: 400; }
+  .cover-request{ display:inline-flex; align-items:center; gap:8px; background: rgba(238,242,249,0.14); border:1px solid rgba(238,242,249,0.3); padding:8px 16px; border-radius:999px; font-size:0.82rem; font-weight:600; color:#fff; width:fit-content; }
+  .cover-meta{ display:flex; flex-wrap:wrap; gap: 14px 40px; border-top: 1px solid rgba(238,242,249,0.24); padding-top: 24px; }
+  .cover-meta div{ min-width: 150px; }
+  .cover-meta .label{ font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color: rgba(238,242,249,0.6); margin-bottom:4px; }
+  .cover-meta .value{ font-family: var(--font-display); font-size:1.1rem; color:#fff; }
+  .cover-stats{ display:grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: rgba(238,242,249,0.18); border: 1px solid rgba(238,242,249,0.18); border-radius: var(--radius); overflow:hidden; }
+  .cover-stats .cell{ background: rgba(19,32,58,0.35); padding: 16px 12px; text-align:center; }
+  .cover-stats .cell .n{ font-family: var(--font-display); font-size: 1.65rem; color:#fff; line-height:1; }
+  .cover-stats .cell .l{ font-size:0.66rem; color: rgba(238,242,249,0.7); margin-top:6px; text-transform:uppercase; letter-spacing:0.05em; }
+
+  .verdict{ display:inline-flex; align-items:center; gap:10px; background: var(--warn-soft); color: var(--warn); border: 1px solid #ecd8a4; padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 0.95rem; }
+  .verdict .glyph{ font-size: 1.05rem; }
+
+  /* ---------- grids/cards ---------- */
+  .grid{ display:grid; gap: 16px; }
+  .grid-2{ grid-template-columns: 1fr 1fr; }
+  .grid-3{ grid-template-columns: repeat(3, 1fr); }
+  .grid-4{ grid-template-columns: repeat(4, 1fr); }
+  .grid-6{ grid-template-columns: repeat(6, 1fr); }
+  @media (max-width: 900px){ .grid-3,.grid-4,.grid-6{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px){ .grid-2,.grid-3,.grid-4,.grid-6{ grid-template-columns: 1fr; } .cover-stats{ grid-template-columns: repeat(3,1fr);} }
+
+  .card{ background: var(--paper-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 20px; box-shadow: var(--shadow-card); }
+  .card h3{ font-size: 1.02rem; margin-bottom: 8px; }
+  .card .stat-n{ font-family: var(--font-display); font-size: 2rem; color: var(--accent); line-height:1; }
+  .card .stat-l{ margin-top:8px; color: var(--ink-soft); font-size:0.86rem; }
+
+  .callout{ background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; }
+  .callout p{ color: var(--accent-ink); max-width: none; }
+  .callout.warn{ background: var(--warn-soft); border-color: var(--warn); }
+  .callout.warn p{ color: #6b4c07; }
+  .callout.good{ background: var(--good-soft); border-color: var(--good); }
+  .callout.good p{ color: #114a32; }
+  .callout.crit{ background: var(--crit-soft); border-color: var(--crit); }
+  .callout.crit p{ color: #7a2626; }
+
+  /* ---------- badges/chips ---------- */
+  .badge{ display:inline-flex; align-items:center; gap:6px; font-size: 0.7rem; font-weight:700; letter-spacing:0.02em; padding: 3px 10px; border-radius: 999px; white-space:nowrap; }
+  .badge.complete{ background: var(--good-soft); color: var(--good); }
+  .badge.partial{ background: var(--warn-soft); color: var(--warn); }
+  .badge.absent{ background: var(--crit-soft); color: var(--crit); }
+  .badge.placeholder{ background: var(--muted-soft); color: var(--muted); }
+  .badge .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; }
+
+  .chip-row{ display:flex; flex-wrap:wrap; gap:6px; }
+  .chip{ font-family: var(--font-mono); font-size: 0.74rem; background: var(--paper-alt); border:1px solid var(--line); color: var(--ink-soft); padding: 3px 9px; border-radius: 4px; white-space:nowrap; }
+  .chip.entity{ background:#fff; border-color: var(--line-strong); color: var(--ink); font-weight:600; }
+  .chip.owner{ background: var(--accent-soft); border-color: var(--accent); color: var(--accent-ink); font-weight:600; }
+  .chip.gap{ background: var(--crit-soft); border-color: var(--crit); color: var(--crit); }
+  .chip.deferred{ background: var(--muted-soft); border-color: var(--line-strong); color: var(--ink-soft); }
+
+  .path-tag{ font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent); background: var(--accent-soft); padding: 2px 9px; border-radius: 4px; display:inline-block; }
+
+  /* ---------- tables ---------- */
+  .table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius: var(--radius); }
+  table{ width:100%; border-collapse: collapse; font-size:0.9rem; min-width: 560px; }
+  thead th{ text-align:left; background: var(--paper-alt); color: var(--ink-soft); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; padding: 11px 15px; border-bottom: 1px solid var(--line); }
+  tbody td{ padding: 12px 15px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tbody tr:last-child td{ border-bottom:none; }
+  tbody tr:hover{ background: var(--paper-alt); }
+  td.center, th.center{ text-align:center; }
+
+  /* ---------- progress bars ---------- */
+  .bar-row{ display:flex; align-items:center; gap: 16px; padding: 9px 0; }
+  .bar-row .lbl{ width: 200px; flex-shrink:0; font-size:0.88rem; color: var(--ink); }
+  .bar-track{ flex:1; height:8px; background: var(--muted-soft); border-radius:99px; overflow:hidden; }
+  .bar-fill{ height:100%; border-radius:99px; background: var(--accent); }
+  .bar-fill.good{ background: var(--good); } .bar-fill.warn{ background: var(--warn); } .bar-fill.crit{ background: var(--crit); }
+  .bar-score{ width: 46px; text-align:right; font-variant-numeric: tabular-nums; color: var(--ink-soft); font-size:0.86rem; flex-shrink:0; }
+
+  /* ---------- lists ---------- */
+  .kv-list{ display:flex; flex-direction:column; gap:0; border-top:1px solid var(--line); }
+  .kv-list .row{ display:flex; gap:20px; padding: 13px 0; border-bottom:1px solid var(--line); }
+  .kv-list .row .k{ width: 220px; flex-shrink:0; font-weight:600; color: var(--ink); font-size:0.92rem; }
+  .kv-list .row .v{ color: var(--ink-soft); font-size:0.92rem; }
+
+  /* ---------- diagrams ---------- */
+  .diagram{ width:100%; overflow-x:auto; }
+  .diagram svg{ display:block; min-width: 640px; }
+
+  .fn{ font-size: 0.8rem; color: var(--ink-faint); border-top:1px dashed var(--line-strong); margin-top:18px; padding-top:12px; }
+
+  /* ---------- evidence card (per-domain spec sheet) ---------- */
+  .evidence-card{ border:1px solid var(--line); border-radius: var(--radius); background: var(--paper-card); box-shadow: var(--shadow-card); padding: 22px 24px; margin-bottom: 18px; }
+  .evidence-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:14px; flex-wrap:wrap; margin-bottom: 6px; }
+  .evidence-head-l{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; }
+  .evidence-head h3{ font-size: 1.14rem; }
+  .evidence-badges{ display:flex; gap:6px; flex-wrap:wrap; }
+  .evidence-purpose{ color: var(--ink-soft); font-size:0.92rem; margin: 8px 0 4px 0; max-width:none; }
+  .evidence-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px 30px; margin-top: 16px; }
+  .evidence-grid .full{ grid-column: 1 / -1; }
+  @media (max-width: 760px){ .evidence-grid{ grid-template-columns: 1fr; } }
+  .ev-label{ font-size:0.66rem; text-transform:uppercase; letter-spacing:0.08em; color: var(--ink-faint); font-weight:700; margin-bottom: 7px; }
+  .ev-empty{ font-size:0.85rem; color: var(--ink-faint); font-style: italic; }
+
+  .rel-line{ font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-soft); display:flex; align-items:center; gap:6px; padding: 3px 0; flex-wrap:wrap; }
+  .rel-line .e{ color: var(--ink); font-weight:700; }
+  .rel-line .p{ color: var(--accent); font-weight:600; }
+  .rel-line .arrow{ color: var(--ink-faint); }
+
+  .depth-meter{ display:flex; gap:4px; align-items:center; }
+  .depth-dot{ width:16px; height:8px; border-radius:2px; background: var(--muted-soft); }
+  .depth-dot.on{ background: var(--accent); }
+  .depth-label{ margin-left:8px; font-size:0.82rem; color: var(--ink-soft); }
+
+  /* ---------- ownership table ---------- */
+  .owner-table .rel-line{ padding:8px 0; border-bottom:1px dashed var(--line); font-size:0.86rem; }
+  .owner-table .rel-line:last-child{ border-bottom:none; }
+
+  /* ---------- module inventory table ---------- */
+  .module-table td:first-child{ font-family: var(--font-mono); font-size:0.84rem; color: var(--accent-ink); font-weight:600; white-space:nowrap; }
+
+  /* ---------- domain approval table ---------- */
+  .approval-table table{ min-width: 720px; }
+  .approval-table td, .approval-table th{ text-align:center; }
+  .approval-table td:first-child, .approval-table th:first-child{ text-align:left; }
+  .approval-verdict{ font-weight:700; }
+  .approval-verdict.yes{ color: var(--good); }
+  .approval-verdict.conditional{ color: var(--warn); }
+  .approval-verdict.deferred{ color: var(--muted); }
+
+  /* ---------- freeze readiness columns ---------- */
+  .freeze-col{ border-radius: var(--radius); padding: 18px 20px; border:1px solid var(--line); }
+  .freeze-col h3{ font-size:0.95rem; margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .freeze-col ul{ margin:0; padding-left:18px; font-size:0.86rem; color:var(--ink-soft); }
+  .freeze-col li{ margin-bottom:8px; }
+  .freeze-col.complete{ background: var(--good-soft); border-color:#bfe3d1; }
+  .freeze-col.deferred{ background: var(--muted-soft); border-color: var(--line-strong); }
+  .freeze-col.review{ background: var(--crit-soft); border-color:#f0c6c6; }
+
+  /* ---------- approval request block ---------- */
+  .approval-request{ background: var(--accent-ink); color: #eef2f9; border-radius: var(--radius); padding: 36px 40px; }
+  .approval-request p{ color: rgba(238,242,249,0.92); max-width:none; font-size:1.02rem; }
+  .approval-request .sig{ margin-top:20px; padding-top:16px; border-top:1px solid rgba(238,242,249,0.25); font-size:0.85rem; color: rgba(238,242,249,0.7); }
+
+  /* ---------- footer ---------- */
+  .footer{ background: var(--accent-ink); color: rgba(238,242,249,0.75); padding: 36px 0; font-size: 0.85rem; }
+  .footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .footer strong{ color:#fff; }
+
+  @media print{
+    body{ font-size: 12px; }
+    .toc{ display:none; }
+    .section{ break-before: page; padding: 20px 0; }
+    .cover{ break-before: avoid; }
+    .card, .callout, .table-wrap, .evidence-card{ box-shadow:none; }
+    a{ color: var(--ink); text-decoration:none; }
+    .footer{ break-before: page; }
+  }
+  ::selection{ background: var(--accent-soft); color: var(--accent-ink); }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- COVER -->
+<!-- ============================================================ -->
+<header class="cover">
+  <div class="wrap">
+    <div class="cover-mark"><span class="dot"></span> KHIDMAT AI &nbsp;·&nbsp; ARCHITECTURE REVIEW</div>
+    <div class="cover-title">
+      <div class="kicker">Phase 1 — Architecture &amp; Domain Validation Review</div>
+      <h1>Knowledge Layer<br><em>Architecture Validation Review</em></h1>
+      <p class="sub">A structured validation of the humanitarian knowledge architecture against its
+      original design intent — presented for architectural approval before implementation proceeds.</p>
+    </div>
+    <div class="cover-request">📋 Requesting confirmation of the canonical architecture as the implementation baseline</div>
+    <div class="cover-meta">
+      <div><div class="label">Review date</div><div class="value">17 July 2026</div></div>
+      <div><div class="label">Repository version</div><div class="value num">1.0.0</div></div>
+      <div><div class="label">Repository maturity</div><div class="value">Level 1</div></div>
+      <div><div class="label">Prepared by</div><div class="value">Knowledge Architecture Office</div></div>
+    </div>
+    <div class="cover-stats">
+      <div class="cell"><div class="n num">13</div><div class="l">Domains</div></div>
+      <div class="cell"><div class="n num">80</div><div class="l">Canonical entities</div></div>
+      <div class="cell"><div class="n num">64</div><div class="l">Ontology modules</div></div>
+      <div class="cell"><div class="n num">94</div><div class="l">Taxonomy modules</div></div>
+      <div class="cell"><div class="n num">300+</div><div class="l">Controlled vocab. terms</div></div>
+      <div class="cell"><div class="n num">28</div><div class="l">Decision records</div></div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#executive-summary">Summary</a><span class="sep">/</span>
+    <a href="#repo-implementation">Repository Structure</a><span class="sep">/</span>
+    <a href="#knowledge-stats">Knowledge Stats</a><span class="sep">/</span>
+    <a href="#validation-matrix">Validation Matrix</a><span class="sep">/</span>
+    <a href="#ontology-coverage">Ontology</a><span class="sep">/</span>
+    <a href="#taxonomy-coverage">Taxonomy</a><span class="sep">/</span>
+    <a href="#domain-evidence">Domain Validation</a><span class="sep">/</span>
+    <a href="#certification">Certification</a><span class="sep">/</span>
+    <a href="#maturity">Maturity</a><span class="sep">/</span>
+    <a href="#completion-activities">Completion Work</a><span class="sep">/</span>
+    <a href="#evolution">Evolution vs. V1</a><span class="sep">/</span>
+    <a href="#freeze-readiness">Freeze Readiness</a><span class="sep">/</span>
+    <a href="#future-expansion">Future Roadmap</a><span class="sep">/</span>
+    <a href="#phase-2-topics">Phase 2 Topics</a><span class="sep">/</span>
+    <a href="#approval-request">Approval Request</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============================================================ -->
+<!-- EXECUTIVE SUMMARY -->
+<!-- ============================================================ -->
+<section class="section" id="executive-summary">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <div class="eyebrow">Executive Summary</div>
+      <h2>Answering one question: is the foundation ready?</h2>
+    </div>
+
+    <div class="callout" style="margin-bottom:20px;">
+      <p style="font-size:1.02rem;"><strong>The question this review exists to answer:</strong> have
+      we implemented the knowledge architecture as originally envisioned, and is the foundation now
+      sufficiently complete to proceed without another major architectural refactor? Every section
+      below contributes evidence toward that answer.</p>
+    </div>
+
+    <p>This is not a status update or a whitepaper — it is a validation review. Each architectural
+    decision recorded in the original Business Logic Blueprint and the 28 subsequent Architecture
+    Decision Records is checked here against what actually exists in the repository today, with
+    file-level evidence, so an architectural sign-off can be given with confidence rather than
+    good faith.</p>
+
+    <div class="grid grid-3" style="margin-top:24px;">
+      <div class="card"><h3>Architecturally sound</h3><p style="font-size:0.9rem;">13 domains, 80
+      canonical entities, single-ownership discipline intact, zero confirmed broken cross-domain
+      references — independently verified.</p></div>
+      <div class="card"><h3>Intentionally deferred</h3><p style="font-size:0.9rem;">Support
+      Interventions, Volunteer Operations Tier 2, Consent &amp; Privacy, and staged reasoning
+      activation are governance decisions, not gaps — see §14.</p></div>
+      <div class="card"><h3>Requires review before freeze</h3><p style="font-size:0.9rem;">Two
+      shared sub-modules need canonical migration; Case Management needs its reasoning layer;
+      three governance documents need reconciliation — see §14.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- REPOSITORY IMPLEMENTATION OVERVIEW -->
+<!-- ============================================================ -->
+<section class="section" id="repo-implementation">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <div class="eyebrow">Repository Implementation Overview</div>
+      <h2>How the semantic architecture is organized on disk.</h2>
+      <div class="dek">Every domain follows the identical five-file ontology contract and a
+      matching taxonomy contract, so the repository's folder structure <em>is</em> the ontology's
+      module boundary — not a separate concern layered on top of it.</div>
+    </div>
+
+    <div class="table-wrap" style="margin-bottom:24px;">
+      <table class="module-table">
+        <thead><tr><th>Module type</th><th>Fixed file set</th><th>Purpose</th><th>Present in</th></tr></thead>
+        <tbody>
+          <tr><td>ontology/</td><td><code>entities.yaml</code>, <code>data-properties.yaml</code>, <code>relationships.yaml</code>, <code>semantic-constraints.yaml</code>, <code>lifecycle-constraints.yaml</code></td><td>Classes, properties, edges, structural invariants, lifecycle semantics</td><td>13 domains</td></tr>
+          <tr><td>taxonomy/</td><td>one file per coherent vocabulary area, each a <code>schemes:</code>/<code>concepts:</code> list</td><td>Controlled vocabularies drawn on by ontology properties</td><td>12 of 14 taxonomy locations (canonical)</td></tr>
+          <tr><td>reasoning/</td><td>domain-authored rule files</td><td>Detection, inference, escalation, and compound-signal rules</td><td>3 domains: registration, shared/risk, verification-operations</td></tr>
+          <tr><td>readiness/, gaps/, questioning/, verification/</td><td>Registration-specific workflow modules</td><td>Case-readiness gating, gap-type vocabulary, question templates, verification-brief projection</td><td>registration/ only — the deepest single-domain workflow in the repository</td></tr>
+          <tr><td>discovery/</td><td>architecture discovery reports</td><td>Records the boundary analysis behind a domain before it was authored</td><td>case-management/, volunteer-operations/, community-context/</td></tr>
+          <tr><td>Governance (repo root + docs/)</td><td>28 ADRs, authority matrix, glossary, canonical schemas, <code>catalog.yaml</code> manifest</td><td>Concept ownership, decision history, and the machine-readable domain registry</td><td>Repository-wide</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 1040 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Repository layering diagram">
+        <rect x="20" y="235" width="1000" height="46" rx="6" fill="#eaf0fa" stroke="#2c4a7c" stroke-width="1.2"/>
+        <text x="520" y="255" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#16294a" font-weight="600">shared/ — <tspan font-family="-apple-system,sans-serif" font-size="11" font-weight="400">person · household · organisation · subject · actor (8 entities, single-owned, never redefined)</tspan></text>
+        <text x="520" y="272" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" fill="#4b5563">shared/human-model/ (lifecycle · capability · dependency · family · health) and shared/risk/ (hazard · exposure · vulnerability · resilience) — content complete, canonical migration pending</text>
+
+        <g font-family="-apple-system, sans-serif" font-size="10.5" fill="#1b2230">
+          <rect x="16"  y="130" width="150" height="86" rx="5" fill="#fbfbfd" stroke="#e3e6ec"/>
+          <text x="91" y="150" text-anchor="middle" font-weight="700">Registration</text>
+          <text x="91" y="164" text-anchor="middle" font-size="9" fill="#4b5563">12 entities</text>
+          <text x="91" y="177" text-anchor="middle" font-size="9" fill="#4b5563">5 reasoning files</text>
+          <text x="91" y="190" text-anchor="middle" font-size="9" fill="#4b5563">reference impl.</text>
+
+          <rect x="174" y="130" width="150" height="86" rx="5" fill="#fbfbfd" stroke="#e3e6ec"/>
+          <text x="249" y="150" text-anchor="middle" font-weight="700">Verification Ops</text>
+          <text x="249" y="164" text-anchor="middle" font-size="9" fill="#4b5563">7 entities</text>
+          <text x="249" y="177" text-anchor="middle" font-size="9" fill="#4b5563">6 reasoning files</text>
+
+          <rect x="332" y="130" width="150" height="86" rx="5" fill="#fbfbfd" stroke="#e3e6ec"/>
+          <text x="407" y="150" text-anchor="middle" font-weight="700">Needs Assessment</text>
+          <text x="407" y="164" text-anchor="middle" font-size="9" fill="#4b5563">9 entities</text>
+
+          <rect x="490" y="130" width="150" height="86" rx="5" fill="#fbfbfd" stroke="#e3e6ec"/>
+          <text x="565" y="150" text-anchor="middle" font-weight="700">Case Management</text>
+          <text x="565" y="164" text-anchor="middle" font-size="9" fill="#4b5563">4 entities</text>
+          <text x="565" y="177" text-anchor="middle" font-size="9" fill="#b23b3b">0 reasoning files</text>
+
+          <rect x="648" y="130" width="150" height="86" rx="5" fill="#fbfbfd" stroke="#e3e6ec"/>
+          <text x="723" y="150" text-anchor="middle" font-weight="700">Community Context</text>
+          <text x="723" y="164" text-anchor="middle" font-size="9" fill="#4b5563">6 entities</text>
+
+          <rect x="806" y="130" width="218" height="86" rx="5" fill="#fbfbfd" stroke="#e3e6ec"/>
+          <text x="915" y="150" text-anchor="middle" font-weight="700">+ 6 more domains</text>
+          <text x="915" y="164" text-anchor="middle" font-size="9" fill="#4b5563">Beneficiary Lifecycle · Programmes</text>
+          <text x="915" y="177" text-anchor="middle" font-size="9" fill="#4b5563">Impact · Support Delivery</text>
+          <text x="915" y="190" text-anchor="middle" font-size="9" fill="#4b5563">Volunteer Ops · Donor &amp; Resource</text>
+        </g>
+        <g stroke="#c7cdd7" stroke-width="1">
+          <line x1="91" y1="216" x2="200" y2="235"/><line x1="249" y1="216" x2="280" y2="235"/>
+          <line x1="407" y1="216" x2="420" y2="235"/><line x1="565" y1="216" x2="560" y2="235"/>
+          <line x1="723" y1="216" x2="700" y2="235"/><line x1="915" y1="216" x2="820" y2="235"/>
+        </g>
+        <text x="520" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#16294a" font-weight="600">13 domains, one shared foundation, one authoring contract</text>
+        <text x="520" y="50" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10.5" fill="#8891a0">Every box above is a real repository folder with the identical entities/relationships/data-properties/constraints file set</text>
+      </svg>
+    </div>
+
+    <p class="fn">Repository entry points for orientation: <code>catalog.yaml</code> (domain registry
+    and dependency graph) · <code>ontology_authority_matrix.md</code> (concept ownership) ·
+    <code>docs/architecture/Canonical_Ontology_Schema.md</code> and
+    <code>Canonical_Taxonomy_Schema.md</code> (the authoring contract every domain below is checked against).</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- KNOWLEDGE MODEL STATISTICS -->
+<!-- ============================================================ -->
+<section class="section" id="knowledge-stats">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <div class="eyebrow">Knowledge Model Statistics</div>
+      <h2>What has actually been modeled.</h2>
+      <div class="dek">Counted directly from repository content — not repository housekeeping
+      metrics, but the size of the knowledge itself.</div>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="card"><div class="stat-n num">13</div><div class="stat-l">Humanitarian knowledge domains</div></div>
+      <div class="card"><div class="stat-n num">80</div><div class="stat-l">Canonically declared entities (+4 in the two pre-canonical shared sub-modules)</div></div>
+      <div class="card"><div class="stat-n num">64</div><div class="stat-l">Ontology modules (entities · properties · relationships · constraints)</div></div>
+      <div class="card"><div class="stat-n num">94</div><div class="stat-l">Taxonomy modules (controlled-vocabulary files)</div></div>
+      <div class="card"><div class="stat-n num">~150+</div><div class="stat-l">Concept schemes across all taxonomy modules</div></div>
+      <div class="card"><div class="stat-n num">300+</div><div class="stat-l">Individually named controlled-vocabulary terms</div></div>
+      <div class="card"><div class="stat-n num">2</div><div class="stat-l">Shared foundational models (Human Model, Risk Model)</div></div>
+      <div class="card"><div class="stat-n num">12</div><div class="stat-l">Reasoning rule files across 3 domains</div></div>
+      <div class="card"><div class="stat-n num">40+</div><div class="stat-l">Explicit cross-domain relationship edges (CURIE-resolved)</div></div>
+      <div class="card"><div class="stat-n num">0</div><div class="stat-l">Confirmed broken cross-domain references (independently verified)</div></div>
+      <div class="card"><div class="stat-n num">28</div><div class="stat-l">Ratified Architecture Decision Records</div></div>
+      <div class="card"><div class="stat-n num">1</div><div class="stat-l">Documented single-ownership exception (Case — see §4)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ARCHITECTURE VALIDATION MATRIX -->
+<!-- ============================================================ -->
+<section class="section" id="validation-matrix">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <div class="eyebrow">Architecture Validation Matrix</div>
+      <h2>The single-page verdict.</h2>
+      <div class="dek">Every major architectural area, its current status, and the evidence behind
+      that status — objective indicators, not subjective ratings. 🟢 Complete · 🟡 Intentionally
+      Staged/Deferred · 🔴 Requires Review before freeze.</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Architecture Area</th><th class="center">Status</th><th>Evidence</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Canonical Repository Structure</strong></td><td class="center">🟢 Complete</td><td>13 domains, identical five-file ontology set, <code>catalog.yaml</code> manifest with dependency graph</td></tr>
+          <tr><td><strong>Cross-Domain Ownership</strong></td><td class="center">🟢 Complete</td><td>ADR-008 single-ownership matrix verified against disk; one documented, governed exception (<code>case</code>, ADR-021)</td></tr>
+          <tr><td><strong>Ontology Contract</strong></td><td class="center">🟢 Complete</td><td><code>Canonical_Ontology_Schema.md</code> ratified; 13 of 13 domains structurally conformant, one missing constraint file (Donor &amp; Resource)</td></tr>
+          <tr><td><strong>Taxonomy Contract</strong></td><td class="center">🟢 Complete</td><td><code>Canonical_Taxonomy_Schema.md</code> ratified; 12 of 14 taxonomy locations fully canonical</td></tr>
+          <tr><td><strong>Repository Organization</strong></td><td class="center">🟢 Complete</td><td>Deterministic domain template; machine-readable manifest; zero confirmed broken cross-domain references</td></tr>
+          <tr><td><strong>Governance (ADR System)</strong></td><td class="center">🟢 Complete</td><td>28 ratified Architecture Decision Records; authority matrix spot-checks confirmed accurate</td></tr>
+          <tr><td><strong>ADR Alignment</strong></td><td class="center">🟢 Complete</td><td>Sampled ADRs implement as decided; one prose-only (non-structural) exception tracked, not hidden</td></tr>
+          <tr><td><strong>Shared Human Model</strong></td><td class="center">🔴 Requires Review</td><td>Content complete and rich; still pre-canonical file structure — migration outstanding</td></tr>
+          <tr><td><strong>Shared Risk Model</strong></td><td class="center">🔴 Requires Review</td><td>Content and reasoning complete; still pre-canonical file structure — migration outstanding</td></tr>
+          <tr><td><strong>Reasoning Coverage</strong></td><td class="center">🟡 Intentionally Staged</td><td>Reasoning activates domain-by-domain per <code>knowledge_layer_roadmap.md</code>; Case Management is the one domain where activation is architecturally due now</td></tr>
+          <tr><td><strong>Documentation Synchronization</strong></td><td class="center">🔴 Requires Review</td><td>3 governance documents contain claims inconsistent with current disk state (see §11)</td></tr>
+          <tr><td><strong>Outstanding Architectural Risks</strong></td><td class="center">🟡 Bounded</td><td>All open items are named, scoped, and sequenced — see §14 Freeze Readiness</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ONTOLOGY COVERAGE (EXPANDED) -->
+<!-- ============================================================ -->
+<section class="section" id="ontology-coverage">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <div class="eyebrow">Ontology Coverage</div>
+      <h2>Entity groups, relationships, and canonical ownership.</h2>
+      <div class="dek">The ontology is not a flat entity list — it is composed: domain entities
+      reference shared entities by CURIE rather than redefining them, and the reference chain is
+      inspectable end to end.</div>
+    </div>
+
+    <h3 style="font-size:1.02rem; margin-bottom:12px;">Cross-domain ownership — every shared concept has exactly one canonical owner</h3>
+    <div class="table-wrap owner-table" style="margin-bottom:30px;">
+      <table>
+        <thead><tr><th>Concept</th><th>Canonical owner</th><th>Referenced by</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip entity">person</span> / <span class="chip entity">household</span> / <span class="chip entity">subject</span></td><td><span class="chip owner">Shared Ontology</span> — <code class="path-tag">shared/ontology/entities.yaml</code></td><td>Registration, Needs Assessment, Case Management, Beneficiary Lifecycle, Donor &amp; Resource</td></tr>
+          <tr><td><span class="chip entity">organisation</span> / <span class="chip entity">actor</span></td><td><span class="chip owner">Shared Ontology</span></td><td>Community Context, Programmes, Volunteer Operations, Case Management</td></tr>
+          <tr><td>Lifecycle stage · capability · dependency · family structure</td><td><span class="chip owner">Shared Human Model</span> — <code class="path-tag">shared/human-model/</code></td><td>Shared Risk Model (compound-risk reasoning); referenceable by every domain, not yet consumed outside Risk</td></tr>
+          <tr><td>Hazard · exposure · vulnerability · household resilience · risk characterization</td><td><span class="chip owner">Shared Risk Model</span> — <code class="path-tag">shared/risk/</code></td><td>Beneficiary Lifecycle (<code>triggered_by_risk_characterization</code>), Verification Operations</td></tr>
+          <tr><td><span class="chip entity">case</span> (pre-handoff view)</td><td><span class="chip owner">Case Management</span> — <em>Registration's own <code>case</code> row is a documented, prose-governed non-canonical duplicate (ADR-021) — see note below</em></td><td>Registration, Verification Operations, Beneficiary Lifecycle</td></tr>
+          <tr><td><span class="chip entity">claim</span> / <span class="chip entity">evidence</span> / <span class="chip entity">support_intervention</span></td><td><span class="chip owner">Registration</span></td><td>Needs Assessment, Verification Operations, Case Management</td></tr>
+          <tr><td><span class="chip entity">geographic_area</span></td><td><span class="chip owner">Community Context</span></td><td>Needs Assessment, Programmes, Support Delivery</td></tr>
+          <tr><td><span class="chip entity">program</span> / <span class="chip entity">intervention_offering</span></td><td><span class="chip owner">Programmes</span></td><td>Verification Operations, Donor &amp; Resource</td></tr>
+          <tr><td><span class="chip entity">verification_finding</span></td><td><span class="chip owner">Verification Operations</span></td><td>Needs Assessment, Beneficiary Lifecycle, Support Delivery</td></tr>
+          <tr><td><span class="chip entity">volunteer_profile</span></td><td><span class="chip owner">Volunteer Operations</span> (attaches behind <code>shared:actor</code>, never redefines it)</td><td>Impact, Support Delivery</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fn" style="margin-bottom:28px;"><strong>The one documented exception:</strong> ADR-021 declares Registration's
+    <code>case</code> and Case Management's <code>case</code> to be the same canonical entity at
+    different lifecycle phases — but this is currently asserted only in a decision record and a
+    prose note in both files, not as a relationship row or shared identifier in the data itself.
+    A reviewer reading only the YAML would see two distinct <code>(domain, id)</code> pairs.
+    Tracked as a High-priority review item (§11), not a silent defect.</p>
+
+    <h3 style="font-size:1.02rem; margin-bottom:12px;">Composition in practice — representative relationship rows</h3>
+    <div class="grid grid-2" style="margin-bottom:28px;">
+      <div class="card">
+        <h3 style="font-size:0.92rem;">registration/ontology/relationships.yaml</h3>
+        <div class="rel-line"><span class="e">beneficiary</span><span class="arrow">→ observes →</span><span class="p">shared:person</span></div>
+        <div class="rel-line"><span class="e">household_snapshot</span><span class="arrow">→ observes →</span><span class="p">shared:household</span></div>
+        <div class="rel-line"><span class="e">situation</span><span class="arrow">→ contextualises →</span><span class="e">need</span></div>
+        <div class="rel-line"><span class="e">need</span><span class="arrow">→ addressed_by →</span><span class="e">support_intervention</span></div>
+        <div class="rel-line"><span class="e">claim</span><span class="arrow">→ supported_by →</span><span class="e">evidence</span></div>
+        <div class="rel-line"><span class="e">lead</span><span class="arrow">→ promotes_to →</span><span class="e">case</span></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:0.92rem;">case-management/ontology/relationships.yaml</h3>
+        <div class="rel-line"><span class="e">case</span><span class="arrow">→ informed_by →</span><span class="p">shared_human_model:family</span></div>
+        <div class="rel-line"><span class="e">case</span><span class="arrow">→ has_primary_subject →</span><span class="p">shared:subject</span></div>
+        <div class="rel-line"><span class="e">case_plan</span><span class="arrow">→ references →</span><span class="p">needs_assessment:need_assertion</span></div>
+        <div class="rel-line"><span class="e">case_plan</span><span class="arrow">→ addressed_by →</span><span class="p">registration:support_intervention</span></div>
+        <div class="rel-line"><span class="e">referral</span><span class="arrow">→ targets →</span><span class="p">shared:organisation</span></div>
+        <div class="rel-line"><span class="e">referral</span><span class="arrow">→ references →</span><span class="p">consent_and_privacy:consent</span></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.02rem; margin-bottom:12px;">Why the ontology is deep, not just wide</h3>
+    <div class="grid grid-3">
+      <div class="callout"><p style="font-size:0.88rem;"><strong>Semantic composition, not flat attributes.</strong>
+      A Case does not carry "risk" as a field — it references <code>shared_risk:risk_characterization</code>,
+      which is itself composed from hazard, exposure, vulnerability, and resilience via
+      <code>risk_composition</code>/<code>risk_profile</code> relationships in <code>shared/risk/ontology/risk.yaml</code>.</p></div>
+      <div class="callout"><p style="font-size:0.88rem;"><strong>Lifecycle modeling is a distinct axis.</strong>
+      Nine developmental stages (infant → elderly) in the Shared Human Model each carry their own
+      characteristic dependencies, capabilities, and vulnerabilities — a person's age is a
+      developmental context, not an integer.</p></div>
+      <div class="callout"><p style="font-size:0.88rem;"><strong>Value Objects vs. Entities is a deliberate test.</strong>
+      ADR-023 defines a four-point promotion test before anything becomes a full Entity — e.g.
+      <code>contact_point</code> and <code>treatment_plan</code> in Registration are structured
+      Value Objects, not entities, because no other entity will ever hold a relationship to one
+      specific instance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAXONOMY COVERAGE (EXPANDED) -->
+<!-- ============================================================ -->
+<section class="section" id="taxonomy-coverage">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <div class="eyebrow">Taxonomy Coverage</div>
+      <h2>The controlled vocabulary, shown rather than described.</h2>
+      <div class="dek">A representative sample of concepts actually declared in the repository —
+      not illustrative examples, the real scheme and concept <code>id</code> values.</div>
+    </div>
+
+    <h3 style="font-size:0.98rem; margin-bottom:10px;">Registration <span class="path-tag">registration/taxonomy/</span></h3>
+    <div class="grid grid-3" style="margin-bottom:10px;">
+      <div><div class="ev-label">Need Categories</div><div class="chip-row"><span class="chip">food</span><span class="chip">medical</span><span class="chip">shelter</span><span class="chip">education</span><span class="chip">livelihood</span><span class="chip">psychosocial</span></div></div>
+      <div><div class="ev-label">Situation Triggers</div><div class="chip-row"><span class="chip">bereavement</span><span class="chip">job_loss</span><span class="chip">displacement</span><span class="chip">domestic_violence</span><span class="chip">natural_disaster</span><span class="chip">legal_crisis</span></div></div>
+      <div><div class="ev-label">Claim Basis</div><div class="chip-row"><span class="chip">first_hand</span><span class="chip">second_hand</span><span class="chip">observational</span><span class="chip">inferred</span></div></div>
+      <div><div class="ev-label">Evidence Types</div><div class="chip-row"><span class="chip">documentary</span><span class="chip">physical</span><span class="chip">testimonial</span></div></div>
+      <div><div class="ev-label">Need Severity</div><div class="chip-row"><span class="chip">critical</span><span class="chip">high</span><span class="chip">medium</span><span class="chip">low</span></div></div>
+      <div><div class="ev-label">Debt Source <span style="font-weight:400;">(9 concepts)</span></div><div class="chip-row"><span class="chip">formal_financial_institution</span><span class="chip">informal_moneylender</span><span class="chip">family_or_relatives</span></div></div>
+    </div>
+    <p class="fn" style="margin-bottom:26px;">9 taxonomy files, 32 schemes: actors, needs, situations, claims,
+    case-outcomes, lead-statuses, referral-sources, evidence, support-interventions (<em>Intentionally
+    Deferred Pending Operational Validation</em> — see §13).</p>
+
+    <h3 style="font-size:0.98rem; margin-bottom:10px;">Verification Operations <span class="path-tag">verification-operations/taxonomy/</span></h3>
+    <div class="grid grid-3" style="margin-bottom:10px;">
+      <div><div class="ev-label">Verification Confidence</div><div class="chip-row"><span class="chip">high</span><span class="chip">moderate</span><span class="chip">low</span><span class="chip">indeterminate</span></div></div>
+      <div><div class="ev-label">Finding Status</div><div class="chip-row"><span class="chip">confirmed</span><span class="chip">partially_confirmed</span><span class="chip">unable_to_confirm</span><span class="chip">contradicted</span><span class="chip">refuted</span></div></div>
+      <div><div class="ev-label">Review Decision</div><div class="chip-row"><span class="chip">approved</span><span class="chip">sent_back_for_reverification</span><span class="chip">overridden</span><span class="chip">escalated_further</span></div></div>
+      <div><div class="ev-label">Escalation Reason</div><div class="chip-row"><span class="chip">low_confidence</span><span class="chip">safety_concern_at_visit</span><span class="chip">suspected_fraud_pattern</span></div></div>
+      <div><div class="ev-label">Verification Methods</div><div class="chip-row"><span class="chip">home_visit</span><span class="chip">document_verification</span><span class="chip">phone_verification</span><span class="chip">field_investigation</span></div></div>
+      <div><div class="ev-label">Reverification Trigger</div><div class="chip-row"><span class="chip">evidence_expiring</span><span class="chip">risk_escalation</span><span class="chip">contradiction_detected</span></div></div>
+    </div>
+    <p class="fn" style="margin-bottom:26px;">8 taxonomy files, the most rigorously governed vocabulary
+    in the repository — 7 of 8 files carry explicit <code>references:</code> blocks reconciling
+    against other domains' vocabularies before authoring a new concept.</p>
+
+    <h3 style="font-size:0.98rem; margin-bottom:10px;">Community Context <span class="path-tag">community-context/taxonomy/</span></h3>
+    <div class="grid grid-3" style="margin-bottom:10px;">
+      <div><div class="ev-label">Settlement Types</div><div class="chip-row"><span class="chip">metropolitan_center</span><span class="chip">informal_urban_settlement</span><span class="chip">nomadic_or_mobile_settlement</span></div></div>
+      <div><div class="ev-label">Hazards</div><div class="chip-row"><span class="chip">flood_prone_lowland</span><span class="chip">earthquake_prone_fault_zone</span><span class="chip">cyclone_exposed_region</span><span class="chip">wildfire_prone_interface</span></div></div>
+      <div><div class="ev-label">Infrastructure</div><div class="chip-row"><span class="chip">primary_health_clinic</span><span class="chip">piped_water_network</span><span class="chip">mobile_money_agent</span></div></div>
+      <div><div class="ev-label">Livelihood</div><div class="chip-row"><span class="chip">subsistence_agriculture</span><span class="chip">artisanal_mining_or_extraction</span><span class="chip">circular_labor_migration</span></div></div>
+      <div><div class="ev-label">Local Organisations</div><div class="chip-row"><span class="chip">civic_and_governance_bodies</span><span class="chip">mutual_aid_and_welfare_groups</span></div></div>
+      <div><div class="ev-label">+ seasonal-events, accessibility, transportation, physical-environment</div><div class="chip-row"><span class="chip gap">4 more files</span></div></div>
+    </div>
+    <p class="fn" style="margin-bottom:26px;">12 taxonomy files — the largest single-domain vocabulary
+    in the repository, with an explicit governance note distinguishing its hazard concepts
+    (settlement exposure context) from the Risk Domain's hazard concepts (household-level harm),
+    preventing the two from silently merging.</p>
+
+    <h3 style="font-size:0.98rem; margin-bottom:10px;">Shared foundations <span class="path-tag">shared/taxonomy/ · shared/human-model/taxonomy/ · shared/risk/taxonomy/</span></h3>
+    <div class="grid grid-3">
+      <div><div class="ev-label">Lifecycle Stages (9)</div><div class="chip-row"><span class="chip">infant</span><span class="chip">school_age_child</span><span class="chip">adolescent</span><span class="chip">adult</span><span class="chip">elderly</span></div></div>
+      <div><div class="ev-label">Protective Factors (12)</div><div class="chip-row"><span class="chip">financial_buffer</span><span class="chip">livelihood_diversity</span><span class="chip">extended_family_support_active</span></div></div>
+      <div><div class="ev-label">Islamic Giving Types</div><div class="chip-row"><span class="chip">zakat</span><span class="chip">sadaqah_jariyah</span><span class="chip">waqf</span><span class="chip">qurbani</span></div></div>
+      <div><div class="ev-label">Zakat-Eligible Categories (8 asnaf)</div><div class="chip-row"><span class="chip">al_fuqara</span><span class="chip">al_gharimin</span><span class="chip">fi_sabilillah</span><span class="chip">ibn_al_sabil</span></div></div>
+      <div><div class="ev-label">Person Roles</div><div class="chip-row"><span class="chip">beneficiary</span><span class="chip">registrant</span><span class="chip">proxy</span><span class="chip">donor</span></div></div>
+      <div><div class="ev-label">Organisation Types</div><div class="chip-row"><span class="chip">ngo_or_charity</span><span class="chip">government_office</span><span class="chip">mosque_or_religious_institution</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DOMAIN-BY-DOMAIN VALIDATION -->
+<!-- ============================================================ -->
+<section class="section" id="domain-evidence">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">07</span>
+      <div class="eyebrow">Domain-by-Domain Validation</div>
+      <h2>Every domain, validated against the architecture.</h2>
+      <div class="dek">Each domain ends with an approval checklist — Architecture, Ontology,
+      Taxonomy, Reasoning, Repository, Cross-Domain Integration, Governance — using objective
+      completion indicators (🟢 Complete · 🟡 Intentionally Deferred/Staged · 🔴 Requires Review),
+      plus an explicit architectural readiness verdict.</div>
+    </div>
+
+    <!-- SHARED -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Shared Ontology</h3><span class="path-tag">shared/ontology/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Canonical</span><span class="badge complete"><span class="dot"></span>Level 1</span></div>
+      </div>
+      <p class="evidence-purpose">Cross-cutting supertypes every domain references but none may redefine.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (8)</div><div class="chip-row"><span class="chip entity">subject</span><span class="chip entity">person</span><span class="chip entity">household</span><span class="chip entity">organisation</span><span class="chip entity">actor</span><span class="chip entity">assessment_tool</span><span class="chip entity">humanitarian_sector</span><span class="chip entity">intervention_type</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies</div><div class="chip-row"><span class="chip">person_roles</span><span class="chip">organisation_types</span><span class="chip">location_precision</span><span class="chip">time (8 schemes)</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">household</span><span class="arrow">→ succeeded_by →</span><span class="e">household</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty">Not applicable — a reference layer, not a reasoning domain.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">Depended on by all 12 other domains</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>—</td><td>🟢</td><td>🟢</td><td>🟢</td><td class="approval-verdict yes">✅ YES</td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- SHARED HUMAN MODEL -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Shared Human Model</h3><span class="path-tag">shared/human-model/</span></div>
+        <div class="evidence-badges"><span class="badge partial"><span class="dot"></span>Content complete, pre-canonical</span></div>
+      </div>
+      <p class="evidence-purpose">The richest human-centred model in the repository: lifecycle, capability, dependency, family structure, and health condition, as reasoning contexts rather than age bands.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities</div><div class="chip-row"><span class="chip entity">family</span><span class="chip entity">family_member</span><span class="chip gap">retrofitted — see note</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies</div><div class="chip-row"><span class="chip">lifecycle_stages (9)</span><span class="chip">capability_levels</span><span class="chip">dependency_types</span><span class="chip">health_conditions</span></div></div>
+        <div><div class="ev-label">Lifecycle Modeling</div><div class="ev-empty" style="font-style:normal;">infant → toddler → early_childhood → school_age_child → adolescent → young_adult → adult → older_adult → elderly, each with characteristic dependencies, capabilities, and vulnerabilities.</div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty" style="font-style:normal;">Consumed by <code>shared/risk/reasoning/compound-risk-detection.yaml</code>; not yet consumed elsewhere.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">Referenced by Case Management (<code>informed_by → shared_human_model:family</code>)</span></div></div>
+      </div>
+      <p class="fn">Migration note: content is architecturally sound and complete; the file structure
+      itself (comment-banner header, <code>ontology_version</code>/<code>status: "Phase 2.x — Active"</code>)
+      predates the ratified canonical schema. This is <strong>Requires Review</strong>, not
+      <strong>Intentionally Deferred</strong> — no governance decision chose to leave it unmigrated.</p>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🔴</td><td>🟢</td><td>🔴</td><td>—</td><td>🟡</td><td>🟢</td><td>🟢</td><td class="approval-verdict conditional">⚠ CONDITIONAL</td></tr></tbody></table>
+      </div>
+      <p class="fn">Conditional on: canonical structural migration (§11 Critical item). Content itself requires no rework.</p>
+    </div>
+
+    <!-- SHARED RISK MODEL -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Shared Risk Model</h3><span class="path-tag">shared/risk/</span></div>
+        <div class="evidence-badges"><span class="badge partial"><span class="dot"></span>Content complete, pre-canonical</span><span class="badge complete"><span class="dot"></span>Reasoning: complete</span></div>
+      </div>
+      <p class="evidence-purpose">Hazard, exposure, vulnerability, and resilience composed into a qualitative — never numerically scored — risk characterization (ADR-010, ADR-011).</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities</div><div class="chip-row"><span class="chip entity">risk</span><span class="chip entity">risk_characterization</span><span class="chip gap">retrofitted — see note</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies</div><div class="chip-row"><span class="chip">hazard_category</span><span class="chip">protective_factors (12)</span><span class="chip">protection_indicators</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">risk_profile</span><span class="arrow">→ represents →</span><span class="e">risk</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty" style="font-style:normal;"><code>compound-risk-detection.yaml</code> — multi-input, lifecycle-aware (infant vs. elderly frailty), moderated by protective factors, produces forward-looking <code>risk_trend</code>/<code>risk_horizon</code>.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">Referenced by Beneficiary Lifecycle (<code>triggered_by_risk_characterization</code>) and Verification Operations</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🔴</td><td>🟢</td><td>🔴</td><td>🟢</td><td>🟡</td><td>🟢</td><td>🟢</td><td class="approval-verdict conditional">⚠ CONDITIONAL</td></tr></tbody></table>
+      </div>
+      <p class="fn">Same conditional as Shared Human Model: content and reasoning are the strongest in the repository; only the file structure requires migration.</p>
+    </div>
+
+    <!-- REGISTRATION -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Registration</h3><span class="path-tag">registration/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Canonical — reference implementation</span></div>
+      </div>
+      <p class="evidence-purpose">The intake conversation: who is registering, what household they represent, what situation and needs exist, and what claims and evidence support them.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (12)</div><div class="chip-row"><span class="chip entity">registrant</span><span class="chip entity">beneficiary</span><span class="chip entity">household_snapshot</span><span class="chip entity">household_member</span><span class="chip entity">situation</span><span class="chip entity">need</span><span class="chip entity">claim</span><span class="chip entity">evidence</span><span class="chip entity">support_intervention</span><span class="chip entity">case</span><span class="chip entity">lead</span><span class="chip entity">volunteer_review</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (9 files, 32 schemes)</div><div class="chip-row"><span class="chip">need_categories</span><span class="chip">trigger_events</span><span class="chip">claim_basis</span><span class="chip">evidence_types</span><span class="chip">need_severity</span></div></div>
+        <div><div class="ev-label">Key Relationships</div><div class="rel-line"><span class="e">situation</span><span class="arrow">→ contextualises →</span><span class="e">need</span></div><div class="rel-line"><span class="e">need</span><span class="arrow">→ addressed_by →</span><span class="e">support_intervention</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty" style="font-style:normal;">5 files — inference, severity, case-coherence, gap-detection, evidence rules. Present and functional; depth-of-composition noted as future-work, not a blocker.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">shared:person</span><span class="chip owner">shared:household</span><span class="chip gap">case — documented, non-structural link to Case Management (ADR-021)</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>🟢</td><td>🟢</td><td>🟡</td><td>🟢</td><td class="approval-verdict yes">✅ YES</td></tr></tbody></table>
+      </div>
+      <p class="fn">Cross-Domain marked 🟡 for the tracked ADR-021 Case link (§11 High-priority item), not a blocking defect.</p>
+    </div>
+
+    <!-- VERIFICATION OPERATIONS -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Verification Operations</h3><span class="path-tag">verification-operations/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Canonical</span></div>
+      </div>
+      <p class="evidence-purpose">Turns a registration claim into field-verified knowledge: findings, confidence, contradictions, escalation, and reverification triggers.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (7)</div><div class="chip-row"><span class="chip entity">verification_subject</span><span class="chip entity">verification_activity</span><span class="chip entity">field_observation</span><span class="chip entity">verification_finding</span><span class="chip entity">reverification_trigger</span><span class="chip entity">human_review</span><span class="chip entity">verification_assignment</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (8 files)</div><div class="chip-row"><span class="chip">verification_confidence</span><span class="chip">finding_status</span><span class="chip">review_decision</span><span class="chip">escalation_reason</span></div></div>
+        <div><div class="ev-label">Key Relationships</div><div class="rel-line"><span class="e">verification_activity</span><span class="arrow">→ conducted_by →</span><span class="p">shared:actor</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty" style="font-style:normal;">6 files — completeness, confidence composition, contradiction detection, escalation, reverification. Domain-local; disciplined about not inventing unsupported properties.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">registration:claim</span><span class="chip owner">registration:evidence</span><span class="chip owner">case_management:case</span><span class="chip owner">shared_risk:risk_characterization</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>🟢</td><td>🟢</td><td>🟢</td><td>🟢</td><td class="approval-verdict yes">✅ YES</td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- NEEDS ASSESSMENT -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Needs Assessment</h3><span class="path-tag">needs-assessment/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Canonical</span></div>
+      </div>
+      <p class="evidence-purpose">Synthesizes observations and claims into confidence-scored, consensus-reviewed need assertions, decoupled from operational case management.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (9)</div><div class="chip-row"><span class="chip entity">assessment_instrument</span><span class="chip entity">assessment_indicator</span><span class="chip entity">assessment_session</span><span class="chip entity">observation</span><span class="chip entity">need_assertion</span><span class="chip entity">finding_consensus</span><span class="chip entity">supervisor_review</span><span class="chip entity">assessor_calibration</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (4 files)</div><div class="chip-row"><span class="chip">session_status</span><span class="chip">confidence_level</span><span class="chip">need_urgency</span><span class="chip">calibration_outcome</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">assessment_instrument</span><span class="arrow">→ parent →</span><span class="p">shared:assessment_tool</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty">Staged for a later roadmap phase; not yet due.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">registration:claim</span><span class="chip owner">registration_tax:need_severity</span><span class="chip owner">verification_operations:verification_finding</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>🟡</td><td>🟢</td><td>🟢</td><td>🟢</td><td class="approval-verdict yes">✅ YES</td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- CASE MANAGEMENT -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Case Management</h3><span class="path-tag">case-management/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Canonical (ontology)</span><span class="badge absent"><span class="dot"></span>Reasoning layer not yet built</span></div>
+      </div>
+      <p class="evidence-purpose">Orchestrates the case once verified: case plans, referrals, follow-ups, and closure — the domain that decides what happens next.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (4)</div><div class="chip-row"><span class="chip entity">case</span><span class="chip entity">case_plan</span><span class="chip entity">referral</span><span class="chip entity">follow_up</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (10 files)</div><div class="chip-row"><span class="chip">case_status</span><span class="chip">priority_level</span><span class="chip">referral_status</span><span class="chip">closure_reason</span><span class="chip">objective_status</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">case_plan</span><span class="arrow">→ addressed_by →</span><span class="p">registration:support_intervention</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty" style="font-style:normal; color:var(--crit);">None — not intentionally deferred. This is the one domain where reasoning activation is architecturally due now; the domain's own discovery report already names the escalations, suggested interventions, and review decisions required.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">shared:subject</span><span class="chip owner">shared_human_model:family</span><span class="chip owner">needs_assessment:need_assertion</span><span class="chip owner">consent_and_privacy:consent</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>🔴</td><td>🟢</td><td>🟡</td><td>🟢</td><td class="approval-verdict conditional">⚠ CONDITIONAL</td></tr></tbody></table>
+      </div>
+      <p class="fn">Ontology and structure approved as-is. Conditional strictly on the reasoning layer — the one Critical, non-deferred gap in the domain (§11).</p>
+    </div>
+
+    <!-- BENEFICIARY LIFECYCLE -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Beneficiary Lifecycle</h3><span class="path-tag">beneficiary-lifecycle/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Canonical</span></div>
+      </div>
+      <p class="evidence-purpose">Tracks a person or household's engagement across time as an event-sourced transition log, not a single status field.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (2)</div><div class="chip-row"><span class="chip entity">beneficiary_lifecycle</span><span class="chip entity">lifecycle_transition</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (4 files)</div><div class="chip-row"><span class="chip">engagement_stage</span><span class="chip">exit_reason</span><span class="chip">suspension_reason</span><span class="chip">human_development_stage</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">lifecycle_transition</span><span class="arrow">→ triggered_by →</span><span class="p">shared_risk:risk_characterization</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty">Staged for a later roadmap phase; not yet due.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">shared_ontology:subject</span><span class="chip owner">case_management:case</span><span class="chip owner">verification_operations:verification_finding</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>🟡</td><td>🟢</td><td>🟢</td><td>🟢</td><td class="approval-verdict yes">✅ YES</td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- COMMUNITY CONTEXT -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Community Context</h3><span class="path-tag">community-context/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Canonical (Phases 1–4)</span></div>
+      </div>
+      <p class="evidence-purpose">The geographic, infrastructural, environmental, and social fabric a household sits inside.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (6)</div><div class="chip-row"><span class="chip entity">community</span><span class="chip entity">geographic_area</span><span class="chip entity">built_infrastructure</span><span class="chip entity">natural_resource</span><span class="chip entity">transportation_network_asset</span><span class="chip entity">local_collective</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (12 files — largest in repo)</div><div class="chip-row"><span class="chip">settlement_formality</span><span class="chip">hydrological_exposure_context</span><span class="chip">infrastructure_type</span><span class="chip">livelihood patterns</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">local_collective</span><span class="arrow">→ composed_of →</span><span class="p">shared_org:organisation</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty" style="font-style:normal;">Staged — the domain's own discovery report names 5 planned modules (seasonal-risk-inference, service-accessibility-rules, economic-shock-inference, volunteer-safety-rules, aggregate-vulnerability-rules) for a later roadmap phase.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">shared:organisation</span><span class="chip owner">shared:household</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>🟡</td><td>🟢</td><td>🟢</td><td>🟢</td><td class="approval-verdict yes">✅ YES</td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- PROGRAMMES -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Programmes</h3><span class="path-tag">programs/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Canonical</span></div>
+      </div>
+      <p class="evidence-purpose">Structured programme offerings, eligibility rules, and enrolment — distinct from ad-hoc case-by-case assistance.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (9)</div><div class="chip-row"><span class="chip entity">program</span><span class="chip entity">program_version</span><span class="chip entity">program_variant</span><span class="chip entity">eligibility_rule</span><span class="chip entity">intervention_offering</span><span class="chip entity">enrollment</span><span class="chip entity">humanitarian_override</span><span class="chip entity">appeal</span><span class="chip entity">compliance_checkpoint</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (6 files)</div><div class="chip-row"><span class="chip">intervention_modality</span><span class="chip">eligibility_categories</span><span class="chip">thematic_sectors</span><span class="chip">funding_source_types</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">program</span><span class="arrow">→ funded_by →</span><span class="p">shared:organisation</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty">Staged for a later roadmap phase (Stage 9); not yet due.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">community_context:geographic_area</span><span class="chip owner">verif_ops:verification_activity</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>🟡</td><td>🟢</td><td>🟢</td><td>🟢</td><td class="approval-verdict yes">✅ YES</td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- IMPACT -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Impact</h3><span class="path-tag">impact/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Canonical</span><span class="badge partial"><span class="dot"></span>Thinnest domain by design</span></div>
+      </div>
+      <p class="evidence-purpose">Evaluation, measurement, and outcome/indicator structures — requires longitudinal data from Beneficiary Lifecycle to be meaningful.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (2)</div><div class="chip-row"><span class="chip entity">impact_evaluation</span><span class="chip entity">measurement</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (5 files)</div><div class="chip-row"><span class="chip">indicator_category</span><span class="chip">indicator_type</span><span class="chip">attribution</span><span class="chip">outcomes</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">impact_evaluation</span><span class="arrow">→ contains →</span><span class="e">measurement</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty">Intentionally Deferred Pending Operational Validation — gated on the Outcome Indicator Vocabulary and longitudinal case data per the roadmap.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">community_context:community</span><span class="chip deferred">shared:outcome-indicators — intentionally deferred</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>🟡</td><td>🟢</td><td>🟡</td><td>🟢</td><td class="approval-verdict yes">✅ YES <span style="font-weight:400;">(scope-limited)</span></td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- SUPPORT DELIVERY -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Support Delivery</h3><span class="path-tag">support-delivery/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Canonical</span></div>
+      </div>
+      <p class="evidence-purpose">Delivery events, custody transfer, proof of delivery, and accountability — where assistance actually gets to a beneficiary.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (9)</div><div class="chip-row"><span class="chip entity">delivery_event</span><span class="chip entity">delivery_window</span><span class="chip entity">delivery_attempt</span><span class="chip entity">proof_of_delivery</span><span class="chip entity">custody_transfer</span><span class="chip entity">custodian</span><span class="chip entity">community_representative</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (7 files)</div><div class="chip-row"><span class="chip">delivery_modality</span><span class="chip">delivery_status</span><span class="chip">delivery_lifecycle</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">delivery_event</span><span class="arrow">→ fulfilled_from →</span><span class="p">donor_resource:resource_allocation</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty">Staged for a later roadmap phase; not yet due.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">case_management:case_plan</span><span class="chip owner">volunteer_operations:volunteer_profile</span><span class="chip owner">verification_operations</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>🟡</td><td>🟢</td><td>🟢</td><td>🟢</td><td class="approval-verdict yes">✅ YES</td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- VOLUNTEER OPERATIONS -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Volunteer Operations</h3><span class="path-tag">volunteer-operations/</span></div>
+        <div class="evidence-badges"><span class="badge complete"><span class="dot"></span>Foundational (Tier 1) canonical</span><span class="badge placeholder"><span class="dot"></span>Tier 2 Intentionally Deferred</span></div>
+      </div>
+      <p class="evidence-purpose">Organisation-invariant volunteer profile — skills, certification, availability, coverage — authored ahead of dispatch/scheduling activation (ADR-024).</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (2)</div><div class="chip-row"><span class="chip entity">volunteer_profile</span><span class="chip entity">volunteer_team</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (9 files)</div><div class="chip-row"><span class="chip">volunteer_status</span><span class="chip">skill_category</span><span class="chip">certification_type</span><span class="chip">coverage_type</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">volunteer_profile</span><span class="arrow">→ profile_of →</span><span class="p">shared:actor</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty">Intentionally Deferred Pending Operational Validation — Tier 2 (scheduling, dispatch, trust/performance scoring) gated to Stage 9 by ADR-024, a deliberate governance decision.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">shared:actor</span><span class="chip owner">shared:organisation</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🟢</td><td>🟢</td><td>🟡</td><td>🟢</td><td>🟢</td><td>🟢</td><td class="approval-verdict yes">✅ YES <span style="font-weight:400;">(foundational scope)</span></td></tr></tbody></table>
+      </div>
+    </div>
+
+    <!-- DONOR & RESOURCE -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Donor &amp; Resource</h3><span class="path-tag">donor-resource/</span></div>
+        <div class="evidence-badges"><span class="badge partial"><span class="dot"></span>Canonical, one file missing</span></div>
+      </div>
+      <p class="evidence-purpose">Donor identity, grants, contributions, and material/financial resource allocation, including an Islamic-giving taxonomy — the newest complete domain (HKMP Stage 8).</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (9)</div><div class="chip-row"><span class="chip entity">donor_profile</span><span class="chip entity">grant</span><span class="chip entity">contribution</span><span class="chip entity">resource</span><span class="chip entity">financial_resource</span><span class="chip entity">material_resource</span><span class="chip entity">inventory_item</span><span class="chip entity">resource_allocation</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies (7 files)</div><div class="chip-row"><span class="chip">islamic_giving_type</span><span class="chip">zakat_eligible_category (8 asnaf)</span><span class="chip">donor_type</span><span class="chip">allocation_status</span></div></div>
+        <div><div class="ev-label">Key Relationship</div><div class="rel-line"><span class="e">grant</span><span class="arrow">→ funds →</span><span class="p">programs:program</span></div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty">Staged for a later roadmap phase; not yet due.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">shared:person</span><span class="chip owner">shared:organisation</span><span class="chip owner">programs:program</span><span class="chip owner">case_management:case_plan</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟢</td><td>🔴</td><td>🟢</td><td>🟡</td><td>🟢</td><td>🟢</td><td>🟢</td><td class="approval-verdict conditional">⚠ CONDITIONAL</td></tr></tbody></table>
+      </div>
+      <p class="fn">Conditional strictly on one missing file (<code>lifecycle-constraints.yaml</code>) — the most disciplined taxonomy in the repository otherwise, with 4+ proactive vocabulary reconciliations.</p>
+    </div>
+
+    <!-- CONSENT & PRIVACY -->
+    <div class="evidence-card">
+      <div class="evidence-head">
+        <div class="evidence-head-l"><h3>Consent &amp; Privacy</h3><span class="path-tag">consent-and-privacy/</span></div>
+        <div class="evidence-badges"><span class="badge placeholder"><span class="dot"></span>Level 2 — Intentionally Deferred</span></div>
+      </div>
+      <p class="evidence-purpose">Consent as a first-class concept, referenced by Case Management's referral workflow — deliberately minimal until active development, per ADR-004's Placeholder Domain Strategy.</p>
+      <div class="evidence-grid">
+        <div><div class="ev-label">Canonical Entities (1)</div><div class="chip-row"><span class="chip entity">consent</span></div></div>
+        <div><div class="ev-label">Controlled Vocabularies</div><div class="ev-empty">Intentionally Deferred Pending Operational Validation — not yet in scope by design (ADR-004).</div></div>
+        <div><div class="ev-label">Reasoning Capabilities</div><div class="ev-empty">Not applicable at this maturity level.</div></div>
+        <div class="full"><div class="ev-label">Cross-Domain Dependencies</div><div class="chip-row"><span class="chip owner">Referenced by case_management:referral</span></div></div>
+      </div>
+      <div class="table-wrap approval-table" style="margin-top:16px;">
+        <table><thead><tr><th>Architecture</th><th>Ontology</th><th>Taxonomy</th><th>Reasoning</th><th>Repository</th><th>Cross-Domain</th><th>Governance</th><th>Architecturally Ready</th></tr></thead>
+        <tbody><tr><td>🟡</td><td>🟡</td><td>🟡</td><td>🟡</td><td>🟡</td><td>🟢</td><td>🟢</td><td class="approval-verdict deferred">🟡 DEFERRED — not evaluated for approval at this maturity level</td></tr></tbody></table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- MAJOR DELIVERABLES -->
+<!-- ============================================================ -->
+<section class="section" id="deliverables">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">08</span>
+      <div class="eyebrow">Major Deliverables</div>
+      <h2>What Phase 1 has produced.</h2>
+    </div>
+    <div class="kv-list">
+      <div class="row"><div class="k">Canonical authoring contract</div><div class="v">A single ratified specification for every domain's ontology and taxonomy structure, replacing five previously-incompatible ad hoc formats.</div></div>
+      <div class="row"><div class="k">Repository manifest</div><div class="v"><code>catalog.yaml</code> — machine-readable registry of every domain, namespace prefix, and dependency graph.</div></div>
+      <div class="row"><div class="k">13 domains, 80 canonical entities</div><div class="v">Registration through Donor &amp; Resource, all built on the Shared Human Model and Shared Risk Model.</div></div>
+      <div class="row"><div class="k">28 ratified Architecture Decision Records</div><div class="v">Every non-obvious design choice recorded with reasoning and rejected alternatives.</div></div>
+      <div class="row"><div class="k">Cross-domain reference remediation</div><div class="v">Independently verified: zero confirmed dangling references, down from a materially broken state at the prior checkpoint.</div></div>
+      <div class="row"><div class="k">12-of-14 taxonomy conformance</div><div class="v">Only the two pre-canonical shared sub-modules remain outside the ratified vocabulary contract.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- INDEPENDENT ARCHITECTURE CERTIFICATION -->
+<!-- ============================================================ -->
+<section class="section" id="certification">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">09</span>
+      <div class="eyebrow">Independent Architecture Certification</div>
+      <h2>What the outside review concluded.</h2>
+    </div>
+    <div class="grid grid-2" style="margin-bottom:24px;">
+      <div class="card"><h3>Scope</h3><p style="font-size:0.9rem;">Every domain's ontology and taxonomy, reasoning content, governance documents, all 28 ADRs, and the cross-domain reference graph.</p></div>
+      <div class="card"><h3>Methodology</h3><p style="font-size:0.9rem;">Five independent evidence-gathering passes, each citing file-level evidence and re-verifying rather than assuming prior findings still held.</p></div>
+    </div>
+    <div class="callout warn" style="margin-bottom:24px;">
+      <p style="font-size:1.02rem;"><span class="verdict"><span class="glyph">&#9888;</span> Approved with Required Remediation</span>&nbsp;&mdash;&nbsp;reproduced exactly as stated by the audit.</p>
+    </div>
+    <div class="grid grid-2">
+      <div><h3 style="font-size:1rem; margin-bottom:12px;">Strengths</h3><ul style="padding-left:20px; color:var(--ink-soft); font-size:0.9rem;">
+        <li style="margin-bottom:6px;">Zero confirmed broken references, down from 12/49.</li>
+        <li style="margin-bottom:6px;">12/14 taxonomy locations fully canonical.</li>
+        <li style="margin-bottom:6px;">Governance feedback loop demonstrably functions.</li>
+        <li>Single-ownership intact, one documented exception.</li>
+      </ul></div>
+      <div><h3 style="font-size:1rem; margin-bottom:12px;">Observations</h3><ul style="padding-left:20px; color:var(--ink-soft); font-size:0.9rem;">
+        <li style="margin-bottom:6px;">Shared Human Model &amp; Risk Model not yet canonically migrated.</li>
+        <li style="margin-bottom:6px;">Case Management reasoning not yet built.</li>
+        <li style="margin-bottom:6px;">No runtime contract or golden test scenario yet.</li>
+        <li>A few governance documents need reconciliation.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CURRENT REPOSITORY MATURITY -->
+<!-- ============================================================ -->
+<section class="section" id="maturity">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">10</span>
+      <div class="eyebrow">Current Repository Maturity</div>
+      <h2>Scored dimension by dimension.</h2>
+    </div>
+    <div class="bar-row"><div class="lbl">Architecture</div><div class="bar-track"><div class="bar-fill good" style="width:70%"></div></div><div class="bar-score num">7 / 10</div></div>
+    <div class="bar-row"><div class="lbl">Ontology</div><div class="bar-track"><div class="bar-fill good" style="width:70%"></div></div><div class="bar-score num">7 / 10</div></div>
+    <div class="bar-row"><div class="lbl">Taxonomy</div><div class="bar-track"><div class="bar-fill good" style="width:80%"></div></div><div class="bar-score num">8 / 10</div></div>
+    <div class="bar-row"><div class="lbl">Cross-domain consistency</div><div class="bar-track"><div class="bar-fill good" style="width:80%"></div></div><div class="bar-score num">8 / 10</div></div>
+    <div class="bar-row"><div class="lbl">Governance</div><div class="bar-track"><div class="bar-fill warn" style="width:60%"></div></div><div class="bar-score num">6 / 10</div></div>
+    <div class="bar-row"><div class="lbl">Documentation</div><div class="bar-track"><div class="bar-fill warn" style="width:50%"></div></div><div class="bar-score num">5 / 10</div></div>
+    <div class="bar-row"><div class="lbl">Reasoning</div><div class="bar-track"><div class="bar-fill crit" style="width:35%"></div></div><div class="bar-score num">3.5 / 10</div></div>
+    <div class="bar-row"><div class="lbl">Knowledge coverage</div><div class="bar-track"><div class="bar-fill crit" style="width:40%"></div></div><div class="bar-score num">4 / 10</div></div>
+    <div class="bar-row"><div class="lbl">AI readiness</div><div class="bar-track"><div class="bar-fill crit" style="width:20%"></div></div><div class="bar-score num">2 / 10</div></div>
+    <div class="bar-row" style="border-top:1px solid var(--line); margin-top:8px; padding-top:18px;"><div class="lbl"><strong>Overall</strong></div><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><div class="bar-score num"><strong>6 / 10</strong></div></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- REPOSITORY COMPLETION ACTIVITIES -->
+<!-- ============================================================ -->
+<section class="section" id="completion-activities">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">11</span>
+      <div class="eyebrow">Repository Completion Activities</div>
+      <h2>What remains to close Phase 1.</h2>
+    </div>
+    <h3 style="font-size:1rem; margin-bottom:12px;">🔴 Requires Review before freeze</h3>
+    <div class="table-wrap" style="margin-bottom:28px;"><table><tbody>
+      <tr><td style="width:280px;"><strong>Migrate Shared Human Model &amp; Risk Model</strong></td><td>Onto the same canonical contract every other domain follows.</td></tr>
+      <tr><td><strong>Build the Case Management reasoning layer</strong></td><td>The one domain where reasoning activation is architecturally due now, not deferred.</td></tr>
+      <tr><td><strong>Author and pass one end-to-end golden scenario</strong></td><td>Registration → reasoning → verification → case management, against one real worked case.</td></tr>
+    </tbody></table></div>
+    <h3 style="font-size:1rem; margin-bottom:12px;">🟡 High Priority — tracked, not blocking</h3>
+    <div class="table-wrap" style="margin-bottom:28px;"><table><tbody>
+      <tr><td style="width:280px;"><strong>Structurally link Registration/Case Management "Case"</strong></td><td>Today recorded in ADR-021 only, not as a relationship in the data.</td></tr>
+      <tr><td><strong>Complete Donor &amp; Resource's ontology module</strong></td><td>One of five required files missing.</td></tr>
+      <tr><td><strong>Reconcile three governance documents</strong></td><td>Inventory, checklist, and roadmap each contain claims that no longer match disk state.</td></tr>
+      <tr><td><strong>Restore the evidentiary trail for ADR-025–028</strong></td><td>Cited supporting reports were removed in a later cleanup.</td></tr>
+    </tbody></table></div>
+    <h3 style="font-size:1rem; margin-bottom:12px;">Quality — low-risk clean-up</h3>
+    <div class="table-wrap"><table><tbody>
+      <tr><td style="width:280px;"><strong>Retire two residual legacy cross-references</strong></td><td>Registration's taxonomy; already tracked in that domain's content-gap log.</td></tr>
+      <tr><td><strong>Remove stale placeholder markers</strong></td><td>Two fully-built domains still carry an inactive marker.</td></tr>
+      <tr><td><strong>Ratify ADR-023 formally</strong></td><td>Marked "proposed" while already binding in production use.</td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- KNOWLEDGE LAYER COMPLETION ROADMAP -->
+<!-- ============================================================ -->
+<section class="section" id="completion-roadmap">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">12</span>
+      <div class="eyebrow">Knowledge Layer Completion Roadmap</div>
+      <h2>The path to a frozen Phase 1.</h2>
+    </div>
+    <div class="diagram">
+      <svg viewBox="0 0 980 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Completion roadmap">
+        <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8891a0"/></marker></defs>
+        <line x1="95" y1="85" x2="885" y2="85" stroke="#c7cdd7" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <circle cx="95" cy="85" r="32" fill="#e7f5ee" stroke="#1f7a54" stroke-width="2"/>
+        <text x="95" y="80" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#114a32">Current</text>
+        <text x="95" y="92" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#114a32">Repository</text>
+        <text x="95" y="132" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9.5" fill="#1f7a54" font-weight="700">COMPLETED</text>
+        <circle cx="358" cy="85" r="32" fill="#fbf1de" stroke="#a9720a" stroke-width="2"/>
+        <text x="358" y="80" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#6b4c07">Remaining</text>
+        <text x="358" y="92" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#6b4c07">Completion</text>
+        <text x="358" y="132" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9.5" fill="#a9720a" font-weight="700">IN PROGRESS</text>
+        <circle cx="621" cy="85" r="32" fill="#f6f7f9" stroke="#c7cdd7" stroke-width="2"/>
+        <text x="621" y="90" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#1b2230">Repository Freeze</text>
+        <text x="621" y="132" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9.5" fill="#8891a0" font-weight="700">NOT YET STARTED</text>
+        <circle cx="884" cy="85" r="32" fill="#f6f7f9" stroke="#c7cdd7" stroke-width="2"/>
+        <text x="884" y="80" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#1b2230">Knowledge Layer</text>
+        <text x="884" y="92" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#1b2230">Complete</text>
+        <text x="884" y="132" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9.5" fill="#8891a0" font-weight="700">NOT YET STARTED</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- EVOLUTION OF THE KNOWLEDGE MODEL (STRENGTHENED) -->
+<!-- ============================================================ -->
+<section class="section" id="evolution">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">13</span>
+      <div class="eyebrow">Evolution of the Knowledge Model</div>
+      <h2>Original vision → current repository → architectural assessment.</h2>
+      <div class="dek">Traced directly against <code>KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md</code> §16
+      ("Scope — Delivered Now vs. Planned"), the document that first separated V1's committed scope
+      from its future roadmap. Every row below closes the chain from original commitment to present
+      architectural verdict — designed to make it impossible to question whether the repository
+      follows the original vision.</div>
+    </div>
+
+    <div class="chip-row" style="margin-bottom:20px; align-items:center;">
+      <span class="chip owner">Business Logic Blueprint (2025)</span><span class="arrow" style="color:var(--ink-faint);">→</span>
+      <span class="chip owner">Ontology Vision (§4–15)</span><span class="arrow" style="color:var(--ink-faint);">→</span>
+      <span class="chip owner">Current Repository (this review)</span><span class="arrow" style="color:var(--ink-faint);">→</span>
+      <span class="chip owner">Current Status</span><span class="arrow" style="color:var(--ink-faint);">→</span>
+      <span class="chip owner">Architectural Assessment</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Blueprint Commitment (§16)</th><th>Current Repository Implementation</th><th>Status</th><th>Architectural Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>Human Model (lifecycle, capability, dependency, health)</td><td><code>shared/human-model/</code></td><td><span class="badge complete">Delivered</span></td><td>Faithfully implemented; structural migration is the only open item</td></tr>
+          <tr><td>Family &amp; Household models, household resilience</td><td><code>shared/human-model/family-structure.yaml</code>, <code>shared/risk/household-resilience.yaml</code></td><td><span class="badge complete">Delivered</span></td><td>Faithfully implemented — 10 resilience sub-capacities, exceeding the blueprint's original description</td></tr>
+          <tr><td>Community context</td><td><code>community-context/</code></td><td><span class="badge complete">Delivered, exceeds scope</span></td><td>Exceeds original vision — 12 taxonomy files vs. a single "built, pending migration" line in the blueprint</td></tr>
+          <tr><td>Needs (registration) + confidence-weighted Needs Assessment</td><td><code>registration/</code>, <code>needs-assessment/</code></td><td><span class="badge complete">Delivered</span></td><td>Faithfully implemented — two-dimensional claim quality model (ADR-003) matches the blueprint exactly</td></tr>
+          <tr><td>Vulnerability and Risk (composition, horizon, trend, compound)</td><td><code>shared/risk/</code></td><td><span class="badge complete">Delivered</span></td><td>Faithfully implemented, and the deepest reasoning in the repository</td></tr>
+          <tr><td>Verification Operations</td><td><code>verification-operations/</code></td><td><span class="badge complete">Delivered</span></td><td>Faithfully implemented, full 6-file reasoning suite</td></tr>
+          <tr><td>Case Management orchestration</td><td><code>case-management/</code></td><td><span class="badge complete">Delivered (ontology)</span></td><td>Ontology faithful to vision; reasoning layer is the tracked exception (§11)</td></tr>
+          <tr><td>Beneficiary Lifecycle (macro-state tracking)</td><td><code>beneficiary-lifecycle/</code></td><td><span class="badge complete">Delivered</span></td><td>Faithfully implemented as an event-sourced model, stronger than a status field</td></tr>
+          <tr><td><em>Planned:</em> Support intervention taxonomy</td><td><code>registration/taxonomy/support-interventions.yaml</code></td><td><span class="badge placeholder">Intentionally Deferred Pending Operational Validation</span></td><td>Exactly as originally scoped — blocked on programme-staff input the knowledge layer cannot invent for itself, not a repository gap</td></tr>
+          <tr><td><em>Planned:</em> Support Delivery (vendors, logistics, proof of delivery)</td><td><code>support-delivery/</code></td><td><span class="badge complete">Delivered, ahead of schedule</span></td><td>Exceeds original vision — complete canonical domain, 9 entities</td></tr>
+          <tr><td><em>Planned:</em> Outcome-indicator vocabulary; Impact measurement</td><td><code>impact/</code> canonical; <code>shared/vocabulary/outcome-indicators.yaml</code> intentionally deferred</td><td><span class="badge placeholder">Intentionally Deferred Pending Operational Validation</span></td><td>Domain structure faithfully implemented ahead of its dependency; the shared vocabulary awaits longitudinal data per roadmap sequencing</td></tr>
+          <tr><td><em>Planned:</em> Programmes (eligibility, cycles, enrollment)</td><td><code>programs/</code></td><td><span class="badge complete">Delivered, ahead of schedule</span></td><td>Exceeds original vision — 9 entities, 6 taxonomy files</td></tr>
+          <tr><td><em>Planned:</em> Volunteer Operations (full profiles and dispatch)</td><td><code>volunteer-operations/</code></td><td><span class="badge placeholder">Foundational delivered; Tier 2 Intentionally Deferred</span></td><td>Faithfully implemented at the scope ADR-024 defines; dispatch/scheduling deliberately gated to Stage 9</td></tr>
+          <tr><td><em>Planned:</em> Consent &amp; Privacy</td><td><code>consent-and-privacy/</code></td><td><span class="badge placeholder">Intentionally Deferred Pending Operational Validation</span></td><td>Exactly as scoped in ADR-004 — a minimal Level 2 placeholder, not an oversight</td></tr>
+          <tr><td><em>Planned:</em> Persistent Person entity promotion</td><td><code>shared/ontology/entities.yaml</code> — <code>person</code> exists</td><td><span class="badge partial">Partially delivered — Requires Review</span></td><td>Entity faithfully declared; the Beneficiary-snapshot → cross-case Person promotion seam is the one genuine gap, not a deferral</td></tr>
+          <tr><td><strong>Out of scope for V1:</strong> donor/resource-supply side</td><td><code>donor-resource/</code></td><td><span class="badge complete">Now exists — exceeds original V1 scope</span></td><td>Exceeds original vision outright — explicitly excluded in blueprint §17, delivered anyway as the newest complete domain</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fn">Read plainly: every conceptual pillar the original blueprint committed to for V1
+    has been faithfully implemented. Two items exceed the original commitment entirely (Support
+    Delivery, Donor &amp; Resource). Four items are correctly classified as
+    <strong>Intentionally Deferred Pending Operational Validation</strong> — a governance decision,
+    not an implementation gap. Exactly one item (Persistent Person promotion) and the Case
+    Management reasoning layer are genuine <strong>Requires Review</strong> items, both already
+    named in §11 and §14.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- KNOWLEDGE LAYER FREEZE READINESS -->
+<!-- ============================================================ -->
+<section class="section" id="freeze-readiness">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">14</span>
+      <div class="eyebrow">Knowledge Layer Freeze Readiness</div>
+      <h2>Three lists, never mixed.</h2>
+      <div class="dek">What is architecturally complete, what was deliberately deferred by
+      governance decision, and what genuinely requires review before this repository can be
+      declared the frozen implementation baseline — kept strictly separate.</div>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="freeze-col complete">
+        <h3>✅ Complete</h3>
+        <ul>
+          <li>Canonical repository structure — 13 domains, deterministic five-file ontology template</li>
+          <li>Repository manifest (<code>catalog.yaml</code>) with dependency graph</li>
+          <li>Cross-domain reference integrity — zero confirmed broken references</li>
+          <li>Taxonomy contract — 12 of 14 locations fully canonical</li>
+          <li>Ontology contract — single-ownership intact, one documented exception</li>
+          <li>Governance apparatus — 28 ADRs, authority matrix independently spot-checked accurate</li>
+          <li>11 of 13 domains fully canonical end-to-end (ontology + taxonomy + repository structure)</li>
+        </ul>
+      </div>
+      <div class="freeze-col deferred">
+        <h3>🟡 Intentionally Deferred</h3>
+        <ul>
+          <li>Support Intervention taxonomy — pending programme-staff operational validation</li>
+          <li>Volunteer Operations Tier 2 (dispatch/scheduling) — deferred to Stage 9 per ADR-024</li>
+          <li>Consent &amp; Privacy — Level 2 placeholder per ADR-004, awaiting activation trigger</li>
+          <li>Outcome Indicator Vocabulary / Impact reasoning — sequenced behind longitudinal data per the roadmap</li>
+          <li>Reasoning in 7 domains — staged activation per <code>knowledge_layer_roadmap.md</code>, not yet due</li>
+        </ul>
+      </div>
+      <div class="freeze-col review">
+        <h3>🔴 Requires Review</h3>
+        <ul>
+          <li>Shared Human Model &amp; Shared Risk Model — canonical structural migration</li>
+          <li>Case Management reasoning layer — architecturally due now, not deferred</li>
+          <li>Registration ↔ Case Management structural link (ADR-021 Case handoff)</li>
+          <li>Donor &amp; Resource — one missing ontology file</li>
+          <li>Three governance documents needing reconciliation with disk state</li>
+          <li>ADR-025–028 evidentiary trail restoration; ADR-023 formal ratification</li>
+          <li>No golden end-to-end test scenario yet</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FUTURE KNOWLEDGE EXPANSION -->
+<!-- ============================================================ -->
+<section class="section" id="future-expansion">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">15</span>
+      <div class="eyebrow">Future Knowledge Expansion</div>
+      <h2>Beyond Phase 1 — the long-term knowledge roadmap.</h2>
+      <div class="dek">Planned future scope, presented separately from outstanding Phase 1 work. Nothing below is late.</div>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>Stage 9 — Programme Intelligence</h3><p style="font-size:0.9rem;">Programme portfolios, dependencies, monitoring, results chains, coverage, scalability, sustainability.</p></div>
+      <div class="card"><h3>Stage 10 — Community Intelligence</h3><p style="font-size:0.9rem;">Community resilience, assets, markets, schools, health facilities, local governance, conflict dynamics, disaster exposure.</p></div>
+      <div class="card"><h3>Stage 11 — Humanitarian Decision Intelligence</h3><p style="font-size:0.9rem;"><strong>Remains ontology, not a reasoning engine.</strong> Decision contexts, objectives, constraints, trade-offs, alternatives, evidence, assumptions, uncertainty.</p></div>
+      <div class="card"><h3>Stage 12 — Longitudinal Human Development</h3><p style="font-size:0.9rem;">A long-horizon model of how a person's relationship to the system changes over years, below.</p></div>
+    </div>
+    <div class="diagram" style="margin-top:28px;">
+      <svg viewBox="0 0 980 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Longitudinal human development ladder">
+        <defs><marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c7cdd7"/></marker></defs>
+        <line x1="55" y1="65" x2="925" y2="65" stroke="#c7cdd7" stroke-width="1.2" marker-end="url(#arrow2)"/>
+        <g font-family="-apple-system, sans-serif">
+          <circle cx="55" cy="65" r="7" fill="#b23b3b"/><text x="55" y="40" text-anchor="middle" font-size="11" font-weight="700" fill="#1b2230">Crisis</text>
+          <circle cx="180" cy="65" r="7" fill="#a9720a"/><text x="180" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="#1b2230">Stabilization</text>
+          <circle cx="305" cy="65" r="7" fill="#a9720a"/><text x="305" y="40" text-anchor="middle" font-size="11" font-weight="700" fill="#1b2230">Recovery</text>
+          <circle cx="430" cy="65" r="7" fill="#1f7a54"/><text x="430" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="#1b2230">Self-Reliance</text>
+          <circle cx="555" cy="65" r="7" fill="#1f7a54"/><text x="555" y="40" text-anchor="middle" font-size="11" font-weight="700" fill="#1b2230">Resilience</text>
+          <circle cx="680" cy="65" r="7" fill="#2c4a7c"/><text x="680" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="#1b2230">Community</text><text x="680" y="103" text-anchor="middle" font-size="11" font-weight="700" fill="#1b2230">Contribution</text>
+          <circle cx="795" cy="65" r="7" fill="#2c4a7c"/><text x="795" y="40" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1b2230">Mentorship /</text><text x="795" y="53" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1b2230">Volunteerism</text>
+          <circle cx="925" cy="65" r="7" fill="#16294a"/><text x="925" y="90" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1b2230">Leadership /</text><text x="925" y="103" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1b2230">Donorship</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TOPICS FOR PHASE 2 PLANNING -->
+<!-- ============================================================ -->
+<section class="section" id="phase-2-topics">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">16</span>
+      <div class="eyebrow">Topics for Phase 2 Planning</div>
+      <h2>Questions to discuss, not decisions to announce.</h2>
+    </div>
+    <div class="grid grid-2">
+      <div class="card"><h3>Knowledge APIs</h3><p style="font-size:0.88rem;">How will other systems query this knowledge layer once live?</p></div>
+      <div class="card"><h3>Runtime architecture</h3><p style="font-size:0.88rem;">What consumes these rules at execution time, and how?</p></div>
+      <div class="card"><h3>Reasoning execution</h3><p style="font-size:0.88rem;">Rule engine, LLM-native reasoning, or a hybrid?</p></div>
+      <div class="card"><h3>Graph database</h3><p style="font-size:0.88rem;">Property graph or triple store, or does file-based structure suffice?</p></div>
+      <div class="card"><h3>Knowledge versioning</h3><p style="font-size:0.88rem;">How do future ontology changes release without breaking dependents?</p></div>
+      <div class="card"><h3>Workflow orchestration</h3><p style="font-size:0.88rem;">How do registration, verification, case management, and delivery hand off?</p></div>
+      <div class="card"><h3>Deployment architecture</h3><p style="font-size:0.88rem;">Embedded, standalone service, or API?</p></div>
+      <div class="card"><h3>Implementation sequencing</h3><p style="font-size:0.88rem;">Which vertical slice gets built first?</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CONCLUSION -->
+<!-- ============================================================ -->
+<section class="section" id="conclusion">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">17</span>
+      <div class="eyebrow">Conclusion</div>
+      <h2>A carefully designed model, faithfully implemented.</h2>
+    </div>
+    <p>Thirteen domains, 80 canonical entities, and roughly 300 controlled-vocabulary terms now
+    share one authoring contract and one governance process — independently verified to have zero
+    confirmed broken cross-domain references. Every conceptual pillar the original Business Logic
+    Blueprint committed to for V1 is implemented, and two domains (Support Delivery, Donor &amp;
+    Resource) now exist beyond that original commitment entirely.</p>
+    <p>What remains is specific, bounded, and already named: two foundational sub-modules need
+    canonical migration, Case Management needs a reasoning layer, and the pipeline needs one real
+    worked case to prove it end to end. Everything else that is not yet built was deliberately
+    deferred by governance decision, not left incomplete by oversight. None of the remaining work
+    requires re-architecting what exists.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ARCHITECTURE REVIEW REQUEST -->
+<!-- ============================================================ -->
+<section class="section" id="approval-request">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">18</span>
+      <div class="eyebrow">Architecture Review Request</div>
+      <h2>Requesting confirmation of the architectural baseline.</h2>
+    </div>
+    <div class="approval-request">
+      <p>This review requests confirmation of the canonical architecture, domain boundaries,
+      ontology ownership, taxonomy completeness, repository organization, and cross-domain
+      integration presented above.</p>
+      <p>Once these architectural foundations are approved, they will be treated as the
+      implementation baseline. Subsequent work should <strong>extend</strong> the knowledge model
+      rather than restructure it — the six items marked 🔴 Requires Review in §14 are scoped
+      completion work against the existing architecture, not open architectural questions.</p>
+      <div class="sig">Prepared for architectural sign-off · Knowledge Architecture Office · 17 July 2026</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div><strong>Khidmat AI</strong> — Knowledge Layer Architecture &amp; Domain Validation Review</div>
+    <div>Prepared 17 July 2026 · Repository v1.0.0 · Source: repository inspection + independent certification audit</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -36,3 +36,10 @@ entities:
       string field (case_timeline.follow_up) to its own entity, matching the Case
       Manager's "plans, referrals, follow-ups" responsibility named alongside Case
       Plan and Referral in the Business Blueprint §4.
+
+  - id: case_objective
+    description: >
+      A granular, actionable goal within a Case Plan designed to address a specific need.
+    notes: >
+      Introduced per RFC v1.0 Wave 2 to model specific casework goals and trace referral 
+      origins accurately, extracting it from being a deferred property in the case_plan.

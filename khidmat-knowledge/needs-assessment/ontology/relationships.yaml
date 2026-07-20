@@ -144,3 +144,17 @@ relationships:
     to: need_assertion
     cardinality: { min: 0, max: unbounded }
     inverse: influenced_by_assertion
+
+  - id: assertion_concerns_person
+    from: need_assertion
+    relationship: concerns_person
+    to: shared:person
+    cardinality: { min: 0, max: 1 }
+    notes: Explicitly links a need assertion to the specific Person it concerns.
+
+  - id: assertion_concerns_household
+    from: need_assertion
+    relationship: concerns_household
+    to: shared:household
+    cardinality: { min: 0, max: 1 }
+    notes: Explicitly links a need assertion to the specific Household it concerns.
