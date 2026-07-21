@@ -34,4 +34,4 @@ Claim quality is assessed along two independent axes:
 Not specified in original decision log.
 
 ## Related Documents
-- DECISIONS.md
+- architecture-decisions/README.md (ADR index; supersedes the retired DECISIONS.md log)

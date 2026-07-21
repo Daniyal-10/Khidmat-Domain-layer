@@ -1361,8 +1361,8 @@ flag_resolutions:
     action_required: >
       Update shared/taxonomy/persons.yaml: remove the functional_capacity
       enum definition and replace with a reference to this file.
-      Record the change in DECISIONS.md as it modifies an existing
-      taxonomy design.
+      Record the change as a new ADR in architecture-decisions/ as it
+      modifies an existing taxonomy design.
 
   flag_004_characteristic_capabilities:
     flag_id: FLAG-004

@@ -116,7 +116,7 @@ entities:
     \ this entry exists so that Registration's ontology can express\
     \ case_has_registrant, case_has_beneficiary, etc. during the registration\
     \ phase, before the Case Management-owned lifecycle begins. See\
-    \ ADR_RECONCILIATION_CASE.md for the full determination."
+    \ ADR-029 for the full determination."
 - id: lead
   label: Lead
   description: 'The initial unverified record representing a candidate''s registration request. Intake conversations write

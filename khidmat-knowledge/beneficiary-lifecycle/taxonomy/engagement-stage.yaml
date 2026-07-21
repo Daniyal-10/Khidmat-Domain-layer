@@ -7,37 +7,78 @@ schemes:
   - id: engagement_stage
     label: Engagement Stage
     description: "The macro-level state of a beneficiary's continuous journey within the Khidmat ecosystem."
+    # Per-concept `note` fields record the authoritative semantic *boundary*
+    # of each stage (the "does not mean" disambiguation) and the bounded
+    # contexts that drive entry/exit. Entry/exit criteria and transition
+    # triggers are workflow/reasoning and are intentionally NOT encoded here
+    # (ADR-023: reasoning is separated from knowledge); they are deferred to
+    # the runtime/reasoning layer that consumes this taxonomy.
     concepts:
       - id: identified
         label: Identified
         description: "First contact made; formal registration has not begun."
+        note: >
+          Driven by Intake/Leads. Does not mean the subject has requested aid
+          or is eligible for anything.
       - id: registration_initiated
         label: Registration Initiated
         description: "Data collection is underway."
+        note: >
+          Driven by Registration. Does not mean the registration data is
+          verified or complete.
       - id: registered
         label: Registered
         description: "Registration data is complete; awaiting formal verification."
+        note: >
+          Handoff from Registration to Verification Operations. Does not mean
+          the subject is eligible for aid — registration is merely a collection
+          of claims.
       - id: verification_pending
         label: Verification Pending
         description: "Identity or eligibility claims actively being verified."
+        note: >
+          Driven by Verification Operations. Does not mean the subject is
+          approved or rejected yet.
       - id: active
         label: Active
         description: "Fully verified and in good standing, eligible for assessment or enrollment."
+        note: >
+          Entered on a positive verification finding without safety/fraud
+          blocks. Does not mean the subject is receiving aid — it represents
+          eligibility and good standing only.
       - id: engaged
         label: Engaged
         description: "The subject is actively engaged with one or more humanitarian services, programs, or interventions within the Khidmat ecosystem."
+        note: >
+          Driven by Programs and Support Delivery. Does not mean program
+          enrollment, financial assistance, material aid, or any specific
+          delivery mechanism — it is a neutral macro-level state representing
+          interaction, decoupled from how aid is delivered.
       - id: monitored
         label: Monitored
         description: "Active intervention has ended; being monitored for sustainability or impact."
+        note: >
+          Driven by Outcome Measurement. Does not mean the subject is receiving
+          ongoing aid.
       - id: suspended
         label: Suspended
         description: "Ecosystem engagement is paused, often due to a flagged risk."
+        note: >
+          Typically driven by Shared Risk or Governance. Does not mean the
+          subject is permanently removed.
       - id: review_required
         label: Review Required
         description: "Triggered by inactivity or alerts; pending a human decision on continuation vs. exit."
+        note: >
+          Driven by Case Management. Does not mean automated exit — it enforces
+          a manual review checkpoint.
       - id: exited
         label: Exited
         description: "Relationship concluded manually (e.g., graduation, permanent relocation)."
+        note: >
+          Terminal state (unless a brand-new lifecycle is later initiated).
+          Does not mean data deletion or archiving — it ends the semantic
+          humanitarian journey only.
 
   # ---------------------------------------------------------------------
   # Added per Stage 6 Canonical Implementation, closing the "Human

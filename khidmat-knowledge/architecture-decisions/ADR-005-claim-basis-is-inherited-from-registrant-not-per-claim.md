@@ -33,4 +33,4 @@ The absence of an explicit value means the registrant default applies.
 Not specified in original decision log.
 
 ## Related Documents
-- DECISIONS.md
+- architecture-decisions/README.md (ADR index; supersedes the retired DECISIONS.md log)

@@ -13,7 +13,7 @@ entities:
       also declares an entry with id: case; that entry is not a second,
       independent entity but the pre-operational-phase view of this same
       canonical Case (see the notes on that entry, and
-      ADR_RECONCILIATION_CASE.md for the full determination). Registration's
+      ADR-029 for the full determination). Registration's
       case_statuses describe the pre-handoff phase; this domain's case_status
       (taxonomy/case_status.yaml) describes the phase from handoff onward.
 

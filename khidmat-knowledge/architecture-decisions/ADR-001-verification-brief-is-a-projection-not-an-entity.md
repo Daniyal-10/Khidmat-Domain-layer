@@ -37,4 +37,4 @@ responsibility of the verification-operations domain (not yet active).
 Not specified in original decision log.
 
 ## Related Documents
-- DECISIONS.md
+- architecture-decisions/README.md (ADR index; supersedes the retired DECISIONS.md log)

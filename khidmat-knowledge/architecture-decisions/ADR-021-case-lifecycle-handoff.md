@@ -24,5 +24,5 @@ The two status vocabularies (`registration/taxonomy/case-outcomes.yaml#case_stat
 Review if/when additional domains introduce their own intermediate statuses.
 
 ## Related Documents
-- `DECISIONS.md`
+- `architecture-decisions/README.md` (ADR index; supersedes the retired DECISIONS.md log)
 - `ontology_authority_matrix.md`

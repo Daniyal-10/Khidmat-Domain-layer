@@ -22,4 +22,4 @@ Risk files must not introduce numeric calculations.
 Not specified in original decision log.
 
 ## Related Documents
-- DECISIONS.md
+- architecture-decisions/README.md (ADR index; supersedes the retired DECISIONS.md log)

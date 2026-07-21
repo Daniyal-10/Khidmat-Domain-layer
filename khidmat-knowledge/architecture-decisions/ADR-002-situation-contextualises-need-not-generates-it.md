@@ -33,4 +33,4 @@ volunteers assess the case in the field.
 Not specified in original decision log.
 
 ## Related Documents
-- DECISIONS.md
+- architecture-decisions/README.md (ADR index; supersedes the retired DECISIONS.md log)

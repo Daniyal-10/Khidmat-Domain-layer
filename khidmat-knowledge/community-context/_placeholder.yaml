@@ -3,9 +3,8 @@ maturity: level_2_placeholder
 status: not_yet_active
 
 scope: >
-  This placeholder formally captures the scope areas defined in the
-  community_context_discovery_report.md that are deliberately deferred
-  from the initial taxonomy release. These include:
+  This placeholder formally captures the community-context scope areas that
+  are deliberately deferred from the initial taxonomy release. These include:
   - Population & Demographics (migration, displacement, transient populations)
   - Economy & Livelihoods (market integration level, financial inclusion)
   - Governance & Institutions (governance structure, decision authority)

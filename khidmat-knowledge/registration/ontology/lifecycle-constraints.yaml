@@ -11,7 +11,7 @@ status: active
 # Registration entities (Situation, Need, Claim, Evidence, Support
 # Intervention) have no distinct lifecycle beyond linear intake completion,
 # already fully governed by semantic-constraints.yaml's required_if rules;
-# Case's lifecycle is intentionally excluded pending ADR_RECONCILIATION_CASE.md.
+# Case's lifecycle is intentionally excluded pending ADR-029.
 
 lifecycle_constraints:
   lead:

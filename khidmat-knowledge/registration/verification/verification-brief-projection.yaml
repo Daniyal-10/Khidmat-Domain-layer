@@ -23,7 +23,8 @@ snapshot_semantics:
   re_issuance_responsibility: >
     Re-issuance is the responsibility of the verification-operations domain,
     which does not yet exist. In V1, re-issuance must be handled manually.
-    This is an accepted gap for V1 and is recorded in DECISIONS.md.
+    This is an accepted gap for V1 and is recorded in ADR-001
+    (architecture-decisions/), which governs the Verification Brief projection.
   rationale_for_snapshot_over_live: >
     A live projection would mean the volunteer's brief changes while
     they are in the field. A volunteer who received a brief, departed

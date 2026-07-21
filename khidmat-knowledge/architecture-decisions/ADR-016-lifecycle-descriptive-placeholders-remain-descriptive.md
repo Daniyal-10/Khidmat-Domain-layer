@@ -23,5 +23,5 @@ Once Case Management and Support Delivery are active and the core entity structu
 
 ## Related Documents
 - shared/human-model/taxonomy/lifecycle-stages.yaml
-- knowledge_layer_inventory.md
+- catalog.yaml (repository manifest; supersedes the retired knowledge_layer_inventory.md)
 - ontology_authority_matrix.md

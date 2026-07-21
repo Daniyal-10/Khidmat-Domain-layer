@@ -8,7 +8,7 @@ status: active
 # Household) and for Organisation are declared here per the Phase 1.1A
 # Canonical Semantic Foundation ratification. Case Management's Case is
 # intentionally excluded pending the ADR-021 / Phase 1.1A reconciliation
-# review (see ADR_RECONCILIATION_CASE.md).
+# review (see ADR-029).
 
 data_properties:
   - id: person_id

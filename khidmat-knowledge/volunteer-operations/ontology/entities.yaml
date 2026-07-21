@@ -8,7 +8,7 @@ status: active
 # concepts are declared here. The operational/runtime layer (scheduling, dispatch,
 # workload, trust/performance scoring, the assignment ACT, per-instance assignment
 # and training history) is Tier 2 and remains deferred to the Stage-9 activation
-# trigger — see governance.md and docs/architecture/Volunteer_Operations_Migration_Plan.md.
+# trigger — see governance.md.
 
 # The shared_core/shared_org namespace declarations previously here were
 # removed per Phase 1.5 Repository Cleanup: this file's own entities never

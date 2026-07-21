@@ -30,4 +30,4 @@ Future domains must reference the Shared Human Model rather than defining compet
 Not specified in original decision log.
 
 ## Related Documents
-- DECISIONS.md
+- architecture-decisions/README.md (ADR index; supersedes the retired DECISIONS.md log)

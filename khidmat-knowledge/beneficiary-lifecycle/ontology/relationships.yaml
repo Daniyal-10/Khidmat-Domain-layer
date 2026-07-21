@@ -18,7 +18,7 @@ namespaces:
 #
 # case_management namespace added per Phase 1.3A Ownership Conflict Resolution,
 # implementing the determination already recorded in ADR-021 and
-# ADR_RECONCILIATION_CASE.md: the Case entity is canonical to Case Management
+# ADR-029: the Case entity is canonical to Case Management
 # and persists across the Registration-to-Case-Management phase handoff. The
 # two relationships below that previously targeted registration:case now
 # target case_management:case, matching how verification-operations already
