@@ -316,6 +316,5 @@ relationships:
 #   - Any volunteer-related relationship — explicitly excluded per
 #     ADR-026 (Volunteer Boundary), unchanged from Stage 8B.
 #   - zakat_eligible_category as a value consumed BY programs:eligibility_rule
-#     — a Programs-side authoring act, not authored here. See
-#     PREPARED_GOVERNANCE_ADDITIONS.md.
+#     — a Programs-side authoring act, not authored here.
 # -------------------------------------------------------------------------

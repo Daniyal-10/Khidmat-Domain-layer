@@ -11,7 +11,7 @@ status: active
 # no hand-authored OWL functional syntax is stored here.
 #
 # Four rows previously in this file were relocated, per
-# docs/architecture/Community_Context_Migration_Plan.md Decisions D-CC1–D-CC3:
+# community-context-governance.md Migration Decisions D-CC1–D-CC3:
 #   - infrastructure_organization_reference: dropped (redundant with the
 #     relationships.yaml `to:` field on built_infrastructure_operated_by_organization).
 #   - collective_human_reference: moved to ontology/lifecycle-constraints.yaml

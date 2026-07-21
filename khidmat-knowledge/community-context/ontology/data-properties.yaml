@@ -3,8 +3,8 @@ domain: community_context
 file: community-context/ontology/data-properties.yaml
 status: active
 
-# Authored under Phase 4 of docs/architecture/Community_Context_Migration_Plan.md
-# (Decision D-CC6, below). Every row wires an existing entities.yaml key_attribute
+# Authored under the canonical migration per Migration Decision D-CC6
+# (recorded in community-context-governance.md). Every row wires an existing entities.yaml key_attribute
 # to a scheme that already exists in this domain's own taxonomy/ files — no new
 # taxonomy concept or scheme was invented to populate this file
 # (Repository_Migration_Methodology.md §2/§4: the property name and its source
@@ -36,7 +36,7 @@ status: active
 #       instance — this is the "not invented" cardinality tool: the closed-vocab
 #       constraint type already covers what was previously an unstated assumption.
 #
-# See docs/architecture/Community_Context_Migration_Plan.md Content Gap Log for
+# See community-context-governance.md Content Gap Log for
 # the one property NOT authored here (transportation_network_asset.surface_condition)
 # and why.
 
@@ -318,7 +318,7 @@ data_properties:
     notes: "Sibling of road_type (D-CC6b)."
 
   # surface_condition: NOT authored — genuine content gap, see Content Gap Log
-  # in docs/architecture/Community_Context_Migration_Plan.md. No taxonomy scheme
+  # in community-context-governance.md's Content Gap Log. No taxonomy scheme
   # anywhere in taxonomy/transportation.yaml (or elsewhere in this domain)
   # enumerates surface-condition concepts (e.g. "passable"/"degraded"/"washed_out")
   # — unlike every other property above, there is no existing scheme to wire this

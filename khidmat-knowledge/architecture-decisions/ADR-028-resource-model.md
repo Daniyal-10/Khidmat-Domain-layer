@@ -106,7 +106,5 @@ altering this ADR's decision:
 ## Related Documents
 - ADR-018 (Shared Subject Supertype — structural precedent), `support-delivery/ontology/entities.yaml`
   (`custody_transfer`, `custodian` — referenced not modified),
-  `support-delivery/Support_Delivery_Repository_Gap_Report.md` (Type D gap this ADR closes),
   ADR-023 (value object vs. entity discipline, informing the resolved
   `consumable`/`equipment`/`asset` question)
-- `HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md` (Part 1 Decision 4, Part 2 — original draft)

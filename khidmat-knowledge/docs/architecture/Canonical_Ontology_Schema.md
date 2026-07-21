@@ -4,9 +4,9 @@
 > been approved and applied. **Registration** became the first domain migrated to this contract
 > (Phases 1–4 of `Registration_Migration_Plan.md` are complete). **Community Context** is the
 > second, and the second to reach **Canonical (Content Pending)** status (Phases 1–4 of
-> `Community_Context_Migration_Plan.md` are complete — 17 of 18 `data-properties.yaml` rows
-> authored; 1 row remains a genuine content gap pending a new taxonomy scheme, tracked in that
-> plan's Content Gap Log; Phase 5 cross-domain CURIE linking is blocked on a repository-wide
+> its canonical migration is complete — 17 of 18 `data-properties.yaml` rows
+> authored; 1 row remains a genuine content gap pending a new taxonomy scheme, tracked in
+> `community-context/community-context-governance.md`'s Content Gap Log; Phase 5 cross-domain CURIE linking is blocked on a repository-wide
 > manifest and ratified base IRI, same as Registration).
 >
 > **Sequencing (historical — superseded by actual migration order):**

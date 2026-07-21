@@ -117,7 +117,7 @@ made during architecture review, not omissions:
 | *(not originally listed)* | `exposure.yaml` | Exposure was elevated to a first-class concept during architecture review, distinct from both Hazard and Vulnerability. |
 | *(not originally listed)* | `protective-factors.yaml` | Protective Factor was elevated to a first-class, symmetric taxonomy alongside Risk Factor, rather than left as an undefined residual category. |
 | *(not originally listed)* | `risk-domain-governance.md` | Boundary enforcement rules, cross-domain reference patterns, and anti-patterns are centralised here rather than repeated inline in every ontology file, following the repository governance pattern established for ontology domains. |
-| "Risk inference rules" | `reasoning/compound-risk-detection.yaml` | Scoped specifically to compound risk detection (concentration and interaction compounding), which closes the long-standing "Compound Situation Inference Rules" gap recorded in `ontology_completion_checklist.md`. General risk-factor-presence detection is left for a later reasoning pass once case-level risk data exists to detect against. |
+| "Risk inference rules" | `reasoning/compound-risk-detection.yaml` | Scoped specifically to compound risk detection (concentration and interaction compounding), which closes the long-standing "Compound Situation Inference Rules" gap. General risk-factor-presence detection is left for a later reasoning pass once case-level risk data exists to detect against. |
 
 ```
 shared/risk/
@@ -223,8 +223,7 @@ The Risk Domain is considered complete and ready to enable Stage 5
 - [x] All planned files exist and are not placeholders
 - [x] Ownership of all concepts is declared in `ontology_authority_matrix.md`
 - [x] All new terms are added to `GLOSSARY.md` under the correct section
-- [x] `knowledge_layer_inventory.md` is updated for all new files
-- [x] `ontology_completion_checklist.md` reflects completion status
+- [x] `catalog.yaml` reflects any new modules
 - [x] `knowledge_layer_roadmap.md` Stage 3 is marked substantially complete
 - [ ] Human Owner has approved the model for downstream use
 - [ ] ADR-010 through ADR-014 are reviewed and recorded by the Human Owner

@@ -210,8 +210,7 @@ Stage 8B or Stage 8C implementation pass — every cross-domain fact through
 Stage 8C was expressed as an outbound reference authored within this
 domain's own files. HKMP Stage 8D Governance Integration subsequently made
 five narrow, explicitly-staged additions to existing files (all previously
-drafted in this domain's own `PREPARED_GOVERNANCE_ADDITIONS.md` before being
-integrated): a `distinct_from` note in
+staged before being integrated): a `distinct_from` note in
 `programs/taxonomy/funding-and-compliance.yaml`, an extended `distinct_from`
 note in `support-delivery/taxonomy/delivery-modalities.yaml`, a documentation
 note on `programs:eligibility_rule`, a documentation note on

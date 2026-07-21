@@ -47,7 +47,7 @@ Canonical (Content Pending)
 
 └── Community Context (12 taxonomy files, full ontology module — migrated onto the
     frozen ontology/taxonomy contract, Phases 1–4 complete; 1 of 18 data properties
-    remains an open content gap, see docs/architecture/Community_Context_Migration_Plan.md)
+    remains an open content gap, see community-context/community-context-governance.md)
 
 Current Active Phase
 
@@ -288,7 +288,7 @@ are complete and stable.
 **Note:** Substantial Community Context content already exists (`community-context/taxonomy/*`,
 12 files, and a full `ontology/` module). Migration to the frozen
 `Canonical_Ontology_Schema.md` / `Canonical_Taxonomy_Schema.md` contract is
-complete through Phase 4 (`docs/architecture/Community_Context_Migration_Plan.md`)
+complete through Phase 4 (recorded in `community-context/community-context-governance.md`)
 — Community Context is the second domain, after Registration, migrated onto both
 contracts, and the second to reach **Canonical (Content Pending)** status. All
 entities, relationships, constraints, and taxonomy schemes are canonical; 17 of 18
@@ -546,7 +546,7 @@ khidmat-knowledge/
 ├── impact/                           [activate in Stage 9]
 │
 ├── ARCHITECTURE.md                   [update at each stage]
-├── DECISIONS.md                      [living document]
+├── architecture-decisions/           [ADR log]
 └── GLOSSARY.md                       [update at each stage]
 ```
 

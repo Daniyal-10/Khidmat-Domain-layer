@@ -45,7 +45,7 @@ this file.
 | `person` | Person | `shared/ontology/entities.yaml` | Shared Ontology | Authoritative concept for individuals. Must not be redefined. |
 | `household` | Household | `shared/ontology/entities.yaml` | Shared Ontology | Authoritative concept for households. Must not be redefined. |
 | `assessment_tool` | AssessmentTool | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Needs Assessment — resolved via `needs_assessment:assessment_instrument` (`parent: shared:assessment_tool`). Must not be redefined. |
-| `humanitarian_sector` | HumanitarianSector | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Needs Assessment. Still unresolved: `needs_assessment:thematic_sector` currently sources its vocabulary from `programs_tax:thematic_sectors` instead. Reassignment to this placeholder is pending a Shared-promotion ADR (see `needs-assessment/Needs_Assessment_Canonical_Migration_Plan.md` §10.1) — not implemented. Must not be redefined. |
+| `humanitarian_sector` | HumanitarianSector | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Needs Assessment. Still unresolved: `needs_assessment:thematic_sector` currently sources its vocabulary from `programs_tax:thematic_sectors` instead. Reassignment to this placeholder is pending a Shared-promotion ADR — not implemented. Must not be redefined. |
 | `intervention_type` | InterventionType | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for Case Management. Must not be redefined. |
 | `actor` | Actor | `shared/ontology/entities.yaml` | Shared Ontology | Placeholder for an operational participant. Must not be redefined. |
 | `organisation` | Organisation | `shared/ontology/entities.yaml` | Shared Ontology | Introduced per the Phase 1.1A Canonical Semantic Foundation. Authoritative concept for any government body, NGO, institution, or partner that funds, implements, operates infrastructure for, affiliates volunteers with, or receives a Referral. Referenced by Community Context (`built_infrastructure_operated_by_organization`), Programs (`program_funded_by`, `program_implemented_by`), Volunteer Operations (`volunteer_profile_affiliated_with_organisation`), and Case Management (`referral_targets_organisation`). Distinct from `shared/taxonomy/organisations.yaml`, which classifies organisation *types* and remains a separate, non-conflicting scheme. Must not be redefined. |
@@ -214,10 +214,7 @@ already superseded by the canonical files above — `need_severity` — was migr
 referencing the existing `registration_tax:need_severity` scheme rather than duplicating
 it). Every other legacy concept (`Assessment`, `AssessmentFinding`, `IdentifiedNeed`,
 `assessment_scope`, `assessment_status`, `finding_confidence`) was confirmed already
-superseded in substance by the canonical concepts below and required no migration. See
-`needs-assessment/Needs_Assessment_Legacy_Migration_Dependency_Report.md` for the
-dependency analysis this retirement was conditioned on, and
-`PHASE1_3A_OWNERSHIP_CONFLICT_RESOLUTION.md` for the full determination.
+superseded in substance by the canonical concepts below and required no migration.
 
 | Concept ID | Concept Name | Authoritative File | Owner Domain | Reference Constraint |
 |---|---|---|---|---|
@@ -543,7 +540,7 @@ future domain designers do not create silent drift.
 | Concept | `functional_capacity` (enum: full, partial, dependent) |
 | Situation | This is a proto-capability concept declared before the Shared Human Model existed. It functions as a placeholder for a capability model. |
 | Risk | When `capabilities.yaml` is created in Phase 2.0, `functional_capacity` in persons.yaml must reference that file as its authority rather than defining its own capability vocabulary. |
-| Resolution required | Update `shared/taxonomy/persons.yaml` to reference `capabilities.yaml`. No silent modification — record in DECISIONS.md if the change is architectural. |
+| Resolution required | Update `shared/taxonomy/persons.yaml` to reference `capabilities.yaml`. No silent modification — record as an ADR in architecture-decisions/ if the change is architectural. |
 | Status | Resolved |
 
 ### FLAG-002: Dependency type names and dependency.yaml
@@ -598,5 +595,5 @@ future domain designers do not create silent drift.
 | Concept | The boundary between a volunteer's **qualification / fitness to be assigned** (skills, certifications, availability, geographic coverage, trust, training) and the **assignment act** itself |
 | Situation | `verification-operations/ontology/relationships.yaml` already states, one-directionally: *"Verification Operations does not define actor qualification, roles, or types — that remains a Volunteer Operations concern (Level 2 placeholder)."* `review-decisions.yaml` echoes it. `verification_assignment` and `CaseAssignment` own the *assignment event*; the `Actor` entity and the `volunteer` role are single-owned in Shared. Volunteer Operations (Stage 9 placeholder) will own the *profile behind the actor* — never the assignment act, the actor entity, or the role label. |
 | Risk | On Volunteer Operations activation, the domain must attach its profile *behind* the shared `Actor` reference (via a `references`/relationship link), not mint a second actor entity or redefine `verification_assignment`/`CaseAssignment`. Silent drift would produce a duplicate actor/assignment model. |
-| Resolution required | On activation: add a Volunteer Operations owned-concepts section here; author the profile-to-`shared:Actor` link; leave the assignment acts owned by their operational domains. See `docs/architecture/Volunteer_Operations_Migration_Plan.md` (Phase 4) and `Volunteer_Operations_Domain_Audit.md` (VO-6). |
+| Resolution required | On activation: add a Volunteer Operations owned-concepts section here; author the profile-to-`shared:Actor` link; leave the assignment acts owned by their operational domains. See `volunteer-operations/governance.md` and the Volunteer Operations foundational ontology. |
 | Status | **Foundational side authored** (ADR-024). The Volunteer Operations owned-concepts section is added above; `volunteer_profile` attaches behind `shared:actor` via `profile_of` (`volunteer-operations/ontology/relationships.yaml`); eligibility is modeled as `eligible_assignment_type` (a data property), and the assignment **act** remains owned by `verification-operations` (`verification_assignment`) and `case-management` (`CaseAssignment`) — not duplicated. The boundary is now held reciprocally in authored YAML, not only in prose. The operational layer (trust/performance scoring, assignment history) stays deferred to Stage 9. |

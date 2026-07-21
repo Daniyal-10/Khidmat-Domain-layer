@@ -58,9 +58,9 @@ entities:
     label: Grant
     description: >
       A funding commitment instance issued by a donor_profile — the missing
-      link Programs' own gap report named ("tracking the lifecycle of the
-      funding proposal that created the program", Programs_Repository_Gap_Report.md
-      Type D). Represents formal, typically institutional funding with its own
+      link the Type D gap Programs disclosed ("tracking the lifecycle of the
+      funding proposal that created the program"), closed by ADR-027.
+      Represents formal, typically institutional funding with its own
       lifecycle (proposed, committed, active, suspended, renewed, expired,
       terminated, closed), funding window, and restriction shape. Optional,
       not mandatory: informal or unrestricted giving may fund a program

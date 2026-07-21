@@ -268,7 +268,6 @@ The Shared Human Model is considered complete and ready to enable Stage 3
 - [ ] All planned files exist and are not placeholders
 - [ ] Ownership of all concepts is declared in `ontology_authority_matrix.md`
 - [ ] All new terms are added to `GLOSSARY.md` under the correct section
-- [ ] `knowledge_layer_inventory.md` is updated for all new files
-- [ ] `ontology_completion_checklist.md` reflects completion status
+- [ ] `catalog.yaml` reflects any new modules
 - [ ] `knowledge_layer_roadmap.md` Stage 2 is marked substantially complete
 - [ ] Human Owner has approved the model for downstream use

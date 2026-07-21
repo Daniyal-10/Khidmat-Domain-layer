@@ -30,8 +30,8 @@ Status:
   (Phases 1–4 complete per `docs/architecture/Registration_Migration_Plan.md`; Phase 5
   cross-domain CURIE linking remains blocked on a repository-wide manifest).
 - Community Context has completed Phases 1–4 of its canonical migration
-  (`docs/architecture/Community_Context_Migration_Plan.md`); Phase 5 cross-domain CURIE
-  linking remains blocked on a repository-wide manifest, same as Registration.
+  (decisions recorded in `community-context/community-context-governance.md`); Phase 5
+  cross-domain CURIE linking remains blocked on a repository-wide manifest, same as Registration.
 - Programs, Impact, and Support Delivery have each been migrated to the canonical
   `ontology/`+`taxonomy/` structure.
 - Volunteer Operations has authored its foundational (Tier 1) canonical `ontology/`+`taxonomy/`
@@ -62,17 +62,15 @@ Status:
 
 The following governance files are authoritative references for the knowledge layer:
 
-* knowledge_layer_inventory.md
+* catalog.yaml
 * ontology_authority_matrix.md
-* ontology_completion_checklist.md
 * knowledge_layer_roadmap.md
 * architecture-decisions/ (Directory containing formal Architecture Decision Records)
 
 Purpose:
 
-* Inventory tracks what exists.
+* catalog.yaml is the machine-readable manifest of what exists (namespaces, modules, dependency graph).
 * Authority Matrix tracks concept ownership.
-* Completion Checklist tracks progress.
 * Roadmap tracks dependency order and activation sequencing.
 
 All ontology work must remain consistent with these files.

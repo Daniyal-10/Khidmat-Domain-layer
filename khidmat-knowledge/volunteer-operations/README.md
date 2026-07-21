@@ -19,8 +19,7 @@ Authored in two tiers under **ADR-024**:
   decomposition of the foundational vocabularies. Gated by the Stage-9 activation
   trigger (a volunteer management workflow defined with operations staff).
 
-See `discovery/foundation-report.md` for the full design summary and
-`governance.md` for the boundary rules.
+See `governance.md` for the tier split, boundary rules, and flagged cases.
 
 ## Owns (foundational)
 
@@ -72,26 +71,21 @@ volunteer-operations/
 │   ├── relationships.yaml
 │   ├── semantic-constraints.yaml
 │   └── lifecycle-constraints.yaml
-├── taxonomy/
-│   ├── volunteer-classification.yaml
-│   ├── skills.yaml
-│   ├── certifications.yaml
-│   ├── availability.yaml
-│   ├── assignment-types.yaml
-│   ├── coverage.yaml
-│   ├── languages.yaml
-│   ├── affiliation.yaml
-│   └── training.yaml
-└── discovery/
-    └── foundation-report.md     # Phase 2 foundation design report
+└── taxonomy/
+    ├── volunteer-classification.yaml
+    ├── skills.yaml
+    ├── certifications.yaml
+    ├── availability.yaml
+    ├── assignment-types.yaml
+    ├── coverage.yaml
+    ├── languages.yaml
+    ├── affiliation.yaml
+    └── training.yaml
 ```
 
 ## Related Documents
 
-- `discovery/foundation-report.md` — foundation design summary, decisions, validation
-- `governance.md` — boundary enforcement and flagged boundary cases
-- `docs/architecture/Volunteer_Operations_Domain_Audit.md` — discovery audit (VO-6)
-- `docs/architecture/Volunteer_Operations_Migration_Plan.md` — decisions D-VO1…D-VO5
+- `governance.md` — tier split, boundary enforcement, cross-domain patterns, and flagged boundary cases
 - `architecture-decisions/ADR-024` — Foundational Layer Precedes Operational Activation
 - `architecture-decisions/ADR-004` — Placeholder Domain Strategy
 - `architecture-decisions/ADR-008` — Single Ownership of Concepts

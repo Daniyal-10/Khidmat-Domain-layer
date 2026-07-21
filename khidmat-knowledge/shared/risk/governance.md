@@ -234,8 +234,7 @@ detection (e.g., automatically flagging every capability-gap-based risk
 factor whenever a capability is recorded as `minimal`) is left for a later
 pass — it requires the capability and dependency instance data to actually
 be collected during registration first, which is itself a known gap
-(`functional_capacity`/capability fields are currently dormant per
-`knowledge_layer_inventory.md`).
+(`functional_capacity`/capability fields are currently dormant).
 
 ### Concept: Hazard Instantiation and Seasonal Calendar
 

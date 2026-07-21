@@ -62,7 +62,7 @@ schemes:
 # domains are active"). No CURIE is minted here — the repository-wide manifest
 # (Finding R-1) and ratified base IRI (C-2) do not exist yet
 # (Repository_Migration_Methodology.md §3); a `references:` entry is added once
-# they do (Community_Context_Migration_Plan.md Phase 5).
+# they do (deferred: cross-domain CURIE linking, pending a repository-wide manifest).
 
 alignment_notes:
   - "This taxonomy integrates with `shared/taxonomy/locations.yaml`, which defines location precision (e.g., area_only). Community Context provides the structured hierarchy that `shared/locations` can reference for area definitions."

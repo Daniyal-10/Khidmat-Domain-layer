@@ -184,9 +184,8 @@ references:
       (cash, voucher, in-kind, service, asset). Neither redefines the other.
       Extends the existing two-way reconciliation note already authored in
       support-delivery/taxonomy/delivery-modalities.yaml to a three-way
-      relationship, per HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md Part 5 —
-      see PREPARED_GOVERNANCE_ADDITIONS.md for the staged extension to that
-      existing file's own note.
+      relationship. The staged extension to that existing file's own note
+      was integrated during Stage 8D.
   - scheme: support_delivery:delivery_modality
     relation: distinct_from
     note: >

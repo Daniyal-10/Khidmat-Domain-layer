@@ -9,8 +9,7 @@
 > **Authorities:** `Canonical_Ontology_Schema.md`, `Canonical_Taxonomy_Schema.md`
 > (frozen structural contracts) and `Repository_Migration_Methodology.md` (frozen
 > process contract — governs *how* this plan is executed; this plan states only
-> what is specific to registration). **Companion:** `Registration_Domain_Audit.md`
-> (findings + architect corrections).
+> what is specific to registration).
 >
 > **Design intent of this plan:** once Phase 0 is approved, every later phase is
 > **mechanical**, under the principles and source-authority rules

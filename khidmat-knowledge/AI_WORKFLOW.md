@@ -57,11 +57,10 @@ ChatGPT operates as the primary ontology design intelligence. It reviews, propos
 Claude operates as the governance and compliance layer. It audits against existing governance files but does not generate ontology concepts.
 
 **Responsibilities:**
-- Governance review: verifying that proposed changes conform to ARCHITECTURE.md, DECISIONS.md, and ADRs
-- Checklist maintenance: updating ontology_completion_checklist.md to reflect progress
+- Governance review: verifying that proposed changes conform to ARCHITECTURE.md and the ADR log (architecture-decisions/)
 - Roadmap compliance: ensuring domain activation follows knowledge_layer_roadmap.md dependencies
 - Authority matrix compliance: ensuring concept ownership is correctly declared in ontology_authority_matrix.md
-- Progress tracking: reporting current state against checklist and roadmap
+- Progress tracking: reporting current state against the roadmap
 
 **Limitations:**
 - Does not create ontology concepts
@@ -78,7 +77,7 @@ Antigravity operates as the implementation layer. It writes files, generates YAM
 - File editing: applying approved changes to existing files
 - YAML generation: translating approved ontology designs into structured files
 - Repository maintenance: keeping file structure consistent with the roadmap
-- Documentation updates: updating ARCHITECTURE.md, DECISIONS.md, GLOSSARY.md, and governance files as directed
+- Documentation updates: updating ARCHITECTURE.md, GLOSSARY.md, and governance files (recording decisions as ADRs in architecture-decisions/) as directed
 
 **Limitations:**
 - Does not create new ontology concepts without prior architectural review and Human Owner approval
@@ -120,11 +119,11 @@ No concept enters the repository without an identified owner.
 
 # Governance File Responsibilities
 
-## knowledge_layer_inventory.md
+## catalog.yaml
 
-**Purpose:** Single source of truth for every file in the repository — what it owns, what it owes, its maturity, and its known gaps.
+**Purpose:** The machine-readable repository manifest — namespaces, canonical prefixes, module paths, and the cross-domain dependency graph. The authoritative inventory of what exists in the repository.
 
-**Update when:** A new file is created, a file's ownership changes, a known gap is resolved, or a new gap is identified.
+**Update when:** A new domain or module is added, a namespace/prefix changes, or a dependency edge changes.
 
 **Authority:** Knowledge Layer Architect.
 
@@ -137,16 +136,6 @@ No concept enters the repository without an identified owner.
 **Update when:** A new concept is introduced, a concept's ownership changes, or a concept is promoted from a domain file to shared ownership.
 
 **Authority:** Knowledge Layer Architect, with Human Owner final approval.
-
----
-
-## ontology_completion_checklist.md
-
-**Purpose:** Tracks progress across all taxonomy, ontology, reasoning, and governance files. The single source of truth for what is done, in progress, missing, and future.
-
-**Update when:** A file is completed, a file moves to in-progress, or a missing item is identified or resolved.
-
-**Authority:** Claude Supervisor maintains; Human Owner approves status changes.
 
 ---
 
@@ -170,13 +159,13 @@ No concept enters the repository without an identified owner.
 
 ---
 
-## DECISIONS.md
+## architecture-decisions/
 
-**Purpose:** Architectural Decision Log. Records every significant design decision — what was decided, why, and what alternatives were rejected. Entries are never removed; reversals are recorded as new entries.
+**Purpose:** The Architecture Decision Record (ADR) log — the complete, authoritative record of every significant design decision, its context, consequences, and rejected alternatives. Indexed by `architecture-decisions/README.md`. ADR files are immutable; a reversal is recorded as a new ADR.
 
 **Update when:** A design decision is made or reversed.
 
-**Authority:** Human Owner approves each ADR before it is recorded.
+**Authority:** Human Owner approves each ADR before it is accepted.
 
 ---
 
@@ -197,12 +186,11 @@ After any ontology, taxonomy, reasoning, or domain change, the following files m
 | Change Type | Files To Review |
 |---|---|
 | New concept introduced | ontology_authority_matrix.md, GLOSSARY.md |
-| New file created | knowledge_layer_inventory.md, ontology_completion_checklist.md |
-| File completed | ontology_completion_checklist.md |
-| Domain activation | ARCHITECTURE.md, knowledge_layer_roadmap.md, ontology_completion_checklist.md |
-| Architectural decision | DECISIONS.md |
+| New file created | catalog.yaml |
+| Domain activation | ARCHITECTURE.md, knowledge_layer_roadmap.md |
+| Architectural decision | architecture-decisions/ (new ADR) |
 | New vocabulary term | GLOSSARY.md |
-| Ownership change | ontology_authority_matrix.md, knowledge_layer_inventory.md |
+| Ownership change | ontology_authority_matrix.md |
 
 Review does not necessarily imply modification. However, every listed file must be checked before work is considered complete.
 
@@ -222,15 +210,12 @@ Governs *what a domain may model* — which concept exists, who owns it, whether
 domain is allowed to activate. When files in this list disagree:
 
 1. Human Owner decisions
-2. The ADR log (`architecture-decisions/` — the complete, authoritative record;
-   `DECISIONS.md` mirrors only ADR-001–014 and is not itself a second source of
-   truth for those — see `DECISIONS.md`'s own note)
+2. The ADR log (`architecture-decisions/`) — the complete, authoritative record
 3. `ARCHITECTURE.md`
 4. `knowledge_layer_roadmap.md`
 5. `ontology_authority_matrix.md`
-6. `knowledge_layer_inventory.md`
-7. `ontology_completion_checklist.md`
-8. `GLOSSARY.md`
+6. `catalog.yaml` (repository manifest)
+7. `GLOSSARY.md`
 
 ## B. Canonical File-Shape Governance
 

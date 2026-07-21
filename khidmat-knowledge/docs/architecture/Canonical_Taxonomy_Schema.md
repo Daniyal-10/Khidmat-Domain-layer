@@ -1,7 +1,7 @@
 # Canonical Taxonomy Authoring Contract
 
 > **Phase:** RATIFIED and in effect. It fixes Finding **R-4**
-> (*Repository_Architecture_Improvement_Program.md*, Phase 2) and closes the dependency the peer
+> and closes the dependency the peer
 > **[Canonical_Ontology_Schema.md](Canonical_Ontology_Schema.md)** left open at its §1 and §3: the
 > taxonomy record shape, the taxonomy-concept identifier scope, and how `taxonomy_ref` resolves
 > through the same deterministic, manifest-based mechanism as ontology cross-domain references —
@@ -14,8 +14,8 @@
 > 4. ✅ Migrate Registration — first reference implementation (not Community Context, as originally
 >    sequenced here; see `Canonical_Ontology_Schema.md`'s status banner).
 > 5. ✅ Migrate Community Context — second reference implementation (Phases 1–4 of
->    `Community_Context_Migration_Plan.md` complete, 17/18 content rows authored; Phase 5 CURIE
->    linking remains blocked, see that plan). → validate and migrate remaining domains next.
+>    its canonical migration complete, 17/18 content rows authored; Phase 5 CURIE
+>    linking remains blocked, see `community-context/community-context-governance.md`). → validate and migrate remaining domains next.
 
 **Purpose:** the normative authoring contract that every current and future domain's `taxonomy/`
 module must follow. The repository is the source of truth; every downstream representation is

@@ -22,8 +22,7 @@ purpose: >
   populated for the same funding relationship without duplication: a
   private_foundation-type donor_profile issuing a grant, and that grant's own
   funding_source_type value (also private_foundation, by convention, though
-  not enforced as identical), are two separately-owned facts. See
-  PREPARED_GOVERNANCE_ADDITIONS.md for the full reconciliation note.
+  not enforced as identical), are two separately-owned facts.
 
 schemes:
   - id: donor_type
@@ -141,5 +140,4 @@ references:
       donor_type classifies the giving PARTY (who gives); funding_source_types
       (programs/taxonomy/funding-and-compliance.yaml) classifies a PROGRAM's
       funding category (what kind of money funds this program). Neither
-      redefines the other. See this file's purpose note above and
-      PREPARED_GOVERNANCE_ADDITIONS.md for the full reconciliation record.
+      redefines the other. See this file's purpose note above.

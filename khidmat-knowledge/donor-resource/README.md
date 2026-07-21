@@ -141,8 +141,6 @@ Knowledge Layer.
 donor-resource/
 ├── README.md                          # this file
 ├── governance.md                      # boundary rules, cross-domain reference patterns
-├── PREPARED_GOVERNANCE_ADDITIONS.md    # drafted (not yet integrated) Authority Matrix /
-│                                       # Glossary / boundary-note additions
 ├── ontology/
 │   ├── entities.yaml                  # Stage 8B: donor_profile, grant, contribution
 │   │                                   # Stage 8C: resource, financial_resource,
@@ -170,20 +168,7 @@ necessary at this scope for either sub-stage.
 
 ## Related Documents
 
-- `HKMP_STAGE8_DONOR_RESOURCE_DOMAIN_DISCOVERY_REPORT.md` — Stage 8 discovery
-- `HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md` — architecture decisions this
-  domain implements (original ADR drafts, pre-ratification)
-- `HKMP_STAGE8B_IMPLEMENTATION_REPORT.md` — Donor & Funding implementation report
-- `HKMP_STAGE8C_IMPLEMENTATION_REPORT.md` — Material Resource & Logistics
-  implementation report
-- `HKMP_STAGE8D_INTEGRATION_REPORT.md` — governance integration report
-  (ADR ratification, Authority Matrix, Glossary, cross-domain boundary notes)
 - `governance.md` — boundary enforcement and cross-domain reference patterns
-- `PREPARED_GOVERNANCE_ADDITIONS.md` — the governance text staged during
-  Stage 8B/8C and integrated verbatim during Stage 8D; retained as the
-  historical staging record, not a live source of truth (the actual
-  Authority Matrix and Glossary entries now live in
-  `ontology_authority_matrix.md` and `GLOSSARY.md` themselves)
 - `ontology_authority_matrix.md` — Donor & Resource Domain section (integrated
   HKMP Stage 8D)
 - `GLOSSARY.md` — Donor & Resource Terms section (integrated HKMP Stage 8D)

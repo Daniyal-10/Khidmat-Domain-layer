@@ -44,8 +44,7 @@ here, rather than invented independently by each consumer.
 - Intervention recommendations or case orchestration (Case Management, Support
   Delivery).
 - A fully-populated, cross-domain **persistent** Person entity — `person` is
-  declared in `shared/ontology/entities.yaml` but is a bare label today; see
-  `ontology_completion_checklist.md`.
+  declared in `shared/ontology/entities.yaml` but is a bare label today.
 
 > **Note:** `household` is currently declared independently in both
 > `shared/ontology/entities.yaml` and `registration/ontology/entities.yaml`. This
@@ -73,7 +72,7 @@ shared/
 
 - `ARCHITECTURE.md` — dependency rules, Shared Human Model declaration
 - `ontology_authority_matrix.md` — concept ownership registry (including FLAG-005)
-- `ontology_completion_checklist.md` — what's complete vs. missing in this domain
+- `catalog.yaml` — repository manifest (namespaces, modules, dependency graph)
 - `shared/human-model/README.md`, `shared/human-model/governance.md`
 - `shared/risk/README.md`, `shared/risk/governance.md`
 - ADR-007 (Shared Human Model), ADR-008 (Single Ownership), ADR-010–ADR-014 (Risk Domain), ADR-018 (Shared Subject Supertype)

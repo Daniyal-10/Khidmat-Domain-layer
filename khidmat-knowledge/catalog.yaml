@@ -51,7 +51,6 @@ namespaces:
     directory: case-management
     status: production
     paths:
-      - discovery
       - ontology
       - taxonomy
       - README.md
@@ -168,7 +167,8 @@ namespaces:
     directory: consent-and-privacy
     status: placeholder
     paths:
-      - ontology.yaml
+      - ontology
+      - taxonomy
       - README.md
     depends_on:
       - community-context

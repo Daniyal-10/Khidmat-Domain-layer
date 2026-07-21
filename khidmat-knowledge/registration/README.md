@@ -89,7 +89,6 @@ registration/
 
 - `docs/architecture/Registration_Migration_Plan.md` — the domain's own migration
   plan, decision table, and open Content Gap Log
-- `docs/architecture/Registration_Domain_Audit.md` — structural conformance audit
 - `docs/architecture/Canonical_Ontology_Schema.md`, `Canonical_Taxonomy_Schema.md`
   — the contracts this domain conforms to
 - `architecture-decisions/ADR-001` through `ADR-006` (Verification Brief,

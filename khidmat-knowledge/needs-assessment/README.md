@@ -51,8 +51,7 @@ need urgency; and review/calibration/consensus/trigger status and outcomes.
   `shared/ontology/entities.yaml` (see `ontology_authority_matrix.md`), but
   `thematic_sector` currently sources its vocabulary from
   `programs_tax:thematic_sectors` instead. Reassignment to the Shared
-  placeholder is pending a Shared-promotion ADR and is not yet implemented
-  — see `Needs_Assessment_Canonical_Migration_Plan.md` §10.1.
+  placeholder is pending a Shared-promotion ADR and is not yet implemented.
 
 ## Directory Structure
 
@@ -70,9 +69,7 @@ needs-assessment/
 │   ├── session.yaml
 │   └── governance.yaml
 ├── ontology.yaml                              # legacy monolith — superseded, pending retirement
-├── taxonomy.yaml                              # legacy monolith — superseded, pending retirement
-├── Needs_Assessment_Canonical_Migration_Plan.md
-└── Needs_Assessment_Canonical_Migration_Plan_VALIDATION_REPORT.md
+└── taxonomy.yaml                              # legacy monolith — superseded, pending retirement
 ```
 
 No `reasoning/` directory exists for this domain yet.
@@ -83,6 +80,4 @@ No `reasoning/` directory exists for this domain yet.
 - `knowledge_layer_roadmap.md` — prerequisites (Verification Operations) and what
   this domain enables downstream (Case Management, Support Delivery, Programs)
 - `ontology_authority_matrix.md` — Needs Assessment concept ownership
-- `Needs_Assessment_Canonical_Migration_Plan.md` — legacy-to-canonical mapping,
-  architectural decisions (D1–D14), and open items
 - `GLOSSARY.md` — Outcome Terms section

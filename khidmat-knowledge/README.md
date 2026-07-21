@@ -58,7 +58,7 @@ eventually, by a reasoning engine that does not yet exist in this repository.
 | 5 | A domain `README.md` matching your task | Purpose/Scope/Owns/Does-Not-Own for that domain |
 | 6 | [`docs/architecture/Canonical_Ontology_Schema.md`](docs/architecture/Canonical_Ontology_Schema.md) + [`Canonical_Taxonomy_Schema.md`](docs/architecture/Canonical_Taxonomy_Schema.md) + [`Repository_Migration_Methodology.md`](docs/architecture/Repository_Migration_Methodology.md) | The frozen file-shape contracts and the process for migrating a domain onto them, before editing any YAML |
 | 7 | [`architecture-decisions/README.md`](architecture-decisions/README.md) | The ADR index — the "why" behind every non-obvious decision |
-| 8 | [`AI_WORKFLOW.md`](AI_WORKFLOW.md) / [`AGENT_HANDOFF.md`](AGENT_HANDOFF.md) | Governance process, roles, and current phase, before proposing a change |
+| 8 | [`AI_WORKFLOW.md`](AI_WORKFLOW.md) | Governance process and roles, before proposing a change |
 
 If you only have 10 minutes: stop after step 3. That's enough to understand the
 vision, the current maturity of every domain, and where your task's domain sits.
@@ -109,7 +109,7 @@ AI reasoning layer (not yet built in this repository — see
 | Consent & Privacy | 🚧 Level 2 placeholder — scope declared, not yet active |
 
 For the authoritative, continuously-updated view of what is done, in progress, and
-missing, see `ontology_completion_checklist.md` and `knowledge_layer_roadmap.md` —
+missing, see `catalog.yaml` and `knowledge_layer_roadmap.md` —
 this table is a snapshot for orientation, not the source of truth.
 
 ---
@@ -269,18 +269,16 @@ is stable.
 This repository's single canonical onboarding path is the
 [Reading Order for First-Time Reviewers](#reading-order-for-first-time-reviewers)
 table above — start there rather than re-deriving a reading order from any other
-document. Other documents in this repository (`AGENT_HANDOFF.md`, `ARCHITECTURE.md`)
-intentionally point back to that table instead of maintaining their own.
+document. `ARCHITECTURE.md`
+intentionally points back to that table instead of maintaining its own.
 
 Beyond that reading path:
 
 - For day-to-day governance mechanics — who owns what, how a change is proposed and
-  reviewed, and what must never be done — see [`AI_WORKFLOW.md`](AI_WORKFLOW.md) and
-  [`AGENT_HANDOFF.md`](AGENT_HANDOFF.md).
-- For what exists, what's in progress, and what's missing, see
-  `knowledge_layer_inventory.md`, `ontology_authority_matrix.md`,
-  `ontology_completion_checklist.md`, and `knowledge_layer_roadmap.md`.
-- The ADR log (`architecture-decisions/`, ADR-001 through ADR-028) records every
+  reviewed, and what must never be done — see [`AI_WORKFLOW.md`](AI_WORKFLOW.md).
+- For what exists and what's missing, see `catalog.yaml` (the repository manifest),
+  `ontology_authority_matrix.md`, and `knowledge_layer_roadmap.md`.
+- The ADR log (`architecture-decisions/`, ADR-001 through ADR-029) records every
   significant design decision and its rationale; `architecture-decisions/README.md`
   has a full index.
 

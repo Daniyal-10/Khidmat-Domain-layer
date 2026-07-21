@@ -114,9 +114,8 @@ schemes:
       eligibility-rule engine. This scheme is a classification a Program's
       own eligibility_rule (programs/ontology/entities.yaml, referenced not
       redefined) may draw on when a Program is zakat-restricted; it does not
-      itself evaluate beneficiary eligibility. See
-      PREPARED_GOVERNANCE_ADDITIONS.md for the drafted note on how Programs
-      would consume this scheme.
+      itself evaluate beneficiary eligibility. How Programs would consume
+      this scheme is a Programs-side concern, not authored here.
     concepts:
       - id: al_fuqara
         label: Al-Fuqara (The Poor)
@@ -185,4 +184,4 @@ references:
       does not redefine programs:eligibility_rule or
       programs:eligibility_categories (programs/taxonomy/eligibility-and-
       enrollment.yaml). The consuming reference, if authored, is added on the
-      Programs side in a future pass — see PREPARED_GOVERNANCE_ADDITIONS.md.
+      Programs side in a future pass.

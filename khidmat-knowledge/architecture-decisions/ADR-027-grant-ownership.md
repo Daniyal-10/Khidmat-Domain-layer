@@ -87,6 +87,4 @@ Status).
 ## Related Documents
 - `programs/ontology/relationships.yaml` (`program_funded_by`, referenced not modified),
   `programs/taxonomy/funding-and-compliance.yaml` (referenced not modified, extended with a
-  `distinct_from` note per HKMP Stage 8D),
-  `programs/Programs_Repository_Gap_Report.md` (Type D gap this ADR closes), ADR-025
-- `HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md` (Part 1 Decision 3, Part 2 — original draft)
+  `distinct_from` note per HKMP Stage 8D), ADR-025

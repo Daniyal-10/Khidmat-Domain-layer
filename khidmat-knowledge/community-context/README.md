@@ -11,8 +11,8 @@ essential services, local organisations, and livelihood patterns.
 
 Substantially built out (12 taxonomy files, a full ontology module). Structurally
 migrated onto `docs/architecture/Canonical_Ontology_Schema.md` /
-`Canonical_Taxonomy_Schema.md` — Phases 1–4 of
-`docs/architecture/Community_Context_Migration_Plan.md` are complete: `entities.yaml`,
+`Canonical_Taxonomy_Schema.md` — Phases 1–4 of its canonical migration are
+complete: `entities.yaml`,
 `relationships.yaml`, `semantic-constraints.yaml`, and all 12 taxonomy files are
 canonical, and `data-properties.yaml` is populated (17 of 18 implied properties;
 see below). **Status: Canonical (Content Pending).** One property,
@@ -53,9 +53,8 @@ every domain.
   downstream ontology/runtime layer.
 - Population & demographics, market integration, governance & institutions,
   social cohesion/exclusion dynamics, culture, safety & security, and public
-  health context — all explicitly deferred (see `_placeholder.yaml` and
-  `community_context_discovery_report.md`) until Volunteer Operations or Support
-  Delivery need them.
+  health context — all explicitly deferred (see `_placeholder.yaml`) until
+  Volunteer Operations or Support Delivery need them.
 
 ## Directory Structure
 
@@ -80,20 +79,16 @@ community-context/
 │   ├── seasonal-events.yaml
 │   ├── settlement-types.yaml
 │   └── transportation.yaml
-├── community-context-governance.md          # boundary rules between the 12 taxonomy files
-├── community_context_discovery_report.md    # architecture discovery and deferred scope
+├── community-context-governance.md          # boundary rules + migration decisions (D-CC1–6) + Content Gap Log
 └── _placeholder.yaml                        # deferred scope areas (see "Does Not Own")
 ```
 
 ## Related Documents
 
-- `docs/architecture/Community_Context_Migration_Plan.md` — this domain's own
-  migration plan, Decision Table, and open Content Gap Log
-- `docs/architecture/Community_Context_Domain_Audit.md` — structural conformance audit
 - `community-context-governance.md` — the authoritative boundary rules between
-  this domain's own taxonomy files (now also the Ontology Boundary Rules,
-  relocated from `semantic-constraints.yaml`)
-- `community_context_discovery_report.md` — architecture discovery
+  this domain's own taxonomy files, now also the Ontology Boundary Rules
+  (relocated from `semantic-constraints.yaml`), the canonical Migration Decisions
+  D-CC1–D-CC6, and the Content Gap Log
 - `docs/architecture/Canonical_Ontology_Schema.md`,
   `Canonical_Taxonomy_Schema.md` — the contracts this domain conforms to
 - `docs/architecture/Repository_Migration_Methodology.md` — the migration process

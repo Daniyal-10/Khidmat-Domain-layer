@@ -31,6 +31,5 @@ This domain is structurally active. It models the execution of assistance.
 ```
 support-delivery/
 ├── ontology/
-├── taxonomy/
-└── Support_Delivery_Business_Architecture.md
+└── taxonomy/
 ```
