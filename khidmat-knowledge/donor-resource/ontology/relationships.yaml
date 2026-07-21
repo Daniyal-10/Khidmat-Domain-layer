@@ -162,8 +162,8 @@ relationships:
       deliberate, more conservative resolution of ADR-027's illustrative
       "program_funded_by_grant" naming: authoring the edge from grant's side
       achieves the identical graph connectivity (per the direction-agnostic
-      traversal principle already noted in HKMP_STAGE7C's review of
-      case_plan_addressed_by_intervention, §1) while requiring zero
+      traversal principle already noted in a prior certification review of
+      case_plan_addressed_by_intervention) while requiring zero
       modification to Programs' certified relationship file. No inverse row
       is authored in programs/ontology/relationships.yaml for the same
       reason volunteer_profile_affiliated_with_organisation and
@@ -276,8 +276,7 @@ relationships:
     notes: >
       Domain-internal reference (both entities are owned here) connecting
       the Stage 8C allocation decision back to its Stage 8B funding source,
-      per the context diagram in
-      HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md Part 3. Optional: an
+      per this domain's context diagram. Optional: an
       allocation drawn from general, non-grant-earmarked stock may leave
       this unpopulated. Mutually exclusive with
       resource_allocation_funded_by_contribution — see
@@ -307,8 +306,7 @@ relationships:
 #     own future reference row, authored on the Support Delivery side (not
 #     here), the same discipline already applied throughout this file: the
 #     domain owning the "from" entity authors the edge. Not authored by this
-#     pass; Support Delivery's own certified files remain untouched (§2 of
-#     HKMP_STAGE8C_IMPLEMENTATION_REPORT.md).
+#     pass; Support Delivery's own certified files remain untouched.
 #   - Any relationship referencing custody_transfer, delivery_event,
 #     proof_of_delivery, custodian, or dispatch workflow of any kind —
 #     explicitly excluded per the Support Delivery boundary. Inventory ends

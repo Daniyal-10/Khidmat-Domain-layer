@@ -11,8 +11,7 @@ namespaces:
   donor_resource: donor_resource
 
 # ---------------------------------------------------------------------
-# Added per Stage 7B Repository Remediation, closing Major Finding M-1 of
-# HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md.
+# Added per Stage 7B Repository Remediation, closing Major Finding M-1.
 #
 # delivery_modality answers a different question from the two Programs
 # schemes it was found to resemble, and this note exists precisely so a
@@ -85,9 +84,8 @@ references:
   - scheme: donor_resource:material_resource_category
     relation: distinct_from
     note: >
-      Added per HKMP Stage 8D Governance Integration, extending the two-way
-      note above to a three-way relationship
-      (HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md Part 5).
+      Added per Stage 8D Governance Integration, extending the two-way
+      note above to a three-way relationship.
       material_resource_category
       (donor-resource/taxonomy/resource-classification.yaml) classifies WHAT
       KIND of material stock exists in inventory before any delivery

@@ -76,32 +76,28 @@ Fully implemented: `resource`, `financial_resource`, `material_resource`, `inven
 (`donor-resource/taxonomy/resource-classification.yaml`); `storage_location_type`
 (`donor-resource/taxonomy/storage.yaml`); `allocation_priority`, `allocation_status`,
 `reservation_state` (`donor-resource/taxonomy/allocation.yaml`); `stock_movement_type`
-(`donor-resource/taxonomy/stock-movement.yaml`, classification only, no runtime log entity). See
-`HKMP_STAGE8C_IMPLEMENTATION_REPORT.md`.
+(`donor-resource/taxonomy/stock-movement.yaml`, classification only, no runtime log entity).
 
 Support Delivery's own downstream reference row, `delivery_event_fulfilled_from_resource_allocation`
 (`support-delivery/ontology/relationships.yaml`), was added per HKMP Stage 8D, authored on the
 Support Delivery side per the "referencing domain owns the edge" discipline.
 
-**HKMP Stage 8R Certification Remediation (post-Stage-8E/8F):** four corrections applied, none
+**Stage 8R Certification Remediation (post-Stage-8E/8F):** four corrections applied, none
 altering this ADR's decision:
 1. `resource_allocation_allocated_to_program` / `_case_plan` relationship verbs renamed from a
    shared `allocated_to` to `allocated_to_program` / `allocated_to_case_plan`; `resource_allocation_
    funded_by_grant` / `_contribution` renamed from a shared `funded_by` to `funded_by_grant` /
-   `funded_by_contribution` — closing the Critical `Canonical_Ontology_Schema.md` §9 violation found
-   in `HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md` §4.1.
+   `funded_by_contribution` — closing a Critical `Canonical_Ontology_Schema.md` §9 violation.
 2. `resource_id`/`resource_name` moved off the abstract `resource` entity onto
    `financial_resource`/`material_resource` individually (as `financial_resource_id`/`_name` and
    `material_resource_id`/`_name`), matching the `person_id`/`household_id` precedent this ADR's
-   "mirrors `subject`'s discipline exactly" claim always intended — closing the Major finding in
-   `HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md` §4.2.
+   "mirrors `subject`'s discipline exactly" claim always intended — closing a Major finding.
 3. `inventory_item.available_quantity` added, and `allocated_quantity_not_exceed_available`
-   retargeted to check against it instead of raw `quantity_on_hand` — closing the Major
-   multi-allocation over-commitment gap in `HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md` §4.3.
+   retargeted to check against it instead of raw `quantity_on_hand` — closing a Major
+   multi-allocation over-commitment gap.
 4. `financial_resource_category` given the same `distinct_from` reconciliation against
    `programs:intervention_modality` / `support_delivery:delivery_modality` that
-   `material_resource_category` already had — closing `HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md`
-   §5.2. See `HKMP_STAGE8R_CERTIFICATION_REMEDIATION_REPORT.md` for full detail.
+   `material_resource_category` already had.
 
 ## Related Documents
 - ADR-018 (Shared Subject Supertype — structural precedent), `support-delivery/ontology/entities.yaml`

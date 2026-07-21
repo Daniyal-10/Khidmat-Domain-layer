@@ -3,9 +3,9 @@ domain: donor_resource
 file: donor-resource/ontology/entities.yaml
 status: active
 
-# Donor & Funding Intelligence (HKMP Stage 8B). Implements ADR-025 (Donor
+# Donor & Funding Intelligence (Stage 8B). Implements ADR-025 (Donor
 # Identity Model), ADR-026 (Volunteer Boundary), and ADR-027 (Grant
-# Ownership) as ratified in HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md.
+# Ownership).
 #
 # Stage 8C addendum (Material Resource & Logistics, ADR-028): the
 # section below the Stage 8B entities adds resource, financial_resource,
@@ -109,9 +109,8 @@ entities:
       (donor_profile, required), contributes_to (grant, optional).
 
   # ===========================================================================
-  # Material Resource & Logistics Intelligence (HKMP Stage 8C). Implements
-  # ADR-028 (Resource Model) as ratified in
-  # HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md. Stage 8B entities above are
+  # Material Resource & Logistics Intelligence (Stage 8C). Implements
+  # ADR-028 (Resource Model). Stage 8B entities above are
   # unmodified.
   # ===========================================================================
 
@@ -136,9 +135,7 @@ entities:
       Delivery's (delivery_event, custody_transfer, custodian,
       proof_of_delivery), referenced nowhere from this domain.
 
-      Corrected per HKMP Stage 8R Certification Remediation
-      (HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md §4.2 /
-      HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5): this entity previously
+      Corrected per Stage 8R Certification Remediation: this entity previously
       declared `resource_id`/`resource_name` itself, contradicting both this
       text's own "owns no allocatable data" claim and the shared:subject
       precedent this entity is built to mirror — subject owns zero data

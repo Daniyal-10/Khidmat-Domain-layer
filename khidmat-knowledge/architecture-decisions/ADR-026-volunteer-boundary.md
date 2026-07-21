@@ -69,13 +69,10 @@ the time it is proposed — not folded into any Stage 8 sub-stage.
   what's available to reference.
 
 ## Implementation Status
-Fully implemented (as an absence): confirmed by explicit self-audit in both
-`HKMP_STAGE8B_IMPLEMENTATION_REPORT.md` and `HKMP_STAGE8C_IMPLEMENTATION_REPORT.md` — no
+Fully implemented (as an absence): confirmed by explicit self-audit — no
 volunteer-related concept appears anywhere in `donor-resource/`. Recorded as `donor-resource/governance.md`
 Rule 3 and DR-FLAG-B.
 
 ## Related Documents
 - `ontology_authority_matrix.md` (Volunteer Operations Domain section, FLAG-006), ADR-024,
   ADR-008, ADR-009
-- `HKMP_STAGE8_DONOR_RESOURCE_DOMAIN_DISCOVERY_REPORT.md` §13,
-  `HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md` (Part 1 Decision 2, Part 2 — original draft)

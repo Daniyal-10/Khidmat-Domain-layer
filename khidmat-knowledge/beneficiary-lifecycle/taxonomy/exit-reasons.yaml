@@ -12,8 +12,7 @@ schemes:
         label: Graduated
         description: "Subject achieved self-sufficiency and no longer requires support."
         note: >
-          Added per Stage 7B Repository Remediation (Major Finding M-3,
-          HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md). Scoped to
+          Added per Stage 7B Repository Remediation (Major Finding M-3). Scoped to
           the beneficiary's entire ecosystem relationship — distinct from,
           and not implied by, programs:enrollment_outcome#graduated
           (programs/taxonomy/eligibility-and-enrollment.yaml), which

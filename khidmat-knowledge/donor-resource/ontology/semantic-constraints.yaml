@@ -24,9 +24,8 @@ constraints:
       `property`/`with` corrected per HKMP Stage 8R Certification
       Remediation to reference the canonical relationship verbs
       (`profile_of_person`, `profile_of_organisation`) rather than the
-      per-row relationship ids this constraint previously used, closing the
-      Critical finding in HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md §4.1 /
-      HKMP_STAGE8F_CERTIFICATION_REVIEW.md §4 — a direct violation of
+      per-row relationship ids this constraint previously used, closing a
+      Critical finding — a direct violation of
       Canonical_Ontology_Schema.md §9 ("never a per-row relationship id").
       No change to what is actually constrained.
 
@@ -72,8 +71,8 @@ constraints:
       name at least one zakat_eligible_category. This is the semantic
       constraint the discovery report (§12) recommended be authored from the
       outset rather than deferred the way the pre-existing
-      case_plan_addressed_by_intervention same-case gap was (noted in
-      HKMP_STAGE7C_CERTIFICATION_REVIEW.md §2) — this domain does not repeat
+      case_plan_addressed_by_intervention same-case gap was (a
+      previously disclosed and accepted gap) — this domain does not repeat
       that known, disclosed gap pattern for its own zakat-restriction
       relationship.
 
@@ -91,9 +90,8 @@ constraints:
       be renewed (renewal_status) and a late-window or post-renewal
       contribution is a valid, ordinary case, not an anomaly.
 
-      Reclassified from `required_if` to `cardinality` per HKMP Stage 8R
-      Certification Remediation (optional cleanup item,
-      HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5, finding 6.4): `contribution_
+      Reclassified from `required_if` to `cardinality` per Stage 8R
+      Certification Remediation (optional cleanup item): `contribution_
       date` is already unconditionally required (data-properties.yaml,
       {min:1,max:1}), so `required_if` — reserved elsewhere in this
       repository for making an otherwise-optional property conditionally
@@ -171,9 +169,8 @@ constraints:
       An inventory_item's available_quantity (data-properties.yaml — the
       portion of quantity_on_hand not currently held by a firm or committed
       resource_allocation) can never be negative and can never exceed
-      quantity_on_hand. Added per HKMP Stage 8R Certification Remediation to
-      resolve the Major finding in HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md
-      §4.3 / HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5: previously,
+      quantity_on_hand. Added per Stage 8R Certification Remediation to
+      resolve a Major finding: previously,
       allocated_quantity_not_exceed_available checked a single
       resource_allocation against raw quantity_on_hand, which multiple
       concurrent allocations could each individually satisfy while
@@ -301,9 +298,8 @@ constraints:
 
       Reclassified from `required_if` to `cardinality`, and the expression
       rewritten to explicitly type-narrow to `material_resource` before
-      reading `cold_chain_required`, per HKMP Stage 8R Certification
-      Remediation (optional cleanup,
-      HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5, findings 4.4 and 6.4):
+      reading `cold_chain_required`, per Stage 8R Certification
+      Remediation (optional cleanup):
       `storage_location_type` is already unconditionally required
       ({min:1,max:unbounded}), making the prior `required_if` a type
       mismatch (same class of issue as

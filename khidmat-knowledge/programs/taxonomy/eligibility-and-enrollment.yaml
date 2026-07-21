@@ -87,8 +87,7 @@ schemes:
         description: >
           Successfully completed the program and achieved its objectives.
         note: >
-          Added per Stage 7B Repository Remediation (Major Finding M-3,
-          HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md). Scoped to
+          Added per Stage 7B Repository Remediation (Major Finding M-3). Scoped to
           this specific Program enrollment only — distinct from, and not
           automatically implying, beneficiary_lifecycle:exit_reason#graduated
           (beneficiary-lifecycle/taxonomy/exit-reasons.yaml), which

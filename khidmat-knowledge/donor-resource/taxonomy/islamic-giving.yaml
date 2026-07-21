@@ -23,8 +23,7 @@ purpose: >
   zakat's restricted recipient eligibility, which does not apply to sadaqah).
   This note exists so a future auditor checking this file against ADR-022
   does not mistake deliberate non-collapse for a localization-discipline
-  violation — see HKMP_STAGE8_DONOR_RESOURCE_DOMAIN_DISCOVERY_REPORT.md §6 for
-  the discovery-phase reasoning this file implements.
+  violation.
 
 schemes:
   - id: islamic_giving_type

@@ -13,10 +13,9 @@ models stable humanitarian knowledge: the entities, taxonomies, and
 relationships that describe giving, funding commitment, and resource stock,
 independent of any single organization's process.
 
-## Maturity: HKMP Stage 8B, 8C, and 8D Implemented — Certified Canonical Domain
+## Maturity: Stage 8B, 8C, and 8D Implemented — Certified Canonical Domain
 
-Authored in two sub-stages, per `HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md`
-Part 1 §5:
+Authored in two sub-stages:
 
 - **Stage 8B — Donor & Funding Intelligence (implemented):** `donor_profile`,
   `grant`, `contribution`, Islamic Giving taxonomy, funding lifecycle (grant
@@ -29,13 +28,13 @@ Part 1 §5:
   Governed by ADR-028.
 
 Both sub-stages are now present. Stage 8C's implementation did not modify any
-Stage 8B entity, taxonomy, relationship, or data property — see
-`HKMP_STAGE8C_IMPLEMENTATION_REPORT.md` §2 for the file-by-file confirmation.
+Stage 8B entity, taxonomy, relationship, or data property (verified file-by-file
+at the time).
 
 - **Stage 8D — Governance Integration (implemented):** ADR-025 through
   ADR-028 ratified; `ontology_authority_matrix.md` and `GLOSSARY.md` updated;
   the five staged boundary-note/reference additions authored in Programs and
-  Support Delivery. See `HKMP_STAGE8D_INTEGRATION_REPORT.md`.
+  Support Delivery.
 
 Donor & Resource is now a fully certified, canonical part of the Khidmat
 Knowledge Layer.

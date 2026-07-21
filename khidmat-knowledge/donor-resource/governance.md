@@ -5,9 +5,8 @@
 and `donor-resource/taxonomy/*.yaml`
 **Governing ADRs:** ADR-025 (Donor Identity Model), ADR-026
 (Volunteer Boundary), ADR-027 (Grant Ownership), ADR-028 (Resource
-Model) — ratified and integrated into `architecture-decisions/` per HKMP
-Stage 8D Governance Integration; drafted in full (pre-ratification) in
-`HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md` Part 2. Also governed by
+Model) — ratified and integrated into `architecture-decisions/` per Stage 8D
+Governance Integration. Also governed by
 ADR-008 (Single Ownership), ADR-009 (Dependency-Driven Domain Activation),
 ADR-018 (Shared Subject Supertype — structural precedent), ADR-022 (Canonical
 Concepts and Regional Localization Strategy — see Rule 5 below), ADR-024
@@ -35,17 +34,15 @@ ADR-024 already established for Volunteer Operations:
   classification. Governed by ADR-028.
 
 Stage 8C's implementation added to, and did not modify, any Stage 8B entity,
-taxonomy, relationship, or data property — verified file-by-file in
-`HKMP_STAGE8C_IMPLEMENTATION_REPORT.md` §5.
+taxonomy, relationship, or data property — verified file-by-file at the time.
 
 - **Stage 8D — Governance Integration (implemented).** ADR-025 through
   ADR-028 ratified into `architecture-decisions/`; this domain's ownership
   declared in `ontology_authority_matrix.md`; Glossary terms added to
   `GLOSSARY.md`; the five boundary-note/reference additions in Rule 8 above
-  authored; `knowledge_layer_roadmap.md` updated with a disambiguated HKMP
+  authored; `knowledge_layer_roadmap.md` updated with a disambiguated
   Stage 8 entry. No ontology was redesigned, and no entity, taxonomy, or
-  relationship beyond what Stage 8B/8C already staged was added — see
-  `HKMP_STAGE8D_INTEGRATION_REPORT.md`.
+  relationship beyond what Stage 8B/8C already staged was added.
 
 ---
 
@@ -257,8 +254,7 @@ application, or software concept is modeled as a `storage_location`.
 
 ### DR-FLAG-A: Donor-as-role vs. a future shared `funding_source_party` supertype
 `donor_profile` attaches to `person`/`organisation` via two separate
-relationship rows today (Alternative B, per
-`HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md` Part 1 Decision 1). If a second
+relationship rows today (Alternative B, per ADR-025). If a second
 future domain independently needs a generic Person-or-Organisation
 abstraction, promoting to a shared supertype (Alternative C, rejected for now
 as disproportionate for a single consumer) should be revisited — not before.

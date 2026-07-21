@@ -197,10 +197,9 @@ references:
   - scheme: programs:intervention_modality
     relation: distinct_from
     note: >
-      Added per HKMP Stage 8R Certification Remediation, completing the
-      taxonomy reconciliation left half-done at Stage 8C (Major finding,
-      HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md §5.2 /
-      HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5): the two references above
+      Added per Stage 8R Certification Remediation, completing the
+      taxonomy reconciliation left half-done at Stage 8C (Major finding):
+      the two references above
       cover material_resource_category only; financial_resource_category
       (unrestricted_cash, restricted_cash, voucher_value, revolving_fund,
       emergency_reserve) was left unreconciled against

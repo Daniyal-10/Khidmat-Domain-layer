@@ -82,8 +82,7 @@ schemes:
           the word "inventory" already appears informally in Support
           Delivery's delivery_status#returned concept; this stock_movement_
           type#return value is the formal reconciliation of that pre-existing
-          informal usage, per HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md
-          Part 5.
+          informal usage.
 
 references:
   - scheme: support_delivery:delivery_status

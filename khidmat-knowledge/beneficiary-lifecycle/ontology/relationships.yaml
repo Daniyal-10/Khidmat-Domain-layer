@@ -94,8 +94,7 @@ relationships:
     to: impact:impact_evaluation
     cardinality: { min: 0, max: 1 }
     notes: >
-      Added per Stage 7B Repository Remediation, closing Critical Finding
-      C-2 of HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md: no
+      Added per Stage 7B Repository Remediation, closing a Critical Finding: no
       structural path previously existed from a measured impact outcome to
       engagement_stage or human_development_stage. Mirrors the existing
       sibling pattern exactly (triggered_by_registration_case,

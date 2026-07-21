@@ -140,8 +140,7 @@ relationships:
     to: registration:support_intervention
     cardinality: { min: 0, max: unbounded }
     notes: >
-      Added per Stage 7B Repository Remediation, closing Critical Finding
-      C-1 of HKMP_STAGE7_REPOSITORY_SEMANTIC_INTEGRITY_AUDIT.md: case_plan's
+      Added per Stage 7B Repository Remediation, closing a Critical Finding: case_plan's
       own description ("the structured, approved operational strategy
       guiding the coordination of interventions for a Case") had no
       relationship to any intervention entity. Reuses the existing

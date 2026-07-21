@@ -76,13 +76,11 @@ correctly left to implementation discretion and resolved conservatively.
 Fully implemented: `grant`, `contribution` (`donor-resource/ontology/entities.yaml`),
 `grant_issued_by_donor_profile`, `contribution_contributes_to_grant`, `grant_funds_program`
 (`donor-resource/ontology/relationships.yaml`), `funding_source_type` / `funding_restriction`
-`taxonomy_ref` properties (`donor-resource/ontology/data-properties.yaml`). See
-`HKMP_STAGE8B_IMPLEMENTATION_REPORT.md` §3 for the disclosed direction deviation and
-`HKMP_STAGE8R_CERTIFICATION_REMEDIATION_REPORT.md` for the relationship-verb
-naming fixes applied to `resource_allocation_funded_by_grant` /
-`_contribution` (a Stage 8C relationship, not owned by this ADR, but renamed
-under the same Stage 8R remediation pass — see ADR-028's Implementation
-Status).
+`taxonomy_ref` properties (`donor-resource/ontology/data-properties.yaml`). The disclosed
+direction deviation and the relationship-verb naming fixes applied to
+`resource_allocation_funded_by_grant` / `_contribution` (a Stage 8C relationship, not owned
+by this ADR, but renamed under the same remediation pass — see ADR-028's Implementation
+Status) were integrated during Stage 8D/8R remediation.
 
 ## Related Documents
 - `programs/ontology/relationships.yaml` (`program_funded_by`, referenced not modified),

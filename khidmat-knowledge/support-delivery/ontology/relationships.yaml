@@ -125,9 +125,8 @@ relationships:
     cardinality: { min: 0, max: 1 }
 
   # ---------------------------------------------------------------------
-  # Added per HKMP Stage 8D Governance Integration, closing the one
-  # remaining edge in the Donor & Resource domain's context diagram
-  # (HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md Part 3) that belongs to
+  # Added per Stage 8D Governance Integration, closing the one
+  # remaining edge in the Donor & Resource domain's context diagram that belongs to
   # Support Delivery, not to Donor & Resource. Authored here, on the Support
   # Delivery side, per the "the domain owning the `from` entity authors the
   # edge" discipline already used throughout donor-resource/ontology/

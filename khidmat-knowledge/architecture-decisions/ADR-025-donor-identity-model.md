@@ -73,13 +73,9 @@ Fully implemented: `donor_profile` (`donor-resource/ontology/entities.yaml`),
 `profile_of_person` / `profile_of_organisation` — renamed from a shared
 `profile_of` per HKMP Stage 8R Certification Remediation to comply with
 `Canonical_Ontology_Schema.md` §9; no semantic change), the mutual-exclusivity
-constraint (`donor-resource/ontology/semantic-constraints.yaml`). See
-`HKMP_STAGE8B_IMPLEMENTATION_REPORT.md` and
-`HKMP_STAGE8R_CERTIFICATION_REMEDIATION_REPORT.md`.
+constraint (`donor-resource/ontology/semantic-constraints.yaml`).
 
 ## Related Documents
 - ADR-008 (Single Ownership), ADR-018 (Shared Subject Supertype — structural precedent),
   ADR-024 (`volunteer_profile`/`profile_of` — direct pattern precedent), FLAG-005, FLAG-006
   (`ontology_authority_matrix.md`)
-- `HKMP_STAGE8_DONOR_RESOURCE_DOMAIN_DISCOVERY_REPORT.md`,
-  `HKMP_STAGE8A_ARCHITECTURE_AND_GOVERNANCE.md` (Part 1 Decision 1, Part 2 — original draft)

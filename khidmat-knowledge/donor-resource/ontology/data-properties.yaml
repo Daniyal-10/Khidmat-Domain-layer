@@ -8,8 +8,7 @@ namespaces:
 
 # Namespace corrected from the file-path form
 # ("programs/taxonomy/funding-and-compliance.yaml") to the domain-name-only
-# form per HKMP Stage 8R Certification Remediation (optional cleanup,
-# HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5, finding 5.4): the file-path form
+# form per Stage 8R Certification Remediation (optional cleanup): the file-path form
 # is the explicitly named anti-pattern in
 # Canonical_Ontology_Schema.md §10 and was inconsistent with this domain's
 # own relationships.yaml and taxonomy/*.yaml files, which already used the
@@ -203,9 +202,8 @@ data_properties:
   # resource
   #
   # No identity property is declared on the abstract `resource` entity
-  # itself. Corrected per HKMP Stage 8R Certification Remediation (Major
-  # finding, HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md §4.2 /
-  # HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5): `resource_id`/`resource_name`
+  # itself. Corrected per Stage 8R Certification Remediation (Major
+  # finding): `resource_id`/`resource_name`
   # were previously declared here, contradicting both this entity's own
   # stated "owns no allocatable/trackable data itself" design intent
   # (entities.yaml) and the repository's own precedent for abstract-
@@ -327,9 +325,8 @@ data_properties:
     datatype: xsd:decimal
     cardinality: { min: 1, max: 1 }
     notes: >
-      Added per HKMP Stage 8R Certification Remediation to resolve the
-      Major finding in HKMP_STAGE8E_SEMANTIC_INTEGRITY_AUDIT.md §4.3 /
-      HKMP_STAGE8F_CERTIFICATION_REVIEW.md §5: the portion of
+      Added per Stage 8R Certification Remediation to resolve a
+      Major finding: the portion of
       quantity_on_hand not currently held by a firm or committed
       resource_allocation. Bounded by
       semantic-constraints.yaml#inventory_item_available_quantity_bounds
