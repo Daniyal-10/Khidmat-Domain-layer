@@ -24,7 +24,8 @@ The lifecycle for every methodology in this directory has two distinct phases, n
 A certification issued for a document whose content does not exist is void (Constitution Article XVI).
 
 ## Contents (flat structure — every methodology document lives directly in this directory)
+- `BUSINESS_DISCOVERY_BLUEPRINT.md` — draft, v0.1.0. Governs the evidence-gathering activity that precedes/feeds Business Master Plan authoring (elaborates BMP Blueprint §7/§9; does not amend Article XVI — see its §2 for the open governance question). Not the same document as `DOMAIN_DISCOVERY.md` below.
 - `BUSINESS_MASTER_PLAN_BLUEPRINT.md` — active methodology; `BUSINESS_MASTER_PLAN.md` (its target) not yet authored.
 - `HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT.md` + its Architecture Review, Resolution, and Freeze Certification — complete, internally consistent blueprint lifecycle; `HUMANITARIAN_BUSINESS_REFERENCE_MODEL.md` (its target) not yet authored.
 - `ONTOLOGY_DESIGN_BLUEPRINT.md` — draft, v0.1.0.
-- `BUSINESS_ARCHITECTURE.md`, `DOMAIN_DISCOVERY.md`, `KNOWLEDGE_LAYER.md`, `ONTOLOGY_ENGINEERING.md`, `TAXONOMY_ENGINEERING.md`, `ONTOLOGY_DESIGN.md` — empty stubs, not yet authored.
+- `BUSINESS_ARCHITECTURE.md`, `DOMAIN_DISCOVERY.md` (post-Business-Architecture domain *sequencing* decision — distinct from Business Discovery above), `KNOWLEDGE_LAYER.md`, `ONTOLOGY_ENGINEERING.md`, `TAXONOMY_ENGINEERING.md`, `ONTOLOGY_DESIGN.md` — empty stubs, not yet authored.
