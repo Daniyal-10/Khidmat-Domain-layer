@@ -1,9 +1,0 @@
-version: "1.0.0"
-domain: shared
-file: shared/ontology/semantic-constraints.yaml
-status: placeholder
-
-# This file will contain structural constraints / graph invariants shared across two or more domains.
-# No shared semantic constraints are defined at current maturity.
-
-constraints: []
