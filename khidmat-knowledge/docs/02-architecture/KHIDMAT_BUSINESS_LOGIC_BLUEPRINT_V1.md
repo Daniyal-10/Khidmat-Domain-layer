@@ -1,17 +1,18 @@
 # KHIDMAT AI — BUSINESS LOGIC BLUEPRINT V1
 
-**Status:** Completion-ready. This edition incorporates the improvements approved by the
-Blueprint V1 Audit and the Blueprint V1 Decision Review. It is the authoritative
-first-generation *business specification* for the Khidmat Knowledge Layer and is ready to be
-frozen.
+**Status:** Flagged, not yet synchronized against `PROJECT_OVERVIEW.md` v1.0 and
+`CONSTITUTION.md` v1.0 (see `docs/02-architecture/README.md`). Should not be treated as frozen
+or authoritative until reconciled.
 
 **What this document is:** a statement of the business architecture — the actors, principles,
 models, lifecycle, and vision the system serves. It is not ontology, taxonomy, reasoning, or
-runtime design. Where it names a concept, the authoritative definition lives in the
-repository (`shared/`, `registration/`, `shared/risk/`, `verification-operations/`,
-`needs-assessment/`, `case-management/`, `beneficiary-lifecycle/`, `community-context/`) and
-its sequencing lives in `knowledge_layer_roadmap.md`. This document describes the *target*
-business architecture; Section 16 states plainly what is delivered today versus planned.
+runtime design. Where it names a concept, the authoritative definition was intended to live in
+the repository at `shared/`, `registration/`, `shared/risk/`, `verification-operations/`,
+`needs-assessment/`, `case-management/`, `beneficiary-lifecycle/`, `community-context/`, with
+sequencing in `knowledge_layer_roadmap.md` — none of these paths exist in the current working
+tree; treat this document's concept references as unresolved until reconciled against the
+canonical Overview/Constitution. This document describes the *target* business architecture;
+Section 16 states plainly what is delivered today versus planned.
 
 ---
 

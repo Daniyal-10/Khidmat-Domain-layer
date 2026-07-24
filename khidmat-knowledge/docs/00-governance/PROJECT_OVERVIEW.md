@@ -407,14 +407,8 @@ The current focus of the project is not software implementation.
 
 The current priority is establishing an exceptionally strong intellectual foundation that will support every future architectural decision.
 
-This includes creating:
-
-* the Khidmat AI Constitution,
-* the Project Foundation,
-* the Business Master Plan,
-* the Humanitarian Business Reference Model,
-* the Conceptual Ontology,
-* the Ontology Design,
-* and ultimately the complete Humanitarian Intelligence Infrastructure.
+This includes the full governance and knowledge-foundation sequence set out in
+`CONSTITUTION.md` Article XVI (Dependency Hierarchy), culminating in the complete
+Humanitarian Intelligence Infrastructure.
 
 Only after these foundations are complete should implementation begin.
