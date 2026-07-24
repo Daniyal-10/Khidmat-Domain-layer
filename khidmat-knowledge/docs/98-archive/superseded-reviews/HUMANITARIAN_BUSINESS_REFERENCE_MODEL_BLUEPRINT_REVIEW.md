@@ -1,3 +1,5 @@
+> **Quarantined (Methodology Integrity Pass).** This review analyzes and cross-checks specific chapter/section content of `BUSINESS_MASTER_PLAN.md` as though it were frozen and complete. That document was never authored (see its own status note). This review's findings are void per `CONSTITUTION.md` Article XVI ("A certification issued for a document whose content does not exist is void.") and are retained here only for historical record, mirroring the equivalent BMP-level trail already archived. Not to be cited as active methodology.
+
 # Humanitarian Business Reference Model Blueprint — Architecture Review
 
 **Reviewer role:** Independent architecture reviewer, adversarial mandate

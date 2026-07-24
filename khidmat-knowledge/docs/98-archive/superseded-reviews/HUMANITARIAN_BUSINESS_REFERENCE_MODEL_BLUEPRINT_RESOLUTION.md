@@ -1,3 +1,5 @@
+> **Quarantined (Methodology Integrity Pass).** This resolution decides Required Changes and Open Questions raised against fictional `BUSINESS_MASTER_PLAN.md` content — that document was never authored. Void per `CONSTITUTION.md` Article XVI. Retained for historical record only; not to be cited as active methodology.
+
 # Humanitarian Business Reference Model Blueprint — Resolution
 
 **Type:** Governance resolution

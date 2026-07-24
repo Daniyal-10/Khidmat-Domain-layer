@@ -50,8 +50,7 @@ blocks (the source need must be resolved before the target can be
 effectively addressed — e.g. a documentation gap blocks an income_support
 need), or compounds (the source need increases the target's severity
 whenever both are present, without causing it — e.g. a disability compounds
-a caregiver_burden need). Added per Stage 2A Canonical Needs Assessment
-Enrichment; mirrored at the synthesized-finding level in the Needs
+a caregiver_burden need). Mirrored at the synthesized-finding level in the Needs
 Assessment domain as assertion_influences_assertion.
 
 **Debt Source and Debt Characteristic**
@@ -62,8 +61,7 @@ employer advance, family/relatives, friends/community, shopkeeper/vendor
 credit, informal moneylender, or mixed/multiple sources). Debt
 characteristic records the humanitarian shape of the debt situation as a
 whole — manageable, burdensome, high_risk, or exploitative — never a
-monetary threshold, balance, or interest calculation. Added per Stage 5B
-Debt Structure & Typology.
+monetary threshold, balance, or interest calculation.
 
 **Claim**
 An assertion made during registration that requires external confirmation.
@@ -106,7 +104,7 @@ situation that has not yet been provided during registration.
 Gaps are classified by severity: critical, high, or medium.
 Blocking gaps (critical and high, where explicitly marked) prevent case closure.
 Non-blocking gaps are noted in the verification brief for volunteer follow-up.
-Gap types are defined in registration/gaps/gap-types.yaml.
+Gap types will be formally enumerated during ontology engineering.
 
 **Registrant Type**
 The role of the person conducting the registration.
@@ -220,7 +218,7 @@ The underlying humanitarian purpose an intervention serves (survival and
 stabilization, restoration, capacity building, protective, connective, or
 resilience building), independent of its delivery modality (cash, voucher,
 in-kind, service, asset) and its thematic sector (WASH, livelihood,
-health, etc.). Added per Stage 6 Canonical Implementation.
+health, etc.).
 
 **Intervention Readiness**
 A structured, qualitative judgement (ready / partially_ready / not_ready
@@ -229,23 +227,20 @@ specific intervention are currently in place for a specific beneficiary
 or household. Distinct from eligibility (categorical, rule-based
 qualification), vulnerability (latent susceptibility to harm), and
 capability (general ability independent of any specific intervention).
-Added per Stage 6 Canonical Implementation.
 
 **Intervention Relationship (prerequisite / mutually exclusive / reinforces / substitutes)**
 Four relationships between intervention offerings recording that one
 ordinarily precedes another, that two should not ordinarily be combined,
 that two strengthen each other without either being a strict
 prerequisite, or that two address the same underlying need such that
-ordinarily only one would be selected. Added per Stage 6 Canonical
-Implementation.
+ordinarily only one would be selected.
 
 **Human Development Stage**
 A beneficiary's or household's own position in the humanitarian
 developmental trajectory — crisis, stabilization, recovery,
 self-reliance, resilience, or community contribution — independent of,
 and never to be conflated with, Engagement Stage (the beneficiary's
-administrative relationship to Khidmat). Added per Stage 6 Canonical
-Implementation.
+administrative relationship to Khidmat).
 
 **Protection Indicator (Exploitation and Coercion Indicators)**
 A specific, independently observable behavioural or circumstantial signal —
@@ -298,8 +293,6 @@ Outcome indicators support lifecycle tracking, program evaluation, and impact me
 
 ## Needs Assessment Terms
 
-*Added per Stage 7B Repository Remediation — this domain previously had no Glossary coverage at all.*
-
 **Assessment Session**
 The episodic event of applying an assessment instrument to a person, household, or community at a specific time and location.
 
@@ -317,13 +310,11 @@ The governance record that resolves conflicting findings or elevates a finding t
 
 ## Case Management Terms
 
-*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
-
 **Case**
 The central, long-lived operational container coordinating holistic support for a subject, from handoff out of Registration onward.
 
 **Case Plan**
-The structured, approved operational strategy guiding the coordination of interventions for a Case. Addressed by one or more Support Interventions (see `case_plan_addressed_by_intervention`, added Stage 7B).
+The structured, approved operational strategy guiding the coordination of interventions for a Case. Addressed by one or more Support Interventions.
 
 **Referral**
 A formal request for a specialized service provided by an internal (Program) or external (Organisation) party.
@@ -333,20 +324,16 @@ A scheduled or completed case-level review or monitoring activity revisiting a b
 
 ## Beneficiary Lifecycle Terms
 
-*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
-
 **Engagement Stage**
 The beneficiary's administrative relationship to the Khidmat ecosystem (identified, registered, active, engaged, monitored, exited, etc.). Strictly distinct from Human Development Stage.
 
 **Human Development Stage**
-The beneficiary's or household's own position in the humanitarian developmental trajectory — crisis, stabilization, recovery, self-reliance, resilience, or community contribution. Never to be conflated with Engagement Stage. Added per Stage 6.
+The beneficiary's or household's own position in the humanitarian developmental trajectory — crisis, stabilization, recovery, self-reliance, resilience, or community contribution. Never to be conflated with Engagement Stage.
 
 **Lifecycle Transition**
-An immutable event representing a macro-state change within a beneficiary's lifecycle, optionally triggered by a registration case, a verification finding, a risk characterization, a case decision, or (added Stage 7B) an impact evaluation.
+An immutable event representing a macro-state change within a beneficiary's lifecycle, optionally triggered by a registration case, a verification finding, a risk characterization, a case decision, or an impact evaluation.
 
 ## Programs Terms
-
-*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
 
 **Program**
 The core structural initiative through which assistance is funded, governed, and bounded.
@@ -358,14 +345,12 @@ A specific support modality and conditionality defined within a program's catalo
 The macro-state and historical record of a beneficiary's participation in a program.
 
 **Intervention Objective Category**
-The underlying humanitarian purpose an intervention serves, independent of its delivery modality and thematic sector. Added per Stage 6.
+The underlying humanitarian purpose an intervention serves, independent of its delivery modality and thematic sector.
 
 **Intervention Readiness**
 See Risk and Vulnerability Terms above.
 
 ## Community Context Terms
-
-*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
 
 **Settlement Type**
 The classification of a community's physical settlement pattern (e.g., rural, peri-urban, informal urban).
@@ -378,13 +363,11 @@ The dominant, persistent community-level economic activity base — a macro-econ
 
 ## Support Delivery Terms
 
-*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
-
 **Delivery Event**
 The fundamental unit of execution, representing the grouping, timing, and occurrence of a delivery. Fulfills a Case Plan.
 
 **Delivery Modality**
-The physical, financial, or service form a delivery takes, and the handling/custody requirements that come with it — distinct from Programs' Intervention Modality and Thematic Sector (see the design note in `support-delivery/taxonomy/delivery-modalities.yaml`, added Stage 7B).
+The physical, financial, or service form a delivery takes, and the handling/custody requirements that come with it — distinct from Programs' Intervention Modality and Thematic Sector.
 
 **Proof of Delivery**
 Evidence collected during the handover confirming a delivery occurred.
@@ -394,8 +377,6 @@ The sequence of Custody Transfers tracking goods between custodians before reach
 
 ## Volunteer Operations Terms
 
-*Added per Stage 7B Repository Remediation, closing Major Finding M-4.*
-
 **Volunteer Profile**
 The record of a volunteer's affiliation, skills, languages, certifications, training, and availability.
 
@@ -403,8 +384,6 @@ The record of a volunteer's affiliation, skills, languages, certifications, trai
 The operational association between a volunteer and a task (a registration, a verification activity, a delivery event) they are responsible for carrying out.
 
 ## Donor & Resource Terms
-
-*Added per HKMP Stage 8D Governance Integration, ratifying the Stage 8B/8C implementation.*
 
 **Donor Profile**
 The record of a person's or organisation's giving relationship with Khidmat — never an independent identity. Attaches behind an existing Person or Organisation record, mirroring how Volunteer Profile attaches behind the shared Actor (see Volunteer Profile, above).
@@ -425,10 +404,10 @@ The tracked instance of a Resource: a specific quantity, in a specific condition
 A physical space (warehouse, distribution center, cold-chain facility, temporary storage site, or mobile storage unit) holding Inventory Items. Not a software or database concept.
 
 **Resource Allocation**
-The decision that reserves or commits a specific Inventory Item to a Program or a Case Plan, before delivery. Distinct from delivery itself, which remains Support Delivery's Delivery Event — see `support-delivery/ontology/relationships.yaml#delivery_event_fulfilled_from_resource_allocation`.
+The decision that reserves or commits a specific Inventory Item to a Program or a Case Plan, before delivery. Distinct from delivery itself, which remains Support Delivery's Delivery Event.
 
 **Islamic Giving**
-Seven distinct, canonically defined charitable-giving forms recognized in this knowledge layer: Zakat, Sadaqah, Sadaqah Jariyah, Waqf, Fidya, Kaffarah, and Qurbani. Each has its own obligation basis and restriction shape; none is a synonym or regional alias for another. See `donor-resource/taxonomy/islamic-giving.yaml`.
+Seven distinct, canonically defined charitable-giving forms recognized in this knowledge layer: Zakat, Sadaqah, Sadaqah Jariyah, Waqf, Fidya, Kaffarah, and Qurbani. Each has its own obligation basis and restriction shape; none is a synonym or regional alias for another.
 
 **Zakat-Eligible Category**
 One of the eight classical recipient categories (asnaf) to which Zakat funds may be distributed. A classification a Program's Eligibility Rule may reference when a Program is zakat-restricted — not a second eligibility engine.
