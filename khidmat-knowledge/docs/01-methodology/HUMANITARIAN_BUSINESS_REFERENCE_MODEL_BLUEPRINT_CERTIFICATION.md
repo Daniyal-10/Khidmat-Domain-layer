@@ -1,8 +1,10 @@
+> **Synchronization note (Repository Provenance Report, Phase 7A.1):** this certification's own blueprint-lifecycle work (amendment application, internal consistency, dependency integrity) was independently re-verified and confirmed genuine — the amendments really are present in the blueprint text. The one caveat: §3's Dependency Integrity check relied on the Business Master Plan being "already frozen and complete," which was later found to be false (the BMP was never authored — see `docs/01-methodology/BUSINESS_MASTER_PLAN.md`). This certification's verdict on the *blueprint document itself* (methodology, not content) still stands; Chapter 0 of the future HBRM cannot actually be authored until the BMP genuinely exists.
+
 # Humanitarian Business Reference Model Blueprint — Freeze Certification
 
 **Type:** Governance certification
 **Certifies:** `HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT.md` (amended state)
-**Reviewed against:** `HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT_ARCHITECTURE_REVIEW.md`, `HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT_RESOLUTION.md`
+**Reviewed against:** `HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT_REVIEW.md`, `HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT_RESOLUTION.md`
 **No document modified by this certification.**
 **Date:** 2026-07-22
 

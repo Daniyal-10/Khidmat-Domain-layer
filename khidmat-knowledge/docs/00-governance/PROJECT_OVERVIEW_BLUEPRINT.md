@@ -1,6 +1,6 @@
 # Blueprint: Khidmat AI Project Overview
 
-This blueprint acts as the Knowledge Extraction Architecture for the `KHIDMAT_AI_PROJECT_OVERVIEW.md` document. The human architects must answer the interview questions within each section. Once populated, this single master document will contain the density of knowledge required to automatically generate the Vision, Constitution, Philosophy, Principles, Business Master Plan, and Humanitarian Business Reference Model.
+This blueprint acts as the Knowledge Extraction Architecture for the `PROJECT_OVERVIEW.md` document. The human architects must answer the interview questions within each section. Once populated, this single master document will contain the density of knowledge required to automatically generate the Vision, Constitution, Philosophy, Principles, Business Master Plan, and Humanitarian Business Reference Model.
 
 ---
 

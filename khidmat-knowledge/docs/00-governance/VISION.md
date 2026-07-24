@@ -6,8 +6,8 @@ status: Normative
 owner: Khidmat Governance Board
 reviewers: Core Architecture Team
 created: 2026-07-22
-last_updated: 2026-07-22
-depends_on: None
+last_updated: 2026-07-24
+depends_on: docs/00-governance/PROJECT_OVERVIEW.md (v1.0)
 consumed_by: All Downstream Documents
 layer: 00-governance
 domain: Foundation
@@ -32,11 +32,11 @@ Khidmat AI is fundamentally different. It is not an application, a case manageme
 
 The defining philosophy of Khidmat AI is a strict, unyielding sequence of operations:
 
-**Knowledge ➔ Understanding ➔ Reasoning ➔ Automation**
+**Knowledge ➔ Understanding ➔ Reasoning ➔ Responsible Action**
 
-To automate an action without first achieving a profound understanding of its context is a dereliction of humanitarian duty. In the pursuit of scale and efficiency, automation divorced from deep knowledge risks compounding harm, erasing nuance, and further marginalizing the vulnerable. 
+To act without first achieving a profound understanding of context is a dereliction of humanitarian duty. Automation is one possible mechanism for carrying out Responsible Action — never the stage itself — and automation divorced from deep knowledge risks compounding harm, erasing nuance, and further marginalizing the vulnerable.
 
-For this reason, Khidmat AI mandates that humanitarian intelligence must unconditionally precede humanitarian automation. Deep knowledge, verifiable evidence, and rooted trust are the non-negotiable foundations of this infrastructure. Intelligent systems must first achieve a canonical understanding of a community’s reality before they are permitted to evaluate, suggest, orchestrate, or automate any intervention.
+For this reason, Khidmat AI mandates that humanitarian intelligence must unconditionally precede humanitarian action. Deep knowledge, verifiable evidence, and rooted trust are the non-negotiable foundations of this infrastructure. Intelligent systems must first achieve a canonical understanding of a community's reality before they are permitted to evaluate, suggest, orchestrate, or act upon any intervention — whether that action is carried out by a human or automated.
 
 ## The Future We Architect
 

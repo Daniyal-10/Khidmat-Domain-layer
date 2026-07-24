@@ -1,7 +1,7 @@
 # Humanitarian Business Reference Model Blueprint — Resolution
 
 **Type:** Governance resolution
-**Resolves:** Every Required Change and Open Question raised in `HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT_ARCHITECTURE_REVIEW.md`
+**Resolves:** Every Required Change and Open Question raised in `HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT_REVIEW.md`
 **Subject blueprint:** `HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT.md` (unmodified by this document)
 **Date:** 2026-07-22
 

@@ -1,5 +1,7 @@
 # KHIDMAT AI Architecture Review
 
+> **ARCHIVED (docs/98-archive), historical record only.** This 2026-07-22 review diagnosed the split between the ontology-engineering track and the (then-new) documentation operating system, and recommended writing PHILOSOPHY.md/PRINCIPLES.md next. That diagnosis led directly to the Project Overview interview process; its questions are now answered far more thoroughly by `docs/00-governance/KHIDMAT_AI_PROJECT_OVERVIEW.md` v1.0. Retained for institutional memory, not as active guidance.
+
 **Reviewer role:** Independent systems architect
 **Scope:** Read-only review. No documents rewritten, no architecture invented, no ontology redesigned.
 **Date of review:** 2026-07-22
