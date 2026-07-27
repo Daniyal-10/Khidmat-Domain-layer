@@ -1,18 +1,20 @@
 ---
 id: DECISION-BRIEF-01
 title: Human Owner Decision Brief — CL-001 and CL-002
-status: Decision support only — no recommendation made, no decision recorded
+status: Decisions rendered (2026-07-27). See CONTRADICTION_LOG.md.
 covers: [CL-001, CL-002]
 source_dossiers: [TD-01]
 created: 2026-07-24
-governed_by: ../BUSINESS_DISCOVERY_BLUEPRINT.md
+governed_by: ../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md
 ---
 
 # Human Owner Decision Brief 01
 
+> **NOTE:** The Human Owner rendered final decisions for CL-001 and CL-002 on 2026-07-27. This brief is retained for historical context. See `CONTRADICTION_LOG.md` for the official resolution.
+
 **Purpose:** prepare the Human Owner to resolve `CONTRADICTION_LOG.md` entries CL-001 and CL-002. This brief restates each contradiction, the evidence gathered, and the implications of each possible path — it does not recommend one, does not decide, and does not modify the Contradiction Log or any repository document. Per the checkpoint review, further web research cannot resolve either item, because both concern reconciling Khidmat's own prior internal artifacts against each other, not an open question about humanitarian reality.
 
-**Once a decision is made:** recording it is a governance action outside this brief's scope. `docs/80-decisions/README.md` scopes that directory to exactly this kind of chronological decision record (ADR/RFC/KDR) — the natural next step, not performed here.
+**Once a decision is made:** recording it is a governance action outside this brief's scope. `[Deleted 80-decisions dir]` scopes that directory to exactly this kind of chronological decision record (ADR/RFC/KDR) — the natural next step, not performed here.
 
 ---
 
@@ -24,8 +26,8 @@ Should "Programme" and "Organisation" be treated as one combined business concep
 
 ### 2. Which internal documents disagree, and how
 
-- **`docs/02-architecture/KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §4** (the "Actors and Operational Roles" table) lists a single combined row: *"Programme / Organisation — Defines the assistance actually available, the eligibility criteria, and the accountability structure the case operates within."* One row, one description, no distinction drawn between the implementing body and the initiative it runs.
-- **`docs/90-reports/Khidmat_Knowledge_Layer_Status_Report.html`** (a report describing a prior, now-archived ontology-drafting effort) lists `organisation` and `program` as two of eight separate canonical entities, with a stated relationship between them ("Programme funded/implemented by an Organisation").
+- **`docs/98-archive/execution_cleanup/BUSINESS_ARCHITECTURE_BLUEPRINT.md` §4** (the "Actors and Operational Roles" table) lists a single combined row: *"Programme / Organisation — Defines the assistance actually available, the eligibility criteria, and the accountability structure the case operates within."* One row, one description, no distinction drawn between the implementing body and the initiative it runs.
+- **`[Deleted prior report]`** (a report describing a prior, now-archived ontology-drafting effort) lists `organisation` and `program` as two of eight separate canonical entities, with a stated relationship between them ("Programme funded/implemented by an Organisation").
 
 Both documents are internal and pre-date this Business Discovery phase; neither was authored with the other in view at the time of writing (confirmed during TD-01's Tier C pass — this is a reconciliation gap, not a newly introduced conflict).
 
@@ -40,19 +42,19 @@ Both Findings lean toward "distinct," but neither is a primary source stating "O
 
 ### 4. What each possible decision would imply
 
-- **Treat them as one combined concept** (ratify `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §4's framing; the archived Status Report's split entities are superseded): keeps V1's actor model simple — one row, one concept — and requires no edit to the currently-referenced business logic document.
-- **Treat them as two distinct concepts** (ratify the archived report's structure, aligned with external evidence): requires revising `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §4's table row into two entries with a stated relationship between them, and requires that relationship (e.g., "funds," "implements") to itself be named.
+- **Treat them as one combined concept** (ratify `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §4's framing; the archived Status Report's split entities are superseded): keeps V1's actor model simple — one row, one concept — and requires no edit to the currently-referenced business logic document.
+- **Treat them as two distinct concepts** (ratify the archived report's structure, aligned with external evidence): requires revising `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §4's table row into two entries with a stated relationship between them, and requires that relationship (e.g., "funds," "implements") to itself be named.
 - **Defer:** leave both documents standing as-is, and let whichever BMP chapter first needs this distinction (Chapter 1's Ecosystem narrative, or later Chapter 4's Business Capabilities, which BLB §16 already names "Programs (eligibility, cycles, enrollment, budget, reporting)" as a planned-but-undelivered domain) resolve it at that point.
 
 ### 5. Risks of each option
 
 - **Combined-concept option:** diverges from every external source examined without a documented reason; carries a rework risk if the planned Programs domain (BLB §16) later needs the split anyway, since eligibility/cycles/enrollment/budget more naturally attach to a Programme than to an Organisation as a whole.
-- **Distinct-concepts option:** requires editing `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md`, a document already flagged in its own header as "not yet synchronized" against the Overview/Constitution — this would be an additional, separate edit to an already-open item, not a clean one-line fix. Also carries a scope risk worth naming: defining the Organisation–Programme relationship precisely edges toward an ontology-shaped decision (a relationship between two concepts), which is a decision this project's own methodology reserves for Ontology Design, not for a Business Discovery contradiction resolution — the Human Owner may want to resolve only the naming/conflation question here and explicitly leave relationship mechanics for later.
+- **Distinct-concepts option:** requires editing `BUSINESS_ARCHITECTURE_BLUEPRINT.md`, a document already flagged in its own header as "not yet synchronized" against the Overview/Constitution — this would be an additional, separate edit to an already-open item, not a clean one-line fix. Also carries a scope risk worth naming: defining the Organisation–Programme relationship precisely edges toward an ontology-shaped decision (a relationship between two concepts), which is a decision this project's own methodology reserves for Ontology Design, not for a Business Discovery contradiction resolution — the Human Owner may want to resolve only the naming/conflation question here and explicitly leave relationship mechanics for later.
 - **Defer option:** does not remove the cost, only postpones it — and the Phase Review checkpoint already flagged Chapter 4 (Capabilities) and Chapter 8 (Governance & Authority Boundaries) as the chapters most likely to need this distinction, so deferral risks the same question resurfacing, unresolved, at a point where more work already depends on an answer.
 
 ### 6. Downstream artifacts affected
 
-BMP Chapter 1 (Ecosystem) directly; transitively Chapter 4 (Business Capabilities) and Chapter 8 (Governance & Authority Boundaries), per the Phase Review's own flagged watch-item; the eventual Humanitarian Business Reference Model's Organisation and/or Programme entries; `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §4 (if the distinct-concepts option is chosen); the archived Status Report's standing (if the combined-concept option is chosen, its split-entity structure would need to be explicitly marked superseded rather than left ambiguous).
+BMP Chapter 1 (Ecosystem) directly; transitively Chapter 4 (Business Capabilities) and Chapter 8 (Governance & Authority Boundaries), per the Phase Review's own flagged watch-item; the eventual Humanitarian Business Reference Model's Organisation and/or Programme entries; `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §4 (if the distinct-concepts option is chosen); the archived Status Report's standing (if the combined-concept option is chosen, its split-entity structure would need to be explicitly marked superseded rather than left ambiguous).
 
 ### 7. Evidence sufficiency
 
@@ -68,9 +70,9 @@ Should "Donor" be modeled as an actor at all — and if so, is its current absen
 
 ### 2. Which internal documents disagree, and how
 
-- **`KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §4 and §17** state plainly: *"Donors and the resource-supply side are intentionally not V1 actors"* and list *"The donor / resource-supply side and donor–need matching"* under "Explicitly Out of Scope for V1."
+- **`BUSINESS_ARCHITECTURE_BLUEPRINT.md` §4 and §17** state plainly: *"Donors and the resource-supply side are intentionally not V1 actors"* and list *"The donor / resource-supply side and donor–need matching"* under "Explicitly Out of Scope for V1."
 - **`docs/00-governance/GLOSSARY.md`** defines a detailed **Donor Profile** entry: *"The record of a person's or organisation's giving relationship with Khidmat... Attaches behind an existing Person or Organisation record, mirroring how Volunteer Profile attaches behind the shared Actor."* This entry treats Donor as attaching to the same shared Actor concept Volunteer does.
-- **`docs/90-reports/Khidmat_Knowledge_Layer_Status_Report.html`** lists `donor` inside its `person_roles` controlled vocabulary, alongside `beneficiary`, `registrant`, and `proxy`.
+- **`[Deleted prior report]`** lists `donor` inside its `person_roles` controlled vocabulary, alongside `beneficiary`, `registrant`, and `proxy`.
 
 The Business Logic Blueprint excludes Donor from the actor set; the Glossary and the archived Status Report both already treat Donor as an actor-adjacent or actor-classified concept.
 
@@ -83,8 +85,8 @@ From TD-01, Tier B:
 ### 4. What each possible decision would imply
 
 - **Exclude Donor from the actor model entirely** (for both V1 delivery and the full conceptual model): treats GLOSSARY's Donor Profile entry and the archived Status Report's `person_roles` vocabulary as premature and requiring removal or deferral until a Donor & Resource domain is actually built.
-- **Include Donor as a conceptual actor, with V1 delivery explicitly scoped to exclude donor-facing features**: ratifies `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md`'s exclusion as a statement about what V1 *builds*, not about what donors *are* — requires a small wording clarification in §4/§17 to remove the current ambiguity between the two readings, but preserves the definitional work already done in GLOSSARY.
-- **Defer:** leave both documents as currently worded, and treat the distinction as immaterial until the Donor & Resource domain (already named as planned in `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §16) is actually scheduled for work.
+- **Include Donor as a conceptual actor, with V1 delivery explicitly scoped to exclude donor-facing features**: ratifies `BUSINESS_ARCHITECTURE_BLUEPRINT.md`'s exclusion as a statement about what V1 *builds*, not about what donors *are* — requires a small wording clarification in §4/§17 to remove the current ambiguity between the two readings, but preserves the definitional work already done in GLOSSARY.
+- **Defer:** leave both documents as currently worded, and treat the distinction as immaterial until the Donor & Resource domain (already named as planned in `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §16) is actually scheduled for work.
 
 ### 5. Risks of each option
 
@@ -94,7 +96,7 @@ From TD-01, Tier B:
 
 ### 6. Downstream artifacts affected
 
-BMP Chapter 1 (Ecosystem) and Chapter 2 (Stakeholder Interests and Tensions — TD-02's donor-accountability tension is a direct downstream consumer of however this is resolved); `GLOSSARY.md`'s Donor Profile entry; `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §4/§17 wording; the eventual Donor & Resource domain and any future HBRM entry for Donor.
+BMP Chapter 1 (Ecosystem) and Chapter 2 (Stakeholder Interests and Tensions — TD-02's donor-accountability tension is a direct downstream consumer of however this is resolved); `GLOSSARY.md`'s Donor Profile entry; `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §4/§17 wording; the eventual Donor & Resource domain and any future HBRM entry for Donor.
 
 ### 7. Evidence sufficiency
 

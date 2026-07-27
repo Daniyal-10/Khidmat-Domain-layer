@@ -6,7 +6,7 @@ feeds_bmp_chapter: "Chapter 2 — Stakeholder Interests and Tensions (BUSINESS_M
 source_topic: "BUSINESS_MASTER_PLAN_BLUEPRINT.md §7, 'For Chapter 2 (Stakeholder tensions)'"
 opened: 2026-07-24
 last_updated: 2026-07-24
-governed_by: ../BUSINESS_DISCOVERY_BLUEPRINT.md
+governed_by: ../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md
 depends_on_dossier: TD-01 (feeds the actor map this topic's tensions are named between)
 ---
 
@@ -40,7 +40,7 @@ Per BMP Blueprint §6, Chapter 2's stated dependency is Chapter 1 ("requires the
 |---|---|---|
 | **A — Practitioner evidence** | Direct elicitation on tensions practitioners have actually faced (e.g., a safety flag vs. speed of assistance; a donor reporting requirement vs. a beneficiary's preference for privacy). | Same structural infeasibility as TD-01's Tier A Disposition — not re-litigated here; carried forward as a standing constraint on this discovery process generally, not re-opened per topic. |
 | **B — Sector standards and bodies** | Core Humanitarian Standard's own nine Commitments (already identified during TD-01 Tier B collection as bearing on accountability) likely name or imply sector-recognized tensions (e.g., timeliness vs. quality, accountability to donors vs. accountability to affected people); Sphere's Protection Principles. | Identified via TD-01 spillover; not yet reviewed specifically for tension content. |
-| **C — Project-internal ratified artifacts** | `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §3 ("Foundational Principles" — epistemic humility, consent/dignity/do-no-harm, human oversight, accountability in both directions, fairness/integrity) is candidate material: several of these principles are stated in a form that implies an underlying tension the principle resolves in one direction (e.g., "claims, not facts" implies a speed-vs-certainty tension). `PROJECT_OVERVIEW.md` Ch4.2 ("Dangers of Premature Automation") and Ch8 ("System Ethics") are similarly candidate sources. No ADR log exists in this repository (confirmed by direct search during TD-01), which is itself the expected answer to part of Q2, not an omission to fix. | Identified; internal, immediate retrieval possible. |
+| **C — Project-internal ratified artifacts** | `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §3 ("Foundational Principles" — epistemic humility, consent/dignity/do-no-harm, human oversight, accountability in both directions, fairness/integrity) is candidate material: several of these principles are stated in a form that implies an underlying tension the principle resolves in one direction (e.g., "claims, not facts" implies a speed-vs-certainty tension). `PROJECT_OVERVIEW.md` Ch4.2 ("Dangers of Premature Automation") and Ch8 ("System Ethics") are similarly candidate sources. No ADR log exists in this repository (confirmed by direct search during TD-01), which is itself the expected answer to part of Q2, not an omission to fix. | Identified; internal, immediate retrieval possible. |
 | **D — Secondary literature** | Humanitarian-sector literature on accountability tensions (donor accountability vs. beneficiary accountability), the "aid effectiveness vs. speed" literature, and localization-vs-standardization debates (directly relevant given TD-01's Islamic-giving/informal-actor findings, which already suggest a standardization-vs-local-variation axis). | Identified as likely productive, given TD-01's Tier D search already surfaced adjacent material (e.g., locally-led humanitarianism and donor risk-appetite tensions in the Sudan case study). Not yet retrieved for this topic specifically. |
 | **E — General/unverified** | Not used for Findings; hypothesis-generation only. | N/A. |
 
@@ -50,11 +50,11 @@ Re-checked against the Business Discovery Blueprint before Collection began: Q1 
 
 ## Tier C Collection (Step 2)
 
-Reviewed: `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §3 (Foundational Principles); `PROJECT_OVERVIEW.md` Chapters 1, 2, 4, 5, 8; confirmed (again) that `docs/80-decisions/` contains no ADR content, only a scope-defining README.
+Reviewed: `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §3 (Foundational Principles); `PROJECT_OVERVIEW.md` Chapters 1, 2, 4, 5, 8; confirmed (again) that `[Deleted 80-decisions dir]` contains no ADR content, only a scope-defining README.
 
 **Observations** (Tier C — evidence of this project's own stated intent, not independent evidence of humanitarian reality; each is a direct textual observation, not yet an inference):
 
-- **TC2-1.** `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §3.1 states: *"Everything a registrant tells the system is a claim, not a confirmed fact... Verification converts claims into findings."*
+- **TC2-1.** `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §3.1 states: *"Everything a registrant tells the system is a claim, not a confirmed fact... Verification converts claims into findings."*
 - **TC2-2.** §3.2 states: *"Safety concerns (safeguarding, domestic violence, minors without guardians) take precedence over process."*
 - **TC2-3.** §3.3 states: *"The system supports human decisions; it does not replace them... Consequential decisions... remain human decisions with a human accountable for them."*
 - **TC2-4.** §3.4 states: *"Accountability runs in both directions. The system is accountable to the people it serves, not only to the organisation."*

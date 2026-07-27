@@ -4,9 +4,9 @@ title: Business Discovery Phase Review — Checkpoint 1 (TD-01–TD-03)
 status: Retrospective review — not a certifying document, not a gate that itself unblocks BMP authoring
 reviewed_dossiers: [TD-01, TD-02, TD-03]
 reviewed_registers: [ASSUMPTION_REGISTER.md, CONTRADICTION_LOG.md]
-reviewed_methodology: ../BUSINESS_DISCOVERY_BLUEPRINT.md (observed against, not modified)
+reviewed_methodology: ../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md (observed against, not modified)
 created: 2026-07-24
-governed_by: ../BUSINESS_DISCOVERY_BLUEPRINT.md
+governed_by: ../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md
 ---
 
 # Business Discovery Phase Review — Checkpoint 1
@@ -64,7 +64,7 @@ No assumption is resolved or removed here; all six remain open exactly as logged
 
 The Contradiction Log currently holds two entries (CL-001, CL-002), both logged during TD-01's Tier C pass, both still open, neither touched by TD-02 or TD-03 (both dossiers explicitly checked and found no new contradiction).
 
-**Are they isolated, or do they reveal broader uncertainty?** A specific, checkable observation: both entries trace to the same underlying cause — two internal, pre-discovery artifacts (`KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` and the archived `docs/90-reports/` ontology material) that were authored at different times without a reconciliation pass, not to any disagreement about humanitarian reality itself. Per §3's pattern above, no external Tier B/D source has ever contradicted another external source across three topics of collection. This suggests the uncertainty currently on record is narrower than "the project doesn't know what's true of the world" — it is closer to "the project has two un-reconciled prior drafts of its own thinking." That is a real and worth-tracking form of uncertainty, but a different, more tractable kind than a genuine disagreement about humanitarian practice would be.
+**Are they isolated, or do they reveal broader uncertainty?** A specific, checkable observation: both entries trace to the same underlying cause — two internal, pre-discovery artifacts (`BUSINESS_ARCHITECTURE_BLUEPRINT.md` and the archived `docs/90-reports/` ontology material) that were authored at different times without a reconciliation pass, not to any disagreement about humanitarian reality itself. Per §3's pattern above, no external Tier B/D source has ever contradicted another external source across three topics of collection. This suggests the uncertainty currently on record is narrower than "the project doesn't know what's true of the world" — it is closer to "the project has two un-reconciled prior drafts of its own thinking." That is a real and worth-tracking form of uncertainty, but a different, more tractable kind than a genuine disagreement about humanitarian practice would be.
 
 **Should a future discovery task investigate them explicitly?** Not as a dedicated task — neither entry is a question further evidence-gathering can resolve; both require a Human Owner decision about which internal artifact's framing to keep, which is a governance action, not a discovery one. What *should* happen going forward: future dossiers (starting with TD-04) should continue actively watching for whether the same Programme/Organisation ambiguity resurfaces — it plausibly will, especially once Chapter 4 (Capabilities) or Chapter 8 (Governance & Authority Boundaries) are reached, since both are naturally organized around exactly this distinction.
 

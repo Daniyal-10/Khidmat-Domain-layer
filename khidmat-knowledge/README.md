@@ -21,8 +21,9 @@ governance source.
 Khidmat AI is a **Humanitarian Intelligence Infrastructure** — not an application, a
 registration platform, a donation platform, or an NGO CRM (Project Overview,
 Chapter 3.1). This repository is the canonical humanitarian knowledge layer that
-infrastructure is built on: ontology, business methodology, and governance content,
-not application code or runtime behavior.
+infrastructure is built on.
+
+**Strategic Objective:** The ultimate objective of this repository is the successful design of the **Khidmat Humanitarian Ontology**. The repository is NOT "doing Business Discovery" as an end in itself; Business Discovery and all other methodological phases are preparation to provide validated inputs into Ontology Design. The immediate architectural goal is to design the Domain Primitives and Ontology Layers, after which work will pause for Project Lead approval.
 
 ---
 

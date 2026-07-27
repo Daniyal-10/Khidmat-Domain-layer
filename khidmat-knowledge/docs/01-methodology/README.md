@@ -7,11 +7,17 @@ Methodology. Frameworks, standards of practice, and rules for engineering.
 - **In Scope**: Business Master Plan, Discovery frameworks, Ontology engineering rules.
 - **Out of Scope**: Actual Domain logic, Actual Ontologies, Code.
 
+## Strategic Alignment
+The ultimate objective of this project is the successful design of the **Khidmat Humanitarian Ontology**.
+Every methodology document in this directory exists solely to improve Ontology Design quality. The Business Discovery process is preparation work, meant to ground the ontology in validated humanitarian business reality. The methodology enforces a strict sequence: 
+`Business Discovery ↓ Business Master Plan ↓ HBRM ↓ Business Architecture ↓ Domain Discovery ↓ Ontology Design`. 
+Ontology engineering and downstream schemas are strictly forbidden until the Ontology Design is complete and approved.
+
 ## Upstream Dependencies
 - 00-governance
 
 ## Downstream Consumers
-- 02-architecture, 03-domains, 04-semantics
+- (None for now, awaiting future pipeline stages)
 
 ## Methodology Lifecycle (corrected — Repository Canonicalization Audit)
 
@@ -24,9 +30,6 @@ The lifecycle for every methodology in this directory has two distinct phases, n
 A certification issued for a document whose content does not exist is void (Constitution Article XVI).
 
 ## Contents (flat structure — every methodology document lives directly in this directory)
-- `BUSINESS_DISCOVERY_BLUEPRINT.md` — draft, v0.1.0. Governs the evidence-gathering activity that precedes/feeds Business Master Plan authoring (elaborates BMP Blueprint §7/§9; does not amend Article XVI — see its §2 for the open governance question). Not the same document as `DOMAIN_DISCOVERY.md` below.
-- `BUSINESS_MASTER_PLAN_BLUEPRINT.md` — active methodology; `BUSINESS_MASTER_PLAN.md` (its target) not yet authored.
-- `HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT.md` + its Architecture Review, Resolution, and Freeze Certification — complete, internally consistent blueprint lifecycle; `HUMANITARIAN_BUSINESS_REFERENCE_MODEL.md` (its target) not yet authored.
-- `ONTOLOGY_DESIGN_BLUEPRINT.md` — draft, v0.1.0.
-- `ONTOLOGY_DESIGN.md` — draft, v0.1.0. The Ontology Design *Framework* (how ontology is designed), authored per the Blueprint above, with that Blueprint's eight design forks carried forward unresolved (see its own §6). Contains no ontology content, entities, or schemas, and per its own Definition of Done (§5) cannot be finalized until the Business Master Plan and HBRM exist. Not to be confused with a future Humanitarian Ontology document, which would model actual concepts and does not yet exist.
-- `BUSINESS_ARCHITECTURE.md`, `DOMAIN_DISCOVERY.md` (post-Business-Architecture domain *sequencing* decision — distinct from Business Discovery above), `KNOWLEDGE_LAYER.md`, `ONTOLOGY_ENGINEERING.md`, `TAXONOMY_ENGINEERING.md` — empty stubs, not yet authored.
+- `BUSINESS_MASTER_PLAN_BLUEPRINT.md` — active blueprint needed for the current pipeline stage execution.
+- `ONTOLOGY_DESIGN.md` — canonical methodology/framework document.
+- `discovery/` — active directory containing the discovery dossiers required to author the Business Master Plan.

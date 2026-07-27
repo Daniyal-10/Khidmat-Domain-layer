@@ -1,390 +1,290 @@
 ---
 id: DOC-METH-006
-title: Ontology Design Framework
-version: 0.1.0
-status: Draft — open forks pending client ratification (see §6)
+title: Khidmat Ontology Design
+version: 1.0.0
+status: Canonical — governs all ontology design work
 owner: Khidmat Governance Board
-reviewers: Core Architecture Team
+reviewers: Project Lead, Domain Approval Authority
 created: 2026-07-24
-last_updated: 2026-07-24
-depends_on: [ONTOLOGY_DESIGN_BLUEPRINT.md, "BUSINESS_MASTER_PLAN.md (not yet authored)", "HUMANITARIAN_BUSINESS_REFERENCE_MODEL.md (not yet authored)"]
-consumed_by: [Ontology Engineering, Architecture Rules Register, future domain ontology authors]
+last_updated: 2026-07-27
+depends_on: docs/00-governance/PROJECT_OVERVIEW.md (v1.0, primary source of truth), docs/00-governance/CONSTITUTION.md (v1.0)
+supporting_references: KHIDMAT_AI.md, FOUNDATION.md, GLOSSARY.md, discovery dossiers TD-01 through TD-06
+consumed_by: All future ontology design, ontology engineering, and architecture work
 layer: 01-methodology
-domain: Ontology Design Framework
-tags: [ontology, methodology, framework, design, draft]
+domain: Ontology Design
+tags: [ontology, design, canonical, framework]
+supersedes: ONTOLOGY_DESIGN.md v0.1.0 (draft framework)
 ---
 
-# ONTOLOGY DESIGN FRAMEWORK
+# KHIDMAT ONTOLOGY DESIGN
 
-**Type:** Framework document (Artifact A) — explains *how* ontology is designed. It is not the Humanitarian Ontology (Artifact B) and does not model humanitarian concepts.
-**Relationship to `ONTOLOGY_DESIGN_BLUEPRINT.md`:** that document is the blueprint that governs this document's authoring — it reasoned through each of the seven sections below, recommended a position on eight genuine design forks, and explicitly deferred final ratification of those forks to the client. This document consolidates that reasoning into the canonical framework shape, under the required section structure, **without silently resolving any fork the Blueprint left open**. Where a fork remains open, it is marked as such below and listed again in §6.
-**Status honesty:** this document exists in draft form so the framework's shape can be reviewed as a whole. It is not frozen, not certified, and must not be treated as authorizing any actual concept modeling — no Entity, Facet, Relationship, Constraint, State, Event, Cognition construct, Coordination Pattern, or taxonomy value appears anywhere below. Per the project's own architecture-readiness assessment, Ontology Design content-authoring itself cannot legitimately begin until the Business Master Plan and Humanitarian Business Reference Model exist — this Framework is the *method* that will govern that future authoring, prepared in advance, not an exemption from that sequencing.
+## Preamble — What This Document Is
 
----
+This document defines **how the Khidmat Humanitarian Ontology will be designed, discovered, validated, and governed**. It is the canonical design reference for all future ontology work.
 
-## 1. Purpose of This Framework
+It deliberately contains **no ontology content**. No entity, relationship, facet, state, event, constraint, taxonomy value, classification of any business concept, or schema appears anywhere in it. Where a humanitarian concept is mentioned, it is mentioned only to illustrate that a design question exists — never to answer it. The ontology itself will be authored later, under this document's rules, and only after the approval gates of Constitution Article XVI are cleared.
 
-Every future domain ontology within Khidmat — whatever humanitarian domain it eventually models — must be designed the same way, or the project inherits ontology engineering's most expensive failure mode: concepts shaped inconsistently by whoever happens to be modeling that week, discovered only once enough of them exist to collide. This Framework exists to fix, once, the *shape* every ontology must take and the *decisions* that must be made about any candidate concept before it is modeled — never the concepts themselves. Section 2 explains why the required progression is ordered the way it is; Section 3 designs each of the seven parts individually; Section 4 makes the true authoring dependency between them explicit; Section 5 states what "done" means for an ontology built under this Framework; Section 6 lists what remains genuinely undecided.
+**Position in the authority hierarchy (Constitution, Articles XIV–XV).** This document is subordinate to `PROJECT_OVERVIEW.md` and `CONSTITUTION.md`. It originates no new philosophy, principle, or mandate; every rule below elaborates or operationalizes what those documents already establish, and cites its source. It is supreme over all downstream ontology design content, ontology engineering, and architecture: no later document may override or reinterpret it.
 
-**Governing test for this document's own content, applied throughout:** could this statement be true of *any* competently designed humanitarian ontology, independent of which specific humanitarian domain or Khidmat implementation detail is eventually modeled? If yes, it belongs here. If it only makes sense with reference to a specific concept, domain, or engineering choice, it does not.
+**Relationship to prior work.** This document supersedes the v0.1.0 draft framework. Ontology engineering artifacts produced before the Architectural Reset — including any inherited vocabulary carrying enumerated value sets, machine-format relation names, or storage and derivation decisions — are **not binding inputs** to ontology design. They may be consulted as candidate evidence of past thinking, but every concept they name must re-enter through the discovery, evidence, and promotion discipline defined here, exactly as if it had never been modeled. Design must precede engineering (`FOUNDATION.md`, "Why ontology design before ontology engineering"); nothing engineered earlier is grandfathered past that sequence.
 
----
-
-## 2. The Required Progression, and Why Its Presentation Order Differs From Its Authoring Order
-
-The client's required structure is a **presentation** order — Domain Primitive, Ontology Layers (Facets, Entities, Relationships, Constraints, States, Events, Cognition, Coordination Patterns), Pillars, Architecture Rules, Ground Truth Reviews, Evidence, Governance — and this document follows it exactly as a table of contents. It is not, however, the order in which these seven parts can be correctly *authored*, because several later-listed parts structurally presuppose earlier ones. Section 4 makes this dependency explicit; each section below states its own position in both orders where they diverge.
-
-One idea has to be stated before any section is designed individually, because it shapes all seven: **this framework must let the ontology represent not only humanitarian reality, but the system's own uncertainty about that reality.** A model of Household, Need, and Assistance alone would be an ordinary humanitarian data model. What this Framework exists to guarantee is that the resulting ontology can also represent what is claimed versus verified, how confident the system is entitled to be, where a human must decide instead, and how a universal rule differs from a locally-variable one. This is why Cognition, Ground Truth Reviews, and Evidence are required sections here, not optional extensions — they exist because the project's founding constraint is epistemic humility, not merely domain coverage.
+**The single idea that shapes everything below.** The mandate (Overview Ch. 2.1, Article I) requires trustworthy, evidence-based understanding of humanitarian reality *before* any decision, recommendation, or automation. An ontology serving that mandate cannot model only what is true of the world; it must also model **what the system is entitled to believe about the world** — what is claimed versus verified, how confident a conclusion is, where uncertainty remains, and where a human must decide (Overview Ch. 2.3, 5.2, 7.2). This is why the required structure contains layers — Cognition, Evidence, Ground Truth Reviews — that a conventional ontology design would omit. They are not extensions. They are the point.
 
 ---
 
-## 3. Section-by-Section Framework Design
+## 1. Domain Primitives
 
-### 3.1 Domain Primitive
+### 1.1 What a Domain Primitive Is
 
-**Purpose.** The smallest, closed set of foundational categories that every later concept — every Entity, Facet, Relationship, Constraint, State, Event, Cognition construct, and Coordination Pattern — must be classifiable under. Domain Primitives are not concepts in the business-catalogue sense; they are the axes of classification that make every later decision decidable rather than ad hoc.
+A Domain Primitive is one of the small, closed set of **foundational categories of concept** from which the entire ontology is built. A primitive is not a business concept; it is the *kind of thing* a business concept can be. Primitives are the classification axes that make every later modeling decision decidable by rule rather than by the instinct of whoever is authoring that week.
 
-**Responsibilities.** Define a closed (or governance-controlled-extensible) list of abstract kinds of thing a humanitarian concept can be. Give every future author a first, decisive question to answer for any candidate concept: which primitive does this belong to?
+The warrant for this layer comes directly from the Overview (Ch. 5.1): certain forms of knowledge are foundational because *every* humanitarian domain depends on them — the Overview names identity, relationships, evidence, uncertainty, temporal change, and humanitarian context as the minimum structure required to understand reality regardless of domain. Domain Primitives is the design layer where that insight becomes operative: before any domain's concepts are modeled, the ontology must fix the categories that all domains share.
 
-**Inputs.** The Humanitarian Business Reference Model's stable, deduplicated concept catalogue — not to be copied forward as primitives themselves, but to be abstracted one level further: the primitives are the categories those concepts would need to be sorted into, including concepts the HBRM has not catalogued yet because no domain requiring them has activated.
+A primitive answers the first question asked of any candidate concept: *what kind of thing is this?* Everything in every Layer (Section 2) must be classifiable under the primitive set. A concept that cannot be classified under any primitive is either evidence that the concept is not yet understood, or evidence that the primitive set is incomplete — and the second possibility is a foundational governance event (Section 7), never a casual edit.
 
-**Outputs.** A ratified, named list of primitives; a stated rule on whether a concept may belong to more than one primitive at once; a stated rule on whether the list itself is closed or extensible, and under what governance tier an extension would require.
+### 1.2 How Primitives Are Discovered
 
-**Relationships to other sections.** The first gate every candidate concept passes through before entering any Layer (§3.2). Supplies the shared vocabulary the Architecture Rules promotion test (§3.4) is written in terms of. The anchor Ground Truth Reviews (§3.5) checks against when validating whether reality still fits the categories assumed at design time.
+Primitives are **discovered by abstraction from validated business reality, never invented in the abstract**. The discovery procedure is:
 
-**Promotion criteria.** A candidate becomes a ratified Domain Primitive only if: it is genuinely abstract (not itself a business concept a downstream catalogue would define), it is exhaustive enough that no anticipated future concept is structurally homeless, and it is minimal (removing it would leave some class of concept unclassifiable, rather than merely inconvenient to classify).
+1. **Start from evidence, not imagination.** The input material is the validated business knowledge of the project — the discovery dossiers, the resolved Human Owner decisions, and the business foundation documents as they are completed. Primitives are abstracted *from* this material; they are never proposed because a modeling tradition, a textbook upper ontology, or a prior engineering artifact contains them. This is the ontology-design application of "Evidence precedes conclusions" (Article II).
+2. **Ask the kind-question repeatedly.** For each validated business concept, ask *what kind of thing is this?* — and then ask the same question of the answer, until answers stop multiplying and begin repeating. The small set of answers that recur across every humanitarian domain examined is the candidate primitive set. The Overview's own foundational list (identity, relationships, evidence, uncertainty, temporal change, context — Ch. 5.1) predicts roughly where this recursion will stabilize, but the actual set must be *derived*, not copied from that prediction.
+3. **Test each candidate against the Knowledge Foundation Boundary (Article IV).** A primitive must pass the same admission test as any knowledge: would its omission materially change the understanding of humanitarian reality or the quality, safety, fairness, or appropriateness of a humanitarian decision? A category that fails this test is a convenience, not a primitive.
+4. **Test the set as a whole for coverage.** Every currently validated business concept must be classifiable somewhere in the candidate set without forced fit. Any concept left structurally homeless falsifies the set.
 
-**Review criteria.** Before ratification: can every currently-known stable business concept be classified under exactly one (or a stated, bounded set of) primitive without forcing an awkward fit? After ratification, at each Ground Truth Review: has any concept surfaced by real humanitarian practice failed to classify under any existing primitive?
+### 1.3 What Qualifies as a Primitive
 
-**Common failure modes.** Re-declaring specific business nouns (Person, Household, Need) as if they were primitives themselves, rather than abstracting one level further — this duplicates the HBRM's own cataloguing job instead of solving the classification problem Domain Primitives exists to solve. Leaving the list open-ended with no governance tier, which lets primitives multiply the same way uncontrolled Entity subtypes would.
+A candidate qualifies as a Domain Primitive only if it satisfies **all** of the following:
+
+- **Abstract.** It is a category of concept, not itself a concept a business catalogue would define. If a future business glossary could sensibly contain an entry for it, it is too concrete to be a primitive.
+- **Universal across humanitarian domains.** It must be required whether the domain is health, education, shelter, livelihoods, disaster response, or a domain not yet discovered (Overview Ch. 5.1's layering of foundational versus domain-specific knowledge). A category needed by only one domain belongs to that domain, not to the primitive set.
+- **Necessary.** Removing it must leave some class of validated knowledge unclassifiable — not merely awkward to classify. Minimality is a design requirement: every additional primitive multiplies the decisions every future author must make.
+- **Evidence-grounded.** At least one validated business concept must already require it. No primitive may exist speculatively, awaiting a concept that might someday need it.
+- **Independent of organization and technology.** Per the governing principle of Ch. 5.1, a primitive must make sense independent of any specific organization, application, or implementation technology. A category that only makes sense because of how some system stores or processes information is Operational Knowledge and is excluded (Article IV).
+
+### 1.4 Rules Governing the Primitive Set
+
+- **The set is closed.** Once ratified, the primitive list may be extended or amended only through the foundational governance tier (Section 7). An author who encounters a concept that seems to need a new primitive escalates; they do not extend.
+- **One primary classification.** Every concept is classified under exactly one primary primitive. Where a concept genuinely appears to require two, that tension is treated as information — evidence that the concept should be decomposed, or that the primitive set needs review — and is escalated rather than resolved by permitting dual classification. This keeps the primitive layer decisive; a classification system under which everything belongs everywhere decides nothing.
+- **Primitives are checked against reality.** Every Ground Truth Review (Section 5) includes the standing question: has any concept surfaced by real humanitarian practice failed to classify under the existing primitives? A "yes" is a finding of the highest severity this design recognizes.
+
+**This document does not identify the primitives.** Producing the ratified primitive list is the first authoring act of the ontology itself, performed under this framework, from the discovery procedure of §1.2, and approved per Section 7 and Constitution Article XVI (Package B).
 
 ---
 
-### 3.2 Ontology Layers
+## 2. Layers
 
-**Purpose of the Layers container as a whole.** Layers is where the actual modeling of concepts happens. The eight kinds of content it groups — Facets, Entities, Relationships, Constraints, States, Events, Cognition, Coordination Patterns — are structural peers (each is a *kind of thing* a concept can be), distinct from the classification axes above them (Domain Primitive) and the constitutional values and authoring law around them (Pillars, Architecture Rules).
+### 2.0 The Layer System as a Whole
 
-**Authoring order versus presentation order (open fork — see §6, item 2).** The client's presentation order groups Facets before Entities. The recommended *authoring* order is **Entities → Facets → Relationships → States → Events → Constraints → Cognition → Coordination Patterns**, because several sub-layers structurally presuppose earlier ones (a Facet cannot be designed without first knowing what kind of thing it attaches to). This document presents the sub-layers in the client's required order below, and notes each one's authoring-order dependency inline.
+The Layers are the eight kinds of formal thing the ontology is permitted to contain. Every concept admitted to the ontology lives in exactly one layer, is classified under exactly one primitive (§1.4), and got there through the promotion test (§4.2). The layers are peers in one sense — each is a distinct kind of ontological citizen — but they are not independent: several presuppose others, and the movement rules in §2.9 govern how a concept's layer assignment can change as understanding deepens.
 
-#### 3.2.1 Facets
+The Overview's description of humanitarian reality dictates why precisely these eight exist. Reality is **relational** (meaning emerges from relationships, not isolated records — Ch. 5.1), **continuously evolving** (Ch. 5.1), **multidimensional** (every person exists within interconnected layers of context — Ch. 1.2), **rule-bounded but locally variable** (Ch. 6.1's universal capabilities with locally adaptable execution), and — critically — **observed through evidence, under uncertainty** (Ch. 5.2). Entities, Relationships, Facets, States, Events, Constraints, Cognition, and Coordination Patterns are the minimum set of formal kinds needed to represent a reality with exactly those properties. Remove any one, and some property of humanitarian reality the Overview identifies becomes unrepresentable.
 
-**Purpose.** Composable, independently-varying dimensions of an Entity (or, per an open fork, of a Relationship) — the qualifying detail that lets an Entity's situation be described in layers that can be added, revised, or retired independently, without minting a new Entity subtype for every new dimension recognized.
+A dependency note, stated once: the order below is the required presentation order. Authoring the actual ontology content will follow dependency — a dimension cannot be designed before the kind of thing it qualifies exists, a transition cannot be designed before the conditions it transitions between exist. Section 4 (Architecture Rules) makes the authoring dependency binding; this section's order is about meaning, not sequence.
 
-**Responsibilities.** Prevent uncontrolled Entity-subtype proliferation. Carry whatever confidence/provenance model Cognition (§3.2.7) and Evidence (§3.6) require, if the evidence-backed-assertion fork (§6, item 3) is ratified in the affirmative.
+### 2.1 Facets
 
-**Inputs.** An already-defined Entity (or Relationship) type to attach to (authoring dependency — Facets cannot be designed before Entities exist).
+**Purpose.** A Facet is an independently varying **dimension** of something else — a qualification, condition, or aspect that describes part of a thing's situation without being a separate thing itself.
 
-**Outputs.** A named Facet type; its value shape; its own lifecycle rules (added, revised, expired, superseded), stated independently of the Entity's own lifecycle.
+**Why this layer exists.** The Overview establishes that a person exists within many interconnected, continuously changing layers of context (Ch. 1.2), and that two families identical on paper may live in completely different realities. If the only way to express a new dimension of someone's situation were to define a new kind of thing, the ontology would multiply kinds without limit, and each would freeze one moment's understanding into a permanent category. Facets exist so that richness of context can be expressed as *composable, revisable dimensions* — added, revised, superseded, or retired independently, without redefining what the underlying thing fundamentally is.
 
-**Relationships to other sections.** Depends on Entities (§3.2.2) existing first. Is the primary consumer of Evidence (§3.6). Is a primary object Cognition (§3.2.7) reasons about when estimating confidence.
+**How it differs.** A Facet has no identity of its own: it cannot be re-identified across encounters except through the thing it qualifies. The moment a candidate needs to be tracked in its own right over time, it has outgrown this layer (§2.9). A Facet also differs from a State (§2.5): a State is one of an enumerable set of conditions a thing occupies *at a point in its progression*; a Facet is a descriptive dimension that varies continuously and independently of any progression.
 
-**Promotion criteria.** A candidate becomes a Facet, not an Entity, when it has no independent identity or persistence apart from what it qualifies, and it varies independently enough from the Entity's core nature that folding it permanently into that Entity's definition would misrepresent it as fixed rather than revisable.
+**Design obligations.** Because uncertainty, evidence, and competing observations are part of reality itself, not exceptions to be resolved before storage (Ch. 5.1), a Facet is never a bare attribute. Every Facet is designed as an **evidence-bearing assertion**: it must be able to carry its provenance, its time of observation, and its epistemic status (Cognition, §2.7). A dimension of a person's reality that could not answer "who observed this, when, and how sure are we?" would reintroduce exactly the false certainty the mandate exists to prevent.
 
-**Review criteria.** Does this Facet correctly avoid needing its own re-identifiable identity across time? Is its confidence/provenance treatment consistent with every other Facet's, per whatever the ratified position on fork §6.3 turns out to be?
+### 2.2 Entities
 
-**Common failure modes.** Modeling a genuinely re-identifiable, persistent thing as a Facet to avoid the overhead of a new Entity type. Treating a Facet as a bare, unqualified attribute when the project's epistemic-humility commitment requires it to carry confidence and provenance.
+**Purpose.** An Entity is a thing with **independent identity that persists through time** — something the rest of the ontology is *about*, and that must be re-identifiable as the same thing across separate observations, conversations, organizations, and years.
 
-#### 3.2.2 Entities
+**Why this layer exists.** The Overview's central criticism of current systems is that they capture a person as a single point in time rather than as a continuously evolving human journey (Ch. 1.2), and that knowledge resets between programs because nothing persists (Ch. 1.3). Continuity of understanding — the defining change Khidmat exists to make (Ch. 2.1) — is only possible for things that have durable identity. Entities are the anchors of continuity: everything accumulated (dimensions, relationships, history, evidence) accumulates *on* them.
 
-**Purpose.** The things with independent identity that persist through time and that the rest of the ontology is *about* — re-identifiable across separate interactions, separate points in time, separate authors.
+**How it differs.** Identity is the entire test. An Entity is re-identifiable in its own right; a Facet is only findable through what it qualifies; a Relationship exists only between things that already exist; an Event happened once and is never re-identified as "the same event, continuing." For every Entity kind the ontology later defines, the design must state its **identity criteria** — what makes two encounters an encounter with the *same* thing — because without stated criteria, the deduplication and continuity failures of Ch. 1.1 are rebuilt inside the ontology itself.
 
-**Responsibilities.** Establish identity criteria (what makes two instances the same Entity versus two different ones) and each Entity's minimal always-true nature, independent of any Facet that may or may not currently be attached.
+**Design obligations.** Each Entity kind must state: its identity criteria; its minimal always-true nature independent of any currently attached Facet; and its primitive classification. Entity kinds are deliberately few. The default answer to "is this a new kind of Entity?" is *no* — most candidate richness is a Facet, a Relationship, or a State of an existing Entity (§4.2).
 
-**Inputs.** Domain Primitive classification (§3.1) for each Entity type; the HBRM's concept catalogue as candidate material.
+### 2.3 Relationships
 
-**Outputs.** A named Entity type; its identity criteria; its Domain Primitive classification.
+**Purpose.** A Relationship is a **connection between things with identity** — kinship, dependency, membership, provision, participation, proximity — carrying its own meaning, duration, and evidence.
 
-**Relationships to other sections.** Authored first among the Layer sub-sections (authoring-order dependency) because Facets, Relationships, States, and Events all presuppose something to attach to, connect, or happen to. Coordination Patterns (§3.2.8) are patterns *of* Entities.
+**Why this layer exists.** "Humanitarian reality is deeply relational, where meaning emerges from relationships rather than isolated records" (Ch. 5.1). Understanding one person requires understanding the relationships in which they exist (Ch. 1.2). If connections were mere attributes of the things they connect, the ontology could not say anything *about the connection itself* — that it is claimed but unverified, that it began after a displacement, that it ended — without distorting one of the parties. Relationships are first-class precisely because in humanitarian reality the connection is often the fact that matters most.
 
-**Promotion criteria.** The central case the Architecture Rules promotion test (§3.4) must resolve: does the candidate have independent identity and persist through time in a way that must be re-identifiable later? If yes, Entity. If the candidate instead varies independently of some other thing without its own identity, it is more likely a Facet; if it connects two already-established things, a Relationship.
+**How it differs.** A Relationship has no meaning apart from the things it connects, which distinguishes it from an Entity; but it can carry its own dimensions, evidence, and temporal validity, which distinguishes it from a bare structural link. A claimed family tie and a verified one are different epistemic situations attached to the *same* relationship — representable only if the relationship itself can bear evidence (Ch. 5.2).
 
-**Review criteria.** Can this Entity type's identity criteria actually distinguish two real instances in practice, not merely in the abstract? Does its minimal nature remain true independent of every currently-attached Facet?
+**Design obligations.** Every Relationship kind must state: what kinds of thing it connects and whether direction matters; its temporal validity (relationships begin and end — reality is continuously evolving, Ch. 5.1); its expected plurality (whether more than one may hold concurrently, stated explicitly, never assumed); and its epistemic treatment (claimed versus verified, per Cognition). Whether Facets may attach to Relationships as well as Entities is answered affirmatively by design: dimensions of a connection (its strength, its verification status, its history) are real and must be expressible without inventing pseudo-entities to hold them.
 
-**Common failure modes.** Entity-type proliferation — minting a new Entity for every recognized dimension of a situation instead of modeling most of that richness as Facets. The inverse failure — modeling something that genuinely needs independent, re-identifiable persistence (a specific Case, a specific Household) as a bare attribute of something else, losing the ability to track it consistently over time.
+### 2.4 Constraints
 
-#### 3.2.3 Relationships
+**Purpose.** A Constraint is a **rule bounding which configurations of the other layers are valid** — what may coexist, what must accompany what, what quantities and combinations reality actually permits.
 
-**Purpose.** Connections between two or more Entities.
+**Why this layer exists.** Understanding reality includes understanding its regularities. But the Overview is explicit that humanitarian reality is *discovered rather than predefined* (Ch. 5.1), and Ch. 6.1 establishes that universal capabilities coexist with locally variable execution. The gravest constraint-level error is therefore not a missing rule but a **false universal**: a regularity observed in one context silently encoded as if true everywhere. The Constraints layer exists to hold rules *with their scope made explicit*.
 
-**Responsibilities.** State which Entity types a Relationship type connects and in what direction (or whether symmetric); its temporal validity; its cardinality.
+**How it differs.** A Constraint is conditional and empirical: it holds because evidence shows reality works this way, here. This distinguishes it categorically from a Pillar (Section 3), which is unconditional and normative — true by the project's founding commitments, in every context, without exception. Misfiling a Pillar as a Constraint makes the non-negotiable overridable; misfiling a local regularity as a universal Constraint encodes one context's reality as everyone's. Both misfilings are named failure modes the promotion test (§4.2) screens for.
 
-**Inputs.** The Entity types it connects must already be defined (authoring-order dependency).
+**Design obligations.** Every Constraint carries a mandatory **universal-or-variable tag**. A universal tag is a strong empirical claim requiring correspondingly strong evidence (Section 6) and remains flagged *untested* until a Ground Truth Review (Section 5) has checked it against at least one real context. A variable Constraint names the scope in which it holds. No Constraint's scope is ever left implicit.
 
-**Outputs.** A named Relationship type; its connected Entity types and direction; its cardinality and temporal-validity rules; whether it carries its own Facets (per the same evidence-backed-assertion fork as §3.2.1).
+### 2.5 States
 
-**Relationships to other sections.** Depends on Entities. Is frequently the subject of Constraints (§3.2.4 — cardinality rules are usually rules about Relationships). Is a building block Coordination Patterns (§3.2.8) assemble into recognizable multi-Entity shapes.
+**Purpose.** A State is one of an **enumerable set of conditions** a thing occupies at a point in time within some recognized progression — the stopping points of a journey, catalogued as concepts without reproducing the flow between them.
 
-**Promotion criteria.** A candidate becomes a Relationship, not an Entity, when its entire reason for existing is to connect two or more already-established things, and it has no independent identity apart from that connection.
+**Why this layer exists.** The Overview's alternative to transactional aid is the humanitarian *journey*: circumstances evolve, interventions build on one another, recovery progresses or regresses (Ch. 1.3, 9.2). A journey is only understandable if the ontology can express *where in it* something currently is. States make progression representable — and therefore make continuity, re-assessment, and "has this actually improved?" (Ch. 9.2) askable questions.
 
-**Review criteria.** Is the cardinality stated explicitly rather than assumed? Is the claim-versus-verified status of the Relationship itself represented consistently with how Facets represent it?
+**How it differs.** A State is enumerable and positional (one of a known set of conditions in a progression); a Facet is a free dimension with no implied progression. An Event is an occurrence *at* a point in time; a State is a condition *across a span* of time. Events and States are designed together but are not the same kind: transitions between States are what Events cause or evidence.
 
-**Common failure modes.** Treating a Relationship as a bare structural link and pushing all qualifying detail onto the Entities at either end, losing the ability to say something is true of the *connection* rather than either party. Leaving cardinality implicit rather than stated.
+**Design obligations.** Two obligations follow directly from the Overview. First, **plurality**: because a household's needs evolve independently and interventions interrelate (Ch. 4.1's worked example), the design must permit multiple simultaneous States across different aspects of one thing's situation, rather than forcing a single global status — which granularity a State attaches at is a per-concept design decision made under this rule. Second, **epistemic honesty**: a State assignment is the system's current, evidence-based belief about a condition, not an unconditional fact; it carries the same provenance and confidence treatment as any assertion (Ch. 5.2, §2.7). "We believe this situation has stabilized, based on this evidence, as of this date" is the only form of state-claim the mandate permits.
 
-#### 3.2.4 Constraints
+### 2.6 Events
 
-**Purpose.** Rules that bound which configurations of Entities, Facets, Relationships, States, and Events are valid — cardinality facts, and the universal-versus-variable discipline that distinguishes a rule that holds in every deployment context from one that holds only in some, named explicitly rather than left implicit.
+**Purpose.** An Event is an **occurrence at a point in time** — something that happened — which causes, or is evidence for, change in the rest of the model: a transition between States, the beginning or end of a Relationship, the revision of a Facet.
 
-**Responsibilities.** Tag every Constraint as universal or variable, and, if variable, name the specific variation. Hold the *conditional*, business-rule-shaped rules — distinct from Pillars (§3.3), which hold the *unconditional* ones.
+**Why this layer exists.** The Overview requires the system to preserve *how circumstances came to exist* — "what events led to the current situation, how previous interventions have influenced future outcomes" (Ch. 1.2), including "significant life events, displacement, crises, or disasters." A model with only current conditions and no occurrences cannot explain anything; explanation is causal history, and Events are its unit. Events are also load-bearing for accountability: every decision must remain auditable after the fact (Article X), which requires an honest record of what actually happened.
 
-**Inputs.** The Entities, Facets, and Relationships it restricts must already have a shape (authoring-order dependency).
+**How it differs.** Point-in-time occurrence versus span-of-time condition is the Event/State boundary. An Event, once recorded, is **history**: it is never silently corrected, revised, or deleted. If an Event is later found to rest on a false account, the correction is itself a new occurrence, layered on top, superseding but preserving the original — because "conflicting observations should not be treated as system failures" (Ch. 5.2) and an audit trail that can be rewritten is not an audit trail.
 
-**Outputs.** A named Constraint; its universal/variable tag; if variable, its stated variation; which Entities/Facets/Relationships it governs.
+**Design obligations.** Every Event kind must state what it is an occurrence *of* or *about*; what changes it can cause or evidence; and its evidential character — most Events are themselves evidence (a verification visit, an observation, a delivery are simultaneously things that happened and grounds for belief), which is the designed connection point between this layer and Section 6.
 
-**Relationships to other sections.** Depends on Entities, Facets, Relationships already being defined. Directly implements the universal/variable discipline Ground Truth Reviews (§3.5) later test against real contexts. Shares a boundary with Pillars (§3.3) that must be actively maintained, not assumed.
+### 2.7 Cognition
 
-**Promotion criteria.** A candidate becomes a Constraint, not a Pillar, when it is conditionally true — true in this context, potentially different in another — rather than true by the ontology's own founding commitment, in every context, without exception.
+**Purpose.** The Cognition layer is the ontological representation of the **system's own epistemic condition**: what is claimed versus verified, what confidence a conclusion currently deserves, what evidence would change it, what remains unknown, and where the threshold lies past which the system must stop and defer to human judgment.
 
-**Review criteria.** Has every Constraint been explicitly tagged universal or variable, with none left implicitly assumed either way? Has a Constraint assumed universal ever actually been tested against a real, specific context (a direct Ground Truth Reviews responsibility)?
+**Why this layer exists — stated fully, because it is the least conventional.** The mandate makes understanding a *precondition* of action, and the Constitution makes that precondition law: Article III's four-part Standard of Understanding, and Article VIII's human review rule. These are only enforceable if the ontology can *represent* the facts they depend on. "Sufficient reliable evidence has been gathered" (Article III-a) is checkable only if evidential sufficiency is representable. "Significant uncertainty has been explicitly identified, not concealed" (III-c) is satisfiable only if uncertainty is a first-class, attachable representation — the Overview states plainly that uncertainty and confidence levels belong to the foundational dimensions of humanitarian reality itself (Ch. 1.2), and that levels of "uncertainty, confidence, and verification for every important conclusion" must be captured. If confidence and claim-status lived only in application code, the founding sequence Knowledge → Understanding → Reasoning → Responsible Action would be an implementation convention, revisable by any future engineering team. Cognition exists to make it a structural property of the knowledge itself. This is the layer without which the architecture will fail — because the architecture's entire safety model (thresholds, escalation, human review) would rest on facts the knowledge foundation could not express.
 
-**Common failure modes.** Leaving a Constraint's universal/variable status implicit, which silently reintroduces exactly the untested-universal-claim risk this Framework exists to prevent. Misclassifying an unconditional Pillar-level commitment as an ordinary, overridable Constraint.
+**How it differs.** Cognition asserts nothing about humanitarian reality. Every other layer models the world; Cognition models the *warrant* for what the other layers assert. It is designed as a cross-cutting epistemic treatment that every assertion-bearing element (Facets, Relationships, States, and evidential Events) must carry — not as a parallel catalog of business concepts, and not as a place where any business concept is ever defined.
 
-#### 3.2.5 States
+**Design obligations.** The Cognition layer must make representable, at minimum: the distinction between an assertion made and an assertion the system is entitled to rely on (the claim/accepted-conclusion distinction of Ch. 5.2, where a conclusion becomes "operationally accepted" yet "remains open to revision"); a confidence treatment whose form is qualitative and evidence-traceable rather than an unexplainable score (bias mitigation and explainability requirements, Ch. 8.2, Article X); the explicit representation of *what is unknown* (a gap in understanding is itself knowledge — Ch. 2.3's requirement that "significant uncertainties are explicitly identified rather than ignored"); and the representability of the Article VIII threshold — the fact *that* a given conclusion's consequence class requires human review must be expressible in the knowledge itself, while the operational mechanics of escalation (queues, routing, notification) are Operational Knowledge and are excluded (Ch. 7.2).
 
-**Purpose.** The enumerable condition an Entity occupies at a point in time — the stopping points a lifecycle passes through, catalogued as concepts, without reproducing the flow between them (that flow, as a recognized shape, belongs to Coordination Patterns, §3.2.8).
+### 2.8 Coordination Patterns
 
-**Responsibilities.** Enumerate an Entity type's possible States. Decide, and state consistently, whether more than one State can be simultaneously true for different aspects of one Entity.
+**Purpose.** A Coordination Pattern is a **recurring, recognizable configuration involving multiple parties and their relationships, states, and events over time** — the formal representation of how understanding and responsibility move across organizational boundaries: a handoff that carries accumulated understanding forward, a shared response by many actors to one situation, an escalation from insufficient confidence to human judgment.
 
-**Inputs.** The Entity type it describes must already be defined (authoring-order dependency).
+**Why this layer exists.** Cross-Organizational Coordination is one of the Overview's cross-cutting capabilities (Ch. 6.1), and the entire long-term vision is an ecosystem in which understanding accumulates *across* organizations instead of resetting per program (Ch. 3.2, 9.1). Fragmentation — each organization solving its slice in isolation — is the root failure of Ch. 1.1. If the ontology could describe individual situations but not the recurring multi-party shapes through which organizations share and act on understanding, it would model the very fragmentation it exists to overcome.
 
-**Outputs.** A named State; the Entity type (or Entity-granularity, e.g., a Need-within-a-Case rather than the Household as a whole) it applies to; its evidence/confidence treatment if the evidence-backed-assertion fork is ratified affirmatively.
+**How it differs, and a boundary that must be actively policed.** A Coordination Pattern is a *shape*, not a procedure. It names which kinds of parties, relationships, states, and events recur together and what constraints and confidence thresholds the configuration carries. It never specifies execution: no sequencing mechanics, no task logic, no automation instruction. How any organization operationalizes a pattern is Operational Knowledge (Ch. 6.1's explicit rule: the universal capability is shared; the workflow is local). This layer sits closest to the automation boundary and therefore receives the strictest review attention (Section 7): the recurring failure to guard against is a pattern description that quietly becomes a workflow specification.
 
-**Relationships to other sections.** Depends on Entities. Must be authored before Events (§3.2.6), since an Event is most naturally defined as what causes a transition between States. Feeds directly into Coordination Patterns (§3.2.8), which recognize sequences of State change across multiple Entities.
+**How it depends.** Coordination Patterns compose everything above; they are necessarily the last-designed layer for any given area of the ontology.
 
-**Promotion criteria.** A candidate becomes a State when it names a condition an Entity occupies at a point in time, rather than a permanent, defining fact about the Entity (which would instead belong at the Entity or Facet level) or an occurrence (which belongs to Events).
+### 2.9 How Concepts Move Between Layers
 
-**Review criteria.** Is the State represented as a bare label, or as an evidence-backed, time-stamped assertion consistent with the ratified position on fork §6.3? Does the model correctly allow simultaneous States across different aspects of one Entity where real practice requires it, rather than forcing one global status?
+Layer assignment is a *finding about reality*, and like every finding it is revisable under evidence (Ch. 5.2). Movement between layers is governed by three rules:
 
-**Common failure modes.** Modeling State as a single global status field when an Entity can genuinely occupy more than one State at once across different aspects of its situation. Treating a State as unconditionally true rather than as the system's current, revisable belief about the Entity's condition.
-
-#### 3.2.6 Events
-
-**Purpose.** Occurrences in time that cause, or are evidence for, a State transition.
-
-**Responsibilities.** State what State transition(s) an Event type can trigger or evidence; what Entity or Relationship it is an occurrence of; whether and how it is retained as history.
-
-**Inputs.** States (§3.2.5) must already be defined (authoring-order dependency), since an Event is defined partly in terms of what it does to a State.
-
-**Outputs.** A named Event type; its triggered/evidenced State transitions; its retention rule; its correction/retraction procedure.
-
-**Relationships to other sections.** Depends on States. Is a primary source for the Evidence layer (§3.6). Is the raw material Coordination Patterns (§3.2.8) recognize repeating sequences within.
-
-**Promotion criteria.** A candidate becomes an Event, not a State, when it names something that happened at a point in time rather than a condition that persists across a span of time.
-
-**Review criteria.** Is the Event's effect on State explicitly stated? Is the retention/correction rule for a later-disputed Event consistent with the project's immutable-history commitment (a correcting Event layered on top, not a silent overwrite)?
-
-**Common failure modes.** Silently overwriting or deleting an Event record once it is found to be based on a false claim, rather than layering a superseding correction — this destroys exactly the auditable history the project's accountability commitments require. Treating something that is really an ongoing condition as a point-in-time Event.
-
-#### 3.2.7 Cognition
-
-**Purpose.** The ontological representation of the system's own epistemic state — what it currently believes, how confident it is entitled to be, what is claimed versus verified, what produced a given belief, and where a confidence threshold requires escalation to a human rather than autonomous action.
-
-**Why this must be a Layer, not left to application code (stated once, centrally, because it is the least self-evident section in this Framework).** The founding constraint that automation may never proceed without adequate understanding is not enforceable as a design principle unless the ontology itself can represent a claim's confidence, source, and verification status as first-class, queryable, auditable facts. If confidence lives only in application code, the ontology cannot express "this claim has not yet reached the confidence required for autonomous action" as a fact about the modeled world, and the project's founding sequence (Knowledge → Understanding → Reasoning → Responsible Action) becomes an implementation convention rather than a structural guarantee.
-
-**Responsibilities.** Represent a Claim (not yet, or not fully, verified) as distinct from a Fact (verified, reliable at a stated confidence). Attach a confidence/uncertainty representation to any Facet, Relationship, or State assertion. Represent an escalation threshold as an ontological fact, not only an application rule.
-
-**Inputs.** Evidence (§3.6) is what Cognition is built from — Cognition cannot exist without Evidence behind it, though Evidence can exist before it produces a confident belief.
-
-**Outputs.** A Claim/Fact distinction usable across every Layer; a confidence representation (numeric, qualitative tier, or both — an open fork, §6); an escalation-threshold representation.
-
-**Relationships to other sections.** Consumes Evidence (§3.6) directly. Wraps or references Facets, Relationships, and States. Is the mechanism by which the Understanding-Before-Automation Pillar (§3.3) becomes checkable rather than aspirational.
-
-**Promotion criteria.** Not applicable in the Entity/Facet/Relationship sense — Cognition is not a concept type candidates are sorted into; it is a cross-cutting wrapper or parallel structure (an open fork, §6) applied to assertions made in other Layers.
-
-**Review criteria.** Can every autonomous action be traced to a stated Cognition-layer confidence that met its escalation threshold? Is the Claim/Fact distinction applied consistently, not selectively, across every Layer that makes assertions?
-
-**Common failure modes.** Implementing confidence scoring purely in application code, leaving the ontology itself unable to express what the system is and isn't entitled to believe. Conflating Cognition with Evidence (see §3.6's failure modes — this exact collapse has already occurred once in this project's history, with "resilience" versus "capacity to cope").
-
-#### 3.2.8 Coordination Patterns
-
-**Purpose.** Recurring, recognized multi-Entity configurations — the ontological formalization of business-level value streams, one layer more formal, but explicitly not an executable workflow.
-
-**A boundary that must be actively policed, not merely stated once.** This is the layer at greatest risk of drifting into a process/workflow specification, which the project's business-purity and no-premature-automation discipline forbids at this altitude. A Coordination Pattern describes a recognizable shape — which Entities, Relationships, States, and Events recur together, in what order, and what Constraints and Cognition-confidence thresholds apply — without specifying how a system executes or automates it.
-
-**Responsibilities.** Name and formalize recurring multi-Entity shapes. State each pattern's required Cognition-layer confidence threshold, if any, before the pattern is considered complete.
-
-**Inputs.** Every other Layer sub-section — Coordination Patterns are compositions of Entities, Facets, Relationships, States, Events, Constraints, and Cognition, and must be authored last for that reason (both in the client's presentation order and the recommended authoring order — the one place the two agree).
-
-**Outputs.** A named Coordination Pattern; its constituent Entities/Relationships/States/Events; its Constraints and Cognition-confidence requirements.
-
-**Relationships to other sections.** Depends on every other Layer sub-section. Is the eventual home for cross-organization coordination authority questions, once a downstream document addresses them.
-
-**Promotion criteria.** A candidate becomes a Coordination Pattern when it names a recurring configuration across multiple Entities and their Relationships/States/Events — never a single Entity's own behavior, and never an execution or automation instruction.
-
-**Review criteria.** Does the pattern description stop at "shape" and avoid specifying execution mechanics? Is its Cognition-confidence requirement explicit rather than assumed?
-
-**Common failure modes.** Drifting into workflow or automation specification — the single most actively-risked failure mode in this entire Framework, requiring explicit review discipline at this section specifically, not only a general purity check.
+1. **Initial placement is decided by the promotion test** (§4.2), applied to the evidence gathered about the concept — never by analogy to how a similar-sounding concept was placed, and never by inheritance from prior engineering artifacts.
+2. **Reclassification is triggered by evidence, in either direction.** A dimension that field reality shows must be re-identified and tracked in its own right has outgrown Facet status; a kind of thing that in practice is never re-identified independently was never really an Entity; a rule tagged universal that fails in one real context becomes variable (§2.4, Section 5). The test is always the same: what does the evidence now show this thing to *be*?
+3. **Movement is a governed, recorded change — never a silent edit.** Reclassification alters what every dependent concept may assume, so it proceeds through the governance tier appropriate to its blast radius (Section 7), and the concept's history — including its former classification and the evidence that changed it — is preserved under the same no-silent-rewriting discipline as Events (§2.6). The ontology's understanding of reality improves the same way the system's understanding of a family does: by revision that leaves an honest trail, not by replacement that pretends the earlier belief never existed.
 
 ---
 
-### 3.3 Ontology Pillars
+## 3. Pillars
 
-**Purpose.** The small number of non-negotiable, unconditional design commitments every Domain Primitive, Layer concept, Constraint, and Coordination Pattern must satisfy — the ontology's own constitution, categorically stronger than any single concept's business rule.
+Pillars are the **unconditional commitments every ontology decision must satisfy**. They are not additional principles — Article II forbids adding to the five foundational principles — but the five principles and the mandate, translated into binding tests for ontology design. Every candidate primitive, layer concept, constraint, pattern, and rule is checked against the Pillars before acceptance; nothing is ever checked the other way. A Pillar differs from a Constraint (§2.4) categorically: a Constraint is conditionally true of reality somewhere; a Pillar is true of *this project* everywhere, by its founding commitments, and no context, deployment, or evidence overrides it.
 
-**Responsibilities.** State a short, closed list of unconditional commitments (candidates in substance, pending final ratification, include: human dignity and agency; verification before trust; understanding before automation; distributed, non-centralized authority; universal-variable honesty). Serve as the check every other section must pass, never the reverse.
+**P1 — Reality only.** *(from the mandate, Article I, and the Knowledge Foundation Boundary, Ch. 5.1 / Article IV.)* The ontology models humanitarian reality — people, relationships, circumstances, evidence, uncertainty, events, context — and nothing else. A concept is admitted only if its omission would materially change the understanding of humanitarian reality or the quality, safety, fairness, or appropriateness of a humanitarian decision. Workflow states, queue mechanics, organizational procedures, and anything that exists only because a particular system operates a particular way are Operational Knowledge and are permanently excluded.
 
-**Inputs.** The project's Vision and stated philosophy — Pillars are derived from these, not invented independently.
+**P2 — Evidence precedes conclusions.** *(Principle 3, Ch. 5.2, Article V.)* No concept enters the ontology, no classification is made, and no constraint is tagged universal, except on identifiable, evaluable evidence. An unsupported assertion is not evidence because it has been written down — this applies to the ontology's own design decisions exactly as it applies to claims about a family.
 
-**Outputs.** A ratified, closed Pillar list; a stated amendment procedure requiring the highest governance tier (§3.7); a stated procedure for handling a Layer concept that appears to violate a Pillar (recommended: escalated, never silently rejected, per the project's own "flag, don't guess" discipline).
+**P3 — Verification precedes trust.** *(Principle 4, Ch. 5.2.)* The distinction between what has been asserted and what has been verified is structural, everywhere. The ontology must never contain a place where a claim and a verified conclusion are indistinguishable — not in its content, and not in its own design record, where an untested assumption must remain visibly an assumption (Section 6).
 
-**Relationships to other sections.** Every other section is checked against Pillars, never the reverse. Binds Domain Primitives (§3.1), every Layer sub-section (§3.2), Constraints specifically (sharing a boundary that must be actively maintained), and sets the floor Ground Truth Reviews (§3.5) must confirm the model still honors.
+**P4 — Uncertainty is represented, never concealed.** *(Principle 2 and the Standard of Understanding, Ch. 2.3 / Article III.)* Uncertainty, confidence, and competing observations are part of reality itself (Ch. 5.1). Every layer that asserts anything must be able to carry the epistemic treatment of §2.7. A design that permits an unqualified, unattributed, confidence-free assertion about a person's reality violates this Pillar regardless of how convenient it is.
 
-**Promotion criteria.** A candidate becomes a Pillar, not a Constraint, when removing it would not merely change the model's form but would mean the system was no longer the system the Vision describes — i.e., it is universal in the strongest sense, never legitimately overridable by context.
+**P5 — Human dignity governs representation.** *(Principle 5, Ch. 2.2, Ch. 8, Articles IX–X.)* People are represented as persons within evolving networks of relationships, history, and context — never reduced to a current deficiency, a transaction record, or a demographic category (Ch. 1.3, 8.2). The ontology must be able to represent a person's agency over their own information — what exists about them, consent, correction, challenge (Ch. 8.1) — and need is evaluated through evidence about circumstances, never through assumptions about identity or group membership (Article X).
 
-**Review criteria.** Does Governance (§3.7) actually enforce a materially higher amendment tier for a Pillar than for an ordinary Constraint? Has any Pillar quietly been treated as an ordinary, overridable Constraint in practice?
+**P6 — Understanding precedes automation, structurally.** *(Principles 1–2, Ch. 4.2, Articles III, VII, VIII.)* The conditions under which action is permitted — evidential sufficiency, considered dimensions, explicit uncertainty, transparent justification, and the human-review threshold — must be representable *in the knowledge itself* (§2.7), so that the canonical sequence Knowledge → Understanding → Reasoning → Responsible Action is a property of the foundation, not a convention of whatever software consumes it.
 
-**Common failure modes.** Collapsing Pillars into ordinary Constraints, which lets a legitimate context-specific Constraint override accidentally weaken something that was never supposed to be overridable at all. Substituting a topic-based structural grouping (a navigational skeleton) for genuine, testable principle-based design law — an open fork, §6.
+**P7 — Continuity through time.** *(Ch. 1.2, 1.3, 2.1.)* The ontology represents journeys, not snapshots. Every design decision is tested against time: identity persists, relationships begin and end, conditions progress and regress, history is preserved, and revision leaves a trail. A design choice that captures the present by discarding the past recreates the knowledge-reset failure Khidmat exists to end.
 
----
-
-### 3.4 Architecture Rules
-
-**Purpose.** The authoring discipline governing how Layer concepts themselves get built and kept consistent over time — not what the ontology says about humanitarian reality, but the law governing how anyone is permitted to add to or change what it says.
-
-**Responsibilities.** Define and maintain the **promotion test** — a small, ordered, repeatable set of questions that lets two different authors reach the same classification for the same candidate concept (does it have independent identity and persist through time? if not, does it vary independently of the thing it qualifies? if not, is it a connection between two already-established things?). Define a global concept-identity/uniqueness rule (one canonical name and identifier per concept, across every Layer). Define change-control (an identifier is never silently reused or redefined; amendment, deprecation, and splitting each have a defined procedure). Define how a Constraint or Facet is tagged universal versus variable, and how a variable one records its specific variation.
-
-**Inputs.** Domain Primitives (§3.1), as the classification vocabulary the promotion test is written in terms of. Every open design fork flagged elsewhere in this Framework as "requires confirmation" — Architecture Rules is where each, once resolved, becomes binding law rather than a standing recommendation.
-
-**Outputs.** A ratified promotion test, pressure-tested against a sample of real HBRM concepts before being treated as final. A concept-identity/uniqueness rule. A change-control procedure. A universal/variable tagging mechanism.
-
-**Relationships to other sections.** Directly operationalizes every "requires confirmation" flag from §3.2. Is checked against Pillars (§3.3) for every rule it establishes. Is the register Ground Truth Reviews (§3.5) and Governance (§3.7) both cite when evaluating a proposed change for consistency.
-
-**Promotion criteria.** Not applicable in the concept-classification sense — Architecture Rules is itself the mechanism that supplies promotion criteria to every other section; its own content is ratified through Governance (§3.7) at an elevated tier, one below Pillars.
-
-**Review criteria.** Does the promotion test, applied by two different authors to the same candidate concept, reliably produce the same classification? Has it been pressure-tested against genuinely ambiguous real cases, not only clear ones?
-
-**Common failure modes.** Designing or finalizing the promotion test too late or too loosely — flagged in the governing Blueprint as the single highest-leverage unresolved mechanism in the entire Framework, since most other open forks ultimately cash out as edge cases this test must handle. Leaving the Entity/Facet decision boundary untested against real concepts before treating it as settled.
+Amendment of Pillar wording follows the foundational governance tier (Section 7); amendment of Pillar substance is impossible below constitutional level, because each Pillar's substance is the Overview's and the Constitution's, not this document's.
 
 ---
 
-### 3.5 Ground Truth Reviews
+## 4. Architecture Rules
 
-**Purpose.** The recurring, formal discipline of checking whether the ontology's model of reality — its Primitives, its Layer concepts, its universal-versus-variable Constraint tags — still actually matches lived humanitarian practice, in specific, real contexts, on an ongoing basis rather than only at initial design time.
+These are the conceptual laws every future ontology author obeys. They govern *how* design decisions are made and recorded — not what the ontology says, and not any software architecture.
 
-**Why this must not be a one-time gate.** An untested universal claim is a liability wearing the appearance of settled fact, and an ontology-level mistake of this kind is far more expensive to discover and correct once structurally encoded than the same mistake left as an unverified paragraph of prose upstream.
+**AR-1 — The admission test.** Every candidate concept, before anything else, passes the Knowledge Foundation Boundary test (Article IV / P1): would its omission materially change understanding of humanitarian reality or the quality of a humanitarian decision? Fail: it is excluded, whatever its local usefulness. Pass: it proceeds to AR-2. No concept skips this gate, including concepts inherited from prior artifacts or present in sector standards.
 
-**Responsibilities.** Validate the model against real, specific contexts, on a defined recurring cadence plus explicit out-of-cycle triggers (e.g., activating a new region or humanitarian domain). Include both expert/field validation (does this match how implementing organizations and volunteers actually operate) and, wherever consent and context allow, direct validation with the people the ontology models (does this match how a household would describe its own reality) — treated as two distinct, both-required checks, not one review assumed to satisfy both.
+**AR-2 — The promotion test.** Layer placement is decided by one fixed, ordered sequence of questions, applied to the evidence about the concept, so that two authors reach the same placement independently:
 
-**Inputs.** The ratified Domain Primitives (§3.1), Layer concepts (§3.2), and Constraint universal/variable tags (§3.2.4) — the things being checked. Real field and lived-experience evidence as the material checked against.
+1. Is it a *rule about valid configurations* rather than a thing, connection, condition, or occurrence? → **Constraint** (then AR-5).
+2. Does it *have independent identity that must be re-identified through time*? → **Entity**.
+3. Is it an *occurrence at a point in time*? → **Event**.
+4. Is it one of an *enumerable set of conditions within a progression* that something occupies across a span of time? → **State**.
+5. Is it a *connection between two or more things that already have identity*? → **Relationship**.
+6. Does it *qualify something else and vary independently of it, with no identity of its own*? → **Facet**.
+7. Is it a *recurring configuration of multiple parties and their relationships, states, and events*? → **Coordination Pattern**.
+8. None of the above → it is not modeled; it is either folded into an existing concept, rejected, or escalated as a possible primitive-set gap (§1.4).
 
-**Outputs.** A record of what has been tested against what, so an untested assumption remains visibly untested rather than silently assumed validated. A disposition for each failed review (a Constraint assumed universal that turns out not to hold becomes explicitly variable, gets corrected at the Primitive level, or escalates to Governance).
+An author who cannot answer a question decisively from evidence stops and escalates (AR-9); the test is never resolved by guessing. Before first use on real content, the test itself must be pressure-tested against a deliberately mixed sample of validated business concepts — clear cases and genuinely ambiguous ones — and refined under governance until independent authors converge.
 
-**Relationships to other sections.** Tests Domain Primitives (§3.1) and the universal/variable tagging in Constraints (§3.2.4) against real contexts. Findings escalate into Governance (§3.7). Is itself a Pillar-adjacent commitment — an ontology that never checks itself against reality would itself violate Understanding Before Automation, applied reflexively to the ontology's own claims.
+**AR-3 — One concept, one definition, one home.** Every concept has exactly one canonical name, one authoritative definition, one layer, and one primary primitive classification. It may be referenced anywhere but defined only once. Two names for one meaning are merged; one name for two meanings is split. (The project has already paid for this lesson once; the rule makes it law.)
 
-**Promotion criteria.** Not applicable in the concept-classification sense — this section governs an ongoing validation activity, not a category concepts are sorted into.
+**AR-4 — Epistemic completeness.** No concept's design is complete until its epistemic treatment is stated: what kinds of evidence can support assertions of this concept, how confident the system is ever entitled to be about it, and whether conclusions involving it can meet the Article VIII human-review threshold. A concept whose epistemic treatment cannot be stated is not yet understood well enough to model (Ch. 2.3, applied reflexively).
 
-**Review criteria.** When field evidence conflicts with the existing model, does the field evidence win and the model get corrected — never the reverse? Is every disposition actually recorded, so the review trail itself remains auditable?
+**AR-5 — No silent universals.** Every Constraint carries an explicit universal-or-variable tag; every universal tag is either backed by a passed Ground Truth Review or visibly marked untested. Absence of a tag blocks acceptance.
 
-**Common failure modes.** Treating Ground Truth Review as a one-time, pre-launch gate rather than a recurring discipline. Allowing the existing model to override contradicting field evidence because the model is already built — reality is not obligated to conform to a prior design.
+**AR-6 — History is never rewritten.** Published concepts are amended, deprecated, split, or superseded through recorded procedures; identifiers are never reused or silently redefined; the design record preserves what was previously believed and what evidence changed it (§2.9, mirroring §2.6).
 
----
+**AR-7 — Design purity.** No ontology design artifact may contain storage decisions, encoding formats, machine-readable naming conventions, derivation or computation rules, enumerated value lists formatted for machines, or any statement whose truth depends on a technology choice. The litmus test: could this statement be true of any competently designed humanitarian ontology regardless of implementation? If not, it belongs to engineering and is deferred. Prior artifacts violating this rule are inputs to *discovery*, never to design.
 
-### 3.6 Evidence
+**AR-8 — Business language, business derivation.** Every concept is named and defined in humanitarian business language, traceable to evidence about humanitarian reality. No part of the ontology is organized around organizational departments, software modules, or the functional categories of existing NGO systems (Article VI) — the fragmentation of Ch. 1.1 must not be reproduced as structure.
 
-**Purpose.** The record of what was actually observed, submitted, reported, or verified, and by what means, and how that record attaches to any Facet, Relationship, State, or Event assertion made elsewhere in the ontology.
+**AR-9 — Flag, don't guess.** Any unresolved classification, any apparent Pillar conflict, any primitive-set gap, and any contradiction between evidence sources is recorded and escalated through Sections 6 and 7. Silent resolution of a genuine open question is a design defect even when the silent answer happens to be right.
 
-**Why Evidence is distinct from Cognition, stated explicitly because the boundary has already collapsed once in this project's history.** Evidence is the *input* — the raw material of what was observed or submitted, with its own provenance and chain of custody. Cognition (§3.2.7) is the *derived belief* built from that Evidence. Evidence can exist before it has produced a confident Cognition-layer belief; Cognition cannot exist without Evidence behind it. This is a Broader/Narrower relationship, not two names for one idea — collapsing them would obscure exactly the distinction between *what was said* and *what the system is entitled to believe* that the project's philosophy most needs preserved.
-
-**Responsibilities.** Maintain a typology of evidence sources (self-report, third-party report, physical/documentary evidence, direct observation, cross-referenced corroboration) with their own inherent reliability characteristics, modeled honestly rather than assumed equal. Maintain a provenance/chain-of-custody representation. Maintain an evidence lifecycle (expiry, contestation, supersession, retraction) that never silently deletes a belief built on later-retracted evidence, but explicitly supersedes it.
-
-**Inputs.** Events (§3.2.6) are a primary source of Evidence. Field observations, submitted documents, and testimony generally.
-
-**Outputs.** A typed evidence-source hierarchy; a provenance representation; a lifecycle/retraction procedure; the connection point every Facet/Relationship/State assertion cites when it carries a confidence/provenance wrapper.
-
-**Relationships to other sections.** Feeds Cognition (§3.2.7) directly. Is what Facets, Relationships, and States cite when carrying a confidence/provenance wrapper. Is the authoritative material Ground Truth Reviews (§3.5) check a model claim against.
-
-**Promotion criteria.** Not applicable in the concept-classification sense — Evidence is a supporting layer every assertion-bearing Layer section cites, not a category candidate concepts are sorted into.
-
-**Review criteria.** Is evidence-source type represented structurally, independent of any particular confidence calculation performed on it, so a confidence assignment remains auditable back to what kind of evidence produced it? Is a retracted piece of evidence's downstream effect on any Cognition-layer belief explicitly superseded rather than silently removed?
-
-**Common failure modes.** Conflating Evidence and Cognition — the single most concretely-precedented risk in this Framework, given the project's own prior experience distinguishing "resilience" from "capacity to cope." Treating all evidence sources as equally reliable by default rather than modeling their reliability characteristics honestly.
+**AR-10 — Dependency-ordered authoring.** Ontology content is authored in dependency order: primitives before layers; things with identity before the dimensions, connections, conditions, and occurrences that presuppose them; constraints after the configurations they bound; patterns last. Presentation order (Section 2) is unaffected.
 
 ---
 
-### 3.7 Governance
+## 5. Ground Truth Reviews
 
-**Purpose.** Who has the authority to propose, review, approve, amend, deprecate, or freeze any concept in any section above, and at what tier of scrutiny — a routine addition (a new Facet type) is not the same order of decision as amending a Pillar.
+A Ground Truth Review is the formal check of ontology content against **lived humanitarian reality** — not against literature, standards, or the project's own prior documents. It exists because humanitarian reality is *discovered rather than predefined* (Ch. 5.1), and because the domain discovery procedure the Constitution mandates already requires exactly this: engagement "directly through domain experts, field practitioners, and observed practice, before any structural modeling begins" (Article XI-b). Ground Truth Reviews are that requirement applied to ontology design — no new review machinery is invented beyond what the Constitution and Overview already demand.
 
-**Responsibilities.** Define a tiering of decision authority, recommended to mirror a distributed-authority logic already established one level down at the business-architecture level: a new Facet or State value within an already-established Entity type as narrow, frequent, low-blast-radius; adding a new Entity type or Coordination Pattern as broader, less frequent; amending a Domain Primitive, an Architecture Rule, or a Pillar as rare, high-blast-radius, requiring the broadest view of the design's coherence. Define an approval procedure at each tier, applying the project's existing review discipline (drafted, independently reviewed, resolved against findings, formally closed) explicitly to ontology concepts.
+**What is reviewed.** Three things, corresponding to the three ways a designed ontology can be wrong about reality: (a) the primitive set — has practice surfaced anything unclassifiable (§1.4)? (b) concept definitions and layer placements — do they match how the reality they model actually behaves, including how affected people themselves would describe their own situation? (c) universal Constraint tags — does the rule actually hold in the specific real context examined (AR-5)?
 
-**Inputs.** Proposed changes at every tier. Escalations from Ground Truth Reviews (§3.5) findings and from Cognition-layer (§3.2.7) confidence gaps.
+**Who constitutes ground truth.** Two sources, both required over time because they answer different questions (Ch. 6.2's research step; Ch. 8.1's agency commitments): domain experts and field practitioners, who validate whether the model matches humanitarian practice; and, wherever consent and context responsibly allow, the people the ontology models, who validate whether it matches lived reality as they experience it. The Overview's definition of success is stated in terms of the second (Ch. 9.2); a review discipline that only ever consulted the first would validate the sector's view of people rather than people's reality.
 
-**Outputs.** A tiered approval procedure; a defined escalation path from Ground Truth Reviews and Cognition-layer flags into a governance action, so neither a failed reality-check nor a persistent uncertainty resolves itself informally.
+**When reviews occur.** At three trigger points, all already present in the canonical documents: before concepts of a domain are formally included (the Review step, Article XI-d); when the system encounters reality the current foundation cannot represent — an unrepresentable situation is potential evidence the foundation must grow (Ch. 7.2, 9.1); and recurringly, because reality is continuously evolving and a model validated once is not validated forever (Ch. 5.1, 9.1).
 
-**Relationships to other sections.** Governs changes to every other section. Receives escalations from Ground Truth Reviews (§3.5) and Cognition-layer confidence gaps (§3.2.7). Is where the Architecture Rules promotion test (§3.4) and the Pillars' protected status (§3.3) both become enforceable rather than aspirational.
+**Disposition of findings.** Where ground truth and the model conflict, **reality wins and the model is corrected** — reality sits above every document in the authority hierarchy (Article XIV), and the correction follows §2.9's movement rules and Section 7's governance. Every review records what was tested against what, so untested content remains visibly untested (P3 applied to the ontology's own claims) — this record is the same assumption-and-evidence discipline of Section 6, not a new apparatus.
 
-**Promotion criteria.** Not applicable in the concept-classification sense — Governance is the authority structure that rules on other sections' promotions, not a category itself.
-
-**Review criteria.** Is the same tiering applied consistently, or does a Layer sub-section warranting stricter scrutiny (Coordination Patterns, given proximity to eventual automation) actually receive it? Is amendment authority for a Pillar materially harder to invoke than for an ordinary Constraint, in practice and not only on paper?
-
-**Common failure modes.** Governance drift — a Pillar treated, in practice, at the same amendment tier as an ordinary Constraint, collapsing a distinction that exists on paper but not in enforcement. Assigning concrete named authority to a role at this altitude, which is a decision this Framework must not make — it belongs to a downstream document with the operational context to make it responsibly.
+**A standing honesty requirement.** Until a channel to practitioners and affected communities exists, no Ground Truth Review can pass, and content dependent on one — every universal Constraint tag above all — remains marked untested, however strong its documentary evidence. Literature corroboration is evidence (Section 6); it is not ground truth. This limitation is recorded, not worked around.
 
 ---
 
-## 4. Cross-Section Dependency Model
+## 6. Evidence
 
-The seven required sections are not peers to be read and authored in the order presented; they form a layered dependency. The presentation order above exists for readability. The authoring and validation order is:
+Ontology design decisions are humanitarian conclusions about what reality contains, and they are held to the same evidentiary discipline the Overview demands for conclusions about a family (Ch. 5.2, Article V). This section governs the evidence *for the ontology's own design* — what justifies admitting, defining, classifying, and tagging concepts.
 
-```mermaid
-graph TD
-    P["Pillars<br/>(constitutional, checked against by everything else)"]
-    DP["Domain Primitive<br/>(classification axes)"]
-    AR["Architecture Rules<br/>(the promotion test and authoring law)"]
+**What counts as evidence.** An observation, document, testimony, standard, or record whose origin can be identified and evaluated (Article V). An assertion in any prior project artifact — including frozen ones — is not evidence for a design decision merely because it was recorded; its provenance must itself be evaluable. Evidence for design decisions is weighed by the same factors as all evidence in Khidmat: source credibility, method of collection, relevance, timeliness, completeness, corroboration, and consistency with other trusted evidence.
 
-    P --> DP
-    P --> AR
-    DP --> AR
+**Evidence requirements scale with commitment.** The more structural the decision, the stronger the required evidence, because the cost of a wrong structural commitment compounds (Ch. 5.1's warning against premature structural commitment):
 
-    subgraph L["Ontology Layers"]
-        direction TB
-        E["Entities"] --> F["Facets"]
-        F --> R["Relationships"]
-        R --> S["States"]
-        S --> EV["Events"]
-        EV --> C["Constraints"]
-        C --> COG["Cognition"]
-        COG --> CP["Coordination Patterns"]
-    end
+- *Admitting a concept* (AR-1) requires evidence that the concept exists in humanitarian reality and materially affects understanding or decisions — independent corroboration from more than one source family, not a single mention.
+- *Layer placement* (AR-2) requires evidence about the concept's actual behavior — identity, variation, duration, recurrence — sufficient to answer the promotion test's questions decisively.
+- *A universal Constraint tag* requires the strongest case: corroboration across contexts *and* a passed Ground Truth Review; documentary evidence alone leaves the tag marked untested (Section 5).
+- *A primitive* requires all of the above plus the coverage test of §1.2.
 
-    AR --> L
-    Ev["Evidence"] --> COG
-    L --> GTR["Ground Truth Reviews"]
-    GTR --> Gov["Governance"]
-    COG --> Gov
-    Gov -.amendment authority.-> P
-    Gov -.amendment authority.-> AR
-    Gov -.amendment authority.-> L
-```
+**Confidence.** Every design decision carries a declared confidence — qualitative, justified by the evidence factors above, and traceable to the specific evidence weighed (explainability, Article X, applied to design). Confidence is never implied by a decision's mere presence in the document. Where evidence is inadequate but progress requires a working position, the position is recorded as an **assumption** — with its owner and the condition that would overturn it — and remains visibly an assumption until evidence resolves it (P3; this is the discipline the discovery phase's assumption register already practices, continued unchanged into design).
 
-Pillars and Domain Primitive are decided first because every other section is checked against or classified under them. Architecture Rules operationalizes that check into a repeatable procedure before any Layer content is authored. Within Layers, Entities are authored first because Facets, Relationships, States, and Events each qualify, connect to, or happen to something that must already exist. Evidence feeds Cognition directly rather than being folded into it. Ground Truth Reviews is the ongoing check that closes the loop back to reality, and Governance is the only path by which anything upstream — including a Pillar — may ever be changed.
+**Contradiction handling.** Conflicting evidence about reality is a natural consequence of observing complexity from different perspectives, not a failure (Ch. 5.2). When sources conflict about what reality contains or how it behaves: both observations are preserved with their provenance; the contradiction is recorded, not smoothed over; no side is discarded merely to produce a single answer; resolution comes only from further evidence, a Ground Truth Review, or — where the contradiction blocks progress and evidence cannot presently resolve it — a recorded Human Owner decision, which settles the design position while leaving the underlying evidence trail intact and revisable. A design decision that quietly picked a winner without recording the conflict violates AR-9 and is defective regardless of whether it picked correctly.
 
 ---
 
-## 5. Definition of Done for This Framework
+## 7. Governance
 
-This Framework is ready to govern actual ontology-content authoring only when:
+Ontology governance answers one question: **who may change what, under how much scrutiny**. It operates entirely within the authority structure the Constitution already establishes; nothing here creates new bodies or organizational workflows.
 
-1. Every open fork listed in §6 has been explicitly ratified, amended, or overridden by the client — none left silently accepted by default.
-2. The Layer authoring order (§4) is confirmed, distinct from and in addition to the client-facing presentation order retained above.
-3. The Architecture Rules promotion test (§3.4) has been pressure-tested against a deliberately-chosen sample of real Humanitarian Business Reference Model concepts — which in turn requires the HBRM to exist.
-4. No section above contains an ontology class, entity, relationship, taxonomy value, or engineering artifact — verified by the same purity-scan discipline already applied at the Business Master Plan and HBRM layers.
-5. A reviewer with no prior exposure to this Framework can read it end-to-end and correctly state, for any candidate business concept, which section it would need to be classified under and why, without needing to guess at an undecided fork.
-6. The Business Master Plan and Humanitarian Business Reference Model both exist, since this Framework's promotion test, Pillars, and Domain Primitive all require real concept material to be pressure-tested against before any of them can be considered more than a well-reasoned draft.
+**Authority.** The authority hierarchy of Article XIV binds all ontology work: Reality above the Project Overview, above the Constitution, above this document, above all ontology content, above everything engineered from it. Within that hierarchy: the **Domain Approval Authority** (Article XVII — the Project Lead and the designated human owners of the architectural review board) holds approval authority over ontology design content, including the Package B gate (Article XVI: Domain Primitives and Ontology Layers only, with all further work blocked until approved). The **Audit Authority** (Article XVIII) may inspect the evidence chain behind any ontology design decision and suspend downstream work that cannot trace its reasoning to verified humanitarian business reality. Admission of any new humanitarian domain's concepts follows Article XI's four-step procedure without exception.
 
-Item 6 is the binding constraint at this project's current stage: this Framework can be fully designed, as this document does, without the BMP or HBRM existing — it is method, not content. It cannot be *validated* or *finalized* without them.
+**Tiers of change.** Not every change is the same order of decision. Scrutiny scales with blast radius — the same reasoning by which the Constitution reserves different decisions to different authorities:
+
+- **Tier 1 — Content changes within settled structure.** Refining a definition, adding a dimension to an already-accepted concept, revising a variable Constraint's stated scope. Reviewed against the Pillars and Architecture Rules; recorded; approvable within the ontology design process itself.
+- **Tier 2 — Structural changes.** Admitting a new concept to any layer, reclassifying a concept between layers (§2.9), retagging a Constraint universal, deprecating or splitting a published concept. Requires the full evidence discipline of Section 6, a consistency review against existing content (Article XI-d), and Domain Approval Authority approval. Coordination Patterns receive Tier 2 scrutiny at minimum for any change, given their proximity to the automation boundary (§2.8).
+- **Tier 3 — Foundational changes.** Amending the primitive set, a Pillar's wording, an Architecture Rule, or this document. Rare and high-consequence by design: requires demonstration that the change is consistent with the Overview and Constitution (which it cannot override — Article XIV), formal written decision by the Domain Approval Authority, and recording in the decision ledger (the governance ledger, per Article XVII). No Tier 3 change may violate the Mandate or the five principles (Article XIX).
+
+**Review.** Every proposed change, at every tier, follows the same discipline the project already applies to its documents: it is proposed with its evidence and declared confidence; independently reviewed against the admission test, the promotion test, the Pillars, and existing content; its contradictions and assumptions recorded per Section 6; and formally closed with a recorded disposition. Escalations arrive from three standing sources and may not be resolved informally: Ground Truth Review failures (Section 5), evidence contradictions (Section 6), and author escalations under AR-9.
+
+**Approval.** Approval is explicit, written, and recorded; silence is never approval. A certification issued for content that does not exist or that skipped a gate is void (Article XVI). Once approved, content is stable until changed through this section — no downstream document, engineering effort, or implementation convenience may reinterpret it (Article XIV). The Package B checkpoint is absolute: after Domain Primitives and the Ontology Layers are designed, all work stops until the Project Lead's approval is received.
 
 ---
 
-## 6. Open Forks Requiring Client Ratification
+## Closing Statement
 
-Carried forward from the governing Blueprint's own §7, unresolved, exactly as flagged there. Each is a genuine design fork this Framework has reasoned about and recommended a position on, without treating any as silently settled:
+This document is the complete design law for the Khidmat Humanitarian Ontology. It defines what kinds of thing the ontology may contain, the tests that decide every placement, the unconditional commitments every decision must satisfy, the evidence and validation discipline that keeps the design honest about reality and about its own uncertainty, and the authority under which any of it may change.
 
-1. **Domain Primitive: abstract meta-categories, or HBRM cross-cutting concepts promoted directly (§3.1).** Recommended: meta-categories, with HBRM concepts as first instances classified against them, not the primitives themselves.
-2. **Layer authoring order versus client-presentation order (§3.2, §4).** Recommended: Entities → Facets → Relationships → States → Events → Constraints → Cognition → Coordination Patterns for authoring, retaining the client's original order for presentation.
-3. **Whether Facets, Relationships, and States are bare attributes/labels or first-class, evidence-backed, time-stamped assertions (§3.2.1, §3.2.3, §3.2.5).** Recommended: first-class assertions throughout.
-4. **Whether Cognition belongs in the ontology at all, versus being purely a reasoning-engine/software concern (§3.2.7).** Recommended: it belongs in the ontology, so Understanding-Before-Automation is structurally checkable, not merely implemented in application code.
-5. **Pillars as principle-based design law versus topic-based structural groupings (§3.3).** Recommended: principle-based.
-6. **Evidence versus Cognition as one layer or two (§3.6).** Recommended: two, in a Broader/Narrower relationship.
-7. **Who participates in Ground Truth Reviews (§3.5).** Recommended: both expert/field validation and, wherever consent and context allow, direct validation with the people the ontology models.
-8. **Governance tiering modeled on business-level distributed-authority logic (§3.7).** Recommended: yes, mapping routine/new-type/Primitive-or-Pillar decisions onto low/medium/high governance tiers respectively.
-
-None of these are resolved by this document. Each requires explicit client decision before this Framework can move from Draft to a status that could govern actual ontology-content authoring.
+It contains no ontology. The ontology itself begins with the discovery of the Domain Primitives (§1.2) and proceeds in dependency order (AR-10), under the gates of Article XVI — and it models reality only as fast as evidence justifies, because that is the mandate, applied to the foundation itself.

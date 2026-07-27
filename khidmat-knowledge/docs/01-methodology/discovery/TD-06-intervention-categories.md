@@ -3,7 +3,7 @@ id: TD-06
 title: Intervention Categories (BMP Chapter 6)
 status: Handed off
 created: 2026-07-27
-governed_by: ../BUSINESS_DISCOVERY_BLUEPRINT.md
+governed_by: ../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md
 ---
 
 # Topic Dossier 06 — Intervention Categories
@@ -20,8 +20,8 @@ governed_by: ../BUSINESS_DISCOVERY_BLUEPRINT.md
 5. Which categories appear stable enough to represent enduring business concepts vs operational implementations?
 
 ## 3. Tier C (Internal artifacts)
-- `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §9 (Needs Model) lists Food, Health, Education, Housing, Livelihood, Psychosocial, and Protection as categories.
-- `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §12 (Support Model) categorizes support as Financial, Material, Medical, Educational, and Livelihood. It explicitly states the concrete intervention catalogue and eligibility per intervention are planned but currently out of scope, relying on operational input from programme staff.
+- `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §9 (Needs Model) lists Food, Health, Education, Housing, Livelihood, Psychosocial, and Protection as categories.
+- `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §12 (Support Model) categorizes support as Financial, Material, Medical, Educational, and Livelihood. It explicitly states the concrete intervention catalogue and eligibility per intervention are planned but currently out of scope, relying on operational input from programme staff.
 
 ## 4. Tier B (Recognized sector standards)
 - **IASC Humanitarian Clusters:** The Inter-Agency Standing Committee (IASC) universally classifies humanitarian action into sectors/clusters (e.g., CCCM, Early Recovery, Education, Food Security, Health, Logistics, Nutrition, Protection, Shelter, WASH).
@@ -43,7 +43,7 @@ governed_by: ../BUSINESS_DISCOVERY_BLUEPRINT.md
 - **What humanitarian business reality has been discovered?** Interventions cannot be flattened into a single list. An intervention exists at the intersection of these three dimensions (e.g., an Emergency [Temporal] In-kind [Modality] Shelter [Sector] intervention).
 - **Why does it matter?** It prevents a future taxonomy from falsely forcing a hierarchical choice between a delivery method and a domain of need.
 - **Is it universal, common practice, or context-specific?** Universal (aligned with IASC clusters, CVA standards, and Triple Nexus frameworks).
-- **Does it reinforce, refine, or challenge previous discovery?** Refines the Tier C Support Model (`KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md`), which mixes modalities ("Financial", "Material") with sectors ("Medical", "Educational") in a single list.
+- **Does it reinforce, refine, or challenge previous discovery?** Refines the Tier C Support Model (`BUSINESS_ARCHITECTURE_BLUEPRINT.md`), which mixes modalities ("Financial", "Material") with sectors ("Medical", "Educational") in a single list.
 - **Source:** Tier B (IASC, Humanitarian modalities standards, Triple Nexus definitions).
 - **Confidence:** High.
 - **Evidence Current As Of:** 2026-07-27.
@@ -76,7 +76,7 @@ governed_by: ../BUSINESS_DISCOVERY_BLUEPRINT.md
 - **What humanitarian business reality has been discovered?** The detailed intervention catalogue is inherently volatile and context-dependent.
 - **Why does it matter?** The Business Master Plan should define the dimensions (the business concepts) but must explicitly avoid hardcoding the operational catalogue, which belongs to downstream configuration or taxonomy.
 - **Is it universal, common practice, or context-specific?** Universal.
-- **Does it reinforce, refine, or challenge previous discovery?** Reinforces `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §12's assertion that the concrete catalogue is out of scope for the core logic layer.
+- **Does it reinforce, refine, or challenge previous discovery?** Reinforces `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §12's assertion that the concrete catalogue is out of scope for the core logic layer.
 - **Source:** Tier D (Supply chain literature) and Tier C.
 - **Confidence:** High.
 - **Evidence Current As Of:** 2026-07-27.

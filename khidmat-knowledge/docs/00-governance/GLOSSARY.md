@@ -1,20 +1,18 @@
 ---
 id: DOC-GOV-003
 title: Khidmat Ubiquitous Language Glossary
-version: 0.9
-status: Provisional — Pending Full Synchronization
-owner:
-reviewers:
-created:
-last_updated: 2026-07-24
-depends_on: docs/00-governance/PROJECT_OVERVIEW.md (v1.0)
+version: 1.0
+status: Normative
+owner: Governance
+reviewers: Architecture Board
+created: 
+last_updated: 2026-07-27
+depends_on: docs/00-governance/PROJECT_OVERVIEW.md (v1.0), docs/00-governance/CONSTITUTION.md (v1.0)
 consumed_by: All Downstream Documents
 layer: 00-governance
 domain: Foundation
 tags: [glossary, terminology, ubiquitous-language]
 ---
-
-> **Synchronization note (Phase 7B):** this glossary predates `PROJECT_OVERVIEW.md` v1.0 and has not yet had a full term-by-term reconciliation against it — in particular, its definitions of Evidence, Verification, Trust, and Case should be checked against Overview Chapters 1.2, 5.1, and 5.2 before being treated as fully synchronized. This is flagged as follow-up work, not yet performed, given its size (400+ terms). Moved here from the repository root, superseding the previously empty stub at this path.
 
 # Khidmat Ubiquitous Language
 
@@ -335,8 +333,11 @@ An immutable event representing a macro-state change within a beneficiary's life
 
 ## Programs Terms
 
+**Organisation**
+The formally registered external implementing body that holds legal accountability, employs staff, and manages overarching resources. Distinct from the Programs it runs.
+
 **Program**
-The core structural initiative through which assistance is funded, governed, and bounded.
+The bounded structural initiative through which assistance is funded, governed, and delivered, possessing specific eligibility criteria.
 
 **Intervention Offering**
 A specific support modality and conditionality defined within a program's catalogue.

@@ -1,6 +1,6 @@
 # Business Discovery — Working Directory
 
-**Status:** Provisional location. `BUSINESS_DISCOVERY_BLUEPRINT.md` §10, Open Question 2 has not yet been answered by the Human Owner — it is undecided whether Topic Dossiers, the Assumption Register, and the Contradiction Log belong in the versioned repository at all, and if so, where. This directory is used in the meantime so discovery work has a consistent home; nothing here should be treated as certified or final, and its location may move once Open Question 2 is resolved.
+**Status:** Provisional location. `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §10, Open Question 2 has not yet been answered by the Human Owner — it is undecided whether Topic Dossiers, the Assumption Register, and the Contradiction Log belong in the versioned repository at all, and if so, where. This directory is used in the meantime so discovery work has a consistent home; nothing here should be treated as certified or final, and its location may move once Open Question 2 is resolved.
 
 ## Contents
 
@@ -13,7 +13,7 @@
 - `ASSUMPTION_REGISTER.md` — running log per Blueprint §6.2. 10 entries as of TD-06 (AR-001–AR-010).
 - `CONTRADICTION_LOG.md` — running log per Blueprint §6.3. 2 entries (CL-001, CL-002), both still open, both pending Human Owner decision — CL-001 now carries a cross-reference to TD-04, where the same underlying question resurfaced.
 - `DISCOVERY_PHASE_REVIEW_01.md` — retrospective quality checkpoint across TD-01–TD-03, performed before opening TD-04. Reviews process health, recurring concepts/patterns, and the two registers above; does not modify the Blueprint, resolve any open item, or authorize BMP authoring.
-- `HUMAN_OWNER_DECISION_BRIEF_01.md` — decision-support brief for `CONTRADICTION_LOG.md` entries CL-001 and CL-002, prepared because the Phase Review flagged a growing gap between discovery output and governance throughput. Restates each contradiction, the evidence gathered, and the implications of each possible path — makes no recommendation and does not modify the Contradiction Log. Resolution remains a Human Owner action, to be recorded in `docs/80-decisions/` once made.
+- `HUMAN_OWNER_DECISION_BRIEF_01.md` — decision-support brief for `CONTRADICTION_LOG.md` entries CL-001 and CL-002, prepared because the Phase Review flagged a growing gap between discovery output and governance throughput. Restates each contradiction, the evidence gathered, and the implications of each possible path — makes no recommendation and does not modify the Contradiction Log. Resolution remains a Human Owner action, to be recorded in `[Deleted 80-decisions dir]` once made.
 
 ## Note on "certification"
 
@@ -21,4 +21,4 @@ Discovery dossiers in this directory do not go through the Blueprint/Final-Metho
 
 ## Governing document
 
-All structure, fields, and process in this directory follow `../BUSINESS_DISCOVERY_BLUEPRINT.md` exactly. Do not modify dossier structure here without first amending the Blueprint — this directory contains discovery *output*, not methodology.
+All structure, fields, and process in this directory follow `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` exactly. Do not modify dossier structure here without first amending the Blueprint — this directory contains discovery *output*, not methodology.

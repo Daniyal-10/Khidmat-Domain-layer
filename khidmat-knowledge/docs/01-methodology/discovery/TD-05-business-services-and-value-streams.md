@@ -3,7 +3,7 @@ id: TD-05
 title: Business Services and Value Streams (BMP Chapter 5)
 status: Handed off
 created: 2026-07-27
-governed_by: ../BUSINESS_DISCOVERY_BLUEPRINT.md
+governed_by: ../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md
 ---
 
 # Topic Dossier 05 — Business Services and Value Streams
@@ -19,8 +19,8 @@ governed_by: ../BUSINESS_DISCOVERY_BLUEPRINT.md
 
 ## 3. Tier C (Internal artifacts)
 - `PROJECT_OVERVIEW.md` describes the Cognitive Lifecycle (Evidence/Knowledge Acquisition → Understanding Formation → Reasoning → Responsible Action), treating automation/action as a consequence of understanding, not a stage itself.
-- `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §14 outlines a Beneficiary Lifecycle flow: Awareness → Lead Creation → Registration → Verification → Needs Assessment → Eligibility → Support Planning → Volunteer Assignment → Support Delivery → Follow-up → Case Management → Outcome/Impact Measurement.
-- `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §16 limits V1 scope to the "understanding" components, explicitly excluding the resource-supply side, donor matching, and logistics delivery.
+- `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §14 outlines a Beneficiary Lifecycle flow: Awareness → Lead Creation → Registration → Verification → Needs Assessment → Eligibility → Support Planning → Volunteer Assignment → Support Delivery → Follow-up → Case Management → Outcome/Impact Measurement.
+- `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §16 limits V1 scope to the "understanding" components, explicitly excluding the resource-supply side, donor matching, and logistics delivery.
 
 ## 4. Tier B (Recognized sector standards)
 - **Humanitarian Value Stream Mapping (HVSM):** An established sector methodology adapted from Lean management. It maps the flow of resources and information between nodes in a supply chain, analyzing bottlenecks and waste. It treats humanitarian interventions as multiple, context-specific value streams built from distinct combinations of actors and resources.
@@ -51,7 +51,7 @@ governed_by: ../BUSINESS_DISCOVERY_BLUEPRINT.md
 - **Why does it matter?** It answers the specific research question posed in the BMP Blueprint §7 for Chapter 5, ensuring the BMP does not falsely model all humanitarian action as individual case management.
 - **Is it universal, common practice, or context-specific?** Universal across acute emergency and area-based response contexts.
 - **Does it reinforce, refine, or challenge previous discovery?** Refines the Case vs Programme altitude split discovered in TD-03, confirming that value streams themselves split along this axis.
-- **Source:** Tier D (Emergency operations case studies) and Tier C (`KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §8 Community Model).
+- **Source:** Tier D (Emergency operations case studies) and Tier C (`BUSINESS_ARCHITECTURE_BLUEPRINT.md` §8 Community Model).
 - **Confidence:** Medium-High.
 - **Evidence Current As Of:** 2026-07-27.
 - **Applicability Scope:** General/cross-context.

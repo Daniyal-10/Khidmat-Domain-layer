@@ -181,49 +181,58 @@ No document at a lower tier may override, contradict, or reinterpret a document 
 
 The Project Overview is the sole conceptual authority of the Khidmat AI project. This Constitution is the sole governance authority. No methodology or architecture document may originate new philosophy, new principle, or new mandate; each may only elaborate, formalize, or operationalize what the Project Overview and this Constitution already establish.
 
-### Article XVI — Dependency Hierarchy
+### Article XVI — Dependency Hierarchy & Approval Gates
 
-Downstream documents shall be authored in the following order, and no document shall be treated as complete, frozen, or certified while a document upstream of it remains unauthored:
+Downstream documents shall be authored in the following strict dependency order. No document shall be treated as complete, frozen, or certified while a document upstream of it remains unauthored. 
 
 ```
-The Project Overview
+Governance
         ↓
-Constitution, Philosophy, and Principles
+Methodology
         ↓
-Business Master Plan
+Business Discovery
         ↓
-Humanitarian Business Reference Model
+Human Owner Decisions
         ↓
-Business Architecture
-        ↓
-Domain Discovery
+Khidmat Foundation
         ↓
 Ontology Design
         ↓
 Ontology Engineering
+        ↓
+Systems Engineering
 ```
 
-A certification issued for a document whose content does not exist is void.
+**Approval Gates:**
+The repository enforces formal Project Lead review gates. 
+1. **Package A (Khidmat Foundation):** Must be complete and approved before Ontology Design can begin.
+2. **Package B (Ontology Design Foundation):** Must be complete (containing ONLY Domain Primitives and Ontology Layers) and approved before any further ontology work (Pillars, Rules, Evidence, Governance) or Engineering begins.
 
-### Article XVII — Domain Approval Authority *(Reserved)*
+A certification issued for a document whose content does not exist or has skipped a gate is void.
 
-The procedure for admitting a new humanitarian domain is established in Article XI. The composition of the authority empowered to approve a domain — whether centralized or distributed, permanent or evolving, and by what process it acts — is not established by the Project Overview and is not invented by this Constitution.
 
-**This Article is reserved.** It shall be completed only by an explicit future governance decision, consistent with the requirement that authority over the shared ecosystem remain distributed across participating organizations and not centralized in any single organization (Article XII).
 
-### Article XVIII — Audit Authority *(Reserved)*
+### Article XVII — Domain Approval Authority
 
-The duty to make every decision auditable is established in Article X. The composition of the body empowered to conduct an audit, its formation, and the extent of its powers are not established by the Project Overview and are not invented by this Constitution.
+The procedure for admitting a new humanitarian domain is established in Article XI. The composition of the authority empowered to approve a domain—the **Domain Approval Authority**—shall consist of the Project Lead and the designated human owners of the architectural review board. 
 
-**This Article is reserved.** It shall be completed only by an explicit future governance decision, consistent with the same distributed-authority requirement stated in Article XVII.
+The Authority is explicitly responsible for approving the Khidmat Foundation (Package A) and the Ontology Design Foundation (Package B) before any downstream work proceeds. The Authority acts by formal written decision recorded in the repository's decision ledger (the governance ledger).
+
+### Article XVIII — Audit Authority
+
+The duty to make every decision auditable is established in Article X. The **Audit Authority** shall be composed of an independent cross-functional panel of humanitarian subject matter experts, ethics reviewers, and systems architects.
+
+The Audit Authority is empowered to inspect the evidence chain of any Ontology Design or algorithmic recommendation. It has the mandate to suspend the deployment of any system that fails to trace its reasoning back to verified humanitarian business reality.
 
 ---
 
 ## VI. Reserved Articles
 
-### Article XIX — Reserved for Future Constitutional Governance
+### Article XIX — Future Governance & Amendment Procedure
 
-This Article is reserved for a future amendment procedure, ratification mechanism, or other constitutional governance instrument not contemplated by the Project Overview. It shall remain empty until the project's institutional structure has matured sufficiently to require it, and shall not be completed by inference or convenience.
+This Constitution represents Governance Baseline v1.0. 
+
+Amendments to this Constitution may only be proposed through a formal Request for Comments (RFC) stored in the governance ledger. An amendment must be ratified by the Project Lead and the core architectural review board. No amendment may violate the Mandate (Article I) or the Foundational Principles (Article II).
 
 ---
 
@@ -233,7 +242,7 @@ This Article is reserved for a future amendment procedure, ratification mechanis
 - **No invented philosophy or principle:** Articles XVII, XVIII, and XIX are explicitly marked Reserved rather than populated with invented governance mechanisms, per the two genuinely open items (domain-approval and audit authority composition) and the absence of any amendment mechanism in the Overview.
 - **No duplicated rules:** The Human Review Rule (Article VIII) is stated once and referenced, not restated, everywhere else it applies (Articles X, XI). The Standard of Understanding (Article III) is referenced, not repeated, in Article VII.
 - **Internal consistency:** Article VI's prohibition on organizational/software-based capability modeling is consistent with Article IV's Reality/Operational Knowledge boundary. Article XVII and XVIII's reserved status is consistent with Article XII's distributed-authority requirement. Article XVI's dependency hierarchy directly reflects the failure mode identified in this project's own Repository Provenance Report (a certification issued for unauthored content), now codified as a standing prohibition.
-- **Constitutional hierarchy coherence:** Article XIV (Reality → Overview → Constitution → Methodology → Architecture → Implementation) is the macro-structure; Articles XV and XVI elaborate its middle tiers in detail; Articles XVII–XVIII populate its Governance Hierarchy function with what can and cannot yet be decided.
-- **Fit for purpose:** This document contains no explanatory prose beyond what each article requires to state its rule, uses normative constitutional language throughout (shall / shall not / may / is prohibited / is required), and is structured to bind every future methodology and architecture document without needing to be rewritten as those documents are authored.
+- **Constitutional hierarchy coherence:** Article XIV establishes the macro-structure; Articles XV and XVI elaborate the exact sequential dependency (Governance to Systems Engineering) and the explicit Approval Gates (Packages A and B); Articles XVII and XVIII empower the Domain Approval Authority and Audit Authority.
+- **Fit for purpose:** This document establishes the **Governance Baseline v1.0**, using normative language throughout, binding all downstream methodology and architecture.
 
-**Status: Version 1.0, Normative, ready for governance adoption.** Articles XVII, XVIII, and XIX remain open pending the governance decisions they name.
+**Status: Version 1.0, Normative, Governance Baseline established.**

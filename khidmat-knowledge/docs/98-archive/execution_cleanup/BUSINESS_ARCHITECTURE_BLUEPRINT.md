@@ -113,9 +113,10 @@ to the Volunteer Operations domain and are out of V1 scope.)
 | **Field Verifier** | Confirms claims through field or desk activity and produces verification findings. |
 | **Human Reviewer** | Adjudicates escalations, ambiguous cases, and safety flags. |
 | **Case Manager** | Owns the case: plans, referrals, follow-ups, assignments, and the eligibility/continuation decisions. |
-| **Programme / Organisation** | Defines the assistance actually available, the eligibility criteria, and the accountability structure the case operates within. |
+| **Organisation** | The implementing body that holds legal accountability, employs staff, and manages overarching resources. |
+| **Programme** | The bounded initiative that defines the assistance actually available, the eligibility criteria, and the targeted beneficiary cohort. |
 
-*Donors and the resource-supply side are intentionally not V1 actors — see Section 17.*
+*Donors are recognized humanitarian actors, but donor-facing features and the resource-supply side are intentionally not in V1 software delivery scope — see Section 17.*
 
 ---
 
@@ -391,7 +392,7 @@ layer. Some are inspired by mature systems such as Direct Relief; they are not a
 because they exist elsewhere, and none is a V1 commitment:
 
 - **A predictive/preventive engine** that flags need before any signal exists (V2 horizon).
-- **The donor / resource-supply side and donor–need matching** (Khidmat V1 understands
+- **The donor / resource-supply side and donor–need matching** (While Donors are recognized as humanitarian actors conceptually, Khidmat V1 software delivery excludes donor-facing portals or funding-management logic. Khidmat V1 understands
   beneficiaries; it is not a donation marketplace).
 - **Resource allocation and optimisation** at scale (future).
 - **Trust-economy scoring, fraud/anomaly engines, and biometric verification** (operational
