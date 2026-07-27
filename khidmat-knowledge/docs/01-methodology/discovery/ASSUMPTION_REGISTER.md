@@ -60,4 +60,44 @@ Per `BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. Recorded whenever discovery cannot 
 **Why necessary:** Deciding this either way would exceed Business Discovery's mandate (naming business reality, not authoring a business decision); sector case-management standards reviewed end at closure, treating outcome/impact as a related-but-distinct discipline, which conflicts with how Khidmat's own artifact is currently structured — but this is a design choice for BMP Chapter 3 to make explicitly, not one this process can resolve.
 **Owner:** Business Discovery process (TD-03) / future BMP Chapter 3 author.
 **What would overturn or resolve it:** Further Tier B/D evidence on M&E-integrated case-management models, or an explicit authorial decision once BMP Chapter 3 drafting begins.
+**Status:** Open. **Substantially informed by TD-04** (BD-TD04-001, MEAL as a distinct sector-standard capability) — not resolved; the evidence now leans toward "separate capability," but the decision itself remains for a future BMP Chapter 3/4 author.
+
+---
+
+## AR-007 — MEAL, CFM, and Case Coordination treated as candidate capability-catalogue additions, without amending PROJECT_OVERVIEW.md
+
+**Assumption:** Monitoring/Evaluation/Accountability/Learning (MEAL), Complaints & Feedback Mechanisms (CFM), and — more tentatively — Case Coordination/Orchestration are treated as strong candidate additions to a future BMP Chapter 4 capability catalogue, without this discovery process asserting that `PROJECT_OVERVIEW.md` Ch6.1's capability framing is incomplete as a governance matter.
+**Why necessary:** `PROJECT_OVERVIEW.md` is explicitly a pre-formal, working document by its own stated terms ("before formal foundational documents are written"); amending or correcting it is outside Business Discovery's mandate. This assumption lets the gap be recorded as evidence for a future author without overstepping into governance.
+**Owner:** Business Discovery process (TD-04) / future BMP Chapter 4 author.
+**What would overturn it:** BMP Chapter 4 explicitly deciding whether and how to incorporate MEAL, CFM, and Case Coordination into the eventual capability catalogue.
+**Status:** Open.
+
+---
+
+## AR-008 — Case Coordination/Orchestration rests on Tier C-only inference
+
+**Assumption:** Case Coordination/Orchestration is treated as a plausible candidate distinct capability on the strength of an internal-document comparison alone (TD-04, §3), pending independent Tier B/D validation not yet performed.
+**Why necessary:** TD-04's external collection targeted MEAL and CFM specifically (both confirmed); Case Coordination as its own named, sector-recognized capability distinct from case-management execution was not separately searched this session.
+**Owner:** Business Discovery process (TD-04).
+**What would overturn it:** A future, targeted Tier B/D search specifically on case coordination/orchestration as a named capability.
+**Status:** Open.
+
+---
+
+## AR-009 — Specific operational value stream narratives deferred pending Tier A/programme input
+
+**Assumption:** Due to the absence of Tier A practitioner evidence, specific end-to-end value stream narratives (e.g., the exact operational sequence for an Emergency Shelter Response versus a Sustainable Livelihood Pathway) are assumed to structurally follow the generic Beneficiary Lifecycle logic described in Tier C, but the concrete operational differences between them remain unevidenced.
+**Why necessary:** Secondary literature (Tier D) provides the structural framework of Humanitarian Value Stream Mapping but does not provide the precise operational workflows used by specific Khidmat partner organizations, which requires practitioner input.
+**Owner:** Business Discovery process (TD-05).
+**What would overturn it:** Tier A practitioner evidence detailing the actual operational workflows for specific value streams.
+**Status:** Open.
+
+---
+
+## AR-010 — Standard intervention dimensions apply to Khidmat context
+
+**Assumption:** Due to the absence of Tier A evidence, it is assumed that Khidmat partner organizations recognize and use the three standard dimensions of intervention categorization (Sector, Modality, Temporal Phase) in their own programmatic design, even if their internal terminology differs slightly.
+**Why necessary:** Tier B and D evidence strongly supports these dimensions, but without Tier A, we assume they align with Khidmat's specific operational context.
+**Owner:** Business Discovery process (TD-06).
+**What would overturn it:** Tier A practitioner evidence indicating that Khidmat partner organizations use a fundamentally different framework for categorizing their interventions.
 **Status:** Open.
