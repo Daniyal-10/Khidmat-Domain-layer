@@ -8,7 +8,7 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 
 **Assumption:** The five operational roles named in `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §4 (Registrant, Proxy, Field Verifier, Human Reviewer, Case Manager) are provisionally treated as plausible candidate business roles for BMP Chapter 1 drafting purposes, pending independent validation.
 **Why necessary:** TD-01's Tier B/D collection (2026-07-24) found no external source — sector standard or academic literature — operating at this granularity; all retrieved sources describe organizational/coordination-level actors, not individual intake-conversation roles. Waiting indefinitely for Tier A would block Chapter 1 drafting entirely.
-**Owner:** Business Discovery process (TD-01) / Human Owner for practitioner-access decision.
+**Owner: Stage 5 Domain Discovery
 **What would overturn it:** Tier A practitioner evidence either corroborating these five roles as accurately describing real intake/verification/case-management practice, or surfacing a different role decomposition.
 **Status:** Open.
 
@@ -18,7 +18,7 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 
 **Assumption:** TD-01 Findings BD-TD01-001, 002, 003, 005 are recorded with a general/cross-context Applicability Scope, on the assumption that this is an acceptable starting scope for BMP Chapter 1 drafting even though no source was checked against this project's actual initial deployment region.
 **Why necessary:** No document reviewed anywhere in this project states an initial deployment geography, so no narrower scope could be tested against even if desired.
-**Owner:** Business Discovery process.
+**Owner: Stage 5 Domain Discovery
 **What would overturn it:** The project stating a specific initial deployment context, after which every general-scope Finding above should be re-validated (or explicitly re-scoped) against it rather than assumed to transfer automatically.
 **Status:** Open. **Applies beyond TD-01** — TD-02's Findings (BD-TD02-001 through 004) are general/cross-context for the identical reason and are covered by this same assumption rather than a duplicate entry.
 
@@ -28,7 +28,7 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 
 **Assumption:** TD-02's four Findings are treated as the structurally significant tensions surfaced by this collection pass, not as proof that no other actor-pair tension exists among TD-01's named actor categories (e.g., Volunteer-vs-Case-Manager or Field-Verifier-vs-Human-Reviewer tensions were not specifically checked).
 **Why necessary:** An exhaustive pairwise tension analysis across every TD-01 actor category was out of scope for a single collection pass, and manufacturing additional tensions merely to achieve pairwise coverage would violate Business Discovery Blueprint §4 Principle 6 (findings must be falsifiable) and Principle 7 (no finding authored for convenience).
-**Owner:** Business Discovery process (TD-02).
+**Owner: Stage 5 Domain Discovery
 **What would overturn it:** Tier A practitioner evidence, or a further Tier B/D pass, surfacing a materially different or additional structural tension among actor pairs not already covered.
 **Status:** Open.
 
@@ -38,7 +38,7 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 
 **Assumption:** The automation/human-oversight tension (`BUSINESS_ARCHITECTURE_BLUEPRINT.md` §3.3; `PROJECT_OVERVIEW.md` Ch4.2) is provisionally treated as a legitimate candidate tension for BMP Chapter 2, on the strength of two independent internal documents stating it, pending Tier B/D corroboration specifically from AI/automation-in-humanitarian-response literature, which was not searched in TD-02's collection pass.
 **Why necessary:** TD-02's Tier B/D search targeted the four tensions with the clearest external literature; automation-vs-human-oversight is a distinct research question requiring its own targeted search, not a byproduct of the searches already run.
-**Owner:** Business Discovery process (TD-02).
+**Owner: Stage 5 Domain Discovery
 **What would overturn it:** A future, narrowly-scoped Tier B/D collection pass on AI/automation-in-humanitarian-response literature, either corroborating this as a recognized sector tension or reframing it as a Khidmat-specific design commitment without broader sector precedent (which would not make it false, only differently sourced).
 **Status:** Open.
 
@@ -48,7 +48,7 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 
 **Assumption:** TD-03's finding that a programme-level (coordination/resourcing) lifecycle and a case-level (individual) lifecycle are structurally distinct (BD-TD03-001) is treated as real and business-relevant, but exactly how the two are coupled in practice (e.g., how resource-mobilization outcomes concretely constrain case-level Support Planning/Delivery) is assumed to exist without being evidenced in detail.
 **Why necessary:** The Tier B sources reviewed established the two cycles as conceptually distinct but did not describe their coupling mechanism.
-**Owner:** Business Discovery process (TD-03).
+**Owner: Stage 5 Domain Discovery
 **What would overturn it:** Tier B/D or Tier A evidence describing the actual coupling mechanism, or evidence the two cycles are more loosely coupled than assumed.
 **Status:** Open.
 
@@ -58,7 +58,7 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 
 **Assumption:** Whether outcome measurement, impact measurement, and organizational learning belong inside the same business-level case lifecycle Khidmat's own `BUSINESS_ARCHITECTURE_BLUEPRINT.md` §14 currently structures them as (BD-TD03-003), or as a related-but-separate business capability, is left genuinely open — not defaulted toward the existing internal structure.
 **Why necessary:** Deciding this either way would exceed Business Discovery's mandate (naming business reality, not authoring a business decision); sector case-management standards reviewed end at closure, treating outcome/impact as a related-but-distinct discipline, which conflicts with how Khidmat's own artifact is currently structured — but this is a design choice for BMP Chapter 3 to make explicitly, not one this process can resolve.
-**Owner:** Business Discovery process (TD-03) / future BMP Chapter 3 author.
+**Owner: Stage 5 Domain Discovery
 **What would overturn or resolve it:** Further Tier B/D evidence on M&E-integrated case-management models, or an explicit authorial decision once BMP Chapter 3 drafting begins.
 **Status:** Open. **Substantially informed by TD-04** (BD-TD04-001, MEAL as a distinct sector-standard capability) — not resolved; the evidence now leans toward "separate capability," but the decision itself remains for a future BMP Chapter 3/4 author.
 
@@ -68,7 +68,7 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 
 **Assumption:** Monitoring/Evaluation/Accountability/Learning (MEAL), Complaints & Feedback Mechanisms (CFM), and — more tentatively — Case Coordination/Orchestration are treated as strong candidate additions to a future BMP Chapter 4 capability catalogue, without this discovery process asserting that `PROJECT_OVERVIEW.md` Ch6.1's capability framing is incomplete as a governance matter.
 **Why necessary:** `PROJECT_OVERVIEW.md` is explicitly a pre-formal, working document by its own stated terms ("before formal foundational documents are written"); amending or correcting it is outside Business Discovery's mandate. This assumption lets the gap be recorded as evidence for a future author without overstepping into governance.
-**Owner:** Business Discovery process (TD-04) / future BMP Chapter 4 author.
+**Owner: Stage 5 Domain Discovery
 **What would overturn it:** BMP Chapter 4 explicitly deciding whether and how to incorporate MEAL, CFM, and Case Coordination into the eventual capability catalogue.
 **Status:** Open.
 
@@ -78,7 +78,7 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 
 **Assumption:** Case Coordination/Orchestration is treated as a plausible candidate distinct capability on the strength of an internal-document comparison alone (TD-04, §3), pending independent Tier B/D validation not yet performed.
 **Why necessary:** TD-04's external collection targeted MEAL and CFM specifically (both confirmed); Case Coordination as its own named, sector-recognized capability distinct from case-management execution was not separately searched this session.
-**Owner:** Business Discovery process (TD-04).
+**Owner: Stage 5 Domain Discovery
 **What would overturn it:** A future, targeted Tier B/D search specifically on case coordination/orchestration as a named capability.
 **Status:** Open.
 
@@ -88,7 +88,7 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 
 **Assumption:** Due to the absence of Tier A practitioner evidence, specific end-to-end value stream narratives (e.g., the exact operational sequence for an Emergency Shelter Response versus a Sustainable Livelihood Pathway) are assumed to structurally follow the generic Beneficiary Lifecycle logic described in Tier C, but the concrete operational differences between them remain unevidenced.
 **Why necessary:** Secondary literature (Tier D) provides the structural framework of Humanitarian Value Stream Mapping but does not provide the precise operational workflows used by specific Khidmat partner organizations, which requires practitioner input.
-**Owner:** Business Discovery process (TD-05).
+**Owner: Stage 5 Domain Discovery
 **What would overturn it:** Tier A practitioner evidence detailing the actual operational workflows for specific value streams.
 **Status:** Open.
 
@@ -98,6 +98,46 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 
 **Assumption:** Due to the absence of Tier A evidence, it is assumed that Khidmat partner organizations recognize and use the three standard dimensions of intervention categorization (Sector, Modality, Temporal Phase) in their own programmatic design, even if their internal terminology differs slightly.
 **Why necessary:** Tier B and D evidence strongly supports these dimensions, but without Tier A, we assume they align with Khidmat's specific operational context.
-**Owner:** Business Discovery process (TD-06).
+**Owner: Stage 5 Domain Discovery
 **What would overturn it:** Tier A practitioner evidence indicating that Khidmat partner organizations use a fundamentally different framework for categorizing their interventions.
+**Status:** Open.
+
+---
+
+## AR-011 — Informal success criteria criteria remains unevidenced
+
+**Assumption:** The specific, informal criteria the client and domain team currently use in practice to judge whether an intervention "worked" (prior to formal outcome indicators) is assumed to align broadly with the business-level Operational Objectives drafted in Chapter 7, but the exact informal criteria remain undocumented.
+**Why necessary:** `PROJECT_OVERVIEW.md` provides broad indicators of human flourishing, but does not provide the concrete informal criteria currently used by the domain team in practice.
+**Owner: Stage 5 Domain Discovery
+**What would overturn it:** Tier A practitioner evidence detailing the actual informal success criteria used by the domain team.
+**Status:** Open.
+
+---
+
+## AR-012 — Authority to override system recommendations unevidenced
+
+**Assumption:** Who, in actual humanitarian practice, possesses the specific operational authority to override a system-generated recommendation (and under what exact circumstances) remains an open discovery topic. The overarching boundary that high-consequence decisions require human review is established, but the specific authority boundaries are not.
+**Why necessary:** While `PROJECT_OVERVIEW.md` establishes the principle of meaningful human review, it does not specify which operational roles hold this override authority in practice.
+**Owner: Stage 5 Domain Discovery
+**What would overturn it:** Tier A practitioner evidence detailing the specific operational roles and circumstances for overriding system recommendations.
+**Status:** Open.
+
+---
+
+## AR-013 — Additional regional/cultural frameworks unevidenced
+
+**Assumption:** Beyond the Islamic giving model (Zakat/Sadaqah), what other specific regional or cultural frameworks the project intends to support—and whether they represent surface-level labeling aliases or substantively distinct business practices—remains an open assumption.
+**Why necessary:** Existing artifacts reference the Islamic giving model as a primary example, but do not provide an exhaustive list of other intended regional/cultural frameworks.
+**Owner: Stage 5 Domain Discovery
+**What would overturn it:** Formal documentation from the Human Owner or client specifying additional regional/cultural frameworks in scope for the project.
+**Status:** Open.
+
+---
+
+## AR-014 — Private Sector and Market Actors unevidenced as formal category
+
+**Assumption:** While `HUMANITARIAN_BUSINESS_REFERENCE_MODEL.md` Chapter 5 describes a "Material and Resource Flow" (logistics, procurement) and Chapter 6 describes "Cash and Voucher Assistance," the specific role of "Private Sector and Market Actors" (e.g., local merchants, financial service providers, logistics vendors) is assumed to exist as a distinct, missing actor category in Chapter 1.
+**Why necessary:** These actors execute the physical delivery and financial transaction components of assistance, but TD-01 did not explicitly capture them alongside NGOs, Governments, and Communities.
+**Owner: Stage 5 Domain Discovery
+**What would overturn it:** Tier A practitioner evidence indicating how market actors are classified in the Khidmat ecosystem.
 **Status:** Open.

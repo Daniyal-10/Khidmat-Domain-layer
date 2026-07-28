@@ -11,16 +11,16 @@
 ```
 1. Project Overview               ✅ Done (v1.0)
         ↓
-2. Business Master Plan           🔴 Blueprint exists, not yet authored
+2. Business Master Plan           ✅ Done (Frozen)
         ↓
 3. Humanitarian Business
-   Reference Model (HBRM)         🟡 Seeded in Ch 6.1, not standalone
+   Reference Model (HBRM)         ✅ Done (Frozen)
         ↓
-4. Business Architecture          🟡 Draft exists, needs reconciliation
+4. Business Architecture          ✅ Done (Frozen)
         ↓
-5. Domain Discovery                🔴 Not started (per-domain, repeatable)
+5. Domain Discovery                🟡 Active (per-domain, repeatable)
         ↓
-6. Ontology Design Prerequisites   🔴 Blocked on stages 2–5
+6. Ontology Design Prerequisites   🔴 Blocked on stage 5
         ↓
 7. Ontology Design                 🔴 Blocked on stage 6
         ↓
@@ -39,7 +39,7 @@ v1.0, frozen conceptual foundation. All downstream stages should trace back to t
 ---
 
 ## Stage 2 — Business Master Plan
-**Status: 🔴 Not yet authored**
+**Status: ✅ Done (Frozen)**
 
 **What exists:**
 - `BUSINESS_MASTER_PLAN_BLUEPRINT.md` — detailed blueprint
@@ -57,7 +57,7 @@ v1.0, frozen conceptual foundation. All downstream stages should trace back to t
 ---
 
 ## Stage 3 — Humanitarian Business Reference Model (HBRM)
-**Status: 🟡 Seeded, not standalone**
+**Status: ✅ Done (Frozen)**
 
 **What exists:** Chapter 6.1 of the Project Overview defines the Core Cognitive Lifecycle (Evidence & Knowledge Acquisition → Understanding Formation → Reasoning & Justified Recommendation → Responsible Action), Cross-Cutting Capabilities (Verification, Continuity & Re-assessment, Cross-Organizational Coordination), and Emergent Properties (Trust, Shared Humanitarian Understanding) — but not as a dedicated document.
 
@@ -71,7 +71,7 @@ v1.0, frozen conceptual foundation. All downstream stages should trace back to t
 ---
 
 ## Stage 4 — Business Architecture
-**Status: 🟡 Draft exists under a different name, needs reconciliation**
+**Status: ✅ Done (Frozen)**
 
 **What exists:** `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` — already captures actors, principles, lifecycle, and business models. Explicitly marked as unsynchronized with the current Project Overview and Constitution, and not yet authoritative.
 
@@ -88,7 +88,7 @@ v1.0, frozen conceptual foundation. All downstream stages should trace back to t
 ---
 
 ## Stage 5 — Domain Discovery
-**Status: 🔴 Not started — repeatable per domain**
+**Status: 🟡 Active — repeatable per domain**
 
 *(Corresponds to Chapter 6.2, Steps 1–2: Proposal + Research and Understanding)*
 
@@ -131,7 +131,7 @@ Log each: concept name, source, one-line description, why it might matter. No st
 ---
 
 ## Stage 6 — Ontology Design Prerequisites
-**Status: 🔴 Blocked on Stages 2–5**
+**Status: 🔴 Blocked on Stage 5**
 
 This is a short readiness gate, not a research phase — it confirms the Stable Core is defined and that Stage 5's qualified concepts are consistent with it, plus confirms Stages 2–4 inputs are actually usable.
 
@@ -201,11 +201,11 @@ Where the conceptual ontology becomes a technical artifact — this is where "RD
 | Stage | Status | Blocking Dependency |
 |---|---|---|
 | 1. Project Overview | ✅ Done | — |
-| 2. Business Master Plan | 🔴 Not authored | Blueprint exists — needs authoring + sign-off |
-| 3. HBRM | 🟡 Seeded in Ch 6.1 | Needs standalone draft; check overlap with Stage 4 blueprint first |
-| 4. Business Architecture | 🟡 Draft exists, unsynchronized | Needs section-by-section reconciliation against Project Overview + Constitution |
-| 5. Domain Discovery | 🔴 Not started | Needs Stages 2–4 closed enough to define scope meaningfully |
-| 6. Ontology Design Prerequisites | 🔴 Blocked | Needs Stages 2–5 |
+| 2. Business Master Plan | ✅ Done | — |
+| 3. HBRM | ✅ Done | — |
+| 4. Business Architecture | ✅ Done | — |
+| 5. Domain Discovery | 🟡 Active | Needs Stage 4 closed (Now complete) |
+| 6. Ontology Design Prerequisites | 🔴 Blocked | Needs Stage 5 |
 | 7. Ontology Design | 🔴 Blocked | Needs Stage 6 |
 | 8. Ontology Engineering | 🔴 Blocked | Needs Stage 7 |
 

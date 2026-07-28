@@ -30,7 +30,7 @@ The mandate of Khidmat AI is:
 
 > To establish a trustworthy, evidence-based understanding of humanitarian reality before any humanitarian decision, recommendation, or automation is performed.
 
-This mandate is immutable. No technology choice, funding model, organizational structure, or AI capability may alter it. Every subsequent article in this Constitution exists to enforce this mandate.
+This mandate is immutable. No technology choice, funding model, organisational structure, or AI capability may alter it. Every subsequent article in this Constitution exists to enforce this mandate.
 
 ---
 
@@ -65,14 +65,14 @@ Where any condition is unmet, the required response is further evidence-gatherin
 
 ### Article IV — The Knowledge Foundation Boundary
 
-A concept shall be admitted to the shared humanitarian knowledge foundation only if its omission would materially change the understanding of humanitarian reality, or the quality, safety, fairness, or appropriateness of a humanitarian decision. This test is independent of domain, organization, or implementation technology.
+A concept shall be admitted to the shared humanitarian knowledge foundation only if its omission would materially change the understanding of humanitarian reality, or the quality, safety, fairness, or appropriateness of a humanitarian decision. This test is independent of domain, organisation, or implementation technology.
 
 Knowledge shall be classified as either:
 
-(a) **Reality Knowledge** — knowledge of humanitarian reality itself, shareable across organizations under governance; or
-(b) **Operational Knowledge** — knowledge that exists solely because of how a particular organization or application operates.
+(a) **Reality Knowledge** — knowledge of humanitarian reality itself, shareable across organisations under governance; or
+(b) **Operational Knowledge** — knowledge that exists solely because of how a particular organisation or application operates.
 
-Only Reality Knowledge may enter the shared foundation. Operational Knowledge shall remain local to the organization or application that produced it.
+Only Reality Knowledge may enter the shared foundation. Operational Knowledge shall remain local to the organisation or application that produced it.
 
 ### Article V — Evidence & Trust Discipline
 
@@ -82,11 +82,11 @@ Evidence shall be evaluated according to the credibility of its source, its meth
 
 Where evidence conflicts, all conflicting observations shall be preserved together with their provenance, context, and time of observation. No conflicting claim shall be discarded merely to produce a premature single answer.
 
-Trust shall not be assigned directly to any claim, source, or organization. Trust may only be permitted to emerge from a demonstrated history of verified, corroborated evidence.
+Trust shall not be assigned directly to any claim, source, or organisation. Trust may only be permitted to emerge from a demonstrated history of verified, corroborated evidence.
 
 ### Article VI — Business Capability Modelling Rule
 
-No methodology or architecture document shall organize humanitarian business capabilities around organizational departments, software modules, or the functional categories of existing NGO systems. Business capabilities shall instead be derived from the mandate (Article I) and the cognitive lifecycle (Article VII).
+No methodology or architecture document shall organize humanitarian business capabilities around organisational departments, software modules, or the functional categories of existing NGO systems. Business capabilities shall instead be derived from the mandate (Article I) and the cognitive lifecycle (Article VII).
 
 ---
 
@@ -141,15 +141,15 @@ No domain shall be admitted by skipping any of these four steps. The composition
 
 ### Article XII — Infrastructure Stewardship, Not Ownership
 
-Khidmat AI shall be governed as shared infrastructure, stewarded on behalf of all participating organizations, and shall not be treated as the exclusive property of any single organization.
+Khidmat AI shall be governed as shared infrastructure, stewarded on behalf of all participating organisations, and shall not be treated as the exclusive property of any single organisation.
 
-Participating organizations shall retain independence and ownership of their own operational systems. No organization's contribution of knowledge to the shared foundation shall be treated as surrendering that organization's operational autonomy.
+Participating organisations shall retain independence and ownership of their own operational systems. No organisation's contribution of knowledge to the shared foundation shall be treated as surrendering that organisation's operational autonomy.
 
 ### Article XIII — The Standard of Success
 
 Khidmat AI shall never be evaluated by software metrics — including uptime, active users, or computational speed — as a measure of its success.
 
-Success shall instead be measured by improvement in human flourishing, including: reduction in unidentified humanitarian need; earlier identification of vulnerability before crisis escalation; faster and more appropriate support once need is identified; improved continuity of care across organizations; reduced duplication and fragmentation between humanitarian actors; increased recovery toward dignity and independence rather than prolonged dependency; increased trust between beneficiaries and organizations through transparent, evidence-based decision-making; and greater collective humanitarian understanding across the ecosystem.
+Success shall instead be measured by improvement in human flourishing, including: reduction in unidentified humanitarian need; earlier identification of vulnerability before crisis escalation; faster and more appropriate support once need is identified; improved continuity of care across organisations; reduced duplication and fragmentation between humanitarian actors; increased recovery toward dignity and independence rather than prolonged dependency; increased trust between beneficiaries and organisations through transparent, evidence-based decision-making; and greater collective humanitarian understanding across the ecosystem.
 
 Any future evaluation or reporting document shall be measured against this Article, not against software performance.
 
@@ -241,7 +241,7 @@ Amendments to this Constitution may only be proposed through a formal Request fo
 - **Traceability:** Every article (I–XVI) cites the specific Project Overview chapter it derives from; none originates content absent from the Overview.
 - **No invented philosophy or principle:** Articles XVII, XVIII, and XIX are explicitly marked Reserved rather than populated with invented governance mechanisms, per the two genuinely open items (domain-approval and audit authority composition) and the absence of any amendment mechanism in the Overview.
 - **No duplicated rules:** The Human Review Rule (Article VIII) is stated once and referenced, not restated, everywhere else it applies (Articles X, XI). The Standard of Understanding (Article III) is referenced, not repeated, in Article VII.
-- **Internal consistency:** Article VI's prohibition on organizational/software-based capability modeling is consistent with Article IV's Reality/Operational Knowledge boundary. Article XVII and XVIII's reserved status is consistent with Article XII's distributed-authority requirement. Article XVI's dependency hierarchy directly reflects the failure mode identified in this project's own Repository Provenance Report (a certification issued for unauthored content), now codified as a standing prohibition.
+- **Internal consistency:** Article VI's prohibition on organisational/software-based capability modeling is consistent with Article IV's Reality/Operational Knowledge boundary. Article XVII and XVIII's reserved status is consistent with Article XII's distributed-authority requirement. Article XVI's dependency hierarchy directly reflects the failure mode identified in this project's own Repository Provenance Report (a certification issued for unauthored content), now codified as a standing prohibition.
 - **Constitutional hierarchy coherence:** Article XIV establishes the macro-structure; Articles XV and XVI elaborate the exact sequential dependency (Governance to Systems Engineering) and the explicit Approval Gates (Packages A and B); Articles XVII and XVIII empower the Domain Approval Authority and Audit Authority.
 - **Fit for purpose:** This document establishes the **Governance Baseline v1.0**, using normative language throughout, binding all downstream methodology and architecture.
 

@@ -1,0 +1,26 @@
+# Business Events
+
+- **Intake Initiated:** A person presents themselves or is identified.
+- **Consent Granted:** Beneficiary explicitly agrees to terms.
+- **Consent Withdrawn:** Beneficiary revokes previous agreement.
+- **Duplicate Identified:** A potential identity collision is flagged.
+- **Household Updated:** Composition changes (e.g., birth, separation).
+- **Claim Recorded:** A specific need or circumstance is stated.
+- **Evidence Verified:** A claim is independently confirmed.
+- **Evidence Invalidated:** Previously accepted proof is found fraudulent or expired.
+- **Evidence Expired:** Verification ages past policy threshold.
+- **Assessment Completed:** The holistic context of the individual is synthesised.
+- **Safeguarding Concern Raised:** A critical protection risk is identified.
+- **Risk Escalated:** A vulnerability reaches a critical threshold.
+- **Support Plan Proposed:** An intervention is recommended.
+- **Support Plan Approved:** A human authorizes the intervention.
+- **Execution Triggered:** The plan is passed to Resource & Logistics for fulfillment.
+- **Fulfillment Confirmed:** Notification received that aid was delivered.
+- **Support Suspended:** Interventions paused due to compliance, security, or eligibility loss.
+- **Referral Created:** A need is sent to a partner Organisation.
+- **Referral Accepted / Rejected:** Partner response received.
+- **Appeal Submitted:** Beneficiary contests a decision.
+- **Appeal Resolved:** Final determination made.
+- **Reassessment Triggered:** New information or time elapsed requires another assessment.
+- **Case Closed:** The active intervention cycle is formally ended.
+- **Case Reopened:** A closed case requires new intervention.

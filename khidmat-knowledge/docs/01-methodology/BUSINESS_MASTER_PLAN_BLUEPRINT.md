@@ -17,8 +17,8 @@ Put simply: the ontology answers *"what do we call this, and how does it relate 
 ### Questions it must answer
 
 - Who does humanitarian assistance actually involve — as actors, not as data fields?
-- What is the shape of the humanitarian lifecycle, independent of any one organization's workflow?
-- What business capabilities does *any* humanitarian organization need, regardless of size, geography, or sector?
+- What is the shape of the humanitarian lifecycle, independent of any one organisation's workflow?
+- What business capabilities does *any* humanitarian organisation need, regardless of size, geography, or sector?
 - What are the recurring value streams (need → assistance → outcome) that repeat across every humanitarian domain this project intends to model?
 - Where does one capability's responsibility end and another's begin (the same "single ownership" discipline ontology engineering will need to enforce, but at the level of *business capability*, not concept)?
 - What does "success" mean in humanitarian terms, before it is operationalized into any outcome-indicator vocabulary?
@@ -40,16 +40,16 @@ The Humanitarian Business Reference Model cannot categorize business capabilitie
 
 ### What belongs inside this document
 
-- **The humanitarian ecosystem** — the organizations, actor types, and systemic relationships that exist in humanitarian work generally (NGOs, government bodies, donors, community structures, volunteers, beneficiaries) — described as *roles in a business process*, not as data entities.
+- **The humanitarian ecosystem** — the organisations, actor types, and systemic relationships that exist in humanitarian work generally (NGOs, government bodies, donors, community structures, volunteers, beneficiaries) — described as *roles in a business process*, not as data entities.
 - **Stakeholders and their interests** — who wants what from the system of humanitarian assistance, and where those interests align or conflict (e.g., donor accountability vs. beneficiary dignity vs. speed of relief).
 - **The humanitarian lifecycle** — the macro sequence of business events from "a need exists" through "assistance is delivered" to "an outcome is achieved or not achieved" — described in business language (what happens, who does it, why), not in lifecycle-state-machine language.
-- **Business capabilities** — the recurring *things a humanitarian organization must be able to do* (identify need, verify claims, coordinate resources, deliver assistance, measure outcome) independent of who does them or how.
+- **Business capabilities** — the recurring *things a humanitarian organisation must be able to do* (identify need, verify claims, coordinate resources, deliver assistance, measure outcome) independent of who does them or how.
 - **Business services** — the concrete offerings a capability produces (a verified case, a delivered intervention, a closed referral) — the "what comes out" of a capability.
 - **Value streams** — the end-to-end chains that connect a triggering event (a person in crisis) to a value-delivering outcome (sustainable recovery), cutting across capabilities.
 - **Operational objectives** — what "doing this well" means at the business level (dignity preserved, verification quality, time-to-assistance, avoidance of duplicate aid) — the business-level ancestors of what will *later* become outcome indicators.
 - **Intervention types, at the business level** — categories of assistance (immediate relief, rehabilitative support, sustainable independence pathways) described as business concepts, not as `support_intervention` taxonomy entries.
 - **Success measures, in business language** — what changes in a person's or community's life when the system works, described narratively and by example, not as a measurement schema.
-- **Governance boundaries** — who has authority over what kind of business decision (case-level, program-level, organizational-level) — the business-process ancestor of the ontology's "concept ownership" discipline.
+- **Governance boundaries** — who has authority over what kind of business decision (case-level, programme-level, organisational-level) — the business-process ancestor of the ontology's "concept ownership" discipline.
 
 ### What does NOT belong here
 
@@ -106,7 +106,7 @@ Ontology Engineering  (this repository's existing, mature, 29-ADR-deep practice)
 The task's example places the Business Master Plan directly under the Project Overview and directly above the Humanitarian Business Reference Model, with no philosophy/principles step and no Business Architecture / Domain Discovery steps shown. Two corrections, both grounded in documents that already exist in this repository:
 
 1. **PHILOSOPHY.md and PRINCIPLES.md must sit between VISION.md and the Business Master Plan, not be skipped.** The repository's own Blueprint (`docs/00-governance/PROJECT_OVERVIEW_BLUEPRINT.md`) states that Chapters 1–2 (Vision, then Philosophy/Principles) "must precede all other chapters," and that Chapters 5–6 (which include the Business Architecture and Business Reference Model) explicitly "depend on the constraints set in Ch 3-4," which in turn depend on Ch 1-2. Writing the Business Master Plan before Philosophy/Principles exist risks the Plan silently inventing its own operating principles (e.g., "AI may act autonomously when confidence is high") that later contradict whatever Chapter 2 eventually states formally.
-2. **Business Architecture and Domain Discovery are real, separate downstream documents already scaffolded in this repository** (`docs/01-methodology/BUSINESS_ARCHITECTURE.md`, `DOMAIN_DISCOVERY.md`), and they are not the same thing as the Humanitarian Business Reference Model. Collapsing them into one step in the dependency chain would misrepresent what each is for: the Reference Model *categorizes* business capabilities; Business Architecture *maps* those capabilities onto organizational/operational boundaries; Domain Discovery *governs the sequencing decision* of which capability area gets modelled into ontology next — a decision this repository has not yet written a formal methodology for.
+2. **Business Architecture and Domain Discovery are real, separate downstream documents already scaffolded in this repository** (`docs/01-methodology/BUSINESS_ARCHITECTURE.md`, `DOMAIN_DISCOVERY.md`), and they are not the same thing as the Humanitarian Business Reference Model. Collapsing them into one step in the dependency chain would misrepresent what each is for: the Reference Model *categorizes* business capabilities; Business Architecture *maps* those capabilities onto organisational/operational boundaries; Domain Discovery *governs the sequencing decision* of which capability area gets modelled into ontology next — a decision this repository has not yet written a formal methodology for.
 
 **Note on future engineering practice:** Once ontology engineering begins, this repository's engineering practice (a decision-record log, a documented AI-collaboration workflow, a knowledge-layer roadmap) will need to encode a working philosophy, a working set of principles, and a working business reference model consistent with these formal documents. None of that engineering practice exists yet — the Business Master Plan should be authored from the formal documents this chain names, not from any assumed prior engineering precedent.
 
@@ -120,7 +120,7 @@ The task's example places the Business Master Plan directly under the Project Ov
 | `VISION.md` | States the mandate and the ultimate measure of success, in aspirational/existential terms ("what fundamental truth about the world will have changed"). | VISION answers *why the project should exist at all*. The BMP answers *how the business it describes actually operates*, independent of whether Khidmat AI exists to serve it. VISION is Khidmat-specific; the BMP's subject matter (humanitarian assistance) predates and would outlive Khidmat AI. |
 | `PHILOSOPHY.md` | States the non-negotiable epistemic rules governing how understanding is built (e.g., "knowledge precedes automation," what it means for a system to "understand"). | PHILOSOPHY is about the *rules of knowing*; the BMP is about the *content known*. PHILOSOPHY would say "verification must precede trust" as a general rule; the BMP would describe what verification actually looks like as a business process, without yet deciding how a system enforces the rule. |
 | `PRINCIPLES.md` | The small number of unbreakable design laws derived from PHILOSOPHY. | PRINCIPLES are constraints ON the BMP (and every document after it) — the BMP must be checked against PRINCIPLES, not the reverse. |
-| Business Architecture | Maps the BMP's capabilities onto organizational structures, roles, and operational boundaries — "who within an org does this, and how do orgs coordinate." | Business Architecture asks "how is this capability organized and executed operationally"; the BMP asks "what is this capability and why must it exist." Business Architecture presumes the BMP's capability list as an input, not vice versa. |
+| Business Architecture | Maps the BMP's capabilities onto organisational structures, roles, and operational boundaries — "who within an org does this, and how do orgs coordinate." | Business Architecture asks "how is this capability organized and executed operationally"; the BMP asks "what is this capability and why must it exist." Business Architecture presumes the BMP's capability list as an input, not vice versa. |
 | Humanitarian Business Reference Model | A structured *taxonomy* of the business capabilities and services the BMP describes narratively — the classification scheme. | The BMP is prose-level business understanding; the Reference Model is the first structured (but still non-ontological) categorization of it. The Reference Model cannot exist without the BMP's content to categorize. |
 
 **Duplication discipline:** each document above answers a distinct question type — *why* (VISION), *how one must think* (PHILOSOPHY/PRINCIPLES), *what happens* (BMP), *how it is categorized* (Reference Model), *how it is organizationally executed* (Business Architecture). If two documents ever seem to need the same paragraph, that is a signal one of them is answering the wrong question type and should be revised — not that the content should be copied into both.
@@ -136,7 +136,7 @@ Each chapter below is designed, not written. Every chapter states its purpose, w
 - **Purpose:** Describe who exists in the world of humanitarian assistance and what role each plays, before any Khidmat-specific concept is introduced.
 - **Why it exists:** Every downstream document (Reference Model, and eventually the ontology's own Actor/Organisation concepts) presumes a shared understanding of *who acts* in humanitarian work. That understanding needs to be stated once, from the business side, up front, before any ontology-level decision about actors is made.
 - **Dependencies:** None internal to the BMP — this is the entry chapter. Externally depends on PHILOSOPHY/PRINCIPLES being settled first (per §4), so that how actors are described doesn't accidentally encode an unratified principle.
-- **Expected output:** A narrative map of actor categories (affected populations, implementing organizations, donors/funders, government bodies, volunteers, community structures) and how they relate to one another as businesses and people — not as ontology entities.
+- **Expected output:** A narrative map of actor categories (affected populations, implementing organisations, donors/funders, government bodies, volunteers, community structures) and how they relate to one another as businesses and people — not as ontology entities.
 
 ### Chapter 2 — Stakeholder Interests and Tensions
 
@@ -154,7 +154,7 @@ Each chapter below is designed, not written. Every chapter states its purpose, w
 
 ### Chapter 4 — Business Capabilities
 
-- **Purpose:** Enumerate the recurring things a humanitarian organization must be able to do (need identification, verification, case coordination, resource management, delivery, monitoring/learning) as capability statements, independent of any specific organization's org chart.
+- **Purpose:** Enumerate the recurring things a humanitarian organisation must be able to do (need identification, verification, case coordination, resource management, delivery, monitoring/learning) as capability statements, independent of any specific organisation's org chart.
 - **Why it exists:** This is the direct business-level ancestor of whatever domain list ontology engineering eventually adopts. A domain list should be traceable to a business-capability rationale, not chosen without one.
 - **Dependencies:** Chapter 3 (capabilities exist to execute stages of the lifecycle).
 - **Expected output:** A capability catalogue, each entry naming what the capability accomplishes, why it is distinct from neighboring capabilities, and what would be missing if it did not exist — written independently of any future domain list, so that list can later be validated against it rather than the other way around.
@@ -182,10 +182,10 @@ Each chapter below is designed, not written. Every chapter states its purpose, w
 
 ### Chapter 8 — Governance and Authority Boundaries (Business Level)
 
-- **Purpose:** Describe, at the business level, who has the authority to make which kinds of decisions (case-level, program-level, organizational-level, cross-organizational/coordination-level) and why those boundaries exist.
-- **Why it exists:** Ontology engineering will eventually need to enforce a technical version of this discipline (single ownership of concepts, a human-approval-required workflow). This chapter is the business-reality justification for why that discipline is the right one — e.g., why a case worker's authority differs from a program director's, independent of any AI system.
+- **Purpose:** Describe, at the business level, who has the authority to make which kinds of decisions (case-level, programme-level, organisational-level, cross-organisational/coordination-level) and why those boundaries exist.
+- **Why it exists:** Ontology engineering will eventually need to enforce a technical version of this discipline (single ownership of concepts, a human-approval-required workflow). This chapter is the business-reality justification for why that discipline is the right one — e.g., why a case worker's authority differs from a programme director's, independent of any AI system.
 - **Dependencies:** Chapters 1, 4, 5 (authority boundaries only make sense relative to actors, capabilities, and the value streams they participate in).
-- **Expected output:** A narrative map of decision-authority boundaries in humanitarian organizations generally, which the Business Architecture chapter (a separate, later document) will subsequently formalize into structure.
+- **Expected output:** A narrative map of decision-authority boundaries in humanitarian organisations generally, which the Business Architecture chapter (a separate, later document) will subsequently formalize into structure.
 
 ### Chapter 9 — Boundary Conditions and Regional/Cultural Variation
 
@@ -215,7 +215,7 @@ The following are areas where the knowledge needed to author each chapter does n
 - What capability, if any, might a future domain list contain with no clear humanitarian-business justification (i.e., engineering-convenience-driven rather than business-reality-driven)?
 
 **For Chapter 5 (Value streams):**
-- Are there value streams humanitarian organizations run that would not cleanly decompose into a capability sequence (e.g., area-level/programmatic response to a community-wide crisis)?
+- Are there value streams humanitarian organisations run that would not cleanly decompose into a capability sequence (e.g., area-level/programmatic response to a community-wide crisis)?
 
 **For Chapter 6 (Intervention categories):**
 - What is the actual, programme-validated intervention catalogue? This is expected to be the single most-cited concrete blocker once a knowledge-layer roadmap exists ("cannot be invented by the knowledge layer alone") — it is the most urgent open research topic in this entire blueprint.
@@ -225,7 +225,7 @@ The following are areas where the knowledge needed to author each chapter does n
 - What does the client/domain team currently use, informally, to judge whether an intervention "worked" — before any formal outcome-indicator vocabulary exists?
 
 **For Chapter 8 (Governance boundaries):**
-- Who, in practice (in a real humanitarian organization's sense, not any future AI-workflow sense), has authority to override a system-generated recommendation, and under what circumstances?
+- Who, in practice (in a real humanitarian organisation's sense, not any future AI-workflow sense), has authority to override a system-generated recommendation, and under what circumstances?
 
 **For Chapter 9 (Variation):**
 - What other regional/cultural frameworks beyond the Islamic giving model does the project intend to eventually support, and does the client consider them equally universal-with-local-aliasing or substantively distinct practices requiring their own business description?

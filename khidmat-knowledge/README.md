@@ -23,7 +23,7 @@ registration platform, a donation platform, or an NGO CRM (Project Overview,
 Chapter 3.1). This repository is the canonical humanitarian knowledge layer that
 infrastructure is built on.
 
-**Strategic Objective:** The ultimate objective of this repository is the successful design of the **Khidmat Humanitarian Ontology**. The repository is NOT "doing Business Discovery" as an end in itself; Business Discovery and all other methodological phases are preparation to provide validated inputs into Ontology Design. The immediate architectural goal is to design the Domain Primitives and Ontology Layers, after which work will pause for Project Lead approval.
+**Strategic Objective:** The ultimate objective of this repository is the successful design of the **Khidmat Humanitarian Ontology**. The immediate architectural goal is to map the specific domains via **Domain Discovery** (Stage 5), after which work will proceed to Ontology Design.
 
 ---
 
@@ -37,14 +37,14 @@ infrastructure is built on.
 
    ```
    Project Overview (v1.0, frozen)
-           ↓
+           â†“
    Constitution (v1.0, frozen) / Foundation / Philosophy / Principles   (docs/00-governance)
-           ↓
-   Business Master Plan                     (docs/01-methodology — not yet authored; see note below)
-           ↓
-   Humanitarian Business Reference Model    (docs/01-methodology — not yet authored)
-           ↓
-   Business Architecture → Domain Discovery → Ontology Design → Ontology Engineering
+           â†“
+   Business Master Plan                     (v1.0, frozen)
+           â†“
+   Humanitarian Business Reference Model    (v1.0, frozen)
+           â†“
+   Business Architecture (v1.0, frozen) â†’ Domain Discovery (Active) â†’ Ontology Design â†’ Ontology Engineering
    ```
 
 **This repository contains no executable code.** There is nothing to install, build,
@@ -57,16 +57,17 @@ engineering layer, YAML (ontology/taxonomy declarations).
 
 | Layer | Status |
 |---|---|
-| Project Overview | ✅ **Frozen, v1.0** — canonical conceptual authority |
-| Constitution | ✅ **Frozen, v1.0** — canonical governance authority. Articles XVII (Domain Approval Authority) and XVIII (Audit Authority) remain explicitly reserved pending a governance decision; Article XIX is reserved for a future amendment procedure. |
-| Vision | ✅ Synchronized against Overview v1.0 |
-| Foundation, Philosophy, Principles | ⬜ Not yet authored — empty stubs at `docs/00-governance/` |
-| Business Master Plan | ⬜ **Not yet authored.** A prior session produced a full governance trail (review, resolution, certification) describing this as complete — that trail was found to describe content that was never actually written. It contained no unique canonical information and has been removed (recoverable from git history); its four genuinely-grounded discovery topics were merged into `docs/01-methodology/BUSINESS_MASTER_PLAN_BLUEPRINT.md` §7, which remains the valid authoring methodology. |
-| Humanitarian Business Reference Model | ⬜ Not yet authored. Its Blueprint (`docs/01-methodology/HUMANITARIAN_BUSINESS_REFERENCE_MODEL_BLUEPRINT.md`) is genuinely complete and internally consistent, and governs future authoring once the Business Master Plan exists. |
-| Ontology Design | ⬜ Not yet authored. Draft blueprint (`docs/01-methodology/ONTOLOGY_DESIGN_BLUEPRINT.md`) exists at v0.1.0. |
-| Business Architecture, Domain Discovery, Knowledge Layer methodology, Taxonomy Engineering, Ontology Engineering | ⬜ Not yet authored — empty stubs at `docs/01-methodology/` |
-| `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md`, `KHIDMAT_AI_BUSINESS_OVERVIEW.html` | ⬜ **Flagged, not yet synchronized.** Both predate the Overview/Constitution and contain a principle list and pipeline terminology that differ from the now-canonical versions. Located at `docs/02-architecture/`. See the in-file sync banners for specifics. |
-| Prior domain ontology/taxonomy engineering (Registration, Community Context, Verification Operations, and others) | 🗄 **Removed from the working tree, recoverable from git history.** This content was schema-first ontology-engineering work that predates and does not follow the Overview's ontology-first discovery methodology (Chapters 5–6), and cannot be treated as canonical input regardless of where it is stored (Constitution Article XV). It contained no unique canonical information beyond what git history already preserves and has been deleted rather than kept in the live archive; recoverable from git history at commit `d28d17e` and its ancestors if ever needed for reference. |
+| Project Overview | âœ… **Frozen, v1.0** — canonical conceptual authority |
+| Constitution | âœ… **Frozen, v1.0** — canonical governance authority. Articles XVII (Domain Approval Authority) and XVIII (Audit Authority) remain explicitly reserved pending a governance decision; Article XIX is reserved for a future amendment procedure. |
+| Vision | âœ… Synchronized against Overview v1.0 |
+| Foundation, Philosophy, Principles | â¬œ Not yet authored — empty stubs at `docs/00-governance/` |
+| Business Master Plan | âœ… **Frozen** | Canonical Stage 2 completed and frozen. |
+| Humanitarian Business Reference Model | âœ… **Frozen** | Canonical Stage 3 completed and frozen. |
+| Ontology Design | â¬œ Not yet authored. Draft blueprint (`docs/01-methodology/ONTOLOGY_DESIGN_BLUEPRINT.md`) exists at v0.1.0. |
+| Business Architecture | âœ… **Frozen** | Canonical Stage 4 completed and frozen. |
+| Domain Discovery | ðŸŸ¡ **Active** | Stage 5 is currently active and mapping domains. |
+| `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md`, `KHIDMAT_AI_BUSINESS_OVERVIEW.html` | ðŸ—„ **Superseded.** Replaced by the formal Stage 2, 3, and 4 artifacts. |
+| Prior domain ontology/taxonomy engineering (Registration, Community Context, Verification Operations, and others) | ðŸ—„ **Removed from the working tree, recoverable from git history.** This content was schema-first ontology-engineering work that predates and does not follow the Overview's ontology-first discovery methodology (Chapters 5"“6), and cannot be treated as canonical input regardless of where it is stored (Constitution Article XV). It contained no unique canonical information beyond what git history already preserves and has been deleted rather than kept in the live archive; recoverable from git history at commit `d28d17e` and its ancestors if ever needed for reference. |
 
 For the full reasoning behind this table, see the Repository Synchronization Report,
 Integrity Report, and Provenance Report produced during the Overview v1.0
@@ -78,24 +79,24 @@ synchronization pass.
 
 ```
 khidmat-knowledge/
-├── README.md
-└── docs/
-    ├── 00-governance/       # Overview, Constitution (both canonical, frozen v1.0), Foundation,
-    │                        # Vision, Philosophy, Principles (pending), Glossary
-    ├── 01-methodology/      # Business Master Plan, HBRM, Ontology Design, and their blueprints
-    │                        # (flat structure — every methodology document lives directly here)
-    ├── 02-architecture/     # Canonical schemas, reference models (pending); also the
-    │                        # versioned business-logic spec and client-facing overview
-    │                        # (both flagged for terminology sync)
-    ├── 03-domains/ … 05-systems/   # Reserved layers, not yet active
-    ├── 80-decisions/        # Reserved for the ADR ledger
-    ├── 90-reports/          # Non-normative status reports (historical)
-    ├── 98-archive/          # Superseded/deprecated documents that retain institutional value
-    │   └── superseded-reviews/     # Valid, completed reviews whose recommendations are now fulfilled
-    │                               # (the engineering-layer and invalid-lifecycles categories were
-    │                               #  reviewed and deleted — no unique canonical information remained;
-    │                               #  see docs/98-archive/README.md for what was removed and why)
-    └── 99-references/       # Reserved for external references
+â”œâ”€â”€ README.md
+â””â”€â”€ docs/
+    â”œâ”€â”€ 00-governance/       # Overview, Constitution (both canonical, frozen v1.0), Foundation,
+    â”‚                        # Vision, Philosophy, Principles (pending), Glossary
+    â”œâ”€â”€ 01-methodology/      # Business Master Plan, HBRM, Ontology Design, and their blueprints
+    â”‚                        # (flat structure — every methodology document lives directly here)
+    â”œâ”€â”€ 02-architecture/     # Canonical schemas, reference models (pending); also the
+    â”‚                        # versioned business-logic spec and client-facing overview
+    â”‚                        # (both flagged for terminology sync)
+    â”œâ”€â”€ 03-domains/ "¦ 05-systems/   # Reserved layers, not yet active
+    â”œâ”€â”€ 80-decisions/        # Reserved for the ADR ledger
+    â”œâ”€â”€ 90-reports/          # Non-normative status reports (historical)
+    â”œâ”€â”€ 98-archive/          # Superseded/deprecated documents that retain institutional value
+    â”‚   â””â”€â”€ superseded-reviews/     # Valid, completed reviews whose recommendations are now fulfilled
+    â”‚                               # (the engineering-layer and invalid-lifecycles categories were
+    â”‚                               #  reviewed and deleted — no unique canonical information remained;
+    â”‚                               #  see docs/98-archive/README.md for what was removed and why)
+    â””â”€â”€ 99-references/       # Reserved for external references
 ```
 
 **No project documentation remains at the repository root.** Only this README lives

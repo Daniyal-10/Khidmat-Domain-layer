@@ -59,10 +59,10 @@ This is an intentional architectural checkpoint. Only after approval will work c
 | Repository Foundation | **Complete** | Governance Baseline v1.0 established. All core governance documents frozen and authoritative. |
 | Business Discovery Methodology | **Complete** | `BUSINESS_DISCOVERY_BLUEPRINT.md` established and approved. |
 | Business Discovery | **Complete** | Evidence successfully gathered. Business Discovery is formally closed. |
-| Business Master Plan | **Ready** | Blockers cleared. Ready for authoring based on discovery evidence. |
-| Humanitarian Business Reference Model | **Blocked** | Awaiting completion of the Business Master Plan. |
-| Business Architecture | **Blocked** | Awaiting completion of the Business Master Plan and HBRM. |
-| Domain Discovery | **Blocked** | Downstream phase. Cannot begin until architecture is established. |
+| Business Master Plan | **Complete (Frozen)** | Stage 2 completed. Canonical strategy defined. |
+| Humanitarian Business Reference Model | **Complete (Frozen)** | Stage 3 completed. Universal humanitarian reality modeled. |
+| Business Architecture | **Complete (Frozen)** | Stage 4 completed. Business domains and boundaries formally established. |
+| Domain Discovery | **Active** | Upstream phases complete. Ready to begin per-domain mapping. |
 | Ontology Design | **Blocked** | Downstream phase. Cannot begin until domains are discovered. |
 | Taxonomy Engineering | **Blocked** | Downstream phase. Cannot begin until ontology is designed. |
 | Systems Engineering | **Not Started** | Out of scope for current knowledge repository work. |
@@ -71,10 +71,10 @@ This is an intentional architectural checkpoint. Only after approval will work c
 
 ## 6. Current Active Phase
 
-- **Current Phase:** Khidmat Foundation Synthesis
-- **Objective:** To build the complete, evidence-backed Khidmat Foundation required to support Ontology Design. This includes gathering evidence (Discovery), synthesizing rules (Business Master Plan), and modeling the business structure (HBRM, Architecture).
-- **Why this phase is active:** Business Discovery is complete and all contradictions are resolved. The repository is ready to synthesize the evidence into the Business Master Plan.
-- **Blocked Downstream Phases:** HBRM, Architecture, Ontology, and Taxonomy remain blocked until the Business Master Plan is complete.
+- **Current Phase:** Domain Discovery (Stage 5)
+- **Objective:** To map specific domains against the Business Architecture, qualifying actors, concepts, and evidence.
+- **Why this phase is active:** Stages 1-4 are frozen. The core structural framework is established and ready for domain-specific practitioner evidence.
+- **Blocked Downstream Phases:** Ontology Design, Taxonomy Engineering, and Systems Engineering remain blocked until Domain Discovery produces qualified concepts.
 
 ---
 
@@ -126,9 +126,16 @@ This is an intentional architectural checkpoint. Only after approval will work c
 
 ## 11. Upcoming Milestones
 
-- Authoring the Business Master Plan.
-- Authoring the Humanitarian Business Reference Model (HBRM).
-- Authoring the Business Architecture.
+- **Business Master Plan (Stage 2)** authored and formally frozen.
+- **Humanitarian Business Reference Model (Stage 3)** authored and formally frozen.
+- **Business Architecture (Stage 4)** authored and formally frozen.
+- **Domain Discovery (Stage 5)** unblocked.
+
+---
+
+## 11. Upcoming Milestones
+
+- Executing Stage 5 Domain Discovery for priority domains (e.g., Case Management).
 - **Ultimate Goal:** Delivery of Package A (Khidmat Foundation) and Package B (Ontology Design Foundation) for Lead Review.
 
 ---
@@ -137,10 +144,10 @@ This is an intentional architectural checkpoint. Only after approval will work c
 
 - **Discovery Topics Completed:** 6
 - **Open Contradictions:** 2
-- **Active Assumptions:** 10
+- **Active Assumptions:** 14
 - **Discovery Reviews:** 1
 - **Decision Briefs:** 1
-- **Current Active Phase:** Khidmat Foundation Synthesis
+- **Current Active Phase:** Domain Discovery
 
 ---
 
@@ -168,6 +175,6 @@ flowchart TD
 
 ## 14. Notes
 
-- **Only Business Discovery is currently active.**
+- **Domain Discovery is currently active.**
 - **Downstream artifacts must not begin until prerequisite phases complete.**
 - **This document should be updated whenever a major project milestone is reached.**

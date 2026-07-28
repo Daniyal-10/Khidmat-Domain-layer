@@ -1,0 +1,30 @@
+# Business Concepts
+
+- Case
+- Support Plan
+- Vulnerability
+- Vulnerability Indicator
+- Risk
+- Priority
+- Safeguarding Concern
+- Need
+- Claim
+- Evidence
+- Observation
+- Identity
+- Household Composition
+- Eligibility
+- Consent
+- Assessment
+- Referral
+- Follow-up
+- Case Note
+- Service Episode
+- Decision Justification
+- Escalation
+- Duplicate Case
+- Community Validation
+- Engagement Stage
+- Human Development Stage
+- Household
+- Intervention Offering

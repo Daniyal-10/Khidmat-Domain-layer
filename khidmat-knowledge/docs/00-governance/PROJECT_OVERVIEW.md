@@ -24,15 +24,15 @@ This document serves as the alignment point for all future contributors, reviewe
 
 ## 1.1 The Current State of Humanitarian Systems
 
-The fundamental problem is not a lack of funding, technology, or goodwill. Across the world, governments, NGOs, humanitarian organizations, and communities invest enormous effort and resources into helping vulnerable populations. Yet sustainable recovery often remains elusive because humanitarian systems are designed to manage **programs and transactions**, rather than to understand **people and their lived reality**.
+The fundamental problem is not a lack of funding, technology, or goodwill. Across the world, governments, NGOs, humanitarian Organisations, and communities invest enormous effort and resources into helping vulnerable populations. Yet sustainable recovery often remains elusive because humanitarian systems are designed to manage **Programmes and transactions**, rather than to understand **people and their lived reality**.
 
-Most humanitarian information systems are built around organizational boundaries. Every organization, every program, and often every project maintains its own records, workflows, eligibility rules, and reporting requirements. As a result, knowledge becomes fragmented across disconnected systems. No single system develops a complete understanding of an individual, a family, or a community over time.
+Most humanitarian information systems are built around Organisational boundaries. Every Organisation, every Programme, and often every project maintains its own records, workflows, eligibility rules, and reporting requirements. As a result, knowledge becomes fragmented across disconnected systems. No single system develops a complete understanding of an individual, a family, or a community over time.
 
 This fragmentation is reinforced by how humanitarian work is measured. Success is frequently evaluated through operational outputs — registrations completed, beneficiaries served, aid distributed, projects delivered — because these are easier to report, audit, and fund. These measures are important, but they do not necessarily reflect whether a person's circumstances have genuinely improved or whether long-term resilience has been achieved.
 
-Consequently, humanitarian interventions often become transactional rather than contextual. A family may receive food assistance, financial aid, medical support, or educational services through separate organizations, each solving a specific problem in isolation without understanding the broader circumstances that created the need. The underlying causes of vulnerability, the relationships between needs, and the long-term progression of recovery are rarely captured within a unified knowledge model.
+Consequently, humanitarian interventions often become transactional rather than contextual. A family may receive food assistance, financial aid, medical support, or educational services through separate Organisations, each solving a specific problem in isolation without understanding the broader circumstances that created the need. The underlying causes of vulnerability, the relationships between needs, and the long-term progression of recovery are rarely captured within a unified knowledge model.
 
-This challenge is not caused by the failure of individual organizations. It emerges from the absence of a shared humanitarian understanding. Existing systems are designed to store records, execute workflows, and satisfy organizational processes — not to represent humanitarian reality itself. They record facts, yet rarely understand context, relationships, history, uncertainty, or evidence.
+This challenge is not caused by the failure of individual Organisations. It emerges from the absence of a shared humanitarian understanding. Existing systems are designed to store records, execute workflows, and satisfy Organisational processes — not to represent humanitarian reality itself. They record facts, yet rarely understand context, relationships, history, uncertainty, or evidence.
 
 Most humanitarian software functions primarily as:
 
@@ -42,9 +42,9 @@ Most humanitarian software functions primarily as:
 * NGO CRMs
 * Simple workflow applications
 
-As a result of this design, duplication occurs, verification becomes inconsistent, institutional knowledge is lost between programs, collaboration becomes difficult, and AI systems inherit incomplete and fragmented information. Even advanced automation cannot reason reliably when the underlying knowledge of reality is incomplete.
+As a result of this design, duplication occurs, verification becomes inconsistent, institutional knowledge is lost between Programmes, collaboration becomes difficult, and AI systems inherit incomplete and fragmented information. Even advanced automation cannot reason reliably when the underlying knowledge of reality is incomplete.
 
-Khidmat AI begins from a different premise. Rather than asking how humanitarian work can be automated more efficiently, it first asks how humanitarian reality can be understood accurately, consistently, and collaboratively across organizations, programs, and time. Only when that understanding exists can technology, automation, and artificial intelligence contribute responsibly to sustainable human recovery.
+Khidmat AI begins from a different premise. Rather than asking how humanitarian work can be automated more efficiently, it first asks how humanitarian reality can be understood accurately, consistently, and collaboratively across Organisations, Programmes, and time. Only when that understanding exists can technology, automation, and artificial intelligence contribute responsibly to sustainable human recovery.
 
 ## 1.2 The Complexity of Lived Reality
 
@@ -86,13 +86,13 @@ The primary harm of transactional humanitarian assistance is not that aid is del
 
 When humanitarian work is reduced to a sequence of transactions — identify a need, deliver assistance, close the case — the beneficiary is gradually represented by their current deficiency rather than by their potential for recovery. The system remembers what was given, but not why the need existed, how the person's circumstances evolved afterward, or whether the intervention produced lasting positive change.
 
-This creates a reactive model of assistance rather than a developmental one. The same individuals and families may repeatedly re-enter humanitarian programs because each intervention addresses the immediate symptom without building a cumulative understanding of the broader humanitarian journey. Knowledge is reset between programs, organizations, and interventions, causing the same assessments, verifications, and decisions to be repeated instead of progressively improving.
+This creates a reactive model of assistance rather than a developmental one. The same individuals and families may repeatedly re-enter humanitarian Programmes because each intervention addresses the immediate symptom without building a cumulative understanding of the broader humanitarian journey. Knowledge is reset between Programmes, Organisations, and interventions, causing the same assessments, verifications, and decisions to be repeated instead of progressively improving.
 
-The consequence is a gradual loss of agency. Beneficiaries become recipients within isolated programs instead of active participants in their own path toward stability and independence. Success becomes measured by the completion of interventions rather than by the person's increasing ability to live with dignity, resilience, and reduced dependence on humanitarian support.
+The consequence is a gradual loss of agency. Beneficiaries become recipients within isolated Programmes instead of active participants in their own path toward stability and independence. Success becomes measured by the completion of interventions rather than by the person's increasing ability to live with dignity, resilience, and reduced dependence on humanitarian support.
 
-The effects extend beyond individuals to communities. When organizations operate independently through isolated interventions, opportunities for coordinated action, shared learning, and collective recovery are diminished. Communities may receive overlapping services in some areas while other needs remain invisible because no shared understanding exists across organizations. Local capabilities, informal support networks, and community resilience can also be overlooked when humanitarian action is designed primarily around organizational programs instead of community reality.
+The effects extend beyond individuals to communities. When Organisations operate independently through isolated interventions, opportunities for coordinated action, shared learning, and collective recovery are diminished. Communities may receive overlapping services in some areas while other needs remain invisible because no shared understanding exists across Organisations. Local capabilities, informal support networks, and community resilience can also be overlooked when humanitarian action is designed primarily around Organisational Programmes instead of community reality.
 
-Importantly, Khidmat AI does not suggest that humanitarian assistance itself creates dependency, nor does it criticize organizations or aid workers who operate under difficult circumstances. Immediate relief is often essential and life-saving. The problem arises when humanitarian systems are unable to move beyond transactions toward understanding, continuity, and long-term recovery.
+Importantly, Khidmat AI does not suggest that humanitarian assistance itself creates dependency, nor does it criticize Organisations or aid workers who operate under difficult circumstances. Immediate relief is often essential and life-saving. The problem arises when humanitarian systems are unable to move beyond transactions toward understanding, continuity, and long-term recovery.
 
 Khidmat AI therefore proposes a different model. Every intervention should become part of an evolving body of humanitarian knowledge rather than an isolated event. Each interaction should deepen the system's understanding of the individual, the family, and the community, allowing future decisions to build upon previous evidence instead of beginning from zero. Humanitarian assistance should be viewed not as a series of disconnected transactions, but as a continuous journey toward sustainable human well-being, where every intervention contributes to understanding, every understanding improves future decisions, and every decision seeks to restore dignity, resilience, and long-term independence.
 
@@ -102,13 +102,13 @@ Khidmat AI therefore proposes a different model. Every intervention should becom
 
 ## 2.1 The Mandate and Ultimate Purpose
 
-Khidmat AI exists to fundamentally change how humanitarian reality is understood. If the project succeeds completely, the defining change in the world will not be the widespread adoption of a software platform or an AI system. The defining change will be that every vulnerable individual and community can be understood continuously across organizations, programs, and time, allowing humanitarian action to build upon accumulated knowledge rather than fragmented transactions. Humanitarian decisions will no longer begin from ignorance but from an evolving understanding of reality.
+Khidmat AI exists to fundamentally change how humanitarian reality is understood. If the project succeeds completely, the defining change in the world will not be the widespread adoption of a software platform or an AI system. The defining change will be that every vulnerable individual and community can be understood continuously across Organisations, Programmes, and time, allowing humanitarian action to build upon accumulated knowledge rather than fragmented transactions. Humanitarian decisions will no longer begin from ignorance but from an evolving understanding of reality.
 
 The non-negotiable mandate of Khidmat AI is:
 
 > **To establish a trustworthy, evidence-based understanding of humanitarian reality before any humanitarian decision, recommendation, or automation is performed.**
 
-This mandate is immutable. Technology, implementation strategies, funding models, organizational structures, and AI capabilities may evolve over time, but the responsibility to understand reality before acting upon it must never be compromised.
+This mandate is immutable. Technology, implementation strategies, funding models, Organisational structures, and AI capabilities may evolve over time, but the responsibility to understand reality before acting upon it must never be compromised.
 
 ## 2.2 Foundational Operating Principles
 
@@ -165,19 +165,19 @@ Applications are built on top of this intelligence — not the other way around.
 
 ## 3.2 The Intelligence Infrastructure Concept
 
-Khidmat AI is infrastructure because its primary purpose is not to deliver humanitarian services directly to end users, but to provide the foundational understanding upon which humanitarian systems can operate. Just as the internet provides communication infrastructure without being a single application, Khidmat AI provides humanitarian intelligence infrastructure without being limited to any one product, organization, or workflow.
+Khidmat AI is infrastructure because its primary purpose is not to deliver humanitarian services directly to end users, but to provide the foundational understanding upon which humanitarian systems can operate. Just as the internet provides communication infrastructure without being a single application, Khidmat AI provides humanitarian intelligence infrastructure without being limited to any one product, Organisation, or workflow.
 
-Applications solve individual organizational problems. Infrastructure enables many different applications to solve different problems while relying on the same underlying foundation. Khidmat AI therefore separates humanitarian understanding from humanitarian applications.
+Applications solve individual Organisational problems. Infrastructure enables many different applications to solve different problems while relying on the same underlying foundation. Khidmat AI therefore separates humanitarian understanding from humanitarian applications.
 
-This means that organizations should not have to replace their existing systems to benefit from Khidmat AI. Registration systems, case management platforms, government portals, NGO software, mobile applications, analytics platforms, and future AI systems should all be capable of building upon the same humanitarian understanding while continuing to serve their own operational needs.
+This means that Organisations should not have to replace their existing systems to benefit from Khidmat AI. Registration systems, case management platforms, government portals, NGO software, mobile applications, analytics platforms, and future AI systems should all be capable of building upon the same humanitarian understanding while continuing to serve their own operational needs.
 
 Over time, Khidmat AI should become the trusted intelligence layer that applications consult whenever humanitarian understanding is required. Some systems may contribute knowledge, some may consume knowledge, many will do both. Every responsible contribution should strengthen the collective understanding available to all authorized participants.
 
-The long-term vision is therefore not a single centralized application but a shared humanitarian intelligence ecosystem. Organizations remain independent, retain ownership of their operational systems, and continue delivering services according to their own mandates. Khidmat AI exists to provide the shared understanding that enables those organizations to coordinate, reason, and make better decisions together.
+The long-term vision is therefore not a single centralized application but a shared humanitarian intelligence ecosystem. Organisations remain independent, retain ownership of their operational systems, and continue delivering services according to their own mandates. Khidmat AI exists to provide the shared understanding that enables those Organisations to coordinate, reason, and make better decisions together.
 
-Khidmat AI is intended to steward this infrastructure rather than monopolize it. The objective is not organizational ownership of humanitarian knowledge, but responsible governance of a shared humanitarian intelligence foundation that multiple organizations can trust, contribute to, and benefit from according to agreed governance, evidence, privacy, and ethical principles.
+Khidmat AI is intended to steward this infrastructure rather than monopolize it. The objective is not Organisational ownership of humanitarian knowledge, but responsible governance of a shared humanitarian intelligence foundation that multiple Organisations can trust, contribute to, and benefit from according to agreed governance, evidence, privacy, and ethical principles.
 
-In this paradigm, applications will continue to evolve, technologies will change, and artificial intelligence will become more capable. The underlying humanitarian understanding, however, should remain persistent, continuously improving, and independent of any single application, vendor, or organization. That enduring understanding is the infrastructure Khidmat AI seeks to establish.
+In this paradigm, applications will continue to evolve, technologies will change, and artificial intelligence will become more capable. The underlying humanitarian understanding, however, should remain persistent, continuously improving, and independent of any single application, vendor, or Organisation. That enduring understanding is the infrastructure Khidmat AI seeks to establish.
 
 ---
 
@@ -189,17 +189,17 @@ Khidmat AI is guided by two related but distinct sequences, describing two diffe
 
 The canonical sequence for humanitarian cognition is:
 
-> **Knowledge → Understanding → Reasoning → Responsible Action**
+> **Knowledge â†’ Understanding â†’ Reasoning â†’ Responsible Action**
 
 This represents the cognitive lifecycle of humanitarian decision-making and is the project's primary conceptual model whenever humanitarian cognition is discussed. Automation is one possible implementation mechanism for carrying out Responsible Action — it is never a stage in its own right.
 
 A second sequence describes the engineering lifecycle used to build the systems that support that cognitive process:
 
-> **Reality → Knowledge → Models → Intelligence → Software**
+> **Reality â†’ Knowledge â†’ Models â†’ Intelligence â†’ Software**
 
 The two relate as follows: Reality is the world that exists independently of any system. From reality, we acquire Knowledge through observation, evidence, and verification. That knowledge is organized into Models that allow a system to represent reality consistently. Those models enable Understanding, Reasoning, and ultimately Intelligence — of which Software is simply one implementation.
 
-In short: *Reality → Knowledge → Models* describes how the foundation is constructed. *Knowledge → Understanding → Reasoning → Responsible Action* describes how that foundation is used to make responsible decisions.
+In short: *Reality â†’ Knowledge â†’ Models* describes how the foundation is constructed. *Knowledge â†’ Understanding â†’ Reasoning â†’ Responsible Action* describes how that foundation is used to make responsible decisions.
 
 **Worked example — a family arrives at a relief camp after flooding:**
 
@@ -207,21 +207,21 @@ In short: *Reality → Knowledge → Models* describes how the foundation is con
 
 **Understanding.** The system connects relationships: this is a single household; one member has a chronic medical condition; two children have interrupted schooling; previous food assistance was received six months earlier; housing has been completely lost; relatives exist in another district; several observations remain unverified. The system now understands the humanitarian situation rather than merely storing isolated records.
 
-**Reasoning.** Reasoning evaluates the understood situation: which needs are immediate, which interventions depend on one another, which uncertainties require verification, which organizations are best positioned to help, what risks exist if action is delayed, and which decisions require human review. Reasoning produces justified recommendations, not automatic actions.
+**Reasoning.** Reasoning evaluates the understood situation: which needs are immediate, which interventions depend on one another, which uncertainties require verification, which Organisations are best positioned to help, what risks exist if action is delayed, and which decisions require human review. Reasoning produces justified recommendations, not automatic actions.
 
-**Responsible Action.** Only after reasoning is complete may the system act. Responsible Action may include automatically notifying appropriate organizations, preparing registration drafts, recommending food assistance, scheduling medical screening, generating follow-up tasks, notifying case workers, and preparing documentation — automation is one possible mechanism for carrying out this stage, not the stage itself, and remains subject to the same understanding threshold and human-review discipline as any other form of action. Responsible Action executes decisions — it does not create them.
+**Responsible Action.** Only after reasoning is complete may the system act. Responsible Action may include automatically notifying appropriate Organisations, preparing registration drafts, recommending food assistance, scheduling medical screening, generating follow-up tasks, notifying case workers, and preparing documentation — automation is one possible mechanism for carrying out this stage, not the stage itself, and remains subject to the same understanding threshold and human-review discipline as any other form of action. Responsible Action executes decisions — it does not create them.
 
 ## 4.2 The Dangers of Premature Automation
 
-Consider a family automatically classified as already receiving sufficient assistance because another organization's records show a prior food distribution. If the system automates that conclusion before understanding the family's current reality, it may fail to recognize that displacement has occurred since that assistance, household membership has changed, supplies have already been exhausted, a disabled family member now requires additional support, or the previous intervention simply failed.
+Consider a family automatically classified as already receiving sufficient assistance because another Organisation's records show a prior food distribution. If the system automates that conclusion before understanding the family's current reality, it may fail to recognize that displacement has occurred since that assistance, household membership has changed, supplies have already been exhausted, a disabled family member now requires additional support, or the previous intervention simply failed.
 
-The automated outcome appears correct according to historical records but is catastrophically wrong according to present reality. The danger of premature automation is therefore not simply an incorrect decision — it is the creation of false confidence that prevents human review while rapidly propagating errors across multiple organizations. Automation amplifies mistakes just as efficiently as it amplifies good decisions.
+The automated outcome appears correct according to historical records but is catastrophically wrong according to present reality. The danger of premature automation is therefore not simply an incorrect decision — it is the creation of false confidence that prevents human review while rapidly propagating errors across multiple Organisations. Automation amplifies mistakes just as efficiently as it amplifies good decisions.
 
 Khidmat AI prevents premature automation through two safeguards.
 
 The first is the understanding threshold established in Chapter 2: a situation is not eligible for Responsible Action until it is understood sufficiently to support responsible action — requiring adequate evidence, relevant contextual dimensions, explicit uncertainty, and transparent justification.
 
-The second is proportionality, governed by a single constitutional rule, introduced here and reused without variation throughout this document: **any decision whose error could materially affect a person's rights, safety, dignity, legal status, eligibility, access to essential services, or long-term wellbeing requires meaningful human review.** Not every humanitarian decision carries the same level of consequence — low-risk operational activities such as scheduling follow-ups, generating reminders, routing cases, preparing drafts, or notifying organizations may be automated once the required understanding threshold is reached. Anything meeting the rule above must always remain subject to meaningful human review, regardless of system confidence.
+The second is proportionality, governed by a single constitutional rule, introduced here and reused without variation throughout this document: **any decision whose error could materially affect a person's rights, safety, dignity, legal status, eligibility, access to essential services, or long-term wellbeing requires meaningful human review.** Not every humanitarian decision carries the same level of consequence — low-risk operational activities such as scheduling follow-ups, generating reminders, routing cases, preparing drafts, or notifying Organisations may be automated once the required understanding threshold is reached. Anything meeting the rule above must always remain subject to meaningful human review, regardless of system confidence.
 
 Automation is therefore not determined by technological capability but by humanitarian responsibility. The question is never *"Can the AI automate this?"* The correct question is *"Has the system developed sufficient understanding, supported by evidence and appropriate human oversight, to act responsibly?"*
 
@@ -237,14 +237,14 @@ Humanitarian reality has at least four properties that make premature structural
 
 For this reason, Khidmat AI treats conceptual modeling as a discovery process rather than a design step performed once at the start. Structural commitments are postponed until reality has been sufficiently understood — which is why an ontology-first approach, rather than a schema-first one, is the correct method.
 
-The purpose of the humanitarian knowledge foundation is not to represent everything that exists. It is to represent everything that is necessary to develop a trustworthy understanding of humanitarian reality and support responsible humanitarian decisions. The governing principle is therefore: **a concept belongs in the humanitarian knowledge foundation if its omission could materially change the understanding of humanitarian reality or the quality, safety, fairness, or appropriateness of a humanitarian decision.** This principle is intentionally independent of any specific domain, organization, or implementation technology. If a concept's absence would make understanding meaningfully incomplete or could lead to a different humanitarian decision, it belongs in the knowledge foundation. If not, it is likely operational, administrative, or application-specific rather than foundational.
+The purpose of the humanitarian knowledge foundation is not to represent everything that exists. It is to represent everything that is necessary to develop a trustworthy understanding of humanitarian reality and support responsible humanitarian decisions. The governing principle is therefore: **a concept belongs in the humanitarian knowledge foundation if its omission could materially change the understanding of humanitarian reality or the quality, safety, fairness, or appropriateness of a humanitarian decision.** This principle is intentionally independent of any specific domain, Organisation, or implementation technology. If a concept's absence would make understanding meaningfully incomplete or could lead to a different humanitarian decision, it belongs in the knowledge foundation. If not, it is likely operational, administrative, or application-specific rather than foundational.
 
-This distinction also defines the boundary between shared humanitarian knowledge and organizational data. The shared humanitarian foundation represents reality itself: people, families, communities, relationships, circumstances, evidence, uncertainty, events, needs, capabilities, vulnerabilities, and every other concept that contributes to understanding humanitarian reality. Applications, however, represent how organizations operate — internal workflow states, queue assignments, UI preferences, routing rules, notification settings, audit logs, and organization-specific procedures belong to applications because they describe the operation of a particular system rather than humanitarian reality itself.
+This distinction also defines the boundary between shared humanitarian knowledge and Organisational data. The shared humanitarian foundation represents reality itself: people, families, communities, relationships, circumstances, evidence, uncertainty, events, needs, capabilities, vulnerabilities, and every other concept that contributes to understanding humanitarian reality. Applications, however, represent how Organisations operate — internal workflow states, queue assignments, UI preferences, routing rules, notification settings, audit logs, and Organisation-specific procedures belong to applications because they describe the operation of a particular system rather than humanitarian reality itself.
 
 Khidmat AI therefore distinguishes between:
 
-* **Reality Knowledge** — knowledge that helps understand humanitarian reality and should be shareable across organizations under appropriate governance.
-* **Operational Knowledge** — knowledge that exists only because a particular organization, application, or workflow operates in a particular way.
+* **Reality Knowledge** — knowledge that helps understand humanitarian reality and should be shareable across Organisations under appropriate governance.
+* **Operational Knowledge** — knowledge that exists only because a particular Organisation, application, or workflow operates in a particular way.
 
 Only the first belongs in the shared humanitarian intelligence foundation.
 
@@ -268,7 +268,7 @@ Reconciliation is a process of increasing understanding rather than selecting a 
 
 Trust is not a property of a single object. It emerges from the interaction between evidence, claims, sources, and the history of their verification.
 
-A claim becomes more trustworthy when it is consistently supported by reliable evidence. A source becomes more trustworthy when its observations have repeatedly proven accurate, transparent, and open to verification. An organization becomes more trustworthy when its processes consistently produce evidence that withstands independent scrutiny. Trust therefore reflects demonstrated reliability over time rather than authority, reputation, or confidence alone.
+A claim becomes more trustworthy when it is consistently supported by reliable evidence. A source becomes more trustworthy when its observations have repeatedly proven accurate, transparent, and open to verification. An Organisation becomes more trustworthy when its processes consistently produce evidence that withstands independent scrutiny. Trust therefore reflects demonstrated reliability over time rather than authority, reputation, or confidence alone.
 
 Khidmat AI does not treat trust as belief. It treats trust as justified confidence earned through evidence, verification, consistency, transparency, and continual re-evaluation. In this way, truth is approached through disciplined accumulation and assessment of evidence rather than assumed through assertion, hierarchy, or technological certainty.
 
@@ -280,7 +280,7 @@ The objective of Khidmat AI is therefore not to eliminate uncertainty but to man
 
 ## 6.1 The Humanitarian Business Reference Model
 
-The Humanitarian Business Reference Model is not organized around organizational departments, software modules, or the functional categories common to existing NGO systems (registration, case management, donation management). Organizing this way would recreate the exact fragmentation Chapter 1 identified as the root failure of current humanitarian systems. Instead, the model is derived directly from the mandate (Chapter 2) and the cognitive lifecycle (Chapter 4): the universal capabilities are the functions required to move any humanitarian situation responsibly through Knowledge, Understanding, Reasoning, and Responsible Action — sustained continuously and shared across organizations, rather than performed once within one.
+The Humanitarian Business Reference Model is not organized around Organisational departments, software modules, or the functional categories common to existing NGO systems (registration, case management, donation management). Organizing this way would recreate the exact fragmentation Chapter 1 identified as the root failure of current humanitarian systems. Instead, the model is derived directly from the mandate (Chapter 2) and the cognitive lifecycle (Chapter 4): the universal capabilities are the functions required to move any humanitarian situation responsibly through Knowledge, Understanding, Reasoning, and Responsible Action — sustained continuously and shared across Organisations, rather than performed once within one.
 
 **The Core Cognitive Lifecycle** — sequential capabilities that any humanitarian situation must pass through:
 
@@ -289,18 +289,18 @@ The Humanitarian Business Reference Model is not organized around organizational
 * **Reasoning & Justified Recommendation** — evaluating needs, dependencies, uncertainties, and risk before any action.
 * **Responsible Action** — executing decisions proportionate to risk, whether human-performed or automated.
 
-**Cross-Cutting Capabilities** — capabilities that condition how the core lifecycle operates over time and across organizations, rather than sequential stages within it:
+**Cross-Cutting Capabilities** — capabilities that condition how the core lifecycle operates over time and across Organisations, rather than sequential stages within it:
 
 * **Verification** — actively corroborating and re-checking evidence and claims.
 * **Continuity & Re-assessment** — sustaining the relationship and re-running the cognitive lifecycle over time, rather than closing it at a single transaction.
-* **Cross-Organizational Coordination** — sharing Reality Knowledge across organizations under governance, so understanding accumulates rather than resetting per program.
+* **Cross-Organisational Coordination** — sharing Reality Knowledge across Organisations under governance, so understanding accumulates rather than resetting per Programme.
 
-**Emergent Properties** — not capabilities that any organization performs, but outcomes that result from performing the above well over time:
+**Emergent Properties** — not capabilities that any Organisation performs, but outcomes that result from performing the above well over time:
 
 * **Trust** — emerges from the accumulated history of verified, corroborated evidence for a given claim, source, or actor.
-* **Shared Humanitarian Understanding** — emerges from Coordination and Continuity operating across organizations over time.
+* **Shared Humanitarian Understanding** — emerges from Coordination and Continuity operating across Organisations over time.
 
-Because the capability layer is universal while its execution is not, every organization retains freedom in *how* it carries out each capability. The universal capability belongs to the shared humanitarian foundation as Reality Knowledge; how a given organization operationalizes that capability — its specific workflow, tooling, or procedure — is Operational Knowledge (Chapter 5.1) and remains locally adaptable. This is a direct consequence of the Reality Knowledge / Operational Knowledge distinction, not a separate rule.
+Because the capability layer is universal while its execution is not, every Organisation retains freedom in *how* it carries out each capability. The universal capability belongs to the shared humanitarian foundation as Reality Knowledge; how a given Organisation operationalizes that capability — its specific workflow, tooling, or procedure — is Operational Knowledge (Chapter 5.1) and remains locally adaptable. This is a direct consequence of the Reality Knowledge / Operational Knowledge distinction, not a separate rule.
 
 ## 6.2 Domain Discovery & Lifecycle Governance
 
@@ -360,7 +360,7 @@ This same discipline governs harm more broadly. A harmful decision must be expla
 
 ## 9.1 The 20-Year Operational Horizon
 
-At full maturity, the end state is not one global humanitarian system — it is a global humanitarian knowledge ecosystem. Many independent humanitarian organizations, governments, NGOs, community groups, and future systems remain autonomous while contributing to and benefiting from a shared humanitarian understanding, exactly as described in Chapter 3.2. Khidmat AI becomes shared humanitarian infrastructure, not centralized operational control; its success is measured by improving collective understanding, not by replacing institutional independence.
+At full maturity, the end state is not one global humanitarian system — it is a global humanitarian knowledge ecosystem. Many independent humanitarian Organisations, governments, NGOs, community groups, and future systems remain autonomous while contributing to and benefiting from a shared humanitarian understanding, exactly as described in Chapter 3.2. Khidmat AI becomes shared humanitarian infrastructure, not centralized operational control; its success is measured by improving collective understanding, not by replacing institutional independence.
 
 The long-term platform may come to include conversational AI assistants, multi-agent orchestration, natural-language and multi-channel registration, semantic search, embeddings, reasoning engines, knowledge graphs, recommendation systems, and regional or nationwide humanitarian intelligence. These remain downstream implementations; the true foundation remains humanitarian knowledge, as established in Chapter 5.
 
@@ -373,10 +373,10 @@ Khidmat AI is not measured by software metrics — uptime, active users, or late
 * Fewer people whose humanitarian needs remain unidentified.
 * Earlier identification of vulnerability before crisis escalation.
 * Faster and more appropriate support once a need is identified.
-* Better continuity of care and support across organizations.
+* Better continuity of care and support across Organisations.
 * Less duplication, contradiction, and fragmentation between humanitarian actors.
 * Greater recovery toward dignity, independence, and long-term wellbeing rather than prolonged dependency.
-* Increased trust between beneficiaries and humanitarian organizations through transparent, evidence-based decision-making.
+* Increased trust between beneficiaries and humanitarian Organisations through transparent, evidence-based decision-making.
 * Greater collective humanitarian understanding across the ecosystem.
 
 These are ecosystem outcomes, not application-level KPIs — each one is the long-horizon expression of a principle already established: the reduction of unidentified need and fragmentation directly answers the failure diagnosed in Chapter 1.1; recovery toward independence rather than dependency answers the harm diagnosed in Chapter 1.3; and increased trust through transparent, evidence-based decisions is the ecosystem-scale expression of the trust defined in Chapter 5.2.
