@@ -7,6 +7,7 @@
 - **Organisation:** The NGO or entity providing aid.
 
 ## Roles (Transient Responsibilities)
-- **Beneficiary / Registrant:** The administrative status of an Individual actively interacting with a Case.
+- **Beneficiary:** The person whose need is being registered, verified, or addressed.
+- **Registrant:** The person conducting the registration conversation (may be the beneficiary, a proxy, or a volunteer).
 - **Case Worker:** The frontline humanitarian responsible for intake, assessment, and recommendation.
 - **Approver / Protection Officer:** The senior humanitarian responsible for authorizing Support Plans and handling escalations.

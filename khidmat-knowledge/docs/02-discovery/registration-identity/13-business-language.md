@@ -1,12 +1,11 @@
 # 17. Terminology
 
 ## Preferred Terms
-- **Identity Profile:** The authoritative record of an individual's existence.
+- **Identity Profile:** The authoritative record of an beneficiary's existence.
 - **Household:** The operational unit of living and aid calculation.
 - **Verification:** The act of proving an identity claim.
 
-## Synonyms
-- **Beneficiary / Person of Concern (PoC):** Used interchangeably with Individual, though Registration prefers Individual.
+## Acronyms & Frameworks
 - **Intake:** Used interchangeably with Registration.
 
 ## Ambiguous Terminology

@@ -12,6 +12,7 @@
 
 ## Produces
 - **For Resource & Logistics:** Triggered execution plans for fulfillment.
+- **For Cross-Organisational Coordination:** Published encrypted, privacy-preserving proof of verified claims to prevent duplicate aid.
 
 ## Dependencies
 - Dependent on Programme Management for rules and budgets.
@@ -21,4 +22,4 @@
 - Regional needs assessments and budgeting (Programme Management).
 - Procurement and financial disbursement (Resource & Logistics).
 - Long-term systemic impact evaluation and independent grievance handling (Accountability & Evaluation).
-- Deduplication across NGOs (Cross-Organisational Coordination).
+- Unilateral alteration of another Organisation's assessment (Cross-Organisational Coordination).

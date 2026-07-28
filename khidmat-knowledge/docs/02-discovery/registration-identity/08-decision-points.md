@@ -6,11 +6,11 @@
 - **Supporting Evidence:** Passports, biometrics, community leader testimony.
 - **Governing Policies:** Organisational Identity Assurance guidelines.
 - **Constraints:** Lack of physical documents in refugee scenarios.
-- **Preconditions:** Individual profile must exist.
+- **Preconditions:** Beneficiary profile must exist.
 - **Alternative Outcomes:** Verified, Rejected (Fraud), Pending (Insufficient Evidence).
 - **Escalation Conditions:** Suspected identity theft or highly sophisticated fraud.
 - **Review Triggers:** Routine quality assurance audits.
-- **Appeal Mechanisms:** Individual can return with a community leader to appeal a rejection.
+- **Appeal Mechanisms:** Beneficiary can return with a community leader to appeal a rejection.
 - **Human Override:** Verification Officer can manually verify an undocumented person based on deep interview consistency.
 - **Uncertainty:** Forged documents and false community testimonies are common.
 
@@ -34,7 +34,7 @@
 - **Supporting Evidence:** Beneficiary testimony, physical cohabitation.
 - **Governing Policies:** Definition of a "Household" (often defined by "eating from the same pot").
 - **Constraints:** Culturally complex family structures (polygamy, unaccompanied minors living with neighbors).
-- **Preconditions:** Registration of individuals.
+- **Preconditions:** Registration of beneficiaries.
 - **Alternative Outcomes:** Joined to Household, Formed into new Household, Split from Household.
 - **Escalation Conditions:** Dispute between spouses over who constitutes the Head of Household.
 - **Review Triggers:** Re-registration drives.

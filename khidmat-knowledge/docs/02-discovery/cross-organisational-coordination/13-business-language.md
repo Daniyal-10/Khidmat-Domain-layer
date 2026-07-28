@@ -5,7 +5,7 @@
 - **Deduplication:** The act of preventing duplicate interventions.
 - **Partner Organisation:** A vetted, trusted external entity.
 
-## Synonyms
+## Acronyms & Frameworks
 - **Coordination Body / Cluster:** UN-led sector groups (e.g., WASH Cluster, Protection Cluster).
 - **4W:** Who does What, Where, and When (standard coordination matrix).
 

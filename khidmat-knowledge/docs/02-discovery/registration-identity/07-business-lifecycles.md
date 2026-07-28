@@ -8,6 +8,6 @@
 5. **Archived / Deceased:** The identity is permanently removed from active operational pools but retained for historical/audit purposes.
 
 ## The Household Lifecycle
-1. **Formation:** Individuals are grouped together.
+1. **Formation:** Beneficiaries are grouped together.
 2. **Evolution:** Members are added (birth, marriage) or removed (death, departure).
 3. **Dissolution:** The household completely ceases to exist as a cohesive unit.

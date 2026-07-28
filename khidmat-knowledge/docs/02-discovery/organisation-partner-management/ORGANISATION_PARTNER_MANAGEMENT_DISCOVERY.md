@@ -1,0 +1,8 @@
+﻿---
+id: DOC-DISC-ORGANISATION_PARTNER_MANAGEMENT
+title: ORGANISATION & PARTNER MANAGEMENT DOMAIN DISCOVERY
+version: 1.0
+status: Draft
+owner: Discovery
+---
+

@@ -2,7 +2,7 @@
 
 ## Established Facts
 - Registration must precede Case Management assessment. Identity is the foundation upon which vulnerability is evaluated.
-- Households are fluid temporal structures; Individuals are permanent entities.
+- Households are fluid temporal structures; Beneficiaries are permanent entities.
 - Algorithmic deduplication creates false positives; human adjudication is a mandatory business reality.
 
 ## Reasonable Assumptions

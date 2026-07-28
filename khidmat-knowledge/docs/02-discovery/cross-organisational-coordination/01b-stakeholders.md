@@ -3,7 +3,7 @@
 ## Actors (Enduring Participants)
 - **Organisation (NGO/Agency):** An autonomous legal entity providing humanitarian aid.
 - **Coordination Body (e.g., UN OCHA / Cluster Leads):** Enduring entities that facilitate macro-level sector coordination.
-- **Individual / Household:** The human being whose context is being shared across boundaries.
+- **Beneficiary / Household:** The human being whose context is being shared across boundaries.
 
 ## Roles (Transient Responsibilities)
 - **Referral Focal Point:** The role within an Organisation responsible for receiving and dispatching external referrals.

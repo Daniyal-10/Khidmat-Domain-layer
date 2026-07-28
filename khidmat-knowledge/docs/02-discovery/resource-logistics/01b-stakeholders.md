@@ -4,7 +4,7 @@
 - **Vendor / Supplier:** External commercial entity providing physical goods or services.
 - **Transporter:** External or internal entity physically moving goods.
 - **Financial Service Provider (FSP):** Bank or mobile money operator executing cash transfers.
-- **Individual:** The human being receiving the aid.
+- **Beneficiary:** The human being receiving the aid.
 
 ## Roles (Transient Responsibilities)
 - **Procurement Officer:** Role responsible for sourcing and vendor selection.

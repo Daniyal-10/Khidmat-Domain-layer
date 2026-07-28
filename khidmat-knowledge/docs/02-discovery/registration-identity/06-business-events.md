@@ -1,7 +1,7 @@
 # 10. Business Events
 
-- **Registration Initiated:** A new profile is created for an Individual.
-- **Household Formed:** Individuals are grouped together into a household unit.
+- **Registration Initiated:** A new profile is created for an Beneficiary.
+- **Household Formed:** Beneficiaries are grouped together into a household unit.
 - **Identity Verified:** Sufficient evidence is gathered to elevate trust in the profile.
 - **Duplicate Detected:** The system or an operator flags two profiles as potentially the same person.
 - **Profiles Merged:** Two duplicate profiles are administratively combined into a single surviving profile.

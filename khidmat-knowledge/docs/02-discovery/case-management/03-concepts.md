@@ -1,11 +1,11 @@
 # Business Concepts
 
+## Reality Knowledge
 - Case
 - Support Plan
 - Vulnerability
 - Vulnerability Indicator
 - Risk
-- Priority
 - Safeguarding Concern
 - Need
 - Claim
@@ -13,18 +13,23 @@
 - Observation
 - Identity
 - Household Composition
-- Eligibility
+- Household
 - Consent
 - Assessment
-- Referral
-- Follow-up
-- Case Note
-- Service Episode
-- Decision Justification
-- Escalation
+- Delivery Event
+- Assessment Session
 - Duplicate Case
 - Community Validation
 - Engagement Stage
 - Human Development Stage
-- Household
+- Gap
+
+## Operational Knowledge
+- Priority
+- Eligibility
+- Referral
+- Follow-up
+- Case Note
+- Decision Justification
+- Escalation
 - Intervention Offering

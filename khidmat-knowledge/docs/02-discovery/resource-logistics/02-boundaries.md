@@ -9,11 +9,9 @@
 
 ## Consumes
 - **From Case Management:** Execution triggers (approved Support Plans) indicating who needs what and where.
-- **From Programme Management:** Budgets and intervention catalogues (predictive demand for procurement).
 
 ## Produces
 - **For Case Management:** Fulfillment status (confirmation that aid was delivered or failed).
-- **For Programme Management:** Spend rates, market feasibility reports, and stock alerts.
 
 ## Explicitly Out of Scope
 - Assessing beneficiary vulnerability (Case Management).

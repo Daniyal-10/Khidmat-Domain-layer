@@ -1,7 +1,7 @@
 # Business Rules
 
 ## Universal Rules
-- **Anti-Fraud Separation of Duties:** The individual who procures goods cannot be the same individual who receives them into stock; the individual who authorizes a distribution cannot physically hand out the goods.
+- **Anti-Fraud Separation of Duties:** The staff member who procures goods cannot be the same staff member who receives them into stock; the staff member who authorizes a distribution cannot physically hand out the goods.
 - Aid must be delivered in a manner that ensures the physical safety and dignity of the recipient.
 
 ## Donor Rules

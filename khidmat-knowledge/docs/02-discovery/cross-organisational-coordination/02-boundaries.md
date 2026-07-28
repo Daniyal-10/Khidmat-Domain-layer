@@ -12,9 +12,8 @@
 
 ## Produces
 - **For Case Management:** Deduplication alerts (warning that a Support Plan conflicts with another agency), and incoming external referrals.
-- **For Programme Management:** Gap analysis data (showing which geographies are over/under-served by the broader ecosystem).
 
 ## Explicitly Out of Scope
-- Assessing the vulnerability of the individual (Case Management).
+- Assessing the vulnerability of the beneficiary (Case Management).
 - Determining an Organisation's internal eligibility rules (Programme Management).
 - Commanding another Organisation to cease an intervention. (Coordination can warn of duplication, but cannot command cessation).

@@ -1,7 +1,7 @@
 # 7. Policies and Constraints
 
 ## Policies
-- **Universal:** Every individual has the right to be registered and recognized as a person before the humanitarian system, regardless of legal status.
+- **Universal:** Every beneficiary has the right to be registered and recognized as a person before the humanitarian system, regardless of legal status.
 - **Organisation:** An Identity Profile cannot be elevated to "Verified" without at least two distinct points of evidence (e.g., Biographical + Community Validation, or Biographical + Document).
 - **Consent:** No Identity Profile can be retained beyond a temporary holding period if Foundational Consent is explicitly denied.
 

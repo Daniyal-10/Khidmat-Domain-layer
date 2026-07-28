@@ -15,6 +15,6 @@
 - **For Accountability & Evaluation:** Verified contact information for post-distribution monitoring.
 
 ## Explicitly Out of Scope
-- Assessing the vulnerability or needs of the individual (Case Management).
+- Assessing the vulnerability or needs of the beneficiary (Case Management).
 - Determining eligibility for aid (Programme Management).
 - Distributing aid (Resource and Logistics).

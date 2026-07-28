@@ -6,7 +6,7 @@
 - Programme impact evaluation.
 
 ## Consumes
-- **From Case Management:** Closed cases (as subjects for evaluation).
+- **From Case Management:** Closed cases (as subjects for evaluation), and Verified Claims (to audit compliance with the Threshold for Human Review).
 - **From Programme Management:** Programme objectives and logical frameworks (to know what to measure).
 - **From Resource & Logistics:** Dispatch records (to verify if aid actually arrived).
 
