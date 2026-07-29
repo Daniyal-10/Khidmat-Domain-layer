@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Khidmat AI — Business Vision &amp; Operational Overview</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a2233;
+    --ink-soft:#4b5468;
+    --ink-faint:#7c8497;
+    --paper:#ffffff;
+    --paper-soft:#f4f6fa;
+    --paper-soft-2:#eef1f7;
+    --line:#e2e6ee;
+    --accent:#1e4d78;
+    --accent-deep:#123452;
+    --accent-soft:#e8f0f8;
+    --accent-soft-2:#dbe7f4;
+    --gold:#a97e35;
+    --gold-soft:#f7efe0;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  h1,h2,h3,.font-display{
+    font-family:'Newsreader', 'Iowan Old Style', Georgia, serif;
+    text-wrap:balance;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.68rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:500;
+  }
+  .prose-body{
+    color:var(--ink-soft);
+    max-width:65ch;
+  }
+  .section-band{
+    background:var(--paper-soft);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+  }
+  .card:hover{
+    box-shadow:0 8px 28px -12px rgba(18,52,82,0.18);
+    border-color:#cdd8e6;
+    transform:translateY(-1px);
+  }
+  .icon-badge{
+    width:2.5rem;height:2.5rem;
+    border-radius:10px;
+    background:var(--accent-soft);
+    color:var(--accent-deep);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .flow-line{
+    background:linear-gradient(to bottom, var(--accent-soft-2), var(--accent-soft-2) 85%, transparent);
+  }
+  .flow-node{
+    width:2.75rem;height:2.75rem;
+    border-radius:999px;
+    background:var(--paper);
+    border:2px solid var(--accent);
+    color:var(--accent-deep);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:.85rem;
+  }
+  .divider-rule{
+    height:1px;
+    background:linear-gradient(to right, var(--line), transparent);
+  }
+  .pull-quote{
+    border-left:3px solid var(--accent);
+    padding-left:1.5rem;
+  }
+  @media print{
+    body{font-size:11pt;}
+    .no-print{display:none !important;}
+    .section-band{background:#fff !important;border:none !important;}
+    .card{break-inside:avoid;box-shadow:none !important;}
+    a[href]:after{content:"";}
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- COVER -->
+<header class="relative overflow-hidden" style="background:linear-gradient(180deg, var(--accent-deep) 0%, var(--accent) 100%);">
+  <div class="absolute inset-0 opacity-[0.06]" style="background-image:radial-gradient(circle at 20% 20%, white 1px, transparent 1px);background-size:22px 22px;"></div>
+  <div class="relative max-w-4xl mx-auto px-8 pt-20 pb-16 text-center">
+    <p class="eyebrow" style="color:#cfe0f2;">Business Vision &amp; Operational Overview</p>
+    <h1 class="mt-5 text-white font-medium tracking-tight" style="font-size:clamp(2.4rem,6vw,3.6rem);">Khidmat AI</h1>
+    <div class="w-16 h-px mx-auto my-7" style="background:rgba(255,255,255,0.35);"></div>
+    <p class="max-w-xl mx-auto" style="color:#dce9f5;font-size:1.05rem;">
+      A long-term effort to understand humanitarian reality — presented for review and approval before Ontology Design begins.
+    </p>
+  </div>
+</header>
+
+<main class="max-w-4xl mx-auto">
+
+  <!-- PURPOSE -->
+  <section class="px-8 py-14">
+    <p class="eyebrow mb-3">Purpose of This Overview</p>
+    <h2 class="text-2xl font-medium mb-5" style="color:var(--ink);">Why this document exists</h2>
+    <p class="prose-body">
+      This overview brings together the vision, direction, and operating philosophy of Khidmat AI in a single, readable summary.
+      It exists to give a clear understanding of the humanitarian reality Khidmat AI seeks to understand, and the philosophy
+      that will guide everything built upon that understanding — so the overall direction can be reviewed and confirmed
+      before design work continues.
+    </p>
+    <p class="prose-body mt-4">
+      This is a business overview, not a technical or architectural document. It describes intent and direction, not implementation.
+    </p>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-8"><div class="divider-rule"></div></div>
+
+  <!-- THE PROBLEM -->
+  <section class="px-8 py-14">
+    <p class="eyebrow mb-3">The Problem</p>
+    <h2 class="text-2xl font-medium mb-5">Humanitarian systems store data. They rarely understand it.</h2>
+    <p class="prose-body">
+      Humanitarian work today depends heavily on manual processes. Organizations maintain fragmented information, inconsistent
+      beneficiary records, disconnected verification steps, and incomplete family histories. Most humanitarian software is built
+      to register cases and track donations — not to understand the people and circumstances behind them.
+    </p>
+    <div class="grid sm:grid-cols-2 gap-3 mt-8">
+      <div class="flex items-start gap-3 p-4 rounded-xl" style="background:var(--paper-soft-2);">
+        <i data-lucide="copy-x" class="w-4 h-4 mt-1" style="color:var(--accent);"></i>
+        <span class="text-sm" style="color:var(--ink-soft);">Duplicate registrations occur</span>
+      </div>
+      <div class="flex items-start gap-3 p-4 rounded-xl" style="background:var(--paper-soft-2);">
+        <i data-lucide="shield-question" class="w-4 h-4 mt-1" style="color:var(--accent);"></i>
+        <span class="text-sm" style="color:var(--ink-soft);">Verification quality varies</span>
+      </div>
+      <div class="flex items-start gap-3 p-4 rounded-xl" style="background:var(--paper-soft-2);">
+        <i data-lucide="history" class="w-4 h-4 mt-1" style="color:var(--accent);"></i>
+        <span class="text-sm" style="color:var(--ink-soft);">Historical context is lost</span>
+      </div>
+      <div class="flex items-start gap-3 p-4 rounded-xl" style="background:var(--paper-soft-2);">
+        <i data-lucide="line-chart" class="w-4 h-4 mt-1" style="color:var(--accent);"></i>
+        <span class="text-sm" style="color:var(--ink-soft);">Long-term outcomes are hard to measure</span>
+      </div>
+    </div>
+    <p class="prose-body mt-6">
+      The limitation is not simply software. It is the absence of a structured understanding of humanitarian reality.
+    </p>
+  </section>
+
+  <!-- THE VISION -->
+  <section class="section-band px-8 py-14">
+    <div class="max-w-4xl mx-auto">
+      <p class="eyebrow mb-3">The Vision</p>
+      <h2 class="text-2xl font-medium mb-5">Understanding reality before automating it</h2>
+      <p class="prose-body">
+        Khidmat AI aims to build a humanitarian intelligence foundation that allows AI systems to understand, reason about,
+        verify, coordinate, and continuously improve humanitarian assistance. Rather than treating beneficiaries as isolated
+        records, Khidmat seeks to understand the complete context surrounding every individual, family, household, community,
+        and organization within humanitarian reality.
+      </p>
+      <p class="pull-quote mt-8 text-lg font-display" style="color:var(--accent-deep);">
+        The objective is to build an intelligence layer capable of understanding reality before attempting to automate it.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section class="px-8 py-14">
+    <p class="eyebrow mb-3">What Khidmat AI Is</p>
+    <h2 class="text-2xl font-medium mb-6">A long-term effort to understand humanitarian reality</h2>
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <p class="prose-body">
+          Khidmat AI is not a software product. It is a long-term effort to understand humanitarian reality itself — the people,
+          families, needs, evidence, and decisions that make up humanitarian work. Software is only one expression of that
+          understanding, not the goal of it.
+        </p>
+        <p class="prose-body mt-4">
+          The project begins with understanding reality, not with building an application. Knowledge comes before models,
+          models come before intelligence, and business understanding always comes before architecture. Applications are
+          the last outcome of this work — they sit on top of the understanding; they do not define it.
+        </p>
+      </div>
+      <div class="card p-6">
+        <p class="text-sm font-medium mb-4" style="color:var(--ink-faint);">Not to be confused with</p>
+        <ul class="space-y-3 text-sm" style="color:var(--ink-soft);">
+          <li class="flex items-center gap-2"><i data-lucide="x" class="w-3.5 h-3.5" style="color:var(--ink-faint);"></i>A software product or application</li>
+          <li class="flex items-center gap-2"><i data-lucide="x" class="w-3.5 h-3.5" style="color:var(--ink-faint);"></i>A simple AI chatbot</li>
+          <li class="flex items-center gap-2"><i data-lucide="x" class="w-3.5 h-3.5" style="color:var(--ink-faint);"></i>A registration or donation platform</li>
+          <li class="flex items-center gap-2"><i data-lucide="x" class="w-3.5 h-3.5" style="color:var(--ink-faint);"></i>A conventional NGO CRM</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE PHILOSOPHY -->
+  <section class="section-band px-8 py-14">
+    <div class="max-w-4xl mx-auto">
+      <p class="eyebrow mb-3">Core Philosophy</p>
+      <h2 class="text-2xl font-medium mb-2">One fundamental belief</h2>
+      <p class="prose-body mb-8">AI cannot make reliable humanitarian decisions unless it first understands humanitarian reality.</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="card p-5 flex items-start gap-4">
+          <div class="icon-badge"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+          <p class="text-sm" style="color:var(--ink-soft);"><span class="font-semibold" style="color:var(--ink);">Knowledge before automation.</span><br>Understanding must always come first.</p>
+        </div>
+        <div class="card p-5 flex items-start gap-4">
+          <div class="icon-badge"><i data-lucide="file-search" class="w-5 h-5"></i></div>
+          <p class="text-sm" style="color:var(--ink-soft);"><span class="font-semibold" style="color:var(--ink);">Evidence before conclusions.</span><br>Claims are grounded before they're acted on.</p>
+        </div>
+        <div class="card p-5 flex items-start gap-4">
+          <div class="icon-badge"><i data-lucide="badge-check" class="w-5 h-5"></i></div>
+          <p class="text-sm" style="color:var(--ink-soft);"><span class="font-semibold" style="color:var(--ink);">Verification before trust.</span><br>Nothing is assumed true without checking.</p>
+        </div>
+        <div class="card p-5 flex items-start gap-4">
+          <div class="icon-badge"><i data-lucide="heart-handshake" class="w-5 h-5"></i></div>
+          <p class="text-sm" style="color:var(--ink-soft);"><span class="font-semibold" style="color:var(--ink);">Dignity at the center.</span><br>Every decision keeps the person first.</p>
+        </div>
+        <div class="card p-5 flex items-start gap-4">
+          <div class="icon-badge"><i data-lucide="compass" class="w-5 h-5"></i></div>
+          <p class="text-sm" style="color:var(--ink-soft);"><span class="font-semibold" style="color:var(--ink);">Reality before implementation.</span><br>Understanding is built before anything is built on top of it.</p>
+        </div>
+        <div class="card p-5 flex items-start gap-4">
+          <div class="icon-badge"><i data-lucide="landmark" class="w-5 h-5"></i></div>
+          <p class="text-sm" style="color:var(--ink-soft);"><span class="font-semibold" style="color:var(--ink);">Business before technology.</span><br>The humanitarian problem is understood before the system is designed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT KHIDMAT AI SEEKS TO UNDERSTAND -->
+  <section class="px-8 py-14">
+    <p class="eyebrow mb-3">What Khidmat AI Seeks to Understand</p>
+    <h2 class="text-2xl font-medium mb-4">The dimensions of humanitarian reality</h2>
+    <p class="prose-body mb-6">
+      Khidmat AI is not organized around software users. It is organized around reality — the entities, relationships,
+      and outcomes that make up humanitarian work, regardless of what technology is eventually used to reason about them.
+    </p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="hand-heart" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Human needs</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="user" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Individuals</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="home" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Households &amp; families</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="users-round" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Communities</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="landmark" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Organizations</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="layers" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Programs</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="package-check" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Interventions</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="file-stack" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Evidence</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="shield-check" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Verification</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="network" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Relationships</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="trending-up" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Outcomes</span></div>
+      <div class="card p-5 flex items-center gap-3"><div class="icon-badge"><i data-lucide="scale" class="w-4.5 h-4.5"></i></div><span class="text-sm font-medium">Decision making</span></div>
+    </div>
+  </section>
+
+  <!-- END TO END FLOW -->
+  <section class="section-band px-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <p class="eyebrow mb-3">End-to-End Humanitarian Flow</p>
+      <h2 class="text-2xl font-medium mb-4">From identifying a need to lasting independence</h2>
+      <p class="prose-body mb-10 text-sm">
+        Shown here as a sequence for clarity — but real humanitarian journeys are rarely linear. People may revisit earlier
+        stages, needs evolve, assessments change, and recovery does not always move in a straight line.
+      </p>
+      <div class="relative pl-2">
+        <div class="absolute left-[1.375rem] top-2 bottom-2 w-0.5 flow-line"></div>
+        <div class="space-y-7">
+          <!-- Steps -->
+          <div class="relative flex items-center gap-5">
+            <div class="flow-node">01</div>
+            <div class="card flex-1 px-5 py-4"><p class="font-medium">Need Identified</p></div>
+          </div>
+          <div class="relative flex items-center gap-5">
+            <div class="flow-node">02</div>
+            <div class="card flex-1 px-5 py-4"><p class="font-medium">Registration</p></div>
+          </div>
+          <div class="relative flex items-center gap-5">
+            <div class="flow-node">03</div>
+            <div class="card flex-1 px-5 py-4"><p class="font-medium">Evidence Collection</p></div>
+          </div>
+          <div class="relative flex items-center gap-5">
+            <div class="flow-node">04</div>
+            <div class="card flex-1 px-5 py-4"><p class="font-medium">Verification</p></div>
+          </div>
+          <div class="relative flex items-center gap-5">
+            <div class="flow-node">05</div>
+            <div class="card flex-1 px-5 py-4"><p class="font-medium">Assessment</p></div>
+          </div>
+          <div class="relative flex items-center gap-5">
+            <div class="flow-node">06</div>
+            <div class="card flex-1 px-5 py-4"><p class="font-medium">Decision Support</p></div>
+          </div>
+          <div class="relative flex items-center gap-5">
+            <div class="flow-node">07</div>
+            <div class="card flex-1 px-5 py-4"><p class="font-medium">Intervention</p></div>
+          </div>
+          <div class="relative flex items-center gap-5">
+            <div class="flow-node">08</div>
+            <div class="card flex-1 px-5 py-4"><p class="font-medium">Monitoring</p></div>
+          </div>
+          <div class="relative flex items-center gap-5">
+            <div class="flow-node">09</div>
+            <div class="card flex-1 px-5 py-4"><p class="font-medium">Recovery</p></div>
+          </div>
+          <div class="relative flex items-center gap-5">
+            <div class="flow-node" style="background:var(--accent-deep);border-color:var(--accent-deep);color:#fff;">10</div>
+            <div class="card flex-1 px-5 py-4" style="background:var(--accent-soft);border-color:var(--accent-soft-2);"><p class="font-medium" style="color:var(--accent-deep);">Long-Term Independence</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDATIONAL UNDERSTANDING -->
+  <section class="px-8 py-14">
+    <p class="eyebrow mb-3">Foundational Understanding</p>
+    <h2 class="text-2xl font-medium mb-4">What the foundation must understand before intelligence can act responsibly</h2>
+    <p class="prose-body mb-6">
+      These are not software features or modules. They are areas of humanitarian understanding the foundation must hold
+      before any reasoning, recommendation, or action can be trusted.
+    </p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="user-plus" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Registration</p><p class="text-xs" style="color:var(--ink-faint);">How a need first becomes known and understood</p></div>
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="fingerprint" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Identity</p><p class="text-xs" style="color:var(--ink-faint);">Recognizing who a person is, consistently over time</p></div>
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="users-round" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Household Understanding</p><p class="text-xs" style="color:var(--ink-faint);">Seeing families as connected wholes</p></div>
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="file-stack" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Evidence</p><p class="text-xs" style="color:var(--ink-faint);">What grounds a claim in fact</p></div>
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="shield-check" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Verification</p><p class="text-xs" style="color:var(--ink-faint);">Confirming reality on the ground</p></div>
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="scale" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Assessment</p><p class="text-xs" style="color:var(--ink-faint);">Understanding urgency and need</p></div>
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="lightbulb" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Decision Support</p><p class="text-xs" style="color:var(--ink-faint);">Reasoning toward good choices with confidence</p></div>
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="package-check" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Interventions</p><p class="text-xs" style="color:var(--ink-faint);">Matching the right kind of help to the need</p></div>
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="network" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Coordination</p><p class="text-xs" style="color:var(--ink-faint);">How people and organizations work together</p></div>
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="activity" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Monitoring</p><p class="text-xs" style="color:var(--ink-faint);">Following outcomes over time</p></div>
+      <div class="card p-5"><div class="icon-badge mb-3"><i data-lucide="bar-chart-3" class="w-4.5 h-4.5"></i></div><p class="font-medium text-sm mb-1">Reporting</p><p class="text-xs" style="color:var(--ink-faint);">Making impact visible and clear</p></div>
+    </div>
+  </section>
+
+  <!-- HOW AI SUPPORTS THE PROCESS -->
+  <section class="section-band px-8 py-14">
+    <div class="max-w-4xl mx-auto">
+      <p class="eyebrow mb-3">The AI Intelligence Layer</p>
+      <h2 class="text-2xl font-medium mb-6">Augmenting judgment, not replacing it</h2>
+      <p class="prose-body mb-8">
+        AI is not a feature. It is an intelligence layer built on top of humanitarian understanding, supporting
+        understanding, reasoning, verification, planning, coordination, recommendations, monitoring, and organizational
+        learning. It is not expected to replace human judgment. It supports human decisions while staying transparent
+        about confidence, uncertainty, and what still needs verifying.
+      </p>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <div class="card p-5">
+          <i data-lucide="brain" class="w-5 h-5 mb-3" style="color:var(--accent);"></i>
+          <p class="font-medium text-sm mb-1">Understanding &amp; Reasoning</p>
+          <p class="text-xs" style="color:var(--ink-faint);">Interpreting evidence and context to build a coherent picture of each situation.</p>
+        </div>
+        <div class="card p-5">
+          <i data-lucide="users-round" class="w-5 h-5 mb-3" style="color:var(--accent);"></i>
+          <p class="font-medium text-sm mb-1">Verification &amp; Coordination</p>
+          <p class="text-xs" style="color:var(--ink-faint);">Guiding volunteers, teams, and partners toward consistent, evidence-based judgment.</p>
+        </div>
+        <div class="card p-5">
+          <i data-lucide="trending-up" class="w-5 h-5 mb-3" style="color:var(--accent);"></i>
+          <p class="font-medium text-sm mb-1">Decision Support &amp; Learning</p>
+          <p class="text-xs" style="color:var(--ink-faint);">Surfacing recommendations and confidence while the organization learns over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND DONATIONS -->
+  <section class="px-8 py-14">
+    <p class="eyebrow mb-3">Beyond Donations</p>
+    <h2 class="text-2xl font-medium mb-5">Sustainable improvement, not just aid delivered</h2>
+    <p class="prose-body">
+      Donations are only one possible form of help. Khidmat AI is designed to support a much wider range of interventions —
+      employment, education, healthcare, government schemes, business support, skills development, and emergency relief
+      among them. The goal in every case is the same: reducing dependency through sustainable improvement.
+    </p>
+    <p class="pull-quote mt-8 text-lg font-display" style="color:var(--accent-deep);">
+      Success is not measured by the amount of aid distributed. Success is measured by sustainable improvement in human well-being.
+    </p>
+  </section>
+
+  <!-- CURRENT DIRECTION -->
+  <section class="section-band px-8 py-14">
+    <div class="max-w-4xl mx-auto">
+      <p class="eyebrow mb-3">Current Direction</p>
+      <h2 class="text-2xl font-medium mb-5">Understanding first. Applications last.</h2>
+      <p class="prose-body mb-8">
+        The current priority is establishing a strong foundation of vision, philosophy, and business understanding that will
+        support every decision that follows. Applications are the last outcome of this work, never the starting point —
+        every application should emerge from validated humanitarian understanding.
+      </p>
+      <div class="flex flex-wrap items-center gap-x-2 gap-y-3 text-sm font-medium" style="color:var(--accent-deep);">
+        <span class="px-3 py-1.5 rounded-full" style="background:var(--paper);border:1px solid var(--line);">Reality</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5" style="color:var(--ink-faint);"></i>
+        <span class="px-3 py-1.5 rounded-full" style="background:var(--paper);border:1px solid var(--line);">Knowledge</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5" style="color:var(--ink-faint);"></i>
+        <span class="px-3 py-1.5 rounded-full" style="background:var(--paper);border:1px solid var(--line);">Understanding</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5" style="color:var(--ink-faint);"></i>
+        <span class="px-3 py-1.5 rounded-full" style="background:var(--paper);border:1px solid var(--line);">Models</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5" style="color:var(--ink-faint);"></i>
+        <span class="px-3 py-1.5 rounded-full" style="background:var(--paper);border:1px solid var(--line);">Reasoning</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5" style="color:var(--ink-faint);"></i>
+        <span class="px-3 py-1.5 rounded-full" style="background:var(--paper);border:1px solid var(--line);">Intelligence</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5" style="color:var(--ink-faint);"></i>
+        <span class="px-3 py-1.5 rounded-full" style="background:var(--accent-soft);border:1px solid var(--accent-soft-2);">Applications</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT REVIEW -->
+  <section class="px-8 py-16">
+    <div class="card p-8 md:p-10" style="background:var(--gold-soft);border-color:#eadcbc;">
+      <div class="flex items-start gap-4">
+        <div class="icon-badge" style="background:#fff;color:var(--gold);flex-shrink:0;"><i data-lucide="clipboard-check" class="w-5 h-5"></i></div>
+        <div>
+          <p class="eyebrow mb-2" style="color:var(--gold);">Client Review</p>
+          <h2 class="text-2xl font-medium mb-4">Ready for review and approval</h2>
+          <p class="prose-body max-w-none">
+            This document represents the current business vision and operational direction of Khidmat AI. It is intended to
+            confirm shared understanding of the humanitarian reality Khidmat AI seeks to understand, and the philosophy that
+            will guide everything built on top of that understanding.
+          </p>
+          <p class="prose-body max-w-none mt-4">
+            Once this direction is approved, the project will proceed to the <span class="font-semibold" style="color:var(--ink);">Ontology Design phase.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <footer class="px-8 pb-20 pt-4 text-center">
+    <div class="divider-rule max-w-xs mx-auto mb-10"></div>
+    <p class="prose-body max-w-lg mx-auto text-sm">
+      Over the long term, Khidmat AI aims to become a shared humanitarian intelligence foundation — capable of supporting
+      organizations, communities, researchers, and future AI systems as they make humanitarian decisions grounded in a
+      common understanding of reality.
+    </p>
+    <p class="font-display text-xl italic max-w-lg mx-auto mt-8" style="color:var(--accent-deep);">
+      "How can an AI truly understand humanitarian reality well enough to responsibly assist humanity?"
+    </p>
+    <p class="text-xs mt-6" style="color:var(--ink-faint);">Khidmat AI &nbsp;·&nbsp; Business Vision &amp; Operational Overview</p>
+  </footer>
+
+</main>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

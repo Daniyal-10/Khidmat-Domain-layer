@@ -20,7 +20,9 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 **Why necessary:** No document reviewed anywhere in this project states an initial deployment geography, so no narrower scope could be tested against even if desired.
 **Owner: Stage 5 Domain Discovery
 **What would overturn it:** The project stating a specific initial deployment context, after which every general-scope Finding above should be re-validated (or explicitly re-scoped) against it rather than assumed to transfer automatically.
-**Status:** Open. **Applies beyond TD-01** — TD-02's Findings (BD-TD02-001 through 004) are general/cross-context for the identical reason and are covered by this same assumption rather than a duplicate entry.
+**Status:** **CLOSED (2026-07-29, remediation B1).** The overturn condition has been met: `BUSINESS_MASTER_PLAN.md` §2 "Initial Applicability Context" (v1.3) now states the deployment geography, population, crisis profile, donor context, currencies, philanthropic framework and connectivity assumptions, sourced from client-supplied project material. Two dimensions — initial partner set and languages — remain explicitly unstated for lack of repository evidence and are recorded as open in that section rather than assumed.
+**Residual obligation (not a new assumption).** Closing this entry makes the general-scope Findings of TD-01 through TD-06 *re-scopeable*; it does not re-scope them. Re-testing each Finding against the stated context is validation work gated on the ground truth channel (remediation B13). Until that occurs, those Findings retain their original general/cross-context scope tag, now by explicit record rather than by absence of any alternative.
+**Applied beyond TD-01** — TD-02's Findings (BD-TD02-001 through 004) were covered by this same assumption and are covered by this same closure.
 
 ---
 
@@ -141,3 +143,50 @@ Per `../../98-archive/execution_cleanup/BUSINESS_DISCOVERY_BLUEPRINT.md` §6.2. 
 **Owner: Stage 5 Domain Discovery
 **What would overturn it:** Tier A practitioner evidence indicating how market actors are classified in the Khidmat ecosystem.
 **Status:** Open.
+
+---
+
+## AR-015 — Human-reality decompositions carried on a single archived internal source
+
+**Assumption:** The decompositions promoted into `docs/02-discovery/human-reality/HUMAN_REALITY_DISCOVERY.md` from `98-archive/execution_cleanup/BUSINESS_ARCHITECTURE_BLUEPRINT.md` — the nine lifecycle stages (§5.2), the five capability classes (§5.3), and the five health-condition kinds (§5.4) — are treated as a plausible starting decomposition of a person's situation.
+**Why necessary:** Remediation B2 required the human-reality content dropped by the skipped Stage 4 reconciliation to re-enter the canonical chain. Promoting it with its weakness recorded is preferable to either leaving the Facets layer with no substrate at all, or inventing a replacement decomposition with no source.
+**Owner:** Human Reality domain (Stage 5).
+**What would overturn it:** Tier A practitioner evidence, or Tier B sector-standard evidence, either corroborating these decompositions or surfacing a materially different cut of a person's situation.
+**Status:** Open. These are **not** Findings and must not be read as such.
+
+---
+
+## AR-016 — Risk assembly and protective-factor model carried on `GLOSSARY.md` alone
+
+**Assumption:** Fourteen of the twenty-nine concepts in `docs/02-discovery/vulnerability-risk-protection/` — principally the Risk Composition → Risk Characterization → Risk Profile assembly structure, Hazard Category, Exposure, Protective Factor and its four named instances — are retained as coherent and load-bearing despite being present in `GLOSSARY.md` and nowhere else.
+**Why necessary:** Remediation B3 directed that the glossary risk terms be re-validated *or retired*. Fifteen validated against a second internal source; these fourteen did not. Retiring them would discard the only account the project has of how risk is assembled and of what protects a person, leaving the domain purely deficit-oriented in violation of Pillar P5.
+**Owner:** Vulnerability, Risk and Protection domain (Stage 5).
+**What would overturn it:** Tier A or Tier B evidence either corroborating the assembly model or showing that practitioners assemble risk differently.
+**Status:** Open. Each affected concept is individually marked *Carried unvalidated* in the domain document.
+
+---
+
+## AR-017 — Islamic giving forms assumed distinct; their substance not asserted
+
+**Assumption:** `GLOSSARY.md`'s claim that seven canonically distinct Islamic giving forms exist (Zakat, Sadaqah, Sadaqah Jariyah, Waqf, Fidya, Kaffarah, Qurbani), each with its own obligation basis and restriction shape and none a synonym or alias for another, and that eight Zakat-eligible recipient categories exist, is assumed valid as to *distinctness*.
+**Why necessary:** Remediation B4 required the ratified concept Donor (CL-002) to acquire discovery. The distinctness claim is load-bearing for modelling — a foundation that treats the seven as aliases cannot honour their differing restrictions — while the substance of each form is genuinely undiscovered.
+**Scope limit, stated explicitly:** the **substance** of each form's obligation basis and restriction shape, and the content of the eight asnaf categories, is **not** assumed and **not** asserted anywhere. Within the applicability context stated in `BUSINESS_MASTER_PLAN.md` §2 this substance determines who may lawfully receive assistance; inventing it would risk religious and legal harm.
+**Owner:** Giving and Resource-Origin domain (Stage 5).
+**What would overturn it:** Evidence that any two forms are in fact aliases, or authoritative sourcing of the obligation bases and recipient categories.
+**Status:** Open. Related to, and does not supersede, AR-013.
+
+---
+
+## AR-018 — Need, intervention-fit and outcome decompositions carried on single sources
+
+**Assumption:** The seven need categories and four outcome categories (from `98-archive/.../BUSINESS_ARCHITECTURE_BLUEPRINT.md` §§9, 13), the three need-relationship qualifiers, the four intervention-relationship types, Intervention Readiness, Intervention Objective Category, and the six-stage Human Development trajectory (all from `GLOSSARY.md`) are treated as plausible starting decompositions.
+**Why necessary:** Remediation B5 required case-altitude content for Need, Intervention Fit and Outcome, which TD-06 had covered only at programme altitude. These are the only accounts the repository holds.
+**Owner:** Case Management and Accountability & Evaluation domains (Stage 5).
+**What would overturn it:** Tier A or Tier B evidence corroborating or replacing any decomposition.
+**Status:** Open.
+
+---
+
+## Note on AR-011 (informal success criteria)
+
+AR-011 was examined during remediation B5 and **remains Open**. Four independent repository sources (`HUMANITARIAN_BUSINESS_REFERENCE_MODEL.md` Ch7; this register's AR-011; `case-management/10-open-questions.md`; `98-archive/.../BUSINESS_ARCHITECTURE_BLUEPRINT.md` §13) agree that the criteria by which practitioners judge an intervention to have worked are unknown. No repository evidence exists from which to close it, and supplying an answer would constitute inventing business knowledge. Its overturn condition — Tier A practitioner evidence — is gated on remediation B13.

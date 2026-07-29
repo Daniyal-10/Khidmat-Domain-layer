@@ -137,3 +137,109 @@ The transition from unverified claims to trusted facts is the primary mechanism 
 
 ### Candidate Stable Core Justification
 The structural separation between an assertion (Claim) and its proof (Evidence) is a universal knowledge pattern. Modeling this at the foundation prevents domains from tightly coupling their decision logic to unverified data.
+
+---
+---
+
+# Part II — Stable Core Definitions
+
+*(Added under remediation B8. `KHIDMAT_FOUNDATION_PIPELINE.md` Stage 6.1 requires a working definition for each of the six Stable Core elements named in `PROJECT_OVERVIEW.md` Ch5.1, a cross-check that every qualified concept can be described in those terms, and a "Stable Core Definitions" note as the stage output. That stage was never performed. Part I above defines four cross-domain concepts — Beneficiary, Organisation, Consent, Evidence — which are **not** the same list: it covers Evidence, partially covers Identity, and omits Relationships, Uncertainty, Temporal change and Context entirely. Part II supplies the missing stage output.)*
+
+**What these are.** `PROJECT_OVERVIEW.md` Ch5.1 states that certain forms of knowledge are foundational "because every humanitarian domain depends upon them — concepts such as identity, relationships, evidence, uncertainty, temporal change, and humanitarian context provide the minimum structure required to understand reality regardless of whether the domain is health, education, shelter, livelihoods, disaster response, or another future area."
+
+**What these are not.** `KHIDMAT_FOUNDATION_PIPELINE.md` Stage 7 is explicit: *"the Stable Core does not generate primitives — discovery does. The Stable Core governs how a discovered primitive is modeled."* These six are therefore **governing dimensions**, not an ontology and not a primitive set. Deriving the primitive set remains the first authoring act of ontology design (`ONTOLOGY_DESIGN.md` §1.4).
+
+## SC-1 — Identity
+
+**Working definition.** That which makes a thing the *same thing* across separate observations, conversations, organisations and years, and therefore that on which continuity of understanding depends.
+
+**Repository basis.** `PROJECT_OVERVIEW.md` Ch1.2 (systems capture a person "as a single point in time rather than as a continuously evolving human journey"); Ch1.3 (knowledge resets between programmes); `registration-identity/12-domain-invariants.md` ("Identity is Immutable, Attributes are Mutable"; "The Primacy of the Beneficiary"); `SHARED_CONCEPT_CATALOG.md` §1 (identity must be decoupled from the roles it plays).
+
+**Cross-check against Ch1.2 and Ch5.2.** Ch1.2's dimension "personal identity and life history" is covered. Ch5.2 requires that a source's reliability accumulate over time, which presupposes the source has identity — covered.
+
+**Known weakness.** Household re-identification across splits and merges is unanswered (`human-reality/HUMAN_REALITY_DISCOVERY.md` Open Question 2).
+
+## SC-2 — Relationships
+
+**Working definition.** A connection between things that already have identity, itself capable of carrying meaning, duration, plurality and evidence — not an attribute of either party.
+
+**Repository basis.** `PROJECT_OVERVIEW.md` Ch5.1 ("deeply relational, where meaning emerges from relationships rather than isolated records"); Ch1.2 ("understanding one person therefore requires understanding the relationships in which they exist"); the ~45 relationships across the seven domains' `04-relationships.md` files; `human-reality/HUMAN_REALITY_DISCOVERY.md` §9 (typed, directional dependency); `GLOSSARY.md` (`need_influences_need`, qualified three ways).
+
+**Cross-check.** Ch1.2's dimensions "family and household structure" and "relationships between family members and dependents" are covered by the Human Reality domain. Ch5.2's requirement that evidence attach to claims is a relationship that itself bears epistemic status — covered.
+
+**Known weakness.** Temporal validity and plurality are unevidenced for most relationships. This is recorded rather than resolved; `ONTOLOGY_DESIGN.md` §2.3 makes stating them a design obligation, and they cannot be stated from current evidence.
+
+## SC-3 — Evidence
+
+**Working definition.** Any observation, record, testimony, measurement or artifact that contributes to understanding humanitarian reality and **whose origin can be identified and evaluated**. An unsupported assertion is not evidence because it has been recorded.
+
+**Repository basis.** `PROJECT_OVERVIEW.md` Ch5.2; `CONSTITUTION.md` Article V; Part I §4 of this document; the claim/evidence/verification spine present in all seven original domains.
+
+**Strength factors, as stated in Ch5.2:** source credibility, method of collection, relevance, timeliness, completeness, corroboration, and consistency with other trusted evidence. These are the repository's canonical criteria and are qualitative by construction.
+
+**Cross-check.** Ch1.2's dimension "evidence supporting observed circumstances" is covered. Note the polymorphic validity established under finding MAJ-01 and remediation REM-02: some evidence is immutable, some expires.
+
+## SC-4 — Uncertainty
+
+**Working definition.** The explicit representation of what is *not* known or not settled about an assertion — its claim status, the confidence it currently deserves, what evidence would change it, what remains unknown, and whether the conclusion it supports requires human review.
+
+**Repository basis.** `PROJECT_OVERVIEW.md` Ch1.2 names "levels of uncertainty, confidence, and verification for every important conclusion" as a foundational dimension; Ch2.3 requires that "significant uncertainties are explicitly identified rather than ignored"; Ch5.2 requires conflicting evidence to be preserved rather than resolved prematurely and defines a conclusion as "operationally accepted" yet "open to revision"; `CONSTITUTION.md` Article III(c) and Article VIII; `GLOSSARY.md` supplies Confidence Level, Claim Basis, Gap and Finding Consensus; the twenty decision points across the seven domains each state their residual uncertainty.
+
+**Cross-check.** This element had **no working definition anywhere in the repository before this section**, which the accepted assessment recorded as directly material to the Cognition layer.
+
+**Known weakness.** `DISCOVERY_HARMONIZATION_REPORT.md` §2 records that the domains "lack a unified mechanism to represent this uncertainty formally," and `case-management/10-open-questions.md` asks how a suspected but unevidenced vulnerability is represented. Designing that representation is ontology-design work (`ONTOLOGY_DESIGN.md` §2.7); what is missing at foundation level is the practitioner-recognised evidence-sufficiency thresholds, which are gated on B13.
+
+## SC-5 — Temporal Change
+
+**Working definition.** The distinction between a condition holding across a *span* of time and an occurrence happening at a *point* in time, together with the requirement that history be preserved rather than overwritten when either is revised.
+
+**Repository basis.** `PROJECT_OVERVIEW.md` Ch5.1 ("continuously evolving rather than static"); Ch1.2 (systems "rarely preserve how circumstances have changed, what events led to the current situation"); the ten state progressions across the seven domains; the ~70 business events; `human-reality/HUMAN_REALITY_DISCOVERY.md` §8.5 (life events) and §11 (the Longitudinal Revision Pattern); `GLOSSARY.md` Trajectory and Lifecycle Transition; `CONSTITUTION.md` Article X(c) (auditability after the fact).
+
+**Cross-check.** Ch1.2's dimension "significant life events, displacement, crises, or disasters" is covered by the Human Reality domain's life-event catalogue. Ch1.2's requirement to preserve "how previous interventions have influenced future outcomes" is covered in shape by the outcome model, with the caveat that outcome criteria remain open (AR-011).
+
+**This element also had no working definition before this section.**
+
+## SC-6 — Context
+
+**Working definition.** The frame relative to which a statement holds — geographic, cultural, temporal, organisational or programmatic — such that a regularity observed in one setting is never silently treated as universal.
+
+**Repository basis.** `PROJECT_OVERVIEW.md` Ch1.2 (the multidimensional layers of context, including community relationships, housing and environment, institutional interactions); Ch6.1 (universal capability, locally adaptable execution); `HUMANITARIAN_BUSINESS_REFERENCE_MODEL.md` Ch9, which supplies the three-layer framework directly — Universal Business Principles, Regional Business Practices, Organisation-Specific Operational Policies; the per-domain policy altitudes in every `05-business-rules.md`; `BUSINESS_MASTER_PLAN.md` §2 Initial Applicability Context (added under B1).
+
+**Cross-check.** This is the element that makes Rule AR-5's universal-or-variable tag operable. Before remediation B1 no applicability context existed, so no variable Constraint could name its scope; that is now possible.
+
+**Known weakness.** `ASSUMPTION_REGISTER.md` AR-013 remains open on which cultural frameworks beyond Islamic giving are in scope.
+
+---
+
+## Stage 6.1 Cross-Check — Can every qualified concept be described in Stable Core terms?
+
+`KHIDMAT_FOUNDATION_PIPELINE.md` §6.1 requires confirmation that every Stage 5 qualified concept "can be described in terms of the core (has identity, participates in relationships, carries evidence, exists in time, carries uncertainty, exists in context)," and states that "a concept that can't be aligned this way is a signal to revisit Stage 5, not to bypass the core."
+
+The check was run across the concept inventories of all ten domains (the seven original plus Human Reality, Vulnerability/Risk/Protection, and Giving/Resource-Origin). Result: **no concept was found that cannot be described in Stable Core terms.** Two classes required attention and are recorded rather than forced:
+
+1. **Concepts whose *uncertainty* description is empty.** Most Operational Knowledge concepts (Case Note, Waybill, Registration Status) carry no epistemic status because they are records rather than claims about reality. This is correct behaviour, not misalignment — Article IV excludes them from the shared foundation in any case.
+
+2. **Concepts whose *context* scope cannot yet be named.** Every Constraint tagged universal in the seven original domains falls here. They are describable in Stable Core terms; their scope tag is simply untested. Rule AR-5 and `ONTOLOGY_DESIGN.md` §5 both require these to remain visibly untested, which they do.
+
+**Two concepts were flagged as not yet alignable and returned to their domains rather than accepted:**
+
+- **Priority / Severity** — cannot be described in evidence or uncertainty terms because no repository source states how it is derived. Held unclassified per the B6 rubric; recorded as an open question in `case-management/03b-need-model.md` §4.
+- **Human Development Stage transition** — the states are describable, the transitions are not, because no evidence criteria exist for movement between them. Recorded as an open question in `accountability-evaluation/03b-outcome-model.md` §7.
+
+Per the pipeline's own instruction, these are signals to revisit discovery, not grounds to bypass the core. Both are logged in their owning domains.
+
+---
+
+## Stage 6.2 Readiness Gate — Status
+
+`KHIDMAT_FOUNDATION_PIPELINE.md` §6.2 lists five conditions. Their state as of this document:
+
+| Condition | State |
+|---|---|
+| Business Master Plan authored and signed off (Stage 2) | Authored; amended v1.3 under B1. Sign-off is part of Package A (B12). |
+| HBRM drafted and signed off (Stage 3) | Drafted and frozen. Sign-off is part of Package A. |
+| Business Architecture reconciled and adopted (Stage 4) | Adopted. The reconciliation step the pipeline specified was performed retrospectively under remediation B2. |
+| Provisional Constitution governance answers exist (domain-approval authority, audit authority) | **Satisfied.** `CONSTITUTION.md` Articles XVII and XVIII compose both authorities. |
+| Stage 5 output exists for the domain being designed | Ten domains exist. Three are marked REQUIRES FURTHER DISCOVERY and all ten record `Client Validation: Pending`. |
+
+**Gate status: not passed.** It cannot be passed by this remediation phase. It is blocked on remediation B12 (Package A approval, which only the Domain Approval Authority may grant) and B13 (ground truth channel, which only the Project Lead may open).

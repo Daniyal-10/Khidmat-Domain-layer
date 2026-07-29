@@ -64,5 +64,43 @@ Duplicating a concept across domains destroys epistemic integrity.
 - **Event Sourced Projections without Strict Ownership:** Allowing any domain to publish events that alter a concept's state. **Rejected:** Lack of a single writer/owner leads to race conditions and prevents strict enforcement of business rules (e.g., bypassing Programme Eligibility).
 
 ## 7. Remaining Uncertainties and Required ADRs
-- **ADR Required:** How should Consent (currently leaning towards Registration & Identity) propagate when a Case Worker needs to share specific medical vulnerability data with a partner organization?
-- **Uncertainty:** Where does the concept of a "Community" live? Is it a logical grouping in Registration, or a contextual entity in Programme Management?
+- **ADR Required:** How should Consent (currently leaning towards Registration & Identity) propagate when a Case Worker needs to share specific medical vulnerability data with a partner organization? — **Now raised as ADR-003 in `docs/00-governance/DECISION_LEDGER.md` (remediation B10). Remains open; the ledger records it rather than leaving it as a note.**
+- **ADR Required (Location Ownership):** Canonical ownership of "Location" is currently Unresolved / Pending ADR. There is a documented tension between `resource-logistics` (which needs operational locations like warehouses and camps) and `organisation-partner-management` (which needs administrative locations like partner offices). — **Now raised as ADR-002 in the decision ledger (remediation B10). Remains open.**
+- **Uncertainty:** Where does the concept of a "Community" live? Is it a logical grouping in Registration, or a contextual entity in Programme Management? — **RESOLVED under remediation B11. See §9.**
+
+---
+
+## 8. Reality / Operational Classification — Cross-Domain Resolutions
+
+*(Added under remediation B6. The rubric itself is in `docs/00-governance/STAGE_5_DISCOVERY_STANDARD.md` §6. This section records only those adjudications where two or more domains had classified the same concept differently, or where a discovery classification contradicted a ratified decision. Domain-local reclassifications are recorded inline in each domain's `03-concepts.md`.)*
+
+| Concept | Prior conflicting classifications | Resolution | Basis |
+|---|---|---|---|
+| **Consent** | Reality Knowledge in `case-management/03`; "Foundational Consent" = Operational Knowledge in `registration-identity/03`; foundational cross-domain concept in `FOUNDATION_CONCEPTS.md` §3 | **Split.** *Consent* — the person's act of authorising — is **Reality Knowledge**, owned by Registration & Identity. *Consent Record* — the organisational artifact recording it — is **Operational Knowledge**, also held by Registration & Identity. | Rubric Q1 and Q2; Constitution Article IX makes consent a right of the person. Rubric §6.3 split rule. |
+| **Programme** | Operational Knowledge in `programme-management/03`; ratified as "a distinct humanitarian business concept" by CL-001 (Human Owner, 2026-07-27) | **Reality Knowledge**, owned by Programme Management. | A discovery classification may not contradict a ratified governance decision. Corroborated by TD-01 BD-TD01-003 and HBRM Ch1. |
+| **Eligibility / Eligibility Rule** | Eligibility = Operational in `case-management/03`; Eligibility Rule = Operational in `programme-management/03`; both are canonical owned concepts in §3.1–3.2 of this document | **Both Reality Knowledge.** *Eligibility Rule* owned by Programme Management; the *eligibility determination* about a specific person owned by Case Management. | Rubric Q2 — nothing determines who receives assistance more directly. |
+| **Intervention Offering / Intervention Catalogue** | Operational in both `case-management/03` and `programme-management/03` | **Reality Knowledge**, owned by Programme Management, referenced by Case Management. | Rubric Q2. |
+| **Grant** | Operational in `programme-management/03`; a Donor & Resource Term in `GLOSSARY.md` | **Reality Knowledge**, owned by the Giving and Resource-Origin domain (created under remediation B4), referenced by Programme Management. | Rubric Q2 — grants carry restrictions that constrain recipient eligibility. |
+| **Delivery Event** | Reality Knowledge in `case-management/03`; "Delivery Confirmation / Receipt" = Operational in `resource-logistics/03` | **Delivery Event is Reality Knowledge**, owned by Resource & Logistics. *Delivery Confirmation / Receipt* remains Operational as its record. | Rubric Q1; `GLOSSARY.md` Support Delivery Terms already assigns Delivery Event to this subject matter. |
+| **Referral** | Operational in `case-management/03`; core produced concept of Cross-Organisational Coordination | **Reality Knowledge.** *Internal Escalation / Handoff* owned by Case Management; *External Referral* owned by Cross-Organisational Coordination — the split already established in `TERMINOLOGY_HARMONIZATION.md` §4.3. | Rubric Q2. |
+| **Head of Household** | Operational in `registration-identity/03` | **Retained as Operational Knowledge**, owned by Registration & Identity. The underlying *responsibility for household decision-making* is Reality Knowledge, owned by Human Reality. | Rubric §6.3 — a role is Operational; the relationship beneath it is Reality. |
+| **Priority / Severity** | Operational in both `case-management/03` and `programme-management/03` | **Not classified.** Held as Operational pending evidence of how it is determined. Recorded as an open question in `case-management/03b-need-model.md` §4. | Rubric §6.3 — a ranking with no stated derivation is not classified until its basis exists. Pillar P4 forbids unexplainable scores. |
+
+**Standing rule.** Where a future domain classifies a concept differently from this table, the table governs until amended through the governance tier appropriate to the change.
+
+---
+
+## 9. Ownership of the Social Units
+
+*(Added under remediation B11. The accepted assessment recorded that three of the four social units in the Project Overview's own model — Family, Household and Community — had no canonical owner, and that §7 above left Community explicitly unresolved.)*
+
+| Concept | Canonical owner | Business justification |
+|---|---|---|
+| **Person / Individual** | **Human Reality** *(`docs/02-discovery/human-reality/`)* | The person persists across cases, programmes and organisations. `registration-identity/12-domain-invariants.md` establishes "The Primacy of the Beneficiary"; `FOUNDATION_CONCEPTS.md` §1 establishes the person as the root anchor. Registration & Identity owns the *assurance* that two encounters concern the same person; Human Reality owns what is true of that person. |
+| **Family** | **Human Reality** | `GLOSSARY.md` defines Family as distinct from Household, connected through kinship, caregiving, marriage or guardianship, with multiple families possible within one household. No prior domain claimed it. |
+| **Household** | **Human Reality** | The household as a social unit — its resilience, internal dependencies, housing, utilities and community context. Registration & Identity retains ownership of household *membership recording and adjudication* as part of registry integrity, including the Household Composition Decision (`registration-identity/08` §3), which is unchanged. |
+| **Community** | **Human Reality** | Resolves the open uncertainty in §7. Neither candidate proposed there is correct: Registration is a registry function and cannot hold settlement type, service access, local organisations, livelihood patterns or seasonal hazard; Programme Management is forbidden from evaluating anything below population aggregate (`programme-management/12-domain-invariants.md`). Community context is reality about where a household lives, which is this domain's subject matter. |
+
+**Responsibility for the Household split rule.** `VALIDATION/FINDINGS.md` REC-01 recommended that responsibility for resolving how a household splits be assigned, and it never was. It is assigned here to **Human Reality**, and is recorded as Open Question 2 in that domain's Section 18. Assigning the owner does not answer the question; the answer requires evidence gated on remediation B13.
+
+**Boundary with Registration & Identity, stated once.** Registration & Identity answers *"is this the same human being, and is this household composition correctly recorded?"* Human Reality answers *"what is true of this person, and what kind of social unit is this?"* Recorded in `registration-identity/02-boundaries.md` and `human-reality/HUMAN_REALITY_DISCOVERY.md` §16.

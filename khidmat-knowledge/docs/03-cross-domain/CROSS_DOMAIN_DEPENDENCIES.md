@@ -47,9 +47,11 @@ A strict architectural invariant in Khidmat is the **Prohibition of Circular Dep
 - **Example of Mitigated Circularity:** Case Management requires an `Eligibility Rule` from Programme Management to approve a `Support Plan`. Programme Management requires aggregated `Support Plans` to adjust budgets. This is mitigated by separating the operational (synchronous) read of the rule from the strategic (asynchronous) aggregation of the data. They do not depend on each other at the exact same moment in time.
 
 ## 6. Missing Reciprocal Dependencies
-Our current architectural discovery highlights a critical missing reciprocal dependency:
-- **Missing Link:** Accountability & Evaluation produces `Systemic Learning Mandates` indicating a program has failed. However, there is no formal enforcement mechanism for Programme Management to consume and act upon these mandates.
+Our current architectural discovery highlights critical missing reciprocal dependencies:
+- **Missing Link (Systemic Learning):** Accountability & Evaluation produces `Systemic Learning Mandates` indicating a program has failed. However, there is no formal enforcement mechanism for Programme Management to consume and act upon these mandates.
 - **Consequence:** Accountability functions merely as an observer rather than a governor. A structural mechanism must be defined where a critical negative evaluation forcibly suspends Programme Eligibility Rules until a "Management Response" is registered.
+- **Missing Producer Dependency (Programme Baselines):** `accountability-evaluation` explicitly lists the consumption of programmatic baseline data to measure impact. However, `programme-management` discovery does not list structured baselines as an output it produces.
+- **Consequence:** M&E expects data that Programme Management is not formally contracted to provide. Handoffs fail if the producer does not know they are required to produce the data.
 
 ## 7. Business Consequences of Dependency Failures
 - **Latency Over Availability:** If the dependency between Identity and Case Management experiences latency, humanitarian intake stops. In conflict zones, this means people wait in dangerous lines. The architecture must prioritize asynchronous caching (e.g., offline identity verification) to prevent network-level dependencies from causing physical harm.

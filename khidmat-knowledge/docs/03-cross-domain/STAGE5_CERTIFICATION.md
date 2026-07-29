@@ -1,3 +1,18 @@
+> # ⛔ VOID — THIS CERTIFICATION CARRIES NO AUTHORITY
+>
+> **Voided 2026-07-29 by ratified decision GOV-001** (`docs/00-governance/DECISION_LEDGER.md`), under remediation B10.
+>
+> **Grounds, in summary:**
+> 1. **Constitution Article XVI** — *"A certification issued for a document whose content does not exist or has skipped a gate is void."* This document declared the project cleared to commence Stage 6 while Stage 6.1 (Stable Core Alignment) had not been performed. It certified past a gate.
+> 2. **Contradicted by the repository's own validation.** `VALIDATION/CERTIFICATION.md` records **NOT CERTIFIED** for the same body of work, with two FAILED and two INCOMPLETE assessment areas. The re-validation that `REMEDIATION_REPORT.md` said would be required was never performed.
+> 3. **Methodologically unsound.** §2.6 below asserts that Reality/Operational Knowledge concepts "directly map to ontological classes" and that Business Relationships "explicitly define the object properties." Reality/Operational is an admission test under Article IV, not a class hierarchy. This is schema-first reasoning inside a certifying document, and it breaches the same Concept Purity rule that validation finding CRIT-01 enforced elsewhere.
+>
+> **Standing state of the cross-domain layer: NOT CERTIFIED**, per `VALIDATION/CERTIFICATION.md`.
+>
+> This document is retained in place, unmodified below this banner, for institutional memory. Nothing below it may be cited as authority. The three caveats in its §3 remain sound observations and are not the reason for voidance.
+
+---
+
 # Stage 5 Business Discovery Certification
 
 ## 1. Executive Certification Statement

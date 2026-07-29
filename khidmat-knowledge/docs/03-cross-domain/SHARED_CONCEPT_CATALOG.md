@@ -54,7 +54,7 @@ Identity cannot be treated as a simple string or database ID. It is a complex bu
 * How does the system handle an Identity that splits (e.g., a household dissolving into two households)?
 
 ### Candidate Ontology Significance
-Identity is a prime candidate for a foundational ontological class (`Foundation:Identity`), from which `Person`, `Household`, and `Organisation` will inherit.
+Identity is a highly stable, universally utilized business concept. It should act as a core foundational anchor for downstream knowledge modeling, representing the parent category for concepts like Person, Household, and Organisation without dictating technical implementation.
 
 ---
 
@@ -82,7 +82,7 @@ Decisions in humanitarian contexts (who gets cash, who gets relocated, who is pr
 * **resource-logistics:** Views Evidence as waybills, signed delivery notes, and warehouse receipts proving the movement of goods.
 
 ### Architectural Implications
-Evidence is polymorphic. It can be a physical document, a digital signature, a biometric hash, or a structured professional assessment. The architecture must model Evidence not just as a file attachment, but as a first-class business object with properties such as `Source`, `ValidityPeriod`, `VerificationLevel`, and `ConfidenceScore`.
+Evidence is polymorphic in its structure and its validity periods. It can be a physical document, a digital signature, a biometric hash, or a structured professional assessment. Its validity may be point-in-time (expirable) or immutable. The architecture must model Evidence not just as a file attachment, but as a first-class business object with properties such as `Source`, `ValidityPeriod`, `VerificationLevel`, and `ConfidenceScore`.
 
 ### Known Conflicts
 There is a repository-wide conflict regarding the lifecycle of Evidence. Does Evidence expire? `case-management` treats evidence of a vulnerability (e.g., malnutrition) as point-in-time and subject to expiration, whereas `registration-identity` treats evidence of birth date as immutable. 

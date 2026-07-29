@@ -228,6 +228,14 @@ An author who cannot answer a question decisively from evidence stops and escala
 
 **AR-10 — Dependency-ordered authoring.** Ontology content is authored in dependency order: primitives before layers; things with identity before the dimensions, connections, conditions, and occurrences that presuppose them; constraints after the configurations they bound; patterns last. Presentation order (Section 2) is unaffected.
 
+**AR-11 — Reality strata over organisational strata.** No layer content may be named, grouped, or scoped by an operational domain. Domain provenance is recorded as metadata only. Where a concept appears in more than one domain, the ontology names it once, by what it is in reality, never by which domain discovered it.
+
+*Why this rule exists, stated because it is the newest and least obvious.* AR-8 forbids the ontology from being organised around organisational departments, and derives that prohibition from Article VI and from the fragmentation diagnosed in Overview Ch1.1. AR-8 governs the ontology's own structure. It says nothing about the structure of the material the ontology is authored *from* — and that material is departmentally scoped: Stage 5 discovery is organised as Registration, Case Management, Programme Management, Resource & Logistics, Accountability & Evaluation, Coordination, Partner Management, which is substantially the functional decomposition Ch1.1 names as the sector's failure. Concept inventories, relationship lists and event lists all inherit that cut.
+
+An author working faithfully from those inputs, obeying AR-8's letter, can still reproduce the fragmentation — by carrying forward a Case-Management-shaped person alongside a Registration-shaped identity, or a Logistics-shaped delivery alongside a Case-shaped one, because that is how the inputs are filed. AR-11 closes that path. The discovery domains remain the correct record of *where knowledge was found*; they are not permitted to become the shape of *what is known*.
+
+*Applying it.* Before layer authoring begins, the concept inventory is re-indexed by what each concept is about — the person and the social units they exist within; their circumstances; the warrant for what is believed about them; the response made; the institutions acting; the coordination between them — and each concept retains its discovering domain as a provenance note. Two concepts differing only in the domain that named them are one concept under AR-3 and are merged. A concept that cannot be stated without naming an operational domain has not yet been separated from the process that produced it, and is escalated under AR-9 rather than admitted.
+
 ---
 
 ## 5. Ground Truth Reviews

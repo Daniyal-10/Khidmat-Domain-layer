@@ -158,3 +158,40 @@ Before any Domain Discovery document is frozen, reviewers must confirm:
 - [ ] **5. Decision Depth:** Every major decision lists its evidence, policies, alternative outcomes, overrides, and escalation triggers.
 - [ ] **6. Evidence Strictness:** Assumptions and Open Questions are clearly separated from Established Facts.
 - [ ] **7. Tension Recognition:** The document accurately acknowledges at least one inherent business tension (Section 17) shaping the domain.
+- [ ] **8. Classification Consistency:** Every concept in Section 8 has been classified against the rubric in §6 below, and the same concept is not classified differently in another domain.
+
+---
+
+## 6. Reality Knowledge / Operational Knowledge Rubric
+
+*(Added under remediation B6. Constitution Article IV establishes the test; it did not establish how to apply it, and the seven original Stage 5 domains applied it inconsistently in at least six documented cases. This rubric makes the test reproducible so that two authors reach the same classification independently.)*
+
+### 6.1 The test, restated
+
+Constitution Article IV: a concept is **Reality Knowledge** if its omission would materially change the understanding of humanitarian reality, or the quality, safety, fairness, or appropriateness of a humanitarian decision. Otherwise it is **Operational Knowledge**, existing only because a particular organisation or application operates in a particular way.
+
+### 6.2 Four ordered questions
+
+Apply in order. The first question answered *yes* decides the classification.
+
+1. **Would the concept still exist if every current organisation and software system disappeared, and humanitarian need continued?**
+   Yes → **Reality Knowledge.** A household, a health condition, a kinship tie, a displacement event exist independently of anyone recording them.
+
+2. **Does the concept determine, constrain, or justify who receives what assistance?**
+   Yes → **Reality Knowledge**, even if it originates institutionally. An eligibility rule, a funding restriction, a recipient-category obligation and a consent authorization all originate in institutions, but their omission changes who receives aid — which is precisely what Article IV's "fairness or appropriateness of a humanitarian decision" clause covers.
+
+3. **Does the concept carry an epistemic status — is it claimed, verified, uncertain, contested, or expired?**
+   Yes → **Reality Knowledge.** Article III makes the warrant for a belief part of what must be understood before acting; a concept that carries warrant is part of the understanding, not part of the workflow.
+
+4. **Otherwise → Operational Knowledge.** Queue states, routing rules, internal approval chains, notification settings, UI concepts, record-keeping artifacts, and roles that exist only to administer a process.
+
+### 6.3 Boundary cases, decided
+
+- **A role is Operational Knowledge; a relationship is Reality Knowledge.** *Head of Household* as an administrative designation is Operational; the underlying *responsibility for household decision-making* is Reality. *Registrar* is Operational; *Caregiver* is Reality, because caregiving persists whether or not anyone registers it.
+- **An institutional artifact recording a real obligation is Reality Knowledge.** A *Grant* is not merely a record; it carries restrictions that determine eligibility (question 2).
+- **A derived or computed value is neither until its basis is stated.** Where a concept is a score or ranking with no stated derivation, it is recorded as an open question rather than classified. Pillar P4 forbids unexplainable scores in any case.
+- **When a concept passes question 1 in one aspect and question 4 in another, it is two concepts and must be split** (Rule AR-3, one concept one home). *Consent* splits this way: the person's act of authorising is Reality; the organisation's record of having captured it is Operational.
+
+### 6.4 Standing obligation
+
+A concept classified in one domain may not be classified differently in another. Where two domains disagree, the disagreement is escalated to `docs/03-cross-domain/CONCEPT_OWNERSHIP.md` §8 and resolved there, not settled locally.

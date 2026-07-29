@@ -100,6 +100,10 @@ This is an intentional architectural checkpoint. Only after approval will work c
 | **Contradiction Log** | Active (2 entries) | Logs conflicts between internal documents or external evidence that require Human Owner resolution. |
 | **Discovery Phase Review 01** | Complete | Assessed process health, methodological compliance, and evidence gaps after TD-03. |
 | **Governance Baseline v1.0** | Complete | Replaces 'Governance Freeze'. Asserts that the Governance layer is now complete, stable, and capable of governing Ontology Design. |
+| **Decision Ledger** | Active | Established 2026-07-29 under remediation B10, per Constitution Articles XVII and XIX. Holds ADRs, Authority decisions and Package approvals. 6 ADRs open; 1 decision ratified; 1 approval pending. |
+| **Stage 5 Business Discovery Certification** | **VOID** | Voided 2026-07-29 by ratified decision GOV-001 (skipped gate, Article XVI; contradicted by `VALIDATION/CERTIFICATION.md`). The standing state of the cross-domain layer is **NOT CERTIFIED**. |
+| **Foundation Readiness Assessment** | Accepted as baseline | Independent review, 2026-07-29. Accepted as the approved remediation backlog. Decision: FOUNDATION INCOMPLETE. |
+| **Remediation Log** | Complete for this phase | `REMEDIATION_LOG_2026-07-29.md`. Traces every repository modification to an accepted finding. |
 
 ---
 
@@ -109,6 +113,10 @@ This is an intentional architectural checkpoint. Only after approval will work c
 |---|---|---|---|
 | **CL-001** | Resolved | Programme and Organisation are confirmed as distinct concepts. | Unblocks downstream capability mapping. |
 | **CL-002** | Resolved | Donor is a valid actor; exclusion is strictly V1 software scope. | Unblocks actor definitions. |
+| **ADR-001** | **Open** | Khidmat's operating scope — understanding versus delivery. | **Load-bearing.** The Article IV admission test cannot be applied consistently until settled. |
+| **ADR-002 – ADR-006** | **Open** | Location ownership; consent propagation; evidence grading; MEAL snapshots; deduplication minimum disclosure. | Carried into the ledger from cross-domain documents where they had been recorded as notes. |
+| **GOV-002** | **Open** | Package A (Khidmat Foundation) approval by the Domain Approval Authority. | Constitution Article XVI makes this a precondition for Ontology Design. Cannot be granted by an execution phase. |
+| **Ground truth channel** | **Open** | Tier A practitioner access (remediation B13). | Executed zero times across 6 dossiers and 10 domains. No Ground Truth Review can pass without it; every universal Constraint tag remains untested. |
 
 ---
 

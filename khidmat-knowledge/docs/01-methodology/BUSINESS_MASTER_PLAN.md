@@ -1,8 +1,8 @@
 ---
 id: DOC-METH-BUSINESS_MASTER_PLAN
 title: BUSINESS MASTER PLAN
-version: 1.2
-status: Frozen
+version: 1.3
+status: Frozen (amended under remediation B1 — see §2, Initial Applicability Context)
 owner: Governance
 ---
 # Khidmat AI Business Master Plan
@@ -34,6 +34,28 @@ Khidmat AI operates as a decentralized, federated intelligence infrastructure. I
 ### Future Expansion
 - Extending the intelligence layer to support predictive crisis capability.
 - Integrating with multilateral early warning initiatives and national government safety nets.
+
+### Initial Applicability Context
+
+*(Added v1.3 under remediation B1, closing Foundation Gap FG-5. Prior to this section, no document anywhere in the project stated a deployment context — see `ASSUMPTION_REGISTER.md` AR-002. Rule AR-5 of `ONTOLOGY_DESIGN.md` requires every Constraint to carry an explicit universal-or-variable tag, and a variable Constraint to name the scope in which it holds; that scope was previously unassignable.)*
+
+The following is the **initial applicability context** against which all Findings, Constraints, and scope tags in this repository are to be validated. It is the context the foundation is being built for first — not a limit on the eventual reach of the infrastructure described in Chapter 3.2 of the Project Overview.
+
+| Dimension | Initial context | Provenance |
+|---|---|---|
+| **Primary operating geography** | Pakistan; initial operational zone Karachi (urban, zoned field operations) | Client blueprint (`direct-relief-architecture.html`), supplied 2026-07-29 |
+| **Affected population** | Urban and peri-urban households in economic and health distress; multi-generational households including dependent children and elderly members | Client blueprint, Flow A worked scenario |
+| **Crisis profile** | Chronic and structural vulnerability with acute episodes (medical, income loss, displacement), rather than a single sudden-onset emergency | Client blueprint, Flows B and C |
+| **Donor geography** | Gulf region, initially the United Arab Emirates (Dubai), giving cross-border to Pakistan | Client blueprint, Flow D worked scenario |
+| **Currencies in scope** | PKR (beneficiary side), AED (donor side); cross-border transfer is therefore in scope as a business reality | Client blueprint, Flow D |
+| **Philanthropic and cultural framework** | Islamic charitable giving, in both its formal/institutional ("vertical") and informal/community ("horizontal") forms | `HUMANITARIAN_BUSINESS_REFERENCE_MODEL.md` Ch1, Ch9; TD-01 Finding BD-TD01-006 |
+| **Field connectivity** | Intermittent to absent at point of registration; field operations must be assumed to occur offline and reconcile later | Client blueprint, MLP passes P1–P3 |
+| **Initial partner set** | Not yet stated | **Insufficient repository evidence — remains open** |
+| **Languages** | Not yet stated | **Insufficient repository evidence — remains open** |
+
+**Status of this context.** The geography, population, crisis profile, donor context, currencies and connectivity assumptions above are **derived from client-supplied project material, not from practitioner validation**. They are sufficient to assign scope tags to Constraints and to give Ground Truth Reviews a nominated real context, which is what Rule AR-5 and `ONTOLOGY_DESIGN.md` §5 require. They are **not** ratified humanitarian findings, and every Constraint scoped against them inherits that qualification until the ground truth channel required by remediation B13 exists.
+
+**Consequence for existing Findings.** Every Finding in TD-01 through TD-06 currently carries the Applicability Scope "general/cross-context" by necessity rather than by validated design. Those Findings are not invalidated by this section. They are now **re-scopeable**: each may be tested against the context above rather than assumed to transfer automatically. That re-testing is validation work, not discovery work, and is gated on B13.
 
 ## 3. Stakeholder Strategy & Value Proposition
 

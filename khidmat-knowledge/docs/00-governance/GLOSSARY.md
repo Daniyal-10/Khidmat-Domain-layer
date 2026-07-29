@@ -1,8 +1,8 @@
 ---
 id: DOC-GOV-003
 title: Khidmat Ubiquitous Language Glossary
-version: 1.0
-status: Normative
+version: 1.1
+status: Candidate Vocabulary — non-normative pending per-term provenance (downgraded from Normative under remediation B15)
 owner: Governance
 reviewers: Governance
 last_updated: 2026-07-28
@@ -14,6 +14,20 @@ tags: [glossary, terminology, ubiquitous-language]
 ---
 
 # Khidmat Ubiquitous Language
+
+> ## Status: Candidate Vocabulary — non-normative
+>
+> **Downgraded from `Normative` on 2026-07-29 under remediation B15.**
+>
+> **Why.** This glossary defines roughly 120 terms. The accepted Foundation Readiness Assessment established that a large proportion of them appeared in no discovery document anywhere in the repository — the risk, resilience, protection, human-model, community-context, giving and intervention-fit vocabularies among them. A document with `status: Normative` makes those terms binding on all downstream work, which conflicts with Constitution Article V (*"an unsupported assertion is not evidence merely because it has been recorded"*) and with `ONTOLOGY_DESIGN.md` §6, which applies the same rule to the ontology's own design decisions including those sourced from frozen artifacts.
+>
+> Two further problems flow from the same cause. This glossary pre-commits **enumerated value sets** (four resilience capacities, seven Islamic giving forms, eight recipient categories, four trajectory values, four claim-basis values, three need-relationship qualifiers, four intervention-relationship types) and **relationship semantics** (`need_influences_need`, `assertion_influences_assertion`). Under `ONTOLOGY_DESIGN.md` AR-7 (design purity) enumerated value sets are deferred to engineering, and under AR-2 relationship placement is decided by the promotion test. A normative glossary that fixes both in advance is a structural commitment made before ontology design — the precise failure `PROJECT_OVERVIEW.md` Ch5.1 warns against.
+>
+> **What changed as a result of remediation.** Terms that have since acquired discovery are no longer glossary-only. Under B2, B3, B4 and B5 the human-model, risk/resilience/protection, community-context, giving and need/intervention/outcome vocabularies were promoted into discovery documents where each term carries an explicit disposition — **Validated (Tier C)** where a repository source independent of this glossary corroborates it, **Carried unvalidated** where it does not. Those dispositions, not this glossary, are now the authority on evidential weight.
+>
+> **How to use this document.** As candidate vocabulary and as the repository's index of terminology in use. It remains the right place to look up what a term means. It is not authority that the term is real, and no ontology design decision may cite it as evidence on its own.
+>
+> **Path back to Normative.** Per-term provenance across the whole document, and removal or deferral of the enumerated value sets. Neither is in scope for the current remediation phase.
 
 ## Core Terms
 
