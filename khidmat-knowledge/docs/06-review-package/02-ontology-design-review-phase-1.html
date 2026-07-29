@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KHIDMAT Ontology Design Review — Phase 1</title>
+<style>
+  :root{
+    --ink:#16181d; --ink-2:#3d434e; --ink-3:#6b7280;
+    --line:#e3e6ea; --line-2:#eef1f4;
+    --bg:#ffffff; --bg-2:#f8f9fa; --bg-3:#f2f4f6;
+    --accent:#1f4e79; --accent-soft:#eef3f8;
+    --warn:#8a6100; --warn-soft:#fdf8ec;
+    --gap:#7a2b2b; --gap-soft:#fbf1f1;
+    --ok:#2f5d3f; --ok-soft:#eaf3ec;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:16px/1.6 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 28px}
+
+  .cover{min-height:78vh;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid var(--line)}
+  .cover .eyebrow{font-size:11px;letter-spacing:.20em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:26px}
+  .cover h1{font-size:clamp(30px,4.6vw,50px);line-height:1.12;font-weight:600;letter-spacing:-.02em;margin-bottom:18px}
+  .cover .sub{font-size:clamp(16px,2vw,20px);color:var(--ink-3);max-width:660px}
+  .cover .rule{width:56px;height:3px;background:var(--accent);margin:30px 0}
+
+  .toc{padding:52px 0;border-bottom:1px solid var(--line)}
+  .toc h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:20px}
+  .toc ol{list-style:none;columns:2;column-gap:44px}
+  .toc li{break-inside:avoid;padding:7px 0;border-bottom:1px solid var(--line-2)}
+  .toc a{color:var(--ink);text-decoration:none;font-size:15px;display:flex;gap:12px}
+  .toc a:hover{color:var(--accent)}
+  .toc .n{color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600;min-width:26px}
+
+  section{padding:46px 0;border-bottom:1px solid var(--line-2)}
+  section:last-of-type{border-bottom:none}
+  h2{font-size:23px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px;display:flex;gap:14px;align-items:baseline}
+  h2 .n{color:var(--accent);font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+  .lede{color:var(--ink-3);font-size:15px;margin-bottom:22px;max-width:720px}
+  h3{font-size:16.5px;font-weight:600;margin:28px 0 10px;color:var(--ink)}
+  h4{font-size:14.5px;font-weight:600;margin:20px 0 8px;color:var(--ink-2)}
+  p{margin-bottom:12px;color:var(--ink-2);max-width:770px}
+  ul,ol{margin:0 0 14px 20px;color:var(--ink-2)}
+  li{margin-bottom:6px}
+  strong{color:var(--ink);font-weight:600}
+  em{font-style:italic}
+  code{background:var(--bg-3);padding:1px 6px;border-radius:3px;font-size:.88em;font-family:ui-monospace,Menlo,Consolas,monospace}
+
+  .tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:4px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{background:var(--bg-2);text-align:left;padding:11px 14px;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:11px 14px;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+  tr:last-child td{border-bottom:none}
+  td:first-child{color:var(--ink);font-weight:500}
+
+  .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:3px;white-space:nowrap}
+  .t-done{background:var(--ok-soft);color:var(--ok)}
+  .t-draft{background:var(--warn-soft);color:var(--warn)}
+  .t-open{background:var(--gap-soft);color:var(--gap)}
+  .t-none{background:var(--bg-3);color:var(--ink-3)}
+
+  .note{border-left:3px solid var(--accent);background:var(--accent-soft);padding:16px 20px;margin:20px 0;border-radius:0 4px 4px 0}
+  .note.warn{border-color:#c9973a;background:var(--warn-soft)}
+  .note.gap{border-color:var(--gap);background:var(--gap-soft)}
+  .note.ok{border-color:#4a7a58;background:var(--ok-soft)}
+  .note .lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:6px}
+  .note.warn .lbl{color:var(--warn)} .note.gap .lbl{color:var(--gap)} .note.ok .lbl{color:var(--ok)}
+  .note p{margin-bottom:0;font-size:14.5px}
+  .note p+p{margin-top:9px}
+
+  .flow{margin:20px 0;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  .flow .step{display:flex;gap:16px;padding:12px 18px;border-bottom:1px solid var(--line-2);align-items:baseline}
+  .flow .step:last-child{border-bottom:none}
+  .flow .step:nth-child(odd){background:var(--bg-2)}
+  .flow .k{font-size:11px;font-weight:700;color:var(--accent);min-width:24px;font-variant-numeric:tabular-nums}
+  .flow .t{font-weight:600;font-size:14.5px;min-width:200px;color:var(--ink)}
+  .flow .d{font-size:13.5px;color:var(--ink-3)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin:18px 0}
+  .card{border:1px solid var(--line);border-radius:4px;padding:15px 17px}
+  .card h4{font-size:14px;font-weight:600;margin:0 0 5px}
+  .card p{font-size:13.5px;color:var(--ink-3);margin:0}
+
+  .ask{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 4px 4px 0;padding:18px 22px;margin:16px 0;background:var(--bg)}
+  .ask .id{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--accent);text-transform:uppercase;margin-bottom:6px}
+  .ask h4{font-size:15.5px;font-weight:600;margin:0 0 8px;color:var(--ink)}
+  .ask p{font-size:14px;margin-bottom:8px}
+  .ask .meta{font-size:13px;color:var(--ink-3);border-top:1px solid var(--line-2);padding-top:9px;margin-top:10px}
+  .ask .meta b{color:var(--ink-2)}
+
+  footer{padding:36px 0 60px;color:var(--ink-3);font-size:13px;border-top:1px solid var(--line)}
+
+  @media (max-width:680px){
+    .toc ol{columns:1}
+    .flow .step{flex-direction:column;gap:4px}
+    .flow .t{min-width:0}
+    .wrap{padding:0 20px}
+  }
+  @media print{
+    body{font-size:10.5pt}
+    .cover{min-height:auto;padding:60pt 0 40pt}
+    section{padding:20pt 0;page-break-inside:avoid}
+    .tw,.note,.flow,.card,.ask{page-break-inside:avoid}
+    .toc{page-break-after:always}
+    a{color:var(--ink);text-decoration:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="cover wrap">
+  <div class="eyebrow">Design Review</div>
+  <h1>KHIDMAT Ontology Design Review — Phase 1</h1>
+  <div class="rule"></div>
+  <p class="sub">Domain Primitives and Ontology Layers, presented for methodology confirmation before the remaining design stages proceed.</p>
+</header>
+
+<nav class="toc wrap">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#s1"><span class="n">1</span> Purpose</a></li>
+    <li><a href="#s2"><span class="n">2</span> Background</a></li>
+    <li><a href="#s3"><span class="n">3</span> Prescribed Methodology</a></li>
+    <li><a href="#s4"><span class="n">4</span> Completed Work</a></li>
+    <li><a href="#s41"><span class="n">4.1</span> Phase 1 — Domain Primitives</a></li>
+    <li><a href="#s42"><span class="n">4.2</span> Phase 2 — Ontology Layers</a></li>
+    <li><a href="#s5"><span class="n">5</span> Methodology Review Requested</a></li>
+    <li><a href="#s6"><span class="n">6</span> Approval Requested</a></li>
+    <li><a href="#s7"><span class="n">7</span> Next Steps</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section id="s1">
+  <h2><span class="n">1</span> Purpose</h2>
+  <p class="lede">What this review asks for.</p>
+  <p>Two design stages are complete in draft: <strong>Domain Primitives</strong> and <strong>Ontology Layers</strong>. This document presents them and requests confirmation of the <strong>methodology decisions</strong> taken along the way.</p>
+  <div class="tw"><table>
+    <thead><tr><th>This review asks for</th><th>This review does not ask for</th></tr></thead>
+    <tbody>
+      <tr><td>Confirmation of methodology decisions</td><td>Approval of a finished ontology</td></tr>
+      <tr><td>Rulings on questions the work could not settle</td><td>Sign-off on evidence completeness</td></tr>
+      <tr><td>Permission to proceed to stages 3–7</td><td>Implementation or engineering approval</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note warn">
+    <div class="lbl">Status of the work presented</div>
+    <p>Both stages are <strong>drafts</strong>. The primitive set is <strong>not closed</strong> and five classification tensions remain deliberately open. Nothing here is offered as settled ontology.</p>
+  </div>
+</section>
+
+<section id="s2">
+  <h2><span class="n">2</span> Background</h2>
+  <p class="lede">How this position was reached.</p>
+  <div class="flow">
+    <div class="step"><span class="k">01</span><span class="t">Foundation reset</span><span class="d">Prior work was found to be schema-first and bottom-up. Everything untraceable to an authoritative source was removed.</span></div>
+    <div class="step"><span class="k">02</span><span class="t">Sources merged</span><span class="d">Business Logic Blueprint and Client Draft reconciled; six conflicts resolved, eleven gaps recorded.</span></div>
+    <div class="step"><span class="k">03</span><span class="t">Domain discovery</span><span class="d">Six evidence dossiers assessed against those gaps.</span></div>
+    <div class="step"><span class="k">04</span><span class="t">Domain Reference Model</span><span class="d">Humanitarian reality described, organised around reality rather than process. Frozen.</span></div>
+    <div class="step"><span class="k">05</span><span class="t">Phase 1 — Primitives</span><span class="d">Eight categories derived from the Reference Model.</span></div>
+    <div class="step"><span class="k">06</span><span class="t">Phase 2 — Layers</span><span class="d">Eight layers derived from those categories.</span></div>
+    <div class="step"><span class="k">07</span><span class="t">Independent review</span><span class="d">Critical findings identified and remediated; further findings remain open — see §4.3.</span></div>
+  </div>
+  <div class="note">
+    <div class="lbl">Discipline carried from the reset</div>
+    <p>No document becomes authoritative by being written · nothing may cite itself as evidence · no stage may be started before the previous one completes · structure follows reality, not process · being real does not mean being in scope.</p>
+  </div>
+</section>
+
+<section id="s3">
+  <h2><span class="n">3</span> Prescribed Methodology</h2>
+  <p class="lede">The seven-stage sequence this work follows.</p>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Stage</th><th>Status</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Domain Primitives</td><td><span class="tag t-draft">Draft — not closed</span></td><td>Eight categories; two classification tensions open</td></tr>
+      <tr><td>2</td><td>Ontology Layers</td><td><span class="tag t-draft">Draft</span></td><td>All eight layers derived; five tensions carried</td></tr>
+      <tr><td>3</td><td>Pillars</td><td><span class="tag t-none">Not started</span></td><td>Blocked — see §5, item R-3</td></tr>
+      <tr><td>4</td><td>Architecture Rules</td><td><span class="tag t-none">Not started</span></td><td>—</td></tr>
+      <tr><td>5</td><td>Ground Truth Reviews</td><td><span class="tag t-none">Not started</span></td><td>—</td></tr>
+      <tr><td>6</td><td>Evidence</td><td><span class="tag t-none">Not started</span></td><td>—</td></tr>
+      <tr><td>7</td><td>Governance</td><td><span class="tag t-none">Not started</span></td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <p>Design precedes architecture. The sequence runs <strong>Ontology Map → Architecture → Ontology Engineering → Implementation</strong>, and no schema, database, API or implementation artifact has been produced.</p>
+  <div class="note">
+    <div class="lbl">On the Cognition layer</div>
+    <p>Cognition is treated as part of ontology design, not as an implementation detail — per the direction that without it the architecture itself fails. It is the layer that represents what the system is entitled to believe, including what it does not know.</p>
+  </div>
+</section>
+
+<section id="s4">
+  <h2><span class="n">4</span> Completed Work</h2>
+  <p class="lede">Two stages, presented with their decisions, assumptions and unresolved questions.</p>
+</section>
+
+<section id="s41">
+  <h2><span class="n">4.1</span> Phase 1 — Domain Primitives</h2>
+
+  <h3>Summary</h3>
+  <p>A Domain Primitive is a <strong>category of concept</strong> — the <em>kind of thing</em> a humanitarian concept can be. Not a humanitarian concept itself. Eight were derived by asking, of every concept in the Reference Model, <em>what kind of thing is this?</em> until answers stopped multiplying.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Primitive</th><th>Definition</th><th>Evidence</th></tr></thead>
+    <tbody>
+      <tr><td>Identity</td><td>That which persists and must be re-identified across encounters</td><td>Moderate</td></tr>
+      <tr><td>Relation</td><td>A connection between things that persist</td><td>Moderate (institutional) · none (social)</td></tr>
+      <tr><td>Condition</td><td>That which is true across a span of time and can change</td><td>Limited</td></tr>
+      <tr><td>Occurrence</td><td>That which happened at a point in time</td><td>Moderate</td></tr>
+      <tr><td>Context</td><td>The frame relative to which a statement holds</td><td>Strong</td></tr>
+      <tr><td>Norm</td><td>That which bounds what is permitted, required or valid</td><td>Strong</td></tr>
+      <tr><td>Evidence</td><td>That which grounds a belief</td><td>Limited</td></tr>
+      <tr><td>Epistemic Stance</td><td>The warrant held for what is asserted — including what is unknown</td><td>Moderate</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Key decisions</h3>
+  <div class="grid">
+    <div class="card"><h4>Categories, not concrete things</h4><p><em>Person</em> is not a primitive. Primitives sit above the Entities layer, so <em>Person</em> would be both source and member of it.</p></div>
+    <div class="card"><h4>Set closed once ratified</h4><p>A concept needing a new primitive is escalated, not accommodated. The set is not yet ratified.</p></div>
+    <div class="card"><h4>One primary classification</h4><p>A concept needing two primitives is treated as information, not resolved by dual placement.</p></div>
+    <div class="card"><h4>Domain scope: all of it</h4><p>Every part of described humanitarian reality is in domain scope, with actions admitted under constraint.</p></div>
+  </div>
+
+  <h4>Coverage test</h4>
+  <p>The set was tested against the <strong>giving side</strong> — the part of the business flow with no domain description. Donor classifies as Identity, a gift as Occurrence, adoption as Relation, a funding restriction as Norm. <strong>No new primitive is required.</strong> This converts the giving gap from structural to content-only: the categories survive its arrival even though its content is undescribed.</p>
+  <div class="note ok">
+    <div class="lbl">Why this test matters</div>
+    <p>Under the alternative definition — primitives as concrete things — Donor, Gift, Adoption and Restriction would each have been candidate primitives and the set would have broken. This is the strongest independent support for the definition chosen.</p>
+  </div>
+
+  <h3>Assumptions</h3>
+  <div class="note warn">
+    <div class="lbl">Disclosure</div>
+    <p>Phase 1 does not yet carry a formal assumptions register, although Phase 2 does. At least four judgements qualify: the category reading, closure at eight members, the eight candidate rejections, and treating the giving-side test as decisive. This inconsistency is known and outstanding.</p>
+  </div>
+
+  <h3>Open tensions</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Concept</th><th>Tension</th><th>Why unresolved</th></tr></thead>
+    <tbody>
+      <tr><td>Risk</td><td>Condition or Epistemic Stance</td><td><strong>Cannot be settled by evidence</strong> — the Reference Model's risk section has no external corroboration at all. A ruling, not a research question.</td></tr>
+      <tr><td>Need</td><td>Condition or Relation</td><td>Defined relationally but behaves like a condition. Entangled with the undefined "basic standard of wellbeing".</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Provenance disclosure</h3>
+  <div class="note warn">
+    <div class="lbl">Stated openly</div>
+    <p>The eight categories match a set produced before the foundation reset. They were re-derived from the Reference Model, but that earlier file had been read during the same working session, so <strong>independence cannot be certified</strong>. The mitigation is that the derivation trace is fully auditable — the set can be judged on its merits regardless of origin. Independent re-derivation is recommended before ratification.</p>
+  </div>
+</section>
+
+<section id="s42">
+  <h2><span class="n">4.2</span> Phase 2 — Ontology Layers</h2>
+
+  <h3>Layer derivation</h3>
+  <p>Every layer names the primitive it derives from. All eight primitives are consumed; no layer introduces a category absent from Phase 1.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Layer</th><th>Derives from</th><th>Holds</th><th>Evidence</th></tr></thead>
+    <tbody>
+      <tr><td>1 · Facets</td><td>Condition + Context</td><td>The dimensions along which things vary</td><td>Split</td></tr>
+      <tr><td>2 · Entities</td><td>Identity</td><td>Things that persist and are re-identified</td><td>Moderate</td></tr>
+      <tr><td>3 · Relationships</td><td>Relation</td><td>Connections between entities</td><td>Split</td></tr>
+      <tr><td>4 · Constraints</td><td>Norm, scoped by Context</td><td>What is permitted, required or valid</td><td>Strong</td></tr>
+      <tr><td>5 · States</td><td>Condition</td><td>Values a condition takes over time</td><td>Limited</td></tr>
+      <tr><td>6 · Events</td><td>Occurrence</td><td>What happened at a point</td><td>Moderate</td></tr>
+      <tr><td>7 · Cognition</td><td>Epistemic Stance + Evidence</td><td>The warrant for what other layers assert</td><td>Moderate</td></tr>
+      <tr><td>8 · Coordination</td><td>Relation + Occurrence + Context + Norm</td><td>Recurring multi-party shapes</td><td>Strong where evidenced</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Key decisions</h3>
+  <div class="grid">
+    <div class="card"><h4>Facets and States are separate</h4><p>A facet is the axis; a state is the value on it. The domain has dimensions almost everywhere and values almost nowhere — the split makes that visible.</p></div>
+    <div class="card"><h4>Actions are quarantined</h4><p>Registration, verification and delivery appear in the model but may never be its organising axis.</p></div>
+    <div class="card"><h4>Cognition carries the unknown</h4><p>Absence of information is modelled as knowledge, distinct from a negative finding.</p></div>
+    <div class="card"><h4>Values are not invented</h4><p>Where the domain names a dimension and not its values, no values were supplied.</p></div>
+  </div>
+  <div class="note ok">
+    <div class="lbl">Worked example — the one externally corroborated structure</div>
+    <p>Support classifies on <strong>three independent axes</strong> — Sector × Modality × Temporal Phase — whose intersection identifies an intervention. The prior single flattened list mixed two of these axes together. This is the pattern a correct facet structure follows.</p>
+  </div>
+
+  <h4>The Cognition seam</h4>
+  <p>Because Risk's classification is unresolved, Cognition is built <em>around</em> the uncertainty rather than over it:</p>
+  <div class="tw"><table>
+    <thead><tr><th>If Risk is ruled…</th><th>Risk lives in</th><th>Cognition holds</th></tr></thead>
+    <tbody>
+      <tr><td>Condition</td><td>States</td><td>Only the confidence in a risk assessment</td></tr>
+      <tr><td>Epistemic Stance</td><td>Cognition</td><td>Risk itself — horizon, trend and severity</td></tr>
+    </tbody>
+  </table></div>
+  <p>Cognition defines <em>expectation about a future state</em> as a first-class form, so the ruling is a single documented switch rather than a rewrite.</p>
+
+  <h3>Assumptions</h3>
+  <p>Seven, recorded separately from the ontology and never inside the layer bodies. The three most consequential:</p>
+  <div class="tw"><table>
+    <thead><tr><th>Assumption</th><th>Why made</th><th>Overturned by</th></tr></thead>
+    <tbody>
+      <tr><td>Organisation and Programme modelled as two entities</td><td>Every external source names them separately; diverges from the Business Logic Blueprint, which collapses them</td><td>A ruling that the Blueprint governs</td></tr>
+      <tr><td>The point-versus-span distinction is retained</td><td>It is unevidenced, but removing it would merge two primitives and restructure four layers on equally thin grounds</td><td>Evidence that the distinction is not real</td></tr>
+      <tr><td>Condition feeds two layers</td><td>Makes the dimensions-without-values asymmetry visible instead of hiding it</td><td>A ruling that facets should hold values</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Open tensions</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Tension</th><th>Effect if ruled the other way</th></tr></thead>
+    <tbody>
+      <tr><td>Risk — Condition or Epistemic Stance</td><td>Moves between States and Cognition. <strong>Blocks stage 3.</strong></td></tr>
+      <tr><td>Need — Condition or Relation</td><td>Moves out of Facets and States into Relationships; makes the undefined wellbeing standard a blocking dependency</td></tr>
+      <tr><td>Family — entity or relationship structure</td><td>Moves between Entities and Relationships</td></tr>
+      <tr><td>States ÷ Events boundary</td><td>If the distinction collapses, two primitives merge</td></tr>
+      <tr><td>Outcome and impact — inside the journey or beside it</td><td>Moves between Events and Coordination</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="s43" style="padding-top:0">
+  <h2><span class="n">4.3</span> Review Findings — Current Position</h2>
+  <p class="lede">An independent review was performed against this work. Its critical findings have been remediated; the remainder are disclosed rather than concealed.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Finding</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Primitive-definition ruling was taken by the authors rather than obtained</td><td><span class="tag t-done">Disclosed as a gate question</span></td></tr>
+      <tr><td>Evidence audit was cited but had not been committed</td><td><span class="tag t-done">Written and committed</span></td></tr>
+      <tr><td>Risk and Need were resolved by placement while claimed open</td><td><span class="tag t-done">Un-resolved and flagged</span></td></tr>
+      <tr><td>Two concepts had entered with no source in the domain reference</td><td><span class="tag t-done">Removed</span></td></tr>
+      <tr><td>Domain scope decision had not been performed</td><td><span class="tag t-done">Performed — see §5, R-2</span></td></tr>
+      <tr><td>Coverage of the domain reference by the layers is incomplete and untested</td><td><span class="tag t-open">Open</span></td></tr>
+      <tr><td>Context appears both as a source of a layer and a member of it</td><td><span class="tag t-open">Open</span></td></tr>
+      <tr><td>Rule against dual classification is not consistently applied</td><td><span class="tag t-open">Open</span></td></tr>
+      <tr><td>Evidence rating scales are not fully unified across both stages</td><td><span class="tag t-open">Open</span></td></tr>
+      <tr><td>Several source citations require correction</td><td><span class="tag t-open">Open</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="note warn">
+    <div class="lbl">One structural caution, stated before it is asked</div>
+    <p>Eight primitives produced exactly eight layers consuming all eight primitives. That fit is <strong>not evidence of correctness</strong> — the layer set was given, and the primitive categories were derived to stand above it, so the completeness of the mapping is expected rather than confirmatory. The genuine independent test of the primitive set is the giving-side coverage test in §4.1, which it passed and which the alternative definition would have failed.</p>
+  </div>
+</section>
+
+<section id="s5">
+  <h2><span class="n">5</span> Methodology Review Requested</h2>
+  <p class="lede">Seven decisions requiring confirmation. These are review items, not implementation issues.</p>
+
+  <div class="ask">
+    <div class="id">R-1 · Highest priority</div>
+    <h4>Confirm the definition of a Domain Primitive</h4>
+    <p>The Domain Reference Model states a ruling was required <em>before</em> primitive discovery. It was not obtained, and the work proceeded under a ruling the authors made: a primitive is a <strong>category of concept</strong> (Identity, Relation, Condition), not a concrete irreducible (Person, Household, Need).</p>
+    <p>Reasoning: stage 2 builds a layer named <em>Entities</em>, and layers derive from primitives. If <em>Person</em> were a primitive it would be both the source and a member of that layer, and the derivation would be circular.</p>
+    <div class="meta"><b>If ruled otherwise:</b> both stages are void and must be rebuilt from the definition upward. Nothing downstream survives.</div>
+  </div>
+
+  <div class="ask">
+    <div class="id">R-2</div>
+    <h4>Ratify the domain scope decision</h4>
+    <p>The scope decision was performed retrospectively and concluded that <strong>all of described humanitarian reality is in domain scope</strong> — with actions admitted under constraint, and support at dimension level only. This keeps the giving side inside the model, consistent with the earlier decision to model reality fully and sequence implementation separately.</p>
+    <div class="meta"><b>If narrowed:</b> affected layers contract. The primitive set is unaffected — the coverage test established it survives either way.</div>
+  </div>
+
+  <div class="ask">
+    <div class="id">R-3 · Blocking</div>
+    <h4>Rule on the classification of Risk</h4>
+    <p>Risk is either a <strong>Condition</strong> (being at risk is currently true of a household) or an <strong>Epistemic Stance</strong> (a warranted expectation about a future condition). The domain reference asserts both readings in different places: risk "produces signals and does not decide" is stance language; risk being "first-class, not a byproduct of severity rules" resists demotion to an annotation.</p>
+    <p>This cannot be resolved by further evidence review — the risk material carries no external corroboration whatsoever.</p>
+    <div class="meta"><b>Blocking:</b> stage 3 cannot proceed. A pillar concerning risk or safety cannot be derived while the layer holding Risk is undetermined.</div>
+  </div>
+
+  <div class="ask">
+    <div class="id">R-4</div>
+    <h4>Rule on the classification of Need</h4>
+    <p>A need is defined as a <em>gap between current state and a basic standard of wellbeing</em> — relational language — but behaves as a condition that opens, changes severity and resolves. It is currently held under the condition reading, provisionally.</p>
+    <div class="meta"><b>Note:</b> the current placement conveniently avoids requiring the wellbeing standard to be defined. That is a reason for caution, not comfort.</div>
+  </div>
+
+  <div class="ask">
+    <div class="id">R-5</div>
+    <h4>Confirm the treatment of concepts spanning two layers</h4>
+    <p>Phase 1 forbids dual classification and requires escalation instead. Phase 2 nonetheless places several concepts in more than one layer. Either the rule should permit a concept to have <strong>one primary classification plus named derived aspects</strong>, or these cases should be escalated as further tensions.</p>
+    <div class="meta"><b>Recommendation:</b> permit aspectual presence under a stated composition rule. Amend Phase 1 rather than override it downstream.</div>
+  </div>
+
+  <div class="ask">
+    <div class="id">R-6</div>
+    <h4>Confirm the divergence on Organisation and Programme</h4>
+    <p>The Business Logic Blueprint treats these as a single actor. Every external source examined names implementing organisations separately from the programmes they lead. The layers follow the evidence and separate them.</p>
+    <div class="meta"><b>If the Blueprint governs:</b> the two collapse into one entity and the constraining relationship between them disappears.</div>
+  </div>
+
+  <div class="ask">
+    <div class="id">R-7</div>
+    <h4>Acknowledge the evidence asymmetry and its consequence</h4>
+    <p>The six evidence dossiers examine <em>how humanitarian organisations operate</em> — actors, tensions, lifecycle, capabilities, services, interventions. None examines people, families, households, situations, needs or risk. Consequently the primitives classifying organisational reality are well evidenced, and those classifying <strong>human</strong> reality are not.</p>
+    <p>Two primitives — <strong>Condition</strong> and <strong>Relation</strong> — carry most of the human content and rest on a single unvalidated source. No statement anywhere in this project has been validated by a humanitarian practitioner.</p>
+    <div class="meta"><b>Consequence:</b> the primitive set can be worked with but <b>must not be closed or ratified</b> on this evidence. Closure asserts completeness the evidence does not support.</div>
+  </div>
+</section>
+
+<section id="s6">
+  <h2><span class="n">6</span> Approval Requested</h2>
+  <p class="lede">Permission to proceed to the remaining design stages.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Stage</th><th>Approval sought</th><th>Precondition</th></tr></thead>
+    <tbody>
+      <tr><td>3 · Pillars</td><td>Proceed</td><td><strong>R-3 must be ruled first</strong></td></tr>
+      <tr><td>4 · Architecture Rules</td><td>Proceed after stage 3</td><td>Pillars complete</td></tr>
+      <tr><td>5 · Ground Truth Reviews</td><td>Proceed after stage 4</td><td>Requires practitioner access to be meaningful</td></tr>
+      <tr><td>6 · Evidence</td><td>Proceed after stage 5</td><td>—</td></tr>
+      <tr><td>7 · Governance</td><td>Proceed after stage 6</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note">
+    <div class="lbl">What approval would and would not mean</div>
+    <p><strong>Would mean:</strong> the methodology is confirmed, the seven review items are ruled on, and design continues under the same discipline.</p>
+    <p><strong>Would not mean:</strong> that the primitive set is closed, that evidence gaps are accepted as resolved, or that the ontology is validated. Those remain explicitly open.</p>
+  </div>
+</section>
+
+<section id="s7">
+  <h2><span class="n">7</span> Next Steps</h2>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Action</th><th>Owner</th><th>Unblocks</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Rule on R-1 — the primitive definition</td><td>Project Lead</td><td>Validity of both completed stages</td></tr>
+      <tr><td>2</td><td>Rule on R-3 — the classification of Risk</td><td>Project Lead</td><td>Stage 3, Pillars</td></tr>
+      <tr><td>3</td><td>Rule on R-2, R-4, R-5, R-6</td><td>Project Lead</td><td>Layer stability</td></tr>
+      <tr><td>4</td><td>Describe the giving side to the depth the human side is already described</td><td>Business</td><td>Entities and patterns for half the business flow</td></tr>
+      <tr><td>5</td><td>Arrange practitioner access</td><td>Business / Client</td><td>Identity resolution, vulnerability composition, family and household membership, dimension values</td></tr>
+      <tr><td>6</td><td>Close the remaining review findings in §4.3</td><td>Design</td><td>Package readiness</td></tr>
+      <tr><td>7</td><td>Independently re-derive the primitive set</td><td>Design</td><td>Ratification</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note gap">
+    <div class="lbl">Two items that cannot be closed inside this process</div>
+    <p><strong>The giving side has no domain description.</strong> Half the intended business flow — how giving works, what adoption is, how restricted funding constrains eligibility — exists in no document. It is business knowledge, not research.</p>
+    <p><strong>No practitioner has validated anything.</strong> The questions that remain open are questions about how work is actually done with real families. They do not live in institutional standards, which is why extensive literature review did not surface them.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  Ontology design, stages 1 and 2 of 7. Presented for methodology confirmation.
+</footer>
+
+</body>
+</html>

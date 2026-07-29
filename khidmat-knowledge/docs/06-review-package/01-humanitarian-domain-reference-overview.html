@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KHIDMAT — Humanitarian Domain Reference Overview</title>
+<style>
+  :root{
+    --ink:#16181d; --ink-2:#3d434e; --ink-3:#6b7280;
+    --line:#e3e6ea; --line-2:#eef1f4;
+    --bg:#ffffff; --bg-2:#f8f9fa; --bg-3:#f2f4f6;
+    --accent:#1f4e79; --accent-soft:#eef3f8;
+    --warn:#8a6100; --warn-soft:#fdf8ec;
+    --gap:#7a2b2b; --gap-soft:#fbf1f1;
+    --ok:#2f5d3f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:16px/1.6 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:0 28px}
+
+  /* COVER */
+  .cover{
+    min-height:78vh;display:flex;flex-direction:column;justify-content:center;
+    border-bottom:1px solid var(--line);
+  }
+  .cover .eyebrow{
+    font-size:11px;letter-spacing:.20em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:26px;
+  }
+  .cover h1{
+    font-size:clamp(30px,4.6vw,50px);line-height:1.12;font-weight:600;
+    letter-spacing:-.02em;margin-bottom:18px;
+  }
+  .cover .sub{font-size:clamp(16px,2vw,20px);color:var(--ink-3);font-weight:400;max-width:640px}
+  .cover .rule{width:56px;height:3px;background:var(--accent);margin:30px 0}
+
+  /* TOC */
+  .toc{padding:52px 0;border-bottom:1px solid var(--line)}
+  .toc h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:20px}
+  .toc ol{list-style:none;columns:2;column-gap:44px}
+  .toc li{break-inside:avoid;padding:7px 0;border-bottom:1px solid var(--line-2)}
+  .toc a{color:var(--ink);text-decoration:none;font-size:15px;display:flex;gap:12px}
+  .toc a:hover{color:var(--accent)}
+  .toc .n{color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600;min-width:20px}
+
+  /* SECTIONS */
+  section{padding:46px 0;border-bottom:1px solid var(--line-2)}
+  section:last-of-type{border-bottom:none}
+  h2{font-size:23px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px;display:flex;gap:14px;align-items:baseline}
+  h2 .n{color:var(--accent);font-size:14px;font-weight:700;font-variant-numeric:tabular-nums}
+  .lede{color:var(--ink-3);font-size:15px;margin-bottom:22px;max-width:700px}
+  h3{font-size:16px;font-weight:600;margin:26px 0 10px}
+  p{margin-bottom:12px;color:var(--ink-2);max-width:760px}
+  ul,ol{margin:0 0 14px 20px;color:var(--ink-2)}
+  li{margin-bottom:6px}
+  strong{color:var(--ink);font-weight:600}
+  code{background:var(--bg-3);padding:1px 6px;border-radius:3px;font-size:.88em;font-family:ui-monospace,Menlo,Consolas,monospace}
+
+  /* TABLES */
+  .tw{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:4px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{
+    background:var(--bg-2);text-align:left;padding:11px 14px;font-size:11px;
+    letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);font-weight:600;
+    border-bottom:1px solid var(--line);white-space:nowrap;
+  }
+  td{padding:11px 14px;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+  tr:last-child td{border-bottom:none}
+  td:first-child{color:var(--ink);font-weight:500}
+  .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:3px;white-space:nowrap}
+  .t-in{background:#eaf3ec;color:var(--ok)}
+  .t-plan{background:var(--warn-soft);color:var(--warn)}
+  .t-out{background:var(--bg-3);color:var(--ink-3)}
+  .t-gap{background:var(--gap-soft);color:var(--gap)}
+
+  /* CALLOUTS */
+  .note{border-left:3px solid var(--accent);background:var(--accent-soft);padding:16px 20px;margin:20px 0;border-radius:0 4px 4px 0}
+  .note.warn{border-color:#c9973a;background:var(--warn-soft)}
+  .note.gap{border-color:var(--gap);background:var(--gap-soft)}
+  .note .lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:6px}
+  .note.warn .lbl{color:var(--warn)} .note.gap .lbl{color:var(--gap)}
+  .note p{margin-bottom:0;font-size:14.5px;color:var(--ink-2)}
+  .note p+p{margin-top:9px}
+
+  /* FLOW DIAGRAM */
+  .flow{margin:20px 0;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  .flow .step{display:flex;gap:16px;padding:13px 18px;border-bottom:1px solid var(--line-2);align-items:baseline}
+  .flow .step:last-child{border-bottom:none}
+  .flow .step:nth-child(odd){background:var(--bg-2)}
+  .flow .k{font-size:11px;font-weight:700;color:var(--accent);min-width:26px;font-variant-numeric:tabular-nums}
+  .flow .t{font-weight:600;font-size:14.5px;min-width:190px;color:var(--ink)}
+  .flow .d{font-size:13.5px;color:var(--ink-3)}
+
+  /* BOX ROWS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin:18px 0}
+  .card{border:1px solid var(--line);border-radius:4px;padding:15px 17px;background:var(--bg)}
+  .card h4{font-size:14px;font-weight:600;margin-bottom:5px}
+  .card p{font-size:13.5px;color:var(--ink-3);margin:0}
+
+  /* NESTED SCOPE */
+  .scope{margin:20px 0;border:1px solid var(--line);border-radius:4px;padding:16px}
+  .scope .lvl{border:1px solid var(--line);border-radius:3px;padding:13px 16px;margin-bottom:0}
+  .scope .l1{background:var(--bg-2)} .scope .l2{background:var(--bg);margin-top:11px}
+  .scope .l3{background:var(--accent-soft);margin-top:11px}
+  .scope .l4{background:var(--warn-soft);margin-top:11px}
+  .scope .lvl b{display:block;font-size:13px;margin-bottom:3px}
+  .scope .lvl span{font-size:13px;color:var(--ink-3)}
+
+  footer{padding:36px 0 60px;color:var(--ink-3);font-size:13px;border-top:1px solid var(--line)}
+
+  @media (max-width:680px){
+    .toc ol{columns:1}
+    .flow .step{flex-direction:column;gap:4px}
+    .flow .t{min-width:0}
+    .wrap{padding:0 20px}
+  }
+  @media print{
+    body{font-size:10.5pt}
+    .cover{min-height:auto;padding:60pt 0 40pt}
+    section{padding:20pt 0;page-break-inside:avoid}
+    .tw,.note,.flow,.card,.scope{page-break-inside:avoid}
+    .toc{page-break-after:always}
+    a{color:var(--ink);text-decoration:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="cover wrap">
+  <div class="eyebrow">Domain Reference</div>
+  <h1>KHIDMAT Humanitarian Domain Reference Overview</h1>
+  <div class="rule"></div>
+  <p class="sub">The humanitarian reality Khidmat is built to understand — actors, needs, risk, support and outcomes — described independently of any system that may act on it.</p>
+</header>
+
+<nav class="toc wrap">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#s1"><span class="n">1</span> Purpose</a></li>
+    <li><a href="#s2"><span class="n">2</span> Vision</a></li>
+    <li><a href="#s3"><span class="n">3</span> Humanitarian Operating Model</a></li>
+    <li><a href="#s4"><span class="n">4</span> Business Scope</a></li>
+    <li><a href="#s5"><span class="n">5</span> Actors</a></li>
+    <li><a href="#s6"><span class="n">6</span> Humanitarian Reality</a></li>
+    <li><a href="#s7"><span class="n">7</span> Core Business Capabilities</a></li>
+    <li><a href="#s8"><span class="n">8</span> End-to-End Humanitarian Flow</a></li>
+    <li><a href="#s9"><span class="n">9</span> Beneficiary Journey</a></li>
+    <li><a href="#s10"><span class="n">10</span> Giving Journey</a></li>
+    <li><a href="#s11"><span class="n">11</span> AI Operating Model</a></li>
+    <li><a href="#s12"><span class="n">12</span> Domain Boundaries</a></li>
+    <li><a href="#s13"><span class="n">13</span> Current Scope</a></li>
+    <li><a href="#s14"><span class="n">14</span> Future Scope</a></li>
+    <li><a href="#s15"><span class="n">15</span> Glossary</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section id="s1">
+  <h2><span class="n">1</span> Purpose</h2>
+  <p class="lede">What business domain is being described, and what this document is not.</p>
+  <p>This document describes <strong>humanitarian reality itself</strong> — the people, circumstances, needs and decisions that constitute humanitarian work — independently of any software, organisation or technology that operates on it.</p>
+  <div class="tw"><table>
+    <thead><tr><th>This document is</th><th>This document is not</th></tr></thead>
+    <tbody>
+      <tr><td>A description of the domain being modelled</td><td>A system specification or architecture</td></tr>
+      <tr><td>The business reference for all downstream design</td><td>A data model, schema or database design</td></tr>
+      <tr><td>Organised around reality — people, needs, risk</td><td>Organised around software modules or workflows</td></tr>
+      <tr><td>Explicit about what is known and unknown</td><td>A statement that all questions are answered</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note">
+    <div class="lbl">Governing distinction</div>
+    <p>Reality is separated from software throughout. A malnourished child is malnourished whether or not any system records it. Registration, verification and delivery are things organisations <em>do</em>; they are not what exists.</p>
+  </div>
+</section>
+
+<section id="s2">
+  <h2><span class="n">2</span> Vision</h2>
+  <p class="lede">Why Khidmat exists.</p>
+  <p>Humanitarian systems store data but rarely understand it. Most humanitarian software registers cases and tracks donations rather than understanding the people and circumstances behind them.</p>
+  <h3>Four consequences of that gap</h3>
+  <div class="grid">
+    <div class="card"><h4>Duplicate registration</h4><p>The same person is not recognised across engagements.</p></div>
+    <div class="card"><h4>Inconsistent verification</h4><p>Quality varies with who performed it.</p></div>
+    <div class="card"><h4>Lost history</h4><p>A person is captured as a point in time, not a trajectory.</p></div>
+    <div class="card"><h4>Unmeasured outcomes</h4><p>Assistance is recorded; improvement is not.</p></div>
+  </div>
+  <h3>The six questions the domain must answer</h3>
+  <p>Most systems answer <em>what did the person ask for?</em> Khidmat must answer:</p>
+  <ol>
+    <li>What does this person need?</li>
+    <li>Why do they need it?</li>
+    <li>What will happen if the need is unmet?</li>
+    <li>Who else is affected?</li>
+    <li>What support pathway exists?</li>
+    <li>What future risks are developing?</li>
+  </ol>
+  <div class="note">
+    <div class="lbl">Definition of success</div>
+    <p>Success is not measured by aid distributed or cases closed. Success is <strong>sustainable improvement in human wellbeing</strong>, and reduced dependency over time.</p>
+  </div>
+</section>
+
+<section id="s3">
+  <h2><span class="n">3</span> Humanitarian Operating Model</h2>
+  <p class="lede">Three structural properties of how humanitarian work actually operates.</p>
+
+  <h3>3.1 Two altitudes running concurrently</h3>
+  <p>Humanitarian work runs two structurally distinct rhythms at once. This is the strongest evidenced finding in the domain research, corroborated independently across five studies of sector practice.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Altitude</th><th>Cadence</th><th>Governs</th></tr></thead>
+    <tbody>
+      <tr><td>Programme</td><td>Annual or crisis-length</td><td>What capacity, funding and eligibility exist at all</td></tr>
+      <tr><td>Case</td><td>Event-driven</td><td>How one person's situation unfolds within that capacity</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note warn">
+    <div class="lbl">Consequence</div>
+    <p>The same words mean different things at each altitude. <em>Needs assessment</em>, <em>planning</em>, <em>monitoring</em> and <em>coordination</em> all exist at both and describe genuinely different activities. Any term used across both must state which altitude it means.</p>
+  </div>
+
+  <h3>3.2 Two flows, structurally decoupled</h3>
+  <div class="grid">
+    <div class="card"><h4>Knowledge flow</h4><p>Registration, evidence, verification, assessment — building understanding of a situation.</p></div>
+    <div class="card"><h4>Material flow</h4><p>Procurement, logistics, delivery — moving resources to people.</p></div>
+  </div>
+  <p>Sector practice separates these. Khidmat is positioned in the knowledge flow: it builds the understanding that the material flow acts upon.</p>
+
+  <h3>3.3 Understanding precedes action</h3>
+  <p>The operating sequence is <strong>Reality → Knowledge → Understanding → Reasoning → Responsible action</strong>. Consequential decisions — eligibility, escalation, exit — remain human decisions with a human accountable for them.</p>
+</section>
+
+<section id="s4">
+  <h2><span class="n">4</span> Business Scope</h2>
+  <p class="lede">What the domain covers, at three levels of commitment.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Area</th><th>Status</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Person, family, household, community</td><td><span class="tag t-in">Specified</span></td><td>The deepest part of the domain description</td></tr>
+      <tr><td>Needs and needs assessment</td><td><span class="tag t-in">Specified</span></td><td>Confidence-weighted</td></tr>
+      <tr><td>Vulnerability and risk</td><td><span class="tag t-in">Specified</span></td><td>Composition rule undefined</td></tr>
+      <tr><td>Evidence and verification</td><td><span class="tag t-in">Specified</span></td><td>Evidence types not enumerated</td></tr>
+      <tr><td>Case orchestration and engagement state</td><td><span class="tag t-in">Specified</span></td><td>—</td></tr>
+      <tr><td>Intervention catalogue</td><td><span class="tag t-plan">Planned</span></td><td>Blocked on programme-staff input</td></tr>
+      <tr><td>Support delivery and logistics</td><td><span class="tag t-plan">Planned</span></td><td>Vendors, proof of delivery</td></tr>
+      <tr><td>Outcome indicators and impact</td><td><span class="tag t-plan">Planned</span></td><td>Currently: assistance recorded, effect unmeasured</td></tr>
+      <tr><td>Programmes — eligibility, cycles, budget</td><td><span class="tag t-plan">Planned</span></td><td>—</td></tr>
+      <tr><td>Consent and privacy</td><td><span class="tag t-plan">Planned</span></td><td>Principle established; mechanism absent</td></tr>
+      <tr><td>Grievance and feedback handling</td><td><span class="tag t-plan">Planned</span></td><td>Sector treats this as a standing capability</td></tr>
+      <tr><td>Donor-facing capability and matching</td><td><span class="tag t-out">Out of first build</span></td><td>Real in the domain; not built first</td></tr>
+      <tr><td>Predictive engine</td><td><span class="tag t-out">Out of first build</span></td><td>Reactive inference only for now</td></tr>
+      <tr><td>Biometric identity</td><td><span class="tag t-out">Out of first build</span></td><td>Requires deliberate decision — see §12</td></tr>
+      <tr><td>Runtime, payments, multi-agent execution</td><td><span class="tag t-out">Out of first build</span></td><td>Designed against the domain, later</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="s5">
+  <h2><span class="n">5</span> Actors</h2>
+  <p class="lede">Who exists in humanitarian reality, and which of them the first build interacts with.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Actor</th><th>Exists in reality</th><th>First build interacts</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Person / beneficiary</td><td>Yes</td><td>Yes</td><td>Persists across cases and years</td></tr>
+      <tr><td>Family / household</td><td>Yes</td><td>Yes</td><td>Not the same unit — see §6.2</td></tr>
+      <tr><td>Registrant (self, proxy, volunteer)</td><td>Yes</td><td>Yes</td><td>Who reports changes what the report is worth</td></tr>
+      <tr><td>Volunteer</td><td>Yes</td><td>Yes</td><td>Full dispatch profile out of first build</td></tr>
+      <tr><td>Field verifier</td><td>Yes</td><td>Yes</td><td>—</td></tr>
+      <tr><td>Human reviewer</td><td>Yes</td><td>Yes</td><td>Adjudicates escalations and safety flags</td></tr>
+      <tr><td>Case manager</td><td>Yes</td><td>Yes</td><td>Owns plan, referrals, continuation decisions</td></tr>
+      <tr><td>Organisation</td><td>Yes</td><td>Yes</td><td>Distinct from Programme — see note</td></tr>
+      <tr><td>Programme</td><td>Yes</td><td>Partly</td><td>Defines available assistance and eligibility</td></tr>
+      <tr><td>Community / emergent groups</td><td>Yes</td><td>Not yet</td><td>Documented as frequently first-responding</td></tr>
+      <tr><td>Donor / giver</td><td>Yes</td><td>No</td><td>Recognised humanitarian actor; not built first</td></tr>
+      <tr><td>Government</td><td>Yes</td><td>No</td><td>Bears primary responsibility for its population</td></tr>
+      <tr><td>Healthcare provider, school, employer</td><td>Yes</td><td>No</td><td>Currently modelled as services, not actors</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note warn">
+    <div class="lbl">Two points worth the Lead's attention</div>
+    <p><strong>Organisation and Programme are separate.</strong> Every external source examined names implementing organisations separately from the programmes they lead. Collapsing them loses the distinction between who acts and what funds the action.</p>
+    <p><strong>The five operational roles above are unverified.</strong> Registrant, proxy, field verifier, human reviewer and case manager are supported by nothing outside this project. Sector standards operate at organisational level and do not describe roles at this granularity.</p>
+  </div>
+</section>
+
+<section id="s6">
+  <h2><span class="n">6</span> Humanitarian Reality</h2>
+  <p class="lede">What exists, organised by reality rather than by process.</p>
+
+  <h3>6.1 The person</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Dimension</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td>Persistence</td><td>A person is a persistent entity, not a per-case record. The same human recognised across registrations, cases and years.</td></tr>
+      <tr><td>Identity</td><td>Name, age, gender, marital status, documentation status</td></tr>
+      <tr><td>Life stage</td><td>Nine developmental stages — each a distinct reality carrying its own dependencies and vulnerabilities, not merely an age band</td></tr>
+      <tr><td>Capability</td><td>Physical · cognitive · educational · economic · caregiving</td></tr>
+      <tr><td>Health</td><td>Acute · chronic · disability · mental health · nutritional</td></tr>
+      <tr><td>Wellbeing</td><td>The state the whole system exists to improve</td></tr>
+      <tr><td>Dignity</td><td>Not a measurable condition — a standing constraint on how everything else may be used</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>6.2 Family, household and community</h3>
+  <p>A family is not a list of people; a household is a living unit; they are not the same thing and routinely diverge.</p>
+  <div class="grid">
+    <div class="card"><h4>Family</h4><p>Relationships, dependency, and who is responsible for income, care, education and decisions.</p></div>
+    <div class="card"><h4>Household</h4><p>Housing, utilities, shelter condition, and resilience — the capacity to absorb a shock.</p></div>
+    <div class="card"><h4>Community</h4><p>Settlement, services and the real distance and quality of access to them, local assets, social capital.</p></div>
+  </div>
+  <div class="note">
+    <div class="lbl">Why isolation fails</div>
+    <p>Vulnerability cascades along dependency. A mother's risk is her infant's risk. A person cannot be assessed apart from those who depend on them.</p>
+  </div>
+
+  <h3>6.3 Environment</h3>
+  <p>Geography, settlement type, infrastructure, markets and seasonality. Environment changes what a condition <em>means</em>: the seasonal calendar turns a damaged roof in a flood zone before monsoon into a preventive emergency rather than a routine repair. Severity is never a property of a condition alone.</p>
+
+  <h3>6.4 Situations, needs, risk and strengths</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Concept</th><th>Definition</th><th>Key property</th></tr></thead>
+    <tbody>
+      <tr><td>Situation</td><td>A circumstance that changes wellbeing — illness, widowhood, disability, job loss, violence, displacement, education interruption</td><td>Situations are not needs; they are what needs arise from</td></tr>
+      <tr><td>Need</td><td>A gap between current state and a basic standard of wellbeing</td><td>Dynamic — opens, changes severity, resolves or expires</td></tr>
+      <tr><td>Vulnerability</td><td>Emerges from multiple compounding factors, not one condition</td><td>Composition rule undefined</td></tr>
+      <tr><td>Risk</td><td>Current, future, compound and long-term, each with horizon, trend and severity</td><td>Produces signals; does not decide</td></tr>
+      <tr><td>Capability &amp; strength</td><td>What a person, household and community <em>can</em> do; assets and opportunity</td><td>Dependency reduction is impossible if only deficits are modelled</td></tr>
+      <tr><td>Outcome</td><td>Improved, held, or deteriorated</td><td>Negative outcomes must be representable</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note warn">
+    <div class="lbl">Seven need categories</div>
+    <p>Food · Health · Education · Housing · Livelihood · Psychosocial · Protection. Whether this set is closed, or must accommodate a situation nobody anticipated, is an open question for the Lead.</p>
+  </div>
+
+  <h3>6.5 Evidence and what is known</h3>
+  <p>Humanitarian reality includes not only how things are, but how well anyone knows it. Two organisations looking at the same household hold genuinely different states of knowledge about it.</p>
+  <div class="flow">
+    <div class="step"><span class="k">→</span><span class="t">Claim</span><span class="d">What someone states. Carries quality: how complete, how internally consistent. Who reported it changes its weight.</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Evidence</span><span class="d">What grounds the claim.</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Finding</span><span class="d">What verification produced from the claim.</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Assessed need</span><span class="d">Carries an explicit confidence, openly held.</span></div>
+  </div>
+</section>
+
+<section id="s7">
+  <h2><span class="n">7</span> Core Business Capabilities</h2>
+  <p class="lede">What humanitarian organisations recurrently do. These operate on reality; they are not reality.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Capability</th><th>What it does</th><th>Altitude</th></tr></thead>
+    <tbody>
+      <tr><td>Registration</td><td>Makes a person and situation known; produces claims</td><td>Case</td></tr>
+      <tr><td>Evidence collection</td><td>Gathers what grounds claims</td><td>Case</td></tr>
+      <tr><td>Verification</td><td>Converts claims into findings</td><td>Case</td></tr>
+      <tr><td>Needs assessment</td><td>Converts claims and findings into identified needs with confidence</td><td>Both — must be qualified</td></tr>
+      <tr><td>Planning</td><td>Determines appropriate support</td><td>Both — must be qualified</td></tr>
+      <tr><td>Referral</td><td>Moves responsibility to another actor, carrying understanding forward</td><td>Case</td></tr>
+      <tr><td>Delivery</td><td>Provides the support</td><td>Case</td></tr>
+      <tr><td>Monitoring</td><td>Observes what happens after</td><td>Both — must be qualified</td></tr>
+      <tr><td>Follow-up &amp; re-verification</td><td>Re-establishes findings as circumstances change</td><td>Case</td></tr>
+      <tr><td>MEAL</td><td>Monitoring, evaluation, accountability and learning — a standing discipline on its own cadence</td><td>Programme</td></tr>
+      <tr><td>Complaints &amp; feedback</td><td>A standing channel, structurally separate from casework, that can reopen a decision</td><td>Both</td></tr>
+      <tr><td>Coordination</td><td>Sharing understanding across organisations; deduplication</td><td>Programme</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note warn">
+    <div class="lbl">Boundary rule</div>
+    <p>These capabilities may appear in the model, but they must never become its organising axis. A model organised around registration and casework holds registry records and workflow records — and never holds a person.</p>
+  </div>
+</section>
+
+<section id="s8">
+  <h2><span class="n">8</span> End-to-End Humanitarian Flow</h2>
+  <p class="lede">How understanding is built and acted upon.</p>
+  <div class="flow">
+    <div class="step"><span class="k">01</span><span class="t">Need identified</span><span class="d">Requested, implied, or observed</span></div>
+    <div class="step"><span class="k">02</span><span class="t">Registration</span><span class="d">Produces claims, not facts</span></div>
+    <div class="step"><span class="k">03</span><span class="t">Evidence collection</span><span class="d">Per the case and the need</span></div>
+    <div class="step"><span class="k">04</span><span class="t">Verification</span><span class="d">Claims become findings</span></div>
+    <div class="step"><span class="k">05</span><span class="t">Assessment</span><span class="d">Needs identified, with confidence</span></div>
+    <div class="step"><span class="k">06</span><span class="t">Decision support</span><span class="d">Recommendation with stated uncertainty</span></div>
+    <div class="step"><span class="k">07</span><span class="t">Eligibility &amp; approval</span><span class="d">A human decision, gated by an approved plan — never an automatic status flip</span></div>
+    <div class="step"><span class="k">08</span><span class="t">Support planning</span><span class="d">Sector, modality and phase selected</span></div>
+    <div class="step"><span class="k">09</span><span class="t">Delivery</span><span class="d">Support reaches the person</span></div>
+    <div class="step"><span class="k">10</span><span class="t">Monitoring &amp; follow-up</span><span class="d">May reopen any earlier stage</span></div>
+    <div class="step"><span class="k">11</span><span class="t">Outcome measurement</span><span class="d">Improved, held, or deteriorated</span></div>
+    <div class="step"><span class="k">12</span><span class="t">Recovery &amp; resilience</span><span class="d">Capacity to absorb the next shock</span></div>
+  </div>
+  <div class="note">
+    <div class="lbl">Not a straight line</div>
+    <p>Reopening is standard professional practice, not exception handling. Monitoring routinely returns a case to reassessment; a grievance, a changed circumstance or new information can send it back to any earlier stage.</p>
+  </div>
+</section>
+
+<section id="s9">
+  <h2><span class="n">9</span> Beneficiary Journey</h2>
+  <p class="lede">The evolution of a person's situation over time — which continues whether or not anyone is acting on it.</p>
+  <div class="flow">
+    <div class="step"><span class="k">→</span><span class="t">Human exists</span><span class="d">A person, in a family, in a household, in a community</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Situation changes</span><span class="d">Illness, loss, displacement, disaster, a season turning</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Need emerges</span><span class="d">A gap opens against a basic standard of wellbeing</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Need communicated</span><span class="d">Requested, implied, observed — or not communicated at all</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Understanding built</span><span class="d">Claims gathered, context assembled, verified, assessed</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Support planned and delivered</span><span class="d">A human decides; support reaches the person</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Outcome</span><span class="d">Wellbeing improved, held, or deteriorated</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Recovery &amp; resilience</span><span class="d">The generating situation resolves; capacity to absorb the next shock returns</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Long-term wellbeing</span><span class="d">Sustained independence — or continued dependency</span></div>
+  </div>
+  <h3>Four properties</h3>
+  <div class="grid">
+    <div class="card"><h4>It is the person's</h4><p>Not the organisation's. It continues without any humanitarian actor knowing.</p></div>
+    <div class="card"><h4>It is not a single position</h4><p>A household can be recovering on one need and in crisis on another.</p></div>
+    <div class="card"><h4>It is not linear</h4><p>People revisit earlier stages; recovery does not move in a straight line.</p></div>
+    <div class="card"><h4>It can end without recovery</h4><p>Nothing guarantees needs are met. A model assuming the endpoint misdescribes every case that never reaches it.</p></div>
+  </div>
+  <div class="note warn">
+    <div class="lbl">Never conflate two clocks</div>
+    <p>Where a person is in their <em>life</em> is not where they are in your <em>process</em>. Mature sector practice tracks these as two separate concepts, never one combined status field.</p>
+  </div>
+</section>
+
+<section id="s10">
+  <h2><span class="n">10</span> Giving Journey</h2>
+  <p class="lede">The resourcing side of the domain — and the largest known gap in this reference.</p>
+  <div class="note gap">
+    <div class="lbl">Status — not described</div>
+    <p>The giving side is <strong>in scope for the domain and has no domain description</strong>. No authoritative source in this project describes how giving works, and the concept of a giver adopting a family or case appears in no source at all.</p>
+    <p>What follows is therefore presented as <strong>the intended shape, unvalidated</strong> — not as a described part of the domain. It is included so the gap is visible rather than silently absent.</p>
+  </div>
+  <h3>10.1 What is established</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Statement</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td>Givers are recognised humanitarian actors</td><td>Sector standards explicitly define humanitarian actors to include those providing financial, material or technical support without directly delivering assistance</td></tr>
+      <tr><td>Giving operates in formal and informal forms</td><td>Documented distinction between institutional and community-level philanthropy</td></tr>
+      <tr><td>Funding restrictions determine who may receive what</td><td>Recognised as real; the content of such restrictions is not described anywhere</td></tr>
+      <tr><td>Donor obligations and beneficiary accountability structurally conflict</td><td>Well-documented sector tension across multiple independent studies</td></tr>
+    </tbody>
+  </table></div>
+  <h3>10.2 Intended shape — unvalidated</h3>
+  <div class="flow">
+    <div class="step"><span class="k">→</span><span class="t">Verified need exists</span><span class="d">Established — output of the beneficiary journey</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Need becomes visible to givers</span><span class="d">Unvalidated — disclosure rules undescribed</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Giver commits support</span><span class="d">Unvalidated — one-time or sustained</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Adoption of a family or case</span><span class="d">No source — exclusivity, duration, consent and termination all undefined</span></div>
+    <div class="step"><span class="k">→</span><span class="t">Delivery and re-verification</span><span class="d">Established on the beneficiary side</span></div>
+  </div>
+  <div class="note gap">
+    <div class="lbl">What is needed to close this</div>
+    <p>A working session describing giving at the same depth the human side is already described: who gives, on what terms, what obligations travel with a resource, what adoption actually is, and how restricted funding constrains eligibility. This is knowledge the business holds and no document in this project contains.</p>
+  </div>
+</section>
+
+<section id="s11">
+  <h2><span class="n">11</span> AI Operating Model</h2>
+  <p class="lede">How intelligence is expected to behave in this domain.</p>
+  <div class="grid">
+    <div class="card"><h4>Augments judgment</h4><p>Supports human decisions. Does not replace them.</p></div>
+    <div class="card"><h4>Reasons from what is known</h4><p>Reactive inference from stated and observed information — not prediction before any signal exists.</p></div>
+    <div class="card"><h4>States its confidence</h4><p>Every important conclusion carries how well it is known and what would change it.</p></div>
+    <div class="card"><h4>Defers when consequence is high</h4><p>Eligibility, escalation and exit remain human decisions with a human accountable.</p></div>
+  </div>
+  <div class="note warn">
+    <div class="lbl">The single most important behaviour</div>
+    <p><strong>Absence of information is not a negative finding.</strong> "We have no record that this household was displaced" is a different statement from "this household was not displaced." A system that cannot say <em>I do not know</em> — distinctly from <em>no</em> — will be confidently wrong, and that confusion is the largest single source of unreliable automated behaviour.</p>
+  </div>
+  <p>This is why the system must model not only the world, but what it is entitled to believe about the world.</p>
+</section>
+
+<section id="s12">
+  <h2><span class="n">12</span> Domain Boundaries</h2>
+  <p class="lede">Four distinct circles that are routinely and damagingly confused.</p>
+  <div class="scope">
+    <div class="lvl l1"><b>Humanitarian reality</b><span>Everything that exists — including things Khidmat will never build. Givers, government responsibility, informal mutual aid, programme coordination, crisis phase.</span></div>
+    <div class="lvl l2"><b>Domain scope</b><span>What Khidmat must understand to help people correctly. Currently: all of the reality described in this document.</span></div>
+    <div class="lvl l3"><b>First build scope</b><span>What is delivered first. Narrower — see §13.</span></div>
+    <div class="lvl l4"><b>Roadmap</b><span>Real, described, and built later — see §14.</span></div>
+  </div>
+  <div class="note">
+    <div class="lbl">Governing rule</div>
+    <p><strong>Being real does not mean being in scope, and being out of scope does not mean being unreal.</strong> Givers are humanitarian actors and are not built first. Both statements are true; neither cancels the other. Collapsing them is how a project either builds what it excluded, or denies what exists.</p>
+  </div>
+  <h3>A boundary requiring deliberate decision</h3>
+  <div class="note warn">
+    <div class="lbl">Biometric identity</div>
+    <p>Facial recognition is currently out of the first build. It would solve a real and open problem — recognising the same person across engagements. But it targets vulnerable people including children and survivors of violence, and established sector data-protection guidance governs it. If it enters scope it should do so through an explicit decision consulting that guidance, not silently because it is convenient.</p>
+  </div>
+</section>
+
+<section id="s13">
+  <h2><span class="n">13</span> Current Scope</h2>
+  <p class="lede">What the first build understands.</p>
+  <ul>
+    <li>Person, family, household and community, including household resilience</li>
+    <li>Life stage, capability and health dimensions</li>
+    <li>Needs, and confidence-weighted needs assessment</li>
+    <li>Vulnerability and risk, with horizon, trend and severity</li>
+    <li>Community and environmental context, including seasonality</li>
+    <li>Evidence, verification, and the claim-to-finding transition</li>
+    <li>Case orchestration and engagement state</li>
+    <li>Claim quality, confidence, and temporal reasoning</li>
+  </ul>
+  <div class="note warn">
+    <div class="lbl">Two gaps inside current scope</div>
+    <p><strong>Consent</strong> is a foundational principle with a placeholder mechanism. <strong>Grievance handling</strong> is a foundational principle with no mechanism — while sector practice treats it as a standing capability maintained by every major humanitarian organisation. Both sit oddly against the commitments they are meant to implement.</p>
+  </div>
+</section>
+
+<section id="s14">
+  <h2><span class="n">14</span> Future Scope</h2>
+  <p class="lede">Real in the domain, described where possible, built later.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Area</th><th>Domain status</th><th>Blocker</th></tr></thead>
+    <tbody>
+      <tr><td>Intervention catalogue</td><td>Dimensions described; items deliberately excluded as volatile</td><td>Programme-staff input</td></tr>
+      <tr><td>Support delivery and logistics</td><td>Recognised, not described</td><td>Sequencing</td></tr>
+      <tr><td>Outcome indicators and impact</td><td>Outcome families described; indicators absent</td><td>Indicator vocabulary</td></tr>
+      <tr><td>Programmes — eligibility, cycles, budget</td><td>Recognised at programme altitude</td><td>Sequencing</td></tr>
+      <tr><td>Volunteer operations and dispatch</td><td>Role recognised; routing out of scope</td><td>Sequencing</td></tr>
+      <tr><td>Giving, matching and adoption</td><td><span class="tag t-gap">Not described</span></td><td>Requires a discovery session — see §10</td></tr>
+      <tr><td>Predictive identification of emerging need</td><td>Emerging needs are real; detection is not built</td><td>Longitudinal and seasonal data</td></tr>
+      <tr><td>Cross-organisational coordination</td><td>Programme altitude described; participation undecided</td><td>Scope ruling</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="s15">
+  <h2><span class="n">15</span> Glossary</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Term</th><th>Meaning in this domain</th></tr></thead>
+    <tbody>
+      <tr><td>Altitude</td><td>Whether a statement concerns the programme level or a single case. Terms used at both must say which.</td></tr>
+      <tr><td>Assessed need</td><td>A need identified from claims and findings, carrying an explicit confidence.</td></tr>
+      <tr><td>Claim</td><td>Anything stated but not yet verified. A registration is a collection of claims.</td></tr>
+      <tr><td>Engagement state</td><td>Where a person stands in an organisation's process. Never the same as their life stage.</td></tr>
+      <tr><td>Evidence</td><td>What grounds a claim in fact.</td></tr>
+      <tr><td>Finding</td><td>What verification produces from a claim.</td></tr>
+      <tr><td>Household resilience</td><td>Capacity to absorb, adapt to and recover from a shock. Two households with identical needs are not equally vulnerable.</td></tr>
+      <tr><td>Life stage</td><td>A distinct developmental reality with characteristic dependencies and vulnerabilities — not an age band.</td></tr>
+      <tr><td>Modality</td><td>How support is delivered — cash, in-kind, service, voucher.</td></tr>
+      <tr><td>Need</td><td>A gap between current state and a basic standard of wellbeing.</td></tr>
+      <tr><td>Sector</td><td>Which domain of need support addresses — health, shelter, education, food, protection.</td></tr>
+      <tr><td>Situation</td><td>A circumstance that changes wellbeing and gives rise to needs. Not itself a need.</td></tr>
+      <tr><td>Temporal phase</td><td>Why and when support is given — emergency relief, rehabilitation, development.</td></tr>
+      <tr><td>Verification</td><td>The activity that converts claims into findings.</td></tr>
+      <tr><td>Vulnerability</td><td>An emergent property of compounding factors, not a single condition.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  This document describes humanitarian reality. It is the business reference from which all downstream design derives.
+</footer>
+
+</body>
+</html>

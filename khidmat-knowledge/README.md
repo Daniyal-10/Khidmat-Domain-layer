@@ -48,6 +48,9 @@ Everything below is **FROZEN**. No further foundation documents are to be create
 | `docs/03-discovery/SCOPE_COVERAGE.md` | FROZEN — decision recorded | Found BL V1 §17 excludes half the Lead's end-to-end flow. Decision taken: model reality fully, sequence implementation separately. |
 | `docs/04-reference-model/KHIDMAT_HUMANITARIAN_DOMAIN_REFERENCE_MODEL.md` | **FROZEN — ACTIVE** | The conceptual reference. The ontology derives from this. |
 | `CLIENT_CONTEXT_UNVERIFIED.md` | QUARANTINED | Deployment context sourced to a client file not present in this repository. Not authoritative. Unresolved. |
+| `docs/05-ontology/01-DOMAIN-PRIMITIVES.md` | **DRAFT — ACTIVE** | Step 1. Eight primitive categories, derivation trace, coverage test, ontology scope decision (§5A). Set **not closed**. |
+| `docs/05-ontology/01a-PRIMITIVE-EVIDENCE-AUDIT.md` | **ACTIVE** | Evidence traceability audit for the primitive set. Defines the rating scale authoritative for both ontology phases. |
+| `docs/05-ontology/02-ONTOLOGY-LAYERS.md` | **DRAFT — ACTIVE** | Step 2. Eight layers derived from the primitives. Five tensions carried open. |
 
 **Superseded in role** means: the content stands and is correct, but ontology work reads the
 reference model, not these. They exist so any statement in the reference model can be traced
