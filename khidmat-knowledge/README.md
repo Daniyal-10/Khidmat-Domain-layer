@@ -1,118 +1,151 @@
 # Khidmat — Ontology Foundation
 
-This repository was reset on 2026-07-29. Everything that could not be traced to an
-authoritative source was deleted. It is being rebuilt from first principles.
+Repository reset 2026-07-29. Everything untraceable to an authoritative source was deleted.
+**The foundation is complete and frozen. The current phase is ontology design.**
 
 ---
 
-## Authoritative sources
+## Authority
 
-Exactly two documents carry authority. Where anything disagrees with them, they win.
-Where they disagree with each other, **Business Logic V1 wins**.
+Two tiers. They do different jobs and must not be confused.
+
+### Tier 1 — Sources of fact (frozen, never edited)
 
 | Document | Role |
 |---|---|
-| `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` | Primary authority. The business specification. |
+| `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` | Primary authority on humanitarian facts. Where sources disagree, this wins. |
 | `KHIDMAT_AI_BUSINESS_OVERVIEW.html` | Client First Draft. Vision and direction. |
 
-These two files are **frozen**. They are inputs, not working documents. Do not edit them.
+Plus external humanitarian standards — OCHA, UNHCR, IASC, ICRC, Sphere/CHS, IOM, WHO — as
+retrieved into `docs/01-evidence/`.
 
-No other document in this repository has authority. Nothing may be cited as a warrant
-unless it traces to one of the two above, or to an external source named in the evidence
-dossiers below.
+### Tier 2 — Source of derivation (frozen)
+
+| Document | Role |
+|---|---|
+| `docs/04-reference-model/KHIDMAT_HUMANITARIAN_DOMAIN_REFERENCE_MODEL.md` | **The ontology derives from this document and nothing else.** |
+
+The reference model does not outrank Tier 1 — it is built entirely from it, with every
+statement cited. It is the *only* document ontology work reads. If the ontology needs a fact,
+it comes from here; if it is not here, it is an open question, not a licence to invent.
+
+**To change a fact, amend Tier 1 and re-derive.** No downstream document may override a
+source. That single rule is why this repository was reset.
 
 ---
 
-## What else is here, and why
+## Document map
 
-### `docs/01-evidence/TD-01` … `TD-06`
+Everything below is **FROZEN**. No further foundation documents are to be created.
 
-Six evidence dossiers. These are the **only material in the project sourced from outside
-the project itself** — OCHA, UNHCR, Sphere / Core Humanitarian Standard, IASC cluster
-documentation, and peer-reviewed humanitarian-studies literature, each with citations,
-confidence levels, corroboration counts, and honest single-source flags.
+| Document | Status | What it is |
+|---|---|---|
+| `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` | FROZEN | Authority |
+| `KHIDMAT_AI_BUSINESS_OVERVIEW.html` | FROZEN | Authority |
+| `docs/01-evidence/TD-01 … TD-06` | FROZEN | The only externally-sourced material in the project. Evidence, never structure. Tier A (practitioner) never executed; Tier C (internal comparisons) void since the reset deleted what they compared against. |
+| `docs/02-understanding/MERGED_BUSINESS_UNDERSTANDING.md` | FROZEN — superseded in role | The two sources reconciled, six conflicts resolved, eleven gaps recorded. **Traceability record**, not a working input. |
+| `docs/03-discovery/DOMAIN_DISCOVERY.md` | FROZEN — superseded in role | Evidence against those gaps. Established the programme/case altitude split. **Traceability record.** |
+| `docs/03-discovery/SCOPE_COVERAGE.md` | FROZEN — decision recorded | Found BL V1 §17 excludes half the Lead's end-to-end flow. Decision taken: model reality fully, sequence implementation separately. |
+| `docs/04-reference-model/KHIDMAT_HUMANITARIAN_DOMAIN_REFERENCE_MODEL.md` | **FROZEN — ACTIVE** | The conceptual reference. The ontology derives from this. |
+| `CLIENT_CONTEXT_UNVERIFIED.md` | QUARANTINED | Deployment context sourced to a client file not present in this repository. Not authoritative. Unresolved. |
 
-They are retained as **evidence, never as structure**. They record what the humanitarian
-sector says. They do not decide how Khidmat models it, and no conclusion in them may be
-promoted into the ontology without re-entering through the phase sequence below.
-
-Their Tier A layer (practitioner elicitation) was never executed. That limitation is
-stated in each dossier and still stands.
-
-### `CLIENT_CONTEXT_UNVERIFIED.md`
-
-Deployment context that appears in neither authoritative source. **Not authoritative.**
-See the file for the open question attached to it.
+**Superseded in role** means: the content stands and is correct, but ontology work reads the
+reference model, not these. They exist so any statement in the reference model can be traced
+back to its source. Do not extend them.
 
 ---
 
 ## Phase sequence
 
-No phase may start before the previous one is complete.
-
 ```
-Phase 0   Understand Business Logic V1
-          Understand Client First Draft
-          Merge both into one coherent business understanding
-             ↓
-          Discover remaining domain knowledge
-             ↓
-          Freeze domain boundaries
-             ↓
-          Discover Domain Primitives
-             ↓
-          Validate primitives
-             ↓
-          Design Ontology Map
-             · Facets      · Entities   · Relationships  · Constraints
-             · States      · Events     · Cognition      · Coordination
-             ↓
-          Business Architecture
-             ↓
-          AI Architecture
-             ↓
-          Ontology Engineering
-             ↓
-          Implementation
+✅ Understand Business Logic V1
+✅ Understand Client First Draft
+✅ Merge into one coherent business understanding
+✅ Discover remaining domain knowledge
+✅ Domain Reference Model — what exists in humanitarian reality
+   ↓
+▶  ONTOLOGY DESIGN  ← current phase — docs/05-ontology/
+      1. Domain Primitives          ◐ DRAFT — set not closed
+      2. Layers                     ◐ DRAFT — 5 tensions carried open
+           · Facets   · Entities · Relationships · Constraints
+           · States   · Events   · Cognition     · Coordination
+      3. Pillars
+      4. Architecture Rules
+      5. Ground Truth Reviews
+      6. Evidence
+      7. Governance
+   ↓
+   Business Architecture
+   ↓
+   AI Architecture
+   ↓
+   Ontology Engineering
+   ↓
+   Implementation
 ```
 
-**Current position: Phase 0, not started.**
+**Domain boundaries are no longer a separate phase.** The reference model §16 already
+separates humanitarian reality from ontology scope from V1 implementation scope from roadmap.
+What remains — deciding which of §§3–15 falls inside ontology scope — is the first act of
+ontology design, performed as ontology work, not as another narrative document.
+
+**From here, every artifact must become part of the ontology.** No narrative, explanatory,
+philosophical, governance or summary documents.
 
 ---
 
 ## Standing rules
 
-These exist because the previous foundation failed by violating them.
+Five rules, each earned by a specific failure of the previous foundation.
 
-1. **No document becomes authoritative by being written.** The previous repository
-   promoted its own derived summaries to canonical status and then derived 176,000 words
-   from them without re-checking source. Authority comes from the two files above and
-   nowhere else.
-2. **No self-citation as evidence.** The deleted discovery corpus contained 171 files and
-   zero external citations — it cited only itself. A document may not be its own warrant.
-3. **No phase may be anticipated.** Design frameworks written before the design phase,
-   architecture written before the ontology, and vocabulary written before primitives all
-   caused the previous failure. Write things when the sequence reaches them.
-4. **Structure follows reality, not process.** Business Logic V1 organises humanitarian
-   reality by model — Human, Family, Household, Community, Needs, Vulnerability, Risk,
-   Support, Outcome. The previous foundation reorganised it by operational function
-   (registration, casework, logistics, evaluation) and consequently described the
-   processes applied to people without ever describing the people.
-5. **Scope exclusions are binding.** Business Logic V1 §17 excludes the donor and
-   resource-supply side, resource allocation at scale, predictive engines, and runtime
-   orchestration. The previous foundation built discovery domains for several of these
-   anyway, via internal decisions that overrode the source document.
+1. **No document becomes authoritative by being written.** The previous repository promoted
+   its own summaries to canonical status and derived 176,000 words from them without
+   re-checking source. Authority is Tier 1; derivation is the reference model; nothing else
+   acquires either by existing.
+
+2. **No self-citation as evidence.** The deleted corpus was 171 files with zero external
+   citations — it cited only itself. A document may not be its own warrant.
+
+3. **No phase may be anticipated.** Design frameworks before the design phase, architecture
+   before the ontology, vocabulary before primitives — all three happened, all three caused
+   damage. Write things when the sequence reaches them.
+
+4. **Structure follows reality, not process.** Registration, verification, case management
+   and delivery are things actors *do*; they are not what exists. The previous foundation
+   organised discovery around them and, in its own words, ended up where *"Registration &
+   Identity holds a registry record; Case Management holds a workflow record. Neither holds a
+   person."* Reference model §12 quarantines actions for this reason. **The ontology must not
+   be organised around them.**
+
+5. **Reality-membership does not imply scope-membership — and scope-exclusion does not imply
+   unreality.** Donors are humanitarian actors; the Core Humanitarian Standard says so.
+   Business Logic V1 §17 excludes them from V1 delivery. Both are true. The previous
+   foundation collapsed these and opened a donor domain by overriding the source through an
+   internal decision — the right instinct executed the wrong way. **Model reality fully;
+   sequence implementation separately; change scope only by amending Tier 1.**
 
 ---
 
-## Open ruling required before primitives
+## Two things blocked outside this repository
 
-"Domain Primitive" has been used two incompatible ways, and the entire ontology derives
-from which is meant:
+**1. The primitive definition — RESOLVED from the lead's own sequence, open to reversal.**
 
-- **as a concrete irreducible of reality** → admits *Person*, *Household*, *Need*
-- **as a category of concept** → admits *Identity*, *Relation*, *Condition*, and rejects
-  *Person* as too concrete to sit above a layer named Entities
+A Domain Primitive is a **category of concept**, not a concrete irreducible. The prescribed
+sequence builds a layer named *Entities* out of primitives; if *Person* were a primitive it
+would be both the source of that layer and a member of it, and the derivation would be
+circular. Reasoning and consequences: `docs/05-ontology/01-DOMAIN-PRIMITIVES.md` §1.
 
-This was previously decided unilaterally inside a working document. It needs an explicit
-ruling from the Project Lead before primitive discovery begins.
+Stated here so it is visible and reversible. If the Project Lead intended the concrete
+reading, step 1 must be redone and everything after it changes.
+
+**2. Practitioner evidence — bounds what the ontology can honestly assert.**
+
+Nothing in this repository has been validated by a humanitarian practitioner. Tier A was never
+executed — structurally unavailable, not deferred. Sixteen questions are marked `[OPEN]` in
+reference model §16.5; the load-bearing ones are identity resolution, how vulnerability
+composes, family/household membership, and the values inside every dimension.
+
+Business Logic V1's operational roles — Registrant, Proxy, Field Verifier, Human Reviewer,
+Case Manager — are supported by nothing outside this project.
+
+**Neither blocks ontology design from starting.** Both bound what it may claim.
