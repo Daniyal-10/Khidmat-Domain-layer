@@ -25,7 +25,7 @@ dossiers below.
 
 ## What else is here, and why
 
-### `docs/01-methodology/discovery/TD-01` … `TD-06`
+### `docs/01-evidence/TD-01` … `TD-06`
 
 Six evidence dossiers. These are the **only material in the project sourced from outside
 the project itself** — OCHA, UNHCR, Sphere / Core Humanitarian Standard, IASC cluster
