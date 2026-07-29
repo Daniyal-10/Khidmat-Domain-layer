@@ -1,8 +1,0 @@
-﻿---
-id: DOC-DISC-ACCOUNTABILITY_EVALUATION
-title: ACCOUNTABILITY & EVALUATION DOMAIN DISCOVERY
-version: 1.0
-status: Draft
-owner: Discovery
----
-

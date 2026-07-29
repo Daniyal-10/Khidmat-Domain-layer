@@ -1,114 +1,118 @@
-# Khidmat Knowledge Layer
+# Khidmat — Ontology Foundation
 
-## Current Authority
-
-The canonical conceptual foundation of this repository is
-[`docs/00-governance/PROJECT_OVERVIEW.md`](docs/00-governance/PROJECT_OVERVIEW.md),
-**frozen as Version 1.0**. The canonical governance authority is
-[`docs/00-governance/CONSTITUTION.md`](docs/00-governance/CONSTITUTION.md), **Version 1.0**,
-which converts the Overview's concepts into enforceable rules and is supreme over
-every methodology and architecture document in this repository. Start with the
-Overview, then the Constitution, not with this README, for vision, mandate,
-philosophy, and governing rules.
-
-This README is an orientation and status document, not a philosophical or
-governance source.
+This repository was reset on 2026-07-29. Everything that could not be traced to an
+authoritative source was deleted. It is being rebuilt from first principles.
 
 ---
 
-## What This Repository Is
+## Authoritative sources
 
-Khidmat AI is a **Humanitarian Intelligence Infrastructure** — not an application, a
-registration platform, a donation platform, or an NGO CRM (Project Overview,
-Chapter 3.1). This repository is the canonical humanitarian knowledge layer that
-infrastructure is built on.
+Exactly two documents carry authority. Where anything disagrees with them, they win.
+Where they disagree with each other, **Business Logic V1 wins**.
 
-**Strategic Objective:** The ultimate objective of this repository is the successful design of the **Khidmat Humanitarian Ontology**. The immediate architectural goal is to map the specific domains via **Domain Discovery** (Stage 5), after which work will proceed to Ontology Design.
-
----
-
-## Reading Order
-
-1. **[`docs/00-governance/PROJECT_OVERVIEW.md`](docs/00-governance/PROJECT_OVERVIEW.md)** (v1.0) — the mandate, philosophy, knowledge-layer principles, business-capability model, and ethics. Read this in full before anything else.
-2. **[`docs/00-governance/CONSTITUTION.md`](docs/00-governance/CONSTITUTION.md)** (v1.0) — the enforceable rules derived from the Overview: mandate, principles, epistemology, governance, constitutional order, and standards of success.
-3. **[`docs/00-governance/VISION.md`](docs/00-governance/VISION.md)** — the normative vision statement, synchronized against the Overview.
-4. **[`docs/00-governance/GLOSSARY.md`](docs/00-governance/GLOSSARY.md)** — ubiquitous language (pending full term-by-term reconciliation against the Overview — see the note at the top of that file).
-5. **The dependency chain for everything downstream** (per the Constitution's Dependency Hierarchy, Article XVI):
-
-   ```
-   Project Overview (v1.0, frozen)
-           â†“
-   Constitution (v1.0, frozen) / Foundation / Philosophy / Principles   (docs/00-governance)
-           â†“
-   Business Master Plan                     (v1.0, frozen)
-           â†“
-   Humanitarian Business Reference Model    (v1.0, frozen)
-           â†“
-   Business Architecture (v1.0, frozen) â†’ Domain Discovery (Active) â†’ Ontology Design â†’ Ontology Engineering
-   ```
-
-**This repository contains no executable code.** There is nothing to install, build,
-or run — every file is Markdown (documentation/governance) or, in the archived
-engineering layer, YAML (ontology/taxonomy declarations).
-
----
-
-## Current Status
-
-| Layer | Status |
+| Document | Role |
 |---|---|
-| Project Overview | âœ… **Frozen, v1.0** — canonical conceptual authority |
-| Constitution | âœ… **Frozen, v1.0** — canonical governance authority. Articles XVII (Domain Approval Authority) and XVIII (Audit Authority) remain explicitly reserved pending a governance decision; Article XIX is reserved for a future amendment procedure. |
-| Vision | âœ… Synchronized against Overview v1.0 |
-| Foundation, Philosophy, Principles | â¬œ Not yet authored — empty stubs at `docs/00-governance/` |
-| Business Master Plan | âœ… **Frozen** | Canonical Stage 2 completed and frozen. |
-| Humanitarian Business Reference Model | âœ… **Frozen** | Canonical Stage 3 completed and frozen. |
-| Ontology Design | â¬œ Not yet authored. Draft blueprint (`docs/01-methodology/ONTOLOGY_DESIGN_BLUEPRINT.md`) exists at v0.1.0. |
-| Business Architecture | âœ… **Frozen** | Canonical Stage 4 completed and frozen. |
-| Domain Discovery | ðŸŸ¡ **Active** | Stage 5 is currently active and mapping domains. |
-| `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md`, `KHIDMAT_AI_BUSINESS_OVERVIEW.html` | ðŸ—„ **Superseded.** Replaced by the formal Stage 2, 3, and 4 artifacts. |
-| Prior domain ontology/taxonomy engineering (Registration, Community Context, Verification Operations, and others) | ðŸ—„ **Removed from the working tree, recoverable from git history.** This content was schema-first ontology-engineering work that predates and does not follow the Overview's ontology-first discovery methodology (Chapters 5"“6), and cannot be treated as canonical input regardless of where it is stored (Constitution Article XV). It contained no unique canonical information beyond what git history already preserves and has been deleted rather than kept in the live archive; recoverable from git history at commit `d28d17e` and its ancestors if ever needed for reference. |
+| `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` | Primary authority. The business specification. |
+| `KHIDMAT_AI_BUSINESS_OVERVIEW.html` | Client First Draft. Vision and direction. |
 
-For the full reasoning behind this table, see the Repository Synchronization Report,
-Integrity Report, and Provenance Report produced during the Overview v1.0
-synchronization pass.
+These two files are **frozen**. They are inputs, not working documents. Do not edit them.
+
+No other document in this repository has authority. Nothing may be cited as a warrant
+unless it traces to one of the two above, or to an external source named in the evidence
+dossiers below.
 
 ---
 
-## Repository Structure
+## What else is here, and why
 
-```
-khidmat-knowledge/
-â”œâ”€â”€ README.md
-â””â”€â”€ docs/
-    â”œâ”€â”€ 00-governance/       # Overview, Constitution (both canonical, frozen v1.0), Foundation,
-    â”‚                        # Vision, Philosophy, Principles (pending), Glossary
-    â”œâ”€â”€ 01-methodology/      # Business Master Plan, HBRM, Ontology Design, and their blueprints
-    â”‚                        # (flat structure — every methodology document lives directly here)
-    â”œâ”€â”€ 02-architecture/     # Canonical schemas, reference models (pending); also the
-    â”‚                        # versioned business-logic spec and client-facing overview
-    â”‚                        # (both flagged for terminology sync)
-    â”œâ”€â”€ 03-domains/ "¦ 05-systems/   # Reserved layers, not yet active
-    â”œâ”€â”€ 80-decisions/        # Reserved for the ADR ledger
-    â”œâ”€â”€ 90-reports/          # Non-normative status reports (historical)
-    â”œâ”€â”€ 98-archive/          # Superseded/deprecated documents that retain institutional value
-    â”‚   â””â”€â”€ superseded-reviews/     # Valid, completed reviews whose recommendations are now fulfilled
-    â”‚                               # (the engineering-layer and invalid-lifecycles categories were
-    â”‚                               #  reviewed and deleted — no unique canonical information remained;
-    â”‚                               #  see docs/98-archive/README.md for what was removed and why)
-    â””â”€â”€ 99-references/       # Reserved for external references
-```
+### `docs/01-methodology/discovery/TD-01` … `TD-06`
 
-**No project documentation remains at the repository root.** Only this README lives
-there.
+Six evidence dossiers. These are the **only material in the project sourced from outside
+the project itself** — OCHA, UNHCR, Sphere / Core Humanitarian Standard, IASC cluster
+documentation, and peer-reviewed humanitarian-studies literature, each with citations,
+confidence levels, corroboration counts, and honest single-source flags.
+
+They are retained as **evidence, never as structure**. They record what the humanitarian
+sector says. They do not decide how Khidmat models it, and no conclusion in them may be
+promoted into the ontology without re-entering through the phase sequence below.
+
+Their Tier A layer (practitioner elicitation) was never executed. That limitation is
+stated in each dossier and still stands.
+
+### `CLIENT_CONTEXT_UNVERIFIED.md`
+
+Deployment context that appears in neither authoritative source. **Not authoritative.**
+See the file for the open question attached to it.
 
 ---
 
-## Design Principles
+## Phase sequence
 
-The full principle set lives in Project Overview Chapter 2.2 and Constitution
-Article II. In summary: knowledge precedes automation, understanding precedes
-intelligence, evidence precedes conclusions, verification precedes trust, and human
-dignity is the purpose of every decision. Every document in this repository is
-expected to be explainable through these five — not through a separate,
-locally-invented principle list.
+No phase may start before the previous one is complete.
+
+```
+Phase 0   Understand Business Logic V1
+          Understand Client First Draft
+          Merge both into one coherent business understanding
+             ↓
+          Discover remaining domain knowledge
+             ↓
+          Freeze domain boundaries
+             ↓
+          Discover Domain Primitives
+             ↓
+          Validate primitives
+             ↓
+          Design Ontology Map
+             · Facets      · Entities   · Relationships  · Constraints
+             · States      · Events     · Cognition      · Coordination
+             ↓
+          Business Architecture
+             ↓
+          AI Architecture
+             ↓
+          Ontology Engineering
+             ↓
+          Implementation
+```
+
+**Current position: Phase 0, not started.**
+
+---
+
+## Standing rules
+
+These exist because the previous foundation failed by violating them.
+
+1. **No document becomes authoritative by being written.** The previous repository
+   promoted its own derived summaries to canonical status and then derived 176,000 words
+   from them without re-checking source. Authority comes from the two files above and
+   nowhere else.
+2. **No self-citation as evidence.** The deleted discovery corpus contained 171 files and
+   zero external citations — it cited only itself. A document may not be its own warrant.
+3. **No phase may be anticipated.** Design frameworks written before the design phase,
+   architecture written before the ontology, and vocabulary written before primitives all
+   caused the previous failure. Write things when the sequence reaches them.
+4. **Structure follows reality, not process.** Business Logic V1 organises humanitarian
+   reality by model — Human, Family, Household, Community, Needs, Vulnerability, Risk,
+   Support, Outcome. The previous foundation reorganised it by operational function
+   (registration, casework, logistics, evaluation) and consequently described the
+   processes applied to people without ever describing the people.
+5. **Scope exclusions are binding.** Business Logic V1 §17 excludes the donor and
+   resource-supply side, resource allocation at scale, predictive engines, and runtime
+   orchestration. The previous foundation built discovery domains for several of these
+   anyway, via internal decisions that overrode the source document.
+
+---
+
+## Open ruling required before primitives
+
+"Domain Primitive" has been used two incompatible ways, and the entire ontology derives
+from which is meant:
+
+- **as a concrete irreducible of reality** → admits *Person*, *Household*, *Need*
+- **as a category of concept** → admits *Identity*, *Relation*, *Condition*, and rejects
+  *Person* as too concrete to sit above a layer named Entities
+
+This was previously decided unilaterally inside a working document. It needs an explicit
+ruling from the Project Lead before primitive discovery begins.
