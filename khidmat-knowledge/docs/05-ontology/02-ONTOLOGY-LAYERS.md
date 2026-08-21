@@ -1,4 +1,4 @@
-﻿# 2 — Ontology Layers
+# 2 — Ontology Layers
 
 **Ontology Design, step 2 of 7.** Status: **DRAFT.**
 
@@ -76,7 +76,7 @@ States layer cannot yet be populated.** That is not a defect in this layer — s
 | Person | lifecycle stage; capability type (physical · cognitive · educational · economic · caregiving); health dimension (acute · chronic · disability · mental · nutritional); documentation status | RM §3.3–3.5, §3.2 | Blueprint only |
 | Household | housing tenure; utilities; shelter condition; resilience components (buffering · role substitution · caregiving and decision continuity · recovery resources) | RM §4.2 | Blueprint only |
 | Community | settlement type; service access (distance **and** quality); livelihood pattern; seasonal hazard | RM §4.4, §5.2 | Blueprint only |
-| Need — **see §12.2, provisionally placed** | category (seven); severity; lifecycle status | RM §7.3–7.4 | Blueprint only |
+| Need | category (seven); severity; lifecycle status | RM §7.3–7.4 | Blueprint only |
 | Risk — **see §12.1, unplaced** | horizon; trend; severity | RM §8.1–8.2 | **Evidence not found** — RM §8 has zero external citations |
 | Support | **Sector × Modality × Temporal Phase** | RM §13.2 | **Strong** — IASC, CVA standards, Triple Nexus (BD-TD06-001) |
 | Claim | completeness; internal consistency | RM §10.1 | Blueprint only |
@@ -174,6 +174,7 @@ anything true of one thing alone is a State.
 | Referral | Organisation ↔ Organisation | RM §12.1 | **Strong** — BD-TD04-002 (CFM referral pathways) |
 | Handoff of a service | Capability ↔ Capability | RM §12.3 | **Strong** — BD-TD05-003 |
 | Adoption of a family | Donor ↔ Household | RM §16.4 | **None** — absent from every source |
+| Need | Subject ↔ Norm | RM §7.1 | Blueprint |
 
 ### 4.2 The asymmetry this layer must not conceal
 
@@ -254,7 +255,7 @@ as §16.5 gap). The constraint is admitted; its parameters are absent.
 | Person — lifecycle stage | nine developmental stages | RM §3.3 | Blueprint; separation-from-programme-status corroborated by BD-TD03-004 |
 | Household — shelter | safe · damaged · flood-prone · leaking | RM §4.2 | **Blueprint only** |
 | Household — resilience | absorptive, adaptive, recovery capacity | RM §4.2 | **Blueprint only** |
-| Need — **see §12.2, provisionally placed** | open → severity change → resolved or expired | RM §7.4 | **Blueprint only** |
+| Need | open → severity change → resolved or expired | RM §7.4 | **Blueprint only** |
 | Vulnerability | composite, emergent from compounding factors | RM §8.4 | **Blueprint only**; composition rule `[OPEN]` |
 | Engagement | identified → registration_initiated → registered → verification_pending → active → engaged → monitored → suspended → review_required → exited | RM §14.2 | Separation from developmental trajectory **corroborated** — BD-TD03-004 |
 | Outcome | improved · held · deteriorated | RM §15.3 | Blueprint |
@@ -531,7 +532,7 @@ The following domain concepts, previously marked [OPEN], are now formally resolv
 *   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* (Primitive) is an Entity. Its establishment is an *Epistemic Stance* (Layer 7) grounded by *Evidence* (Primitive). Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
 *   **Undocumented Status (RM §3.2):** Ontologically, this is the absence of *Evidence* (Cognition), which simultaneously instantiates as a *Constraint* (Layer 4) limiting formal Coordination Patterns, and a *Condition* (Layer 5) aggravating Vulnerability.
 *   **Wellbeing Standard (RM §3.6):** Structurally a *Norm* (Layer 4) that is strictly *Context-dependent* (Layer 1). A Need is a *Relation* between a Subject's State and this Context-bound Norm.
-*   **Family vs Household (RM §4.3):** Both are *Relational Structures* (Layer 3). *Family* is bounded by kinship/legal guardianship (highly persistent). *Household* is bounded by co-residence/shared economy (volatile). A Subject can hold relationships to both concurrently.
+*   **Family vs Household (RM §4.3):** Both are *Entities* (Layer 2) rather than merely Relational Structures, as they have their own trajectories and conditions. *Family* is bounded by kinship/legal guardianship (highly persistent). *Household* is bounded by co-residence/shared economy (volatile). A Subject can hold relationships to both concurrently.
 *   **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Layer 1) that cascades *Constraints* (Layer 4) and *Conditions* (Layer 5) down to Subjects. Its phase is a temporal *State* of that Context.
 *   **Orphanhood vs Unguardianed (RM §6.3):** *Orphanhood* is an irreversible *State* (Layer 5) of a kinship Relation (Layer 3). *Unguardianed* is a reversible *State* of a caregiving Relation.
 *   **Need Interactions (RM §7.5):** Needs (Relations) interact via *Dependency Relationships* (Layer 3).
@@ -555,9 +556,6 @@ open tensions carried intact (§12).
 **Cannot be populated:** giving-side entities and patterns (§3.3, §9.4); values within every human
 facet (§2.3, §6.3); evidence kinds (§8.5).
 
-**Blocking for the next phase:** None. The Risk ruling (A 12.1) has been resolved as a Condition/Epistemic Stance split in Stage 3.
+**Blocking for the next phase:** None structurally, but the Risk ruling (A-06) remains explicitly open pending a Project Lead decision, carried as a dual Condition/Epistemic Stance provisional placement.
 
-**Foundation status:**  1-DOMAIN-PRIMITIVES.md is structurally frozen. Every layer above inherits that stability. The 8 Layers are structurally frozen.
-
-
-
+**Foundation status:** `01-DOMAIN-PRIMITIVES.md` is structurally frozen (pending Phase 1 R-1 and R-7 validation). Every layer above inherits that stability. The 8 Layers are structurally frozen.

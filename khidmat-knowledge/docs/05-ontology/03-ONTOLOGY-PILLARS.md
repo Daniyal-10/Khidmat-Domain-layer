@@ -1,4 +1,4 @@
-﻿# 3 â€” Ontology Pillars
+# 3 â€” Ontology Pillars
 
 **Ontology Design, step 3 of 7.** Status: **DRAFT.**
 
@@ -32,7 +32,7 @@ The pillars are derived systematically:
 **Supporting primitives:** Identity (P5), Relation (P8), Condition (P1), Norm (P6).
 **RM concepts within it:** Person, Family, Household, Lifecycle, Capability, Dependency.
 **Why it is a pillar:** It is the persistent "who" of humanitarian reality. It cannot be reduced to an application module or an entity record because it encompasses identity, social connections, and spanning conditions (capabilities). It exists whether or not help is provided.
-**Boundary:** Universal. India-specific localizations (e.g., Aadhaar, Ration Card, joint-family structures) will extend this at Level 2, but the core pillar is independent of jurisdiction.
+**Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific national ID systems or joint-family structures) will extend this at Level 2, but the core pillar is independent of jurisdiction.
 **What remains outside:** The environment they live in, the acute deficits they suffer, and their interactions with NGOs.
 
 ### Pillar II: Context & Environment
@@ -41,7 +41,7 @@ The pillars are derived systematically:
 **Supporting primitives:** Context (P2).
 **RM concepts within it:** Geography, Seasonality, Hazard, Local Economy, Distance to services, Settlement type.
 **Why it is a pillar:** It scopes reality. The same damaged roof is a minor repair or an emergency depending on the season and location. It provides the frame within which all other pillars operate.
-**Boundary:** Universal. India-specific localizations (e.g., Monsoons, Gram Panchayats, Tehsils) will specialize the context dimensions, but Context itself is universal.
+**Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific administrative boundaries or monsoon seasons) will specialize the context dimensions, but Context itself is universal.
 **What remains outside:** The actors and the specific needs.
 
 ### Pillar III: Vulnerability & Need
@@ -60,7 +60,7 @@ The pillars are derived systematically:
 **Supporting primitives:** Epistemic Stance (P3), Evidence (P4), Norm (P6).
 **RM concepts within it:** Claims, Findings, Evidence, Confidence, Uncertainty, Contradiction, Missing Information, Epistemic weight of actors.
 **Why it is a pillar:** Humanitarian reality is defined by contested, partial, and evolving information. Two actors can hold different epistemic stances about the same Human Subject. This pillar governs AI reasoning, verification boundaries, and human oversight. It guarantees that cognition is a first-class feature of the ontology, not an afterthought.
-**Boundary:** Universal. India-specific localizations (e.g., BPL cards as specific evidence artifacts) will map here, but the epistemic structure is universal.
+**Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific poverty-line cards as evidence artifacts) will map here, but the epistemic structure is universal.
 **What remains outside:** Ground truth reality (Pillars I and III).
 
 ### Pillar V: Actors & Ecosystem
@@ -69,7 +69,7 @@ The pillars are derived systematically:
 **Supporting primitives:** Identity (P5), Relation (P8), Norm (P6).
 **RM concepts within it:** Organisations, Programmes, Donors, Community Groups, Governments, Accountability.
 **Why it is a pillar:** It models the resource and response side of the equation. It is distinct from the human subject and is necessary to represent accountability, funding chains, and ecosystem coordination.
-**Boundary:** Universal. India-specific localizations (e.g., FCRA rules, Indian NGOs, State government bodies) will populate this layer, but the structure is universal.
+**Boundary:** Universal. Jurisdiction-specific localizations (e.g., local charity regulations or specific government bodies) will populate this layer, but the structure is universal.
 **What remains outside:** The specific actions they take (Events).
 
 ### Pillar VI: Action & Coordination
@@ -87,7 +87,7 @@ The pillars are derived systematically:
 **Supporting primitives:** Identity (P5), Condition (P1), Occurrence (P7).
 **RM concepts within it:** Interventions, Sector Ã— Modality Ã— Phase, Cash, In-kind, Giving, Matching.
 **Why it is a pillar:** The giving side (donors, resources) needs equal representation to the receiving side to enable the full Khidmat vision. Support is an artifact distinct from the Action of delivering it or the Actor funding it.
-**Boundary:** Universal. India-specific localizations (e.g., UPI transfers, specific ration items) sit at Level 2.
+**Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific digital payment transfers or local ration items) sit at Level 2.
 **What remains outside:** Needs (what it targets), Actors (who gives it).
 
 ---
@@ -142,18 +142,14 @@ Pillar IV explicitly models:
 
 ---
 
-## 7. Universal vs India-localization boundary (Jurisdiction Strategy)
+## 7. Universal vs Localization boundary (Jurisdiction Strategy)
 
 The pillars enforce a strict two-level jurisdiction strategy:
 
 * **Level 1 (Universal Ontology):** All 7 pillars and their foundational concepts (Person, Need, Resource, Identity, Geography) are universally applicable to any humanitarian context globally.
-* **Level 2 (India Localization):** India-specific concepts specialize the universal ontology but do not define it.
-  * Aadhaar/PAN specialize *Identity Document* (Pillar I).
-  * Gram Panchayat / Tehsil specialize *Geography/Community* (Pillar II).
-  * Ayushman Bharat specializes *Programme* (Pillar V).
-  * UPI transfers specialize *Support Modality* (Pillar VII).
+* **Level 2 (Jurisdiction Localization):** Jurisdiction-specific concepts specialize the universal ontology but do not define it. (e.g., a specific national ID specializing *Identity Document*, or a specific local government tier specializing *Geography/Community*).
 
-The ontology is fully capable of supporting future localization for the UAE, Pakistan, USA, or UK by swapping the Level 2 specializations without altering the 7 fundamental pillars.
+The ontology is fully capable of supporting localization for any specific jurisdiction (e.g., Pakistan, UAE, USA, or UK) by adding Level 2 specializations without altering the 7 fundamental pillars.
 
 ---
 
@@ -161,10 +157,10 @@ The ontology is fully capable of supporting future localization for the UAE, Pak
 
 The primary structural tensions have been formally resolved:
 
-1. **Risk Placement:** Risk is classified as a *Condition* (Pillar III). Confidence *about* a Risk is an *Epistemic Stance* (Pillar IV).
-2. **Need Placement:** Need is fundamentally a *Relation* (a gap between a state and a standard) with Condition-like temporal behaviour.
-3. **Outcome / Impact Ownership:** Outcome/Impact is a separate discipline, independent of the case journey (Pillar VI).
-4. **Family Structure vs Household (RM §4.3):** Both are *Relational Structures*. *Family* is bounded by kinship (persistent). *Household* is bounded by co-residence/shared economy (volatile).
+1. **Risk Placement (PROVISIONAL):** Pending Project Lead ruling, Risk is provisionally classified as a *Condition* (Pillar III). Confidence *about* a Risk is an *Epistemic Stance* (Pillar IV).
+2. **Need Placement (PROVISIONAL):** Pending Project Lead ruling, Need is provisionally modeled as a *Relation* (a gap between a state and a standard) with Condition-like temporal behaviour.
+3. **Outcome / Impact Ownership (PROVISIONAL):** Pending Project Lead ruling, Outcome/Impact is provisionally modeled as a separate discipline, independent of the case journey (Pillar VI).
+4. **Family Structure vs Household (RM §4.3):** Both are *Entities*. *Family* is bounded by kinship (persistent). *Household* is bounded by co-residence/shared economy (volatile).
 5. **States vs Events Boundary:** The point-versus-span distinction derives structurally from RM quarantining actions from ongoing reality.
 6. **Service Providers as Actors:** Government, healthcare, schools, and employers are modeled as Actors (Entities) with agency (Pillar V).
 7. **Humanitarian Situations:** Open-world. New situations emerge dynamically without requiring a schema update.
@@ -181,17 +177,17 @@ The primary structural tensions have been formally resolved:
 
 **Remaining Open Tensions:**
 
-**NONE.** There are zero unresolved foundational ontology decisions. Future domain population, India-specific localization, exact taxonomies, practitioner enrichment, and implementation details (algorithms/database schemas) remain open, but the foundational ontology itself is completely resolved and structurally frozen.
+At minimum, Risk placement, Need placement, and Outcome/Impact ownership remain as explicit ontology-author judgements awaiting Project Lead rulings. Furthermore, per the Phase-1 review (R-1), the definitional ruling of a primitive remains open, and per (R-7), the structure must not be fully closed on current evidence until practitioner validation is complete. Future domain population, jurisdiction-specific localization, exact taxonomies, practitioner enrichment, and implementation details remain open. The foundational ontology is provisionally resolved but not yet structurally frozen.
 
 ---
 
 ## 9. Stage 3 completion status
 
-* **Stage 1 (Domain Primitives):** Frozen (Structure).
-* **Stage 2 (Ontology Layers):** Frozen (Structure).
-* **Stage 3 (Ontology Pillars):** Frozen (Structure).
+* **Stage 1 (Domain Primitives):** Provisionally Frozen (pending rulings and validation).
+* **Stage 2 (Ontology Layers):** Provisionally Frozen (pending rulings and validation).
+* **Stage 3 (Ontology Pillars):** Provisionally Frozen (pending rulings and validation).
 
-Architecture has **NOT** been designed yet. We are now ready to proceed to Stage 4 � Architecture Rules. The Stage 1-3 foundation is structurally **frozen**. While Tier A practitioner validation of human/social primitives is still pending, practitioner validation exists to validate and enrich the ontology, it will not reopen the structural foundation unless evidence identifies a genuine structural category that cannot be represented. Architecture design may now proceed.
+Architecture has **NOT** been designed yet. The Stage 1-3 foundation is **provisionally frozen**, pending specific Project Lead rulings (Risk, Need, Outcome) and Tier A practitioner validation of human/social primitives. While practitioner validation exists to validate and enrich the ontology, it will not reopen the structural foundation unless evidence identifies a genuine structural category that cannot be represented.
 
 
 
