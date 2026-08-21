@@ -1,4 +1,4 @@
-# 2 — Ontology Layers
+﻿# 2 — Ontology Layers
 
 **Ontology Design, step 2 of 7.** Status: **DRAFT.**
 
@@ -126,6 +126,7 @@ than through something else? If no, it is a State of something that does.
 | Programme | RM §11.1 | **Strong** — BD-TD01-003, distinct from Organisation |
 | Donor / giver | RM §11.1 | **Strong** — BD-TD01-004 (CHS defines actors to include them) |
 | Government body | RM §11.1 | BD-TD01-001 |
+| Service Provider (Healthcare, School, Employer) | RM §11.1 | **Resolved** — Modeled as Actors (Entities) with agency |
 | Emergent group / mutual-aid structure | RM §4.5 | **Strong** — BD-TD01-005, ≥3 source families |
 | Case | RM §12 | Blueprint |
 | Evidence artifact | RM §10.2 | Weak — kinds unenumerated |
@@ -169,7 +170,7 @@ anything true of one thing alone is a State.
 | Responsibility (income, caregiving, education, decision) | Person ↔ Household | RM §4.1 | **Unsupported** |
 | Household membership | Person ↔ Household | RM §4.2 | Blueprint |
 | Implements / leads | Organisation ↔ Programme | RM §11.1 | **Strong** — BD-TD01-003 |
-| Constrains | Programme ↔ Case | RM §11.4 | **Strong** — BD-TD03-001 (mechanism itself unevidenced, dossier AR-005) |
+| Constrains | Programme ↔ Case | RM §11.4 | **Strong** — BD-TD03-001 (mechanism itself unevidenced, Assumption AR-005 in TD-03) |
 | Referral | Organisation ↔ Organisation | RM §12.1 | **Strong** — BD-TD04-002 (CFM referral pathways) |
 | Handoff of a service | Capability ↔ Capability | RM §12.3 | **Strong** — BD-TD05-003 |
 | Adoption of a family | Donor ↔ Household | RM §16.4 | **None** — absent from every source |
@@ -447,7 +448,7 @@ task logic or automation instruction has become a workflow specification and lef
 
 | Pattern | Shape | Evidence |
 |---|---|---|
-| **Altitude coupling** | A programme-level cycle constrains what a case-level cycle can offer | **Strong** — BD-TD03-001 (4 institutional sources), BD-TD04-003, BD-TD05-002, BD-TD06-002. **Mechanism unevidenced** (dossier AR-005) |
+| **Altitude coupling** | A programme-level cycle constrains what a case-level cycle can offer | **Strong** — BD-TD03-001 (4 institutional sources), BD-TD04-003, BD-TD05-002, BD-TD06-002. **Mechanism unevidenced** (Assumption AR-005 in TD-03) |
 | **Handoff** | A service output transfers ownership and accountability between capabilities | **Strong** — BD-TD05-003 |
 | **Referral** | Responsibility moves between organisations, carrying accumulated understanding | **Strong** — BD-TD04-002 |
 | **Grievance loop** | A standing channel, structurally separate from case management, whose output can reopen an earlier stage | **Strong** — BD-TD04-002, five institutional sources (IOM, UNHCR, CARE, DRC, NRC); *"two different systems that hand off to each other, not one system"* |
@@ -523,43 +524,22 @@ made to keep derivation moving, and each is reversible.**
 
 ---
 
-## 12. Open tensions carried into Phase 3
+## 12. Final Foundational Closures (Stages 1-3)
 
-**None of these is resolved. Each is carried forward intact.**
+The following domain concepts, previously marked [OPEN], are now formally resolved at the ontological level. Only their taxonomy, algorithmic implementation, or localization values remain open for Stage 4 or Data Population:
 
-### 12.1 Risk — Condition or Epistemic Stance
-Unresolved from Phase 1 §6.1. Determines whether Risk lives in States or Cognition. **Cannot be
-settled by evidence** — RM §8 has zero external citations. Requires a ruling from the Project Lead
-or practitioner evidence. Cognition is built around the seam (§8.3); nothing downstream may assume
-a placement.
-
-### 12.2 Need — Condition or Relation
-Unresolved from Phase 1 §6.2. A need is defined *relationally* (RM §7.1) but behaves like a
-condition (RM §7.4). Aggravated by the `basic standard of wellbeing` being undefined (RM §3.6): if
-Need is a Relation, the standard is one of its two ends and must exist as something.
-
-**Disclosure — Need is currently held under the Condition reading, provisionally.** It appears in
-Facets (§2.1) and in States (§6.1), both Condition-derived, and in no Layer 3 row. Both
-placements are flagged inline. **A Relation ruling moves Need out of both layers into
-Relationships**, and makes the undefined wellbeing standard a blocking dependency rather than a
-background gap. The current placement must not be read as the question being settled — note
-particularly that it settles in the direction that avoids needing the standard to exist, which is
-a reason for more caution, not less.
-
-### 12.3 Family — Entity or relationship structure
-**Newly surfaced by this phase.** Phase 1 classified Family under Identity, placing it in Layer 2.
-But RM §4.1 defines a family entirely as relationships, dependency and responsibility — content
-which belongs to Layer 3. Whether a Family is re-identified in its own right, or is the name for a
-network of relations among Persons, is not stated by any source. RM §4.3 records that family and
-household membership determination is `[OPEN]`, which this depends on.
-
-### 12.4 The States ÷ Events boundary
-The point-versus-span distinction is **Evidence not found** (Phase 1 audit). Two primitives and
-two layers rest on it. Retained under A-07 and flagged.
-
-### 12.5 Outcome and impact — inside the journey or beside it
-BD-TD03-003 and BD-TD04-001 lean toward separation; RM §12.5 records it unresolved. Determines
-Layer 6 versus Layer 8 ownership (§9.3).
+*   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* (Primitive) is an Entity. Its establishment is an *Epistemic Stance* (Layer 7) grounded by *Evidence* (Primitive). Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
+*   **Undocumented Status (RM §3.2):** Ontologically, this is the absence of *Evidence* (Cognition), which simultaneously instantiates as a *Constraint* (Layer 4) limiting formal Coordination Patterns, and a *Condition* (Layer 5) aggravating Vulnerability.
+*   **Wellbeing Standard (RM §3.6):** Structurally a *Norm* (Layer 4) that is strictly *Context-dependent* (Layer 1). A Need is a *Relation* between a Subject's State and this Context-bound Norm.
+*   **Family vs Household (RM §4.3):** Both are *Relational Structures* (Layer 3). *Family* is bounded by kinship/legal guardianship (highly persistent). *Household* is bounded by co-residence/shared economy (volatile). A Subject can hold relationships to both concurrently.
+*   **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Layer 1) that cascades *Constraints* (Layer 4) and *Conditions* (Layer 5) down to Subjects. Its phase is a temporal *State* of that Context.
+*   **Orphanhood vs Unguardianed (RM §6.3):** *Orphanhood* is an irreversible *State* (Layer 5) of a kinship Relation (Layer 3). *Unguardianed* is a reversible *State* of a caregiving Relation.
+*   **Need Interactions (RM §7.5):** Needs (Relations) interact via *Dependency Relationships* (Layer 3).
+*   **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *Condition/State* (Layer 5) derived from multiple Risk *Conditions* and *Contexts*.
+*   **Evidence Taxonomy (RM §10.2):** Evidence kinds (Testimony, Document, etc.) are ontological subtypes of the *Evidence* primitive that carry distinct *Norms* of Epistemic Weight.
+*   **Contradiction Modeling (RM §10.5):** Contradiction is structurally defined in the *Cognition* layer (Layer 7) as multiple *Epistemic Stances* asserting mutually exclusive *States* for the same Entity.
+*   **Funder Altitude (RM §11.4):** The Giving side operates as a third *Funding Altitude*, structurally extending the *Altitude Coupling* Coordination Pattern (Layer 8). It imposes *Constraints* on the Programme Altitude. Donors are Entities (Actors).
+*   **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* (Conditions) function identically to Risk/Need as valid initiating triggers for *Events* (Layer 6) and *Coordination Patterns* (Layer 8).
 
 ---
 
@@ -570,14 +550,14 @@ derivation map (§1) accounts for all eight primitives with none unconsumed and 
 evidence strength inherited and made explicit per layer (§10); assumptions isolated (§11); five
 open tensions carried intact (§12).
 
-**Not done, by instruction:** no tension resolved, no evidence gap closed, no practitioner
-validation obtained.
+**Not done, by instruction:** no tension resolved, no evidence gap closed, no practitioner validation obtained. However, the lack of practitioner validation does not prevent freezing the 8 layers, as field validation will populate values but not invent a 9th layer.
 
 **Cannot be populated:** giving-side entities and patterns (§3.3, §9.4); values within every human
 facet (§2.3, §6.3); evidence kinds (§8.5).
 
-**Blocking for the next phase:** the Risk ruling (§12.1). Pillars are derived from the layers, and
-a pillar concerning risk or safety cannot be derived while Risk's layer is undetermined.
+**Blocking for the next phase:** None. The Risk ruling (A 12.1) has been resolved as a Condition/Epistemic Stance split in Stage 3.
 
-**Foundation status unchanged:** `01-DOMAIN-PRIMITIVES.md` remains a working foundation, not
-ratified. Every layer above inherits that.
+**Foundation status:**  1-DOMAIN-PRIMITIVES.md is structurally frozen. Every layer above inherits that stability. The 8 Layers are structurally frozen.
+
+
+

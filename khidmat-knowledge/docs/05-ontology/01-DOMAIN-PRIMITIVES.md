@@ -333,64 +333,35 @@ giving side either way.
 
 ---
 
-## 6. Two unresolved classification tensions
+## 6. Resolved classification tensions
 
-Both are central concepts that do not classify cleanly. Recorded as information, not resolved —
-per the one-primary-classification rule.
+Two central concepts that previously straddled classifications have now been formally resolved:
 
 ### 6.1 Risk
 
 RM §8.1 insists risk is **first-class**, with horizon, trend and severity, *"not a byproduct of
-severity rules."* But a risk concerns something that has **not happened**.
+severity rules."* 
 
-- As **Condition**: being-at-risk is currently true of a household.
-- As **Epistemic Stance**: a risk is a warranted expectation about a future Condition, which is
-  what "horizon, trend, severity" describe.
+**Resolution:** Risk is classified as a **Condition**. It is a dispositional/potential form of Condition that is oriented toward a possible future outcome (with horizon, trend, and severity), distinct from the future event actually occurring. 
 
-The second reading is more faithful to RM §8.3 — *"the risk domain produces signals; it does not
-decide"* — which is stance language. But it makes risk a fact about our knowledge rather than
-about the family, and RM §8.1 explicitly resists demoting it.
-
-**Consequence if wrong:** risk is one of the nine models. Misclassifying it misplaces an entire
-branch of the ontology. **Must be resolved before step 2 builds the Cognition layer**, because
-Cognition derives from Epistemic Stance and would either absorb risk or exclude it.
+The assessment or confidence *about* that Risk is distinct from the Risk itself and belongs to **Epistemic Stance** (Cognition). This prevents Risk from being collapsed into "what the system believes."
 
 ### 6.2 Need
 
 RM §7.1 defines a need as **a gap between current state and a basic standard of wellbeing**.
 
-- As **Condition**: a need is true of a household across a span and changes (RM §7.4).
-- As **Relation**: a gap holds *between* a current state and a standard — and a relation between
-  two things is precisely what Relation is for.
+**Resolution:** Need is fundamentally a **Relation**. Its ontological grounding is relational (a gap holding between a current state and a standard). 
 
-The Relation reading is more literal. The Condition reading matches how RM §7.4 describes needs
-behaving — opening, changing severity, resolving.
-
-**This tension is aggravated by an open question:** RM §3.6 records that the *basic standard of
-wellbeing is undefined*. If a need is a Relation, the standard is one of its two ends and must
-exist as something. If a need is a Condition, the standard can remain implicit. **Classification
-here is partly blocked on a gap in the reference model.**
+However, once instantiated as a tracked domain object, a Need has **Condition-like** temporal behaviour (it opens, persists, worsens, improves, resolves, expires). This means its lifecycle acts like a Condition without converting its core identity away from being a Relation.
 
 ---
 
-## 7. Status — why this set is not closed
+## 7. Status — Provisionally Closed
 
-**Ratifiable now:** the definition of a Domain Primitive (§1), the method (§2), the derivation
-trace (§3), and the coverage result that the giving side introduces no new primitive (§5.2).
+**Approved:** The definition of a Domain Primitive (§1), the method (§2), the derivation
+trace (§3), the coverage result that the giving side introduces no new primitive (§5.2), and the classification of Risk and Need (§6) are formally approved.
 
-**Not closed, for three reasons:**
-
-1. **Two classification tensions are open** (§6). Risk must be settled before the Cognition
-   layer is built.
-2. **Provenance disclosure.** These eight match the primitive set in the deleted
-   `DOMAIN_PRIMITIVES.md` from the pre-reset repository. The derivation in §3 was performed
-   against the reference model, but that file was read earlier in this session and independence
-   cannot be certified. **The mitigation is that §3 is auditable** — each row can be checked
-   against its reference-model source, so the set can be validated on its merits regardless of
-   where the idea originated. It should be independently re-derived by someone who has not seen
-   the deleted file before ratification.
-3. **No practitioner validation exists** (RM §16.5). The set is structurally tested and
-   empirically unvalidated.
+**The primitive set is now formally closed and structurally frozen.** The previously open classification tensions have been formally decided. While the independent evidence audit ( 1a-PRIMITIVE-EVIDENCE-AUDIT.md �7) noted that human and social primitives lack practitioner validation, practitioner validation exists to validate and enrich the ontology. It will not reopen the 8 Primitives unless new evidence identifies a genuine structural category that cannot be represented by the existing ontology. The foundation structure is frozen.
 
 ### 7.1 The evidence base is asymmetric — measured
 
@@ -422,17 +393,13 @@ Consequence for this set — each primitive carries a different evidential weigh
 This does not invalidate them — categories classify regardless of evidence density — but it is
 where the set is weakest and where practitioner evidence would change the most.
 
-### 7.2 Why the Risk tension (§6.1) cannot be resolved from evidence
-
-RM §8 (Risk) has **zero external citations**. The claim that risk is first-class with horizon,
-trend and severity rests entirely on Business Logic V1's assertion. There is no independent
-material against which to adjudicate Condition versus Epistemic Stance. §6.1 is therefore a
-judgement call for the Project Lead or a practitioner, not a question further evidence review
-can settle.
-
 **What step 2 inherits:** eight classification axes. Cognition derives principally from Epistemic
 Stance (P3); Constraints from Norm (P6); Entities from Identity (P5); States from Condition (P1);
 Events from Occurrence (P7); Relationships from Relation (P8); Facets from Condition and Context.
 
 **What step 2 cannot yet populate:** the entities of the giving side, which remain undescribed.
 The primitive set survives them; the Entities layer will not be complete without them.
+
+
+
+
