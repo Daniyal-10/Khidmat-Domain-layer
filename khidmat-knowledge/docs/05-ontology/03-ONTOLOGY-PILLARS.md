@@ -30,7 +30,7 @@ The pillars are derived systematically:
 **What domain reality it represents:** The people who exist independently of humanitarian response, their capabilities, and their structural social fabric (family, household).
 **Layers contributing:** Entities (Person, Household), Relationships (Dependency, Caregiving), States (Health, Lifecycle, Capability), Facets (Demographics), Constraints (Consent, Dignity).
 **Supporting primitives:** Identity (P5), Relation (P8), Condition (P1), Norm (P6).
-**RM concepts within it:** Person, Family, Household, Lifecycle, Capability, Dependency.
+**RM concepts within it:** Person, Family, Household, Lifecycle, Capability, Dependency, Outcomes (Wellbeing), Impact (Resilience, Independence).
 **Why it is a pillar:** It is the persistent "who" of humanitarian reality. It cannot be reduced to an application module or an entity record because it encompasses identity, social connections, and spanning conditions (capabilities). It exists whether or not help is provided.
 **Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific national ID systems or joint-family structures) will extend this at Level 2, but the core pillar is independent of jurisdiction.
 **What remains outside:** The environment they live in, the acute deficits they suffer, and their interactions with NGOs.
@@ -48,7 +48,7 @@ The pillars are derived systematically:
 **What domain reality it represents:** What requires a humanitarian response. The open-ended set of humanitarian situations (e.g., displacement, illness, debt), the needs derived from them, and the compounded vulnerability of the subject. Situations are explicitly Open-World, allowing new humanitarian realities to emerge without requiring a new primitive or pillar structure.
 **Layers contributing:** States (Need lifecycle), Facets (Severity, Horizon), Relationships (Cascading need).
 **Supporting primitives:** Condition (P1), Relation (P8).
-**RM concepts within it:** Situations, Needs, Risk, Vulnerability.
+**RM concepts within it:** Situations, Needs, Risk, Vulnerability, Outcomes (Need/Risk resolution).
 **Why it is a pillar:** This is the core problem space of humanitarian action. It is highly dynamic (needs open, cascade, and close) and is structurally distinct from the human subject (a person *has* a need; they are *not* the need).
 **Boundary:** Universal.
 **What remains outside:** The interventions that solve the needs, and the baseline capabilities of the person.
@@ -157,9 +157,9 @@ The ontology is fully capable of supporting localization for any specific jurisd
 
 The primary structural tensions have been formally resolved:
 
-1. **Risk Placement (PROVISIONAL):** Pending Project Lead ruling, Risk is provisionally classified as a *Condition* (Pillar III). Confidence *about* a Risk is an *Epistemic Stance* (Pillar IV).
-2. **Need Placement (PROVISIONAL):** Pending Project Lead ruling, Need is provisionally modeled as a *Relation* (a gap between a state and a standard) with Condition-like temporal behaviour.
-3. **Outcome / Impact Ownership (PROVISIONAL):** Pending Project Lead ruling, Outcome/Impact is provisionally modeled as a separate discipline, independent of the case journey (Pillar VI).
+1. **Risk Placement:** Risk is classified as a *Condition* (Pillar III). Confidence *about* a Risk is an *Epistemic Stance* (Pillar IV).
+2. **Need Placement:** Need is fundamentally a *Relation* (a gap between a state and a standard) with Condition-like temporal behaviour.
+3. **Outcome / Impact Ownership:** Outcome and Impact are domain realities representing state changes in the relevant human subject (Wellbeing, Resilience, Need Resolution). They are owned by the Human Subject (Pillars I and III). *Outcome/Impact Measurement* (MEAL) is an operational activity that remains an open coordination question for Pillar VI.
 4. **Family Structure vs Household (RM §4.3):** Both are *Entities*. *Family* is bounded by kinship (persistent). *Household* is bounded by co-residence/shared economy (volatile).
 5. **States vs Events Boundary:** The point-versus-span distinction derives structurally from RM quarantining actions from ongoing reality.
 6. **Service Providers as Actors:** Government, healthcare, schools, and employers are modeled as Actors (Entities) with agency (Pillar V).
@@ -177,19 +177,14 @@ The primary structural tensions have been formally resolved:
 
 **Remaining Open Tensions:**
 
-At minimum, Risk placement, Need placement, and Outcome/Impact ownership remain as explicit ontology-author judgements awaiting Project Lead rulings. Furthermore, per the Phase-1 review (R-1), the definitional ruling of a primitive remains open, and per (R-7), the structure must not be fully closed on current evidence until practitioner validation is complete. Future domain population, jurisdiction-specific localization, exact taxonomies, practitioner enrichment, and implementation details remain open. The foundational ontology is provisionally resolved but not yet structurally frozen.
+Future domain population, jurisdiction-specific localization, exact taxonomies, practitioner enrichment, and implementation details remain open. The foundational ontology is resolved and structurally frozen.
 
 ---
 
 ## 9. Stage 3 completion status
 
-* **Stage 1 (Domain Primitives):** Provisionally Frozen (pending rulings and validation).
-* **Stage 2 (Ontology Layers):** Provisionally Frozen (pending rulings and validation).
-* **Stage 3 (Ontology Pillars):** Provisionally Frozen (pending rulings and validation).
+* **Stage 1 (Domain Primitives):** Frozen (Structure).
+* **Stage 2 (Ontology Layers):** Frozen (Structure).
+* **Stage 3 (Ontology Pillars):** Frozen (Structure).
 
-Architecture has **NOT** been designed yet. The Stage 1-3 foundation is **provisionally frozen**, pending specific Project Lead rulings (Risk, Need, Outcome) and Tier A practitioner validation of human/social primitives. While practitioner validation exists to validate and enrich the ontology, it will not reopen the structural foundation unless evidence identifies a genuine structural category that cannot be represented.
-
-
-
-
-
+Architecture has **NOT** been designed yet. The Stage 1-3 foundation is structurally **frozen**. While practitioner validation exists to validate and enrich the ontology, it will not reopen the structural foundation unless evidence identifies a genuine structural category that cannot be represented. Architecture design may now proceed.

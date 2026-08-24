@@ -1,4 +1,4 @@
-# 2 — Ontology Layers
+﻿# 2 — Ontology Layers
 
 **Ontology Design, step 2 of 7.** Status: **DRAFT.**
 
@@ -77,7 +77,7 @@ States layer cannot yet be populated.** That is not a defect in this layer — s
 | Household | housing tenure; utilities; shelter condition; resilience components (buffering · role substitution · caregiving and decision continuity · recovery resources) | RM §4.2 | Blueprint only |
 | Community | settlement type; service access (distance **and** quality); livelihood pattern; seasonal hazard | RM §4.4, §5.2 | Blueprint only |
 | Need | category (seven); severity; lifecycle status | RM §7.3–7.4 | Blueprint only |
-| Risk — **see §12.1, unplaced** | horizon; trend; severity | RM §8.1–8.2 | **Evidence not found** — RM §8 has zero external citations |
+| Risk | horizon; trend; severity | RM §8.1–8.2 | **Evidence not found** — RM §8 has zero external citations |
 | Support | **Sector × Modality × Temporal Phase** | RM §13.2 | **Strong** — IASC, CVA standards, Triple Nexus (BD-TD06-001) |
 | Claim | completeness; internal consistency | RM §10.1 | Blueprint only |
 | Context | geography; culture; season; altitude; programme scope | RM §2.2, §5, §11.4 | **Strong** (altitude: five dossiers) |
@@ -258,7 +258,7 @@ as §16.5 gap). The constraint is admitted; its parameters are absent.
 | Need | open → severity change → resolved or expired | RM §7.4 | **Blueprint only** |
 | Vulnerability | composite, emergent from compounding factors | RM §8.4 | **Blueprint only**; composition rule `[OPEN]` |
 | Engagement | identified → registration_initiated → registered → verification_pending → active → engaged → monitored → suspended → review_required → exited | RM §14.2 | Separation from developmental trajectory **corroborated** — BD-TD03-004 |
-| Outcome | improved · held · deteriorated | RM §15.3 | Blueprint |
+| Person / Household (Wellbeing / Condition) | improved · held · deteriorated (Outcome/Impact describes this change) | RM §15.3 | Blueprint |
 
 ### 6.2 The rule this layer enforces
 
@@ -271,7 +271,7 @@ most common modelling shortcut in the domain: a single status field.
 
 ### 6.3 What this layer cannot hold — the largest gap in the ontology
 
-**Values.** Every row above except Engagement and Outcome names a dimension whose values are
+**Values.** Every row above except Engagement and Person/Household (Wellbeing/Condition) names a dimension whose values are
 unevidenced. The Phase 1 audit rates Condition **Limited**, Blueprint-only, with health,
 capability, shelter condition, wellbeing and caregiving all at term-count zero across six
 dossiers.
@@ -336,7 +336,7 @@ further stages of the same lifecycle. BD-TD04-001 records MEAL as a **separate b
 capability** on its own cadence, *"not the final stage of any one case's journey"* (≥4
 institutional sources).
 
-**Not resolved here.** Outcome and impact events are admitted to this layer; whether they belong
+**Not resolved here.** Outcome and impact *measurement* events are admitted to this layer; whether they belong
 to the case journey or to a separate discipline that consumes it is `[OPEN]` (RM §12.5). The
 consequence falls on Coordination Patterns — see §9.
 
@@ -378,40 +378,13 @@ representation of missing information is unmodelled by either authoritative sour
 **This is the highest-priority gap in the layer**, because the layer's core purpose — honest
 representation of the system's epistemic condition — is not achievable without it.
 
-### 8.3 The Risk seam — built around the uncertainty, not over it
+### 8.3 The Risk seam — resolved
 
-**Risk's primitive classification is unresolved** (Phase 1 §6.1), and the Phase 1 audit
-established it **cannot be resolved by evidence review**: RM §8 has zero external citations, so
-no independent material exists to adjudicate against.
+**Risk's primitive classification is formally resolved** (Phase 1 §6.1). Risk is classified as a **Condition** (P1) and lives in the **States** layer.
 
-Risk therefore lands in one of two layers depending on a ruling not yet made:
+Consequently, this Cognition layer holds **only the *confidence in* a risk assessment**, not the Risk itself. Risk is a fact about the household; Cognition annotates it like any other state.
 
-| If Risk is… | Risk lives in | Cognition holds | Consequence |
-|---|---|---|---|
-| **Condition** (P1) | **States** (§6) | only the *confidence in* a risk assessment | Risk is a fact about the household. Cognition annotates it like any other state. |
-| **Epistemic Stance** (P3) | **Cognition** (this layer) | risk itself — horizon, trend, severity as warranted expectation | Risk is a fact about what the system is entitled to expect. Cognition owns it and its structure. |
-
-**This layer is designed so that both are expressible and the choice is a single documented
-switch, not a rewrite.** Concretely: Cognition defines an *expectation about a future state* as a
-first-class cognitive form. Under the first reading that form is used only to carry confidence
-about a state held elsewhere; under the second it carries risk entirely.
-
-**What is not done:** Risk is not placed. Neither §6.1 nor §8.1 asserts ownership of it. The seam
-is named, its two sides are specified, and the decision is left where it belongs.
-
-**Disclosure — a provisional presence that is not a placement.** Risk's *dimensional structure*
-(horizon, trend, severity) appears in the Facets table at §2.1, and Facets derives from Condition
-(P1) + Context (P2). Recording those dimensions in a Condition-derived layer would, if left
-unremarked, place Risk on the Condition side of this very seam. It is flagged inline there as
-**unplaced** and recorded here: **§2.1 holds Risk's dimensions provisionally and asserts nothing
-about which primitive Risk classifies under.** If the ruling is Epistemic Stance, those three
-dimensions move to this layer intact.
-
-**Why this cannot be deferred indefinitely.** RM §8.3 states *"the risk domain produces signals;
-it does not decide"* — signal language, which leans toward the stance reading — while RM §8.1
-insists risk is first-class and *"not a byproduct of severity rules"*, which resists demotion into
-an annotation. Both are Blueprint assertions with no external support. **Until ruled on, no
-downstream artifact may assume either placement.**
+**Disclosure:** Risk's dimensional structure (horizon, trend, severity) correctly appears in the Facets table at §2.1, and its states in Layer 5, since it derives from Condition (P1). The expectation about a future state remains a first-class cognitive form here, but it is strictly used to carry confidence about the state held in Layer 5.
 
 ### 8.4 Boundary rules
 
@@ -519,8 +492,7 @@ made to keep derivation moving, and each is reversible.**
 | **A-02** | Context feeds Facets **and** scopes Constraints, rather than forming its own layer | The prescribed eight layers contain no Context layer; Context frames rather than participates (Phase 1 P2 boundary) | A ruling that scope requires its own layer |
 | **A-03** | Evidence (P4) feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
 | **A-04** | Organisation and Programme are modelled as **two** entities | BD-TD01-003: every external source names them separately. Diverges from BL V1 §4, which collapses them | A ruling that BL V1's single actor row governs |
-| **A-05** | Outcome and impact events are admitted to Layer 6 without deciding their ownership | §7.3 is `[OPEN]`; admitting them keeps them representable while the question stands | A ruling either way |
-| **A-06** | Cognition defines *expectation about a future state* as a first-class form so the Risk seam is switchable | Permits both Risk placements without pre-empting the ruling | A Risk ruling; the losing branch is then removed |
+| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 without deciding their ownership | `[OPEN]` (RM §12.5); admitting them keeps them representable while the operational coordination question stands | A ruling either way |
 | **A-07** | The point-versus-span distinction (States ÷ Events) is retained despite being unevidenced | Removing it would merge two primitives and restructure four layers on equally thin grounds | Evidence that the distinction is not real, or a ruling that they merge |
 
 ---
@@ -541,6 +513,7 @@ The following domain concepts, previously marked [OPEN], are now formally resolv
 *   **Contradiction Modeling (RM §10.5):** Contradiction is structurally defined in the *Cognition* layer (Layer 7) as multiple *Epistemic Stances* asserting mutually exclusive *States* for the same Entity.
 *   **Funder Altitude (RM §11.4):** The Giving side operates as a third *Funding Altitude*, structurally extending the *Altitude Coupling* Coordination Pattern (Layer 8). It imposes *Constraints* on the Programme Altitude. Donors are Entities (Actors).
 *   **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* (Conditions) function identically to Risk/Need as valid initiating triggers for *Events* (Layer 6) and *Coordination Patterns* (Layer 8).
+*   **Outcome / Impact Ownership:** Outcome and Impact are *States* (Layer 5) belonging to the Human Subject (Person/Household), reflecting changes in their wellbeing or conditions. *Outcome Measurement* is an *Event* (Layer 6) / *Coordination Pattern* (Layer 8) distinct from the domain reality.
 
 ---
 
@@ -556,6 +529,6 @@ open tensions carried intact (§12).
 **Cannot be populated:** giving-side entities and patterns (§3.3, §9.4); values within every human
 facet (§2.3, §6.3); evidence kinds (§8.5).
 
-**Blocking for the next phase:** None structurally, but the Risk ruling (A-06) remains explicitly open pending a Project Lead decision, carried as a dual Condition/Epistemic Stance provisional placement.
+**Blocking for the next phase:** None structurally, since Risk was formally resolved as a Condition.
 
-**Foundation status:** `01-DOMAIN-PRIMITIVES.md` is structurally frozen (pending Phase 1 R-1 and R-7 validation). Every layer above inherits that stability. The 8 Layers are structurally frozen.
+**Foundation status:**  1-DOMAIN-PRIMITIVES.md is structurally frozen . Every layer above inherits that stability. The 8 Layers are structurally frozen.
