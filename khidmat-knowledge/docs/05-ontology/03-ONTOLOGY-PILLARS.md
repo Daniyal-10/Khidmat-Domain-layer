@@ -29,7 +29,7 @@ The pillars are derived systematically:
 ### Pillar I: Human & Social Subject
 **What domain reality it represents:** The people who exist independently of humanitarian response, their capabilities, and their structural social fabric (family, household).
 **Layers contributing:** Entities (Person, Household), Relationships (Dependency, Caregiving), States (Health, Lifecycle, Capability), Facets (Demographics), Constraints (Consent, Dignity).
-**Supporting primitives:** Identity (P5), Relation (P8), Condition (P1), Norm (P6).
+**Supporting primitives:** Entity (P4), Relation (P7), Condition (P1), Norm (P5).
 **RM concepts within it:** Person, Family, Household, Lifecycle, Capability, Dependency, Outcomes (Wellbeing), Impact (Resilience, Independence).
 **Why it is a pillar:** It is the persistent "who" of humanitarian reality. It cannot be reduced to an application module or an entity record because it encompasses identity, social connections, and spanning conditions (capabilities). It exists whether or not help is provided.
 **Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific national ID systems or joint-family structures) will extend this at Level 2, but the core pillar is independent of jurisdiction.
@@ -47,7 +47,7 @@ The pillars are derived systematically:
 ### Pillar III: Vulnerability & Need
 **What domain reality it represents:** What requires a humanitarian response. The open-ended set of humanitarian situations (e.g., displacement, illness, debt), the needs derived from them, and the compounded vulnerability of the subject. Situations are explicitly Open-World, allowing new humanitarian realities to emerge without requiring a new primitive or pillar structure.
 **Layers contributing:** States (Need lifecycle), Facets (Severity, Horizon), Relationships (Cascading need).
-**Supporting primitives:** Condition (P1), Relation (P8).
+**Supporting primitives:** Condition (P1), Relation (P7).
 **RM concepts within it:** Situations, Needs, Risk, Vulnerability, Outcomes (Need/Risk resolution).
 **Why it is a pillar:** This is the core problem space of humanitarian action. It is highly dynamic (needs open, cascade, and close) and is structurally distinct from the human subject (a person *has* a need; they are *not* the need).
 **Boundary:** Universal.
@@ -57,7 +57,7 @@ The pillars are derived systematically:
 ### Pillar IV: Epistemics & Knowledge
 **What domain reality it represents:** What the system (and humanitarian actors) know, how well they know it, and what they do *not* know.
 **Layers contributing:** Cognition (Stances, Confidence), Entities (Evidence artifacts), Constraints (Decision thresholds).
-**Supporting primitives:** Epistemic Stance (P3), Evidence (P4), Norm (P6).
+**Supporting primitives:** Epistemic Stance (P3), Norm (P5).
 **RM concepts within it:** Claims, Findings, Evidence, Confidence, Uncertainty, Contradiction, Missing Information, Epistemic weight of actors.
 **Why it is a pillar:** Humanitarian reality is defined by contested, partial, and evolving information. Two actors can hold different epistemic stances about the same Human Subject. This pillar governs AI reasoning, verification boundaries, and human oversight. It guarantees that cognition is a first-class feature of the ontology, not an afterthought.
 **Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific poverty-line cards as evidence artifacts) will map here, but the epistemic structure is universal.
@@ -66,7 +66,7 @@ The pillars are derived systematically:
 ### Pillar V: Actors & Ecosystem
 **What domain reality it represents:** The entities that respond to, fund, or coordinate humanitarian action, including Government bodies, Healthcare providers, Schools, and Employers, which act with agency. It models the rules binding them.
 **Layers contributing:** Entities (Organisation, Donor, Programme), Relationships (Implements, Funds, Adopts), Constraints (Compliance, Eligibility, Funding restrictions).
-**Supporting primitives:** Identity (P5), Relation (P8), Norm (P6).
+**Supporting primitives:** Entity (P4), Relation (P7), Norm (P5).
 **RM concepts within it:** Organisations, Programmes, Donors, Community Groups, Governments, Accountability.
 **Why it is a pillar:** It models the resource and response side of the equation. It is distinct from the human subject and is necessary to represent accountability, funding chains, and ecosystem coordination.
 **Boundary:** Universal. Jurisdiction-specific localizations (e.g., local charity regulations or specific government bodies) will populate this layer, but the structure is universal.
@@ -75,7 +75,7 @@ The pillars are derived systematically:
 ### Pillar VI: Action & Coordination
 **What domain reality it represents:** How help happens over time, how actors engage with subjects, and how reality is altered or measured.
 **Layers contributing:** Events (Occurrences), Coordination Patterns (Loops, Handoffs, Altitude coupling), Constraints.
-**Supporting primitives:** Occurrence (P7), Relation (P8), Context (P2), Norm (P6).
+**Supporting primitives:** Occurrence (P6), Relation (P7), Context (P2), Norm (P5).
 **RM concepts within it:** Registration, Verification, Delivery, Follow-up, Handoffs, Case Journey, Grievance loops, Reassessment, Verification events.
 **Why it is a pillar:** It tracks actual interventions in the world. It is a pillar because it synthesizes actors, subjects, and needs into sequenced shapes. It adheres to the RM Â§12 quarantine: actions are things done *to* reality.
 **Boundary:** Universal.
@@ -84,7 +84,7 @@ The pillars are derived systematically:
 ### Pillar VII: Resources & Support
 **What domain reality it represents:** The resources, modalities of help, gifts, and matching that fuel the response.
 **Layers contributing:** Facets (Support dimensions), Entities (Gifts, Resources), Events (Delivery, Matching).
-**Supporting primitives:** Identity (P5), Condition (P1), Occurrence (P7).
+**Supporting primitives:** Entity (P4), Condition (P1), Occurrence (P6).
 **RM concepts within it:** Interventions, Sector Ã— Modality Ã— Phase, Cash, In-kind, Giving, Matching.
 **Why it is a pillar:** The giving side (donors, resources) needs equal representation to the receiving side to enable the full Khidmat vision. Support is an artifact distinct from the Action of delivering it or the Actor funding it.
 **Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific digital payment transfers or local ration items) sit at Level 2.

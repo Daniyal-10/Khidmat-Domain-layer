@@ -1,4 +1,4 @@
-﻿# 2 — Ontology Layers
+# 2 — Ontology Layers
 
 **Ontology Design, step 2 of 7.** Status: **DRAFT.**
 
@@ -38,15 +38,15 @@ Every layer names the primitive it derives from. Nothing appears in a layer that
 | Layer | Derives from | Relationship |
 |---|---|---|
 | **1 Facets** | **Condition** (P1) + **Context** (P2) | The dimensions along which conditions vary and contexts are delimited |
-| **2 Entities** | **Identity** (P5) | Things that persist and must be re-identified |
-| **3 Relationships** | **Relation** (P8) | Connections between entities |
-| **4 Constraints** | **Norm** (P6), scoped by **Context** (P2) | What is permitted, required or valid — and where it holds |
+| **2 Entities** | **Entity** (P4) | Things that persist and must be re-identified |
+| **3 Relationships** | **Relation** (P7) | Connections between entities |
+| **4 Constraints** | **Norm** (P5), scoped by **Context** (P2) | What is permitted, required or valid — and where it holds |
 | **5 States** | **Condition** (P1) | Values a condition takes across a span, and their transitions |
-| **6 Events** | **Occurrence** (P7) | What happened at a point |
-| **7 Cognition** | **Epistemic Stance** (P3) + **Evidence** (P4) | The warrant for everything the other layers assert |
+| **6 Events** | **Occurrence** (P6) | What happened at a point |
+| **7 Cognition** | **Epistemic Stance** (P3) | The warrant for everything the other layers assert |
 | **8 Coordination Patterns** | Composite — **Relation** + **Occurrence** + **Context** + **Norm** | Recurring multi-party shapes |
 
-**All eight primitives are consumed. No layer introduces a category not present in Phase 1.**
+**All seven primitives are consumed. No layer introduces a category not present in Phase 1.**
 
 Two primitives feed more than one layer, by design:
 
@@ -107,7 +107,7 @@ rather than incomplete: dimensions are stable business concepts while concrete i
 
 ## 3. Layer 2 — Entities
 
-**Derives from:** Identity (P5)
+**Derives from:** Entity (P4)
 
 **What it holds.** Things that persist and must be re-identified across encounters.
 
@@ -155,7 +155,7 @@ sub-kinds and lifecycle are absent.
 
 ## 4. Layer 3 — Relationships
 
-**Derives from:** Relation (P8)
+**Derives from:** Relation (P7)
 
 **What it holds.** Connections between entities. A relationship requires two persisting things;
 anything true of one thing alone is a State.
@@ -199,7 +199,7 @@ it cannot state when they hold.
 
 ## 5. Layer 4 — Constraints
 
-**Derives from:** Norm (P6), scoped by Context (P2)
+**Derives from:** Norm (P5), scoped by Context (P2)
 
 **What it holds.** What is permitted, required, or valid — and the frame in which that binds.
 
@@ -295,7 +295,7 @@ irreducible kinds.
 
 ## 7. Layer 6 — Events
 
-**Derives from:** Occurrence (P7)
+**Derives from:** Occurrence (P6)
 
 **What it holds.** What happened at a point. An event is complete when it has happened; anything
 still true afterwards is the State it produced.
@@ -344,7 +344,7 @@ consequence falls on Coordination Patterns — see §9.
 
 ## 8. Layer 7 — Cognition
 
-**Derives from:** Epistemic Stance (P3) + Evidence (P4)
+**Derives from:** Epistemic Stance (P3)
 
 **The layer the architecture fails without.** Every other layer models the world. This one models
 **the warrant for what those layers assert** — and, critically, what is *not* known.
@@ -407,7 +407,7 @@ structurally defined but operationally empty.
 
 ## 9. Layer 8 — Coordination Patterns
 
-**Derives from:** Relation (P8) + Occurrence (P7) + Context (P2) + Norm (P6)
+**Derives from:** Relation (P7) + Occurrence (P6) + Context (P2) + Norm (P5)
 
 **What it holds.** Recurring, recognisable configurations involving multiple parties over time. A
 pattern is a **shape, not a procedure**. It names which kinds of parties, relationships, states
@@ -501,8 +501,8 @@ made to keep derivation moving, and each is reversible.**
 
 The following domain concepts, previously marked [OPEN], are now formally resolved at the ontological level. Only their taxonomy, algorithmic implementation, or localization values remain open for Stage 4 or Data Population:
 
-*   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* (Primitive) is an Entity. Its establishment is an *Epistemic Stance* (Layer 7) grounded by *Evidence* (Primitive). Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
-*   **Undocumented Status (RM §3.2):** Ontologically, this is the absence of *Evidence* (Cognition), which simultaneously instantiates as a *Constraint* (Layer 4) limiting formal Coordination Patterns, and a *Condition* (Layer 5) aggravating Vulnerability.
+*   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* (Entity) is an Entity. Its establishment is an *Epistemic Stance* (Layer 7) grounded by *Evidence* (Entity). Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
+*   **Undocumented Status (RM §3.2):** Ontologically, this is the absence of *Evidence* (Entity), which simultaneously instantiates as a *Constraint* (Layer 4) limiting formal Coordination Patterns, and a *Condition* (Layer 5) aggravating Vulnerability.
 *   **Wellbeing Standard (RM §3.6):** Structurally a *Norm* (Layer 4) that is strictly *Context-dependent* (Layer 1). A Need is a *Relation* between a Subject's State and this Context-bound Norm.
 *   **Family vs Household (RM §4.3):** Both are *Entities* (Layer 2) rather than merely Relational Structures, as they have their own trajectories and conditions. *Family* is bounded by kinship/legal guardianship (highly persistent). *Household* is bounded by co-residence/shared economy (volatile). A Subject can hold relationships to both concurrently.
 *   **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Layer 1) that cascades *Constraints* (Layer 4) and *Conditions* (Layer 5) down to Subjects. Its phase is a temporal *State* of that Context.

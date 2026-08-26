@@ -4,32 +4,6 @@
 
 ---
 
-> ## ⚠ GATE QUESTION — read before anything else
->
-> **`REFERENCE_MODEL.md` §17, which is FROZEN, states:**
->
-> > *"One ruling is still required before primitive discovery can begin: whether a Domain
-> > Primitive means a concrete irreducible of reality (Person, Household, Need) or a category of
-> > concept (Identity, Relation, Condition). The entire ontology derives from the answer."*
->
-> **That ruling was not obtained. This work proceeded under a ruling the authors made.**
->
-> **Ruling taken:** a Domain Primitive is a **category of concept**.
->
-> **Argument, in three sentences.** The prescribed step 2 builds a layer named *Entities*, and
-> layers derive from primitives. If *Person* were a primitive it would be both the source of the
-> Entities layer and a member of it, and the derivation would be circular. Only a category can
-> stand above eight layers that themselves include Entities and Relationships.
->
-> **Consequence of a contrary ruling: Phase 1 is void and Phase 2 with it.** Both documents
-> would require rebuilding from the primitive definition upward. Nothing downstream survives.
->
-> **This is the first thing the Project Lead should ratify or reverse.** It is not presented as
-> settled. Full reasoning at §1; the strongest independent support for it is the falsification
-> test at §5.2.
-
----
-
 Derived from `docs/04-reference-model/KHIDMAT_HUMANITARIAN_DOMAIN_REFERENCE_MODEL.md` (RM).
 No concept enters from the methodology teaching documents.
 
@@ -110,21 +84,20 @@ audit trail: each answer can be checked against its source.
 
 | Reference-model concepts | Kind-answer reached |
 |---|---|
-| Person (§3.1) · Family (§4.1) · Household (§4.2) · Community (§4.4) · Organisation, Programme, Donor, Government (§11.1) · Emergent groups (§4.5) | that which persists and must be re-identified |
-| Parent, child, guardian, spouse, caregiver (§4.1) · dependency (§4.1) · responsibility (§4.1) · household membership (§4.3) · referral (§12.1) · adoption of a family (§16.4) | a connection between things that persist |
+| Person (§3.1) · Family (§4.1) · Household (§4.2) · Community (§4.4) · Organisation, Programme, Donor, Government (§11.1) · Emergent groups (§4.5) | that which exists and persists as a distinct whole |
+| Parent, child, guardian, spouse, caregiver (§4.1) · dependency (§4.1) · responsibility (§4.1) · household membership (§4.3) · referral (§12.1) · adoption of a family (§16.4) · evidence grounding a belief (§10.2) | a connection between things that persist |
 | Lifecycle stage (§3.3) · capabilities (§3.4) · health, disability, malnutrition (§3.5) · wellbeing (§3.6) · shelter condition, utilities (§4.2) · household resilience (§4.2) · need (§7.1) · vulnerability (§8.4) · engagement stage (§14.2) · outcome (§15.2) · documentation status (§3.2) | that which is true across a span, and can change |
-| Registration, verification visit, delivery, referral, follow-up (§12.1) · displacement, death, job loss (§6) · a shock absorbed (§4.2) · complaint raised (§12.6) | that which happened at a point |
-| Document, testimony, field observation, community attestation, measurement (§10.2) · proof of delivery (§12.1) | that which grounds a belief |
+| Registration, verification visit, delivery, referral, follow-up (§12.1) · displacement, death, job loss (§6) · a shock absorbed (§4.2) · complaint raised (§12.6) · document/testimony generation (§10.2) | that which happened at a point |
 | Claim vs finding (§10.1, §10.3) · confidence (§10.4) · uncertainty, contradiction, missing information (§10.5) · epistemic weight of a registrant (§10.1) | the warrant the system holds for what it asserts |
 | Consent and its bounded necessity exception (§3.7) · dignity as standing constraint (§3.7) · eligibility (§12.2) · safeguarding precedence (§3.7) · funding restriction (§11.4, stated there inside an `[OPEN]`) · human-review requirement (§10.6) | that which bounds what is permitted or valid |
 | Geography, settlement type (§5.1) · seasonal calendar (§5.2) · cultural framing of household (§4.3) · crisis phase (§5.4) · programme vs case altitude (§11.4) · applicability scope (§2.2) | the frame relative to which a statement holds |
 
-**Eight answers. Each recurs across multiple independent sections of the reference model. No
-ninth answer survived a second pass** — except two contested classifications recorded in §6.
+**Seven answers. Each recurs across multiple independent sections of the reference model. No
+eighth answer survived a second pass** — except two contested classifications recorded in §6.
 
 ---
 
-## 4. The eight Domain Primitives
+## 4. The seven Domain Primitives
 
 Presented alphabetically. Order carries no meaning.
 
@@ -174,33 +147,16 @@ Condition; "we have not verified this" is an Epistemic Stance.
 methodology's open-world principle — *absence of a statement is not its negation* — is
 representable only because this category exists.
 
-### P4 — Evidence
-**That which grounds a belief.**
+### P4 — Entity
+**That which exists and persists as a distinct whole across encounters.**
 
-Irreducible because evidence is neither the claim it supports nor the confidence it produces. A
-photograph of a damaged roof is not the damage, not the assertion of damage, and not the
-confidence in that assertion.
-
-*Evidence:* RM §10.2, §12.1.
-*Boundary:* the *act of collecting* evidence is an Occurrence; the evidence collected is not.
-Distinct from Epistemic Stance: evidence is what is held; stance is what may be concluded from it.
-
-### P5 — Identity
-**That which persists and must be re-identified across encounters.**
-
-Irreducible because persistence-with-re-identification cannot be produced from the others. RM
-§3.1 states that every promise about longitudinal reasoning rests on it, and RM §3.5's fairness
-principle and RM §2's duplicate-registration problem both reduce to it.
+Irreducible because ontological persistence cannot be produced from the others. RM §3.1 states that every promise about longitudinal reasoning rests on it (a person is a persistent entity). RM §3.5's fairness principle and RM §2's duplicate-registration problem both reduce to it.
 
 *Evidence:* RM §3.1, §4.1–4.5, §11.1.
-*Boundary:* something that is never tracked in its own right across encounters is not an
-Identity — it is a Condition of something that is.
+*Boundary:* something that is never tracked in its own right across encounters is not an Entity — it is a Condition of something that is.
+*Note on Identity:* "Identity" is the epistemic construct (how we track and re-identify an Entity), not the fundamental category of reality itself. Identity verification and identity evidence are relations and epistemic stances about an Entity.
 
-*Open:* RM §3.1 records that *how* sameness is established is unknown. That is a mechanism gap,
-not an obstacle to the category — the category asserts only that re-identification is required
-and may fail.
-
-### P6 — Norm
+### P5 — Norm
 **That which bounds what is permitted, required, or valid.**
 
 Irreducible because a norm binds rather than describes. Consent, safeguarding precedence,
@@ -214,7 +170,7 @@ inside one programme and not outside it is one Norm plus one Context, not two No
 *Load-bearing note:* the methodology's *"regulation lives inside the ontology — they ARE the
 model"* is this primitive. Consent is not a compliance wrapper.
 
-### P7 — Occurrence
+### P6 — Occurrence
 **That which happened at a point in time.**
 
 Irreducible because point and span do not derive from one another. RM distinguishes them
@@ -224,10 +180,10 @@ consequentially throughout — a displacement, a verification visit, a death, a 
 *Boundary:* an occurrence is complete when it has happened. Anything that continues to be true
 afterwards is the Condition it produced, not the occurrence itself.
 
-### P8 — Relation
+### P7 — Relation
 **A connection between things that persist.**
 
-Irreducible because a relation holds *between* identities and cannot be reduced to a property of
+Irreducible because a relation holds *between* entities and cannot be reduced to a property of
 either. RM §4.1's central finding — that vulnerability cascades along dependency, *"a mother's
 risk is her infant's risk"* — is a statement that can only be made if connection is a category.
 
@@ -275,10 +231,12 @@ the set would break.
 
 | Candidate | Rejected because |
 |---|---|
-| **Person** | Fails T1. A concept a glossary defines. Classifies under Identity. |
+| **Evidence** | Fails T1, T3. Evidence is not a fundamental category of existence. The artifacts that *serve as* evidence (documents, testimonies, observations) classify under Entity or Occurrence. Their role in grounding a belief is a **Relation** connecting them to an **Epistemic Stance**. |
+| **Identity** | Fails T1. Identity is an epistemic construct — how we recognize and track a person/thing across time. The underlying fundamental category of reality is the **Entity** itself. |
+| **Person** | Fails T1. A concept a glossary defines. Classifies under Entity. |
 | **Time** | Fails T1, T3. Time is the medium in which Condition and Occurrence are distinguished, not a category anything classifies under. Nothing in RM is "a Time." |
-| **Place** | Fails T3. Decomposes — a settlement tracked in its own right is an Identity; an applicability frame is a Context. |
-| **Role** | Fails T3. A responsibility held by an identity across a span: Identity + Condition, or Identity + Relation. Decomposes without loss. |
+| **Place** | Fails T3. Decomposes — a settlement tracked in its own right is an Entity; an applicability frame is a Context. |
+| **Role** | Fails T3. A responsibility held by an entity across a span: Entity + Condition, or Entity + Relation. Decomposes without loss. |
 | **Capability** | Fails T1, T3. A Condition of a person (RM §3.4). |
 | **Dignity** | Fails T1 as a category. RM §3.7 makes it a standing constraint — a Norm — not a kind of thing concepts can be. Nothing classifies as "a Dignity." |
 | **Action / Process** | Fails T3. RM §12 quarantines actions as things done *to* reality. Each is an Occurrence. |
@@ -319,17 +277,18 @@ constraint, and §13 admitted at dimension level only.
 
 **Why this is the right answer rather than a convenient one.** The narrower alternative would
 exclude the giving side. `SCOPE_COVERAGE.md` §4 records that the Project Lead already chose
-Option C — model reality fully, sequence implementation separately — and RM §16 was authored to
-enact it. Excluding givers here would reverse a decision already taken, one layer further down.
+| Reference-model concepts | Kind-answer reached |
+|---|---|
+| Person (§3.1) · Family (§4.1) · Household (§4.2) · Community (§4.4) · Organisation, Programme, Donor, Government (§11.1) · Emergent groups (§4.5) | that which exists and persists as a distinct whole |
+| Parent, child, guardian, spouse, caregiver (§4.1) · dependency (§4.1) · responsibility (§4.1) · household membership (§4.3) · referral (§12.1) · adoption of a family (§16.4) · evidence grounding a belief (§10.2) | a connection between things that persist |
+| Lifecycle stage (§3.3) · capabilities (§3.4) · health, disability, malnutrition (§3.5) · wellbeing (§3.6) · shelter condition, utilities (§4.2) · household resilience (§4.2) · need (§7.1) · vulnerability (§8.4) · engagement stage (§14.2) · outcome (§15.2) · documentation status (§3.2) | that which is true across a span, and can change |
+| Registration, verification visit, delivery, referral, follow-up (§12.1) · displacement, death, job loss (§6) · a shock absorbed (§4.2) · complaint raised (§12.6) · document/testimony generation (§10.2) | that which happened at a point |
+| Claim vs finding (§10.1, §10.3) · confidence (§10.4) · uncertainty, contradiction, missing information (§10.5) · epistemic weight of a registrant (§10.1) | the warrant the system holds for what it asserts |
+| Consent and its bounded necessity exception (§3.7) · dignity as standing constraint (§3.7) · eligibility (§12.2) · safeguarding precedence (§3.7) · funding restriction (§11.4, stated there inside an `[OPEN]`) · human-review requirement (§10.6) | that which bounds what is permitted or valid |
+| Geography, settlement type (§5.1) · seasonal calendar (§5.2) · cultural framing of household (§4.3) · crisis phase (§5.4) · programme vs case altitude (§11.4) · applicability scope (§2.2) | the frame relative to which a statement holds |
 
-**What this does not decide.** Ontology scope is not V1 implementation scope. RM §16.3's
-exclusions stand unchanged: the ontology may *represent* givers, matching, biometric identity and
-proactive identification; whether V1 *builds* them is a separate question RM §16.4 tables for
-ruling.
-
-**Status: offered for ratification.** If the Lead narrows this, the affected layers in Phase 2
-contract accordingly; the primitive set is unaffected, since §5.2 established it survives the
-giving side either way.
+**Seven answers. Each recurs across multiple independent sections of the reference model. No
+eighth answer survived a second pass** — except two contested classifications recorded in §6.
 
 ---
 
@@ -348,20 +307,20 @@ The assessment or confidence *about* that Risk is distinct from the Risk itself 
 
 ### 6.2 Need
 
-RM §7.1 defines a need as **a gap between current state and a basic standard of wellbeing**.
+RM §7.1 defines a need as **a gap between current state and a basic standard**. 
 
-**Resolution:** Need is fundamentally a **Relation**. Its ontological grounding is relational (a gap holding between a current state and a standard). 
+Because of this relational definition, Need initially appears to classify as a Relation. However, once instantiated as a tracked domain object in humanitarian reality, a Need is experienced by the beneficiary as a state of deprivation that opens, persists, worsens, improves, and resolves. 
 
-However, once instantiated as a tracked domain object, a Need has **Condition-like** temporal behaviour (it opens, persists, worsens, improves, resolves, expires). This means its lifecycle acts like a Condition without converting its core identity away from being a Relation.
+**Resolution:** Need is fundamentally a **Condition**. Its semantic definition involves a gap (a relational concept), but as an ontological entity that the system tracks over time with severity and a lifecycle, it is a Condition of the beneficiary. Classifying it as a Relation would distort its temporal behavior, since a Relation connects things that persist rather than having a severity lifecycle of its own.
 
 ---
 
-## 7. Status — Provisionally Closed
+## 7. Status — DRAFT: PENDING GOVERNANCE CLOSURE
 
-**Approved:** The definition of a Domain Primitive (§1), the method (§2), the derivation
-trace (§3), the coverage result that the giving side introduces no new primitive (§5.2), and the classification of Risk and Need (§6) are formally approved.
+**In Draft:** The definition of a Domain Primitive (§1), the method (§2), the derivation
+trace (§3), the coverage result that the giving side introduces no new primitive (§5.2), and the classification of Risk and Need (§6) are proposed and structurally sound.
 
-**The primitive set is now formally closed and structurally frozen.** The previously open classification tensions have been formally decided. While the independent evidence audit ( 1a-PRIMITIVE-EVIDENCE-AUDIT.md �7) noted that human and social primitives lack practitioner validation, practitioner validation exists to validate and enrich the ontology. It will not reopen the 8 Primitives unless new evidence identifies a genuine structural category that cannot be represented by the existing ontology. The foundation structure is frozen.
+**The primitive set is NOT formally closed.** The independent Evidence Audit explicitly requires practitioner validation before the set can be closed, as the primitives carrying the human side of the domain (Condition and Relation) currently lack external corroboration. Furthermore, there is no verified Project Lead ruling or governance artifact overriding this block. The foundation structure remains in draft until these governance requirements are met.
 
 ### 7.1 The evidence base is asymmetric — measured
 
@@ -381,25 +340,20 @@ Consequence for this set — each primitive carries a different evidential weigh
 | Primitive | Support |
 |---|---|
 | **Context** (P2) | Strong — altitude split, five independent dossiers |
-| **Norm** (P6) | Moderate — ICRC consent guidance, funding restrictions |
+| **Norm** (P5) | Moderate — ICRC consent guidance, funding restrictions |
 | **Epistemic Stance** (P3) | Moderate — claim/finding split corroborated via TD-02 |
-| **Occurrence** (P7) | Moderate — lifecycle and verification practice via TD-03 |
-| **Evidence** (P4) | **Limited** — evidence kinds absent entirely: testimony 0, attestation 0, biometric 0 across six dossiers |
-| **Identity** (P5) | Partial — trajectory/enrolment separation via TD-03 |
+| **Occurrence** (P6) | Moderate — lifecycle and verification practice via TD-03 |
+| **Entity** (P4) | Partial — trajectory/enrolment separation via TD-03 |
 | **Condition** (P1) | **Business Logic V1 alone** — health, capability, shelter, vulnerability, resilience have no external corroboration |
-| **Relation** (P8) | **Business Logic V1 alone** — family, dependency and caregiving are effectively absent from the dossiers |
+| **Relation** (P7) | **Business Logic V1 alone** — family, dependency and caregiving are effectively absent from the dossiers |
 
 **The two primitives carrying most of the human side rest on a single unvalidated source.**
 This does not invalidate them — categories classify regardless of evidence density — but it is
 where the set is weakest and where practitioner evidence would change the most.
 
-**What step 2 inherits:** eight classification axes. Cognition derives principally from Epistemic
-Stance (P3); Constraints from Norm (P6); Entities from Identity (P5); States from Condition (P1);
-Events from Occurrence (P7); Relationships from Relation (P8); Facets from Condition and Context.
+**What step 2 inherits:** seven classification axes. Cognition derives principally from Epistemic
+Stance (P3); Constraints from Norm (P5); Entities from Entity (P4); States from Condition (P1);
+Events from Occurrence (P6); Relationships from Relation (P7); Facets from Condition and Context.
 
 **What step 2 cannot yet populate:** the entities of the giving side, which remain undescribed.
 The primitive set survives them; the Entities layer will not be complete without them.
-
-
-
-
