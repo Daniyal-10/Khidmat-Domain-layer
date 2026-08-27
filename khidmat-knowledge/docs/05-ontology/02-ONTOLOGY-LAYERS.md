@@ -465,12 +465,12 @@ Each layer's ceiling is the strength of its source primitive (Phase 1 audit).
 | Layer | Source primitive(s) | Inherited strength | Note |
 |---|---|---|---|
 | Facets | Condition, Context | **Split** — Strong on Context/Support; Limited elsewhere | Support facets are the only externally corroborated facet structure |
-| Entities | Identity | **Moderate** | Institutional entities Strong; Person weakest |
-| Relationships | Relation | **Split** — Moderate institutional; **Unsupported social** | The most asymmetric layer |
-| Constraints | Norm, Context | **Strong** | Best-evidenced layer after Coordination |
-| States | Condition | **Limited** | **Least evidenced layer; carries the most domain content** |
-| Events | Occurrence | **Moderate** | Boundary with States unevidenced |
-| Cognition | Epistemic Stance, Evidence | **Moderate / Limited** | Core purpose blocked on two `[OPEN]` representations |
+| Entities | Entity (P4) | **Moderate** | Institutional entities Strong; Person weakest |
+| Relationships | Relation (P7) | **Split** — Moderate institutional; **Unsupported social** | The most asymmetric layer |
+| Constraints | Norm (P5), Context (P2) | **Strong** | Best-evidenced layer after Coordination |
+| States | Condition (P1) | **Limited** | **Least evidenced layer; carries the most domain content** |
+| Events | Occurrence (P6) | **Moderate** | Boundary with States unevidenced |
+| Cognition | Epistemic Stance (P3) | **Moderate / Limited** | Core purpose blocked on two `[OPEN]` representations |
 | Coordination | composite | **Strong** where evidenced; absent for giving | Altitude coupling is the strongest finding in the base |
 
 **Ontology-wide observation.** Layers describing how organisations operate — Constraints, Events,
@@ -490,7 +490,7 @@ made to keep derivation moving, and each is reversible.**
 |---|---|---|---|
 | **A-01** | Condition feeds **two** layers — Facets (axis) and States (value on the axis) | RM §16.5 records dimensions present and values absent; splitting makes the asymmetry visible rather than hiding it inside one layer | A ruling that Facets should hold values, or that dimensions and values belong together |
 | **A-02** | Context feeds Facets **and** scopes Constraints, rather than forming its own layer | The prescribed eight layers contain no Context layer; Context frames rather than participates (Phase 1 P2 boundary) | A ruling that scope requires its own layer |
-| **A-03** | Evidence (P4) feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
+| **A-03** | The Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
 | **A-04** | Organisation and Programme are modelled as **two** entities | BD-TD01-003: every external source names them separately. Diverges from BL V1 §4, which collapses them | A ruling that BL V1's single actor row governs |
 | **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 without deciding their ownership | `[OPEN]` (RM §12.5); admitting them keeps them representable while the operational coordination question stands | A ruling either way |
 | **A-07** | The point-versus-span distinction (States ÷ Events) is retained despite being unevidenced | Removing it would merge two primitives and restructure four layers on equally thin grounds | Evidence that the distinction is not real, or a ruling that they merge |
@@ -503,13 +503,13 @@ The following domain concepts, previously marked [OPEN], are now formally resolv
 
 *   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* (Entity) is an Entity. Its establishment is an *Epistemic Stance* (Layer 7) grounded by *Evidence* (Entity). Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
 *   **Undocumented Status (RM §3.2):** Ontologically, this is the absence of *Evidence* (Entity), which simultaneously instantiates as a *Constraint* (Layer 4) limiting formal Coordination Patterns, and a *Condition* (Layer 5) aggravating Vulnerability.
-*   **Wellbeing Standard (RM §3.6):** Structurally a *Norm* (Layer 4) that is strictly *Context-dependent* (Layer 1). A Need is a *Relation* between a Subject's State and this Context-bound Norm.
+*   **Wellbeing Standard (RM §3.6):** Structurally a *Norm* (Layer 4) that is strictly *Context-dependent* (Layer 1). A Need is a *Condition* (Layer 5) assessed against this Context-bound Norm.
 *   **Family vs Household (RM §4.3):** Both are *Entities* (Layer 2) rather than merely Relational Structures, as they have their own trajectories and conditions. *Family* is bounded by kinship/legal guardianship (highly persistent). *Household* is bounded by co-residence/shared economy (volatile). A Subject can hold relationships to both concurrently.
 *   **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Layer 1) that cascades *Constraints* (Layer 4) and *Conditions* (Layer 5) down to Subjects. Its phase is a temporal *State* of that Context.
 *   **Orphanhood vs Unguardianed (RM §6.3):** *Orphanhood* is an irreversible *State* (Layer 5) of a kinship Relation (Layer 3). *Unguardianed* is a reversible *State* of a caregiving Relation.
-*   **Need Interactions (RM §7.5):** Needs (Relations) interact via *Dependency Relationships* (Layer 3).
+*   **Need Interactions (RM §7.5):** Needs (Conditions) interact via *Dependency Relationships* (Layer 3).
 *   **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *Condition/State* (Layer 5) derived from multiple Risk *Conditions* and *Contexts*.
-*   **Evidence Taxonomy (RM §10.2):** Evidence kinds (Testimony, Document, etc.) are ontological subtypes of the *Evidence* primitive that carry distinct *Norms* of Epistemic Weight.
+*   **Evidence Taxonomy (RM §10.2):** Evidence kinds (Testimony, Document, etc.) are ontological subtypes of the Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, that carry distinct *Norms* of Epistemic Weight.
 *   **Contradiction Modeling (RM §10.5):** Contradiction is structurally defined in the *Cognition* layer (Layer 7) as multiple *Epistemic Stances* asserting mutually exclusive *States* for the same Entity.
 *   **Funder Altitude (RM §11.4):** The Giving side operates as a third *Funding Altitude*, structurally extending the *Altitude Coupling* Coordination Pattern (Layer 8). It imposes *Constraints* on the Programme Altitude. Donors are Entities (Actors).
 *   **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* (Conditions) function identically to Risk/Need as valid initiating triggers for *Events* (Layer 6) and *Coordination Patterns* (Layer 8).

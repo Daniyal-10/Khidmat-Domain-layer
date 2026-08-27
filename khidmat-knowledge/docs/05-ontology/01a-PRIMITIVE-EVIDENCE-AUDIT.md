@@ -44,16 +44,17 @@ This scale is authoritative for both `01-DOMAIN-PRIMITIVES.md` and `02-ONTOLOGY-
 
 ## 3. Evidence Traceability Matrix
 
+> **Mapping Note (Stage 5 Correction):** This audit uses the term **Entity (P4)** to refer to what was originally assessed as "Identity". Similarly, "Evidence" was assessed but later rejected as a primitive and distributed across Entity, Occurrence, and Cognition. Its ratings are omitted from this primitive table but apply to the underlying concepts.
+
 | Primitive | Supporting TD findings | Independent sources | Primary source | Strength | Evidence gaps | Practitioner validation |
 |---|---|---|---|---|---|---|
 | **Context** | BD-TD01-002, BD-TD01-006, BD-TD03-001, BD-TD04-003, BD-TD05-002, BD-TD06-002 | OCHA, UNHCR, IASC, IOM, WHO Health Cluster, fscluster, Springer, ReliefWeb | **TD Evidence** | **Strong** | No source specific to any deployment geography (TD-01 Open Gap 3) — category evidenced, instances not | Desirable |
 | **Norm** | BD-TD01-004, BD-TD02-001, BD-TD02-003, BD-TD02-004 | ICRC (Tier B primary), Sphere/CHS, CSIS, ODI HPN, ScienceDirect, Emerald, *Disasters* (2025), IOM | **TD Evidence** | **Strong** | Content of specific giving restrictions: **Evidence not found** | Desirable |
-| **Identity** | BD-TD01-001/002/003/004/005, BD-TD03-004 | OCHA, UNHCR, IASC, Sphere/CHS, WHO EMRO, Twigg & Mosel (2017), BRAC/USAID, PMC | **TD Evidence** | **Moderate** | How sameness of a person is established: **Evidence not found**. TD-01 Open Gap 1 — operational roles have zero external validation | **Yes** |
-| **Occurrence** | BD-TD03-001, BD-TD03-002, BD-TD05-003, BD-TD06-003 | IASC, UNHCR, IOM, WHO, interagency GBV and Child Protection Guidelines, HVSM | **TD Evidence** | **Moderate** | **The point-versus-span distinction itself: Evidence not found.** All findings describe stages; none establishes point and span as two irreducible kinds | Desirable |
-| **Epistemic Stance** | BD-TD02-002, BD-TD03-003, BD-TD04-001 | ResearchGate critical review, expert-framework commentary; Better Care Network, Sopact | TD Evidence (one direct finding) | **Moderate** | Confidence as an attached property of a humanitarian conclusion: **Evidence not found**. Representation of contradiction and of missing information: **Evidence not found** | **Yes** |
-| **Evidence** | BD-TD02-002, BD-TD02-004 | ICRC (primary), ResearchGate | TD Evidence (thin) | **Limited** | Taxonomy of evidence kinds and relative weight: **Evidence not found** — testimony 0, attestation 0, biometric 0, "proof of" 0 across six dossiers | **Yes** |
-| **Condition** | BD-TD03-004, BD-TD06-001, BD-TD06-002 | BRAC/USAID Graduation literature, PMC systematic review, IASC, Triple Nexus | **Blueprint** | **Limited** | Health, capability, shelter condition, wellbeing, caregiving: **Evidence not found**. Vulnerability composition: **Evidence not found** | **Yes — critical** |
-| **Relation** | BD-TD01-003, BD-TD03-001, BD-TD05-003 | IASC, UNHCR, OCHA, IOM, WHO, HVSM | **Split** — TD (institutional) / Blueprint (social) | **Moderate** institutional · **Evidence not found** social | Kinship 0, spouse 0, parent 0, sibling 0, family-member 0. RM §4.1's cascade claim — *"a mother's risk is her infant's risk"* — **Evidence not found** | **Yes — critical** |
+| **Entity (P4)** | BD-TD01-001/002/003/004/005, BD-TD03-004 | OCHA, UNHCR, IASC, Sphere/CHS, WHO EMRO, Twigg & Mosel (2017), BRAC/USAID, PMC | **TD Evidence** | **Moderate** | How sameness of a person is established: **Evidence not found**. TD-01 Open Gap 1 — operational roles have zero external validation | **Yes** |
+| **Occurrence (P6)** | BD-TD03-001, BD-TD03-002, BD-TD05-003, BD-TD06-003 | IASC, UNHCR, IOM, WHO, interagency GBV and Child Protection Guidelines, HVSM | **TD Evidence** | **Moderate** | **The point-versus-span distinction itself: Evidence not found.** All findings describe stages; none establishes point and span as two irreducible kinds | Desirable |
+| **Epistemic Stance (P3)** | BD-TD02-002, BD-TD03-003, BD-TD04-001 | ResearchGate critical review, expert-framework commentary; Better Care Network, Sopact | TD Evidence (one direct finding) | **Moderate** | Confidence as an attached property of a humanitarian conclusion: **Evidence not found**. Representation of contradiction and of missing information: **Evidence not found** | **Yes** |
+| **Condition (P1)** | BD-TD03-004, BD-TD06-001, BD-TD06-002 | BRAC/USAID Graduation literature, PMC systematic review, IASC, Triple Nexus | **Blueprint** | **Limited** | Health, capability, shelter condition, wellbeing, caregiving: **Evidence not found**. Vulnerability composition: **Evidence not found** | **Yes — critical** |
+| **Relation (P7)** | BD-TD01-003, BD-TD03-001, BD-TD05-003 | IASC, UNHCR, OCHA, IOM, WHO, HVSM | **Split** — TD (institutional) / Blueprint (social) | **Moderate** institutional · **Evidence not found** social | Kinship 0, spouse 0, parent 0, sibling 0, family-member 0. RM §4.1's cascade claim — *"a mother's risk is her infant's risk"* — **Evidence not found** | **Yes — critical** |
 
 **All 22 `BD-TD` finding IDs cited above resolve to real findings in the six dossiers.**
 
@@ -86,8 +87,8 @@ Chapters 8 and 9 as requiring evidence, and no dossier for them exists.
 ## 5. Confidence bands
 
 - **High confidence:** Context, Norm
-- **Medium confidence:** Identity, Occurrence, Epistemic Stance
-- **Low confidence:** Relation, Condition, Evidence
+- **Medium confidence:** Entity, Occurrence, Epistemic Stance
+- **Low confidence:** Relation, Condition
 
 ## 6. Risks
 
@@ -99,7 +100,7 @@ Chapters 8 and 9 as requiring evidence, and no dossier for them exists.
 3. **RM §8 (Risk) has zero external citations.** The Condition-versus-Epistemic-Stance tension in
    `01-DOMAIN-PRIMITIVES.md` §6.1 **cannot be settled by evidence review** — no independent
    material exists to adjudicate it. It is a ruling, not a research question.
-4. **Identity's mechanism gap.** Person-persistence is load-bearing for three principles; how
+4. **Entity's mechanism gap.** Person-persistence is load-bearing for three principles; how
    sameness is established has no evidence, and TD-01 states literature search will not close it.
 
 ## 7. Verdict

@@ -18,7 +18,7 @@ This document represents the completion of **Phase 3** of the ontology design. I
 
 The pillars are derived systematically:
 1. **Reference Model (Â§Â§3â€“15)** establishes what exists in humanitarian reality.
-2. **Domain Primitives (Step 1)** establish the *kinds* of things those concepts are (Identity, Condition, Context, etc.).
+2. **Domain Primitives (Step 1)** establish the *kinds* of things those concepts are (Entity, Condition, Context, etc.).
 3. **Ontology Layers (Step 2)** establish the structural representation (Entities, States, Events, Cognition, etc.).
 4. **Pillars (Step 3)** slice vertically through the layers, grouping reality into major thematic domains that are internally cohesive and externally distinct.
 
@@ -52,7 +52,7 @@ The pillars are derived systematically:
 **Why it is a pillar:** This is the core problem space of humanitarian action. It is highly dynamic (needs open, cascade, and close) and is structurally distinct from the human subject (a person *has* a need; they are *not* the need).
 **Boundary:** Universal.
 **What remains outside:** The interventions that solve the needs, and the baseline capabilities of the person.
-**Unresolved tensions:** The placement of Risk (Condition vs. Epistemic Stance) and Need (Condition vs. Relation) remain structurally open per the Phase 1/2 audits.
+**Unresolved tensions:** Both Risk and Need placements are resolved (see §8, items 1–2, and `04-ARCHITECTURE-RULES.md` §1). No structural tension remains for this pillar's definition; population and evidentiary depth remain future work — see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`.
 
 ### Pillar IV: Epistemics & Knowledge
 **What domain reality it represents:** What the system (and humanitarian actors) know, how well they know it, and what they do *not* know.
@@ -98,13 +98,13 @@ The pillars consume the entire ontology stack without gaps:
 
 | Pillar | Primitives | Primary Layers |
 |---|---|---|
-| **I. Human & Social Subject** | Identity, Relation, Condition, Norm | Entities, Relationships, States, Constraints |
+| **I. Human & Social Subject** | Entity, Relation, Condition, Norm | Entities, Relationships, States, Constraints |
 | **II. Context & Environment** | Context | Facets, Constraints |
 | **III. Vulnerability & Need** | Condition, Relation | States, Facets, Relationships |
-| **IV. Epistemics & Knowledge** | Epistemic Stance, Evidence, Norm | Cognition, Entities, Constraints |
-| **V. Actors & Ecosystem** | Identity, Relation, Norm | Entities, Relationships, Constraints |
+| **IV. Epistemics & Knowledge** | Epistemic Stance, Norm | Cognition, Entities, Constraints |
+| **V. Actors & Ecosystem** | Entity, Relation, Norm | Entities, Relationships, Constraints |
 | **VI. Action & Coordination** | Occurrence, Relation, Context, Norm | Events, Coordination Patterns |
-| **VII. Resources & Support** | Identity, Condition, Occurrence | Entities, Facets, Events |
+| **VII. Resources & Support** | Entity, Condition, Occurrence | Entities, Facets, Events |
 
 ---
 
@@ -158,7 +158,7 @@ The ontology is fully capable of supporting localization for any specific jurisd
 The primary structural tensions have been formally resolved:
 
 1. **Risk Placement:** Risk is classified as a *Condition* (Pillar III). Confidence *about* a Risk is an *Epistemic Stance* (Pillar IV).
-2. **Need Placement:** Need is fundamentally a *Relation* (a gap between a state and a standard) with Condition-like temporal behaviour.
+2. **Need Placement:** Need is fundamentally a Condition (RESOLVED — see `01-DOMAIN-PRIMITIVES.md` §6.2 and `04-ARCHITECTURE-RULES.md` §1). Its relational definition describes what a Need means, not what kind of ontological object it is; as a tracked object it carries severity and a lifecycle, which Condition governs and which Relation's own boundary rule cannot accommodate, since the wellbeing standard it is measured against is a Norm, not a persisting Entity.
 3. **Outcome / Impact Ownership:** Outcome and Impact are domain realities representing state changes in the relevant human subject (Wellbeing, Resilience, Need Resolution). They are owned by the Human Subject (Pillars I and III). *Outcome/Impact Measurement* (MEAL) is an operational activity that remains an open coordination question for Pillar VI.
 4. **Family Structure vs Household (RM §4.3):** Both are *Entities*. *Family* is bounded by kinship (persistent). *Household* is bounded by co-residence/shared economy (volatile).
 5. **States vs Events Boundary:** The point-versus-span distinction derives structurally from RM quarantining actions from ongoing reality.
@@ -166,7 +166,7 @@ The primary structural tensions have been formally resolved:
 7. **Humanitarian Situations:** Open-world. New situations emerge dynamically without requiring a schema update.
 8. **Identity & Biometrics (RM §3.1):** *Identity* is an Entity; its establishment is an *Epistemic Stance* grounded by *Evidence*. Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
 9. **Undocumented Status (RM §3.2):** The absence of *Evidence* (Cognition) structurally instantiates as a *Constraint* limiting formal Coordination Patterns, and a *Condition* aggravating Vulnerability.
-10. **Wellbeing Standard (RM §3.6):** A *Norm* that is strictly *Context-dependent* (Pillar II). Need is a *Relation* to this Norm.
+10. **Wellbeing Standard (RM §3.6):** A *Norm* that is strictly *Context-dependent* (Pillar II). Need is a *Condition* assessed against this Norm.
 11. **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Pillar II) that cascades *Constraints* and *Conditions* down to Subjects. Phase is a temporal *State*.
 12. **Orphanhood vs Unguardianed (RM §6.3):** *Orphanhood* is an irreversible *State* of a kinship Relation. *Unguardianed* is a reversible *State* of a caregiving Relation.
 13. **Need Interactions (RM §7.5):** Needs interact via *Dependency Relationships* (Layer 3).
