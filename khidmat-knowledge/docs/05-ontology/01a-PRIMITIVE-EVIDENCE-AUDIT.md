@@ -44,7 +44,7 @@ This scale is authoritative for both `01-DOMAIN-PRIMITIVES.md` and `02-ONTOLOGY-
 
 ## 3. Evidence Traceability Matrix
 
-> **Mapping Note (Stage 5 Correction):** This audit uses the term **Entity (P4)** to refer to what was originally assessed as "Identity". Similarly, "Evidence" was assessed but later rejected as a primitive and distributed across Entity, Occurrence, and Cognition. Its ratings are omitted from this primitive table but apply to the underlying concepts.
+> **Mapping Note (Stage 1 terminology alignment — not a Stage 5 event):** This audit uses the term **Entity (P4)** to refer to what was originally assessed, in an earlier working draft, as "Identity"; `01-DOMAIN-PRIMITIVES.md` §4/§5.3 subsequently rejected Identity as a primitive and named Entity (P4) as the correct category, and this note aligns this audit's table to that Stage 1 terminology. Similarly, "Evidence" was assessed but later rejected as a primitive (`01-DOMAIN-PRIMITIVES.md` §5.3), and its content is distributed across Entity, Occurrence, and Cognition. Its ratings are omitted from this primitive table but apply to the underlying concepts.
 
 | Primitive | Supporting TD findings | Independent sources | Primary source | Strength | Evidence gaps | Practitioner validation |
 |---|---|---|---|---|---|---|

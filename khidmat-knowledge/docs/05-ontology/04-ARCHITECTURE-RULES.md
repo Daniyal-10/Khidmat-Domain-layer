@@ -31,7 +31,7 @@ and corrected going forward.
 
 ---
 
-## 1. Ruling — Need Classification (closes the Stage 3 contradiction)
+## 1. Synchronization Correction — Need Classification (Stage 1-origin decision, propagated to Stage 3)
 
 **Finding.** Three answers exist for the same question across the frozen documents:
 
@@ -44,8 +44,11 @@ and corrected going forward.
 
 Stage 3 disagrees with Stage 1/2 in one place and with itself in another.
 
-**Ruling: Need is classified as a Condition (P1).** This is now the single stated answer for
-architecture purposes.
+**Confirmed classification (originating in `01-DOMAIN-PRIMITIVES.md` §6.2 — not newly decided
+here): Need is classified as a Condition (P1).** Stage 4's role in this section is limited to
+identifying that `03-ONTOLOGY-PILLARS.md` had drifted from Stage 1's already-established
+classification, and correcting Stage 3 to match Stage 1 — not to originate the classification.
+This is now the single stated answer for architecture purposes, per Stage 1's authority.
 
 **Reasoning, restated and strengthened.** Need's *definition* — a gap between current state and
 a basic standard of wellbeing (RM §7.1) — is relational language, which is what motivated the
@@ -67,16 +70,25 @@ what **kind of tracked object** it is. Stage 1 already drew this exact distincti
 (RM §8.1's "first-class" language vs. the confidence held *about* it) — the same distinction now
 closes Need consistently.
 
-**Patch required (not made here — this document cannot edit `03-ONTOLOGY-PILLARS.md` directly):**
+**Propagation status: CONFIRMED APPLIED (verified against current repository text at time of
+this remediation).**
 
-| Location | Current text | Corrected text |
-|---|---|---|
-| `03-ONTOLOGY-PILLARS.md` §8, item 2 | *"Need Placement: Need is fundamentally a Relation (a gap between a state and a standard) with Condition-like temporal behaviour."* | *"Need Placement: Need is fundamentally a Condition (RESOLVED — see `01-DOMAIN-PRIMITIVES.md` §6.2 and `04-ARCHITECTURE-RULES.md` §1). Its relational definition describes what a Need means, not what kind of ontological object it is; as a tracked object it carries severity and a lifecycle, which Condition governs and which Relation's own boundary rule cannot accommodate, since the wellbeing standard it is measured against is a Norm, not a persisting Entity."* |
-| `03-ONTOLOGY-PILLARS.md` §3, Pillar III, "Unresolved tensions" line | *"The placement of Risk (Condition vs. Epistemic Stance) and Need (Condition vs. Relation) remain structurally open per the Phase 1/2 audits."* | *"Both Risk and Need placements are resolved (see §8, items 1–2, and `04-ARCHITECTURE-RULES.md` §1). No structural tension remains for this pillar's definition; population and evidentiary depth remain future work — see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`."* |
+*Historical finding (recorded for traceability):* `03-ONTOLOGY-PILLARS.md` originally contained
+two locations that had drifted from Stage 1's Need classification — §8 item 2 originally read
+*"Need is fundamentally a Relation..."* and §3 Pillar III's "Unresolved tensions" line originally
+called both Risk and Need "structurally open."
 
-Both cells needed correction — the second was stale on **both** Risk and Need, not Need alone,
-since Risk's own resolution (§8 item 1) is also contradicted by that same "structurally open"
-line.
+*Corrective action:* Both locations were corrected to state Need as a Condition, consistent with
+`01-DOMAIN-PRIMITIVES.md` §6.2, with the reasoning that the wellbeing standard Need is measured
+against is a Norm rather than a persisting Entity, which forecloses the Relation reading.
+
+*Current status:* `03-ONTOLOGY-PILLARS.md` §8 item 2 now reads *"Need Placement: Need is
+fundamentally a Condition (RESOLVED — see `01-DOMAIN-PRIMITIVES.md` §6.2 and
+`04-ARCHITECTURE-RULES.md` §1)..."* and §3 Pillar III now reads *"Both Risk and Need placements
+are resolved (see §8, items 1–2, and `04-ARCHITECTURE-RULES.md` §1). No structural tension
+remains for this pillar's definition..."* — both confirmed present verbatim as of this
+remediation. No further action is required on this item.
+
 
 This ruling is binding per **CTR-2 / CTR-3** (§4.7): it applies wherever Need appears, and may be
 reopened only by new evidence or an explicit governance ruling, never by a later document
@@ -282,15 +294,16 @@ both the design source and the underlying TD evidence tier are cited. This mirro
 exclusion already applied in `01a-PRIMITIVE-EVIDENCE-AUDIT.md` §1, extended by analogy to
 rule-provenance.
 
-**Minor citation defects flagged for cleanup under ECR-1/ECR-5** (do not block Stage 4;
-correction is a wording fix, not new derivation):
-- `02-ONTOLOGY-LAYERS.md` §11, assumption A-03 labels Evidence as **"(P4)"**; P4 is Entity
-  (`01-DOMAIN-PRIMITIVES.md` §4). Evidence was examined and rejected as a primitive
-  (`01-DOMAIN-PRIMITIVES.md` §5.3).
-- `02-ONTOLOGY-LAYERS.md` §12, "Evidence Taxonomy" item, refers to "the *Evidence* primitive,"
-  which does not exist as a ratified primitive for the same reason.
-  Both should read "the Evidence *entity/occurrence* content, per §5.3's rejection of Evidence
-  as a primitive."
+**Citation defects — CONFIRMED CORRECTED (historical record retained per XCR-3):**
+- *Historical finding:* `02-ONTOLOGY-LAYERS.md` §11 (assumption A-03) previously labeled
+  Evidence as "(P4)"; P4 is Entity (`01-DOMAIN-PRIMITIVES.md` §4), and Evidence was examined and
+  rejected as a primitive (`01-DOMAIN-PRIMITIVES.md` §5.3), so the label was incorrect.
+- *Historical finding:* `02-ONTOLOGY-LAYERS.md` §12 ("Evidence Taxonomy" item) previously
+  referred to "the Evidence primitive," which does not exist as a primitive for the same reason.
+- *Corrective action:* Both locations were rewritten to read "the Evidence *entity/occurrence*
+  content, per §5.3's rejection of Evidence as a primitive."
+- *Current status:* Confirmed present verbatim in `02-ONTOLOGY-LAYERS.md` §11 and §12 as of this
+  remediation. No further action required on this item.
 
 ### 4.6 Extension & Change-Control Rules (XCR)
 
@@ -402,13 +415,12 @@ undisclosed violation exists:
 | LCR-6 (Cognition non-assertion) | **Pass** — Stage 2 §8.4 states this rule explicitly and no layer entry violates it. |
 | CCR-1 (altitude qualification) | **Pass** — RM §11.4 and Stage 2 §9.2 state the obligation; no ontology element currently uses an altitude-ambiguous term unqualified. |
 | CCR-2 (action quarantine) | **Pass** — Stage 2 §9 and Stage 3 §3 (Pillar VI) both cite the RM §12 quarantine explicitly. |
-| ECR-1/ECR-5 (citation integrity) | **Minor defect found and flagged** — Evidence mislabeled as "(P4)" in Stage 2 §11/§12 (see §4.5 above). Cosmetic; does not misclassify any domain concept. |
+| ECR-1/ECR-5 (citation integrity) | **Defect found and confirmed corrected at source** — Evidence was mislabeled as "(P4)" in Stage 2 §11/§12; both locations now read correctly per §4.5's historical record. Never misclassified any domain concept. |
 | CTR-2 (single-answer requirement) | **Defect found and closed by §1** — Need was answered three ways; now one. |
 | PBR-1 (pillars introduce no new primitive) | **Pass** — Stage 3 §2 states derivation direction explicitly; no pillar in §3 is cited as a primitive source. |
 
-**Net result:** one substantive defect (Need), now closed; one cosmetic defect (Evidence
-mislabel), flagged for correction but non-blocking. No other rule is violated by existing
-content.
+**Net result:** one substantive defect (Need) and one cosmetic defect (Evidence mislabel), both
+now confirmed corrected at source. No other rule is violated by existing content.
 
 ---
 
@@ -444,8 +456,8 @@ validation of the domain content the rules govern; no taxonomy or value-set popu
 **Blocking for Stage 5:** None. The rules in §4 are sufficient to begin Ground Truth Reviews —
 which test the ontology's content against real cases — without further Stage 1–4 rework.
 
-**Propagation required, not yet performed (tracked here since this document cannot edit other
-files):** the two patch cells in §1, and the two citation cleanups in §4.5, should be applied to
-`03-ONTOLOGY-PILLARS.md` and `02-ONTOLOGY-LAYERS.md` respectively when those files are next
-opened for editing. Neither blocks proceeding to Stage 5 in the meantime — this document is the
-authoritative record of both corrections until they are applied at source, per XCR-3.
+**Propagation — CONFIRMED COMPLETE.** The two patch cells specified in §1 and the two citation
+cleanups specified in §4.5 have been verified as applied at source, verbatim, in
+`03-ONTOLOGY-PILLARS.md` and `02-ONTOLOGY-LAYERS.md` respectively, as of this remediation. This
+section (§8) and §1/§4.5 remain the historical record of what was found and corrected, per
+XCR-3; no further propagation action is required.

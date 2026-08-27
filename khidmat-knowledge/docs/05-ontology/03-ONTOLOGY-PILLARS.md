@@ -69,7 +69,10 @@ The pillars are derived systematically:
 **Supporting primitives:** Entity (P4), Relation (P7), Norm (P5).
 **RM concepts within it:** Organisations, Programmes, Donors, Community Groups, Governments, Accountability.
 **Why it is a pillar:** It models the resource and response side of the equation. It is distinct from the human subject and is necessary to represent accountability, funding chains, and ecosystem coordination.
-**Boundary:** Universal. Jurisdiction-specific localizations (e.g., local charity regulations or specific government bodies) will populate this layer, but the structure is universal.
+**Boundary:** Universal. Jurisdiction-specific localizations (e.g., local charity regulations or specific government bodies) will populate this layer, but the structure is universal. Organisation and Programme are modelled here as two distinct Entities, per the evidence-favored
+separation (see `01-DOMAIN-PRIMITIVES.md` §5.2, Evidence Audit; `02-ONTOLOGY-LAYERS.md` A-04);
+this diverges from Business Logic V1 §4's single-row treatment, an open item deferred to Stage 7
+governance (`04-ARCHITECTURE-RULES.md` §7).
 **What remains outside:** The specific actions they take (Events).
 
 ### Pillar VI: Action & Coordination
@@ -164,27 +167,37 @@ The primary structural tensions have been formally resolved:
 5. **States vs Events Boundary:** The point-versus-span distinction derives structurally from RM quarantining actions from ongoing reality.
 6. **Service Providers as Actors:** Government, healthcare, schools, and employers are modeled as Actors (Entities) with agency (Pillar V).
 7. **Humanitarian Situations:** Open-world. New situations emerge dynamically without requiring a schema update.
-8. **Identity & Biometrics (RM §3.1):** *Identity* is an Entity; its establishment is an *Epistemic Stance* grounded by *Evidence*. Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
+8. **Identity & Biometrics (RM §3.1):** *Identity* is not a primitive (per `01-DOMAIN-PRIMITIVES.md` §5.3). The persisting subject is the **Entity (P4)**; identity resolution — establishing that a subject is the same subject across encounters — is an **Epistemic Stance**, grounded by Evidence. Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights on that stance.
 9. **Undocumented Status (RM §3.2):** The absence of *Evidence* (Cognition) structurally instantiates as a *Constraint* limiting formal Coordination Patterns, and a *Condition* aggravating Vulnerability.
 10. **Wellbeing Standard (RM §3.6):** A *Norm* that is strictly *Context-dependent* (Pillar II). Need is a *Condition* assessed against this Norm.
 11. **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Pillar II) that cascades *Constraints* and *Conditions* down to Subjects. Phase is a temporal *State*.
 12. **Orphanhood vs Unguardianed (RM §6.3):** *Orphanhood* is an irreversible *State* of a kinship Relation. *Unguardianed* is a reversible *State* of a caregiving Relation.
 13. **Need Interactions (RM §7.5):** Needs interact via *Dependency Relationships* (Layer 3).
-14. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple Risk *Conditions* and *Contexts*.
+14. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple compounding *Conditions* (e.g., health, capability, household and environmental Conditions) and *Contexts*, per RM §8.4's own framing of "multiple compounding factors." Risk (RM §8.1–8.3) is one *Condition* among several that can compound into Vulnerability; Vulnerability composition is not defined as derived from Risk alone. The composition rule itself remains `[OPEN]` (see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`; `04-ARCHITECTURE-RULES.md` UHR-2).
 15. **Contradiction Modeling (RM §10.5):** Defined in Cognition as multiple *Epistemic Stances* asserting mutually exclusive *States*.
 16. **Funder Altitude (RM §11.4):** The Giving side operates as a third *Funding Altitude*, extending the *Altitude Coupling* Coordination Pattern. It imposes *Constraints* on the Programme Altitude.
 17. **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* function identically to Risk/Need as valid initiating triggers for *Events* and *Coordination Patterns*.
 
 **Remaining Open Tensions:**
 
-Future domain population, jurisdiction-specific localization, exact taxonomies, practitioner enrichment, and implementation details remain open. The foundational ontology is resolved and structurally frozen.
+Future domain population, jurisdiction-specific localization, exact taxonomies, practitioner enrichment, and implementation details remain open. The foundational ontology's structure — the seven primitives, eight layers, and seven pillars,
+and the resolved classification decisions listed above — is resolved and structurally stable.
+This is a structural-stability statement, not a governance-ratification statement; formal
+ratification is a Stage 7 matter and has not occurred (see `01-DOMAIN-PRIMITIVES.md` §7).
 
 ---
 
 ## 9. Stage 3 completion status
 
-* **Stage 1 (Domain Primitives):** Frozen (Structure).
-* **Stage 2 (Ontology Layers):** Frozen (Structure).
-* **Stage 3 (Ontology Pillars):** Frozen (Structure).
+* **Stage 1 (Domain Primitives):** Structurally Stable — Not Governance-Ratified (see `01-DOMAIN-PRIMITIVES.md` §7).
+* **Stage 2 (Ontology Layers):** Structurally Stable — Not Governance-Ratified.
+* **Stage 3 (Ontology Pillars):** Structurally Stable — Not Governance-Ratified.
 
-Architecture has **NOT** been designed yet. The Stage 1-3 foundation is structurally **frozen**. While practitioner validation exists to validate and enrich the ontology, it will not reopen the structural foundation unless evidence identifies a genuine structural category that cannot be represented. Architecture design may now proceed.
+Architecture has **NOT** been designed yet. The Stage 1-3 foundation is **structurally stable**:
+its categories, layers and pillars are not expected to change absent new evidence or an explicit
+ruling. This is a statement of structural stability, not of formal governance ratification —
+governance closure remains a Stage 7 matter and has not occurred (see
+`01-DOMAIN-PRIMITIVES.md` §7). While practitioner validation exists to validate and enrich the
+ontology, it will not reopen the structural foundation unless evidence identifies a genuine
+structural category that cannot be represented. Architecture design may now proceed on this
+structurally stable, not-yet-ratified basis.

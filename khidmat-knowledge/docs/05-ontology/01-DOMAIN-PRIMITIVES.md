@@ -317,6 +317,16 @@ Because of this relational definition, Need initially appears to classify as a R
 
 ## 7. Status — DRAFT: PENDING GOVERNANCE CLOSURE
 
+**Terminology note (added for cross-document consistency, not a change of status):**
+Downstream documents (`02-ONTOLOGY-LAYERS.md` §13; `03-ONTOLOGY-PILLARS.md` §8, §9) describe
+this primitive set, and the layers/pillars built on it, as "structurally stable" or
+"structurally frozen." That term refers only to structural stability — the seven categories and
+their boundaries are not expected to change absent new evidence or an explicit ruling — and does
+**not** mean governance ratification has occurred. This section's status
+(DRAFT — PENDING GOVERNANCE CLOSURE, not formally closed) remains the single authoritative
+statement of this primitive set's ratification status. See §5 (Status Semantics) of the
+remediation record for the exact distinction in use project-wide.
+
 **In Draft:** The definition of a Domain Primitive (§1), the method (§2), the derivation
 trace (§3), the coverage result that the giving side introduces no new primitive (§5.2), and the classification of Risk and Need (§6) are proposed and structurally sound.
 

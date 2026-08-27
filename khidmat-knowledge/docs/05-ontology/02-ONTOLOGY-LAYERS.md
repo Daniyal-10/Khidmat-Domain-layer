@@ -120,7 +120,7 @@ than through something else? If no, it is a State of something that does.
 |---|---|---|
 | Person | RM §3.1 | Blueprint; obliquely BD-TD03-004 |
 | Household | RM §4.2 | BD-TD03-004 (trajectory tracked separately from programme status) |
-| Family | RM §4.1 | Blueprint only — **see §12.3, contested** |
+| Family | RM §4.1 | Blueprint only — resolved as a distinct Entity, bounded by kinship/legal guardianship; see §12 ("Family vs Household") |
 | Community | RM §4.4 | Blueprint |
 | Organisation | RM §11.1 | **Strong** — BD-TD01-001/002/003 |
 | Programme | RM §11.1 | **Strong** — BD-TD01-003, distinct from Organisation |
@@ -390,7 +390,7 @@ Consequently, this Cognition layer holds **only the *confidence in* a risk asses
 
 - Cognition asserts **nothing** about humanitarian reality. *"This family is destitute"* is a
   State; *"we have not verified this"* is Cognition.
-- Evidence (P4) is **what is held**; Epistemic Stance (P3) is **what may be concluded from it**.
+- Entity (P4) is **what is held**; Epistemic Stance (P3) is **what may be concluded from it**.
   Both feed this layer and are not interchangeable.
 - The *act* of collecting evidence is an Event; the evidence collected is not.
 - The consequence class that triggers human review is representable here; the **mechanics** of
@@ -501,7 +501,7 @@ made to keep derivation moving, and each is reversible.**
 
 The following domain concepts, previously marked [OPEN], are now formally resolved at the ontological level. Only their taxonomy, algorithmic implementation, or localization values remain open for Stage 4 or Data Population:
 
-*   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* (Entity) is an Entity. Its establishment is an *Epistemic Stance* (Layer 7) grounded by *Evidence* (Entity). Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
+*   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* is not a primitive and is not itself Entity-classified content (per `01-DOMAIN-PRIMITIVES.md` §5.3 and §4's P4 boundary note). The **persisting subject** (e.g., a Person) is the **Entity (P4)**. **Identity resolution** — the act of recognising that persisting subject as the same subject across encounters — is an **Epistemic Stance** (Layer 7), grounded by **Evidence** content. Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights on an identity-resolution stance.
 *   **Undocumented Status (RM §3.2):** Ontologically, this is the absence of *Evidence* (Entity), which simultaneously instantiates as a *Constraint* (Layer 4) limiting formal Coordination Patterns, and a *Condition* (Layer 5) aggravating Vulnerability.
 *   **Wellbeing Standard (RM §3.6):** Structurally a *Norm* (Layer 4) that is strictly *Context-dependent* (Layer 1). A Need is a *Condition* (Layer 5) assessed against this Context-bound Norm.
 *   **Family vs Household (RM §4.3):** Both are *Entities* (Layer 2) rather than merely Relational Structures, as they have their own trajectories and conditions. *Family* is bounded by kinship/legal guardianship (highly persistent). *Household* is bounded by co-residence/shared economy (volatile). A Subject can hold relationships to both concurrently.
@@ -531,4 +531,9 @@ facet (§2.3, §6.3); evidence kinds (§8.5).
 
 **Blocking for the next phase:** None structurally, since Risk was formally resolved as a Condition.
 
-**Foundation status:**  1-DOMAIN-PRIMITIVES.md is structurally frozen . Every layer above inherits that stability. The 8 Layers are structurally frozen.
+**Foundation status:** `01-DOMAIN-PRIMITIVES.md`'s primitive set is **structurally stable** — its
+seven categories and their derivation are not expected to change absent new evidence or an
+explicit governance ruling. This is a structural-stability statement only; the primitive set is
+**not formally ratified or governance-closed** (see `01-DOMAIN-PRIMITIVES.md` §7). Every layer
+above inherits that same structural stability, on the same not-yet-ratified basis. The 8 Layers
+are structurally stable, not governance-closed.
