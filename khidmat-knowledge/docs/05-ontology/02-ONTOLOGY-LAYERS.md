@@ -6,8 +6,8 @@ Derived from `01-DOMAIN-PRIMITIVES.md`, which is the **current working foundatio
 ratified ontology**. Every layer below inherits that provisionality.
 
 Domain content traces to `docs/04-reference-model/…REFERENCE_MODEL.md` (RM). Evidence strength
-traces to **`01a-PRIMITIVE-EVIDENCE-AUDIT.md`** — referred to below as *the Phase 1 audit* —
-which defines the rating scale used throughout and is authoritative for it.
+traces to the authoritative rating scale established in **`04-ARCHITECTURE-RULES.md`** (ECR-0) —
+referred to below as *the pre-Stage-5 evidence ratings*.
 
 ---
 
@@ -24,7 +24,7 @@ which defines the rating scale used throughout and is authoritative for it.
 **Historical note:** Where a concept's primitive was previously contested (e.g., Risk and Need), those classifications have now been formally resolved (see `04-ARCHITECTURE-RULES.md` and `01-DOMAIN-PRIMITIVES.md`).
 
 **Evidence strength is inherited, not re-derived.** Each layer carries the strength of the
-primitive it derives from, per the Phase 1 audit. A layer cannot be better evidenced than its
+primitive it derives from, per the pre-Stage-5 evidence rating. A layer cannot be better evidenced than its
 source.
 
 ---
@@ -132,7 +132,7 @@ than through something else? If no, it is a State of something that does.
 **Strongest.** Institutional entities. While external evidence (BD-TD01-003) distinguishes implementing organisations from the programmes they lead, Business Logic V1 §4 collapses them into a single actor row ("Programme / Organisation"). Per the repository authority rules, Tier 1 outranks external evidence, so this layer unifies them as a single combined Entity, closing the previous divergence.
 
 **Weakest.** Person. RM §3.1 makes person-persistence load-bearing for three separate principles,
-and the Phase 1 audit records that **how sameness is established is Evidence not found** —
+and the pre-Stage-5 evidence rating records that **how sameness is established is Evidence not found** —
 closable only by practitioner evidence (TD-01 Open Gap 1). The entity is admitted; its
 re-identification mechanism is absent. That is an engineering gap, not an ontology gap, but it
 means the entity most central to the model is the one least able to be operated.
@@ -176,7 +176,7 @@ on BL V1 §6 alone, with zero corroboration across six dossiers.
 This matters more than the count suggests. RM §4.1's central claim — that **vulnerability
 cascades along dependency**, *"a mother's risk is her infant's risk"* — is a statement about
 relationship semantics, and it is the mechanism by which a person cannot be assessed in isolation.
-The Phase 1 audit records it as **Evidence not found.** It is retained because RM states it; it is
+the pre-Stage-5 evidence rating records it as **Evidence not found.** It is retained because RM states it; it is
 flagged because nothing outside this project confirms it.
 
 ### 4.3 What this layer cannot yet hold
@@ -262,7 +262,7 @@ most common modelling shortcut in the domain: a single status field.
 ### 6.3 What this layer cannot hold — the largest gap in the ontology
 
 **Values.** Every row above except Engagement and Person/Household (Wellbeing/Condition) names a dimension whose values are
-unevidenced. The Phase 1 audit rates Condition **Limited**, Blueprint-only, with health,
+unevidenced. the pre-Stage-5 evidence rating rates Condition **Limited**, Blueprint-only, with health,
 capability, shelter condition, wellbeing and caregiving all at term-count zero across six
 dossiers.
 
@@ -274,7 +274,7 @@ It cannot yet be populated with confidence.
 
 ### 6.4 A boundary that rests on an unevidenced distinction
 
-The line between States and Events is the point-versus-span distinction. The Phase 1 audit
+The line between States and Events is the point-versus-span distinction. the pre-Stage-5 evidence rating
 records: *"the point-versus-span distinction itself: Evidence not found."* All TD findings
 describe stages and activities; none establishes that a point-event and a span-state are two
 irreducible kinds.
@@ -446,7 +446,7 @@ is the largest structural absence in the ontology.
 
 ## 10. Evidence strength inherited by layer
 
-Each layer's ceiling is the strength of its source primitive (Phase 1 audit).
+Each layer's ceiling is the strength of its source primitive (pre-Stage-5 evidence rating).
 
 | Layer | Source primitive(s) | Inherited strength | Note |
 |---|---|---|---|

@@ -52,7 +52,7 @@ The pillars are derived systematically:
 **Why it is a pillar:** This is the core problem space of humanitarian action. It is highly dynamic (needs open, cascade, and close) and is structurally distinct from the human subject (a person *has* a need; they are *not* the need).
 **Boundary:** Universal.
 **What remains outside:** The interventions that solve the needs, and the baseline capabilities of the person.
-**Dependencies:** Both Risk and Need placements are resolved (see §8, items 1–2, and `04-ARCHITECTURE-RULES.md` §1). No structural tension remains for this pillar's definition; population and evidentiary depth remain future work (Stage 5) — see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`.
+**Dependencies:** Both Risk and Need placements are resolved (see §8, items 1–2, and `04-ARCHITECTURE-RULES.md` §1). No structural tension remains for this pillar's definition; population and evidentiary depth remain future work (Stage 5).
 
 ### Pillar IV: Epistemics & Knowledge
 **What domain reality it represents:** What the system (and humanitarian actors) know, how well they know it, and what they do *not* know.
@@ -170,7 +170,7 @@ The primary structural tensions have been formally resolved:
 11. **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Pillar II) that cascades *Constraints* and *Conditions* down to Subjects. Phase is a temporal *State*.
 12. **Orphanhood vs Unguardianed (RM §6.3):** *Orphanhood* is an irreversible *State* of a kinship Relation. *Unguardianed* is a reversible *State* of a caregiving Relation.
 13. **Need Interactions (RM §7.5):** Needs interact via *Dependency Relationships* (Layer 3).
-14. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple compounding *Conditions* (e.g., health, capability, household and environmental Conditions) and *Contexts*, per RM §8.4's own framing of "multiple compounding factors." Risk (RM §8.1–8.3) is one *Condition* among several that can compound into Vulnerability; Vulnerability composition is not defined as derived from Risk alone. The composition rule itself is a Source-Absent Parameter (see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`; `04-ARCHITECTURE-RULES.md` UHR-2).
+14. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple compounding *Conditions* (e.g., health, capability, household and environmental Conditions) and *Contexts*, per RM §8.4's own framing of "multiple compounding factors." Risk (RM §8.1–8.3) is one *Condition* among several that can compound into Vulnerability; Vulnerability composition is not defined as derived from Risk alone. The composition rule itself is a Source-Absent Parameter (see `04-ARCHITECTURE-RULES.md` UHR-2).
 15. **Contradiction Modeling (RM §10.5):** Defined in Cognition as multiple *Epistemic Stances* asserting mutually exclusive *States*.
 16. **Funder Altitude (RM §11.4):** The Giving side operates as a third *Funding Altitude*, extending the *Altitude Coupling* Coordination Pattern. It imposes *Constraints* on the Programme Altitude.
 17. **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* function identically to Risk/Need as valid initiating triggers for *Events* and *Coordination Patterns*.
@@ -195,4 +195,3 @@ While practitioner validation exists to validate and enrich the
 ontology, it will not reopen the structural foundation unless evidence identifies a genuine
 structural category that cannot be represented. Architecture design may now proceed on this
 fully resolved and closed basis.
-

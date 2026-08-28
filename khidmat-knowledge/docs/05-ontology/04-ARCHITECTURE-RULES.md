@@ -3,7 +3,7 @@
 **Ontology Design, step 4 of 7.** Status: **Structurally resolved; pending Stage 5/7.**
 
 Derived from `01-DOMAIN-PRIMITIVES.md`, `02-ONTOLOGY-LAYERS.md`, `03-ONTOLOGY-PILLARS.md`,
-`01a-PRIMITIVE-EVIDENCE-AUDIT.md`, `README.md` (Standing Rules), and
+`README.md` (Standing Rules), and
 `docs/04-reference-model/KHIDMAT_HUMANITARIAN_DOMAIN_REFERENCE_MODEL.md` (RM).
 
 Intended location in the repository: `docs/05-ontology/04-ARCHITECTURE-RULES.md`.
@@ -268,15 +268,24 @@ measurable Condition.
 
 ### 4.5 Evidence & Citation Rules (ECR)
 
+**ECR-0 — Evidence Rating Scale.** The following scale is authoritative for all evidence strength references in the ontology foundation. (Level-1 sources are TD Evidence Dossier Tier B/D findings; Tier C findings are excluded).
+| Grade | Meaning |
+|---|---|
+| **Strong** | ≥2 independent Level-1 source families, Tier B institutional or high-confidence Tier D |
+| **Moderate** | 1–2 Level-1 findings, corroborated but thin or at medium confidence |
+| **Limited** | A single Level-1 finding, tangential or partial |
+| **Blueprint-only** | No Level-1 support. Conceptually defined at Levels 3–4 only |
+| **Evidence not found** | The specific claim was searched for across all dossiers and is absent |
+
 **ECR-1 — RM citation required.** Every ontology element must cite the Reference Model section
 it derives from. An element with no RM citation is a proposal, not part of the ontology.
 *Source:* README Standing Rules 1–2.
 
 **ECR-2 — Evidence strength inherits downward, never upgrades.** A layer entry cannot exceed the
-strength recorded for it in `01a-PRIMITIVE-EVIDENCE-AUDIT.md`; a pillar cannot exceed its
+strength recorded for its primitive; a pillar cannot exceed its
 constituent layers'. Restating a Blueprint-only claim elsewhere does not make it Tier B/D
 evidence.
-*Source:* `01a-PRIMITIVE-EVIDENCE-AUDIT.md` §1–2; `02-ONTOLOGY-LAYERS.md` §0, §10.
+*Source:* Pre-Stage-5 Phase 1 ratings; `02-ONTOLOGY-LAYERS.md` §0, §10.
 
 **ECR-3 — No self-citation.** A document may not cite itself, or a document derived from it, as
 independent support for a claim.
@@ -291,7 +300,7 @@ pillar body.
 to a Standing Rule, an RM section, or a prior design decision — not to a TD dossier finding —
 unless it directly operationalizes a domain finding (e.g., CCR-1, CCR-6, CCR-7), in which case
 both the design source and the underlying TD evidence tier are cited. This mirrors the Tier-C
-exclusion already applied in `01a-PRIMITIVE-EVIDENCE-AUDIT.md` §1, extended by analogy to
+exclusion already applied in the evidence rating scale (ECR-0), extended by analogy to
 rule-provenance.
 
 **Citation defects — CONFIRMED CORRECTED (historical record retained per XCR-3):**
@@ -384,7 +393,7 @@ trigger (CCR-5) rather than resolving them silently.
 | LCR (4.2) | Layer derivation integrity | Stage 2 |
 | PBR (4.3) | Pillar derivation integrity | Stage 3 |
 | CCR (4.4) | Domain-critical invariants that cut across all stages | RM directly |
-| ECR (4.5) | Evidentiary honesty across all stages | `01a-PRIMITIVE-EVIDENCE-AUDIT.md` |
+| ECR (4.5) | Evidentiary honesty across all stages | ECR-0 Rating Scale |
 | XCR (4.6) | Change discipline | README Standing Rules |
 | CTR (4.7) | Tension-resolution discipline | Review package + this document |
 | UHR (4.8) | Non-blocking treatment of source-absent parameters | RM source-gap items, Stage 2 §3.3/§6.3/§8.5/§9.4 |

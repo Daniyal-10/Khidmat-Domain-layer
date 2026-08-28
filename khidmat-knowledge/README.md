@@ -50,7 +50,6 @@ Everything below is **FROZEN**. No further foundation documents are to be create
 | `CLIENT_CONTEXT_UNVERIFIED.md` | QUARANTINED | Deployment context sourced to a client file not present in this repository. Not authoritative. Unresolved. |
 | `PRE-STAGE-5-OPEN-QUESTION-RESOLUTION-REGISTER.md` | **ACTIVE** | Final resolution pass closing all structural ontology-design questions prior to Stage 5. |
 | `docs/05-ontology/01-DOMAIN-PRIMITIVES.md` | **DRAFT — ACTIVE** | Step 1. Seven primitive categories, derivation trace, coverage test. Structurally resolved; pending Stage 5/7. |
-| `docs/05-ontology/01a-PRIMITIVE-EVIDENCE-AUDIT.md` | **ACTIVE** | Evidence traceability audit for the primitive set. |
 | `docs/05-ontology/02-ONTOLOGY-LAYERS.md` | **DRAFT — ACTIVE** | Step 2. Eight layers derived from the primitives. Structural tensions resolved; empirical dependencies marked. |
 | `docs/05-ontology/03-ONTOLOGY-PILLARS.md` | **DRAFT — ACTIVE** | Step 3. Seven pillars grouping reality into domains. Structurally resolved; pending Stage 5/7. |
 | `docs/05-ontology/04-ARCHITECTURE-RULES.md` | **DRAFT — ACTIVE** | Step 4. Architecture rules governing composition, extension, and handling of unknowns (UHR). |
