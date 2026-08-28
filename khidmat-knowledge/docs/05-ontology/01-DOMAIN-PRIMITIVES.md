@@ -277,18 +277,7 @@ constraint, and §13 admitted at dimension level only.
 
 **Why this is the right answer rather than a convenient one.** The narrower alternative would
 exclude the giving side. `SCOPE_COVERAGE.md` §4 records that the Project Lead already chose
-| Reference-model concepts | Kind-answer reached |
-|---|---|
-| Person (§3.1) · Family (§4.1) · Household (§4.2) · Community (§4.4) · Organisation, Programme, Donor, Government (§11.1) · Emergent groups (§4.5) | that which exists and persists as a distinct whole |
-| Parent, child, guardian, spouse, caregiver (§4.1) · dependency (§4.1) · responsibility (§4.1) · household membership (§4.3) · referral (§12.1) · adoption of a family (§16.4) · evidence grounding a belief (§10.2) | a connection between things that persist |
-| Lifecycle stage (§3.3) · capabilities (§3.4) · health, disability, malnutrition (§3.5) · wellbeing (§3.6) · shelter condition, utilities (§4.2) · household resilience (§4.2) · need (§7.1) · vulnerability (§8.4) · engagement stage (§14.2) · outcome (§15.2) · documentation status (§3.2) | that which is true across a span, and can change |
-| Registration, verification visit, delivery, referral, follow-up (§12.1) · displacement, death, job loss (§6) · a shock absorbed (§4.2) · complaint raised (§12.6) · document/testimony generation (§10.2) | that which happened at a point |
-| Claim vs finding (§10.1, §10.3) · confidence (§10.4) · uncertainty, contradiction, missing information (§10.5) · epistemic weight of a registrant (§10.1) | the warrant the system holds for what it asserts |
-| Consent and its bounded necessity exception (§3.7) · dignity as standing constraint (§3.7) · eligibility (§12.2) · safeguarding precedence (§3.7) · funding restriction (§11.4, structurally supported) · human-review requirement (§10.6) | that which bounds what is permitted or valid |
-| Geography, settlement type (§5.1) · seasonal calendar (§5.2) · cultural framing of household (§4.3) · crisis phase (§5.4) · programme vs case altitude (§11.4) · applicability scope (§2.2) | the frame relative to which a statement holds |
-
-**Seven answers. Each recurs across multiple independent sections of the reference model. No
-eighth answer survived a second pass** — except two contested classifications recorded in §6.
+to include it.
 
 ---
 
@@ -301,9 +290,9 @@ Two central concepts that previously straddled classifications have now been for
 RM §8.1 insists risk is **first-class**, with horizon, trend and severity, *"not a byproduct of
 severity rules."* 
 
-**Resolution:** Risk is classified as a **Condition**. It is a dispositional/potential form of Condition that is oriented toward a possible future outcome (with horizon, trend, and severity), distinct from the future event actually occurring.
+**Resolution:** Risk is classified as a **Condition**. It is a dispositional form of Condition that is oriented toward a possible future outcome (with horizon, trend, and severity), distinct from the future event actually occurring. The assessment or confidence *about* that Risk is distinct from the Risk itself and belongs to **Epistemic Stance**.
 
-The assessment or confidence *about* that Risk is distinct from the Risk itself and belongs to **Epistemic Stance** (Cognition). This prevents Risk from being collapsed into "what the system believes."
+**Provenance Disclosure:** This classification was initially a provisional authorial ruling, but is now formally resolved. Per the final pre-Stage-5 resolution, Risk is structurally confirmed as a Condition.
 
 ### 6.2 Need
 
@@ -321,8 +310,8 @@ Because of this relational definition, Need initially appears to classify as a R
 Downstream documents (`02-ONTOLOGY-LAYERS.md` §13; `03-ONTOLOGY-PILLARS.md` §8, §9) describe this primitive set, and the layers/pillars built on it, as "structurally stable" or "structurally resolved." The structural ontology (the seven primitives) has passed final source-grounded resolution against Tier 1 authority. No structural governance dependencies remain. See §5 (Status Semantics) of the
 remediation record for the exact distinction in use project-wide.
 
-**In Draft:** The definition of a Domain Primitive (§1), the method (§2), the derivation
-trace (§3), the coverage result that the giving side introduces no new primitive (§5.2), and the classification of Risk and Need (§6) are proposed and structurally sound.
+**Resolved:** The definition of a Domain Primitive (§1), the method (§2), the derivation
+trace (§3), the coverage result that the giving side introduces no new primitive (§5.2), and the classification of Risk and Need (§6) are resolved and structurally sound.
 
 **The primitive set is formally closed.** The foundation structure is fully resolved against the project's authoritative sources. Practitioner validation (Stage 5) will populate values but will not invent an 8th primitive. No governance block remains.
 

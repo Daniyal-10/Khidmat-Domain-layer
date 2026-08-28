@@ -371,7 +371,7 @@ named, empty extension point in the relevant layer/pillar. The stub carries no i
 **UHR-2 — Composition-function parameterization.** Where a composition rule is domain-real but unevidenced (vulnerability composition, compound risk composition), the architecture represents it as a named, versioned function attached to the relevant State, parameterized for Stage 5. It is NOT hard-coded as additive, multiplicative, or threshold-based because the sources do not provide a math formula.
 *Source:* RM §8.4; `02-ONTOLOGY-LAYERS.md` §6.3.
 
-**UHR-3 — Disputed ownership tagging.** (Historical Note) Where a Coordination Pattern's ownership was genuinely undecided (outcome/impact measurement as a case-journey stage vs. a separate MEAL discipline), it was tagged pending. This specific tension is now **RESOLVED** by Tier 1 (BL V1 §14) in favor of the Case Journey.
+**UHR-3 — Disputed ownership tagging.** Where a Coordination Pattern's ownership is genuinely undecided (e.g., outcome/impact measurement as a case-journey stage vs. a separate MEAL discipline), the architecture tags its ownership `ownership: pending` rather than forcing a premature resolution, preserving the tension from RM §12.5.
 *Source:* RM §12.5; `02-ONTOLOGY-LAYERS.md` §7.3, §9.3.
 
 **UHR-4 — Identity-resolution uncertainty routing.** Because the mechanism for establishing
@@ -422,14 +422,30 @@ now confirmed corrected at source. No other rule is violated by existing content
 
 ---
 
-## 7. Structurally Resolved but Parameter-Absent
+## 7. Open Tensions and Parameter Gaps
 
-There are no unresolved structural ontology questions remaining. Every item listed below is formally classified and bounded by the ontology (Stages 1–4). What remains missing is strictly the **empirical value/rule** which the current authoritative project sources do not specify. These are formally classified as Source-Absent Parameters.
+### 7.1 Open Tensions Carried Forward
+
+These represent genuine structural ambiguities or governance gaps that remain unresolved, tracked here to prevent them from blocking Stage 5.
+
+| Open Item | UHR Treatment | Resolution Path |
+|---|---|---|
+| **Service Providers as Actors** (Whether healthcare, schools, employers act with agency) | UHR-3 equivalent (carried as `[OPEN]`) | Project Lead governance ruling |
+| **Need-interaction model** (General model unstated) | UHR-1 (stub extension point) | Practitioner evidence / explicit ruling |
+| **Contradiction-representation** (Representation unstated) | UHR-1 (stub extension point) | Practitioner evidence / explicit ruling |
+| **Missing-information-representation** (Representation unstated) | UHR-1 (stub extension point) | Practitioner evidence / explicit ruling |
+| **Case Coordination/Orchestration capability status** (Tier-C-only, not independently evidenced) | UHR-1 (stub extension point) | Tier B/D evidence collection or practitioner evidence |
+| **Outcome/Impact operational ownership** (Case journey vs MEAL) | UHR-3 | Project Lead governance ruling |
+
+### 7.2 Structurally Resolved but Parameter-Absent
+
+There are no unresolved structural questions for the items below. What remains missing is strictly the **empirical value/rule** which the current authoritative project sources do not specify. These are formally classified as Source-Absent Parameters.
 
 None of the following prevents Stage 5 (Ground Truth Reviews) from beginning. Each has an explicit UHR treatment (§4.8) that lets the architecture proceed.
 
 | Structurally Resolved Domain Concept | Structural Classification (Established) | Source-Absent Parameter (Not defined in sources) | UHR treatment |
 |---|---|---|---|
+| **Family Structure vs Household** | Entities (P4) bounded by kinship vs shared economy. | The ontology establishes the entities, but no authoritative project source specifies the membership determination rules or parameters. | UHR-2 equivalent |
 | **Person-sameness / Identity** | Persisting subject is an Entity (P4); Sameness assertion is an Epistemic Stance (P3). | The ontology establishes the identity-sameness mechanism class, but no authoritative project source specifies the operational attestation rules or conflict procedures. | UHR-4 |
 | **Vulnerability / Risk Composition** | Emergent composite State (Layer 5) derived from compounding Conditions (P1). | The ontology establishes the composition boundary, but no authoritative project source specifies the qualitative/quantitative composition rules. | UHR-2 |
 | **Evidence Taxonomy** | Evidence artifacts are Entities/Occurrences that ground an Epistemic Stance (P3). | The ontology establishes the grounding role, but no authoritative project source specifies an exhaustive evidence taxonomy or numerical epistemic weights. | UHR-1 |

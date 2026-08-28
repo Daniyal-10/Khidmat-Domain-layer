@@ -64,7 +64,7 @@ The pillars are derived systematically:
 **What remains outside:** Ground truth reality (Pillars I and III).
 
 ### Pillar V: Actors & Ecosystem
-**What domain reality it represents:** The entities that respond to, fund, or coordinate humanitarian action, including Government bodies, Healthcare providers, Schools, and Employers, which act with agency. It models the rules binding them.
+**What domain reality it represents:** The entities that respond to, fund, or coordinate humanitarian action, including Government bodies, which act with agency. (Whether Service Providers like Healthcare and Schools act with agency remains an open tension). It models the rules binding them.
 **Layers contributing:** Entities (Organisation, Donor, Programme), Relationships (Implements, Funds, Adopts), Constraints (Compliance, Eligibility, Funding restrictions).
 **Supporting primitives:** Entity (P4), Relation (P7), Norm (P5).
 **RM concepts within it:** Organisations, Programmes, Donors, Community Groups, Governments, Accountability.
@@ -147,33 +147,42 @@ Pillar IV explicitly models:
 The pillars enforce a strict two-level jurisdiction strategy:
 
 * **Level 1 (Universal Ontology):** All 7 pillars and their foundational concepts (Person, Need, Resource, Identity, Geography) are universally applicable to any humanitarian context globally.
+
 * **Level 2 (Jurisdiction Localization):** Jurisdiction-specific concepts specialize the universal ontology but do not define it. (e.g., a specific national ID specializing *Identity Document*, or a specific local government tier specializing *Geography/Community*).
 
 The ontology is fully capable of supporting localization for any specific jurisdiction (e.g., Pakistan, UAE, USA, or UK) by adding Level 2 specializations without altering the 7 fundamental pillars.
 
 ---
 
-## 8. Resolved decisions and final ontological closures
+## 8. Closures and Open Tensions
+
+### 8.1 Resolved decisions and final ontological closures
 
 The primary structural tensions have been formally resolved:
 
 1. **Risk Placement:** Risk is classified as a *Condition* (Pillar III). Confidence *about* a Risk is an *Epistemic Stance* (Pillar IV).
-2. **Need Placement:** Need is fundamentally a Condition (RESOLVED — see `01-DOMAIN-PRIMITIVES.md` §6.2 and `04-ARCHITECTURE-RULES.md` §1). Its relational definition describes what a Need means, not what kind of ontological object it is; as a tracked object it carries severity and a lifecycle, which Condition governs and which Relation's own boundary rule cannot accommodate, since the wellbeing standard it is measured against is a Norm, not a persisting Entity.
-3. **Outcome / Impact Ownership:** Outcome and Impact are domain realities representing state changes in the relevant human subject (Wellbeing, Resilience, Need Resolution). They are owned by the Human Subject (Pillars I and III). *Outcome/Impact Measurement* (MEAL) is an operational activity that structurally belongs to the Beneficiary Lifecycle (Case Journey) per BL V1 §14 precedence over contradictory evidence.
-4. **Family Structure vs Household (RM §4.3):** Both are *Entities*. *Family* is bounded by kinship (persistent). *Household* is bounded by co-residence/shared economy (volatile).
-5. **States vs Events Boundary:** The point-versus-span distinction derives structurally from RM quarantining actions from ongoing reality.
-6. **Service Providers as Actors:** Government, healthcare, schools, and employers are modeled as Actors (Entities) with agency (Pillar V).
-7. **Humanitarian Situations:** Open-world. New situations emerge dynamically without requiring a schema update.
-8. **Identity & Biometrics (RM §3.1):** *Identity* is not a primitive (per `01-DOMAIN-PRIMITIVES.md` §5.3). The persisting subject is the **Entity (P4)**; identity resolution — establishing that a subject is the same subject across encounters — is an **Epistemic Stance**, grounded by Evidence. Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights on that stance.
-9. **Undocumented Status (RM §3.2):** The absence of *Evidence* (Cognition) structurally instantiates as a *Constraint* limiting formal Coordination Patterns, and a *Condition* aggravating Vulnerability.
-10. **Wellbeing Standard (RM §3.6):** A *Norm* that is strictly *Context-dependent* (Pillar II). Need is a *Condition* assessed against this Norm.
-11. **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Pillar II) that cascades *Constraints* and *Conditions* down to Subjects. Phase is a temporal *State*.
-12. **Orphanhood vs Unguardianed (RM §6.3):** *Orphanhood* is an irreversible *State* of a kinship Relation. *Unguardianed* is a reversible *State* of a caregiving Relation.
-13. **Need Interactions (RM §7.5):** Needs interact via *Dependency Relationships* (Layer 3).
-14. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple compounding *Conditions* (e.g., health, capability, household and environmental Conditions) and *Contexts*, per RM §8.4's own framing of "multiple compounding factors." Risk (RM §8.1–8.3) is one *Condition* among several that can compound into Vulnerability; Vulnerability composition is not defined as derived from Risk alone. The composition rule itself is a Source-Absent Parameter (see `04-ARCHITECTURE-RULES.md` UHR-2).
-15. **Contradiction Modeling (RM §10.5):** Defined in Cognition as multiple *Epistemic Stances* asserting mutually exclusive *States*.
-16. **Funder Altitude (RM §11.4):** The Giving side operates as a third *Funding Altitude*, extending the *Altitude Coupling* Coordination Pattern. It imposes *Constraints* on the Programme Altitude.
-17. **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* function identically to Risk/Need as valid initiating triggers for *Events* and *Coordination Patterns*.
+2. **Need Placement:** Need is fundamentally a Condition (RESOLVED — see `01-DOMAIN-PRIMITIVES.md` §6.2 and `04-ARCHITECTURE-RULES.md` §1). Its relational definition describes what a Need means, not what kind of ontological object it is.
+3. **Family Structure vs Household (RM §4.3):** Both are *Entities*. *Family* is bounded by kinship (persistent). *Household* is bounded by co-residence/shared economy (volatile).
+4. **States vs Events Boundary:** The point-versus-span distinction derives structurally from RM quarantining actions from ongoing reality.
+5. **Humanitarian Situations:** Open-world. New situations emerge dynamically without requiring a schema update.
+6. **Identity & Biometrics (RM §3.1):** *Identity* is not a primitive. The persisting subject is the **Entity (P4)**; identity resolution is an **Epistemic Stance**, grounded by Evidence.
+7. **Undocumented Status (RM §3.2):** The absence of *Evidence* (Cognition) structurally instantiates as a *Constraint* limiting formal Coordination Patterns, and a *Condition* aggravating Vulnerability.
+8. **Wellbeing Standard (RM §3.6):** A *Norm* that is strictly *Context-dependent* (Pillar II). Need is a *Condition* assessed against this Norm.
+9. **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Pillar II) that cascades *Constraints* and *Conditions* down to Subjects. Phase is a temporal *State*.
+10. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple compounding *Conditions* and *Contexts*. The composition rule itself is a Source-Absent Parameter (see `04-ARCHITECTURE-RULES.md` UHR-2).
+11. **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* function identically to Risk/Need as valid initiating triggers for *Events* and *Coordination Patterns*.
+
+### 8.2 Open Tensions Carried Forward
+
+The following concepts remain structurally `[OPEN]` or unevidenced, carried forward as tensions:
+
+1. **Outcome / Impact Ownership:** Outcome and Impact are domain realities representing state changes in the relevant human subject (Wellbeing, Resilience, Need Resolution). They are owned by the Human Subject (Pillars I and III). However, the operational ownership of *Outcome/Impact Measurement* (MEAL) remains an open coordination question for Pillar VI (`ownership: pending`).
+2. **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. This remains `[OPEN]`.
+3. **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another is not stated by any source and remains `[OPEN]`.
+4. **Contradiction Modeling (RM §10.5):** Representation is unstated by any source. Remains `[OPEN]`.
+5. **Missing Information as Knowledge (RM §10.5):** Representation is unstated by any source. Remains `[OPEN]`.
+6. **Funder Altitude (RM §11.4):** An implied but unevidenced third altitude. No source in this repository models this, and it remains `[OPEN]` (handled via UHR).
+7. **Service Providers as Actors (RM §11.1):** Whether healthcare providers, schools, and employers are modeled as Actors (Entities) with agency remains `[OPEN]`.
 
 **Empirical and Governance Dependencies:**
 

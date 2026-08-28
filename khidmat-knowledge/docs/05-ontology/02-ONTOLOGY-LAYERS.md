@@ -2,8 +2,7 @@
 
 **Ontology Design, step 2 of 7.** Status: **Structurally resolved; pending Stage 5/7.**
 
-Derived from `01-DOMAIN-PRIMITIVES.md`, which is the **current working foundation, not a
-ratified ontology**. Every layer below inherits that provisionality.
+Derived from `01-DOMAIN-PRIMITIVES.md`, whose primitive set is **structurally stable and formally closed**. Every layer below inherits that structural stability.
 
 Domain content traces to `docs/04-reference-model/…REFERENCE_MODEL.md` (RM). Evidence strength
 traces to the authoritative rating scale established in **`04-ARCHITECTURE-RULES.md`** (ECR-0) —
@@ -122,7 +121,7 @@ than through something else? If no, it is a State of something that does.
 | Programme / Organisation | RM §11.1 | **Strong** — Tier 1 authority (BL V1 §4) overrides BD-TD01-003 divergence |
 | Donor / giver | RM §11.1 | **Strong** — BD-TD01-004 (CHS defines actors to include them) |
 | Government body | RM §11.1 | BD-TD01-001 |
-| Service Provider (Healthcare, School, Employer) | RM §11.1 | **Resolved** — Modeled as Actors (Entities) with agency |
+| Service Provider (Healthcare, School, Employer) | RM §11.1 | **[OPEN]** — whether they are modelled as actors is undecided |
 | Emergent group / mutual-aid structure | RM §4.5 | **Strong** — BD-TD01-005, ≥3 source families |
 | Case | RM §12 | Blueprint |
 | Evidence artifact | RM §10.2 | Weak — kinds unenumerated |
@@ -326,7 +325,7 @@ further stages of the same lifecycle. BD-TD04-001 records MEAL as a **separate b
 capability** on its own cadence, *"not the final stage of any one case's journey"* (≥4
 institutional sources).
 
-**RESOLVED.** Outcome and impact *measurement* events are admitted to this layer. Ownership of that measurement belongs to the Case Journey (Beneficiary Lifecycle) as explicitly specified by BL V1 §14, overriding the contrary external RM tension. Structurally, Outcome and Impact are States (Layer 5), and their measurement is an Event (Layer 6). The coordination consequence falls on Coordination Patterns — see §9.
+**CARRIED AS OPEN TENSION.** Outcome and impact *measurement* events are admitted to this layer, but the operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is marked `ownership: pending`. Structurally, Outcome and Impact are States (Layer 5), and their measurement is an Event (Layer 6). The coordination consequence falls on Coordination Patterns — see §9.
 
 ---
 
@@ -432,9 +431,9 @@ will silently conflate two genuinely different activities that happen to share a
 This applies to *needs assessment*, *planning*, *monitoring* and *coordination* across Layers 5,
 6 and 8.
 
-### 9.3 A pattern whose ownership is resolved
+### 9.3 A pattern whose ownership is pending
 
-**RESOLVED:** Outcome and impact measurement ownership belongs to the Case Journey (Beneficiary Lifecycle) per Tier 1 (BL V1 §14), overriding external tensions. Therefore, it is structured as a phase of the case journey, acting as an Event sequence in Layer 6 governed by Case Journey Coordination in Layer 8.
+**CARRIED AS OPEN TENSION.** The operational ownership of Outcome and impact measurement (whether it belongs to the Case Journey per BL V1 or to a separate MEAL discipline per RM §12.5) remains unresolved. It is tagged `ownership: pending` and carried forward as a genuine architectural tension.
 
 ### 9.4 What this layer cannot yet hold
 
@@ -478,28 +477,36 @@ made to keep derivation moving, and each is reversible.**
 | **A-02** | Context feeds Facets **and** scopes Constraints, rather than forming its own layer | The prescribed eight layers contain no Context layer; Context frames rather than participates (Phase 1 P2 boundary) | A ruling that scope requires its own layer |
 | **A-03** | The Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
 | **A-04** | Organisation and Programme are collapsed into one Entity | **RESOLVED:** Tier 1 authority (BL V1 §4) overrides the divergent external evidence (BD-TD01-003). | None |
-| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | **RESOLVED:** Tier 1 authority (BL V1 §14) specifies outcome and impact measurement as the final phase of the Case Journey. | None |
+| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | Structural admission is resolved (they are Occurrences); however, operational ownership (Case Journey vs MEAL) is **CARRIED AS OPEN TENSION** (`ownership: pending`). | None |
 | **A-07** | The point-versus-span distinction (States ÷ Events) is retained despite being unevidenced | Removing it would merge two primitives and restructure four layers on equally thin grounds | Evidence that the distinction is not real, or a ruling that they merge |
 
 ---
 
-## 12. Final Foundational Closures (Stages 1-3)
+## 12. Closures and Open Tensions (Stages 1-3)
 
-The following domain concepts, previously marked [OPEN], are now formally resolved at the ontological level. Only their taxonomy, algorithmic implementation, or localization values remain open for Stage 4 or Data Population:
+### 12.1 Final Foundational Closures
 
-*   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* is not a primitive and is not itself Entity-classified content (per `01-DOMAIN-PRIMITIVES.md` §5.3 and §4's P4 boundary note). The **persisting subject** (e.g., a Person) is the **Entity (P4)**. **Identity resolution** — the act of recognising that persisting subject as the same subject across encounters — is an **Epistemic Stance** (Layer 7), grounded by **Evidence** content. Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights on an identity-resolution stance.
+The following domain concepts are formally resolved at the ontological level:
+
+*   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* is not a primitive and is not itself Entity-classified content. The **persisting subject** is the **Entity (P4)**. **Identity resolution** is an **Epistemic Stance** (Layer 7), grounded by **Evidence** content. Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
 *   **Undocumented Status (RM §3.2):** Ontologically, this is the absence of *Evidence* (Entity), which simultaneously instantiates as a *Constraint* (Layer 4) limiting formal Coordination Patterns, and a *Condition* (Layer 5) aggravating Vulnerability.
 *   **Wellbeing Standard (RM §3.6):** Structurally a *Norm* (Layer 4) that is strictly *Context-dependent* (Layer 1). A Need is a *Condition* (Layer 5) assessed against this Context-bound Norm.
-*   **Family vs Household (RM §4.3):** Both are *Entities* (Layer 2) rather than merely Relational Structures, as they have their own trajectories and conditions. *Family* is bounded by kinship/legal guardianship (highly persistent). *Household* is bounded by co-residence/shared economy (volatile). A Subject can hold relationships to both concurrently.
-*   **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Layer 1) that cascades *Constraints* (Layer 4) and *Conditions* (Layer 5) down to Subjects. Its phase is a temporal *State* of that Context.
-*   **Orphanhood vs Unguardianed (RM §6.3):** *Orphanhood* is an irreversible *State* (Layer 5) of a kinship Relation (Layer 3). *Unguardianed* is a reversible *State* of a caregiving Relation.
-*   **Need Interactions (RM §7.5):** Needs (Conditions) interact via *Dependency Relationships* (Layer 3).
-*   **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *Condition/State* (Layer 5) derived from multiple Risk *Conditions* and *Contexts*.
-*   **Evidence Taxonomy (RM §10.2):** Evidence kinds (Testimony, Document, etc.) are ontological subtypes of the Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, that carry distinct *Norms* of Epistemic Weight.
-*   **Contradiction Modeling (RM §10.5):** Contradiction is structurally defined in the *Cognition* layer (Layer 7) as multiple *Epistemic Stances* asserting mutually exclusive *States* for the same Entity.
-*   **Funder Altitude (RM §11.4):** The Giving side operates as a third *Funding Altitude*, structurally extending the *Altitude Coupling* Coordination Pattern (Layer 8). It imposes *Constraints* on the Programme Altitude. Donors are Entities (Actors).
-*   **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* (Conditions) function identically to Risk/Need as valid initiating triggers for *Events* (Layer 6) and *Coordination Patterns* (Layer 8).
-*   **Outcome / Impact Ownership:** Outcome and Impact are *States* (Layer 5) belonging to the Human Subject (Person/Household), reflecting changes in their wellbeing or conditions. *Outcome Measurement* is an *Event* (Layer 6) / *Coordination Pattern* (Layer 8) distinct from the domain reality.
+*   **Family vs Household (RM §4.3):** Both are *Entities* (Layer 2) rather than merely Relational Structures. *Family* is bounded by kinship/legal guardianship. *Household* is bounded by co-residence/shared economy.
+*   **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Layer 1) that cascades *Constraints* and *Conditions* down to Subjects. Its phase is a temporal *State*.
+*   **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *Condition/State* (Layer 5) derived from multiple Risk *Conditions* and *Contexts*. The quantitative/qualitative composition rule itself remains `[OPEN]` as a Source-Absent Parameter.
+*   **Evidence Taxonomy (RM §10.2):** Evidence kinds (Testimony, Document, etc.) are ontological subtypes of the Evidence *entity/occurrence* content that carry distinct *Norms* of Epistemic Weight.
+*   **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* (Conditions) function identically to Risk/Need as valid initiating triggers for *Events* and *Coordination Patterns*.
+
+### 12.2 Open Tensions Carried Forward
+
+The following concepts remain structurally `[OPEN]` or unevidenced, carried forward as tensions:
+
+*   **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. This remains `[OPEN]`.
+*   **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another (prerequisite, aggravating, substituting, mutually exclusive) is not stated by any source and remains `[OPEN]`.
+*   **Contradiction Modeling (RM §10.5):** Representation is unstated by any source. Remains `[OPEN]`.
+*   **Missing Information as Knowledge (RM §10.5):** Representation of missing information is unstated by any source. Remains `[OPEN]`.
+*   **Funder Altitude (RM §11.4):** An implied but unevidenced third altitude. No source in this repository models this, and it remains `[OPEN]` (handled via UHR).
+*   **Outcome / Impact Ownership:** Outcome and Impact are *States* (Layer 5) belonging to the Human Subject (Person/Household), reflecting changes in their wellbeing or conditions. However, the operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is `ownership: pending` and remains genuinely undecided.
 
 ---
 
