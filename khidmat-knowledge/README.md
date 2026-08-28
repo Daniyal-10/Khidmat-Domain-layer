@@ -48,10 +48,11 @@ Everything below is **FROZEN**. No further foundation documents are to be create
 | `docs/03-discovery/SCOPE_COVERAGE.md` | FROZEN — decision recorded | Found BL V1 §17 excludes half the Lead's end-to-end flow. Decision taken: model reality fully, sequence implementation separately. |
 | `docs/04-reference-model/KHIDMAT_HUMANITARIAN_DOMAIN_REFERENCE_MODEL.md` | **FROZEN — ACTIVE** | The conceptual reference. The ontology derives from this. |
 | `CLIENT_CONTEXT_UNVERIFIED.md` | QUARANTINED | Deployment context sourced to a client file not present in this repository. Not authoritative. Unresolved. |
-| `docs/05-ontology/01-DOMAIN-PRIMITIVES.md` | **DRAFT — ACTIVE** | Step 1. Seven primitive categories, derivation trace, coverage test. Structurally stable; pending Stage 5/7. |
+| `PRE-STAGE-5-OPEN-QUESTION-RESOLUTION-REGISTER.md` | **ACTIVE** | Final resolution pass closing all structural ontology-design questions prior to Stage 5. |
+| `docs/05-ontology/01-DOMAIN-PRIMITIVES.md` | **DRAFT — ACTIVE** | Step 1. Seven primitive categories, derivation trace, coverage test. Structurally resolved; pending Stage 5/7. |
 | `docs/05-ontology/01a-PRIMITIVE-EVIDENCE-AUDIT.md` | **ACTIVE** | Evidence traceability audit for the primitive set. |
 | `docs/05-ontology/02-ONTOLOGY-LAYERS.md` | **DRAFT — ACTIVE** | Step 2. Eight layers derived from the primitives. Structural tensions resolved; empirical dependencies marked. |
-| `docs/05-ontology/03-ONTOLOGY-PILLARS.md` | **DRAFT — ACTIVE** | Step 3. Seven pillars grouping reality into domains. Structurally stable; pending Stage 5/7. |
+| `docs/05-ontology/03-ONTOLOGY-PILLARS.md` | **DRAFT — ACTIVE** | Step 3. Seven pillars grouping reality into domains. Structurally resolved; pending Stage 5/7. |
 | `docs/05-ontology/04-ARCHITECTURE-RULES.md` | **DRAFT — ACTIVE** | Step 4. Architecture rules governing composition, extension, and handling of unknowns (UHR). |
 
 **Superseded in role** means: the content stands and is correct, but ontology work reads the
@@ -70,12 +71,13 @@ back to its source. Do not extend them.
 ✅ Domain Reference Model — what exists in humanitarian reality
    ↓
 ▶  ONTOLOGY DESIGN  ← current phase — docs/05-ontology/
-      1. Domain Primitives          ◐ DRAFT — 7 primitives; structurally stable; pending Stage 5/7
-      2. Layers                     ◐ DRAFT — 8 layers; structurally stable; pending Stage 5/7
+      1. Domain Primitives          ✅ Structurally resolved; empirical validation and formal governance ratification pending
+      2. Layers                     ✅ Structurally resolved; empirical validation and formal governance ratification pending
            · Facets   · Entities · Relationships · Constraints
            · States   · Events   · Cognition     · Coordination
-      3. Pillars                    ◐ DRAFT — 7 pillars; structurally stable; pending Stage 5/7
-      4. Architecture Rules         ◐ DRAFT — UHR rules established for Stage 5/7 handling
+      3. Pillars                    ✅ Structurally resolved; empirical validation and formal governance ratification pending
+      4. Architecture Rules         ✅ UHR rules established for Stage 5/7 handling
+      4a. Final Resolution Pass     ✅ All structural questions resolved (PRE-STAGE-5-OPEN-QUESTION-RESOLUTION-REGISTER.md)
       5. Ground Truth Reviews       (NOT YET GENERATED)
       6. Evidence
       7. Governance

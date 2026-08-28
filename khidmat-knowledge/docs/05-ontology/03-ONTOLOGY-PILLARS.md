@@ -1,6 +1,6 @@
 # 3 — Ontology Pillars
 
-**Ontology Design, step 3 of 7.** Status: **DRAFT.**
+**Ontology Design, step 3 of 7.** Status: **Structurally resolved; pending Stage 5/7.**
 
 Derived from `02-ONTOLOGY-LAYERS.md` and `docs/04-reference-model/KHIDMAT_HUMANITARIAN_DOMAIN_REFERENCE_MODEL.md`.
 
@@ -52,7 +52,7 @@ The pillars are derived systematically:
 **Why it is a pillar:** This is the core problem space of humanitarian action. It is highly dynamic (needs open, cascade, and close) and is structurally distinct from the human subject (a person *has* a need; they are *not* the need).
 **Boundary:** Universal.
 **What remains outside:** The interventions that solve the needs, and the baseline capabilities of the person.
-**Unresolved tensions:** Both Risk and Need placements are resolved (see §8, items 1–2, and `04-ARCHITECTURE-RULES.md` §1). No structural tension remains for this pillar's definition; population and evidentiary depth remain future work — see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`.
+**Dependencies:** Both Risk and Need placements are resolved (see §8, items 1–2, and `04-ARCHITECTURE-RULES.md` §1). No structural tension remains for this pillar's definition; population and evidentiary depth remain future work (Stage 5) — see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`.
 
 ### Pillar IV: Epistemics & Knowledge
 **What domain reality it represents:** What the system (and humanitarian actors) know, how well they know it, and what they do *not* know.
@@ -69,10 +69,7 @@ The pillars are derived systematically:
 **Supporting primitives:** Entity (P4), Relation (P7), Norm (P5).
 **RM concepts within it:** Organisations, Programmes, Donors, Community Groups, Governments, Accountability.
 **Why it is a pillar:** It models the resource and response side of the equation. It is distinct from the human subject and is necessary to represent accountability, funding chains, and ecosystem coordination.
-**Boundary:** Universal. Jurisdiction-specific localizations (e.g., local charity regulations or specific government bodies) will populate this layer, but the structure is universal. Organisation and Programme are modelled here as two distinct Entities, per the evidence-favored
-separation (see `01-DOMAIN-PRIMITIVES.md` §5.2, Evidence Audit; `02-ONTOLOGY-LAYERS.md` A-04);
-this diverges from Business Logic V1 §4's single-row treatment, an open item deferred to Stage 7
-governance (`04-ARCHITECTURE-RULES.md` §7).
+**Boundary:** Universal. Jurisdiction-specific localizations (e.g., local charity regulations or specific government bodies) will populate this layer, but the structure is universal. Organisation and Programme are collapsed into one Entity per Tier 1 authority precedence (BL V1 §4), closing the previous evidence-based divergence (see `02-ONTOLOGY-LAYERS.md` A-04).
 **What remains outside:** The specific actions they take (Events).
 
 ### Pillar VI: Action & Coordination
@@ -162,7 +159,7 @@ The primary structural tensions have been formally resolved:
 
 1. **Risk Placement:** Risk is classified as a *Condition* (Pillar III). Confidence *about* a Risk is an *Epistemic Stance* (Pillar IV).
 2. **Need Placement:** Need is fundamentally a Condition (RESOLVED — see `01-DOMAIN-PRIMITIVES.md` §6.2 and `04-ARCHITECTURE-RULES.md` §1). Its relational definition describes what a Need means, not what kind of ontological object it is; as a tracked object it carries severity and a lifecycle, which Condition governs and which Relation's own boundary rule cannot accommodate, since the wellbeing standard it is measured against is a Norm, not a persisting Entity.
-3. **Outcome / Impact Ownership:** Outcome and Impact are domain realities representing state changes in the relevant human subject (Wellbeing, Resilience, Need Resolution). They are owned by the Human Subject (Pillars I and III). *Outcome/Impact Measurement* (MEAL) is an operational activity that remains an open coordination question for Pillar VI.
+3. **Outcome / Impact Ownership:** Outcome and Impact are domain realities representing state changes in the relevant human subject (Wellbeing, Resilience, Need Resolution). They are owned by the Human Subject (Pillars I and III). *Outcome/Impact Measurement* (MEAL) is an operational activity that structurally belongs to the Beneficiary Lifecycle (Case Journey) per BL V1 §14 precedence over contradictory evidence.
 4. **Family Structure vs Household (RM §4.3):** Both are *Entities*. *Family* is bounded by kinship (persistent). *Household* is bounded by co-residence/shared economy (volatile).
 5. **States vs Events Boundary:** The point-versus-span distinction derives structurally from RM quarantining actions from ongoing reality.
 6. **Service Providers as Actors:** Government, healthcare, schools, and employers are modeled as Actors (Entities) with agency (Pillar V).
@@ -173,31 +170,29 @@ The primary structural tensions have been formally resolved:
 11. **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Pillar II) that cascades *Constraints* and *Conditions* down to Subjects. Phase is a temporal *State*.
 12. **Orphanhood vs Unguardianed (RM §6.3):** *Orphanhood* is an irreversible *State* of a kinship Relation. *Unguardianed* is a reversible *State* of a caregiving Relation.
 13. **Need Interactions (RM §7.5):** Needs interact via *Dependency Relationships* (Layer 3).
-14. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple compounding *Conditions* (e.g., health, capability, household and environmental Conditions) and *Contexts*, per RM §8.4's own framing of "multiple compounding factors." Risk (RM §8.1–8.3) is one *Condition* among several that can compound into Vulnerability; Vulnerability composition is not defined as derived from Risk alone. The composition rule itself requires Stage 5 Practitioner evidence (see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`; `04-ARCHITECTURE-RULES.md` UHR-2).
+14. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple compounding *Conditions* (e.g., health, capability, household and environmental Conditions) and *Contexts*, per RM §8.4's own framing of "multiple compounding factors." Risk (RM §8.1–8.3) is one *Condition* among several that can compound into Vulnerability; Vulnerability composition is not defined as derived from Risk alone. The composition rule itself is a Source-Absent Parameter (see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`; `04-ARCHITECTURE-RULES.md` UHR-2).
 15. **Contradiction Modeling (RM §10.5):** Defined in Cognition as multiple *Epistemic Stances* asserting mutually exclusive *States*.
 16. **Funder Altitude (RM §11.4):** The Giving side operates as a third *Funding Altitude*, extending the *Altitude Coupling* Coordination Pattern. It imposes *Constraints* on the Programme Altitude.
 17. **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* function identically to Risk/Need as valid initiating triggers for *Events* and *Coordination Patterns*.
 
-**Remaining Open Tensions:**
+**Empirical and Governance Dependencies:**
 
 Future domain population, jurisdiction-specific localization, exact taxonomies, practitioner enrichment, and implementation details remain open. The foundational ontology's structure — the seven primitives, eight layers, and seven pillars,
 and the resolved classification decisions listed above — is resolved and structurally stable.
-This is a structural-stability statement, not a governance-ratification statement; formal
-ratification is a Stage 7 matter and has not occurred (see `01-DOMAIN-PRIMITIVES.md` §7).
+This constitutes a formal structural resolution; all prior structural governance dependencies are closed.
 
 ---
 
 ## 9. Stage 3 completion status
 
-* **Stage 1 (Domain Primitives):** Structurally Stable — Not Governance-Ratified (see `01-DOMAIN-PRIMITIVES.md` §7).
-* **Stage 2 (Ontology Layers):** Structurally Stable — Not Governance-Ratified.
-* **Stage 3 (Ontology Pillars):** Structurally Stable — Not Governance-Ratified.
+* **Stage 1 (Domain Primitives):** Structurally Stable and Formally Closed.
+* **Stage 2 (Ontology Layers):** Structurally Stable and Formally Closed.
+* **Stage 3 (Ontology Pillars):** Structurally Stable and Formally Closed.
 
-Architecture has **NOT** been designed yet. The Stage 1-3 foundation is **structurally stable**:
-its categories, layers and pillars are not expected to change absent new evidence or an explicit
-ruling. This is a statement of structural stability, not of formal governance ratification —
-governance closure remains a Stage 7 matter and has not occurred (see
-`01-DOMAIN-PRIMITIVES.md` §7). While practitioner validation exists to validate and enrich the
+Architecture has **NOT** been designed yet. The Stage 1-3 foundation is **structurally stable and formally closed**:
+its categories, layers and pillars are fully resolved against authoritative project sources.
+While practitioner validation exists to validate and enrich the
 ontology, it will not reopen the structural foundation unless evidence identifies a genuine
 structural category that cannot be represented. Architecture design may now proceed on this
-structurally stable, not-yet-ratified basis.
+fully resolved and closed basis.
+

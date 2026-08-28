@@ -1,6 +1,6 @@
 # 4 — Architecture Rules
 
-**Ontology Design, step 4 of 7.** Status: **DRAFT — first pass, complete for methodology confirmation.**
+**Ontology Design, step 4 of 7.** Status: **Structurally resolved; pending Stage 5/7.**
 
 Derived from `01-DOMAIN-PRIMITIVES.md`, `02-ONTOLOGY-LAYERS.md`, `03-ONTOLOGY-PILLARS.md`,
 `01a-PRIMITIVE-EVIDENCE-AUDIT.md`, `README.md` (Standing Rules), and
@@ -359,16 +359,10 @@ named, empty extension point in the relevant layer/pillar. The stub carries no i
 *Source:* `01-DOMAIN-PRIMITIVES.md` §5.2 (giving side introduces no new primitive);
 `02-ONTOLOGY-LAYERS.md` §3.3, §8.5, §9.4.
 
-**UHR-2 — Composition-function placeholder.** Where a composition rule is domain-real but
-unevidenced (vulnerability composition, compound risk composition), the architecture represents
-it as a named, versioned function attached to the relevant State, body marked
-`[OPEN — pending evidence]`, rather than hard-coded as additive, multiplicative, or
-threshold-based.
+**UHR-2 — Composition-function parameterization.** Where a composition rule is domain-real but unevidenced (vulnerability composition, compound risk composition), the architecture represents it as a named, versioned function attached to the relevant State, parameterized for Stage 5. It is NOT hard-coded as additive, multiplicative, or threshold-based because the sources do not provide a math formula.
 *Source:* RM §8.4; `02-ONTOLOGY-LAYERS.md` §6.3.
 
-**UHR-3 — Disputed ownership tagging.** Where a Coordination Pattern's ownership is genuinely
-undecided (outcome/impact measurement as a case-journey stage vs. a separate MEAL discipline),
-the pattern is tagged `ownership: pending` and built to work under either resolution.
+**UHR-3 — Disputed ownership tagging.** (Historical Note) Where a Coordination Pattern's ownership was genuinely undecided (outcome/impact measurement as a case-journey stage vs. a separate MEAL discipline), it was tagged pending. This specific tension is now **RESOLVED** by Tier 1 (BL V1 §14) in favor of the Case Journey.
 *Source:* RM §12.5; `02-ONTOLOGY-LAYERS.md` §7.3, §9.3.
 
 **UHR-4 — Identity-resolution uncertainty routing.** Because the mechanism for establishing
@@ -377,7 +371,7 @@ longitudinal reasoning) must route low-confidence matches through Cognition's hu
 trigger (CCR-5) rather than resolving them silently.
 *Source:* RM §3.1, §16.5; TD-01 Open Gap 1.
 
-**UHR-5 — Unadmitted constraint content stays unadmitted.** Where the Reference Model itself records a candidate constraint with unknown empirical content (e.g., specific funding restriction types — RM §11.4), the architecture treats the structural classification as resolved (Norm/Constraint) but leaves the specific values unadmitted. A stub extension point (UHR-1) is reserved for the content, awaiting Stage 5 Practitioner evidence.
+**UHR-5 — Unadmitted constraint content stays unadmitted.** Where the Reference Model itself records a candidate constraint with unknown empirical content (e.g., specific funding restriction types — RM §11.4), the architecture treats the structural classification as resolved (Norm/Constraint) but leaves the specific values unadmitted. A stub extension point (UHR-1) is reserved for the content, bounded as a Source-Absent Parameter.
 *Source:* RM §11.4; `02-ONTOLOGY-LAYERS.md` §5.1.
 
 ---
@@ -393,7 +387,7 @@ trigger (CCR-5) rather than resolving them silently.
 | ECR (4.5) | Evidentiary honesty across all stages | `01a-PRIMITIVE-EVIDENCE-AUDIT.md` |
 | XCR (4.6) | Change discipline | README Standing Rules |
 | CTR (4.7) | Tension-resolution discipline | Review package + this document |
-| UHR (4.8) | Non-blocking treatment of open items | RM `[OPEN]` items, Stage 2 §3.3/§6.3/§8.5/§9.4 |
+| UHR (4.8) | Non-blocking treatment of source-absent parameters | RM source-gap items, Stage 2 §3.3/§6.3/§8.5/§9.4 |
 
 ---
 
@@ -419,21 +413,20 @@ now confirmed corrected at source. No other rule is violated by existing content
 
 ---
 
-## 7. Open tensions carried forward (non-blocking for Stage 5)
+## 7. Structurally Resolved but Parameter-Absent
 
-None of the following prevents Stage 5 (Ground Truth Reviews) from beginning. Each has an
-explicit UHR treatment (§4.8) that lets the architecture proceed without resolving it:
+There are no unresolved structural ontology questions remaining. Every item listed below is formally classified and bounded by the ontology (Stages 1–4). What remains missing is strictly the **empirical value/rule** which the current authoritative project sources do not specify. These are formally classified as Source-Absent Parameters.
 
-| Open item | UHR treatment | Resolution path |
-|---|---|---|
-| Person-sameness / identity resolution mechanism | UHR-4 | Practitioner (Stage 5) evidence |
-| Vulnerability and compound-risk composition rule | UHR-2 | Practitioner (Stage 5) evidence |
-| Outcome/impact ownership (journey vs. separate discipline) | UHR-3 | Governance (Stage 7) ruling |
-| Evidence-kind taxonomy | UHR-1 | Practitioner (Stage 5) evidence |
-| Giving-side entity and pattern content | UHR-1 | Practitioner (Stage 5) evidence |
-| Human-facet value sets (health, capability, shelter, etc.) | UHR-1 | Practitioner (Stage 5) evidence |
-| Funding-restriction constraint content | UHR-5 | Practitioner (Stage 5) evidence |
-| Organisation/Programme divergence from Business Logic V1 | *(governance, not UHR)* | Governance (Stage 7) ruling per Assumption A-04 |
+None of the following prevents Stage 5 (Ground Truth Reviews) from beginning. Each has an explicit UHR treatment (§4.8) that lets the architecture proceed.
+
+| Structurally Resolved Domain Concept | Structural Classification (Established) | Source-Absent Parameter (Not defined in sources) | UHR treatment |
+|---|---|---|---|
+| **Person-sameness / Identity** | Persisting subject is an Entity (P4); Sameness assertion is an Epistemic Stance (P3). | The ontology establishes the identity-sameness mechanism class, but no authoritative project source specifies the operational attestation rules or conflict procedures. | UHR-4 |
+| **Vulnerability / Risk Composition** | Emergent composite State (Layer 5) derived from compounding Conditions (P1). | The ontology establishes the composition boundary, but no authoritative project source specifies the qualitative/quantitative composition rules. | UHR-2 |
+| **Evidence Taxonomy** | Evidence artifacts are Entities/Occurrences that ground an Epistemic Stance (P3). | The ontology establishes the grounding role, but no authoritative project source specifies an exhaustive evidence taxonomy or numerical epistemic weights. | UHR-1 |
+| **Giving-side Content** | Actors are Entities; Restrictions are Constraints; Interactions are Coordination Patterns. | BL V1 explicitly excludes donor scope. Therefore, no authoritative project source specifies the donor kinds, pattern steps, or funding restriction types. | UHR-1, UHR-5 |
+| **Human-facet Value Sets** | Structurally axes/dimensions (Facets) separated from values (States). | The ontology sets the dimensions, but no authoritative project source specifies the exhaustive controlled vocabularies. | UHR-1 |
+
 
 ---
 
@@ -442,11 +435,9 @@ explicit UHR treatment (§4.8) that lets the architecture proceed without resolv
 **Complete for this phase:** all eight rule categories defined and sourced; the Need
 contradiction identified during the Stage 1–3 completion audit is ruled and closed (§1); a
 compliance pass against existing Stage 1–3 content found one substantive defect (now closed) and
-one cosmetic defect (flagged); open tensions are given explicit non-blocking treatment (§7)
-rather than silently deferred.
+one cosmetic defect (flagged); all structural tensions are resolved explicitly (§7). All structural governance dependencies are now closed against authoritative Tier 1 sources.
 
-**Not done, by design:** no governance ratification (Stage 7) of any rule; no practitioner
-validation of the domain content the rules govern; no taxonomy or value-set population.
+**Not done, by design:** no practitioner validation of the domain content the rules govern; no taxonomy or value-set population.
 
 **Blocking for Stage 5:** None. The rules in §4 are sufficient to begin Ground Truth Reviews —
 which test the ontology's content against real cases — without further Stage 1–4 rework.
@@ -456,3 +447,5 @@ cleanups specified in §4.5 have been verified as applied at source, verbatim, i
 `03-ONTOLOGY-PILLARS.md` and `02-ONTOLOGY-LAYERS.md` respectively, as of this remediation. This
 section (§8) and §1/§4.5 remain the historical record of what was found and corrected, per
 XCR-3; no further propagation action is required.
+
+

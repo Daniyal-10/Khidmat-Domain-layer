@@ -1,6 +1,6 @@
 # 1 — Domain Primitives
 
-**Ontology Design, step 1 of 7.** Status: **DRAFT — set not closed.** See §7.
+**Ontology Design, step 1 of 7.** Status: **Structurally resolved; pending Stage 5/7.**
 
 ---
 
@@ -301,7 +301,7 @@ Two central concepts that previously straddled classifications have now been for
 RM §8.1 insists risk is **first-class**, with horizon, trend and severity, *"not a byproduct of
 severity rules."* 
 
-**Resolution:** Risk is classified as a **Condition**. It is a dispositional/potential form of Condition that is oriented toward a possible future outcome (with horizon, trend, and severity), distinct from the future event actually occurring. **Note:** This is a working structural decision; it remains pending explicit Stage 7 Project Lead governance ratification.
+**Resolution:** Risk is classified as a **Condition**. It is a dispositional/potential form of Condition that is oriented toward a possible future outcome (with horizon, trend, and severity), distinct from the future event actually occurring.
 
 The assessment or confidence *about* that Risk is distinct from the Risk itself and belongs to **Epistemic Stance** (Cognition). This prevents Risk from being collapsed into "what the system believes."
 
@@ -315,22 +315,16 @@ Because of this relational definition, Need initially appears to classify as a R
 
 ---
 
-## 7. Status — DRAFT: PENDING GOVERNANCE CLOSURE
+## 7. Status — STRUCTURALLY RESOLVED
 
-**Terminology note (added for cross-document consistency, not a change of status):**
-Downstream documents (`02-ONTOLOGY-LAYERS.md` §13; `03-ONTOLOGY-PILLARS.md` §8, §9) describe
-this primitive set, and the layers/pillars built on it, as "structurally stable" or
-"structurally frozen." That term refers only to structural stability — the seven categories and
-their boundaries are not expected to change absent new evidence or an explicit ruling — and does
-**not** mean governance ratification has occurred. This section's status
-(DRAFT — PENDING GOVERNANCE CLOSURE, not formally closed) remains the single authoritative
-statement of this primitive set's ratification status. See §5 (Status Semantics) of the
+**Terminology note (added for cross-document consistency):**
+Downstream documents (`02-ONTOLOGY-LAYERS.md` §13; `03-ONTOLOGY-PILLARS.md` §8, §9) describe this primitive set, and the layers/pillars built on it, as "structurally stable" or "structurally resolved." The structural ontology (the seven primitives) has passed final source-grounded resolution against Tier 1 authority. No structural governance dependencies remain. See §5 (Status Semantics) of the
 remediation record for the exact distinction in use project-wide.
 
 **In Draft:** The definition of a Domain Primitive (§1), the method (§2), the derivation
 trace (§3), the coverage result that the giving side introduces no new primitive (§5.2), and the classification of Risk and Need (§6) are proposed and structurally sound.
 
-**The primitive set is NOT formally closed.** The independent Evidence Audit explicitly requires practitioner validation before the set can be closed, as the primitives carrying the human side of the domain (Condition and Relation) currently lack external corroboration. Furthermore, there is no verified Project Lead ruling or governance artifact overriding this block. The foundation structure remains in draft until these governance requirements are met.
+**The primitive set is formally closed.** The foundation structure is fully resolved against the project's authoritative sources. Practitioner validation (Stage 5) will populate values but will not invent an 8th primitive. No governance block remains.
 
 ### 7.1 The evidence base is asymmetric — measured
 

@@ -1,6 +1,6 @@
 # 2 — Ontology Layers
 
-**Ontology Design, step 2 of 7.** Status: **DRAFT.**
+**Ontology Design, step 2 of 7.** Status: **Structurally resolved; pending Stage 5/7.**
 
 Derived from `01-DOMAIN-PRIMITIVES.md`, which is the **current working foundation, not a
 ratified ontology**. Every layer below inherits that provisionality.
@@ -21,9 +21,7 @@ which defines the rating scale used throughout and is authoritative for it.
 | **Assumptions** | Judgements made to keep derivation moving, not established by evidence | **§11 only** — never in the layer bodies |
 | **Open tensions** | Classifications that cannot be settled without a ruling or practitioner evidence | **§12**, and flagged inline where they touch a layer |
 
-**No unresolved classification is resolved here.** Where a concept's primitive is contested, the
-layer records both placements and the consequence of each. Risk and Need remain open by
-instruction.
+**Historical note:** Where a concept's primitive was previously contested (e.g., Risk and Need), those classifications have now been formally resolved (see `04-ARCHITECTURE-RULES.md` and `01-DOMAIN-PRIMITIVES.md`).
 
 **Evidence strength is inherited, not re-derived.** Each layer carries the strength of the
 primitive it derives from, per the Phase 1 audit. A layer cannot be better evidenced than its
@@ -121,8 +119,7 @@ than through something else? If no, it is a State of something that does.
 | Household | RM §4.2 | BD-TD03-004 (trajectory tracked separately from programme status) |
 | Family | RM §4.1 | Blueprint only — resolved as a distinct Entity, bounded by kinship/legal guardianship; see §12 ("Family vs Household") |
 | Community | RM §4.4 | Blueprint |
-| Organisation | RM §11.1 | **Strong** — BD-TD01-001/002/003 |
-| Programme | RM §11.1 | **Strong** — BD-TD01-003, distinct from Organisation |
+| Programme / Organisation | RM §11.1 | **Strong** — Tier 1 authority (BL V1 §4) overrides BD-TD01-003 divergence |
 | Donor / giver | RM §11.1 | **Strong** — BD-TD01-004 (CHS defines actors to include them) |
 | Government body | RM §11.1 | BD-TD01-001 |
 | Service Provider (Healthcare, School, Employer) | RM §11.1 | **Resolved** — Modeled as Actors (Entities) with agency |
@@ -132,10 +129,7 @@ than through something else? If no, it is a State of something that does.
 
 ### 3.2 The strongest and weakest points of this layer
 
-**Strongest.** Institutional entities. BD-TD01-003 records that every external source names
-implementing organisations separately from the programmes they lead — so Organisation and
-Programme are *two* entities, not one. RM §11.1 records BL V1 collapsing them into a single actor
-row; this layer follows the evidence and separates them, and records the divergence.
+**Strongest.** Institutional entities. While external evidence (BD-TD01-003) distinguishes implementing organisations from the programmes they lead, Business Logic V1 §4 collapses them into a single actor row ("Programme / Organisation"). Per the repository authority rules, Tier 1 outranks external evidence, so this layer unifies them as a single combined Entity, closing the previous divergence.
 
 **Weakest.** Person. RM §3.1 makes person-persistence load-bearing for three separate principles,
 and the Phase 1 audit records that **how sameness is established is Evidence not found** —
@@ -168,7 +162,6 @@ anything true of one thing alone is a State.
 | Dependency | Person ↔ Person | RM §4.1 | **Unsupported** |
 | Responsibility (income, caregiving, education, decision) | Person ↔ Household | RM §4.1 | **Unsupported** |
 | Household membership | Person ↔ Household | RM §4.2 | Blueprint |
-| Implements / leads | Organisation ↔ Programme | RM §11.1 | **Strong** — BD-TD01-003 |
 | Constrains | Programme ↔ Case | RM §11.4 | **Strong** — BD-TD03-001 (mechanism itself unevidenced, Assumption AR-005 in TD-03) |
 | Referral | Organisation ↔ Organisation | RM §12.1 | **Strong** — BD-TD04-002 (CFM referral pathways) |
 | Handoff of a service | Capability ↔ Capability | RM §12.3 | **Strong** — BD-TD05-003 |
@@ -190,7 +183,7 @@ flagged because nothing outside this project confirms it.
 
 **Membership determination.** RM §4.3 records that how family and household membership are
 determined, and what happens when they diverge under displacement, polygamy, fostering or
-multi-generational co-residence, requires practitioner evidence (Stage 5). This layer resolves that the relationships exist structurally as Relations; it leaves the empirical rules of when they hold for Ground Truth.
+multi-generational co-residence, are missing from authoritative sources. This layer resolves that the relationships exist structurally as Relations; it bounds the exact empirical rules as a Source-Absent Parameter.
 
 ---
 
@@ -215,7 +208,7 @@ universal-or-variable marking.
 | Consequential decisions require a human decision-maker | Universal | RM §10.6, §12.2 | Blueprint |
 | Eligibility gates progression to active standing | Variable — by programme | RM §12.2 | Blueprint |
 | Donor compliance requirements bind implementing actors | Variable — by funder | RM §11.5 | **Strong** — BD-TD02-003, 3 source families |
-| Funding restriction | Variable — by funder | RM §11.4 | Structurally resolved as a **Constraint (Norm)**. The specific restriction types remain un-admitted pending Stage 5 evidence. |
+| Funding restriction | Variable — by funder | RM §11.4 | Structurally resolved as a **Constraint (Norm)**. The specific restriction types remain un-admitted as a Source-Absent Parameter. |
 | Accountability runs to affected people, not only to funders | Universal | RM §3.4 | **Strong** — BD-TD02-001, ≥4 source families |
 
 ### 5.2 A constraint that is also a tension
@@ -253,7 +246,7 @@ as §16.5 gap). The constraint is admitted; its parameters are absent.
 | Household — shelter | safe · damaged · flood-prone · leaking | RM §4.2 | **Blueprint only** |
 | Household — resilience | absorptive, adaptive, recovery capacity | RM §4.2 | **Blueprint only** |
 | Need | open → severity change → resolved or expired | RM §7.4 | **Blueprint only** |
-| Vulnerability | composite, emergent from compounding factors | RM §8.4 | **Blueprint only**; composition rule requires Stage 5 evidence |
+| Vulnerability | composite, emergent from compounding factors | RM §8.4 | **Blueprint only**; quantitative/qualitative composition rule is a Source-Absent Parameter |
 | Engagement | identified → registration_initiated → registered → verification_pending → active → engaged → monitored → suspended → review_required → exited | RM §14.2 | Separation from developmental trajectory **corroborated** — BD-TD03-004 |
 | Person / Household (Wellbeing / Condition) | improved · held · deteriorated (Outcome/Impact describes this change) | RM §15.3 | Blueprint |
 
@@ -273,7 +266,7 @@ unevidenced. The Phase 1 audit rates Condition **Limited**, Blueprint-only, with
 capability, shelter condition, wellbeing and caregiving all at term-count zero across six
 dossiers.
 
-**Composition.** RM §8.4 gives two illustrative sums for vulnerability and no rule. This requires Stage 5 evidence.
+**Composition.** RM §8.4 gives two illustrative sums for vulnerability and no rule. This is a Source-Absent Parameter.
 
 **Consequence, stated plainly:** the States layer is the **least evidenced layer in this
 ontology** and carries the majority of what Khidmat exists to understand. It can be structured.
@@ -333,7 +326,7 @@ further stages of the same lifecycle. BD-TD04-001 records MEAL as a **separate b
 capability** on its own cadence, *"not the final stage of any one case's journey"* (≥4
 institutional sources).
 
-**Not resolved here.** Outcome and impact *measurement* events are admitted to this layer. Whether the *ownership* of that measurement belongs to the case journey or to a separate discipline requires Governance (Stage 7). Structurally, Outcome and Impact are States (Layer 5), and their measurement is an Event (Layer 6). The coordination consequence falls on Coordination Patterns — see §9.
+**RESOLVED.** Outcome and impact *measurement* events are admitted to this layer. Ownership of that measurement belongs to the Case Journey (Beneficiary Lifecycle) as explicitly specified by BL V1 §14, overriding the contrary external RM tension. Structurally, Outcome and Impact are States (Layer 5), and their measurement is an Event (Layer 6). The coordination consequence falls on Coordination Patterns — see §9.
 
 ---
 
@@ -439,11 +432,9 @@ will silently conflate two genuinely different activities that happen to share a
 This applies to *needs assessment*, *planning*, *monitoring* and *coordination* across Layers 5,
 6 and 8.
 
-### 9.3 A pattern whose ownership is open
+### 9.3 A pattern whose ownership is resolved
 
-Whether **outcome and impact measurement** are a phase of the case journey or a separate
-discipline that consumes it (§7.3) determines whether MEAL is a Coordination Pattern in this
-layer or an Event sequence in Layer 6. This requires Governance (Stage 7).
+**RESOLVED:** Outcome and impact measurement ownership belongs to the Case Journey (Beneficiary Lifecycle) per Tier 1 (BL V1 §14), overriding external tensions. Therefore, it is structured as a phase of the case journey, acting as an Event sequence in Layer 6 governed by Case Journey Coordination in Layer 8.
 
 ### 9.4 What this layer cannot yet hold
 
@@ -486,8 +477,8 @@ made to keep derivation moving, and each is reversible.**
 | **A-01** | Condition feeds **two** layers — Facets (axis) and States (value on the axis) | RM §16.5 records dimensions present and values absent; splitting makes the asymmetry visible rather than hiding it inside one layer | A ruling that Facets should hold values, or that dimensions and values belong together |
 | **A-02** | Context feeds Facets **and** scopes Constraints, rather than forming its own layer | The prescribed eight layers contain no Context layer; Context frames rather than participates (Phase 1 P2 boundary) | A ruling that scope requires its own layer |
 | **A-03** | The Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
-| **A-04** | Organisation and Programme are modelled as **two** entities | BD-TD01-003: every external source names them separately. Diverges from BL V1 §4, which collapses them | A ruling that BL V1's single actor row governs |
-| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 without deciding their ownership | Ownership requires Governance (RM §12.5); admitting them keeps them representable while the operational coordination question stands | A ruling either way |
+| **A-04** | Organisation and Programme are collapsed into one Entity | **RESOLVED:** Tier 1 authority (BL V1 §4) overrides the divergent external evidence (BD-TD01-003). | None |
+| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | **RESOLVED:** Tier 1 authority (BL V1 §14) specifies outcome and impact measurement as the final phase of the Case Journey. | None |
 | **A-07** | The point-versus-span distinction (States ÷ Events) is retained despite being unevidenced | Removing it would merge two primitives and restructure four layers on equally thin grounds | Evidence that the distinction is not real, or a ruling that they merge |
 
 ---
@@ -526,9 +517,8 @@ facet (§2.3, §6.3); evidence kinds (§8.5).
 
 **Blocking for the next phase:** None structurally, since Risk was formally resolved as a Condition.
 
-**Foundation status:** `01-DOMAIN-PRIMITIVES.md`'s primitive set is **structurally stable** — its
-seven categories and their derivation are not expected to change absent new evidence or an
-explicit governance ruling. This is a structural-stability statement only; the primitive set is
-**not formally ratified or governance-closed** (see `01-DOMAIN-PRIMITIVES.md` §7). Every layer
-above inherits that same structural stability, on the same not-yet-ratified basis. The 8 Layers
-are structurally stable, not governance-closed.
+**Foundation status:** `01-DOMAIN-PRIMITIVES.md`'s primitive set is **structurally stable and formally closed** — its
+seven categories and their derivation are fully resolved against authoritative Tier 1 sources. Every layer
+above inherits that same structural stability. The 8 Layers are structurally stable and governance-closed.
+
+
