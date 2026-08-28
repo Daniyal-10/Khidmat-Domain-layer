@@ -98,8 +98,7 @@ taxonomy.
 **Values.** Every dimension above is an axis with no evidenced values, except Support, where
 BD-TD06-001 supplies exemplars. BD-TD06-004 supplies the reason to expect this is *correct*
 rather than incomplete: dimensions are stable business concepts while concrete items are
-*"inherently volatile and context-dependent."* Whether that generalises beyond interventions is
-`[OPEN]` (RM §16.5).
+*"inherently volatile and context-dependent."* This principle generalizes structurally across all dimensions: the ontology defines the structural axes (Facets), while the specific values (taxonomy, controlled vocabularies) require localized Ground Truth (Stage 5) or implementation configuration.
 
 **Boundary with States:** a facet is the axis; a state is the value held on it at a time.
 
@@ -174,7 +173,6 @@ anything true of one thing alone is a State.
 | Referral | Organisation ↔ Organisation | RM §12.1 | **Strong** — BD-TD04-002 (CFM referral pathways) |
 | Handoff of a service | Capability ↔ Capability | RM §12.3 | **Strong** — BD-TD05-003 |
 | Adoption of a family | Donor ↔ Household | RM §16.4 | **None** — absent from every source |
-| Need | Subject ↔ Norm | RM §7.1 | Blueprint |
 
 ### 4.2 The asymmetry this layer must not conceal
 
@@ -192,8 +190,7 @@ flagged because nothing outside this project confirms it.
 
 **Membership determination.** RM §4.3 records that how family and household membership are
 determined, and what happens when they diverge under displacement, polygamy, fostering or
-multi-generational co-residence, is `[OPEN]`. This layer can state that the relationships exist;
-it cannot state when they hold.
+multi-generational co-residence, requires practitioner evidence (Stage 5). This layer resolves that the relationships exist structurally as Relations; it leaves the empirical rules of when they hold for Ground Truth.
 
 ---
 
@@ -218,7 +215,7 @@ universal-or-variable marking.
 | Consequential decisions require a human decision-maker | Universal | RM §10.6, §12.2 | Blueprint |
 | Eligibility gates progression to active standing | Variable — by programme | RM §12.2 | Blueprint |
 | Donor compliance requirements bind implementing actors | Variable — by funder | RM §11.5 | **Strong** — BD-TD02-003, 3 source families |
-| Funding restriction determines who may receive — **`[OPEN]` in source** | Variable — by funder | RM §11.4 | **Evidence not found.** RM §11.4 states this *inside* an `[OPEN]`: *"No source in this repository models this."* Carried as an open question, **not** as an admitted constraint |
+| Funding restriction | Variable — by funder | RM §11.4 | Structurally resolved as a **Constraint (Norm)**. The specific restriction types remain un-admitted pending Stage 5 evidence. |
 | Accountability runs to affected people, not only to funders | Universal | RM §3.4 | **Strong** — BD-TD02-001, ≥4 source families |
 
 ### 5.2 A constraint that is also a tension
@@ -235,7 +232,7 @@ of the domain. A constraint layer that assumes consistency would misdescribe it.
 ### 5.3 What this layer cannot yet hold
 
 Consent is a placeholder in V1 (RM §16.3) — *what* consent is obtained for, from whom in a
-household, how it is withdrawn, and what withdrawal obliges are all `[OPEN]` (RM §11.5, listed
+household, how it is withdrawn, and what withdrawal obliges all require Stage 5 practitioner evidence (RM §11.5, listed
 as §16.5 gap). The constraint is admitted; its parameters are absent.
 
 ---
@@ -256,7 +253,7 @@ as §16.5 gap). The constraint is admitted; its parameters are absent.
 | Household — shelter | safe · damaged · flood-prone · leaking | RM §4.2 | **Blueprint only** |
 | Household — resilience | absorptive, adaptive, recovery capacity | RM §4.2 | **Blueprint only** |
 | Need | open → severity change → resolved or expired | RM §7.4 | **Blueprint only** |
-| Vulnerability | composite, emergent from compounding factors | RM §8.4 | **Blueprint only**; composition rule `[OPEN]` |
+| Vulnerability | composite, emergent from compounding factors | RM §8.4 | **Blueprint only**; composition rule requires Stage 5 evidence |
 | Engagement | identified → registration_initiated → registered → verification_pending → active → engaged → monitored → suspended → review_required → exited | RM §14.2 | Separation from developmental trajectory **corroborated** — BD-TD03-004 |
 | Person / Household (Wellbeing / Condition) | improved · held · deteriorated (Outcome/Impact describes this change) | RM §15.3 | Blueprint |
 
@@ -276,7 +273,7 @@ unevidenced. The Phase 1 audit rates Condition **Limited**, Blueprint-only, with
 capability, shelter condition, wellbeing and caregiving all at term-count zero across six
 dossiers.
 
-**Composition.** RM §8.4 gives two illustrative sums for vulnerability and no rule. `[OPEN]`.
+**Composition.** RM §8.4 gives two illustrative sums for vulnerability and no rule. This requires Stage 5 evidence.
 
 **Consequence, stated plainly:** the States layer is the **least evidenced layer in this
 ontology** and carries the majority of what Khidmat exists to understand. It can be structured.
@@ -336,9 +333,7 @@ further stages of the same lifecycle. BD-TD04-001 records MEAL as a **separate b
 capability** on its own cadence, *"not the final stage of any one case's journey"* (≥4
 institutional sources).
 
-**Not resolved here.** Outcome and impact *measurement* events are admitted to this layer; whether they belong
-to the case journey or to a separate discipline that consumes it is `[OPEN]` (RM §12.5). The
-consequence falls on Coordination Patterns — see §9.
+**Not resolved here.** Outcome and impact *measurement* events are admitted to this layer. Whether the *ownership* of that measurement belongs to the case journey or to a separate discipline requires Governance (Stage 7). Structurally, Outcome and Impact are States (Layer 5), and their measurement is an Event (Layer 6). The coordination consequence falls on Coordination Patterns — see §9.
 
 ---
 
@@ -359,8 +354,8 @@ consequence falls on Coordination Patterns — see §9.
 | Finding — a claim converted by verification | RM §10.3 | **Moderate** — BD-TD02-002 |
 | Confidence attached to an assessed need | RM §10.4 | Blueprint — confidence as a domain property is Evidence not found |
 | Uncertainty held openly | RM §10.4 | Blueprint |
-| **Contradiction between claims** | RM §10.5 | **`[OPEN]` — representation unstated by any source** |
-| **Missing information as knowledge** | RM §10.5 | **`[OPEN]` — representation unstated by any source** |
+| **Contradiction between claims** | RM §10.5 | **Structurally resolved** — Multiple Epistemic Stances asserting exclusive States |
+| **Missing information as knowledge** | RM §10.5 | **Structurally resolved** — Epistemic Stance indicating absence of warrant |
 | Consequence class triggering human review | RM §10.6 | Blueprint |
 
 ### 8.2 The open-world commitment
@@ -398,7 +393,7 @@ Consequently, this Cognition layer holds **only the *confidence in* a risk asses
 
 ### 8.5 What this layer cannot yet hold
 
-Evidence kinds and their relative weight (RM §10.2, `[OPEN]`; Phase 1 rates Evidence
+Evidence kinds and their relative empirical weight require Stage 5 evidence (RM §10.2). Phase 1 rates Evidence
 **Limited** — testimony 0, attestation 0, biometric 0 across six dossiers). Without an evidence
 taxonomy, *what verification consumes* is unspecified, and the claim→finding transition is
 structurally defined but operationally empty.
@@ -448,7 +443,7 @@ This applies to *needs assessment*, *planning*, *monitoring* and *coordination* 
 
 Whether **outcome and impact measurement** are a phase of the case journey or a separate
 discipline that consumes it (§7.3) determines whether MEAL is a Coordination Pattern in this
-layer or an Event sequence in Layer 6. Carried as `[OPEN]`.
+layer or an Event sequence in Layer 6. This requires Governance (Stage 7).
 
 ### 9.4 What this layer cannot yet hold
 
@@ -470,7 +465,7 @@ Each layer's ceiling is the strength of its source primitive (Phase 1 audit).
 | Constraints | Norm (P5), Context (P2) | **Strong** | Best-evidenced layer after Coordination |
 | States | Condition (P1) | **Limited** | **Least evidenced layer; carries the most domain content** |
 | Events | Occurrence (P6) | **Moderate** | Boundary with States unevidenced |
-| Cognition | Epistemic Stance (P3) | **Moderate / Limited** | Core purpose blocked on two `[OPEN]` representations |
+| Cognition | Epistemic Stance (P3) | **Moderate / Limited** | Structurally resolves missing info and contradiction |
 | Coordination | composite | **Strong** where evidenced; absent for giving | Altitude coupling is the strongest finding in the base |
 
 **Ontology-wide observation.** Layers describing how organisations operate — Constraints, Events,
@@ -492,7 +487,7 @@ made to keep derivation moving, and each is reversible.**
 | **A-02** | Context feeds Facets **and** scopes Constraints, rather than forming its own layer | The prescribed eight layers contain no Context layer; Context frames rather than participates (Phase 1 P2 boundary) | A ruling that scope requires its own layer |
 | **A-03** | The Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
 | **A-04** | Organisation and Programme are modelled as **two** entities | BD-TD01-003: every external source names them separately. Diverges from BL V1 §4, which collapses them | A ruling that BL V1's single actor row governs |
-| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 without deciding their ownership | `[OPEN]` (RM §12.5); admitting them keeps them representable while the operational coordination question stands | A ruling either way |
+| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 without deciding their ownership | Ownership requires Governance (RM §12.5); admitting them keeps them representable while the operational coordination question stands | A ruling either way |
 | **A-07** | The point-versus-span distinction (States ÷ Events) is retained despite being unevidenced | Removing it would merge two primitives and restructure four layers on equally thin grounds | Evidence that the distinction is not real, or a ruling that they merge |
 
 ---
@@ -520,7 +515,7 @@ The following domain concepts, previously marked [OPEN], are now formally resolv
 ## 13. Status
 
 **Complete for this phase:** all eight layers derived, each naming its source primitive; the
-derivation map (§1) accounts for all eight primitives with none unconsumed and none introduced;
+derivation map (§1) accounts for all seven primitives with none unconsumed and none introduced;
 evidence strength inherited and made explicit per layer (§10); assumptions isolated (§11); five
 open tensions carried intact (§12).
 

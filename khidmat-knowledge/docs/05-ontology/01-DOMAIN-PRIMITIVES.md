@@ -89,7 +89,7 @@ audit trail: each answer can be checked against its source.
 | Lifecycle stage (§3.3) · capabilities (§3.4) · health, disability, malnutrition (§3.5) · wellbeing (§3.6) · shelter condition, utilities (§4.2) · household resilience (§4.2) · need (§7.1) · vulnerability (§8.4) · engagement stage (§14.2) · outcome (§15.2) · documentation status (§3.2) | that which is true across a span, and can change |
 | Registration, verification visit, delivery, referral, follow-up (§12.1) · displacement, death, job loss (§6) · a shock absorbed (§4.2) · complaint raised (§12.6) · document/testimony generation (§10.2) | that which happened at a point |
 | Claim vs finding (§10.1, §10.3) · confidence (§10.4) · uncertainty, contradiction, missing information (§10.5) · epistemic weight of a registrant (§10.1) | the warrant the system holds for what it asserts |
-| Consent and its bounded necessity exception (§3.7) · dignity as standing constraint (§3.7) · eligibility (§12.2) · safeguarding precedence (§3.7) · funding restriction (§11.4, stated there inside an `[OPEN]`) · human-review requirement (§10.6) | that which bounds what is permitted or valid |
+| Consent and its bounded necessity exception (§3.7) · dignity as standing constraint (§3.7) · eligibility (§12.2) · safeguarding precedence (§3.7) · funding restriction (§11.4, structurally supported) · human-review requirement (§10.6) | that which bounds what is permitted or valid |
 | Geography, settlement type (§5.1) · seasonal calendar (§5.2) · cultural framing of household (§4.3) · crisis phase (§5.4) · programme vs case altitude (§11.4) · applicability scope (§2.2) | the frame relative to which a statement holds |
 
 **Seven answers. Each recurs across multiple independent sections of the reference model. No
@@ -210,7 +210,7 @@ against the giving side as the Project Lead described it:
 
 | Giving-side concept | Classifies as | Forced? |
 |---|---|---|
-| Donor, institutional funder | Identity | No — persists, must be re-identified |
+| Donor, institutional funder | Entity | No — persists, must be re-identified |
 | A gift or contribution | Occurrence | No — happened at a point |
 | Donor adopting a family | Relation | No — connects two persisting things |
 | Funding restriction on who may receive | Norm | No — bounds who may receive |
@@ -284,7 +284,7 @@ exclude the giving side. `SCOPE_COVERAGE.md` §4 records that the Project Lead a
 | Lifecycle stage (§3.3) · capabilities (§3.4) · health, disability, malnutrition (§3.5) · wellbeing (§3.6) · shelter condition, utilities (§4.2) · household resilience (§4.2) · need (§7.1) · vulnerability (§8.4) · engagement stage (§14.2) · outcome (§15.2) · documentation status (§3.2) | that which is true across a span, and can change |
 | Registration, verification visit, delivery, referral, follow-up (§12.1) · displacement, death, job loss (§6) · a shock absorbed (§4.2) · complaint raised (§12.6) · document/testimony generation (§10.2) | that which happened at a point |
 | Claim vs finding (§10.1, §10.3) · confidence (§10.4) · uncertainty, contradiction, missing information (§10.5) · epistemic weight of a registrant (§10.1) | the warrant the system holds for what it asserts |
-| Consent and its bounded necessity exception (§3.7) · dignity as standing constraint (§3.7) · eligibility (§12.2) · safeguarding precedence (§3.7) · funding restriction (§11.4, stated there inside an `[OPEN]`) · human-review requirement (§10.6) | that which bounds what is permitted or valid |
+| Consent and its bounded necessity exception (§3.7) · dignity as standing constraint (§3.7) · eligibility (§12.2) · safeguarding precedence (§3.7) · funding restriction (§11.4, structurally supported) · human-review requirement (§10.6) | that which bounds what is permitted or valid |
 | Geography, settlement type (§5.1) · seasonal calendar (§5.2) · cultural framing of household (§4.3) · crisis phase (§5.4) · programme vs case altitude (§11.4) · applicability scope (§2.2) | the frame relative to which a statement holds |
 
 **Seven answers. Each recurs across multiple independent sections of the reference model. No
@@ -301,7 +301,7 @@ Two central concepts that previously straddled classifications have now been for
 RM §8.1 insists risk is **first-class**, with horizon, trend and severity, *"not a byproduct of
 severity rules."* 
 
-**Resolution:** Risk is classified as a **Condition**. It is a dispositional/potential form of Condition that is oriented toward a possible future outcome (with horizon, trend, and severity), distinct from the future event actually occurring. 
+**Resolution:** Risk is classified as a **Condition**. It is a dispositional/potential form of Condition that is oriented toward a possible future outcome (with horizon, trend, and severity), distinct from the future event actually occurring. **Note:** This is a working structural decision; it remains pending explicit Stage 7 Project Lead governance ratification.
 
 The assessment or confidence *about* that Risk is distinct from the Risk itself and belongs to **Epistemic Stance** (Cognition). This prevents Risk from being collapsed into "what the system believes."
 

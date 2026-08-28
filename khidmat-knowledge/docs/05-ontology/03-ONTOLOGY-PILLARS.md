@@ -1,4 +1,4 @@
-# 3 â€” Ontology Pillars
+# 3 — Ontology Pillars
 
 **Ontology Design, step 3 of 7.** Status: **DRAFT.**
 
@@ -17,7 +17,7 @@ This document represents the completion of **Phase 3** of the ontology design. I
 ## 2. Derivation method
 
 The pillars are derived systematically:
-1. **Reference Model (Â§Â§3â€“15)** establishes what exists in humanitarian reality.
+1. **Reference Model (§§3–15)** establishes what exists in humanitarian reality.
 2. **Domain Primitives (Step 1)** establish the *kinds* of things those concepts are (Entity, Condition, Context, etc.).
 3. **Ontology Layers (Step 2)** establish the structural representation (Entities, States, Events, Cognition, etc.).
 4. **Pillars (Step 3)** slice vertically through the layers, grouping reality into major thematic domains that are internally cohesive and externally distinct.
@@ -80,7 +80,7 @@ governance (`04-ARCHITECTURE-RULES.md` §7).
 **Layers contributing:** Events (Occurrences), Coordination Patterns (Loops, Handoffs, Altitude coupling), Constraints.
 **Supporting primitives:** Occurrence (P6), Relation (P7), Context (P2), Norm (P5).
 **RM concepts within it:** Registration, Verification, Delivery, Follow-up, Handoffs, Case Journey, Grievance loops, Reassessment, Verification events.
-**Why it is a pillar:** It tracks actual interventions in the world. It is a pillar because it synthesizes actors, subjects, and needs into sequenced shapes. It adheres to the RM Â§12 quarantine: actions are things done *to* reality.
+**Why it is a pillar:** It tracks actual interventions in the world. It is a pillar because it synthesizes actors, subjects, and needs into sequenced shapes. It adheres to the RM §12 quarantine: actions are things done *to* reality.
 **Boundary:** Universal.
 **What remains outside:** The static entities and the resources themselves.
 
@@ -88,14 +88,14 @@ governance (`04-ARCHITECTURE-RULES.md` §7).
 **What domain reality it represents:** The resources, modalities of help, gifts, and matching that fuel the response.
 **Layers contributing:** Facets (Support dimensions), Entities (Gifts, Resources), Events (Delivery, Matching).
 **Supporting primitives:** Entity (P4), Condition (P1), Occurrence (P6).
-**RM concepts within it:** Interventions, Sector Ã— Modality Ã— Phase, Cash, In-kind, Giving, Matching.
+**RM concepts within it:** Interventions, Sector × Modality × Phase, Cash, In-kind, Giving, Matching.
 **Why it is a pillar:** The giving side (donors, resources) needs equal representation to the receiving side to enable the full Khidmat vision. Support is an artifact distinct from the Action of delivering it or the Actor funding it.
 **Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific digital payment transfers or local ration items) sit at Level 2.
 **What remains outside:** Needs (what it targets), Actors (who gives it).
 
 ---
 
-## 4. Primitive â†’ Layer â†’ Pillar traceability
+## 4. Primitive → Layer → Pillar traceability
 
 The pillars consume the entire ontology stack without gaps:
 
@@ -115,15 +115,15 @@ The pillars consume the entire ontology stack without gaps:
 
 Tested against the required Reference Model coverage list:
 
-* Person, Family, Household, Community, Identity â†’ **Covered (Pillars I, II)**
-* Situation, Need, Vulnerability, Risk â†’ **Covered (Pillar III)**
-* Evidence, Claims, Verification, Assessment â†’ **Covered (Pillar IV handles the knowledge; Pillar VI handles the action)**
-* Volunteer/field activity â†’ **Covered (Pillar V handles the Actor; Pillar VI handles the Action)**
-* Organisations, Programmes â†’ **Covered (Pillar V)**
-* Support/interventions, Resources, Giving/donors, Matching, Delivery â†’ **Covered (Pillar VII handles Resources/Interventions; Pillar V handles Donors; Pillar VI handles Delivery)**
-* Re-verification, Outcomes, Long-term wellbeing â†’ **Covered (Pillar VI handles Re-verification; Pillar I handles Wellbeing; Pillar III handles Outcomes/Risk trajectories)**
-* Accountability, Context â†’ **Covered (Pillar V handles Accountability Constraints; Pillar II handles Context)**
-* Knowledge/cognition, Coordination â†’ **Covered (Pillar IV handles Knowledge; Pillar VI handles Coordination)**
+* Person, Family, Household, Community, Identity → **Covered (Pillars I, II)**
+* Situation, Need, Vulnerability, Risk → **Covered (Pillar III)**
+* Evidence, Claims, Verification, Assessment → **Covered (Pillar IV handles the knowledge; Pillar VI handles the action)**
+* Volunteer/field activity → **Covered (Pillar V handles the Actor; Pillar VI handles the Action)**
+* Organisations, Programmes → **Covered (Pillar V)**
+* Support/interventions, Resources, Giving/donors, Matching, Delivery → **Covered (Pillar VII handles Resources/Interventions; Pillar V handles Donors; Pillar VI handles Delivery)**
+* Re-verification, Outcomes, Long-term wellbeing → **Covered (Pillar VI handles Re-verification; Pillar I handles Wellbeing; Pillar III handles Outcomes/Risk trajectories)**
+* Accountability, Context → **Covered (Pillar V handles Accountability Constraints; Pillar II handles Context)**
+* Knowledge/cognition, Coordination → **Covered (Pillar IV handles Knowledge; Pillar VI handles Coordination)**
 
 **Coverage Result:** The 7-pillar structure covers the complete Reference Model. There are no unmapped concepts, no concepts forced into incorrect pillars, and no workflow concepts accidentally becoming pillars. The giving/donor side is fully represented without reducing the human subject to an administrative record.
 
@@ -173,7 +173,7 @@ The primary structural tensions have been formally resolved:
 11. **Crisis Typology (RM §5.4):** A Crisis is a *Macro-Context* (Pillar II) that cascades *Constraints* and *Conditions* down to Subjects. Phase is a temporal *State*.
 12. **Orphanhood vs Unguardianed (RM §6.3):** *Orphanhood* is an irreversible *State* of a kinship Relation. *Unguardianed* is a reversible *State* of a caregiving Relation.
 13. **Need Interactions (RM §7.5):** Needs interact via *Dependency Relationships* (Layer 3).
-14. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple compounding *Conditions* (e.g., health, capability, household and environmental Conditions) and *Contexts*, per RM §8.4's own framing of "multiple compounding factors." Risk (RM §8.1–8.3) is one *Condition* among several that can compound into Vulnerability; Vulnerability composition is not defined as derived from Risk alone. The composition rule itself remains `[OPEN]` (see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`; `04-ARCHITECTURE-RULES.md` UHR-2).
+14. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple compounding *Conditions* (e.g., health, capability, household and environmental Conditions) and *Contexts*, per RM §8.4's own framing of "multiple compounding factors." Risk (RM §8.1–8.3) is one *Condition* among several that can compound into Vulnerability; Vulnerability composition is not defined as derived from Risk alone. The composition rule itself requires Stage 5 Practitioner evidence (see `01a-PRIMITIVE-EVIDENCE-AUDIT.md`; `04-ARCHITECTURE-RULES.md` UHR-2).
 15. **Contradiction Modeling (RM §10.5):** Defined in Cognition as multiple *Epistemic Stances* asserting mutually exclusive *States*.
 16. **Funder Altitude (RM §11.4):** The Giving side operates as a third *Funding Altitude*, extending the *Altitude Coupling* Coordination Pattern. It imposes *Constraints* on the Programme Altitude.
 17. **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* function identically to Risk/Need as valid initiating triggers for *Events* and *Coordination Patterns*.

@@ -377,12 +377,7 @@ longitudinal reasoning) must route low-confidence matches through Cognition's hu
 trigger (CCR-5) rather than resolving them silently.
 *Source:* RM §3.1, §16.5; TD-01 Open Gap 1.
 
-**UHR-5 — Unadmitted constraint content stays unadmitted.** Where the Reference Model itself
-records a candidate constraint inside an `[OPEN]` marker rather than stating it as fact (e.g.,
-"funding restriction determines who may receive" — RM §11.4, carried in
-`02-ONTOLOGY-LAYERS.md` §5.1 explicitly as *not* an admitted constraint), the architecture
-preserves that non-admission. A stub extension point (UHR-1) is reserved; no Constraint entry is
-created from an `[OPEN]` statement.
+**UHR-5 — Unadmitted constraint content stays unadmitted.** Where the Reference Model itself records a candidate constraint with unknown empirical content (e.g., specific funding restriction types — RM §11.4), the architecture treats the structural classification as resolved (Norm/Constraint) but leaves the specific values unadmitted. A stub extension point (UHR-1) is reserved for the content, awaiting Stage 5 Practitioner evidence.
 *Source:* RM §11.4; `02-ONTOLOGY-LAYERS.md` §5.1.
 
 ---
@@ -431,14 +426,14 @@ explicit UHR treatment (§4.8) that lets the architecture proceed without resolv
 
 | Open item | UHR treatment | Resolution path |
 |---|---|---|
-| Person-sameness / identity resolution mechanism | UHR-4 | Practitioner (Tier A) evidence |
-| Vulnerability and compound-risk composition rule | UHR-2 | Practitioner evidence or explicit ruling |
-| Outcome/impact ownership (journey vs. separate discipline) | UHR-3 | Future BMP-equivalent authorial decision |
-| Evidence-kind taxonomy | UHR-1 | Domain content work, not a ruling |
-| Giving-side entity and pattern content | UHR-1 | Dedicated discovery session (per `02-ontology-design-review-phase-1.html` §7, action 4) |
-| Human-facet value sets (health, capability, shelter, etc.) | UHR-1 | Practitioner evidence or explicit ruling that values are correctly context-local |
-| Funding-restriction constraint content | UHR-5 | Remains un-admitted pending evidence; stub reserved |
-| Organisation/Programme divergence from Business Logic V1 | *(governance, not UHR)* | Stage 7 — requires a Project Lead ruling per Assumption A-04, `02-ontology-design-review-phase-1.html` R-6 |
+| Person-sameness / identity resolution mechanism | UHR-4 | Practitioner (Stage 5) evidence |
+| Vulnerability and compound-risk composition rule | UHR-2 | Practitioner (Stage 5) evidence |
+| Outcome/impact ownership (journey vs. separate discipline) | UHR-3 | Governance (Stage 7) ruling |
+| Evidence-kind taxonomy | UHR-1 | Practitioner (Stage 5) evidence |
+| Giving-side entity and pattern content | UHR-1 | Practitioner (Stage 5) evidence |
+| Human-facet value sets (health, capability, shelter, etc.) | UHR-1 | Practitioner (Stage 5) evidence |
+| Funding-restriction constraint content | UHR-5 | Practitioner (Stage 5) evidence |
+| Organisation/Programme divergence from Business Logic V1 | *(governance, not UHR)* | Governance (Stage 7) ruling per Assumption A-04 |
 
 ---
 

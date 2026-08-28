@@ -96,7 +96,7 @@ Chapters 8 and 9 as requiring evidence, and no dossier for them exists.
    family, household, health, capability and vulnerability content. If Business Logic V1 is wrong
    about any of it, nothing in this repository would detect the error.
 2. **The point-versus-span distinction is unevidenced.** Condition and Occurrence are separated
-   on structural grounds alone. If they collapse, two of eight primitives merge.
+   on structural grounds alone. If they collapse, two of seven primitives merge.
 3. **RM §8 (Risk) has zero external citations.** The Condition-versus-Epistemic-Stance tension in
    `01-DOMAIN-PRIMITIVES.md` §6.1 **cannot be settled by evidence review** — no independent
    material exists to adjudicate it. It is a ruling, not a research question.
