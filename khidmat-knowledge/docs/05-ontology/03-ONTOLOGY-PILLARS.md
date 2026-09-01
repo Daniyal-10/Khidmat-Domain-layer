@@ -64,7 +64,7 @@ The pillars are derived systematically:
 **What remains outside:** Ground truth reality (Pillars I and III).
 
 ### Pillar V: Actors & Ecosystem
-**What domain reality it represents:** The entities that respond to, fund, or coordinate humanitarian action, including Government bodies, which act with agency. (Service Providers like Healthcare and Schools are provisionally refined as active Entities with independent capacity/eligibility decisions per Stage 5 GT-OQ15, retaining a single-source caveat). It models the rules binding them.
+**What domain reality it represents:** The entities that respond to, fund, or coordinate humanitarian action, including Government bodies, which act with agency. (Service Providers like Healthcare and Schools are structurally resolved as active Entities with independent capacity/eligibility decisions per Stage 5 GT-OQ15, retaining a single-source caveat; CLOSED). It models the rules binding them.
 **Layers contributing:** Entities (Organisation, Donor, Programme), Relationships (Implements, Funds, Adopts, Operates), Constraints (Compliance, Eligibility, Funding restrictions).
 **Supporting primitives:** Entity (P4), Relation (P7), Norm (P5).
 **RM concepts within it:** Organisations, Programmes, Donors, Community Groups, Governments, Accountability.
@@ -172,17 +172,17 @@ The primary structural tensions have been formally resolved:
 10. **Vulnerability Composition (RM §8.4):** Vulnerability is an emergent composite *State* derived from multiple compounding *Conditions* and *Contexts*. The composition rule itself is a Source-Absent Parameter (see `04-ARCHITECTURE-RULES.md` UHR-2).
 11. **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* function identically to Risk/Need as valid initiating triggers for *Events* and *Coordination Patterns*.
 
-### 8.2 Open Tensions Carried Forward
+### 8.2 Former Open Tensions (Now Resolved)
 
-The following concepts remain structurally `[OPEN]` or unevidenced, carried forward as tensions:
+The following concepts were previously carried forward as tensions, but are now structurally resolved:
 
-1. **Outcome / Impact Ownership:** Outcome and Impact are domain realities representing state changes in the relevant human subject (Wellbeing, Resilience, Need Resolution). They are owned by the Human Subject (Pillars I and III). However, the operational ownership of *Outcome/Impact Measurement* (MEAL) remains an open coordination question for Pillar VI (`ownership: pending`).
+1. **Outcome / Impact Ownership:** Outcome and Impact are domain realities representing state changes in the relevant human subject (Wellbeing, Resilience, Need Resolution). They are owned by the Human Subject (Pillars I and III). Operational responsibility for measurement (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. CLOSED (Option A Closure).
 2. **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. CONFIRMED-distinct by Stage 5 (GT-OQ18) as an independent Condition (Orphanhood) and Relation (Guardianship).
-3. **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another is not stated by any source. Stage 5 evidence (GT-OQ16) indicates a formal Need↔Need Relation should NOT be built; interactions are Cognition/documentation content, not structural Relations. Remains [OPEN].
+3. **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another is not stated by any source. Stage 5 evidence (GT-OQ16) indicates a formal Need↔Need Relation should NOT be built; interactions are Cognition/documentation content, not structural Relations. CLOSED (Option A Closure).
 4. **Contradiction Modeling (RM §10.5):** Structurally resolved by Stage 5 (GT-OQ12) — retains all conflicting claims with source attribution rather than overwriting.
 5. **Missing Information as Knowledge (RM §10.5):** Structurally resolved by Stage 5 (GT-L7, GT-OQ13) — every State/Claim carries a paired (value, epistemic-status) tuple.
-6. **Funder Altitude (RM §11.4):** An implied but unevidenced third altitude. Shape defined by Stage 5 evidence (GT-OQ17); detailed operational rules remain UHR-1 stub.
-7. **Service Providers as Actors (RM §11.1):** Provisionally REFINED — single-source (GT-OQ15); retained open pending broader corroboration or explicit Stage 7 ratification.
+6. **Funder Altitude (RM §11.4):** Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). No distinct third altitude layer or primitive exists. CLOSED (Option A Closure).
+7. **Service Providers as Actors (RM §11.1):** Structurally modeled as active Entities (P4) capable of participating in coordination and making capacity decisions, while retaining a single-source evidence caveat (GT-OQ15). CLOSED (Option A Closure).
 
 **Empirical and Governance Dependencies:**
 

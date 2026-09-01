@@ -267,7 +267,7 @@ families (interagency GBV and Child Protection case-management standards).
 
 **CCR-7 — Dual-clock rule.** A person's or household's developmental/life-trajectory state and
 their engagement/administrative state are two separate State tracks and may never collapse into
-one combined status field. **Status: RESOLVED (Option A Closure). A person's real-world circumstances (States) and programmatic engagement (Events) are ontologically distinct. The architectural implementation mechanics (e.g., dual physical clocks, temporal tables, event sourcing) are explicitly delegated to architecture rather than mandated by the ontology.**
+one combined status field. Status: UNRESOLVED per Stage 7 G2 (2026-09-01). Not enforced as a mandatory constraint. Retained as a documented hypothesis pending further evidence.
 *Source:* RM §14.2. *Underlying evidence:* **Medium-High** — BD-TD03-004, ≥4 source families
 (Graduation Approach / BRAC / USAID practice).
 
@@ -381,7 +381,7 @@ named, empty extension point in the relevant layer/pillar. The stub carries no i
 **UHR-2 — Composition-function parameterization.** Where a composition rule is domain-real but unevidenced (vulnerability composition, compound risk composition), the architecture represents it as a named, versioned function attached to the relevant State, parameterized for Stage 5. It is NOT hard-coded as additive, multiplicative, or threshold-based because the sources do not provide a math formula.
 *Source:* RM §8.4; `02-ONTOLOGY-LAYERS.md` §6.3.
 
-**UHR-3 — Disputed ownership tagging.** Where a Coordination Pattern's ownership is genuinely undecided (e.g., outcome/impact measurement as a case-journey stage vs. a separate MEAL discipline), the architecture tags its ownership `ownership: pending` rather than forcing a premature resolution, preserving the tension from RM §12.5.
+**UHR-3 — Disputed ownership tagging.** (Historical). This rule previously tagged Coordination Patterns whose ownership was genuinely undecided (e.g., outcome/impact measurement) as `ownership: pending`. This tension has been structurally resolved (delegated to architecture); the tag is no longer active.
 *Source:* RM §12.5; `02-ONTOLOGY-LAYERS.md` §7.3, §9.3.
 
 **UHR-4 — Identity-resolution uncertainty routing.** Because the mechanism for establishing
@@ -438,11 +438,7 @@ now confirmed corrected at source. No other rule is violated by existing content
 
 These represent genuine structural ambiguities or governance gaps that remain unresolved, tracked here to prevent them from blocking Stage 5.
 
-| Open Item | UHR Treatment | Resolution Path |
-|---|---|---|
-| **Contradiction-representation** (Representation unstated) | UHR-1 (stub extension point) | Practitioner evidence / explicit ruling |
-| **Missing-information-representation** (Representation unstated) | UHR-1 (stub extension point) | Practitioner evidence / explicit ruling |
-
+None. All previously open tensions have been structurally resolved.
 ### 7.2 Structurally Resolved but Parameter-Absent
 
 There are no unresolved structural questions for the items below. What remains missing is strictly the **empirical value/rule** which the current authoritative project sources do not specify. These are formally classified as Source-Absent Parameters.
@@ -462,6 +458,8 @@ None of the following prevents Stage 5 (Ground Truth Reviews) from beginning. Ea
 | **Outcome / Impact Ownership** | States (L5) belonging to Human Subject. | Operational responsibility for measurement (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. | Option A Closure |
 | **Funder Altitude** | Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). | No distinct third altitude layer or primitive exists. | Option A Closure |
 | **Case Orchestration** | Coordination Pattern (L8). | It is not a distinct domain primitive. Technical workflow implementation is deferred to architecture. | Option A Closure |
+| **Contradiction-representation** | Cognition (Layer 7). | Retains all conflicting claims with source attribution rather than overwriting. Resolution algorithms are deferred to architecture. | Option A Closure |
+| **Missing-information-representation** | Cognition (Layer 7). | Every State/Claim carries a paired (value, epistemic-status) tuple. | Option A Closure |
 
 
 ---

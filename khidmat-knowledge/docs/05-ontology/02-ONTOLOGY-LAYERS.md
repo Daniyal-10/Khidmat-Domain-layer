@@ -122,7 +122,7 @@ than through something else? If no, it is a State of something that does.
 | Programme | RM §11.1 | **Strong** — Stage 7 G1 split; carries programme-specific eligibility, funding, and activity rules |
 | Donor / giver | RM §11.1 | **Strong** — BD-TD01-004 (CHS defines actors to include them) |
 | Government body | RM §11.1 | BD-TD01-001 |
-| Service Provider (Healthcare, School, Employer) | RM §11.1 | **Provisionally REFINED** — modelled as an active Entity with independent capacity/eligibility decisions (GT-OQ15), but retains single-source caveat (F-3); not fully closed |
+| Service Provider (Healthcare, School, Employer) | RM §11.1 | **Structurally resolved** — modelled as an active Entity with independent capacity/eligibility decisions (GT-OQ15), but retains single-source caveat (F-3); CLOSED (Option A Closure) |
 | Emergent group / mutual-aid structure | RM §4.5 | **Strong** — BD-TD01-005, ≥3 source families |
 | Case | RM §12 | Blueprint |
 | Evidence artifact | RM §10.2 | Weak — kinds unenumerated |
@@ -326,7 +326,7 @@ further stages of the same lifecycle. BD-TD04-001 records MEAL as a **separate b
 capability** on its own cadence, *"not the final stage of any one case's journey"* (≥4
 institutional sources).
 
-**CARRIED AS OPEN TENSION.** Outcome and impact *measurement* events are admitted to this layer, but the operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is marked `ownership: pending` (Stage 5 GT-PL6, GT-OQ5). Structurally, Outcome and Impact are States (Layer 5), and their measurement is an Event (Layer 6). The coordination consequence falls on Coordination Patterns — see §9.
+**STRUCTURALLY RESOLVED.** Outcome and impact *measurement* events are admitted to this layer. The operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is explicitly delegated to architecture/workflow design. Structurally, Outcome and Impact are States (Layer 5) belonging to the Human Subject, and their measurement is an Event (Layer 6). CLOSED (Option A Closure).
 
 ---
 
@@ -431,7 +431,7 @@ This applies to *needs assessment*, *planning*, *monitoring* and *coordination* 
 
 ### 9.3 A pattern whose ownership is pending
 
-**CARRIED AS OPEN TENSION.** The operational ownership of Outcome and impact measurement (whether it belongs to the Case Journey per BL V1 or to a separate MEAL discipline per RM §12.5) remains unresolved. It is tagged `ownership: pending` and carried forward as a genuine architectural tension.
+**STRUCTURALLY RESOLVED.** The operational ownership of Outcome and impact measurement (whether it belongs to the Case Journey per BL V1 or to a separate MEAL discipline per RM §12.5) is explicitly delegated to architecture/workflow design. CLOSED (Option A Closure).
 
 ### 9.4 What this layer cannot yet hold
 
@@ -473,7 +473,7 @@ made to keep derivation moving, and each is reversible.**
 | **A-02** | Context feeds Facets **and** scopes Constraints, rather than forming its own layer | The prescribed eight layers contain no Context layer; Context frames rather than participates (Phase 1 P2 boundary) | A ruling that scope requires its own layer |
 | **A-03** | The Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
 | **A-04** | Organisation and Programme are collapsed into one Entity | **SUPERSEDED BY STAGE 7 G1:** Split into two Entities connected by an operates relation. | None |
-| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | Structural admission is resolved (they are Occurrences); however, operational ownership (Case Journey vs MEAL) is **CARRIED AS OPEN TENSION** (`ownership: pending`). | None |
+| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | Structural admission is resolved (they are Occurrences); operational ownership (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. CLOSED (Option A Closure). | None |
 | **A-07** | The point-versus-span distinction (States ÷ Events) is retained despite being unevidenced | Removing it would merge two primitives and restructure four layers on equally thin grounds | Evidence that the distinction is not real, or a ruling that they merge |
 
 ---
@@ -494,16 +494,16 @@ The following domain concepts are formally resolved at the ontological level:
 *   **Evidence Taxonomy (RM §10.2):** Evidence kinds (Testimony, Document, etc.) are ontological subtypes of the Evidence *entity/occurrence* content that carry distinct *Norms* of Epistemic Weight.
 *   **Proactive Triggers (RM §16.4):** *Capability* and *Opportunity* (Conditions) function identically to Risk/Need as valid initiating triggers for *Events* and *Coordination Patterns*.
 
-### 12.2 Open Tensions Carried Forward
+### 12.2 Former Open Tensions (Now Resolved)
 
-The following concepts remain structurally `[OPEN]` or unevidenced, carried forward as tensions:
+The following concepts were previously carried forward as tensions, but are now structurally resolved:
 
 *   **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. CONFIRMED-distinct by Stage 5 (GT-OQ18) as an independent Condition (Orphanhood) and Relation (Guardianship).
-*   **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another (prerequisite, aggravating, substituting, mutually exclusive) is not stated by any source. Stage 5 evidence (GT-OQ16) indicates a formal Need↔Need Relation should NOT be built; interactions are Cognition/documentation content, not structural Relations. Remains [OPEN].
+*   **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another (prerequisite, aggravating, substituting, mutually exclusive) is not stated by any source. Stage 5 evidence (GT-OQ16) indicates a formal Need↔Need Relation should NOT be built; interactions are Cognition/documentation content, not structural Relations. CLOSED (Option A Closure).
 *   **Contradiction Modeling (RM §10.5):** Structurally resolved by Stage 5 (GT-OQ12) — retains all conflicting claims with source attribution rather than overwriting.
 *   **Missing Information as Knowledge (RM §10.5):** Structurally resolved by Stage 5 (GT-L7, GT-OQ13) — every State/Claim carries a paired (value, epistemic-status) tuple.
-*   **Funder Altitude (RM §11.4):** An implied but unevidenced third altitude. Shape defined by Stage 5 evidence (GT-OQ17); detailed operational rules remain UHR-1 stub.
-*   **Outcome / Impact Ownership:** Outcome and Impact are *States* (Layer 5) belonging to the Human Subject (Person/Household), reflecting changes in their wellbeing or conditions. However, the operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is `ownership: pending` (GT-PL6, GT-OQ5) and remains genuinely undecided.
+*   **Funder Altitude (RM §11.4):** Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). No distinct third altitude layer or primitive exists. CLOSED (Option A Closure).
+*   **Outcome / Impact Ownership:** Outcome and Impact are *States* (Layer 5) belonging to the Human Subject (Person/Household), reflecting changes in their wellbeing or conditions. Operational responsibility for measurement (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. CLOSED (Option A Closure).
 
 ---
 
