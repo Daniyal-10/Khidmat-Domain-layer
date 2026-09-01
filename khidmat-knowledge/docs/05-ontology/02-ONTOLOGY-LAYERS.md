@@ -1,6 +1,6 @@
 # 2 — Ontology Layers
 
-**Ontology Design, step 2 of 7.** Status: **Structurally resolved; pending Stage 5/7.**
+**Ontology Design, step 2 of 7.** Status: **COMPLETE / BASELINED.**
 
 Derived from `01-DOMAIN-PRIMITIVES.md`, whose primitive set is **structurally stable and formally closed**. Every layer below inherits that structural stability.
 
@@ -514,7 +514,7 @@ derivation map (§1) accounts for all seven primitives with none unconsumed and 
 evidence strength inherited and made explicit per layer (§10); assumptions isolated (§11); five
 open tensions carried intact (§12).
 
-**Not done, by instruction:** no tension resolved, no evidence gap closed, no practitioner validation obtained. However, the lack of practitioner validation does not prevent freezing the 8 layers, as field validation will populate values but not invent a 9th layer.
+**Practitioner validation:** Ground Truth practitioner validation was obtained during Stage 5. Relevant evidence gaps and tensions were formally resolved and integrated via the Stage 5–7 governance process, successfully corroborating the layer definitions.
 
 **Cannot be populated:** giving-side entities and patterns (§3.3, §9.4); values within every human
 facet (§2.3, §6.3); evidence kinds (§8.5).

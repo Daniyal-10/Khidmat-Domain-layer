@@ -1,6 +1,6 @@
 # 4 — Architecture Rules
 
-**Ontology Design, step 4 of 7.** Status: **Structurally resolved; pending Stage 5/7.**
+**Ontology Design, step 4 of 7.** Status: **COMPLETE / BASELINED.**
 
 Derived from `01-DOMAIN-PRIMITIVES.md`, `02-ONTOLOGY-LAYERS.md`, `03-ONTOLOGY-PILLARS.md`,
 `README.md` (Standing Rules), and

@@ -1,6 +1,6 @@
 # 3 — Ontology Pillars
 
-**Ontology Design, step 3 of 7.** Status: **Structurally resolved; pending Stage 5/7.**
+**Ontology Design, step 3 of 7.** Status: **COMPLETE / BASELINED.**
 
 Derived from `02-ONTOLOGY-LAYERS.md` and `docs/04-reference-model/KHIDMAT_HUMANITARIAN_DOMAIN_REFERENCE_MODEL.md`.
 

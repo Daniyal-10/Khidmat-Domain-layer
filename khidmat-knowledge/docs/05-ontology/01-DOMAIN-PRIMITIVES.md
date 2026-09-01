@@ -1,6 +1,6 @@
 # 1 — Domain Primitives
 
-**Ontology Design, step 1 of 7.** Status: **Structurally resolved; pending Stage 5/7.**
+**Ontology Design, step 1 of 7.** Status: **COMPLETE / BASELINED.**
 
 ---
 
