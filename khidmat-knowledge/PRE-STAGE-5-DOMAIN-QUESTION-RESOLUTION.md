@@ -108,7 +108,7 @@ This register acts as the final resolution pass before Stage 5. It evaluates eve
 | Rule Established | The distinction is collapsed for the V1 business model, resolving earlier reference-model tensions. |
 | Remaining Parameter, if any | None. |
 | Why It Cannot Yet Be Determined | N/A |
-| Status | RESOLVED |
+| Status | RESOLVED — SUPERSEDED BY STAGE 7 G1 — split, not collapsed |
 
 ---
 

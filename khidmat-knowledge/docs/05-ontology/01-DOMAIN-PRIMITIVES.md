@@ -152,9 +152,9 @@ representable only because this category exists.
 
 Irreducible because ontological persistence cannot be produced from the others. RM §3.1 states that every promise about longitudinal reasoning rests on it (a person is a persistent entity). RM §3.5's fairness principle and RM §2's duplicate-registration problem both reduce to it.
 
-*Evidence:* RM §3.1, §4.1–4.5, §11.1.
+*Evidence:* RM §3.1, §4.1–4.5, §11.1; Stage 5 GT-P4, GT-OQ1.
 *Boundary:* something that is never tracked in its own right across encounters is not an Entity — it is a Condition of something that is.
-*Note on Identity:* "Identity" is the epistemic construct (how we track and re-identify an Entity), not the fundamental category of reality itself. Identity verification and identity evidence are relations and epistemic stances about an Entity.
+*Note on Identity:* "Identity" is the epistemic construct (how we track and re-identify an Entity), not the fundamental category of reality itself. Identity verification and identity evidence are relations and epistemic stances about an Entity. Note that identifiers (phone, national ID, internal ID) are attributes/Relations grounding identity evidence, not the Person Entity itself. This confirms the practitioner's "beneficiary card ≠ person" distinction (GT-P4, GT-OQ1), which the existing Person/Case separation satisfies.
 
 ### P5 — Norm
 **That which bounds what is permitted, required, or valid.**
@@ -337,10 +337,10 @@ Consequence for this set — each primitive carries a different evidential weigh
 | **Epistemic Stance** (P3) | Moderate — claim/finding split corroborated via TD-02 |
 | **Occurrence** (P6) | Moderate — lifecycle and verification practice via TD-03 |
 | **Entity** (P4) | Partial — trajectory/enrolment separation via TD-03 |
-| **Condition** (P1) | **Business Logic V1 alone** — health, capability, shelter, vulnerability, resilience have no external corroboration |
-| **Relation** (P7) | **Business Logic V1 alone** — family, dependency and caregiving are effectively absent from the dossiers |
+| **Condition** (P1) | Moderate — Stage 5 practitioner-corroborated (GT-P1, GT-OQ2, GT-OQ9, GT-OQ11) |
+| **Relation** (P7) | Moderate — Stage 5 practitioner-corroborated (GT-P7, GT-L3) |
 
-**The two primitives carrying most of the human side rest on a single unvalidated source.**
+**The primitives now have practitioner corroboration.**
 This does not invalidate them — categories classify regardless of evidence density — but it is
 where the set is weakest and where practitioner evidence would change the most.
 

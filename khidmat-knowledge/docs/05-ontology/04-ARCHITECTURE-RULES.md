@@ -94,6 +94,16 @@ This ruling is binding per **CTR-2 / CTR-3** (§4.7): it applies wherever Need a
 reopened only by new evidence or an explicit governance ruling, never by a later document
 silently reverting to the Relation reading.
 
+## 1A. Synchronization Correction — Organisation/Programme Split (Stage 7 G1-origin decision)
+
+**Finding.** Business Logic V1 §4 originally collapsed implementing organisations and the programmes they lead into a single actor row ("Programme / Organisation").
+
+**Confirmed classification (originating in Stage 7 `07-STAGE-7-GOVERNANCE-DECISIONS.md` G1):** `Organisation` and `Programme` are split into two distinct Entities connected by a new `operates` Relation.
+
+**Reasoning.** Stage 6 identified this as a tension between Tier-1 sources and external practitioner evidence (GT-PL5, GT-OQ6). Stage 7 G1 formally amended the Blueprint, splitting the entities so that programme-specific eligibility, funding, and activity rules attach to the Programme rather than the Organisation.
+
+**Propagation status: APPLIED.** `02-ONTOLOGY-LAYERS.md` and `03-ONTOLOGY-PILLARS.md` have been updated to reflect the two distinct Entities and the new relationship, overwriting the earlier unified Entity.
+
 ---
 
 ## 2. Purpose and scope
@@ -257,7 +267,7 @@ families (interagency GBV and Child Protection case-management standards).
 
 **CCR-7 — Dual-clock rule.** A person's or household's developmental/life-trajectory state and
 their engagement/administrative state are two separate State tracks and may never collapse into
-one combined status field.
+one combined status field. **Status: UNRESOLVED per Stage 7 G2 (2026-09-01). Not enforced as a mandatory constraint. Retained as a documented hypothesis pending further evidence.**
 *Source:* RM §14.2. *Underlying evidence:* **Medium-High** — BD-TD03-004, ≥4 source families
 (Graduation Approach / BRAC / USAID practice).
 
@@ -430,11 +440,12 @@ These represent genuine structural ambiguities or governance gaps that remain un
 
 | Open Item | UHR Treatment | Resolution Path |
 |---|---|---|
-| **Service Providers as Actors** (Whether healthcare, schools, employers act with agency) | UHR-3 equivalent (carried as `[OPEN]`) | Project Lead governance ruling |
-| **Need-interaction model** (General model unstated) | UHR-1 (stub extension point) | Practitioner evidence / explicit ruling |
+| **Service Providers as Actors** (Whether healthcare, schools, employers act with agency) | Provisionally REFINED — single-source; retained open pending broader corroboration or explicit Stage 7 ratification | Project Lead governance ruling |
+| **Need-interaction model** (General model unstated) | Stage 5 evidence (GT-OQ16) indicates formal Need↔Need Relation should NOT be built; interactions are Cognition/documentation content, not structural Relations | Practitioner evidence / explicit ruling |
 | **Contradiction-representation** (Representation unstated) | UHR-1 (stub extension point) | Practitioner evidence / explicit ruling |
 | **Missing-information-representation** (Representation unstated) | UHR-1 (stub extension point) | Practitioner evidence / explicit ruling |
-| **Case Coordination/Orchestration capability status** (Tier-C-only, not independently evidenced) | UHR-1 (stub extension point) | Tier B/D evidence collection or practitioner evidence |
+| **Funder Altitude** | shape defined by Stage 5 evidence; detailed operational rules remain UHR-1 stub | Tier B/D evidence collection or practitioner evidence |
+| **Case Coordination/Orchestration capability status** (Tier-C-only, not independently evidenced) | shape defined by Stage 5 evidence; detailed operational rules remain UHR-1 stub | Tier B/D evidence collection or practitioner evidence |
 | **Outcome/Impact operational ownership** (Case journey vs MEAL) | UHR-3 | Project Lead governance ruling |
 
 ### 7.2 Structurally Resolved but Parameter-Absent

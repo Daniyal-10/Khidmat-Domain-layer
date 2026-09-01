@@ -118,23 +118,24 @@ than through something else? If no, it is a State of something that does.
 | Household | RM §4.2 | BD-TD03-004 (trajectory tracked separately from programme status) |
 | Family | RM §4.1 | Blueprint only — resolved as a distinct Entity, bounded by kinship/legal guardianship; see §12 ("Family vs Household") |
 | Community | RM §4.4 | Blueprint |
-| Programme / Organisation | RM §11.1 | **Strong** — Tier 1 authority (BL V1 §4) overrides BD-TD01-003 divergence |
+| Organisation | RM §11.1 | **Strong** — Stage 7 G1 split |
+| Programme | RM §11.1 | **Strong** — Stage 7 G1 split; carries programme-specific eligibility, funding, and activity rules |
 | Donor / giver | RM §11.1 | **Strong** — BD-TD01-004 (CHS defines actors to include them) |
 | Government body | RM §11.1 | BD-TD01-001 |
-| Service Provider (Healthcare, School, Employer) | RM §11.1 | **[OPEN]** — whether they are modelled as actors is undecided |
+| Service Provider (Healthcare, School, Employer) | RM §11.1 | **Provisionally REFINED** — modelled as an active Entity with independent capacity/eligibility decisions (GT-OQ15), but retains single-source caveat (F-3); not fully closed |
 | Emergent group / mutual-aid structure | RM §4.5 | **Strong** — BD-TD01-005, ≥3 source families |
 | Case | RM §12 | Blueprint |
 | Evidence artifact | RM §10.2 | Weak — kinds unenumerated |
 
 ### 3.2 The strongest and weakest points of this layer
 
-**Strongest.** Institutional entities. While external evidence (BD-TD01-003) distinguishes implementing organisations from the programmes they lead, Business Logic V1 §4 collapses them into a single actor row ("Programme / Organisation"). Per the repository authority rules, Tier 1 outranks external evidence, so this layer unifies them as a single combined Entity, closing the previous divergence.
+**Strongest.** Institutional entities. While Business Logic V1 §4 originally collapsed implementing organisations and the programmes they lead into a single actor row, Stage 7 G1 formally amended this to split them into two distinct Entities (Organisation and Programme). Programme-specific eligibility, funding, and activity rules attach to the Programme.
 
 **Weakest.** Person. RM §3.1 makes person-persistence load-bearing for three separate principles,
 and the pre-Stage-5 evidence rating records that **how sameness is established is Evidence not found** —
 closable only by practitioner evidence (TD-01 Open Gap 1). The entity is admitted; its
 re-identification mechanism is absent. That is an engineering gap, not an ontology gap, but it
-means the entity most central to the model is the one least able to be operated.
+means the entity most central to the model is the one least able to be operated. Stage 5 (GT-P4, GT-OQ1) confirms the existing Person/Case separation satisfies the "beneficiary card ≠ person" distinction; identifiers (phone, national ID, internal ID) are attributes/Relations grounding identity evidence, not the Person Entity itself.
 
 ### 3.3 What this layer cannot yet hold
 
@@ -157,12 +158,13 @@ anything true of one thing alone is a State.
 | Relationship | Between | Source | Evidence |
 |---|---|---|---|
 | Kinship (parent, child, spouse, sibling) | Person ↔ Person | RM §4.1 | **Unsupported** — kinship 0, spouse 0, parent 0, sibling 0 across all dossiers |
-| Guardianship / caregiving | Person ↔ Person | RM §4.1 | **Unsupported** — caregiving 0 |
+| Guardianship / caregiving | Person ↔ Person | RM §4.1 | **Moderate** — Stage 5 (GT-P7, GT-L3, GT-OQ18). CONFIRMED-distinct from Orphanhood Condition (L5). |
 | Dependency | Person ↔ Person | RM §4.1 | **Unsupported** |
 | Responsibility (income, caregiving, education, decision) | Person ↔ Household | RM §4.1 | **Unsupported** |
 | Household membership | Person ↔ Household | RM §4.2 | Blueprint |
 | Constrains | Programme ↔ Case | RM §11.4 | **Strong** — BD-TD03-001 (mechanism itself unevidenced, Assumption AR-005 in TD-03) |
 | Referral | Organisation ↔ Organisation | RM §12.1 | **Strong** — BD-TD04-002 (CFM referral pathways) |
+| Operates | Organisation ↔ Programme | Stage 7 G1 | **Strong** — Stage 7 G1 split |
 | Handoff of a service | Capability ↔ Capability | RM §12.3 | **Strong** — BD-TD05-003 |
 | Adoption of a family | Donor ↔ Household | RM §16.4 | **None** — absent from every source |
 
@@ -201,13 +203,13 @@ universal-or-variable marking.
 
 | Constraint | Scope | Source | Evidence |
 |---|---|---|---|
-| Consent required, bounded by a necessity exception | Universal | RM §3.7 | **Strong** — ICRC *Handbook on Data Protection in Humanitarian Action*, Tier B primary (BD-TD02-004) |
+| Consent required, bounded by a necessity exception | Universal | RM §3.7 | **Strong** — ICRC *Handbook*, Stage 5 (GT-OQ14). Consent is an ongoing per-action validation Norm; withdrawal halts dependent actions but does not cascade-delete history where another lawful basis applies. |
 | Safeguarding takes precedence over process | Universal | RM §3.7 | Blueprint |
 | Data minimisation — collect only what is necessary | Universal | RM §3.7 | BD-TD02-004 |
 | Consequential decisions require a human decision-maker | Universal | RM §10.6, §12.2 | Blueprint |
-| Eligibility gates progression to active standing | Variable — by programme | RM §12.2 | Blueprint |
+| Eligibility gates progression to active standing | Variable — by programme | RM §12.2 | Blueprint. *Cross-reference: Structurally distinct from Need (L5 Condition); lack of eligibility does not erase a Need.* |
 | Donor compliance requirements bind implementing actors | Variable — by funder | RM §11.5 | **Strong** — BD-TD02-003, 3 source families |
-| Funding restriction | Variable — by funder | RM §11.4 | Structurally resolved as a **Constraint (Norm)**. The specific restriction types remain un-admitted as a Source-Absent Parameter. |
+| Funding restriction | Variable — by funder | RM §11.4 | **Moderate** — Stage 5 corroborated (GT-P5, GT-L4). Non-exhaustive types: geography, target population, sector, eligible activity, time period, reporting. |
 | Accountability runs to affected people, not only to funders | Universal | RM §3.4 | **Strong** — BD-TD02-001, ≥4 source families |
 
 ### 5.2 A constraint that is also a tension
@@ -223,9 +225,7 @@ of the domain. A constraint layer that assumes consistency would misdescribe it.
 
 ### 5.3 What this layer cannot yet hold
 
-Consent is a placeholder in V1 (RM §16.3) — *what* consent is obtained for, from whom in a
-household, how it is withdrawn, and what withdrawal obliges all require Stage 5 practitioner evidence (RM §11.5, listed
-as §16.5 gap). The constraint is admitted; its parameters are absent.
+Consent mechanics (what consent is obtained for, from whom, and what withdrawal obliges) were partially clarified by Stage 5 practitioner evidence (GT-OQ14). It is now explicitly modeled as an ongoing per-action validation Norm, where withdrawal halts dependent actions but does not cascade-delete history. Some specific operational parameters may still require implementation-level configuration.
 
 ---
 
@@ -241,10 +241,11 @@ as §16.5 gap). The constraint is admitted; its parameters are absent.
 |---|---|---|---|
 | Person — health | acute · chronic · disability · mental · nutritional (incl. SAM/MAM staging) | RM §3.5 | **Blueprint only** |
 | Person — capability | across five dimensions | RM §3.4 | **Blueprint only** |
+| Person — orphanhood | biological/legal fact of being an orphan | RM §6.3 | **Moderate** — Stage 5 (GT-OQ18). CONFIRMED-distinct from active-caregiving relation (L3). |
 | Person — lifecycle stage | nine developmental stages | RM §3.3 | Blueprint; separation-from-programme-status corroborated by BD-TD03-004 |
 | Household — shelter | safe · damaged · flood-prone · leaking | RM §4.2 | **Blueprint only** |
 | Household — resilience | absorptive, adaptive, recovery capacity | RM §4.2 | **Blueprint only** |
-| Need | open → severity change → resolved or expired | RM §7.4 | **Blueprint only** |
+| Need | open → severity change → resolved or expired | RM §7.4 | **Blueprint only** (Stage 5 GT-OQ11 notes: Structurally distinct from Programme Eligibility (L4 Norm). A Need exists independently of eligibility.) |
 | Vulnerability | composite, emergent from compounding factors | RM §8.4 | **Blueprint only**; quantitative/qualitative composition rule is a Source-Absent Parameter |
 | Engagement | identified → registration_initiated → registered → verification_pending → active → engaged → monitored → suspended → review_required → exited | RM §14.2 | Separation from developmental trajectory **corroborated** — BD-TD03-004 |
 | Person / Household (Wellbeing / Condition) | improved · held · deteriorated (Outcome/Impact describes this change) | RM §15.3 | Blueprint |
@@ -265,7 +266,7 @@ unevidenced. the pre-Stage-5 evidence rating rates Condition **Limited**, Bluepr
 capability, shelter condition, wellbeing and caregiving all at term-count zero across six
 dossiers.
 
-**Composition.** RM §8.4 gives two illustrative sums for vulnerability and no rule. This is a Source-Absent Parameter.
+**Composition.** RM §8.4 gives two illustrative sums for vulnerability and no rule. This is a Source-Absent Parameter (confirmed correct by Stage 5 GT-OQ2, GT-PL3 — vulnerability is context/professional-judgement driven, with no hardcoded universal formula).
 
 **Consequence, stated plainly:** the States layer is the **least evidenced layer in this
 ontology** and carries the majority of what Khidmat exists to understand. It can be structured.
@@ -325,7 +326,7 @@ further stages of the same lifecycle. BD-TD04-001 records MEAL as a **separate b
 capability** on its own cadence, *"not the final stage of any one case's journey"* (≥4
 institutional sources).
 
-**CARRIED AS OPEN TENSION.** Outcome and impact *measurement* events are admitted to this layer, but the operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is marked `ownership: pending`. Structurally, Outcome and Impact are States (Layer 5), and their measurement is an Event (Layer 6). The coordination consequence falls on Coordination Patterns — see §9.
+**CARRIED AS OPEN TENSION.** Outcome and impact *measurement* events are admitted to this layer, but the operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is marked `ownership: pending` (Stage 5 GT-PL6, GT-OQ5). Structurally, Outcome and Impact are States (Layer 5), and their measurement is an Event (Layer 6). The coordination consequence falls on Coordination Patterns — see §9.
 
 ---
 
@@ -346,8 +347,8 @@ institutional sources).
 | Finding — a claim converted by verification | RM §10.3 | **Moderate** — BD-TD02-002 |
 | Confidence attached to an assessed need | RM §10.4 | Blueprint — confidence as a domain property is Evidence not found |
 | Uncertainty held openly | RM §10.4 | Blueprint |
-| **Contradiction between claims** | RM §10.5 | **Structurally resolved** — Multiple Epistemic Stances asserting exclusive States |
-| **Missing information as knowledge** | RM §10.5 | **Structurally resolved** — Epistemic Stance indicating absence of warrant |
+| **Contradiction between claims** | RM §10.5 | **Structurally resolved** — Retains all conflicting claims with source attribution rather than overwriting |
+| **Missing information as knowledge** | RM §10.5 | **Structurally resolved** — Every State/Claim carries a paired `(value, epistemic-status)` tuple (Known-True, Known-False, Unknown, Not-Assessed, Not-Applicable) |
 | Consequence class triggering human review | RM §10.6 | Blueprint |
 
 ### 8.2 The open-world commitment
@@ -358,12 +359,7 @@ attribute set on records:
 > **Absence of a statement is not its negation.** "We have no record that this household was
 > displaced" is a different assertion from "this household was not displaced."
 
-The system must be able to say *I do not know*, distinctly from *no*. Collapsing the two is the
-single largest source of confidently wrong automated behaviour, and RM §10.5 already records that
-representation of missing information is unmodelled by either authoritative source.
-
-**This is the highest-priority gap in the layer**, because the layer's core purpose — honest
-representation of the system's epistemic condition — is not achievable without it.
+The system must be able to say *I do not know*, distinctly from *no*. Collapsing the two is the single largest source of confidently wrong automated behaviour. This is structurally resolved by the mechanism now evidenced (GT-L7, GT-OQ12): every State/Claim carries a paired `(value, epistemic-status)` tuple, making missing information and open-world uncertainty explicit rather than inferred from absence.
 
 ### 8.3 The Risk seam — resolved
 
@@ -388,7 +384,7 @@ Consequently, this Cognition layer holds **only the *confidence in* a risk asses
 Evidence kinds and their relative empirical weight require Stage 5 evidence (RM §10.2). Phase 1 rates Evidence
 **Limited** — testimony 0, attestation 0, biometric 0 across six dossiers). Without an evidence
 taxonomy, *what verification consumes* is unspecified, and the claim→finding transition is
-structurally defined but operationally empty.
+structurally defined but operationally empty. **Prohibition note (Stage 5 GT-OQ10):** Do not hardcode a global evidence-type precedence order; evidence weighting is Context-scoped (P2) and case-purpose-dependent.
 
 ---
 
@@ -417,6 +413,8 @@ task logic or automation instruction has become a workflow specification and lef
 | **Reassessment loop** | Monitoring returns a case to an earlier stage | **Strong** — BD-TD03-002 |
 | **Multi-need satisfaction** | One intervention satisfies several needs across sectors concurrently | **Strong** — BD-TD06-003 (multipurpose cash) |
 | **Deduplication across organisations** | Two organisations recognise the same person | Blueprint — RM §2; **blocked on the identity-resolution gap**, §3.2 |
+| **Funder Coordination** | Funders set priorities/restrictions/reporting across programmes, distinct from programme casework | **Moderate** — Stage 5 (GT-OQ17); shape only, single-source caveat |
+| **Case Orchestration** | Cross-organisational coordination function (handoffs, gap/duplication tracking) distinct from direct service delivery | **Moderate** — Stage 5 (GT-OQ19); shape only, single-source caveat |
 | **Giving and matching** | A verified need becomes visible to a giver, who commits support | **None** — undescribed (RM §16.4) |
 | **Adoption** | A giver holds a sustained relationship with a household | **None** — absent from every source |
 
@@ -437,9 +435,7 @@ This applies to *needs assessment*, *planning*, *monitoring* and *coordination* 
 
 ### 9.4 What this layer cannot yet hold
 
-The **giving-side patterns**. Phase 1 §5.2 established the primitive set survives their arrival;
-their content is undescribed. This is where the missing half of the business flow lands, and it
-is the largest structural absence in the ontology.
+The **giving-side patterns**. Phase 1 §5.2 established the primitive set survives their arrival; their operational content is largely undescribed. While Funder Coordination now provides some high-level shape for funder interaction (GT-OQ17), the detailed execution of giving and matching is where the missing half of the business flow lands, remaining a significant structural absence in the ontology.
 
 ---
 
@@ -449,11 +445,11 @@ Each layer's ceiling is the strength of its source primitive (pre-Stage-5 eviden
 
 | Layer | Source primitive(s) | Inherited strength | Note |
 |---|---|---|---|
-| Facets | Condition, Context | **Split** — Strong on Context/Support; Limited elsewhere | Support facets are the only externally corroborated facet structure |
+| Facets | Condition, Context | **Moderate/Strong** (Stage 5 upgraded) | Support facets are the only externally corroborated facet structure |
 | Entities | Entity (P4) | **Moderate** | Institutional entities Strong; Person weakest |
-| Relationships | Relation (P7) | **Split** — Moderate institutional; **Unsupported social** | The most asymmetric layer |
+| Relationships | Relation (P7) | **Moderate** (Stage 5 upgraded) | The most asymmetric layer |
 | Constraints | Norm (P5), Context (P2) | **Strong** | Best-evidenced layer after Coordination |
-| States | Condition (P1) | **Limited** | **Least evidenced layer; carries the most domain content** |
+| States | Condition (P1) | **Moderate** (Stage 5 upgraded) | **Previously least evidenced layer; now practitioner-corroborated** |
 | Events | Occurrence (P6) | **Moderate** | Boundary with States unevidenced |
 | Cognition | Epistemic Stance (P3) | **Moderate / Limited** | Structurally resolves missing info and contradiction |
 | Coordination | composite | **Strong** where evidenced; absent for giving | Altitude coupling is the strongest finding in the base |
@@ -476,7 +472,7 @@ made to keep derivation moving, and each is reversible.**
 | **A-01** | Condition feeds **two** layers — Facets (axis) and States (value on the axis) | RM §16.5 records dimensions present and values absent; splitting makes the asymmetry visible rather than hiding it inside one layer | A ruling that Facets should hold values, or that dimensions and values belong together |
 | **A-02** | Context feeds Facets **and** scopes Constraints, rather than forming its own layer | The prescribed eight layers contain no Context layer; Context frames rather than participates (Phase 1 P2 boundary) | A ruling that scope requires its own layer |
 | **A-03** | The Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
-| **A-04** | Organisation and Programme are collapsed into one Entity | **RESOLVED:** Tier 1 authority (BL V1 §4) overrides the divergent external evidence (BD-TD01-003). | None |
+| **A-04** | Organisation and Programme are collapsed into one Entity | **SUPERSEDED BY STAGE 7 G1:** Split into two Entities connected by an operates relation. | None |
 | **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | Structural admission is resolved (they are Occurrences); however, operational ownership (Case Journey vs MEAL) is **CARRIED AS OPEN TENSION** (`ownership: pending`). | None |
 | **A-07** | The point-versus-span distinction (States ÷ Events) is retained despite being unevidenced | Removing it would merge two primitives and restructure four layers on equally thin grounds | Evidence that the distinction is not real, or a ruling that they merge |
 
@@ -489,6 +485,7 @@ made to keep derivation moving, and each is reversible.**
 The following domain concepts are formally resolved at the ontological level:
 
 *   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* is not a primitive and is not itself Entity-classified content. The **persisting subject** is the **Entity (P4)**. **Identity resolution** is an **Epistemic Stance** (Layer 7), grounded by **Evidence** content. Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
+*   **Organisation vs Programme:** Stage 7 G1 explicitly split `Organisation` and `Programme` into two distinct Entities (Layer 2) connected by an `operates` Relation (Layer 3), rather than remaining collapsed. Programme-specific eligibility, funding, and activity rules attach to the Programme.
 *   **Undocumented Status (RM §3.2):** Ontologically, this is the absence of *Evidence* (Entity), which simultaneously instantiates as a *Constraint* (Layer 4) limiting formal Coordination Patterns, and a *Condition* (Layer 5) aggravating Vulnerability.
 *   **Wellbeing Standard (RM §3.6):** Structurally a *Norm* (Layer 4) that is strictly *Context-dependent* (Layer 1). A Need is a *Condition* (Layer 5) assessed against this Context-bound Norm.
 *   **Family vs Household (RM §4.3):** Both are *Entities* (Layer 2) rather than merely Relational Structures. *Family* is bounded by kinship/legal guardianship. *Household* is bounded by co-residence/shared economy.
@@ -506,7 +503,7 @@ The following concepts remain structurally `[OPEN]` or unevidenced, carried forw
 *   **Contradiction Modeling (RM §10.5):** Representation is unstated by any source. Remains `[OPEN]`.
 *   **Missing Information as Knowledge (RM §10.5):** Representation of missing information is unstated by any source. Remains `[OPEN]`.
 *   **Funder Altitude (RM §11.4):** An implied but unevidenced third altitude. No source in this repository models this, and it remains `[OPEN]` (handled via UHR).
-*   **Outcome / Impact Ownership:** Outcome and Impact are *States* (Layer 5) belonging to the Human Subject (Person/Household), reflecting changes in their wellbeing or conditions. However, the operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is `ownership: pending` and remains genuinely undecided.
+*   **Outcome / Impact Ownership:** Outcome and Impact are *States* (Layer 5) belonging to the Human Subject (Person/Household), reflecting changes in their wellbeing or conditions. However, the operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is `ownership: pending` (GT-PL6, GT-OQ5) and remains genuinely undecided.
 
 ---
 

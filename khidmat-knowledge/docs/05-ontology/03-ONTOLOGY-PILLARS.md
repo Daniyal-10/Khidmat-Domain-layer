@@ -64,12 +64,12 @@ The pillars are derived systematically:
 **What remains outside:** Ground truth reality (Pillars I and III).
 
 ### Pillar V: Actors & Ecosystem
-**What domain reality it represents:** The entities that respond to, fund, or coordinate humanitarian action, including Government bodies, which act with agency. (Whether Service Providers like Healthcare and Schools act with agency remains an open tension). It models the rules binding them.
-**Layers contributing:** Entities (Organisation, Donor, Programme), Relationships (Implements, Funds, Adopts), Constraints (Compliance, Eligibility, Funding restrictions).
+**What domain reality it represents:** The entities that respond to, fund, or coordinate humanitarian action, including Government bodies, which act with agency. (Service Providers like Healthcare and Schools are provisionally refined as active Entities with independent capacity/eligibility decisions per Stage 5 GT-OQ15, retaining a single-source caveat). It models the rules binding them.
+**Layers contributing:** Entities (Organisation, Donor, Programme), Relationships (Implements, Funds, Adopts, Operates), Constraints (Compliance, Eligibility, Funding restrictions).
 **Supporting primitives:** Entity (P4), Relation (P7), Norm (P5).
 **RM concepts within it:** Organisations, Programmes, Donors, Community Groups, Governments, Accountability.
 **Why it is a pillar:** It models the resource and response side of the equation. It is distinct from the human subject and is necessary to represent accountability, funding chains, and ecosystem coordination.
-**Boundary:** Universal. Jurisdiction-specific localizations (e.g., local charity regulations or specific government bodies) will populate this layer, but the structure is universal. Organisation and Programme are collapsed into one Entity per Tier 1 authority precedence (BL V1 §4), closing the previous evidence-based divergence (see `02-ONTOLOGY-LAYERS.md` A-04).
+**Boundary:** Universal. Jurisdiction-specific localizations (e.g., local charity regulations or specific government bodies) will populate this layer, but the structure is universal. Organisation and Programme are explicitly split into two distinct Entities connected by an `operates` relation, per Stage 7 G1 amending the earlier Tier 1 (BL V1 §4) collapse (see `02-ONTOLOGY-LAYERS.md` A-04).
 **What remains outside:** The specific actions they take (Events).
 
 ### Pillar VI: Action & Coordination
@@ -116,7 +116,7 @@ Tested against the required Reference Model coverage list:
 * Situation, Need, Vulnerability, Risk → **Covered (Pillar III)**
 * Evidence, Claims, Verification, Assessment → **Covered (Pillar IV handles the knowledge; Pillar VI handles the action)**
 * Volunteer/field activity → **Covered (Pillar V handles the Actor; Pillar VI handles the Action)**
-* Organisations, Programmes → **Covered (Pillar V)**
+* Organisations, Programmes (now distinct Entities per Stage 7 G1) → **Covered (Pillar V)**
 * Support/interventions, Resources, Giving/donors, Matching, Delivery → **Covered (Pillar VII handles Resources/Interventions; Pillar V handles Donors; Pillar VI handles Delivery)**
 * Re-verification, Outcomes, Long-term wellbeing → **Covered (Pillar VI handles Re-verification; Pillar I handles Wellbeing; Pillar III handles Outcomes/Risk trajectories)**
 * Accountability, Context → **Covered (Pillar V handles Accountability Constraints; Pillar II handles Context)**
