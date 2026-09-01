@@ -245,8 +245,8 @@ Consent mechanics (what consent is obtained for, from whom, and what withdrawal 
 | Person — lifecycle stage | nine developmental stages | RM §3.3 | Blueprint; separation-from-programme-status corroborated by BD-TD03-004 |
 | Household — shelter | safe · damaged · flood-prone · leaking | RM §4.2 | **Blueprint only** |
 | Household — resilience | absorptive, adaptive, recovery capacity | RM §4.2 | **Blueprint only** |
-| Need | open → severity change → resolved or expired | RM §7.4 | **Blueprint only** (Stage 5 GT-OQ11 notes: Structurally distinct from Programme Eligibility (L4 Norm). A Need exists independently of eligibility.) |
-| Vulnerability | composite, emergent from compounding factors | RM §8.4 | **Blueprint only**; quantitative/qualitative composition rule is a Source-Absent Parameter |
+| Need | open → severity change → resolved or expired | RM §7.4 | **Moderate** — Stage 5 practitioner-corroborated (GT-OQ11 notes: Structurally distinct from Programme Eligibility (L4 Norm). A Need exists independently of eligibility.) |
+| Vulnerability | composite, emergent from compounding factors | RM §8.4 | **Moderate** — Stage 5 practitioner-corroborated (GT-OQ2, GT-PL3); quantitative/qualitative composition rule is a Source-Absent Parameter |
 | Engagement | identified → registration_initiated → registered → verification_pending → active → engaged → monitored → suspended → review_required → exited | RM §14.2 | Separation from developmental trajectory **corroborated** — BD-TD03-004 |
 | Person / Household (Wellbeing / Condition) | improved · held · deteriorated (Outcome/Impact describes this change) | RM §15.3 | Blueprint |
 
@@ -498,11 +498,11 @@ The following domain concepts are formally resolved at the ontological level:
 
 The following concepts remain structurally `[OPEN]` or unevidenced, carried forward as tensions:
 
-*   **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. This remains `[OPEN]`.
-*   **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another (prerequisite, aggravating, substituting, mutually exclusive) is not stated by any source and remains `[OPEN]`.
-*   **Contradiction Modeling (RM §10.5):** Representation is unstated by any source. Remains `[OPEN]`.
-*   **Missing Information as Knowledge (RM §10.5):** Representation of missing information is unstated by any source. Remains `[OPEN]`.
-*   **Funder Altitude (RM §11.4):** An implied but unevidenced third altitude. No source in this repository models this, and it remains `[OPEN]` (handled via UHR).
+*   **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. CONFIRMED-distinct by Stage 5 (GT-OQ18) as an independent Condition (Orphanhood) and Relation (Guardianship).
+*   **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another (prerequisite, aggravating, substituting, mutually exclusive) is not stated by any source. Stage 5 evidence (GT-OQ16) indicates a formal Need↔Need Relation should NOT be built; interactions are Cognition/documentation content, not structural Relations. Remains [OPEN].
+*   **Contradiction Modeling (RM §10.5):** Structurally resolved by Stage 5 (GT-OQ12) — retains all conflicting claims with source attribution rather than overwriting.
+*   **Missing Information as Knowledge (RM §10.5):** Structurally resolved by Stage 5 (GT-L7, GT-OQ13) — every State/Claim carries a paired (value, epistemic-status) tuple.
+*   **Funder Altitude (RM §11.4):** An implied but unevidenced third altitude. Shape defined by Stage 5 evidence (GT-OQ17); detailed operational rules remain UHR-1 stub.
 *   **Outcome / Impact Ownership:** Outcome and Impact are *States* (Layer 5) belonging to the Human Subject (Person/Household), reflecting changes in their wellbeing or conditions. However, the operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is `ownership: pending` (GT-PL6, GT-OQ5) and remains genuinely undecided.
 
 ---

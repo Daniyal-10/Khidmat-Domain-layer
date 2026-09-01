@@ -177,12 +177,12 @@ The primary structural tensions have been formally resolved:
 The following concepts remain structurally `[OPEN]` or unevidenced, carried forward as tensions:
 
 1. **Outcome / Impact Ownership:** Outcome and Impact are domain realities representing state changes in the relevant human subject (Wellbeing, Resilience, Need Resolution). They are owned by the Human Subject (Pillars I and III). However, the operational ownership of *Outcome/Impact Measurement* (MEAL) remains an open coordination question for Pillar VI (`ownership: pending`).
-2. **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. This remains `[OPEN]`.
-3. **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another is not stated by any source and remains `[OPEN]`.
-4. **Contradiction Modeling (RM §10.5):** Representation is unstated by any source. Remains `[OPEN]`.
-5. **Missing Information as Knowledge (RM §10.5):** Representation is unstated by any source. Remains `[OPEN]`.
-6. **Funder Altitude (RM §11.4):** An implied but unevidenced third altitude. No source in this repository models this, and it remains `[OPEN]` (handled via UHR).
-7. **Service Providers as Actors (RM §11.1):** Whether healthcare providers, schools, and employers are modeled as Actors (Entities) with agency remains `[OPEN]`.
+2. **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. CONFIRMED-distinct by Stage 5 (GT-OQ18) as an independent Condition (Orphanhood) and Relation (Guardianship).
+3. **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another is not stated by any source. Stage 5 evidence (GT-OQ16) indicates a formal Need↔Need Relation should NOT be built; interactions are Cognition/documentation content, not structural Relations. Remains [OPEN].
+4. **Contradiction Modeling (RM §10.5):** Structurally resolved by Stage 5 (GT-OQ12) — retains all conflicting claims with source attribution rather than overwriting.
+5. **Missing Information as Knowledge (RM §10.5):** Structurally resolved by Stage 5 (GT-L7, GT-OQ13) — every State/Claim carries a paired (value, epistemic-status) tuple.
+6. **Funder Altitude (RM §11.4):** An implied but unevidenced third altitude. Shape defined by Stage 5 evidence (GT-OQ17); detailed operational rules remain UHR-1 stub.
+7. **Service Providers as Actors (RM §11.1):** Provisionally REFINED — single-source (GT-OQ15); retained open pending broader corroboration or explicit Stage 7 ratification.
 
 **Empirical and Governance Dependencies:**
 
