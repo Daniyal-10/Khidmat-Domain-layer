@@ -267,7 +267,7 @@ families (interagency GBV and Child Protection case-management standards).
 
 **CCR-7 — Dual-clock rule.** A person's or household's developmental/life-trajectory state and
 their engagement/administrative state are two separate State tracks and may never collapse into
-one combined status field. **Status: UNRESOLVED per Stage 7 G2 (2026-09-01). Not enforced as a mandatory constraint. Retained as a documented hypothesis pending further evidence.**
+one combined status field. **Status: RESOLVED (Option A Closure). A person's real-world circumstances (States) and programmatic engagement (Events) are ontologically distinct. The architectural implementation mechanics (e.g., dual physical clocks, temporal tables, event sourcing) are explicitly delegated to architecture rather than mandated by the ontology.**
 *Source:* RM §14.2. *Underlying evidence:* **Medium-High** — BD-TD03-004, ≥4 source families
 (Graduation Approach / BRAC / USAID practice).
 
@@ -440,13 +440,8 @@ These represent genuine structural ambiguities or governance gaps that remain un
 
 | Open Item | UHR Treatment | Resolution Path |
 |---|---|---|
-| **Service Providers as Actors** (Whether healthcare, schools, employers act with agency) | Provisionally REFINED — single-source; retained open pending broader corroboration or explicit Stage 7 ratification | Project Lead governance ruling |
-| **Need-interaction model** (General model unstated) | Stage 5 evidence (GT-OQ16) indicates formal Need↔Need Relation should NOT be built; interactions are Cognition/documentation content, not structural Relations | Practitioner evidence / explicit ruling |
 | **Contradiction-representation** (Representation unstated) | UHR-1 (stub extension point) | Practitioner evidence / explicit ruling |
 | **Missing-information-representation** (Representation unstated) | UHR-1 (stub extension point) | Practitioner evidence / explicit ruling |
-| **Funder Altitude** | shape defined by Stage 5 evidence; detailed operational rules remain UHR-1 stub | Tier B/D evidence collection or practitioner evidence |
-| **Case Coordination/Orchestration capability status** (Tier-C-only, not independently evidenced) | shape defined by Stage 5 evidence; detailed operational rules remain UHR-1 stub | Tier B/D evidence collection or practitioner evidence |
-| **Outcome/Impact operational ownership** (Case journey vs MEAL) | UHR-3 | Project Lead governance ruling |
 
 ### 7.2 Structurally Resolved but Parameter-Absent
 
@@ -462,6 +457,11 @@ None of the following prevents Stage 5 (Ground Truth Reviews) from beginning. Ea
 | **Evidence Taxonomy** | Evidence artifacts are Entities/Occurrences that ground an Epistemic Stance (P3). | The ontology establishes the grounding role, but no authoritative project source specifies an exhaustive evidence taxonomy or numerical epistemic weights. | UHR-1 |
 | **Giving-side Content** | Actors are Entities; Restrictions are Constraints; Interactions are Coordination Patterns. | BL V1 explicitly excludes donor scope. Therefore, no authoritative project source specifies the donor kinds, pattern steps, or funding restriction types. | UHR-1, UHR-5 |
 | **Human-facet Value Sets** | Structurally axes/dimensions (Facets) separated from values (States). | The ontology sets the dimensions, but no authoritative project source specifies the exhaustive controlled vocabularies. | UHR-1 |
+| **Need-interaction model** | Intentional Exclusion. | Need-to-Need interactions are formally excluded as structural Relations. They exist solely as Cognition/documentation content. | Option A Closure |
+| **Service Providers as Actors** | Entities (P4). | Structurally modeled as active Entities capable of participating in coordination and making capacity decisions, while retaining a single-source evidence caveat. | Option A Closure |
+| **Outcome / Impact Ownership** | States (L5) belonging to Human Subject. | Operational responsibility for measurement (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. | Option A Closure |
+| **Funder Altitude** | Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). | No distinct third altitude layer or primitive exists. | Option A Closure |
+| **Case Orchestration** | Coordination Pattern (L8). | It is not a distinct domain primitive. Technical workflow implementation is deferred to architecture. | Option A Closure |
 
 
 ---
