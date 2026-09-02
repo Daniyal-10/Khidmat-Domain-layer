@@ -55,3 +55,27 @@ This register records formal governance rulings on structural conflicts and unre
 | Tier 1 Authority Status | No Tier 1 conflict. This is a methodological/design-primitive definition, not a business fact. |
 | Downstream Ontology Changes | None. Stages 1–2 already reflect this interpretation. This ruling makes the interpretation formally authoritative. |
 | Status | **RESOLVED** |
+
+---
+
+### G4 — Option A Closure Ratification (Need-Interactions, Service Providers, Outcome/Impact Ownership, Funder Altitude, Case Orchestration)
+| Field | Value |
+| --- | --- |
+| ID | G4 |
+| Domain Question | Are the single-source "Option A Closure" resolutions for these five items formally adopted? |
+| Source Evidence | `GT-OQ16`, `GT-OQ15`, `GT-OQ5`, `GT-OQ17`, `GT-OQ19` |
+| Established Domain Facts | Each item rests on exactly one practitioner record (Finding classification REFINED, not CONFIRMED) and has not been independently corroborated. |
+| Formal Ruling | "Option A" (the treatment already described for each item in `06-STAGE-6-EVIDENCE-INTEGRATION-REPORT.md` §9 / the closure reports) is formally ratified as the governed position, on the basis that Stage 6 classified all five as "Governance Required: No" (ordinary refinement) and no domain-breaking conflict was found.<br><br>This ruling is provisional pending broader corroboration. Reopening requires new practitioner evidence or an explicit superseding governance ruling — it is not self-reopening merely because it is single-sourced. |
+| Status | **RESOLVED (provisional, single-source-acknowledged)** |
+
+---
+
+### G5 — Risk and Need Primitive Classification
+| Field | Value |
+| --- | --- |
+| ID | G5 |
+| Domain Question | Are Risk and Need classified as Condition (P1) or some other primitive? |
+| Source Evidence | `01-DOMAIN-PRIMITIVES.md` §6.1 (Risk), §6.2 (Need); `04-ARCHITECTURE-RULES.md` §1 (Need synchronization correction). |
+| Established Domain Facts | Risk is a dispositional-future-oriented Condition; Need is a Condition with a lifecycle, not a Relation, because its Norm-based comparator forecloses the Relation reading. |
+| Formal Ruling | Risk = Condition (P1); confidence about Risk = Epistemic Stance (P3). Need = Condition (P1); the wellbeing standard it is measured against = Norm (P5). |
+| Status | **RESOLVED** |
