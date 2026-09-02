@@ -24,7 +24,7 @@ not simulate, anticipate, or pre-populate what that collection will show.
 
 ## 1. Purpose
 
-Stages 1–4 produced a structurally resolved ontology built entirely from two authoritative
+Stages 1–4 produced the current ontology structure, subsequently formalized and governed through Stage 7 rulings G1, G2, and G3 (see `docs/05-ontology/07-STAGE-7-GOVERNANCE-DECISIONS.md`). The ontology is baselined and architecture-ready; CCR-7 remains explicitly unresolved and non-blocking under G2. This structure was built entirely from two authoritative
 business documents and six evidence dossiers whose Tier B/D sources describe *sector
 institutions*, not *lived humanitarian casework*. `01-DOMAIN-PRIMITIVES.md` §7.1 records this
 asymmetry directly: the primitives carrying the human side of the domain — Condition and
