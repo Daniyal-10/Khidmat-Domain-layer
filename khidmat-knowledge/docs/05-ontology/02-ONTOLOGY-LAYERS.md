@@ -122,7 +122,7 @@ than through something else? If no, it is a State of something that does.
 | Programme | RM §11.1 | **Strong** — Stage 7 G1 split; carries programme-specific eligibility, funding, and activity rules |
 | Donor / giver | RM §11.1 | **Strong** — BD-TD01-004 (CHS defines actors to include them) |
 | Government body | RM §11.1 | BD-TD01-001 |
-| Service Provider (Healthcare, School, Employer) | RM §11.1 | **Structurally resolved** — modelled as an active Entity with independent capacity/eligibility decisions (GT-OQ15), but retains single-source caveat (F-3); Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration. |
+| Service Provider (Healthcare, School, Employer) | RM §11.1 | **Structurally resolved** — modelled as an active Entity with independent capacity/eligibility decisions (GT-OQ15), but retains single-source caveat (F-3); Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration. |
 | Emergent group / mutual-aid structure | RM §4.5 | **Strong** — BD-TD01-005, ≥3 source families |
 | Case | RM §12 | Blueprint |
 | Evidence artifact | RM §10.2 | Weak — kinds unenumerated |
@@ -135,7 +135,7 @@ than through something else? If no, it is a State of something that does.
 and the pre-Stage-5 evidence rating records that **how sameness is established is Evidence not found** —
 closable only by practitioner evidence (TD-01 Open Gap 1). The entity is admitted; its
 re-identification mechanism is absent. That is an engineering gap, not an ontology gap, but it
-means the entity most central to the model is the one least able to be operated. Stage 5 (GT-P4, GT-OQ1) confirms the existing Person/Case separation satisfies the "beneficiary card ≠ person" distinction; identifiers (phone, national ID, internal ID) are attributes/Relations grounding identity evidence, not the Person Entity itself.
+means the entity most central to the model is the one least able to be operated. Stage 5 (GT-P4, GT-OQ1) confirms the existing Person/Case separation satisfies the "beneficiary card ≠ person" distinction; identifiers (phone, national ID, internal ID) are means of reference grounding identity evidence, not the Person Entity itself.
 
 ### 3.3 What this layer cannot yet hold
 
@@ -325,7 +325,7 @@ further stages of the same lifecycle. BD-TD04-001 records MEAL as a **separate b
 capability** on its own cadence, *"not the final stage of any one case's journey"* (≥4
 institutional sources).
 
-**STRUCTURALLY RESOLVED.** Outcome and impact *measurement* events are admitted to this layer. The operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is explicitly delegated to architecture/workflow design. Structurally, Outcome and Impact are States (Layer 5) belonging to the Human Subject, and their measurement is an Event (Layer 6). Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration.
+**STRUCTURALLY RESOLVED.** Outcome and impact *measurement* events are admitted to this layer. The operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is explicitly delegated to architecture/workflow design. Outcome and Impact remain distinct from their measurement or assessment representations. Their operational measurement structures and ownership are context-dependent unless specifically established by source evidence. The ontology does not impose a universal ownership assignment to the Human Subject. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
 
 ---
 
@@ -347,7 +347,7 @@ institutional sources).
 | Confidence attached to an assessed need | RM §10.4 | Blueprint — confidence as a domain property is Evidence not found |
 | Uncertainty held openly | RM §10.4 | Blueprint |
 | **Contradiction between claims** | RM §10.5 | **Structurally resolved** — Retains all conflicting claims with source attribution rather than overwriting |
-| **Missing information as knowledge** | RM §10.5 | **Structurally resolved** — Every State/Claim carries a paired `(value, epistemic-status)` tuple (Known-True, Known-False, Unknown, Not-Assessed, Not-Applicable) |
+| **Missing information as knowledge** | RM §10.5 | **Structurally resolved** — The Cognition layer preserves explicit epistemic information so that unknown, uncertain, or conflicting claims are not collapsed into first-order reality. |
 | Consequence class triggering human review | RM §10.6 | Blueprint |
 
 ### 8.2 The open-world commitment
@@ -358,7 +358,7 @@ attribute set on records:
 > **Absence of a statement is not its negation.** "We have no record that this household was
 > displaced" is a different assertion from "this household was not displaced."
 
-The system must be able to say *I do not know*, distinctly from *no*. Collapsing the two is the single largest source of confidently wrong automated behaviour. This is structurally resolved by the mechanism now evidenced (GT-L7, GT-OQ12): every State/Claim carries a paired `(value, epistemic-status)` tuple, making missing information and open-world uncertainty explicit rather than inferred from absence.
+The system must be able to say *I do not know*, distinctly from *no*. Collapsing the two is the single largest source of confidently wrong automated behaviour. This is structurally resolved by the mechanism now evidenced (GT-L7, GT-OQ12): the system preserves explicit epistemic information, making missing information and open-world uncertainty explicit rather than inferred from absence.
 
 ### 8.3 The Risk seam — resolved
 
@@ -430,7 +430,7 @@ This applies to *needs assessment*, *planning*, *monitoring* and *coordination* 
 
 ### 9.3 A pattern whose ownership is pending
 
-**STRUCTURALLY RESOLVED.** The operational ownership of Outcome and impact measurement (whether it belongs to the Case Journey per BL V1 or to a separate MEAL discipline per RM §12.5) is explicitly delegated to architecture/workflow design. Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration.
+**STRUCTURALLY RESOLVED.** The operational ownership of Outcome and impact measurement (whether it belongs to the Case Journey per BL V1 or to a separate MEAL discipline per RM §12.5) is explicitly delegated to architecture/workflow design. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
 
 ### 9.4 What this layer cannot yet hold
 
@@ -472,7 +472,7 @@ made to keep derivation moving, and each is reversible.**
 | **A-02** | Context feeds Facets **and** scopes Constraints, rather than forming its own layer | The prescribed eight layers contain no Context layer; Context frames rather than participates (Phase 1 P2 boundary) | A ruling that scope requires its own layer |
 | **A-03** | The Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
 | **A-04** | Organisation and Programme are collapsed into one Entity | **SUPERSEDED BY STAGE 7 G1:** Split into two Entities connected by an operates relation. | None |
-| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | Structural admission is resolved (they are Occurrences); operational ownership (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration. | None |
+| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | Structural admission is resolved (they are Occurrences); operational ownership (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration. | None |
 | **A-07** | The point-versus-span distinction (States ÷ Events) is retained despite being unevidenced | Removing it would merge two primitives and restructure four layers on equally thin grounds | Evidence that the distinction is not real, or a ruling that they merge |
 
 ---
@@ -498,11 +498,11 @@ The following domain concepts are formally resolved at the ontological level:
 The following concepts were previously carried forward as tensions, but are now structurally resolved:
 
 *   **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. CONFIRMED-distinct by Stage 5 (GT-OQ18) as an independent Condition (Orphanhood) and Relation (Guardianship).
-*   **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another (prerequisite, aggravating, substituting, mutually exclusive) is not stated by any source. Stage 5 evidence (GT-OQ16) indicates a formal Need↔Need Relation should NOT be built; interactions are Cognition/documentation content, not structural Relations. Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration.
+*   **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another (prerequisite, aggravating, substituting, mutually exclusive) is not stated by any source. Stage 5 evidence (GT-OQ16) is insufficient to justify introducing a formal Need↔Need Relation type at this stage. Provisionally treated as Cognition/documentation content — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
 *   **Contradiction Modeling (RM §10.5):** Structurally resolved by Stage 5 (GT-OQ12) — retains all conflicting claims with source attribution rather than overwriting.
-*   **Missing Information as Knowledge (RM §10.5):** Structurally resolved by Stage 5 (GT-L7, GT-OQ13) — every State/Claim carries a paired (value, epistemic-status) tuple.
-*   **Funder Altitude (RM §11.4):** Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). No distinct third altitude layer or primitive exists. Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration.
-*   **Outcome / Impact Ownership:** Outcome and Impact are *States* (Layer 5) belonging to the Human Subject (Person/Household), reflecting changes in their wellbeing or conditions. Operational responsibility for measurement (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration.
+*   **Missing Information as Knowledge (RM §10.5):** Structurally resolved by Stage 5 (GT-L7, GT-OQ13) — the Cognition layer preserves explicit epistemic information so that unknown, uncertain, or conflicting claims are not collapsed into first-order reality.
+*   **Funder Altitude (RM §11.4):** Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). No distinct third altitude layer or primitive exists. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
+*   **Outcome / Impact Ownership:** Outcome and Impact remain distinct from their measurement or assessment representations. Their operational measurement structures and ownership are context-dependent unless specifically established by source evidence. The ontology does not impose a universal ownership assignment to the Human Subject. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
 
 ---
 

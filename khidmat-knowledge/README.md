@@ -1,4 +1,4 @@
-# Khidmat Humanitarian Domain Model
+﻿# Khidmat Humanitarian Domain Model
 
 Welcome to the Khidmat Humanitarian Domain repository. This project contains the definitive conceptual and semantic foundation for Khidmat AI. It is designed to model humanitarian reality—separating what actually exists in the field from how software systems track it.
 

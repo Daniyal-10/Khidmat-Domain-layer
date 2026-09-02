@@ -65,8 +65,8 @@ This register records formal governance rulings on structural conflicts and unre
 | Domain Question | Are the single-source "Option A Closure" resolutions for these five items formally adopted? |
 | Source Evidence | `GT-OQ16`, `GT-OQ15`, `GT-OQ5`, `GT-OQ17`, `GT-OQ19` |
 | Established Domain Facts | Each item rests on exactly one practitioner record (Finding classification REFINED, not CONFIRMED) and has not been independently corroborated. |
-| Formal Ruling | "Option A" (the treatment already described for each item in `06-STAGE-6-EVIDENCE-INTEGRATION-REPORT.md` §9 / the closure reports) is formally ratified as the governed position, on the basis that Stage 6 classified all five as "Governance Required: No" (ordinary refinement) and no domain-breaking conflict was found.<br><br>This ruling is provisional pending broader corroboration. Reopening requires new practitioner evidence or an explicit superseding governance ruling — it is not self-reopening merely because it is single-sourced. |
-| Status | **RESOLVED (provisional, single-source-acknowledged)** |
+| Formal Ruling | **Governance decision**: The project adopts "Option A" (the treatment described for each item in `06-STAGE-6-EVIDENCE-INTEGRATION-REPORT.md` §9 / the closure reports) for current modeling purposes.<br><br>**Ontological status**: UNRESOLVED. The underlying domain propositions are NOT ontologically closed. For example, regarding Need-Interactions, the current evidence is insufficient to justify introducing a formal ontology-level relation type, but this does not mean such a relation does not exist in humanitarian reality.<br><br>**Evidence status**: Weak/Single-source. Each item rests on exactly one practitioner record and lacks independent corroboration.<br><br>Reopening requires new practitioner evidence or an explicit superseding governance ruling. |
+| Status | **GOVERNED PROVISIONAL — single-source evidence acknowledged** |
 
 ---
 

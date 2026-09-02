@@ -154,7 +154,7 @@ Irreducible because ontological persistence cannot be produced from the others. 
 
 *Evidence:* RM §3.1, §4.1–4.5, §11.1; Stage 5 GT-P4, GT-OQ1.
 *Boundary:* something that is never tracked in its own right across encounters is not an Entity — it is a Condition of something that is.
-*Note on Identity:* "Identity" is the epistemic construct (how we track and re-identify an Entity), not the fundamental category of reality itself. Identity verification and identity evidence are relations and epistemic stances about an Entity. Note that identifiers (phone, national ID, internal ID) are attributes/Relations grounding identity evidence, not the Person Entity itself. This confirms the practitioner's "beneficiary card ≠ person" distinction (GT-P4, GT-OQ1), which the existing Person/Case separation satisfies.
+*Note on Identity:* "Identity" is the epistemic construct (how we track and re-identify an Entity), not the fundamental category of reality itself. Identity verification and identity evidence are relations and epistemic stances about an Entity. Note that identifiers (phone, national ID, internal ID) are means of reference grounding identity evidence; they are not ontologically frozen as Attributes or database fields, nor are they the Person Entity itself. This confirms the practitioner's "beneficiary card ≠ person" distinction (GT-P4, GT-OQ1), which the existing Person/Case separation satisfies.
 
 ### P5 — Norm
 **That which bounds what is permitted, required, or valid.**
@@ -171,14 +171,12 @@ inside one programme and not outside it is one Norm plus one Context, not two No
 model"* is this primitive. Consent is not a compliance wrapper.
 
 ### P6 — Occurrence
-**That which happened at a point in time.**
+**That which happens, potentially over a bounded period.**
 
-Irreducible because point and span do not derive from one another. RM distinguishes them
-consequentially throughout — a displacement, a verification visit, a death, a delivery.
+Irreducible because a bounded happening and an ongoing condition do not derive from one another. RM distinguishes them consequentially throughout — a displacement, a verification visit, a death, a delivery.
 
 *Evidence:* RM §6, §12.1, §14.
-*Boundary:* an occurrence is complete when it has happened. Anything that continues to be true
-afterwards is the Condition it produced, not the occurrence itself.
+*Boundary:* an occurrence is complete when it has finished happening. Anything that continues to be true afterwards is the Condition it established, changed, or ended — not the occurrence itself.
 
 ### P7 — Relation
 **A connection between things that persist.**

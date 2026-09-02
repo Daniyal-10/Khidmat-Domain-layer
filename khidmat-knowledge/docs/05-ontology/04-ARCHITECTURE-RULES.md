@@ -188,8 +188,7 @@ become an Entity.
 Constraint (Norm) plus one Context — never two Constraints.
 *Source:* `01-DOMAIN-PRIMITIVES.md` P5 boundary; `02-ONTOLOGY-LAYERS.md` §5.
 
-**LCR-5 — Event completion rule.** An Event is complete once it has occurred. Anything still
-true afterward is the State it produced, not a property of the Event.
+**LCR-5 — Event completion rule.** An Event is complete once it has finished happening. Anything still true afterward is the State it established, changed, or ended, not a property of the Event.
 *Source:* `01-DOMAIN-PRIMITIVES.md` P6 boundary; `02-ONTOLOGY-LAYERS.md` §7.
 
 **LCR-6 — Cognition non-assertion rule.** Cognition never asserts a fact about the world. "This
@@ -454,18 +453,18 @@ None of the following prevents Stage 5 (Ground Truth Reviews) from beginning. Ea
 | Structurally Resolved Domain Concept | Structural Classification (Established) | Source-Absent Parameter (Not defined in sources) | UHR treatment |
 |---|---|---|---|
 | **Family Structure vs Household** | Entities (P4) bounded by kinship vs shared economy. | The ontology establishes the entities, but no authoritative project source specifies the membership determination rules or parameters. | UHR-2 equivalent |
-| **Person-sameness / Identity** | Persisting subject is an Entity (P4); Sameness assertion is an Epistemic Stance (P3). | The ontology establishes the identity-sameness mechanism class, but no authoritative project source specifies the operational attestation rules or conflict procedures. | UHR-4 |
+| **Person-sameness / Identity** | Persisting subject is an Entity (P4); Sameness assertion is a Claim evaluated by an Epistemic Stance (P3). | The ontology establishes the identity-sameness mechanism class, but no authoritative project source specifies the operational attestation rules or conflict procedures. | UHR-4 |
 | **Vulnerability / Risk Composition** | Emergent composite State (Layer 5) derived from compounding Conditions (P1). | The ontology establishes the composition boundary, but no authoritative project source specifies the qualitative/quantitative composition rules. | UHR-2 |
 | **Evidence Taxonomy** | Evidence artifacts are Entities/Occurrences that ground an Epistemic Stance (P3). | The ontology establishes the grounding role, but no authoritative project source specifies an exhaustive evidence taxonomy or numerical epistemic weights. | UHR-1 |
 | **Giving-side Content** | Actors are Entities; Restrictions are Constraints; Interactions are Coordination Patterns. | BL V1 explicitly excludes donor scope. Therefore, no authoritative project source specifies the donor kinds, pattern steps, or funding restriction types. | UHR-1, UHR-5 |
 | **Human-facet Value Sets** | Structurally axes/dimensions (Facets) separated from values (States). | The ontology sets the dimensions, but no authoritative project source specifies the exhaustive controlled vocabularies. | UHR-1 |
-| **Need-interaction model** | Intentional Exclusion. | Need-to-Need interactions are formally excluded as structural Relations. They exist solely as Cognition/documentation content. | Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration. |
-| **Service Providers as Actors** | Entities (P4). | Structurally modeled as active Entities capable of participating in coordination and making capacity decisions, while retaining a single-source evidence caveat. | Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration. |
-| **Outcome / Impact Ownership** | States (L5) belonging to Human Subject. | Operational responsibility for measurement (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. | Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration. |
-| **Funder Altitude** | Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). | No distinct third altitude layer or primitive exists. | Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration. |
-| **Case Orchestration** | Coordination Pattern (L8). | It is not a distinct domain primitive. Technical workflow implementation is deferred to architecture. | Provisionally settled — single-source practitioner evidence, ratified by Stage 7 G4; retained pending broader corroboration. |
+| **Need-interaction model** | Scope accommodation. | The current evidence is insufficient to justify introducing a formal ontology-level relation type for this interaction. Provisionally treated as Cognition/documentation content. | Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration. |
+| **Service Providers as Actors** | Entities (P4). | Structurally modeled as active Entities capable of participating in coordination and making capacity decisions, while retaining a single-source evidence caveat. | Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration. |
+| **Outcome / Impact Ownership** | Distinct from measurement representations. | The ontology does not impose a universal ownership assignment to the Human Subject. Operational responsibility for measurement is explicitly delegated to architecture/workflow design. | Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration. |
+| **Funder Altitude** | Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). | No distinct third altitude layer or primitive exists based on current evidence. | Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration. |
+| **Case Orchestration** | Coordination Pattern (L8). | It is not a distinct domain primitive. Technical workflow implementation is deferred to architecture. | Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration. |
 | **Contradiction-representation** | Cognition (Layer 7). | Retains all conflicting claims with source attribution rather than overwriting. Resolution algorithms are deferred to architecture. | Option A Closure (CONFIRMED evidence — not a G4 item; no single-source caveat applies) |
-| **Missing-information-representation** | Cognition (Layer 7). | Every State/Claim carries a paired (value, epistemic-status) tuple. | Option A Closure (CONFIRMED evidence — not a G4 item; no single-source caveat applies) |
+| **Missing-information-representation** | Cognition (Layer 7). | The system preserves explicit epistemic information so that unknown or uncertain claims are not collapsed. | Option A Closure (CONFIRMED evidence — not a G4 item; no single-source caveat applies) |
 
 
 ---
