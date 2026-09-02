@@ -438,7 +438,13 @@ now confirmed corrected at source. No other rule is violated by existing content
 
 These represent genuine structural ambiguities or governance gaps that remain unresolved, tracked here to prevent them from blocking Stage 5.
 
-None. All previously open tensions have been structurally resolved.
+One item remains open by explicit governance ruling, not by omission:
+
+| Rule | Status | Why it is not blocking |
+|---|---|---|
+| CCR-7 — Dual-clock rule | **UNRESOLVED per Stage 7 G2** (see §4.4) | Governance explicitly declined to force a ruling on insufficient evidence (GT-AR3: UNRESOLVED). Retained as a documented hypothesis, not enforced as a mandatory constraint. Does not block Stage 5 or architecture — no pattern depends on it being resolved one way or the other. |
+
+Every other tension named in the pre-Stage-5 review package (§7.2 below) has been structurally resolved and is not repeated here.
 ### 7.2 Structurally Resolved but Parameter-Absent
 
 There are no unresolved structural questions for the items below. What remains missing is strictly the **empirical value/rule** which the current authoritative project sources do not specify. These are formally classified as Source-Absent Parameters.

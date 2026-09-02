@@ -18,7 +18,7 @@ This register records formal governance rulings on structural conflicts and unre
 | Architectural Consequences | Opt 1 conflates Org and Prog IDs. Opt 2 requires tracking two distinct IDs and APIs. |
 | Breakage | Opt 1 breaks the ability to properly model "Funding Restrictions" (Q8) and "Context" (P2), which depend on Programme rules. Opt 2 formally amends Tier 1 authority. |
 | Formal Ruling | **Opt 2 is SELECTED.** Organisation and Programme ARE distinct entities. |
-| Tier 1 Authority Status | The prior rule collapsing them (`BL V1 §4`, `Q6`) is formally **AMENDED** by this Stage 7 ruling. Field evidence demonstrates that Context, Norms, and Need derivation cannot function structurally if the Organisation is the only boundary. |
+| Tier 1 Authority Status | The prior rule collapsing them (`BL V1 §4`, `Q6`) has been amended directly at source in `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §4 (dated 2026-09-02), per this document's own XCR-2 requirement. This Stage 7 entry records the ruling; the source document itself now reflects it. Field evidence demonstrates that Context, Norms, and Need derivation cannot function structurally if the Organisation is the only boundary. |
 | Downstream Ontology Changes | L2 (Entities) must explicitly list Programme as a distinct Entity. P4 (Entity) description updated. |
 | Architecture Rule Changes | None fundamentally, but schema representations must split them. |
 | Status | **RESOLVED** |
@@ -40,3 +40,18 @@ This register records formal governance rulings on structural conflicts and unre
 | Formal Ruling | **Opt 2 is SELECTED.** Do not force a ruling. |
 | Tier 1 Authority Status | Retained as a theoretical guideline, not a mandatory constraint. |
 | Status | **UNRESOLVED** |
+
+---
+
+### G3 — Domain Primitive Definition (Resolution of R-1)
+| Field | Value |
+| --- | --- |
+| ID | G3 |
+| Domain Question | Is a Domain Primitive a category of concept (Identity, Relation, Condition) or a concrete irreducible of reality (Person, Household, Need)? |
+| Source Evidence | - `01-DOMAIN-PRIMITIVES.md` §1 — circularity argument: Person cannot be both source and member of the Entities layer.<br>- `01-DOMAIN-PRIMITIVES.md` §5.2 — giving-side coverage test.<br>- `docs/06-review-package/02-ontology-design-review-phase-1.html` — R-1. |
+| Established Domain Facts | The category reading is the only reading under which Stage 2's eight layers, including the Entities layer, can be derived without circularity. The concrete reading was tested and produces an unbounded/non-converging candidate list. |
+| Options Evaluated | - **Opt 1** — Ratify category-of-concept reading as already implemented in Stages 1–2.<br>- **Opt 2** — Reject it and require concrete-irreducible re-derivation of the entire primitive/layer stack. |
+| Formal Ruling | **Opt 1 is SELECTED.**<br><br>Domain Primitive = category of concept.<br><br>This is the governing definition project-wide. |
+| Tier 1 Authority Status | No Tier 1 conflict. This is a methodological/design-primitive definition, not a business fact. |
+| Downstream Ontology Changes | None. Stages 1–2 already reflect this interpretation. This ruling makes the interpretation formally authoritative. |
+| Status | **RESOLVED** |

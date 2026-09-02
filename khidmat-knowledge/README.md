@@ -95,6 +95,18 @@ It does not specify software architecture. The following concerns are entirely o
 **ONTOLOGY DESIGN IS COMPLETE.**
 The ontology has passed all structural, validation, and governance checks. There are no remaining unbounded domain-semantic blockers requiring architecture to invent semantics. The current baseline is authoritative and ready for architecture.
 
+### Two things that remain reversible only by explicit ruling
+
+Two decisions in this repository are foundational but were made by the design process itself rather than independently ratified before use. Both have since been closed by explicit Stage 7 governance rulings and are recorded here so future readers can find them without searching:
+
+1. **The definition of a Domain Primitive** (category of concept vs. concrete irreducible)
+   — ratified by governance ruling **G3**. Open to reversal only via a new, explicit Lead or governance ruling — never by a downstream document silently assuming the other reading.
+
+2. **The Organisation/Programme split**
+   — ratified by governance ruling **G1**, amended at source in `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md` §4. Open to reversal only via a new governance ruling that also re-amends the Tier 1 source.
+
+See `docs/05-ontology/07-STAGE-7-GOVERNANCE-DECISIONS.md` for both rulings in full.
+
 **THE NEXT PHASE IS ARCHITECTURE.**
 The repository represents a baselined, architecture-ready domain model. The project now transitions to the software and AI architecture phase, which will consume this ontology to build the operational Khidmat system.
 

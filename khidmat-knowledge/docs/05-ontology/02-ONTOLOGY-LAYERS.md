@@ -157,10 +157,10 @@ anything true of one thing alone is a State.
 
 | Relationship | Between | Source | Evidence |
 |---|---|---|---|
-| Kinship (parent, child, spouse, sibling) | Person ↔ Person | RM §4.1 | **Unsupported** — kinship 0, spouse 0, parent 0, sibling 0 across all dossiers |
+| Kinship (parent, child, spouse, sibling) | Person ↔ Person | RM §4.1 | **Moderate — Stage 5 practitioner-corroborated (GT-L3, CONFIRMED)**. Prior dossier term-count absence (TD-01–06) reflects the organisational-side evidence gap noted in `01-DOMAIN-PRIMITIVES.md` §7.1, now closed by direct practitioner testimony. |
 | Guardianship / caregiving | Person ↔ Person | RM §4.1 | **Moderate** — Stage 5 (GT-P7, GT-L3, GT-OQ18). CONFIRMED-distinct from Orphanhood Condition (L5). |
-| Dependency | Person ↔ Person | RM §4.1 | **Unsupported** |
-| Responsibility (income, caregiving, education, decision) | Person ↔ Household | RM §4.1 | **Unsupported** |
+| Dependency | Person ↔ Person | RM §4.1 | **Moderate — Stage 5 practitioner-corroborated (GT-L3, CONFIRMED)**. Prior dossier term-count absence (TD-01–06) reflects the organisational-side evidence gap noted in `01-DOMAIN-PRIMITIVES.md` §7.1, now closed by direct practitioner testimony. Also corroborated by GT-P7 (CONFIRMED). |
+| Responsibility (income, caregiving, education, decision) | Person ↔ Household | RM §4.1 | **Moderate — Stage 5 practitioner-corroborated (GT-L3, CONFIRMED)**. Prior dossier term-count absence (TD-01–06) reflects the organisational-side evidence gap noted in `01-DOMAIN-PRIMITIVES.md` §7.1, now closed by direct practitioner testimony. |
 | Household membership | Person ↔ Household | RM §4.2 | Blueprint |
 | Constrains | Programme ↔ Case | RM §11.4 | **Strong** — BD-TD03-001 (mechanism itself unevidenced, Assumption AR-005 in TD-03) |
 | Referral | Organisation ↔ Organisation | RM §12.1 | **Strong** — BD-TD04-002 (CFM referral pathways) |
@@ -171,8 +171,7 @@ anything true of one thing alone is a State.
 ### 4.2 The asymmetry this layer must not conceal
 
 **Institutional relationships are the best-evidenced content in the ontology. Social
-relationships are the least.** Every kinship, dependency and caregiving relationship above rests
-on BL V1 §6 alone, with zero corroboration across six dossiers.
+relationships are the least.** Every kinship, dependency and caregiving relationship above originally rested on BL V1 §6 alone, with zero corroboration across the six evidence dossiers — this gap has since been closed by direct Stage 5 practitioner testimony (GT-L3, GT-P7), both CONFIRMED.
 
 This matters more than the count suggests. RM §4.1's central claim — that **vulnerability
 cascades along dependency**, *"a mother's risk is her infant's risk"* — is a statement about

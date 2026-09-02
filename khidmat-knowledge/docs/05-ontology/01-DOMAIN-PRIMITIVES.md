@@ -306,6 +306,8 @@ Because of this relational definition, Need initially appears to classify as a R
 
 ## 7. Status — STRUCTURALLY RESOLVED
 
+**Resolved by Stage 7 Governance ruling G3 (see `07-STAGE-7-GOVERNANCE-DECISIONS.md`).**
+
 **Terminology note (added for cross-document consistency):**
 Downstream documents (`02-ONTOLOGY-LAYERS.md` §13; `03-ONTOLOGY-PILLARS.md` §8, §9) describe this primitive set, and the layers/pillars built on it, as "structurally stable" or "structurally resolved." The structural ontology (the seven primitives) has passed final source-grounded resolution against Tier 1 authority. No structural governance dependencies remain. See §5 (Status Semantics) of the
 remediation record for the exact distinction in use project-wide.

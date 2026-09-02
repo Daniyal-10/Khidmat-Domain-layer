@@ -112,7 +112,10 @@ to the Volunteer Operations domain and are out of V1 scope.)
 | **Field Verifier** | Confirms claims through field or desk activity and produces verification findings. |
 | **Human Reviewer** | Adjudicates escalations, ambiguous cases, and safety flags. |
 | **Case Manager** | Owns the case: plans, referrals, follow-ups, assignments, and the eligibility/continuation decisions. |
-| **Programme / Organisation** | Defines the assistance actually available, the eligibility criteria, and the accountability structure the case operates within. |
+| **Organisation** | The implementing/coordinating body (NGO, INGO, community organisation, or government body) that operates one or more Programmes and bears the accountability structure the case operates within. |
+| **Programme** | A specific funded initiative operated by an Organisation, defining the assistance actually available and its eligibility criteria. An Organisation may operate multiple Programmes, each with distinct rules. |
+
+> **Amendment (2026-09-02), per Stage 7 Governance ruling G1.** The original text above collapsed Organisation and Programme into a single actor row. Practitioner ground-truth evidence (GT-PL5, GT-OQ6) and every external sector source examined (TD-01: BD-TD01-003) established these as distinct concepts — an operator versus a specific intervention it runs, each carrying its own eligibility and funding rules. This amendment is made at source per this document's own `XCR-2` amend-at-source discipline (see `docs/05-ontology/04-ARCHITECTURE-RULES.md` §4.6), rather than being left as a downstream-only override. The row above is corrected accordingly; this note documents why, per the same disclosure discipline already used elsewhere in this document (Section heading note on delegated definitions).
 
 *Donors and the resource-supply side are intentionally not V1 actors — see Section 17.*
 
