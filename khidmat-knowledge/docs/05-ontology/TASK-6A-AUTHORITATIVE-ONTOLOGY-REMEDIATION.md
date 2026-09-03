@@ -79,14 +79,14 @@ There are no remaining active ontology definitions containing these contradictor
 - **7 Pillars Unchanged**: Verified. No new pillar was introduced.
 - **No new ontology constructs introduced**: Verified.
 - **G4 Preserved**: Verified. G4 items (e.g., Service Provider agency, Funder altitude) remain "Governed provisional".
-- **CCR-7 Preserved**: Verified. The Dual-clock rule remains UNRESOLVED, non-mandatory, and non-foreclosing.
+- **CCR-7 Preserved**: Verified. *(Historical Note: During Task 6A, the Dual-clock rule remained UNRESOLVED, non-mandatory, and non-foreclosing. CURRENT STATUS: CCR-7 has since been formally RESOLVED by G2 as ONE TEMPORAL FOUNDATION WITH MULTIPLE TEMPORAL PERSPECTIVES.)*
 - **No architecture work performed**: Verified. All corrections were purely semantic.
 
 ## 10. Remaining Issues
 
 - **Foundational Blockers**: NONE remaining. The three foundational blockers identified in Task 6 have been fully remediated.
 - **Governed Provisional Items**: Service Provider agency, Funder altitude, Case orchestration, Need interactions, Outcome/Impact ownership.
-- **Unresolved Non-blocking Items**: CCR-7 (Dual-clock rule).
+- **Unresolved Non-blocking Items**: *(Historically included CCR-7 (Dual-clock rule), which has since been formally RESOLVED.)*
 - **Parameter-absent Items**: Vulnerability / Risk composition thresholds.
 - **Deferred Taxonomy/Detail**: Evidence taxonomy depth, Specific giving-side patterns, Human-facet value sets.
 

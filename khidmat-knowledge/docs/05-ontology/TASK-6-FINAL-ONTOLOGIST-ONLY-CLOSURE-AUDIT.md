@@ -51,7 +51,7 @@ The open-world assumption is preserved. The Cognition layer handles uncertaintie
 
 ### AUDIT DIMENSION 7 — TEMPORAL SEMANTICS
 **Status:** RESOLVED
-The ontology distinguishes Occurrence (point in time) from Condition (span). The Dual-clock rule (CCR-7) remains explicitly unresolved and non-blocking, which is appropriate for a parameter lacking universal evidence.
+The ontology distinguishes Occurrence (point in time) from Condition (span). *(Historical Note: At the time of this audit, the Dual-clock rule (CCR-7) remained explicitly unresolved and non-blocking, which was appropriate for a parameter lacking universal evidence. CURRENT STATUS: CCR-7 has since been formally RESOLVED — ONE TEMPORAL FOUNDATION WITH MULTIPLE TEMPORAL PERSPECTIVES, where human/life trajectory remains distinct from administrative/programme engagement, interpreted via Context without mandating two mechanical clocks.)*
 
 ### AUDIT DIMENSION 8 — HUMAN / ACTOR / ROLE SEMANTICS
 **Status:** RESOLVED
@@ -153,7 +153,7 @@ There is no semantic distortion.
 **J. Would closing the ontology now require us to knowingly freeze a semantically incorrect statement?** **YES.** We would freeze an implementation data structure (tuple) as an ontological truth and an unsupported universal ownership claim.
 
 ## 10. Remaining Uncertainties
-- The Dual-clock rule (CCR-7) remains a non-blocking documented hypothesis.
+- *(Historical Note: At the time of this audit, the Dual-clock rule (CCR-7) remained a non-blocking documented hypothesis. CURRENT STATUS: CCR-7 is now formally RESOLVED by subsequent governance.)*
 
 ## 11. Remaining Provisional Items
 - Service Provider agency, Funder altitude, Case orchestration, and Need interactions remain Governed Provisional (G4).

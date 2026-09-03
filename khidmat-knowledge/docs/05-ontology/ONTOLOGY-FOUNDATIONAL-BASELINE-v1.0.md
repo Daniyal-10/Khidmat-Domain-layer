@@ -91,8 +91,15 @@ The ontology provides semantic constraints and vocabulary; downstream architectu
 * Funder Altitude
 * Case Orchestration
 
-### UNRESOLVED — NON-MANDATORY — NON-FORECLOSING
-* CCR-7 Dual-clock rule
+### HISTORICALLY UNRESOLVED (NOW FORMALLY RESOLVED)
+* **CCR-7: RESOLVED — ONE TEMPORAL FOUNDATION WITH MULTIPLE TEMPORAL PERSPECTIVES**. 
+  Ground Truth supported semantic separation between the person and administrative engagement but did not establish a universal mandatory dual-clock architecture, originally leaving G2 unresolved. The later focused CCR-7 ontological analysis demonstrated that the semantic issue is resolved without requiring independent mechanical clocks. 
+  - There is **one underlying temporal foundation/continuum**.
+  - Temporal facts may be interpreted through **multiple semantic perspectives** (e.g., human/life/situation, programme/engagement, legal, funder, or other legitimate domain contexts). The ontology does not mandate exactly two perspectives.
+  - Human/life/situation trajectory and organisational/programme/administrative engagement must remain semantically distinguishable and **must not collapse into one combined status** (i.e., Case Closed ≠ Need Resolved; Programme Ended ≠ Vulnerability Ended; No Active Case ≠ No Humanitarian Need; Support Delivered ≠ Outcome Achieved).
+  - This relies exclusively on existing semantics (`Condition`, `Context`, `Entity`, `Occurrence`, `Relation`, `State`). `Context` may distinguish the semantic frame/perspective in which a temporal `State` or `Occurrence` is understood. Context is not a temporal primitive.
+  - It does NOT introduce a Clock, Timeline, Temporal, or Process primitive, nor a new layer, pillar, or ontology category.
+  - Architecture must preserve semantic separation but this does not prescribe database schemas, tables, columns, event sourcing, workflow engines, APIs, classes, queues, storage models, implementation-specific timelines, or technical clock mechanisms.
 
 ### PARAMETER-ABSENT
 * Vulnerability / Risk composition thresholds

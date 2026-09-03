@@ -69,7 +69,7 @@ The following authoritative files were explicitly examined:
 
 ### Test 13: CCR-7 Dual-Clock Rule
 - **Status: PASS**
-- **Evidence:** `04-ARCHITECTURE-RULES.md` and `07-STAGE-7-GOVERNANCE-DECISIONS.md` explicitly treat CCR-7 as `UNRESOLVED — NON-MANDATORY — NON-FORECLOSING`, allowing it to persist as a hypothesis without blocking closure.
+- **Evidence:** *(Historical Note: At the time of closure verification, `04-ARCHITECTURE-RULES.md` and `07-STAGE-7-GOVERNANCE-DECISIONS.md` explicitly treated CCR-7 as `UNRESOLVED — NON-MANDATORY — NON-FORECLOSING`, allowing it to persist as a hypothesis without blocking closure. CURRENT STATUS: Subsequent dedicated analysis resulted in G2 formally marking CCR-7 as RESOLVED — ONE TEMPORAL FOUNDATION WITH MULTIPLE TEMPORAL PERSPECTIVES, preserving semantic separation without mandating mechanical clocks.)*
 
 ### Test 14: Architecture Contamination
 - **Status: PASS**
@@ -123,7 +123,7 @@ The core foundational documents (`01-DOMAIN-PRIMITIVES.md`, `02-ONTOLOGY-LAYERS.
 
 The ontology retains several items that do not mandate foundational redesign, meaning they do not block formal closure:
 - **Governed Provisional Items (G4):** Service Provider agency, Funder altitude, Case orchestration, Need interactions, Outcome/Impact ownership.
-- **Unresolved Non-mandatory Items:** CCR-7 (Dual-clock rule).
+- **Unresolved Non-mandatory Items:** *(Historically included CCR-7 (Dual-clock rule), which was subsequently RESOLVED by later G2 governance.)*
 - **Parameter-absent Items:** Vulnerability / Risk composition thresholds.
 - **Deferred Taxonomy/Detail:** Evidence taxonomy depth, specific giving-side patterns, human-facet value sets.
 

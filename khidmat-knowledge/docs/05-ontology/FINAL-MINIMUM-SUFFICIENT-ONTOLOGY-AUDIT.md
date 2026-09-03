@@ -47,7 +47,7 @@
 ## 6. Temporal Sufficiency
 *   **Result:** `PASS`
 *   The ontology handles persistent entities, ongoing conditions, bounded occurrences, and contextual change adequately without requiring a new "Process" primitive.
-*   CCR-7 (Dual-clock rule) is correctly maintained as **UNRESOLVED — NON-MANDATORY — NON-FORECLOSING**.
+*   **CCR-7 — RESOLVED: ONE TEMPORAL FOUNDATION WITH MULTIPLE TEMPORAL PERSPECTIVES**. (Historically, the original dual-clock question was not empirically established by Ground Truth, leaving it initially unresolved. The later semantic resolution confirmed temporal semantics were already sufficient: a semantic distinction between human/life/situation and administrative/programme engagement remains mandatory and must not collapse into a single status, but no independent mechanical clocks are required, exactly two perspectives are not mandated, and no new primitive/layer/pillar is required. Context provides the semantic frame without imposing implementation architecture).
 
 ## 7. Open-World Sufficiency
 *   **Result:** `PASS`
@@ -83,7 +83,7 @@
 
 ## 15. Evidence / Governance Synchronization
 *   **Result:** `PASS`
-*   Governed provisional items (G4) are properly identified as such. CCR-7 remains unresolved/non-foreclosing. Source-absent parameters remain explicitly unpopulated rather than invented.
+*   Governed provisional items (G4) are properly identified as such. CCR-7 is formally resolved (G2) without mandating independent clocks. Source-absent parameters remain explicitly unpopulated rather than invented.
 
 ## 16. Implementation Boundary Audit
 *   **Result:** `PASS`

@@ -25,21 +25,19 @@ This register records formal governance rulings on structural conflicts and unre
 
 ---
 
-### G2 — CCR-7 Dual-clock rule (Resolution of C8)
+### G2 — CCR-7 Temporal Perspectives (Resolution of C8)
 | Field | Value |
 | --- | --- |
 | ID | G2 |
-| Domain Question | Does the Dual-clock rule (CCR-7) require mandatory architectural enforcement? |
-| Source Evidence | `GT-AR3` |
-| Existing Authoritative Position | CCR-7 Dual-clock rule suggests separating a person's life circumstances from their administrative status. |
-| Exact Conflict | Evidence supports separating the Person from the administrative record, but is insufficient to prove a universal architectural requirement for two strictly separated temporal clocks across all deployments. |
-| Options Evaluated | **Opt 1**: Enforce CCR-7 unconditionally.<br>**Opt 2**: Treat CCR-7 as unresolved/optional until further evidence. |
-| Ontological Consequences | None directly (this is an architectural rule). |
-| Architectural Consequences | Opt 1 forces complex dual temporal tables/event sourcing on implementations. Opt 2 leaves temporal tracking slightly ambiguous. |
-| Breakage | Opt 1 forces over-engineering if not universally true. |
-| Formal Ruling | **Opt 2 is SELECTED.** Do not force a ruling. |
-| Tier 1 Authority Status | Retained as a theoretical guideline, not a mandatory constraint. |
-| Status | **UNRESOLVED** |
+| Original Domain Question | Whether human/life-trajectory temporality and organisational/programme engagement temporality require two formally independent temporal clocks. |
+| Source Evidence | `GT-AR3`; subsequent dedicated CCR-7 ontological resolution study comparing a unified temporal model, two independent clocks, and one temporal foundation with multiple temporal perspectives. |
+| Established Domain Facts | The Reference Model and Ground Truth establish that a person's human/life/situation trajectory exists and persists independently of organisational engagement. Case closure does not imply need resolution. The evidence does not establish a universal requirement for two independent mechanical temporal systems. |
+| Exact Conflict | Ground Truth supported separation between the person and administrative engagement but did not justify a universal mandatory dual-clock architecture, originally leaving this parameter UNRESOLVED. |
+| Formal Ruling | They are semantically distinct temporal perspectives, but the ontology does not require two formally independent clocks.<br><br>A person's life/situation states and organisational/programme engagement states MUST NOT collapse into a single combined status or be treated as semantically equivalent. Therefore: Case Closed ≠ Need Resolved; Programme Ended ≠ Vulnerability Ended; No Active Case ≠ No Humanitarian Need; Support Delivered ≠ Outcome Achieved.<br><br>The distinction is represented through existing ontology semantics: temporally valid States and Occurrences interpreted relative to their relevant semantic Context (which can provide the frame/perspective relative to which a temporal state or occurrence is understood).<br><br>Both kinds of temporal facts share the same underlying temporal foundation.<br><br>The ontology does not prescribe a fixed number of temporal perspectives (e.g., Life/situation, Programme/engagement, Legal, Funder, or other legitimate future contexts) and does NOT introduce a Clock entity, Timeline primitive, or Process primitive, nor any new primitive, layer, or pillar. |
+| Rationale | The existing ontology (`Condition` + `Context`) is sufficient to preserve the distinction without semantic loss. This resolves the semantic problem without requiring independent clocks. |
+| Architectural Consequences | CCR-7 is no longer an unresolved foundational question. Architecture MUST preserve the semantic distinction and prevent conflation, while remaining free to determine the appropriate technical representation. |
+| Future Evolution | Additional temporal perspectives may be supported if later domain evidence or scope requires them. Such evolution does not imply the existence of independent clocks or require reopening the foundational ontology unless genuine semantic loss is demonstrated. |
+| Status | **RESOLVED — ONE TEMPORAL FOUNDATION WITH MULTIPLE TEMPORAL PERSPECTIVES** |
 
 ---
 

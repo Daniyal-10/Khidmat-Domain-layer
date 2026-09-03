@@ -264,11 +264,8 @@ an earlier stage as a first-class, non-exceptional transition.
 *Source:* RM §12.4, §14.1. *Underlying evidence:* **High** — BD-TD03-002, ≥4 independent source
 families (interagency GBV and Child Protection case-management standards).
 
-**CCR-7 — Dual-clock rule.** A person's or household's developmental/life-trajectory state and
-their engagement/administrative state are two separate State tracks and may never collapse into
-one combined status field. Status: UNRESOLVED per Stage 7 G2 (2026-09-01). Not enforced as a mandatory constraint. Retained as a documented hypothesis pending further evidence.
-*Source:* RM §14.2. *Underlying evidence:* **Medium-High** — BD-TD03-004, ≥4 source families
-(Graduation Approach / BRAC / USAID practice).
+**CCR-7 — Temporal Perspectives rule.** The ontology assumes one underlying temporal foundation. A person's or household's human/life/situation trajectory and their organisational/programme/administrative engagement are semantically distinct and may never collapse into one combined status field or equivalent semantic representation (i.e., Case Closed does not imply Need Resolved; Programme Ended does not imply Vulnerability Ended; No Active Case does not imply No Humanitarian Need; Support Delivered does not imply Outcome Achieved). Temporal facts may be interpreted within different semantic perspectives (e.g., human/life/situation, programme/engagement, legal, funder, or other legitimate domain contexts, without freezing this into exactly two perspectives). `Context` distinguishes the semantic perspective/frame in which a temporal `State` or `Occurrence` is interpreted. This relies strictly on existing ontology semantics (`Condition`, `Context`, `Entity`, `Occurrence`, `Relation`, State semantics). It does NOT mandate two independent mechanical clocks, nor introduce a Clock, Timeline, Temporal, or Process primitive, nor a new layer, pillar, or ontology category. Architecture must preserve this semantic separation but remains technology-neutral (it does not prescribe database tables, columns, schemas, event sourcing, workflow engines, APIs, classes, queues, storage models, or implementation-specific timeline mechanisms). Status: RESOLVED per Stage 7 G2 (Historically, Ground Truth did not establish a universal requirement for two independent clocks, originally leaving G2 unresolved; later ontological analysis proved the semantic problem is resolved without independent clocks).
+*Source:* RM §14.2. *Underlying evidence:* **Medium-High** — BD-TD03-004, ≥4 source families (Graduation Approach / BRAC / USAID practice), and subsequent CCR-7 ontological resolution.
 
 **CCR-8 — Dignity-as-constraint rule.** Dignity is represented only as a standing Constraint
 governing how other layers' content may be used or disclosed — never as a State, score, or
@@ -437,11 +434,11 @@ now confirmed corrected at source. No other rule is violated by existing content
 
 These represent genuine structural ambiguities or governance gaps that remain unresolved, tracked here to prevent them from blocking Stage 5.
 
-One item remains open by explicit governance ruling, not by omission:
+All items in this category have now been formally resolved. The final previously unresolved item (CCR-7) was closed by subsequent governance:
 
 | Rule | Status | Why it is not blocking |
 |---|---|---|
-| CCR-7 — Dual-clock rule | **UNRESOLVED per Stage 7 G2** (see §4.4) | Governance explicitly declined to force a ruling on insufficient evidence (GT-AR3: UNRESOLVED). Retained as a documented hypothesis, not enforced as a mandatory constraint. Does not block Stage 5 or architecture — no pattern depends on it being resolved one way or the other. |
+| CCR-7 — Temporal Perspectives rule | **RESOLVED per Stage 7 G2** (see §4.4) | Governance formally resolved this item via a dedicated ontological analysis, establishing one temporal foundation with multiple temporal perspectives. It is no longer an open tension. |
 
 Every other tension named in the pre-Stage-5 review package (§7.2 below) has been structurally resolved and is not repeated here.
 ### 7.2 Structurally Resolved but Parameter-Absent
