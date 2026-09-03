@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khidmat Humanitarian Domain Ontology — Design Completion Update</title>
+<style>
+  :root{
+    --ink:#16181d; --ink-2:#3d434e; --ink-3:#6b7280;
+    --line:#e3e6ea; --line-2:#eef1f4;
+    --bg:#ffffff; --bg-2:#f8f9fa; --bg-3:#f2f4f6;
+    --accent:#1f4e79; --accent-deep:#123452; --accent-soft:#eef3f8; --accent-soft-2:#dbe7f4;
+    --ok:#2f5d3f; --ok-soft:#eaf3ec;
+    --warn:#8a6100; --warn-soft:#fdf8ec;
+    --gap:#7a2b2b; --gap-soft:#fbf1f1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:16px/1.62 "Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 30px}
+
+  /* COVER */
+  .cover{min-height:64vh;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid var(--line)}
+  .cover .eyebrow{font-size:11px;letter-spacing:.20em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:22px}
+  .cover h1{font-size:clamp(28px,4.4vw,46px);line-height:1.14;font-weight:600;letter-spacing:-.02em;margin-bottom:14px}
+  .cover .sub{font-size:clamp(15px,1.8vw,19px);color:var(--ink-3);max-width:680px;margin-bottom:26px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.05em;
+    padding:8px 16px;border-radius:999px;background:var(--ok-soft);color:var(--ok);border:1px solid #cfe3d4;width:max-content}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+  .cover .rule{width:56px;height:3px;background:var(--accent);margin:26px 0}
+
+  /* TOC */
+  .toc{padding:44px 0;border-bottom:1px solid var(--line)}
+  .toc h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:600;margin-bottom:18px}
+  .toc ol{list-style:none;columns:2;column-gap:44px}
+  .toc li{break-inside:avoid;padding:6px 0;border-bottom:1px solid var(--line-2)}
+  .toc a{color:var(--ink);text-decoration:none;font-size:14.5px;display:flex;gap:12px}
+  .toc a:hover{color:var(--accent)}
+  .toc .n{color:var(--accent);font-variant-numeric:tabular-nums;font-weight:600;min-width:20px}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line-2)}
+  section:last-of-type{border-bottom:none}
+  h2{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px;display:flex;gap:14px;align-items:baseline}
+  h2 .n{color:var(--accent);font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+  .lede{color:var(--ink-3);font-size:14.5px;margin-bottom:20px;max-width:720px}
+  h3{font-size:15.5px;font-weight:600;margin:24px 0 10px;color:var(--ink)}
+  p{margin-bottom:12px;color:var(--ink-2);max-width:760px}
+  ul,ol{margin:0 0 14px 20px;color:var(--ink-2)}
+  li{margin-bottom:6px}
+  strong{color:var(--ink);font-weight:600}
+  code{background:var(--bg-3);padding:1px 6px;border-radius:3px;font-size:.86em;font-family:ui-monospace,Menlo,Consolas,monospace}
+
+  .tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:4px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{background:var(--bg-2);text-align:left;padding:10px 13px;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:600;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:10px 13px;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--ink-2)}
+  tr:last-child td{border-bottom:none}
+  td:first-child{color:var(--ink);font-weight:500}
+
+  .tag{display:inline-block;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:3px;white-space:nowrap}
+  .t-ok{background:var(--ok-soft);color:var(--ok)}
+  .t-warn{background:var(--warn-soft);color:var(--warn)}
+  .t-gap{background:var(--gap-soft);color:var(--gap)}
+  .t-none{background:var(--bg-3);color:var(--ink-3)}
+
+  .note{border-left:3px solid var(--accent);background:var(--accent-soft);padding:14px 18px;margin:18px 0;border-radius:0 4px 4px 0}
+  .note.warn{border-color:#c9973a;background:var(--warn-soft)}
+  .note.ok{border-color:#4a7a58;background:var(--ok-soft)}
+  .note .lbl{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:6px}
+  .note.warn .lbl{color:var(--warn)} .note.ok .lbl{color:var(--ok)}
+  .note p{margin-bottom:0;font-size:14px;color:var(--ink-2)}
+  .note p+p{margin-top:8px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:16px 0}
+  .card{border:1px solid var(--line);border-radius:6px;padding:15px 17px;background:var(--bg)}
+  .card h4{font-size:13.5px;font-weight:600;margin-bottom:5px;color:var(--ink)}
+  .card p{font-size:13px;color:var(--ink-3);margin:0}
+
+  /* stage flow */
+  .flow{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;align-items:stretch}
+  .flow .step{flex:1 1 110px;border:1px solid var(--line);border-radius:6px;padding:12px 12px;background:var(--bg-2);
+    display:flex;flex-direction:column;gap:4px;position:relative}
+  .flow .step .k{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:.05em}
+  .flow .step .t{font-size:13px;font-weight:600;color:var(--ink)}
+  .flow .step .s{font-size:11px;color:var(--ok);font-weight:600}
+  .flow .arrow{align-self:center;color:var(--ink-3);font-size:15px;padding:0 2px}
+
+  /* big number panel */
+  .numgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+  .numcard{border:1px solid var(--line);border-radius:8px;padding:26px 18px;text-align:center;background:var(--bg-2)}
+  .numcard .num{font-size:42px;font-weight:700;color:var(--accent-deep);line-height:1}
+  .numcard .lab{margin-top:8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+
+  /* derivation diagram */
+  .deriv{border:1px solid var(--line);border-radius:6px;padding:18px;margin:16px 0;background:var(--bg)}
+  .deriv-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .deriv-row:last-child{margin-bottom:0}
+  .chip{font-size:12px;padding:5px 11px;border-radius:5px;border:1px solid var(--line);background:var(--bg-2);color:var(--ink-2);white-space:nowrap}
+  .chip.primitive{background:var(--accent-soft);border-color:var(--accent-soft-2);color:var(--accent-deep);font-weight:600}
+  .chip.layer{background:#fff;border-color:var(--line);color:var(--ink)}
+  .deriv-arrow{color:var(--ink-3)}
+
+  /* boundary cards */
+  .bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:18px 0}
+  .bcard{border:1px solid var(--line);border-radius:8px;padding:18px 20px;background:var(--bg)}
+  .bcard h4{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:12px}
+  .chain{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:13.5px;color:var(--ink);font-weight:500}
+  .chain .sep{color:var(--ink-3);font-weight:400}
+  .bcard .expl{margin-top:10px;font-size:13px;color:var(--ink-3)}
+
+  /* status panel */
+  .statuspanel{border:1px solid #cfe3d4;background:var(--ok-soft);border-radius:10px;padding:28px 30px;margin:20px 0}
+  .statuspanel .head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .statuspanel .head .dot{width:12px;height:12px;border-radius:50%;background:var(--ok)}
+  .statuspanel .head .title{font-size:17px;font-weight:700;color:var(--ok);letter-spacing:.01em}
+  .statuslist{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px 24px}
+  .statuslist .item{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:6px 0;border-bottom:1px solid #d7e8db}
+  .statuslist .item span:first-child{color:var(--ink-2)}
+  .statuslist .item span:last-child{font-weight:600;color:var(--ink)}
+
+  /* deferred vs foundational */
+  .dvsplit{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+  @media (max-width:680px){.dvsplit{grid-template-columns:1fr}}
+  .dvsplit .col{border-radius:8px;padding:18px 20px;border:1px solid var(--line)}
+  .dvsplit .col.f{background:var(--ok-soft);border-color:#cfe3d4}
+  .dvsplit .col.d{background:var(--bg-2)}
+  .dvsplit .col h4{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+  .dvsplit .col.f h4{color:var(--ok)}
+  .dvsplit .col.d h4{color:var(--ink-3)}
+  .dvsplit ul{margin:0 0 0 18px}
+  .dvsplit li{font-size:13px;margin-bottom:6px;color:var(--ink-2)}
+
+  footer{padding:34px 0 60px;color:var(--ink-3);font-size:12.5px;border-top:1px solid var(--line)}
+
+  @media (max-width:680px){
+    .toc ol{columns:1}
+    .wrap{padding:0 20px}
+    .numgrid{grid-template-columns:1fr}
+    .flow{flex-direction:column}
+    .flow .arrow{transform:rotate(90deg)}
+  }
+  @media print{
+    body{font-size:10.5pt}
+    .cover{min-height:auto;padding:50pt 0 30pt}
+    section{padding:18pt 0;page-break-inside:avoid}
+    .tw,.note,.card,.deriv,.bcard,.statuspanel,.numcard{page-break-inside:avoid}
+    .toc{page-break-after:always}
+    a{color:var(--ink);text-decoration:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="cover wrap">
+  <div class="eyebrow">Ontology Design — Completion Update</div>
+  <h1>Khidmat Humanitarian Domain Ontology</h1>
+  <p class="sub">A structured account of how the foundational ontology was designed, tested against practitioner ground truth, integrated with evidence, governed, and verified as sufficient for the current project scope.</p>
+  <div class="badge"><span class="dot"></span>GREEN — MINIMUM SUFFICIENT FOUNDATION</div>
+</header>
+
+<nav class="toc wrap">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#s1"><span class="n">1</span> Domain Primitives</a></li>
+    <li><a href="#s2"><span class="n">2</span> Ontology Layers</a></li>
+    <li><a href="#s3"><span class="n">3</span> Ontology Pillars</a></li>
+    <li><a href="#s4"><span class="n">4</span> Architecture Rules</a></li>
+    <li><a href="#s5"><span class="n">5</span> Ground Truth Reviews</a></li>
+    <li><a href="#s6"><span class="n">6</span> Evidence Integration</a></li>
+    <li><a href="#s7"><span class="n">7</span> Governance</a></li>
+    <li><a href="#s8"><span class="n">8</span> Key Semantic Boundaries</a></li>
+    <li><a href="#s9"><span class="n">9</span> Humanitarian Reality Coverage</a></li>
+    <li><a href="#s10"><span class="n">10</span> What Was Deliberately Not Added</a></li>
+    <li><a href="#s11"><span class="n">11</span> Final Ontology Baseline</a></li>
+    <li><a href="#s12"><span class="n">12</span> What "Complete" Means</a></li>
+    <li><a href="#s13"><span class="n">13</span> Final Status</a></li>
+    <li><a href="#s14"><span class="n">14</span> Next Phase</a></li>
+    <li><a href="#s15"><span class="n">15</span> Traceability</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<section id="s1">
+  <h2><span class="n">1</span> Domain Primitives</h2>
+  <p class="lede">The irreducible categories of concept that everything else in the ontology classifies under.</p>
+  <p>A Domain Primitive is not a humanitarian concept in its own right — it is the answer to the question <em>"what kind of thing is this?"</em>, asked of every concept in the domain until the answers stop multiplying and begin repeating. Seven such categories were reached, each grounded in the Humanitarian Domain Reference Model and tested against the domain's least-described area (the giving side) to confirm the set does not need to grow as new content arrives.</p>
+
+  <div class="numgrid">
+    <div class="numcard"><div class="num">7</div><div class="lab">Domain Primitives</div></div>
+    <div class="numcard"><div class="num">8</div><div class="lab">Ontology Layers</div></div>
+    <div class="numcard"><div class="num">7</div><div class="lab">Ontology Pillars</div></div>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Primitive</th><th>What it captures</th></tr></thead>
+    <tbody>
+      <tr><td>Condition</td><td>Something true across a span of time, which can change while what it describes persists</td></tr>
+      <tr><td>Context</td><td>The frame relative to which a statement holds — geographic, temporal, cultural, programmatic</td></tr>
+      <tr><td>Epistemic Stance</td><td>The warrant held for what is asserted, including what is not known</td></tr>
+      <tr><td>Entity</td><td>That which exists and persists as a distinct whole across encounters</td></tr>
+      <tr><td>Norm</td><td>That which bounds what is permitted, required, or valid</td></tr>
+      <tr><td>Occurrence</td><td>That which happens, potentially over a bounded period</td></tr>
+      <tr><td>Relation</td><td>A connection between things that persist</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note">
+    <div class="lbl">Closure status</div>
+    <p>The set is treated as closed. No eighth primitive is currently required — a candidate concept needing one is escalated for review, never accommodated by stretching an existing category's boundary.</p>
+  </div>
+</section>
+
+<section id="s2">
+  <h2><span class="n">2</span> Ontology Layers</h2>
+  <p class="lede">Eight structural layers, each derived from a named primitive, that hold the actual content of the domain.</p>
+  <p>Layers are where domain concepts are structured for use — dimensions, persisting things, connections, rules, values over time, dateable happenings, warrant, and recurring multi-party shapes. Every layer traces to one or more of the seven primitives; nothing appears in a layer without a named source.</p>
+
+  <div class="deriv">
+    <div class="deriv-row"><span class="chip primitive">Condition</span><span class="chip primitive">Context</span><span class="deriv-arrow">→</span><span class="chip layer">Facets</span></div>
+    <div class="deriv-row"><span class="chip primitive">Entity</span><span class="deriv-arrow">→</span><span class="chip layer">Entities</span></div>
+    <div class="deriv-row"><span class="chip primitive">Relation</span><span class="deriv-arrow">→</span><span class="chip layer">Relationships</span></div>
+    <div class="deriv-row"><span class="chip primitive">Norm</span><span class="chip primitive">Context</span><span class="deriv-arrow">→</span><span class="chip layer">Constraints</span></div>
+    <div class="deriv-row"><span class="chip primitive">Condition</span><span class="deriv-arrow">→</span><span class="chip layer">States</span></div>
+    <div class="deriv-row"><span class="chip primitive">Occurrence</span><span class="deriv-arrow">→</span><span class="chip layer">Events</span></div>
+    <div class="deriv-row"><span class="chip primitive">Epistemic Stance</span><span class="deriv-arrow">→</span><span class="chip layer">Cognition</span></div>
+    <div class="deriv-row"><span class="chip primitive">Relation</span><span class="chip primitive">Occurrence</span><span class="chip primitive">Context</span><span class="chip primitive">Norm</span><span class="deriv-arrow">→</span><span class="chip layer">Coordination Patterns</span></div>
+  </div>
+  <p>All seven primitives are consumed across the eight layers, and no layer introduces a category absent from the primitive set. Condition and Context each feed more than one layer by design — Condition separates the <em>dimension</em> something varies along (Facets) from the <em>value</em> it holds at a given time (States), which makes visible that the domain currently has many dimensions and comparatively few populated values.</p>
+  <div class="note warn">
+    <div class="lbl">Where the layers are strongest and weakest</div>
+    <p>Layers describing how organisations operate — Constraints, Events, Coordination Patterns — are the best evidenced. Layers describing people directly — States, social Relationships, human Facets — were historically the thinnest, until ground-truth practitioner review (§5) substantially strengthened them.</p>
+  </div>
+</section>
+
+<section id="s3">
+  <h2><span class="n">3</span> Ontology Pillars</h2>
+  <p class="lede">Seven vertical domain views across the layers — not an additional structural category.</p>
+  <p>A pillar groups entities, relationships, states, events, and cognitive content into a coherent area of humanitarian reality. Pillars never introduce a primitive or a layer of their own; citation always runs primitives → layers → pillars, never the reverse.</p>
+  <div class="grid">
+    <div class="card"><h4>I · Human & Social Subject</h4><p>The person, and the family/household fabric around them</p></div>
+    <div class="card"><h4>II · Context & Environment</h4><p>The physical, economic, and temporal frame that changes what a condition means</p></div>
+    <div class="card"><h4>III · Vulnerability & Need</h4><p>The open-ended situations, needs, and compounding vulnerability that drive response</p></div>
+    <div class="card"><h4>IV · Epistemics & Knowledge</h4><p>What is known, how well, and what is explicitly not known</p></div>
+    <div class="card"><h4>V · Actors & Ecosystem</h4><p>Organisations, programmes, donors, government, and community actors</p></div>
+    <div class="card"><h4>VI · Action & Coordination</h4><p>How help happens over time, and how actors hand work to one another</p></div>
+    <div class="card"><h4>VII · Resources & Support</h4><p>The sector, modality, and phase dimensions of assistance</p></div>
+  </div>
+  <p>A full-domain coverage test confirmed the seven pillars jointly cover the Reference Model's content without leaving a concept unmapped and without forcing any workflow concept into pillar status.</p>
+</section>
+
+<section id="s4">
+  <h2><span class="n">4</span> Architecture Rules</h2>
+  <p class="lede">The grammar the ontology must obey — not the software architecture itself.</p>
+  <p>Architecture Rules govern how the primitives, layers, and pillars may be composed, extended, or corrected. They are deliberately kept apart from implementation: <strong>ontology rules ≠ database schema ≠ API design ≠ workflow engine ≠ AI-agent architecture.</strong> No rule below specifies a table, an endpoint, a queue, or an agent behaviour.</p>
+  <div class="grid">
+    <div class="card"><h4>Primitive closure</h4><p>The seven-primitive set is treated as complete; extension requires escalation, not accommodation</p></div>
+    <div class="card"><h4>One primary classification</h4><p>Every concept gets exactly one primary primitive; apparent dual needs are escalated as a tension</p></div>
+    <div class="card"><h4>Reality / scope separation</h4><p>Being real does not imply being in scope; being out of scope does not imply being unreal</p></div>
+    <div class="card"><h4>Context frames, never participates</h4><p>A frame that is itself tracked and funded has become an Entity, not a Context</p></div>
+    <div class="card"><h4>Norm/Context pairing</h4><p>A rule binding in one scope and not another is one Constraint plus one Context, never two Constraints</p></div>
+    <div class="card"><h4>Occurrence vs. State</h4><p>An Occurrence is complete once it has happened; anything still true afterward is the State it produced</p></div>
+    <div class="card"><h4>Cognition non-assertion</h4><p>Cognition never asserts a fact about the world — it records the warrant for what other layers assert</p></div>
+    <div class="card"><h4>Open-world commitment</h4><p>Absence of a recorded statement is never the negation of that statement</p></div>
+    <div class="card"><h4>Human-oversight trigger</h4><p>Decisions materially affecting rights, safety, dignity, or eligibility route to human review</p></div>
+    <div class="card"><h4>Non-linearity</h4><p>Every multi-stage pattern supports re-entry to an earlier stage as ordinary, not exceptional</p></div>
+    <div class="card"><h4>Dignity as constraint</h4><p>Dignity is represented as a standing rule on how content may be used — never as a score</p></div>
+    <div class="card"><h4>Outcome/Impact vs. closure</h4><p>Whether a case is closed and whether it worked are kept as distinct representations</p></div>
+  </div>
+  <div class="note">
+    <div class="lbl">Implementation quarantine</div>
+    <p>Registration, verification, assessment, delivery, and similar actions appear in the ontology because understanding is acquired through them — but they may never become the ontology's organising axis. Modelling around activity produces a record of the organisation, not a model of the people it serves.</p>
+  </div>
+</section>
+
+<section id="s5">
+  <h2><span class="n">5</span> Ground Truth Reviews</h2>
+  <p class="lede">The foundation was tested against real practitioner accounts, not left as a theoretical construction.</p>
+  <p>A structured review matrix covering every primitive, layer, pillar, and domain-bearing architecture rule — plus every previously named open question — was put to practitioners across field operations, MEAL/information management, and programme coordination. Each response was recorded against a fixed vocabulary (Confirmed, Challenged, Refined, Missing, Context-dependent, Unresolved, Not assessable) rather than folded into a predetermined narrative.</p>
+  <div class="numgrid">
+    <div class="numcard"><div class="num">47</div><div class="lab">Review Records</div></div>
+    <div class="numcard"><div class="num">29</div><div class="lab">Confirmed</div></div>
+    <div class="numcard"><div class="num">15</div><div class="lab">Refined</div></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>Outcome</th><th>Count</th><th>What it means</th></tr></thead>
+    <tbody>
+      <tr><td>Confirmed</td><td>29</td><td>Practitioner evidence matched the existing structural interpretation</td></tr>
+      <tr><td>Refined</td><td>15</td><td>The interpretation held, with a stated qualification or added specificity</td></tr>
+      <tr><td>Challenged</td><td>2</td><td>Evidence conflicted with the existing interpretation and was carried to governance</td></tr>
+      <tr><td>Unresolved</td><td>1</td><td>Evidence was insufficient to settle the question either way</td></tr>
+    </tbody>
+  </table></div>
+  <p>The two challenged items both concerned whether Organisation and Programme should be treated as one actor or two — practitioners consistently described them as distinct, which was carried into governance (§7). The one unresolved item concerned the dual-clock separation of a person's life trajectory from their administrative status, where the evidence offered was compatible with, but did not conclusively establish, the proposed rule.</p>
+  <p>The result of this stage is not primarily the count. It is that the foundation was deliberately exposed to disconfirmation, and where it was found wanting, that finding was carried forward rather than smoothed over.</p>
+</section>
+
+<section id="s6">
+  <h2><span class="n">6</span> Evidence Integration</h2>
+  <p class="lede">Ground-truth findings were weighed, not automatically promoted into universal ontology structure.</p>
+  <p>Every review outcome was mapped against the primitive, layer, pillar, or architecture rule it bore on, and the strength of that evidence was explicitly tracked alongside the resulting change. A single practitioner's account, however clear, was treated differently from a finding corroborated across several independent reviews.</p>
+  <div class="dvsplit">
+    <div class="col f">
+      <h4>Carried forward with confidence</h4>
+      <ul>
+        <li>Facets, Entities, Relationships, Constraints, Events, and Cognition structures — all confirmed as designed</li>
+        <li>Compound vulnerability as an emergent, context-shaped condition rather than a fixed formula</li>
+        <li>The open-world commitment: unknown information preserved as unknown, not treated as false</li>
+        <li>Non-linearity and altitude qualification, both independently confirmed by practitioners</li>
+      </ul>
+    </div>
+    <div class="col d">
+      <h4>Carried forward as governed provisional</h4>
+      <ul>
+        <li>Outcome/Impact ownership (case journey vs. a separate MEAL function)</li>
+        <li>Service Providers as active, decision-making Entities</li>
+        <li>Funder-level coordination as a distinct pattern</li>
+        <li>Case Coordination/Orchestration as a distinct function</li>
+        <li>Need-to-Need interactions, deliberately kept out of formal Relation structure</li>
+      </ul>
+    </div>
+  </div>
+  <p>Each governed-provisional item rests on a single practitioner account and is recorded as such — a workable basis for current modelling, not an empirically settled universal claim. Reopening any of these requires new corroborating evidence or an explicit superseding governance decision, not silent drift in a later document.</p>
+</section>
+
+<section id="s7">
+  <h2><span class="n">7</span> Governance</h2>
+  <p class="lede">Formal rulings on the structural conflicts that ground-truth review surfaced.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Decision</th><th>Ruling</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Organisation vs. Programme</td><td>Split into two distinct Entities, connected by an <code>operates</code> relation. The authoritative business source was amended at source to reflect this.</td><td><span class="tag t-ok">Resolved</span></td></tr>
+      <tr><td>Risk classification</td><td>Risk is a Condition — dispositional, future-oriented, carrying horizon/trend/severity. Confidence about a risk assessment is separately an Epistemic Stance.</td><td><span class="tag t-ok">Resolved</span></td></tr>
+      <tr><td>Need classification</td><td>Need is a Condition with its own lifecycle (opens, changes severity, resolves). The basic-wellbeing standard it is measured against is a Norm, not a persisting thing a Relation could connect to.</td><td><span class="tag t-ok">Resolved</span></td></tr>
+      <tr><td>Primitive definition</td><td>A Domain Primitive is a category of concept, not a concrete irreducible — ratifying the reading already used since Stage 1.</td><td><span class="tag t-ok">Resolved</span></td></tr>
+      <tr><td>Option A closure items</td><td>Need-interactions, Service Provider agency, Outcome/Impact ownership, Funder altitude, Case orchestration — adopted for current modelling on single-source evidence.</td><td><span class="tag t-warn">Governed provisional</span></td></tr>
+      <tr><td>Dual-clock rule (CCR-7)</td><td>Not enforced as a mandatory architectural constraint. Retained as a documented hypothesis.</td><td><span class="tag t-gap">Unresolved / non-blocking</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="note warn">
+    <div class="lbl">What governance does not do</div>
+    <p>A governed-provisional ruling is a modelling accommodation, not proof that the underlying domain proposition is empirically settled. The dual-clock rule, in particular, is preserved exactly as unresolved, non-mandatory, and non-foreclosing — it constrains nothing until further evidence or an explicit new ruling changes that.</p>
+  </div>
+</section>
+
+<section id="s8">
+  <h2><span class="n">8</span> Key Semantic Boundaries</h2>
+  <p class="lede">The distinctions that keep the ontology from silently conflating different kinds of thing.</p>
+  <div class="bgrid">
+    <div class="bcard">
+      <h4>Reality / knowledge boundary</h4>
+      <div class="chain">Reality <span class="sep">≠</span> Claim <span class="sep">≠</span> Evidence <span class="sep">≠</span> Epistemic Stance</div>
+      <p class="expl">What exists, what is asserted about it, what grounds the assertion, and how much warrant is held for it are four different things, never merged into one field.</p>
+    </div>
+    <div class="bcard">
+      <h4>Identity boundary</h4>
+      <div class="chain">Entity <span class="sep">→</span> Identifier / Reference <span class="sep">→</span> Sameness Claim <span class="sep">→</span> Epistemic Stance</div>
+      <p class="expl">A person is the Entity. An identifier (phone number, national ID, internal ID) is a means of referring to that Entity, not the Entity itself. Asserting that two references denote the same person is a Claim. How confidently that claim is held is the Epistemic Stance. None of these four collapses into another.</p>
+    </div>
+    <div class="bcard">
+      <h4>Temporal boundary</h4>
+      <div class="chain">Occurrence <span class="sep">≠</span> State</div>
+      <p class="expl">An Occurrence is something that happens, possibly over a bounded period (a verification visit, a displacement journey). A State is a condition that holds and can be re-examined later. An Occurrence may establish, change, or end a State — it is never the State itself.</p>
+    </div>
+    <div class="bcard">
+      <h4>Need / Risk</h4>
+      <div class="chain">Need <span class="sep">≠</span> Risk</div>
+      <p class="expl">Both are classified as Conditions, but a Need is a present gap against a wellbeing standard, while Risk is oriented toward something that has not yet happened, carrying its own horizon, trend, and severity.</p>
+    </div>
+    <div class="bcard">
+      <h4>Organisation / Programme</h4>
+      <div class="chain">Organisation <span class="sep">≠</span> Programme</div>
+      <p class="expl">An operator and the specific intervention it runs are distinct Entities. Programme-specific eligibility, funding, and activity rules attach to the Programme, not to the Organisation that operates it.</p>
+    </div>
+    <div class="bcard">
+      <h4>Outcome / Impact / Closure</h4>
+      <div class="chain">Outcome / Impact <span class="sep">≠</span> Case Closure</div>
+      <p class="expl">Whether a case is administratively closed and whether the assistance actually worked are tracked separately, potentially by different people on different timelines.</p>
+    </div>
+    <div class="bcard">
+      <h4>Open-world boundary</h4>
+      <div class="chain">Unknown <span class="sep">≠</span> False</div>
+      <p class="expl">Absence of a recorded statement is never treated as its negation. "No record of displacement" and "confirmed not displaced" must remain distinguishable.</p>
+    </div>
+  </div>
+</section>
+
+<section id="s9">
+  <h2><span class="n">9</span> Humanitarian Reality Coverage</h2>
+  <p class="lede">Sufficient coverage for the current intended Khidmat scope — not a claim of exhaustive humanitarian coverage.</p>
+  <p>Across the seven pillars, the ontology represents: the person, family, and household, with the social relationships that connect them; context and environment, including seasonality and settlement; vulnerability, need, and risk, including their compounding and dynamic character; a basic-wellbeing standard as a norm; organisations, programmes, donors, government bodies, service providers, and emergent community actors; claims, evidence, epistemic confidence, uncertainty, and contradiction; states and dateable events; outcomes and impact as conditions distinct from their measurement; constraints including consent, safeguarding, and funding restrictions; and coordination patterns such as handoffs, referrals, reassessment loops, and grievance channels.</p>
+  <div class="note ok">
+    <div class="lbl">Scope statement</div>
+    <p>This is sufficient coverage for the current intended Khidmat scope, verified against the domain reference model and practitioner ground truth. It is not a claim that every possible humanitarian reality, in every context, is represented.</p>
+  </div>
+</section>
+
+<section id="s10">
+  <h2><span class="n">10</span> What Was Deliberately Not Added</h2>
+  <p class="lede">Minimum sufficiency does not require modelling every future detail — it requires knowing which details are safely deferred.</p>
+  <div class="dvsplit">
+    <div class="col d">
+      <h4>Deferred / non-foundational</h4>
+      <ul>
+        <li>The precise identity-resolution matching mechanism</li>
+        <li>A vulnerability or compound-risk composition formula</li>
+        <li>A full evidence-kind taxonomy and relative epistemic weighting</li>
+        <li>Human-facet value sets (health, capability, lifecycle categories)</li>
+        <li>Detailed giving-side entities and patterns</li>
+        <li>A complete funding-restriction taxonomy</li>
+        <li>Whether the set of humanitarian situations is open or closed</li>
+        <li>Broader corroboration of governed-provisional items (§6–7)</li>
+        <li>Resolution of the dual-clock rule (CCR-7)</li>
+      </ul>
+    </div>
+    <div class="col f">
+      <h4>Foundational — closed / verified</h4>
+      <ul>
+        <li>Seven primitives, closed and coverage-tested</li>
+        <li>Eight layers, each with a named primitive source</li>
+        <li>Seven pillars, functioning as vertical views only</li>
+        <li>Architecture rules governing composition and extension</li>
+        <li>Organisation/Programme, Risk, and Need classifications</li>
+        <li>The open-world and human-oversight commitments</li>
+      </ul>
+    </div>
+  </div>
+  <p>Implementation concerns — database schema, API contracts, a concrete representation of epistemic status, workflow routing, deduplication algorithms, and AI-agent architecture — sit downstream of this document entirely and are not addressed here.</p>
+</section>
+
+<section id="s11">
+  <h2><span class="n">11</span> Final Ontology Baseline</h2>
+  <p class="lede">The structural summary of what now exists.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Component</th><th>Final state</th></tr></thead>
+    <tbody>
+      <tr><td>Domain Primitives</td><td>7</td></tr>
+      <tr><td>Ontology Layers</td><td>8</td></tr>
+      <tr><td>Ontology Pillars</td><td>7</td></tr>
+      <tr><td>Architecture Rules</td><td>Established</td></tr>
+      <tr><td>Ground Truth Reviews</td><td>Completed — 47 records</td></tr>
+      <tr><td>Evidence Integration</td><td>Completed</td></tr>
+      <tr><td>Governance</td><td>Completed</td></tr>
+    </tbody>
+  </table></div>
+  <p>The resulting ontology is the minimum-sufficient foundational ontology for the current Khidmat project scope.</p>
+</section>
+
+<section id="s12">
+  <h2><span class="n">12</span> What "Complete" Means</h2>
+  <p class="lede">Complete does not mean exhaustive, and it does not mean immutable forever.</p>
+  <p>It means that the foundational ontology required for the current project scope has been established, tested, evidenced, governed, and verified as sufficient for downstream work — without requiring the invention of an additional foundational category, layer, or pillar. Future evolution remains possible if new evidence, or a genuinely expanded scope, demonstrates an actual foundational gap. That is not the same as expecting or requiring further foundational change now.</p>
+</section>
+
+<section id="s13">
+  <h2><span class="n">13</span> Final Status</h2>
+  <div class="statuspanel">
+    <div class="head"><span class="dot"></span><span class="title">GREEN — MINIMUM SUFFICIENT FOUNDATION</span></div>
+    <div class="statuslist">
+      <div class="item"><span>Foundational completeness</span><span>Verified</span></div>
+      <div class="item"><span>Semantic correctness</span><span>Verified</span></div>
+      <div class="item"><span>Foundational missing concepts</span><span>None identified</span></div>
+      <div class="item"><span>Foundational incorrect concepts</span><span>None identified</span></div>
+      <div class="item"><span>Primitive count</span><span>7</span></div>
+      <div class="item"><span>Layer count</span><span>8</span></div>
+      <div class="item"><span>Pillar count</span><span>7</span></div>
+      <div class="item"><span>Ontology expansion required now</span><span>No</span></div>
+      <div class="item"><span>Ontology freeze</span><span>Yes</span></div>
+      <div class="item"><span>Downstream architecture readiness</span><span>Yes</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="s14">
+  <h2><span class="n">14</span> Next Phase</h2>
+  <p class="lede">What follows this milestone.</p>
+  <div class="flow">
+    <div class="step"><span class="k">STAGE</span><span class="t">Ontology Design</span><span class="s">✓ Complete</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><span class="k">STATE</span><span class="t">Foundational Ontology</span><span class="s">✓ Frozen / Minimum Sufficient</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><span class="k">NEXT</span><span class="t">Architecture Design</span><span class="s" style="color:var(--accent)">→ Next</span></div>
+  </div>
+  <div class="note">
+    <div class="lbl">Governing principle</div>
+    <p>Architecture must be designed from the ontology, not by redefining the ontology to accommodate implementation decisions. Where architecture appears to require a foundational change, that change is raised explicitly as a request against this ontology, not made silently downstream.</p>
+  </div>
+</section>
+
+<section id="s15">
+  <h2><span class="n">15</span> Traceability</h2>
+  <p class="lede">Where the material behind this update lives in the repository.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Area</th><th>Location</th></tr></thead>
+    <tbody>
+      <tr><td>Domain evidence</td><td><code>docs/01-evidence/</code></td></tr>
+      <tr><td>Domain understanding</td><td><code>docs/02-understanding/</code></td></tr>
+      <tr><td>Discovery and scope</td><td><code>docs/03-discovery/</code></td></tr>
+      <tr><td>Reference Model</td><td><code>docs/04-reference-model/</code></td></tr>
+      <tr><td>Ontology foundation</td><td><code>docs/05-ontology/01-DOMAIN-PRIMITIVES.md</code>, <code>02-ONTOLOGY-LAYERS.md</code>, <code>03-ONTOLOGY-PILLARS.md</code>, <code>04-ARCHITECTURE-RULES.md</code></td></tr>
+      <tr><td>Ground Truth reviews</td><td><code>docs/05-ontology/05-GROUND-TRUTH-REVIEW-MATRIX.md</code> and associated <code>GT-*-R1.md</code> records</td></tr>
+      <tr><td>Evidence integration</td><td><code>docs/05-ontology/06-STAGE-6-EVIDENCE-INTEGRATION-REPORT.md</code></td></tr>
+      <tr><td>Governance decisions</td><td><code>docs/05-ontology/07-STAGE-7-GOVERNANCE-DECISIONS.md</code></td></tr>
+      <tr><td>Closure / baseline</td><td><code>docs/05-ontology/ONTOLOGY-FOUNDATIONAL-BASELINE-v1.0.md</code>, <code>FINAL-MINIMUM-SUFFICIENT-ONTOLOGY-AUDIT.md</code></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  Khidmat Humanitarian Domain Ontology — foundational design stands as the semantic reference for all downstream architecture.
+</footer>
+
+</body>
+</html>
