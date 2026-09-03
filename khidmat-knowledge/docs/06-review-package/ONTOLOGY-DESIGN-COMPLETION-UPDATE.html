@@ -179,12 +179,31 @@
     <li><a href="#s11"><span class="n">11</span> Final Ontology Baseline</a></li>
     <li><a href="#s12"><span class="n">12</span> What "Complete" Means</a></li>
     <li><a href="#s13"><span class="n">13</span> Final Status</a></li>
-    <li><a href="#s14"><span class="n">14</span> Next Phase</a></li>
-    <li><a href="#s15"><span class="n">15</span> Traceability</a></li>
+    <li><a href="#s14"><span class="n">14</span> Traceability</a></li>
   </ol>
 </nav>
 
 <main class="wrap">
+
+<section style="padding-top:34px">
+  <p class="lede" style="margin-bottom:14px">The path actually followed to close the ontology — not a future plan.</p>
+  <div class="flow">
+    <div class="step"><span class="k">1</span><span class="t">Primitives</span><span class="s">✓ Closed</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><span class="k">2</span><span class="t">Layers</span><span class="s">✓ Derived</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><span class="k">3</span><span class="t">Pillars</span><span class="s">✓ Established</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><span class="k">4</span><span class="t">Architecture Rules</span><span class="s">✓ Established</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><span class="k">5</span><span class="t">Ground Truth</span><span class="s">✓ Reviewed</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><span class="k">6</span><span class="t">Evidence</span><span class="s">✓ Integrated</span></div>
+    <div class="arrow">→</div>
+    <div class="step"><span class="k">7</span><span class="t">Governance</span><span class="s">✓ Resolved</span></div>
+  </div>
+  <p style="margin-top:10px">The ontology is not considered complete because eight layer names exist. It is complete because the primitives, layers, pillars, semantic boundaries, architecture-protection rules, evidence treatment, ground-truth outcomes, and governance dispositions covered in the sections below have each been explicitly established.</p>
+</section>
 
 <section id="s1">
   <h2><span class="n">1</span> Domain Primitives</h2>
@@ -220,17 +239,64 @@
   <p class="lede">Eight structural layers, each derived from a named primitive, that hold the actual content of the domain.</p>
   <p>Layers are where domain concepts are structured for use — dimensions, persisting things, connections, rules, values over time, dateable happenings, warrant, and recurring multi-party shapes. Every layer traces to one or more of the seven primitives; nothing appears in a layer without a named source.</p>
 
-  <div class="deriv">
-    <div class="deriv-row"><span class="chip primitive">Condition</span><span class="chip primitive">Context</span><span class="deriv-arrow">→</span><span class="chip layer">Facets</span></div>
-    <div class="deriv-row"><span class="chip primitive">Entity</span><span class="deriv-arrow">→</span><span class="chip layer">Entities</span></div>
-    <div class="deriv-row"><span class="chip primitive">Relation</span><span class="deriv-arrow">→</span><span class="chip layer">Relationships</span></div>
-    <div class="deriv-row"><span class="chip primitive">Norm</span><span class="chip primitive">Context</span><span class="deriv-arrow">→</span><span class="chip layer">Constraints</span></div>
-    <div class="deriv-row"><span class="chip primitive">Condition</span><span class="deriv-arrow">→</span><span class="chip layer">States</span></div>
-    <div class="deriv-row"><span class="chip primitive">Occurrence</span><span class="deriv-arrow">→</span><span class="chip layer">Events</span></div>
-    <div class="deriv-row"><span class="chip primitive">Epistemic Stance</span><span class="deriv-arrow">→</span><span class="chip layer">Cognition</span></div>
-    <div class="deriv-row"><span class="chip primitive">Relation</span><span class="chip primitive">Occurrence</span><span class="chip primitive">Context</span><span class="chip primitive">Norm</span><span class="deriv-arrow">→</span><span class="chip layer">Coordination Patterns</span></div>
+  <div class="tw"><table>
+    <thead><tr><th>Primitive</th><th>Layer contribution</th></tr></thead>
+    <tbody>
+      <tr><td>Condition</td><td>Facets + States</td></tr>
+      <tr><td>Context</td><td>Facets + Constraint scope</td></tr>
+      <tr><td>Epistemic Stance</td><td>Cognition</td></tr>
+      <tr><td>Entity</td><td>Entities</td></tr>
+      <tr><td>Norm</td><td>Constraints</td></tr>
+      <tr><td>Occurrence</td><td>Events</td></tr>
+      <tr><td>Relation</td><td>Relationships + Coordination Patterns</td></tr>
+    </tbody>
+  </table></div>
+  <p>All seven primitives are consumed across the eight layers, and no eighth primitive was introduced to make the mapping work. Where a primitive feeds more than one layer — Condition into Facets and States, Context into Facets and Constraint scope, Relation into Relationships and Coordination Patterns — that fan-out happens only because the primitive plays a genuinely distinct semantic role in each case, not because a layer needed content borrowed from elsewhere.</p>
+
+  <h3>What was actually established for each layer</h3>
+  <div class="bgrid">
+    <div class="bcard">
+      <h4>1 · Facets</h4>
+      <div class="chain">Facet = axis <span class="sep">≠</span> value on it</div>
+      <p class="expl">The independent dimensions along which a Condition or Context can be characterised — lifecycle stage, capability type, health dimension, shelter condition, sector/modality/phase, and similar. A facet is the axis, not the value held on it; where evidence did not support a concrete value set, none was invented — value population is left to configuration and further review rather than frozen prematurely.</p>
+    </div>
+    <div class="bcard">
+      <h4>2 · Entities</h4>
+      <div class="chain">Persistent, independently identified</div>
+      <p class="expl">The domain things that must be tracked and re-identified across encounters in their own right — Person, Household, Family, Community, Case, Organisation, Programme, Donor, Government body, Service Provider, and emergent community actors. Following governance review, Organisation and Programme are modelled as two distinct Entities connected by an <code>operates</code> relation, not one collapsed actor, so that programme-specific eligibility, funding, and activity rules attach to the right one.</p>
+    </div>
+    <div class="bcard">
+      <h4>3 · Relationships</h4>
+      <div class="chain">Between independent concepts</div>
+      <p class="expl">Connections between independent domain concepts — kinship, dependency, guardianship, responsibility, referral, and similar. The Relation primitive is kept distinct from broader relationship families and specific relationship types. A characteristic that belongs to one thing alone — a person's own health condition, for instance — is not a Relation; that boundary between structural inherence and an ordinary Relation is enforced explicitly, so a dependency effect (one person's risk affecting another) is represented without silently building automatic inference between people into the ontology (see §4).</p>
+    </div>
+    <div class="bcard">
+      <h4>4 · Constraints</h4>
+      <div class="chain">Norm = rule <span class="sep">·</span> Context = scope</div>
+      <p class="expl">What is permitted, required, or valid (a Norm), paired with where or within what frame that rule applies (a Context). Consent and its bounded necessity exception, safeguarding precedence, eligibility gates, and funding restrictions are all represented this way. This layer states what is allowed — it does not sequence how anyone acts on it.</p>
+    </div>
+    <div class="bcard">
+      <h4>5 · States</h4>
+      <div class="chain">Facet = axis <span class="sep">·</span> State = value held</div>
+      <p class="expl">The values a Condition takes and how they change over time — health, capability, shelter condition, vulnerability, need severity, and comparable dimensions. Outcome and Impact are represented here too, deliberately without asserting that they universally belong to, or are owned by, the Human Subject — who owns outcome measurement remains a context-dependent modelling question, not a fixed rule.</p>
+    </div>
+    <div class="bcard">
+      <h4>6 · Events</h4>
+      <div class="chain">Occurrence <span class="sep">≠</span> State</div>
+      <p class="expl">Bounded happenings — registration, verification, a referral, a delivery, a displacement. An Occurrence may span a period of time; it is not limited to a single instant. An Occurrence is complete once it has happened, and anything that remains true afterward is represented as the State it produced, changed, or ended — never as a property of the Occurrence itself.</p>
+    </div>
+    <div class="bcard">
+      <h4>7 · Cognition</h4>
+      <div class="chain">Unknown <span class="sep">≠</span> False</div>
+      <p class="expl">The layer carrying epistemic information rather than facts about the world: claims, the evidence that grounds or challenges them, confidence, contradiction, missing information, and verification status. Cognition never asserts first-order humanitarian reality — "this household is destitute" is a State; "we have not yet verified this" is Cognition. No specific database or schema representation is prescribed by the ontology.</p>
+    </div>
+    <div class="bcard">
+      <h4>8 · Coordination Patterns</h4>
+      <div class="chain">Shape <span class="sep">≠</span> procedure</div>
+      <p class="expl">Recurring structural shapes involving more than one party over time — a handoff, a referral, a reassessment loop, a grievance channel. A pattern describes which kinds of parties, relationships, states, and events recur together, and under what constraints. It never specifies execution order, task routing, automation instructions, or hidden causal inference — those remain downstream architecture concerns.</p>
+    </div>
   </div>
-  <p>All seven primitives are consumed across the eight layers, and no layer introduces a category absent from the primitive set. Condition and Context each feed more than one layer by design — Condition separates the <em>dimension</em> something varies along (Facets) from the <em>value</em> it holds at a given time (States), which makes visible that the domain currently has many dimensions and comparatively few populated values.</p>
+
   <div class="note warn">
     <div class="lbl">Where the layers are strongest and weakest</div>
     <p>Layers describing how organisations operate — Constraints, Events, Coordination Patterns — are the best evidenced. Layers describing people directly — States, social Relationships, human Facets — were historically the thinnest, until ground-truth practitioner review (§5) substantially strengthened them.</p>
@@ -270,6 +336,7 @@
     <div class="card"><h4>Non-linearity</h4><p>Every multi-stage pattern supports re-entry to an earlier stage as ordinary, not exceptional</p></div>
     <div class="card"><h4>Dignity as constraint</h4><p>Dignity is represented as a standing rule on how content may be used — never as a score</p></div>
     <div class="card"><h4>Outcome/Impact vs. closure</h4><p>Whether a case is closed and whether it worked are kept as distinct representations</p></div>
+    <div class="card"><h4>Relation vs. Condition-inherence</h4><p>A dependency cascade (e.g., a risk in one household member affecting another) is represented as each person holding their own Condition, connected by a Relation. Inferring one Condition from another automatically is downstream reasoning — it is not embedded in the ontology</p></div>
   </div>
   <div class="note">
     <div class="lbl">Implementation quarantine</div>
@@ -280,7 +347,7 @@
 <section id="s5">
   <h2><span class="n">5</span> Ground Truth Reviews</h2>
   <p class="lede">The foundation was tested against real practitioner accounts, not left as a theoretical construction.</p>
-  <p>A structured review matrix covering every primitive, layer, pillar, and domain-bearing architecture rule — plus every previously named open question — was put to practitioners across field operations, MEAL/information management, and programme coordination. Each response was recorded against a fixed vocabulary (Confirmed, Challenged, Refined, Missing, Context-dependent, Unresolved, Not assessable) rather than folded into a predetermined narrative.</p>
+  <p>A structured review matrix covering every primitive, layer, pillar, and domain-bearing architecture rule — plus every previously named open question — was tested against practitioner input spanning three perspectives: field operations and casework, MEAL/information management, and programme coordination. A single conversation could speak to more than one review item, so the 47 records below are individually attributed review outcomes, not a count of separate practitioner sessions. Each was recorded against a fixed vocabulary (Confirmed, Challenged, Refined, Missing, Context-dependent, Unresolved, Not assessable) rather than folded into a predetermined narrative.</p>
   <div class="numgrid">
     <div class="numcard"><div class="num">47</div><div class="lab">Review Records</div></div>
     <div class="numcard"><div class="num">29</div><div class="lab">Confirmed</div></div>
@@ -292,10 +359,14 @@
       <tr><td>Confirmed</td><td>29</td><td>Practitioner evidence matched the existing structural interpretation</td></tr>
       <tr><td>Refined</td><td>15</td><td>The interpretation held, with a stated qualification or added specificity</td></tr>
       <tr><td>Challenged</td><td>2</td><td>Evidence conflicted with the existing interpretation and was carried to governance</td></tr>
-      <tr><td>Unresolved</td><td>1</td><td>Evidence was insufficient to settle the question either way</td></tr>
+      <tr><td>Unresolved at Ground Truth stage <span class="tag t-ok" style="margin-left:6px">subsequently resolved</span></td><td>1</td><td>At the practitioner-review stage, this one question could not be settled from the available evidence alone. It was resolved afterward through governance review (§7) and is <strong>not</strong> an unresolved item in the final ontology.</td></tr>
     </tbody>
   </table></div>
-  <p>The two challenged items both concerned whether Organisation and Programme should be treated as one actor or two — practitioners consistently described them as distinct, which was carried into governance (§7). The one unresolved item concerned the dual-clock separation of a person's life trajectory from their administrative status, where the evidence offered was compatible with, but did not conclusively establish, the proposed rule (although this was subsequently resolved via later governance).</p>
+  <div class="note ok">
+    <div class="lbl">Historical record vs. final status</div>
+    <p>The count above is the practitioner-review record, preserved as-is. It is not the same thing as the current ontology status: every item that was Challenged or Unresolved at this stage was subsequently given an explicit disposition in Governance (§7) — either fully resolved, or adopted as a clearly labelled governed-provisional item. Nothing from this table remains an open ontology question today.</p>
+  </div>
+  <p>The two challenged items both concerned whether Organisation and Programme should be treated as one actor or two — practitioners consistently described them as distinct, which was carried into governance (§7) and resolved there. The one item recorded as unresolved at this stage concerned the separation of a person's life trajectory from their administrative status: the practitioner evidence offered was compatible with the proposed rule but did not, on its own, conclusively establish it. Governance (§7) subsequently closed that gap; in the final ontology it is a resolved distinction, not an open question.</p>
   <p>The result of this stage is not primarily the count. It is that the foundation was deliberately exposed to disconfirmation, and where it was found wanting, that finding was carried forward rather than smoothed over.</p>
 </section>
 
@@ -311,6 +382,7 @@
         <li>Compound vulnerability as an emergent, context-shaped condition rather than a fixed formula</li>
         <li>The open-world commitment: unknown information preserved as unknown, not treated as false</li>
         <li>Non-linearity and altitude qualification, both independently confirmed by practitioners</li>
+        <li>Kinship, dependency, guardianship, and responsibility relationships — previously resting on the founding business document alone with no external corroboration, now confirmed by direct practitioner testimony, closing what had been the least-evidenced content in the ontology</li>
       </ul>
     </div>
     <div class="col d">
@@ -337,13 +409,13 @@
       <tr><td>Risk classification</td><td>Risk is a Condition — dispositional, future-oriented, carrying horizon/trend/severity. Confidence about a risk assessment is separately an Epistemic Stance.</td><td><span class="tag t-ok">Resolved</span></td></tr>
       <tr><td>Need classification</td><td>Need is a Condition with its own lifecycle (opens, changes severity, resolves). The basic-wellbeing standard it is measured against is a Norm, not a persisting thing a Relation could connect to.</td><td><span class="tag t-ok">Resolved</span></td></tr>
       <tr><td>Primitive definition</td><td>A Domain Primitive is a category of concept, not a concrete irreducible — ratifying the reading already used since Stage 1.</td><td><span class="tag t-ok">Resolved</span></td></tr>
-      <tr><td>Option A closure items</td><td>Need-interactions, Service Provider agency, Outcome/Impact ownership, Funder altitude, Case orchestration — adopted for current modelling on single-source evidence.</td><td><span class="tag t-warn">Governed provisional</span></td></tr>
-      <tr><td>CCR-7 Temporal Perspectives</td><td><em>(Historical note: Originally retained as an unresolved, non-mandatory hypothesis due to lack of GT evidence.)</em><br><br><strong>Current Status:</strong> Subsequent dedicated CCR-7 analysis and G2 governance resolved the temporal question through one temporal foundation with multiple temporal perspectives. The resolution preserves the distinction between human/life/situation trajectories and administrative/programme engagement without mandating two mechanical clocks or introducing a new primitive, layer, or pillar.</td><td><span class="tag t-ok">Resolved</span></td></tr>
+      <tr><td>Five provisional modelling items <span class="tag t-none" style="margin-left:6px">not blockers</span></td><td>Need-interactions, Service Provider agency, Outcome/Impact ownership, Funder altitude, and Case orchestration are each workable for current modelling, but each rests on a single practitioner account. They are adopted as the working answer, flagged for broader corroboration over time, and reopen only with new evidence or an explicit new ruling — not silently.</td><td><span class="tag t-warn">Governed provisional</span></td></tr>
+      <tr><td>Life-trajectory vs. administrative status</td><td>A person's life/situation trajectory and their administrative/programme engagement are semantically distinct and must never collapse into one combined status (Case Closed ≠ Need Resolved; Programme Ended ≠ Vulnerability Ended). This is represented using existing <code>Condition</code> and <code>Context</code> semantics — one underlying temporal foundation, interpreted through multiple perspectives. No independent mechanical clocks, and no new primitive, layer, or pillar, are introduced.</td><td><span class="tag t-ok">Resolved</span></td></tr>
     </tbody>
   </table></div>
-  <div class="note warn">
-    <div class="lbl">What governance does not do</div>
-    <p>A governed-provisional ruling is a modelling accommodation, not proof that the underlying domain proposition is empirically settled. <em>(Historical note: The dual-clock rule was originally preserved as unresolved and non-foreclosing. It has since been formally resolved via a new G2 explicit ruling, which confirms one temporal foundation with multiple semantic perspectives, without mandating independent mechanical clocks.)</em></p>
+  <div class="note ok">
+    <div class="lbl">Reading this table</div>
+    <p>Every row above is closed for architecture purposes: either <strong>Resolved</strong> outright, or <strong>Governed provisional</strong> — meaning the ontology has a stated, working answer for current use, explicitly flagged as resting on thinner evidence than the rest of the foundation. Neither status is an open blocker. Nothing in this table is waiting on a decision before downstream work can proceed.</p>
   </div>
 </section>
 
@@ -414,7 +486,6 @@
         <li>A complete funding-restriction taxonomy</li>
         <li>Whether the set of humanitarian situations is open or closed</li>
         <li>Broader corroboration of governed-provisional items (§6–7)</li>
-        <li><del>Resolution of the dual-clock rule (CCR-7)</del> <i>(Historically missing; now formally resolved)</i></li>
       </ul>
     </div>
     <div class="col f">
@@ -426,6 +497,7 @@
         <li>Architecture rules governing composition and extension</li>
         <li>Organisation/Programme, Risk, and Need classifications</li>
         <li>The open-world and human-oversight commitments</li>
+        <li>The separation of a person's life trajectory from their administrative status — one temporal foundation, multiple perspectives, no independent clocks required</li>
       </ul>
     </div>
   </div>
@@ -476,23 +548,7 @@
 </section>
 
 <section id="s14">
-  <h2><span class="n">14</span> Next Phase</h2>
-  <p class="lede">What follows this milestone.</p>
-  <div class="flow">
-    <div class="step"><span class="k">STAGE</span><span class="t">Ontology Design</span><span class="s">✓ Complete</span></div>
-    <div class="arrow">→</div>
-    <div class="step"><span class="k">STATE</span><span class="t">Foundational Ontology</span><span class="s">✓ Frozen / Minimum Sufficient</span></div>
-    <div class="arrow">→</div>
-    <div class="step"><span class="k">NEXT</span><span class="t">Architecture Design</span><span class="s" style="color:var(--accent)">→ Next</span></div>
-  </div>
-  <div class="note">
-    <div class="lbl">Governing principle</div>
-    <p>Architecture must be designed from the ontology, not by redefining the ontology to accommodate implementation decisions. Where architecture appears to require a foundational change, that change is raised explicitly as a request against this ontology, not made silently downstream.</p>
-  </div>
-</section>
-
-<section id="s15">
-  <h2><span class="n">15</span> Traceability</h2>
+  <h2><span class="n">14</span> Traceability</h2>
   <p class="lede">Where the material behind this update lives in the repository.</p>
   <div class="tw"><table>
     <thead><tr><th>Area</th><th>Location</th></tr></thead>
