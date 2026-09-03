@@ -152,7 +152,7 @@ representable only because this category exists.
 Irreducible because ontological persistence cannot be produced from the others. RM §3.1 states that every promise about longitudinal reasoning rests on it (a person is a persistent entity). RM §3.5's fairness principle and RM §2's duplicate-registration problem both reduce to it.
 
 *Evidence:* RM §3.1, §4.1–4.5, §11.1; Stage 5 GT-P4, GT-OQ1.
-*Boundary:* something that is never tracked in its own right across encounters is not an Entity — it is a Condition of something that is.
+*Boundary:* an Entity is a distinct, identifiable thing capable of persisting as the same referent across relevant contexts or encounters. Whether a system currently tracks, records, funds, or reports it is not what makes it an Entity — that is an implementation fact, not an ontological one. Tracking behaviour can be *evidence* that something is being treated as an Entity, but it does not define Entityhood. Something that cannot persist as an independent referent — because it has no identity apart from what it characterises — is not an Entity; it is a Condition of something that is.
 *Note on Identity:* "Identity" is the epistemic construct (how we track and re-identify an Entity), not the fundamental category of reality itself. Identity verification and identity evidence are relations and epistemic stances about an Entity. Note that identifiers (phone, national ID, internal ID) are means of reference grounding identity evidence; they are not ontologically frozen as Attributes or database fields, nor are they the Person Entity itself. This confirms the practitioner's "beneficiary card ≠ person" distinction (GT-P4, GT-OQ1), which the existing Person/Case separation satisfies.
 
 ### P5 — Norm

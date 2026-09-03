@@ -1,5 +1,7 @@
 # TASK-6-FINAL-ONTOLOGIST-ONLY-CLOSURE-AUDIT
 
+> **Historical snapshot notice.** This document records the findings and verdict reached at this specific point in the Stage-1–7 closure process. It has been superseded by later documents in the same sequence (see `TASK-6B-FINAL-ONTOLOGY-CLOSURE-VERIFICATION.md` and `ONTOLOGY-FOUNDATIONAL-BASELINE-v1.0.md` for the current, authoritative closure status). Retained verbatim for audit traceability; do not treat any verdict stated here as the current status of the ontology.
+
 ## 1. Audit Purpose
 To conduct a final independent closure audit of the Khidmat Humanitarian Domain Ontology strictly from the perspective of a senior ontology engineer / domain ontologist, determining whether all foundational ontology design work is genuinely complete and semantically closed, independent of previous audit conclusions.
 

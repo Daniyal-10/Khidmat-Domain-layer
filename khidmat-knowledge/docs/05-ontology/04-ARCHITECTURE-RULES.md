@@ -378,7 +378,7 @@ named, empty extension point in the relevant layer/pillar. The stub carries no i
 *Source:* `01-DOMAIN-PRIMITIVES.md` §5.2 (giving side introduces no new primitive);
 `02-ONTOLOGY-LAYERS.md` §3.3, §8.5, §9.4.
 
-**UHR-2 — Composition-function parameterization.** Where a composition rule is domain-real but unevidenced (vulnerability composition, compound risk composition), the architecture represents it as a named, versioned function attached to the relevant State, parameterized for Stage 5. It is NOT hard-coded as additive, multiplicative, or threshold-based because the sources do not provide a math formula.
+**UHR-2 — Composition rule provisionality.** Where a composition rule is domain-real but unevidenced (vulnerability composition, compound risk composition), the ontology treats it as an explicitly provisional, Source-Absent Parameter attached to the relevant State — never as a hard-coded additive, multiplicative, or threshold-based rule, because the sources do not provide a formula. Insufficient evidence must not silently become a universal ontological rule. How this provisional parameter is eventually represented — as a function, a configuration, a model, or otherwise — is a downstream architecture decision and is explicitly out of ontology scope; this rule constrains only the ontology's semantic commitment (i.e., that no composition rule is asserted), not its implementation.
 *Source:* RM §8.4; `02-ONTOLOGY-LAYERS.md` §6.3.
 
 **UHR-3 — Disputed ownership tagging.** (Historical). This rule previously tagged Coordination Patterns whose ownership was genuinely undecided (e.g., outcome/impact measurement) as `ownership: pending`. This tension has been structurally resolved (delegated to architecture); the tag is no longer active.

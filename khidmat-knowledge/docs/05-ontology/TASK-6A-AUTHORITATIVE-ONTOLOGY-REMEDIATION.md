@@ -57,7 +57,9 @@ The ontology now outlines a pure semantic requirement. It does not prescribe any
 > "...identifiers (phone, national ID, internal ID) are means of reference grounding identity evidence; they are not ontologically frozen as Attributes or database fields..."
 
 **Confirmation:**
-No "Identity" primitive was introduced. Identifiers are preserved as a means of referring to an Entity, while the Sameness Claim remains an epistemic stance, correctly separating administrative records from the humanitarian reality of a Person.
+No "Identity" primitive was introduced. Identifiers are preserved as a means of referring to an Entity. The Sameness Claim — the assertion that two references denote the same Entity — is a Claim (Cognition), and the confidence held in that claim is a separate Epistemic Stance evaluating it; the claim itself is not the stance. This correctly separates administrative records from the humanitarian reality of a Person.
+
+> **Post-hoc correction notice (added for traceability, does not alter the historical record above):** The original wording of this section read *"the Sameness Claim remains an epistemic stance,"* which collapsed the Claim and the Epistemic Stance evaluating it into one construct. This was inconsistent with the identity chain later formalized in `TASK-6B-FINAL-ONTOLOGY-CLOSURE-VERIFICATION.md` §4 and `ONTOLOGY-FOUNDATIONAL-BASELINE-v1.0.md` §5: **Identifier/Reference ≠ Sameness Claim ≠ Epistemic Stance**. The text above has been corrected to match the authoritative chain. This notice is added so the document is not read as endorsing the superseded wording, per this repository's discipline of preserving historical text while making current status unmistakable (see README Standing Rule 1–2).
 
 ## 7. Cross-Document Consistency
 

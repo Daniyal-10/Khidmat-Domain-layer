@@ -38,7 +38,7 @@ The pillars are derived systematically:
 ### Pillar II: Context & Environment
 **What domain reality it represents:** The physical, economic, and temporal world a household lives in, which changes the meaning and severity of any given condition.
 **Layers contributing:** Facets (Context dimensions), Constraints (Applicability bounds), Entities (Community).
-**Supporting primitives:** Context (P2).
+**Supporting primitives:** Context (P2), Entity (P4). *Community appears here as an Entity (independently identifiable and persistent as a social grouping — see `02-ONTOLOGY-LAYERS.md` §3.1) situated within an environmental Context; the two primitives are not interchangeable and both are required to trace this pillar's content correctly. Where "community" is used loosely as a contextual/social frame rather than as the tracked grouping itself, that usage is Context (P2) only.*
 **RM concepts within it:** Geography, Seasonality, Hazard, Local Economy, Distance to services, Settlement type.
 **Why it is a pillar:** It scopes reality. The same damaged roof is a minor repair or an emergency depending on the season and location. It provides the frame within which all other pillars operate.
 **Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific administrative boundaries or monsoon seasons) will specialize the context dimensions, but Context itself is universal.
@@ -77,7 +77,7 @@ The pillars are derived systematically:
 **Layers contributing:** Events (Occurrences), Coordination Patterns (Loops, Handoffs, Altitude coupling), Constraints.
 **Supporting primitives:** Occurrence (P6), Relation (P7), Context (P2), Norm (P5).
 **RM concepts within it:** Registration, Verification, Delivery, Follow-up, Handoffs, Case Journey, Grievance loops, Reassessment, Verification events.
-**Why it is a pillar:** It tracks actual interventions in the world. It is a pillar because it synthesizes actors, subjects, and needs into sequenced shapes. It adheres to the RM §12 quarantine: actions are things done *to* reality.
+**Why it is a pillar:** It tracks actual interventions in the world. It is a pillar because it synthesizes actors, subjects, and needs into recurring configurations of relations, states, and occurrences over time — not into a workflow or execution sequence. It adheres to the RM §12 quarantine: actions are things done *to* reality, and per LCR-7 a Coordination Pattern names shape only (which party types, relationships, states, and events recur together) and never task order, routing, or automation instruction.
 **Boundary:** Universal.
 **What remains outside:** The static entities and the resources themselves.
 
@@ -99,7 +99,7 @@ The pillars consume the entire ontology stack without gaps:
 | Pillar | Primitives | Primary Layers |
 |---|---|---|
 | **I. Human & Social Subject** | Entity, Relation, Condition, Norm | Entities, Relationships, States, Constraints |
-| **II. Context & Environment** | Context | Facets, Constraints |
+| **II. Context & Environment** | Context, Entity | Facets, Constraints, Entities |
 | **III. Vulnerability & Need** | Condition, Relation | States, Facets, Relationships |
 | **IV. Epistemics & Knowledge** | Epistemic Stance, Norm | Cognition, Entities, Constraints |
 | **V. Actors & Ecosystem** | Entity, Relation, Norm | Entities, Relationships, Constraints |
