@@ -36,7 +36,7 @@ Every layer names the primitive it derives from. Nothing appears in a layer that
 |---|---|---|
 | **1 Facets** | **Condition** (P1) + **Context** (P2) | The dimensions along which conditions vary and contexts are delimited |
 | **2 Entities** | **Entity** (P4) | Things that persist and must be re-identified |
-| **3 Relationships** | **Relation** (P7) | Connections between entities |
+| **3 Relationships** | **Relation** (P7) | Connections between independent concepts |
 | **4 Constraints** | **Norm** (P5), scoped by **Context** (P2) | What is permitted, required or valid — and where it holds |
 | **5 States** | **Condition** (P1) | Values a condition takes across a span, and their transitions |
 | **6 Events** | **Occurrence** (P6) | What happened at a point |
@@ -150,8 +150,9 @@ sub-kinds and lifecycle are absent.
 
 **Derives from:** Relation (P7)
 
-**What it holds.** Connections between entities. A relationship requires two persisting things;
-anything true of one thing alone is a State.
+**What it holds.** Connections between independent domain concepts (e.g., Entity ↔ Entity, Entity ↔ Occurrence, Occurrence ↔ Occurrence, concepts serving an evidential role ↔ Claim). A relationship requires two independent concepts; anything true of one thing alone is a State.
+
+The ontology clearly distinguishes the foundational primitive (**Relation**) from broad semantic groupings (**Relation Families**, e.g., Kinship, Dependency, Temporal Succession), specific **Relation Types** (e.g., Parent, Guardian, Precedes), and concrete **Relation Instances** connecting specific domain objects.
 
 ### 4.1 Relationships
 
@@ -167,6 +168,10 @@ anything true of one thing alone is a State.
 | Operates | Organisation ↔ Programme | Stage 7 G1 | **Strong** — Stage 7 G1 split |
 | Handoff of a service | Capability ↔ Capability | RM §12.3 | **Strong** — BD-TD05-003 |
 | Adoption of a family | Donor ↔ Household | RM §16.4 | **None** — absent from every source |
+| Participation / Agency | Entity ↔ Occurrence | RM §11, §12 | **Moderate** — Stage 5 (GT-OQ15, GT-OQ19) |
+| Temporal Succession (precedes, follows, overlaps; never causation) | Occurrence ↔ Occurrence | RM §12.4 | **Strong** — BD-TD03-002 |
+| Evidence Support / Challenge | Evidential concept ↔ Claim | RM §10.2 | Blueprint |
+| Programmatic Participation / Funding | Entity ↔ Programme | RM §11.1, §11.4 | **Strong** — Stage 7 G1 split, BD-TD02-003 |
 
 ### 4.2 The asymmetry this layer must not conceal
 

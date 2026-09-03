@@ -85,7 +85,7 @@ audit trail: each answer can be checked against its source.
 | Reference-model concepts | Kind-answer reached |
 |---|---|
 | Person (§3.1) · Family (§4.1) · Household (§4.2) · Community (§4.4) · Organisation, Programme, Donor, Government (§11.1) · Emergent groups (§4.5) | that which exists and persists as a distinct whole |
-| Parent, child, guardian, spouse, caregiver (§4.1) · dependency (§4.1) · responsibility (§4.1) · household membership (§4.3) · referral (§12.1) · adoption of a family (§16.4) · evidence grounding a belief (§10.2) | a connection between things that persist |
+| Parent, child, guardian, spouse, caregiver (§4.1) · dependency (§4.1) · responsibility (§4.1) · household membership (§4.3) · referral (§12.1) · adoption of a family (§16.4) · evidence grounding a belief (§10.2) | a connection between independent domain concepts |
 | Lifecycle stage (§3.3) · capabilities (§3.4) · health, disability, malnutrition (§3.5) · wellbeing (§3.6) · shelter condition, utilities (§4.2) · household resilience (§4.2) · need (§7.1) · vulnerability (§8.4) · engagement stage (§14.2) · outcome (§15.2) · documentation status (§3.2) | that which is true across a span, and can change |
 | Registration, verification visit, delivery, referral, follow-up (§12.1) · displacement, death, job loss (§6) · a shock absorbed (§4.2) · complaint raised (§12.6) · document/testimony generation (§10.2) | that which happened at a point |
 | Claim vs finding (§10.1, §10.3) · confidence (§10.4) · uncertainty, contradiction, missing information (§10.5) · epistemic weight of a registrant (§10.1) | the warrant the system holds for what it asserts |
@@ -124,8 +124,7 @@ setting becomes a claim about all settings — the failure RM §2.2 names as str
 domain.
 
 *Evidence:* RM §2.2, §5.1–5.4, §4.3, §11.4.
-*Boundary:* Context frames; it does not participate. A geographic area that is itself tracked,
-funded and reported on has crossed into Identity. Context stops short of the rule it scopes —
+*Boundary:* Context primarily frames and scopes concepts and rules, and should not be modeled as an ordinary P7 Relation merely to express that scoping. A geographic area that is itself tracked, funded and reported on has crossed into Entity. Context stops short of the rule it scopes —
 the scope is Context, the rule is a Norm.
 
 *Load-bearing note:* RM §11.4's programme/case altitude split classifies here. This is what
@@ -179,14 +178,14 @@ Irreducible because a bounded happening and an ongoing condition do not derive f
 *Boundary:* an occurrence is complete when it has finished happening. Anything that continues to be true afterwards is the Condition it established, changed, or ended — not the occurrence itself.
 
 ### P7 — Relation
-**A connection between things that persist.**
+**A semantic connection between independent domain concepts (such as Entities, Occurrences, or concepts serving an evidential role).**
 
-Irreducible because a relation holds *between* entities and cannot be reduced to a property of
+Irreducible because a relation holds *between* independent concepts and cannot be reduced to a property of
 either. RM §4.1's central finding — that vulnerability cascades along dependency, *"a mother's
 risk is her infant's risk"* — is a statement that can only be made if connection is a category.
 
 *Evidence:* RM §4.1, §4.3, §12.1, §16.4.
-*Boundary:* a relation requires two persisting things. Something true of one thing alone is a
+*Boundary:* a relation requires two independent concepts. Something true of one thing alone is a
 Condition.
 
 ---
@@ -298,7 +297,7 @@ RM §7.1 defines a need as **a gap between current state and a basic standard**.
 
 Because of this relational definition, Need initially appears to classify as a Relation. However, once instantiated as a tracked domain object in humanitarian reality, a Need is experienced by the beneficiary as a state of deprivation that opens, persists, worsens, improves, and resolves. 
 
-**Resolution:** Need is fundamentally a **Condition**. Its semantic definition involves a gap (a relational concept), but as an ontological entity that the system tracks over time with severity and a lifecycle, it is a Condition of the beneficiary. Classifying it as a Relation would distort its temporal behavior, since a Relation connects things that persist rather than having a severity lifecycle of its own.
+**Resolution:** Need is fundamentally a **Condition**. Its semantic definition involves a gap (a relational concept), but as an ontological entity that the system tracks over time with severity and a lifecycle, it is a Condition of the beneficiary. Classifying it as a Relation would distort its temporal behavior, since a Relation connects independent concepts rather than having a severity lifecycle of its own.
 
 ---
 

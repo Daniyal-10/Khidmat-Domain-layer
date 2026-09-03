@@ -59,7 +59,7 @@ Relation reading. But two structural facts foreclose it:
    something across a span of time, and which can change while what it is true of persists").
    A Relation has no such lifecycle of its own; it holds or it doesn't.
 2. **Need's own primitive boundary rule forecloses Relation.** P7 (Relation) requires "a
-   connection between things that persist" (`01-DOMAIN-PRIMITIVES.md` §4, P7). The counterpart
+   connection between independent domain concepts" (`01-DOMAIN-PRIMITIVES.md` §4, P7). The counterpart
    Need is measured against — "a basic standard of wellbeing" — is a **Norm** (RM §3.6;
    `03-ONTOLOGY-PILLARS.md` §8 item 10 itself classifies the wellbeing standard as a
    Context-scoped Norm), not a persisting Entity. A Norm is not the kind of thing Relation
@@ -179,9 +179,7 @@ named primitive.
 on that axis at a point in time is a State. The two are never merged into one entry.
 *Source:* `02-ONTOLOGY-LAYERS.md` §2 vs §6; RM §16.5.
 
-**LCR-3 — Context framing rule.** Context scopes and frames; it does not itself hold state or
-act as a party to a relationship. A frame that is itself tracked, funded, and reported on has
-become an Entity.
+**LCR-3 — Context framing rule.** Context primarily frames and scopes concepts and rules, and should not be modeled as an ordinary P7 Relation merely to express that scoping. A frame that is itself tracked, funded, and reported on has become an Entity.
 *Source:* `01-DOMAIN-PRIMITIVES.md` P2 boundary.
 
 **LCR-4 — Norm/Context pairing rule.** A rule binding in one scope and not another is one
@@ -198,13 +196,19 @@ may be phrased as a first-order claim about reality.
 
 **LCR-7 — Coordination Pattern shape-only rule.** A pattern names which party types,
 relationships, states, and events recur together, and which constraints and confidence
-thresholds apply. It never specifies execution order, task routing, or automation instruction.
+thresholds apply. It never specifies execution order, task routing, automation instruction, or hidden inference / causal derivation.
 *Source:* `02-ONTOLOGY-LAYERS.md` §9; RM §12 (action quarantine); README Standing Rule 4.
 
 **LCR-8 — Open-world default.** Where a State's value is unknown, the correct representation is
 an explicit "unknown" Cognition entry referencing that State — never a default value or an
 omitted field treated as negative.
 *Source:* `02-ONTOLOGY-LAYERS.md` §8.2; RM §10.5.
+
+**LCR-9 — Inherence of Condition.** When a Condition characterizes a bearer, that characterization is structural inherence, not a Relation (P7). A Relation connects two independent concepts, whereas a Condition cannot exist independently of what it characterizes.
+- *Entity Dependency:* Represented via a P7 Relation (e.g., Person A depends on Person B).
+- *Condition Cascade:* The domain's dependency-based cascade (e.g., "a mother's risk is her infant's risk") is represented by each entity structurally bearing its own inherent Condition, with a P7 Relation between the entities. The ontology provides the structural capacity to record both risks, but the automated inference of one from the other belongs to downstream reasoning/business logic, not embedded in the ontology or Coordination Patterns.
+- *Condition Influence:* Causal or influence assertions (e.g., Condition A caused Condition B) are represented as Claims (Layer 7 Cognition) evaluated by an Epistemic Stance, or deferred to downstream reasoning. They are not modeled as first-order P7 Relations, nor embedded in Coordination Patterns (which only describe recurring non-inferential shapes).
+*Source:* `01-DOMAIN-PRIMITIVES.md` P1 boundary, P7 boundary; RM §4.1.
 
 ### 4.3 Pillar Boundary Rules (PBR)
 
