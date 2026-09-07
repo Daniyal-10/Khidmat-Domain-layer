@@ -2,6 +2,8 @@
 
 **Ontology Design, step 5 of 7.** Status: **Framework established — zero reviews conducted.**
 
+> **Historical snapshot notice.** The status line above ("zero reviews conducted") and every statement in this document describing the review process as not-yet-started reflect the state of the repository *at the time this framework was authored*, before Stage 5 practitioner reviews were carried out. This document is retained for audit and methodological traceability. It has since been superseded in practice: 47 completed Ground Truth review records (`GT-*-R1.md`) now exist, and their findings have been carried through Stage 6 evidence integration (`06-STAGE-6-EVIDENCE-INTEGRATION-REPORT.md`) and Stage 7 governance (`07-STAGE-7-GOVERNANCE-DECISIONS.md`). Do not read this document's "zero reviews" language as describing the current repository state — see `docs/06-review-package/ONTOLOGY-DESIGN-COMPLETION-UPDATE.html` for current status.
+
 Derived from `01-DOMAIN-PRIMITIVES.md`, `02-ONTOLOGY-LAYERS.md`, `03-ONTOLOGY-PILLARS.md`,
 `04-ARCHITECTURE-RULES.md`, and `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md`.
 

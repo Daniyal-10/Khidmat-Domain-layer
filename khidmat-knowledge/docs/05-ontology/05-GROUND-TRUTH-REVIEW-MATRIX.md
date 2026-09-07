@@ -2,6 +2,8 @@
 
 **Ontology Design, step 5 of 7.** Status: **Every item below is `NOT YET REVIEWED`.**
 
+> **Historical snapshot caveat on the header above.** The literal "Status" column values in the tables below have been updated in place to reflect actual Stage 5 findings (CONFIRMED / REFINED / CHALLENGED / UNRESOLVED) and are current. Only the document's introductory "Status:" line and §0 framing language, which describe the pre-review state, are historical — retained as originally authored rather than edited, per this repository's no-silent-rewrite discipline.
+
 Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`. Recorded per item using
 `05-GROUND-TRUTH-REVIEW-RECORD-TEMPLATE.md` once genuine practitioner evidence exists.
 
