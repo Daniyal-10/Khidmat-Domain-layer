@@ -182,16 +182,17 @@ on that axis at a point in time is a State. The two are never merged into one en
 **LCR-3 — Context framing rule.** Context primarily frames and scopes concepts and rules, and should not be modeled as an ordinary P7 Relation merely to express that scoping. A frame that is itself tracked, funded, and reported on has become an Entity.
 *Source:* `01-DOMAIN-PRIMITIVES.md` P2 boundary.
 
+**LCR-3a — Entity/Context dual-role rule.** The same real-world thing can legitimately be represented as an Entity in one part of the ontology and participate as Context in another, without this being a primitive violation or a duplicate classification — these are two different *roles*, not two competing classifications of the same fact. Example: "District X" is an Entity (independently identifiable, persisting, potentially tracked as a service-coverage area). "District X as the geographic context of Assessment Y" is District X's Entity participating in a Context role that scopes how Assessment Y's findings are interpreted. The rule for telling these apart: if the thing is being asked *"what is true of this, independently?"* it is functioning as an Entity; if it is being asked *"relative to what frame does this other statement hold?"* it is functioning as Context. A single concept may answer to both questions in different parts of the model — this is expected, not an error, and does not require inventing a second Entity or a second primitive.
+*Source:* `01-DOMAIN-PRIMITIVES.md` P2 and P4 boundaries; `03-ONTOLOGY-PILLARS.md` Pillar II (Community as Entity vs. Context, see LCR-3a companion note there).
+
 **LCR-4 — Norm/Context pairing rule.** A rule binding in one scope and not another is one
 Constraint (Norm) plus one Context — never two Constraints.
 *Source:* `01-DOMAIN-PRIMITIVES.md` P5 boundary; `02-ONTOLOGY-LAYERS.md` §5.
 
-**LCR-5 — Event completion rule.** An Event is complete once it has finished happening. Anything still true afterward is the State it established, changed, or ended, not a property of the Event.
+**LCR-5 — Event completion rule.** Duration does not distinguish an Event from a State — an Event may be instantaneous or span a bounded period (an assessment, a displacement, a delivery process). The discriminator is completion versus persistence: an Event is complete once it has finished happening and becomes a closed, dateable episode not itself re-examinable; a State remains open to being re-examined and found to still hold, or not, at any later point. Anything still true, or still askable-about, after an Event ends is the State it established, changed, or ended — not a property of the Event. Where a phenomenon has both a finished episode and an ongoing consequence, both are represented separately, never collapsed into one object.
 *Source:* `01-DOMAIN-PRIMITIVES.md` P6 boundary; `02-ONTOLOGY-LAYERS.md` §7.
 
-**LCR-6 — Cognition non-assertion rule.** Cognition never asserts a fact about the world. "This
-household is destitute" is a State; "we have not verified this" is Cognition. No Cognition entry
-may be phrased as a first-order claim about reality.
+**LCR-6 — Cognition non-assertion rule.** Cognition may represent claims, findings, and other assertions people or systems have made, but representing an assertion is never the same as the ontology endorsing it as first-order reality. A Cognition entry always describes *that something was asserted, and with what warrant* — never states the asserted content as fact in its own right. "This household is destitute" is a State only once relied upon as established; as a raw claim it is Cognition content describing an assertion, not a fact. "We have not verified this" is Cognition describing the warrant held for a claim. No Cognition entry may be read or implemented as directly writing to first-order reality without passing through this representational layer.
 *Source:* `02-ONTOLOGY-LAYERS.md` §8.4.
 
 **LCR-7 — Coordination Pattern shape-only rule.** A pattern names which party types,

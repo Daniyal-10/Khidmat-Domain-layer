@@ -124,9 +124,17 @@ None.
 *   **Result:** `SELF-CONTAINED AT FOUNDATIONAL LEVEL`
 
 ## 21. Closure vs Completeness Distinction
-*   **FORMALLY CLOSED:** YES
-*   **MINIMUM SUFFICIENT FOR DOWNSTREAM WORK:** YES
-*   **EXHAUSTIVELY COMPLETE:** NO / NOT REQUIRED
+
+Four distinct kinds of "done" are in play across this project's status vocabulary, and they are not interchangeable. Every future use of "complete," "closed," "baselined," or "resolved" in this repository should specify which of the four is meant:
+
+*   **Structural closure** — the primitive/layer/pillar/rule *categories themselves* are fixed: no new primitive, layer, or pillar is currently required. **Status: YES.**
+*   **Semantic closure** — every structural category has an unambiguous definition and boundary, with no unresolved classification tension for the concepts currently admitted. **Status: YES for the seven primitives and eight layers as categories; specific concept placements (e.g., Risk, Need, Organisation/Programme) are individually resolved per `07-STAGE-7-GOVERNANCE-DECISIONS.md`, and any concept not yet given an explicit placement (e.g., Situation, prior to the clarification added in `03-ONTOLOGY-PILLARS.md` §3) is a semantic-closure gap, not a structural one.**
+*   **Empirical validation** — the structure has been checked against real humanitarian practice (ground truth) and, where checked, corroborated. **Status: PARTIAL — 47 of 47 matrix items reviewed (see `06-STAGE-6-EVIDENCE-INTEGRATION-REPORT.md`), but several rest on single-source practitioner evidence and are marked Governed Provisional (G4) precisely because empirical validation, while present, is not yet broad.**
+*   **Engineering / downstream readiness** — a competent architect can begin schema, API, and system design without first needing to invent or redefine a foundational category. **Status: YES** (per §17 of this document, the "Can We Start?" test).
+
+*   **FORMALLY CLOSED (structural):** YES
+*   **MINIMUM SUFFICIENT FOR DOWNSTREAM WORK (engineering readiness):** YES
+*   **EXHAUSTIVELY COMPLETE (empirical validation, all items broadly corroborated):** NO / NOT REQUIRED
 
 ## 22. Final Score
 | Dimension | Status |

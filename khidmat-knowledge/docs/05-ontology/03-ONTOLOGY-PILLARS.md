@@ -46,6 +46,8 @@ The pillars are derived systematically:
 
 ### Pillar III: Vulnerability & Need
 **What domain reality it represents:** What requires a humanitarian response. The open-ended set of humanitarian situations (e.g., displacement, illness, debt), the needs derived from them, and the compounded vulnerability of the subject. Situations are explicitly Open-World, allowing new humanitarian realities to emerge without requiring a new primitive or pillar structure.
+
+**Ontological identity of Situation.** Situation is not itself a primitive, and is not assigned to exactly one layer. A Situation is a **contextualized configuration** of relevant Entities, Conditions, Relations, Occurrences, and Contexts that together describe a circumstance of concern (e.g., "household in a displacement situation" = the Household Entity + a displacement Condition it currently bears + the Context in which that Condition is interpreted +, where relevant, the Occurrence that produced it). A Situation is therefore traced as: **Entity (who it concerns) + Condition (what currently holds) + Context (the frame it is interpreted in) + optionally an originating Occurrence (what happened to produce it)** — never as a single new primitive-classified object. This composite reading is what makes Situation genuinely open-world: adding a new kind of situation never requires a new primitive, because a Situation is always assembled from the existing seven. A Situation does not automatically imply a Need — needs are derived by interpreting a Situation's Conditions against the wellbeing Norm (§8, item 8), not asserted as an ontological consequence of the Situation existing.
 **Layers contributing:** States (Need lifecycle), Facets (Severity, Horizon), Relationships (Cascading need).
 **Supporting primitives:** Condition (P1), Relation (P7).
 **RM concepts within it:** Situations, Needs, Risk, Vulnerability, Outcomes (Need/Risk resolution).
@@ -87,6 +89,16 @@ The pillars are derived systematically:
 **Supporting primitives:** Entity (P4), Condition (P1), Occurrence (P6).
 **RM concepts within it:** Interventions, Sector × Modality × Phase, Cash, In-kind, Giving, Matching.
 **Why it is a pillar:** The giving side (donors, resources) needs equal representation to the receiving side to enable the full Khidmat vision. Support is an artifact distinct from the Action of delivering it or the Actor funding it.
+
+**Disambiguating the Support vocabulary.** "Support" is an umbrella domain term, not itself a single primitive-classified object. Its constituent concepts resolve as follows, without semantic duplication:
+- **Resource / Gift** (the thing given — cash, food, materials) → **Entity** (P4), persisting and re-identifiable as a specific item or fund.
+- **Support / Intervention as artifact** (a specific planned or approved package of assistance) → **Entity** (P4).
+- **Delivery / Matching / Provision** (the act of giving it) → **Occurrence** (P6) — a bounded episode, per Layer 6.
+- **Modality, Sector, Temporal Phase** (how, what-for, and when the support is delivered) → **Facets** (P1 + P2), the independent dimensions along which a Support artifact or Delivery is characterised — never merged into one flattened list (see §2.2 of `02-ONTOLOGY-LAYERS.md`).
+- **Provider ↔ Resource ↔ Recipient ↔ Need addressed** → **Relations** (P7) connecting the independent Entities and Conditions involved.
+- **Outcome of the support** → a **State** (P1) change in the recipient, tracked separately (§8, item 8 below) — never a property of the Delivery Occurrence itself.
+
+Worked example — *"Organisation A provides food assistance to Household B"*: Organisation A and Household B are Entities; the food-assistance package is a Support Entity; the act of providing it is a Delivery Occurrence; "food" and "in-kind" are Modality/Sector Facets on that Support Entity; the fact that Household B has a food need is a Condition (State) on Household B, addressed-by related via a Relation to the Support Entity; whether food security actually improved afterward is a separate, later State change, not an automatic consequence of the Delivery Occurrence having happened.
 **Boundary:** Universal. Jurisdiction-specific localizations (e.g., specific digital payment transfers or local ration items) sit at Level 2.
 **What remains outside:** Needs (what it targets), Actors (who gives it).
 

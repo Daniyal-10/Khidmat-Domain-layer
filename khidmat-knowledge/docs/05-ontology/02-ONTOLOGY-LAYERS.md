@@ -107,9 +107,7 @@ rather than incomplete: dimensions are stable business concepts while concrete i
 
 **What it holds.** Things that persist and must be re-identified across encounters.
 
-**Admission test:** does this thing have to be tracked in its own right across encounters, rather
-than through something else? If no, it is a State of something that does.
-
+**Admission test:** does this thing have an identity capable of persisting as the same referent in its own right across encounters, independent of anything else it characterises? If no — if it only exists as a value held by some other persisting thing — it is a State of something that does. Whether a system happens to track, record, or report it is evidence relevant to answering this question; it is not the test itself.
 ### 3.1 Entities
 
 | Entity | Source | Evidence |
@@ -254,6 +252,8 @@ Consent mechanics (what consent is obtained for, from whom, and what withdrawal 
 | Engagement | identified → registration_initiated → registered → verification_pending → active → engaged → monitored → suspended → review_required → exited | RM §14.2 | Separation from developmental trajectory **corroborated** — BD-TD03-004 |
 | Person / Household (Wellbeing / Condition) | improved · held · deteriorated (Outcome/Impact describes this change) | RM §15.3 | Blueprint |
 
+> **What "Outcome" is, stated explicitly.** Outcome is not a separate primitive-classified object — it is a comparison between two States of the same Condition (e.g., wellbeing, food security) at two points in time: a *before* State and an *after* State, with Outcome naming the direction of change between them (improved / held / deteriorated). The *measurement* of that change — an assessment visit, a survey, a follow-up call — is a separate Occurrence (Layer 6), which produces a Finding (Layer 7, Cognition) *about* the Outcome; the Outcome itself is the State-to-State change, not the measurement event, and not automatically attributable to any specific intervention unless a Claim explicitly asserts that causal link (per LCR-9, causal/influence assertions are Cognition content, evaluated by an Epistemic Stance — never a first-order ontological Relation). This keeps one coherent model: Condition (before) → Occurrence (intervention, if any) → Condition (after) → Outcome (the named direction of the State-to-State change) → Occurrence (the measurement act) → Finding/Epistemic Stance (what is known about that Outcome, and how confidently).
+
 ### 6.2 The rule this layer enforces
 
 **Where a person is in their life is never where they are in a process.** RM §14.2 states it;
@@ -355,6 +355,17 @@ institutional sources).
 | **Missing information as knowledge** | RM §10.5 | **Structurally resolved** — The Cognition layer preserves explicit epistemic information so that unknown, uncertain, or conflicting claims are not collapsed into first-order reality. |
 | Consequence class triggering human review | RM §10.6 | Blueprint |
 
+### 8.1a The epistemic chain, stated explicitly
+
+These four are related but distinct, and the relation between them is fixed:
+
+- **Claim** — an assertion made about the world, not yet relied upon (RM §10.1). A Claim can exist with no Evidence at all (a bare, unsupported assertion), and multiple conflicting Claims about the same fact can coexist (§8.1, "Contradiction between claims").
+- **Evidence** — an Entity or Occurrence that serves an evidential role in supporting or challenging a Claim (§5.3 of `01-DOMAIN-PRIMITIVES.md`). Evidence can exist without yet being attached to any Claim.
+- **Finding** — a conclusion produced through a verification or assessment activity concerning one or more Claims (RM §10.3). A Finding is not simply "a Claim with higher status" — it is the distinct output of an assessment act performed *on* a Claim, and it can itself carry low confidence, or two Findings can conflict with one another (both retained, per GT-OQ13, never silently overwritten).
+- **Epistemic Stance** — the warrant, confidence, or verification status held toward a Claim *or* a Finding (P3). It is never itself the Claim or the Finding; it is the position taken regarding one of them, and it is the only one of the four that can explicitly hold the value "unknown."
+
+This chain permits, without contradiction: Evidence with no Claim; a Claim with no Evidence; a Claim with conflicting Evidence; a Finding held at low confidence; two conflicting Findings; a Claim explicitly marked unknown; a Claim explicitly rejected (a Finding that contradicts it, both retained). Each of these has a distinct representation under the four concepts above — none collapses into another.
+
 ### 8.2 The open-world commitment
 
 This layer is built on one principle, and it is the reason the layer exists rather than being an
@@ -375,8 +386,7 @@ Consequently, this Cognition layer holds **only the *confidence in* a risk asses
 
 ### 8.4 Boundary rules
 
-- Cognition asserts **nothing** about humanitarian reality. *"This family is destitute"* is a
-  State; *"we have not verified this"* is Cognition.
+- Cognition represents assertions, claims, findings, and epistemic positions **about** the world; representing such an assertion does not ontologically endorse its content as first-order reality. A Claim recorded in Cognition is a proposition someone put forward — it is not thereby true. *"This family is destitute"*, when it appears in Cognition, is always shorthand for *"a claim was made that this family is destitute"*; the corresponding State layer entry (if and when the claim is verified or otherwise relied upon) is what carries the first-order assertion. *"We have not verified this"* is likewise Cognition, describing the warrant held for the claim above it.
 - Entity (P4) is **what is held**; Epistemic Stance (P3) is **what may be concluded from it**.
   Both feed this layer and are not interchangeable.
 - The *act* of collecting evidence is an Event; the evidence collected is not.
