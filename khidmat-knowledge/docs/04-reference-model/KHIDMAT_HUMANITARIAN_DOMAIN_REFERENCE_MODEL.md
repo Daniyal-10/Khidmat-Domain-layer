@@ -172,6 +172,8 @@ principles rest on it. Biometric approaches exist in the sector; Business Logic 
 from V1 `[BL §17]`, which is a scope decision and not an answer to the underlying question. See
 §16.4.
 
+*(Amendment Note, 2026-09-07 — Stage 5/7 Clarification: The ontology establishes that a possible-duplicate assertion between two Entity references — whether intra-organisational or cross-organisational — is structurally a Sameness Claim evaluated by an Epistemic Stance. Deterministic resolution mechanics remain explicitly deferred to architecture per UHR-4.)*
+
 ### 3.2 Identity
 
 Every person has identity: name, age, gender, marital status, documentation `[BL §5.2]`.

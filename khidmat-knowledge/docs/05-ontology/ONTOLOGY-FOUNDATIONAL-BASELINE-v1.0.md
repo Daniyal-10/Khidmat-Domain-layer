@@ -53,8 +53,9 @@ Exactly:
 
 * Reality ≠ Claim ≠ Epistemic Stance
 * Person ≠ Identifier / Reference
-* Identifier / Reference ≠ Sameness Claim
-* Sameness Claim ≠ Epistemic Stance
+* Identifier / Reference → Sameness Claim
+* Sameness Claim → Epistemic Stance
+* Cross-organisational possible-duplicate → Sameness Claim → Epistemic Stance
 * Occurrence ≠ State
 * Evidence ≠ Claim
 * Evidence ≠ Epistemic Stance

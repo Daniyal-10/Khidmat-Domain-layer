@@ -186,7 +186,7 @@ on that axis at a point in time is a State. The two are never merged into one en
 *Source:* `01-DOMAIN-PRIMITIVES.md` P2 and P4 boundaries; `03-ONTOLOGY-PILLARS.md` Pillar II (Community as Entity vs. Context, see LCR-3a companion note there).
 
 **LCR-4 — Norm/Context pairing rule.** A rule binding in one scope and not another is one
-Constraint (Norm) plus one Context — never two Constraints.
+Constraint (Norm) plus one Context — never two Constraints. This includes temporal scope: a Norm is interpreted relative to the temporal Context in force at the time an event occurs or a decision is made. A subsequent change to a Norm does not retroactively alter the correct interpretation of past decisions made under the Norm as it stood at that time (consistent with CCR-7).
 *Source:* `01-DOMAIN-PRIMITIVES.md` P5 boundary; `02-ONTOLOGY-LAYERS.md` §5.
 
 **LCR-5 — Event completion rule.** Duration does not distinguish an Event from a State — an Event may be instantaneous or span a bounded period (an assessment, a displacement, a delivery process). The discriminator is completion versus persistence: an Event is complete once it has finished happening and becomes a closed, dateable episode not itself re-examinable; a State remains open to being re-examined and found to still hold, or not, at any later point. Anything still true, or still askable-about, after an Event ends is the State it established, changed, or ended — not a property of the Event. Where a phenomenon has both a finished episode and an ongoing consequence, both are represented separately, never collapsed into one object.
@@ -385,10 +385,7 @@ named, empty extension point in the relevant layer/pillar. The stub carries no i
 **UHR-3 — Disputed ownership tagging.** (Historical). This rule previously tagged Coordination Patterns whose ownership was genuinely undecided (e.g., outcome/impact measurement) as `ownership: pending`. This tension has been structurally resolved (delegated to architecture); the tag is no longer active.
 *Source:* RM §12.5; `02-ONTOLOGY-LAYERS.md` §7.3, §9.3.
 
-**UHR-4 — Identity-resolution uncertainty routing.** Because the mechanism for establishing
-person-sameness is unevidenced, any pattern depending on person-identity (deduplication,
-longitudinal reasoning) must route low-confidence matches through Cognition's human-review
-trigger (CCR-5) rather than resolving them silently.
+**UHR-4 — Identity-resolution uncertainty routing (including possible-duplicate).** Because the mechanism for establishing person-sameness is unevidenced, any pattern depending on person-identity (deduplication, longitudinal reasoning) must route low-confidence matches through Cognition's human-review trigger (CCR-5) rather than resolving them silently. This applies identically whether the Entity references being compared originate from the same organisation (intra-organisational) or from two different organisations (cross-organisational). A possible-duplicate assertion between two Entity references is itself a **Sameness Claim**, evaluated by an **Epistemic Stance**, using the already established identity chain. To clarify the states: a *same-entity assertion* is a Sameness Claim held with high confidence; a *possible-duplicate flag* is a Sameness Claim held with low/uncertain confidence (an Epistemic Stance value); an *unresolved-identity state* means the Epistemic Stance is unknown/not assessed; and *deterministic identity resolution* is explicitly out of ontology scope, deferred to architecture by this rule.
 *Source:* RM §3.1, §16.5; TD-01 Open Gap 1.
 
 **UHR-5 — Unadmitted constraint content stays unadmitted.** Where the Reference Model itself records a candidate constraint with unknown empirical content (e.g., specific funding restriction types — RM §11.4), the architecture treats the structural classification as resolved (Norm/Constraint) but leaves the specific values unadmitted. A stub extension point (UHR-1) is reserved for the content, bounded as a Source-Absent Parameter.

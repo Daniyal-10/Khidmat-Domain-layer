@@ -79,6 +79,8 @@ States layer cannot yet be populated.** That is not a defect in this layer — s
 | Claim | completeness; internal consistency | RM §10.1 | Blueprint only |
 | Context | geography; culture; season; altitude; programme scope | RM §2.2, §5, §11.4 | **Strong** (altitude: five dossiers) |
 
+*Note on Need Categories:* The seven Need categories listed in RM §7.3 represent the currently known/populated value set, not a closed universal enumeration. Additional Need-category values may be added through governed content/taxonomy population without requiring any change to the Facets layer's structure or to any primitive/layer/pillar. This applies the "dimensions are stable, values are volatile" principle established in §2.3.
+
 ### 2.2 The one facet structure independently evidenced
 
 Support is the only faceted thing in this ontology whose dimensions are externally corroborated,
@@ -119,7 +121,7 @@ rather than incomplete: dimensions are stable business concepts while concrete i
 | Organisation | RM §11.1 | **Strong** — Stage 7 G1 split |
 | Programme | RM §11.1 | **Strong** — Stage 7 G1 split; carries programme-specific eligibility, funding, and activity rules |
 | Donor / giver | RM §11.1 | **Strong** — BD-TD01-004 (CHS defines actors to include them) |
-| Government body | RM §11.1 | BD-TD01-001 |
+| Government body | RM §11.1, §13.4 | BD-TD01-001. Structurally, a government scheme is a Programme operated by a Government body, classified via the Sector×Modality×Phase facets. This accommodates government schemes as content/taxonomy without structural omission. |
 | Service Provider (Healthcare, School, Employer) | RM §11.1 | **Structurally resolved** — modelled as an active Entity with independent capacity/eligibility decisions (GT-OQ15), but retains single-source caveat (F-3); Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration. |
 | Emergent group / mutual-aid structure | RM §4.5 | **Strong** — BD-TD01-005, ≥3 source families |
 | Case | RM §12 | Blueprint |
@@ -213,6 +215,8 @@ universal-or-variable marking.
 | Donor compliance requirements bind implementing actors | Variable — by funder | RM §11.5 | **Strong** — BD-TD02-003, 3 source families |
 | Funding restriction | Variable — by funder | RM §11.4 | **Moderate** — Stage 5 corroborated (GT-P5, GT-L4). Non-exhaustive types: geography, target population, sector, eligible activity, time period, reporting. |
 | Accountability runs to affected people, not only to funders | Universal | RM §3.4 | **Strong** — BD-TD02-001, ≥4 source families |
+
+**Temporal Interpretation:** Like Conditions, Norms/Constraints are interpreted relative to the temporal Context in force at the time an event occurs or a decision is made. A subsequent change to a Norm does not erase or retroactively alter the historical interpretation of past decisions made under the previous version of the Norm.
 
 ### 5.2 A constraint that is also a tension
 
@@ -364,6 +368,8 @@ These four are related but distinct, and the relation between them is fixed:
 - **Finding** — a conclusion produced through a verification or assessment activity concerning one or more Claims (RM §10.3). A Finding is not simply "a Claim with higher status" — it is the distinct output of an assessment act performed *on* a Claim, and it can itself carry low confidence, or two Findings can conflict with one another (both retained, per GT-OQ13, never silently overwritten).
 - **Epistemic Stance** — the warrant, confidence, or verification status held toward a Claim *or* a Finding (P3). It is never itself the Claim or the Finding; it is the position taken regarding one of them, and it is the only one of the four that can explicitly hold the value "unknown."
 
+*(Note on Identity and Duplication: A possible-duplicate assertion between two Entity references, regardless of whether they originate inside one organisation or across two or more, is structurally modeled as a **Sameness Claim** evaluated by an **Epistemic Stance**, using this exact chain. It introduces no new primitive or layer, and delegates deterministic resolution to architecture.)*
+
 This chain permits, without contradiction: Evidence with no Claim; a Claim with no Evidence; a Claim with conflicting Evidence; a Finding held at low confidence; two conflicting Findings; a Claim explicitly marked unknown; a Claim explicitly rejected (a Finding that contradicts it, both retained). Each of these has a distinct representation under the four concepts above — none collapses into another.
 
 ### 8.2 The open-world commitment
@@ -429,6 +435,7 @@ task logic or automation instruction has become a workflow specification and lef
 | **Deduplication across organisations** | Two organisations recognise the same person | Blueprint — RM §2; **blocked on the identity-resolution gap**, §3.2 |
 | **Funder Coordination** | Funders set priorities/restrictions/reporting across programmes, distinct from programme casework | **Moderate** — Stage 5 (GT-OQ17); shape only, single-source caveat |
 | **Case Orchestration** | Cross-organisational coordination function (handoffs, gap/duplication tracking) distinct from direct service delivery | **Moderate** — Stage 5 (GT-OQ19); shape only, single-source caveat |
+| **Area-level crisis trigger** | A crisis-onset Occurrence and aggregated Context/Condition signals trigger response at the Community Entity level (UHR-1 stub) | **Medium-High** — BD-TD05-002 |
 | **Giving and matching** | A verified need becomes visible to a giver, who commits support | **None** — undescribed (RM §16.4) |
 | **Adoption** | A giver holds a sustained relationship with a household | **None** — absent from every source |
 
