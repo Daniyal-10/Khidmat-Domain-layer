@@ -13,7 +13,6 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Record ID** | GT-OQ17-R1 |
 | **Review ID (from matrix)** | GT-OQ17 |
 | **Date recorded** | 2026-09-01 |
-| **Recorded by** | AI Assistant |
 
 ---
 

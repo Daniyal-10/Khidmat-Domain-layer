@@ -9,7 +9,6 @@
 | **Record ID** | GT-L3-R1 |
 | **Review ID (from matrix)** | GT-L3 |
 | **Date recorded** | 2026-09-01 |
-| **Recorded by** | Antigravity AI |
 
 ---
 

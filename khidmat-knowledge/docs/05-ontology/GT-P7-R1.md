@@ -9,7 +9,6 @@
 | **Record ID** | GT-P7-R1 |
 | **Review ID (from matrix)** | GT-P7 |
 | **Date recorded** | 2026-09-01 |
-| **Recorded by** | Antigravity AI |
 
 ---
 

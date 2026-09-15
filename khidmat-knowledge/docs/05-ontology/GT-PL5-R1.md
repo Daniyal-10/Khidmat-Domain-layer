@@ -9,7 +9,6 @@
 | **Record ID** | GT-PL5-R1 |
 | **Review ID (from matrix)** | GT-PL5 |
 | **Date recorded** | 2026-08-31 |
-| **Recorded by** | Antigravity AI |
 
 ---
 

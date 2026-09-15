@@ -9,7 +9,6 @@
 | **Record ID** | GT-AR3-R1 |
 | **Review ID (from matrix)** | GT-AR3 |
 | **Date recorded** | 2026-08-28 |
-| **Recorded by** | Antigravity AI |
 
 ---
 

@@ -13,7 +13,6 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Record ID** | GT-AR1-R1 |
 | **Review ID (from matrix)** | GT-AR1 |
 | **Date recorded** | 2026-09-01 |
-| **Recorded by** | AI Assistant |
 
 ---
 

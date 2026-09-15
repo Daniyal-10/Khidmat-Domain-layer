@@ -9,7 +9,6 @@
 | **Record ID** | GT-OQ12-R1 |
 | **Review ID (from matrix)** | GT-OQ12 |
 | **Date recorded** | 2026-09-01 |
-| **Recorded by** | Antigravity AI |
 
 ---
 
