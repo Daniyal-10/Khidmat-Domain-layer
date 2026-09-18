@@ -1,3 +1,144 @@
+# STAGE 6 — EVIDENCE INTEGRATION REPORT (GTR SESSION 01)
+
+## 1. Purpose
+This document formally integrates real practitioner evidence from Khidmat (GTR Session 01) into the humanitarian ontology process. It evaluates what the evidence establishes about existing ontology assumptions, separating raw practitioner statements (Level 1) from semantic interpretation (Level 2) and potential ontology implications (Level 3). It does not perform ontology refinement or governance.
+
+## 2. Evidence Sources
+**Highest Priority (Real Practitioner Evidence):**
+* `DOMAIN Gathering/all_answers.md`
+* `DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md`
+
+**Baseline Models (for comparison):**
+* `01-DOMAIN-PRIMITIVES.md`, `02-ONTOLOGY-LAYERS.md`, `03-ONTOLOGY-PILLARS.md`, `04-ARCHITECTURE-RULES.md`
+
+## 3. Evidence Method
+This analysis maintains strict evidentiary boundaries:
+1. **Level 1 — Practitioner Evidence:** What the expert explicitly stated.
+2. **Level 2 — Semantic Interpretation:** What can be reasonably inferred from the evidence.
+3. **Level 3 — Ontology Implication:** Potential refinement signals for the ontology (subject to governance).
+
+## 4. Session 01 Context
+The practitioner operates within a specific, grassroots, volunteer-based organization in the Bhopal area. The organization uses a direct volunteer-to-donor matchmaking model. It explicitly excludes seasonal or pandemic disaster situations from its core workflow. **Findings are localized to this context and are not automatically universalized.**
+
+## 5. Review-ID Disposition
+
+| Review ID | Disposition | What is Established | What Remains Unknown |
+|---|---|---|---|
+| GT-L1, GT-P1, GT-L5 | ANSWERED | Ground verification process exists and corrects survey claims. | N/A |
+| GT-OQ3, GT-L2 | ANSWERED | Zimmedar (head) acts for family; distinct entities for Donor/Provider. | N/A |
+| GT-OQ15, GT-OQ7 | ANSWERED | Specific eligibility rules (zakat, govt hospital provision) apply. | N/A |
+| GT-OQ8, GT-OQ11 | ANSWERED | Needs attach to individuals or families contextually. | N/A |
+| GT-L8, GT-OQ19, GT-PL7 | ANSWERED | Direct donor adoption and vendor fulfillment mechanisms. | N/A |
+| GT-L6, GT-P6, GT-AR2 | ANSWERED | Tracking cards with signatures used as delivery evidence. | N/A |
+| GT-OQ4, GT-PL1 | ANSWERED | Needs have varying temporal spans (recurring vs one-time). | N/A |
+| GT-PL5, GT-OQ6 | ANSWERED | Khidmat operates without nested programmes. | Universality across domain. |
+| GT-OQ17 | ANSWERED | Micro-donor matchmaking environment is active. | Universality across domain. |
+| GT-OQ1 | PARTIALLY_ANSWERED | Reverification for recurring needs occurs. | Seasonal handling (excluded from context). |
+| GT-P4 | PARTIALLY_ANSWERED | Unique Beneficiary IDs resolve identity mismatch. | Full person vs admin case separation. |
+| GT-AR6 | PARTIALLY_ANSWERED | Volunteers provide human check over initial survey. | Algorithmic intervention handling. |
+| GT-P2, GT-PL2 | PARTIALLY_ANSWERED | Context modulates support rules. | Exact facet definitions. |
+| GT-OQ2, GT-PL3, GT-OQ9 | PARTIALLY_ANSWERED | Vulnerability based on compound factors (widow, no income). | Exact risk formulas. |
+| GT-P7, GT-L3 | PARTIALLY_ANSWERED | Family/household relations are recorded. | Complex cascading dependencies. |
+| GT-L7, GT-P3, GT-OQ10 | PARTIALLY_ANSWERED | Volunteer check & govt proofs separate claim from verified fact. | Exact handling of "Unknown/Unable to determine". |
+| GT-OQ12 | PARTIALLY_ANSWERED | False claims rejected; genuine ones proceed. | "Unknown" handling (expert says not much required). |
+| GT-OQ5, GT-PL6 | PARTIALLY_ANSWERED | One-time needs are closed after help; recurring ones continue. | Complex outcome timelines. |
+| GT-OQ14 | PARTIALLY_ANSWERED | Donor limits applied so beneficiary doesn't become dependent. | Safeguarding vs Score formulas. |
+| GT-P5 | PARTIALLY_ANSWERED | Norms (zakat eligibility) restrict action. | Full constraint resolution mechanics. |
+| GT-OQ16, GT-OQ18 | UNANSWERED | N/A | Interaction between explicitly blocked needs. |
+| GT-PL4, GT-OQ13, GT-AR4 | UNANSWERED | N/A | Conflicting source resolution. |
+| GT-AR3 | UNANSWERED | N/A | Status vs Reality (Dual-clock) mismatch. |
+| GT-L4 | UNANSWERED | N/A | Conflicting rule resolution. |
+| GT-AR5 | UNANSWERED | N/A | Dignity vs Score. |
+| GT-AR1 | NOT_ASSESSABLE | Khidmat operates at a single altitude. | Altitude qualification. |
+
+## 6. Major Practitioner Findings
+
+1. **Identity:** Beneficiaries require unique IDs to solve identity mismatches; government proofs (Aadhar, Ayushman) are collected.
+2. **Family vs. Individual:** General needs (food) attach to the family head (Zimmedar); specific needs (medical, orphans) attach to individuals.
+3. **Vulnerability:** Poverty, widowhood, lack of income, and accidental injuries compound to raise priority.
+4. **Evidence/Verification:** Initial surveys are treated as claims. Experienced volunteers do physical ground-reality checks. Government hospital docs are trusted (no double verification). Totally false claims are rejected, genuine requirements proceed, and surveyed needs that differ from actual needs can be corrected based on ground reality. Multiple needs can have different genuine/non-genuine outcomes. No second survey is performed. Unknown/unable-to-determine remains unresolved.
+5. **Needs:** Reported requirements can be corrected, partially approved, or totally rejected based on ground checks.
+6. **Fulfillment:** Delivery uses physical tracking cards with signatures. Donors directly adopt cases, combine, or split support. Vendors provide direct fulfillment.
+7. **Recurrence:** Distinction between one-time needs (medical bills) which close, and recurring needs (monthly rations) which require reverification.
+8. **Coordination:** First-come-first-serve donor matching via messaging groups; lead verification by volunteers.
+9. **Programme:** Khidmat explicitly does not use nested programmes.
+10. **Constraints:** Donor limits are enforced to prevent over-dependence; seasonal/pandemic issues are out of scope.
+
+## 7. Evidence vs Semantic Interpretation
+
+| Level 1: Observed Reality | Level 2: Semantic Interpretation | Level 3: Potential Ontology Impact |
+|---|---|---|
+| "Volunteer goes to the ground and checks the requirement... reject false, correct, or proceed." | A candidate semantic interpretation is that the workflow distinguishes reported information from information supported by verification. | Refinement signal: The ontology may require Epistemic Stance mechanisms on States to distinguish claims from verified findings (Requires Stage 7 consideration). |
+| "General needs head of family, specific needs individual members." | A possible semantic interpretation is that Need entities may attach flexibly to either Person or Family entities. | Refinement signal: Support for non-linear Relation and Entity mappings may be a candidate ontology implication. |
+| "Government hospital reports considered true only." | Some evidentiary sources are intrinsically trusted without secondary ground checks. | Refinement signal: Source-trust properties on Epistemic claims may be a candidate ontology implication. |
+| "No organisations and programs are involved... just Khidmat grp doing the root work." | The specific operating context lacks a distinct Programme layer above the case. | Context-specific observation; this may challenge the applicability of the Tier 1 Organisation/Programme collapse and requires Stage 7 consideration. |
+| "Donors adopt the beneficiary... can combine or split." | Financial coordination happens at the direct case level in this context. | Refinement signal: A Coordination pattern for direct micro-funders may be a candidate ontology implication. |
+
+## 8. Session 01 vs Existing Ontology
+The Session 01 evidence provides support for the ontology's proposed distinct Epistemic Stances, flexible Entity attachment, and distinct Coordination patterns. However, it raises questions about the generalization of nested Programmes and highlights remaining evidence gaps in handling true "Unknown" states and conflicting sources (which the practitioner simply avoids or resolves manually on the ground).
+
+## 9. Eight-Layer Evidence Analysis
+
+| Layer | Session 01 Evidence | Existing Coverage | Evidence Assessment | Potential Impact |
+|---|---|---|---|---|
+| 1. Facets | Context limits to non-seasonal, local poverty. | Context modules meaning. | ALREADY REPRESENTED | NO MATERIAL IMPACT |
+| 2. Entities | Uses Person, Family, Vendor, Donor. | Supports these entities. | ALREADY REPRESENTED | NO MATERIAL IMPACT |
+| 3. Relationships | Zimmedar represents family. | Relations handle kinship. | ALREADY REPRESENTED | NO MATERIAL IMPACT |
+| 4. Constraints | Donor limits, Zakat rules. | Norms bound operations. | REFINEMENT SIGNAL | Refinement signal: Potential need to formalize rule-based capacity constraints. |
+| 5. States | Needs are recurring vs one-time. | Persistent vs Occurrence. | REFINEMENT SIGNAL | Refinement signal: Potential need to represent temporal recurrence patterns. |
+| 6. Events | Ground verification, tracking card signature. | Events alter States. | REFINEMENT SIGNAL | Refinement signal: Verification events may need to distinctly alter Epistemic Stance. |
+| 7. Cognition | Correcting a survey claim via ground check. | Open-world stance. | REFINEMENT SIGNAL | Refinement signal: A potential mechanism to distinguish a claim from a verified finding may be required. |
+| 8. Coordination | Direct donor matching, vendor fulfillment. | Funder/Orchestration. | REFINEMENT SIGNAL | Refinement signal: Potential formalization of Micro-donor coordination pattern. |
+
+## 10. Ontology Refinement Signals
+
+| Refinement Signal (NOT AN ONTOLOGY DECISION) | Evidence | Review IDs | Relevant Layer(s) | Why It Matters | Confidence | Governance Required? |
+|---|---|---|---|---|---|---|
+| Verification Epistemics | Volunteer corrects/rejects initial survey. | GT-L1, GT-P1, GT-L7 | L7 (Cognition), L6 (Events) | Separation of reported claim from verified finding may be crucial for data integrity. | High | No |
+| Entity Need Attachment | General needs to family, specific to individual. | GT-OQ8, GT-OQ11 | L2 (Entities), L3 (Relationships) | May prevent rigid single-entity need modeling. | High | No |
+| Recurring vs One-time | Monthly rations vs medical bill. | GT-OQ4, GT-PL1 | L5 (States) | May dictate reverification cycles and closure rules. | High | No |
+| Trusted Source Evidence | Govt hospital proof accepted as true. | GT-OQ10 | L7 (Cognition) | May prevent redundant verification; may introduce source-trust weighting. | Medium | No |
+| Direct Coordination | Donor adoption, vendor fulfillment. | GT-L8, GT-OQ19 | L8 (Coordination) | Provides evidence for the existence of decentralized micro-coordination in humanitarian work. | High | No |
+
+## 11. Context-Specific Findings
+* **No nested programmes:** The lack of programmes is specific to grassroots Khidmat; it does not establish that Programme does not exist across the humanitarian ontology.
+* **Scope exclusions:** Ignoring seasonal/pandemic disasters is a localized policy.
+* **WhatsApp/Messaging matching:** The specific use of messaging apps is an implementation detail, not a universal Coordination pattern (though the pattern of "Direct Matchmaking" is).
+
+## 12. Contradictions / Challenges
+* **Programme Altitude:** Khidmat's grassroots reality (no programmes) contradicts the Tier 1 Business Logic assumption that everything sits under a Programme. This is a governance candidate: Stage 7 must determine how to reconcile the Tier 1 baseline with this organizational context without prematurely forcing an architectural choice.
+
+## 13. Remaining Evidence Gaps
+
+| Review ID | What Session 01 Established | What Remains Unknown | Why It Matters | Session 02 Question |
+|---|---|---|---|---|
+| GT-OQ12 | False claims rejected. | "Unknown" handling. | System needs state for unverified claims. | "When a volunteer is absolutely unsure if a claim is true or false, how is it recorded?" |
+| GT-AR3 | Needs are verified. | Status vs Reality mismatch. | Dual-clock validation. | "Have you ever had a case where the tracking card said 'delivered' but the beneficiary claimed they didn't receive it?" |
+| GT-PL4 | Verification checks survey. | Conflicting source resolution. | Conflict algorithms. | "What happens when two different volunteers disagree on a family's needs?" |
+
+## 14. Session 02 Follow-up Requirements
+1. Further investigate "unknown" state handling.
+2. Investigate conflicting sources and manual overrides.
+3. Clarify boundary constraints (Dignity vs Score).
+
+## 15. Required / Desired Artifacts
+* Khidmat Form = E1 practitioner testimony / description (unless actual artifact evidence is inspected).
+* Blank Tracking Card = E1 practitioner testimony / description (unless actual artifact evidence is inspected).
+* Anonymized Case Summary example = E1 practitioner testimony / description (unless actual artifact evidence is inspected).
+
+## 16. Governance-Required Items
+* **Organisation vs. Programme Structure:** Stage 7 must consider how to address the structural tension between the Tier 1 collapsed model and grassroots realities like Khidmat's, without prematurely forcing an architectural choice.
+
+## 17. Stage 6 Conclusions
+Session 01 provides robust Level 1 evidence that supports the exploration of distinct Epistemic Stance separation, flexible temporal states, and direct coordination patterns. It answers 20 Review IDs and partially answers 18 others, leaving 8 unanswered and 1 not assessable (Total 47). Critical gaps remain regarding conflicting sources and "unknown" states. The major structural tension regarding the absence of "Programmes" is isolated as a context-specific finding that triggers a formal Stage 7 Governance requirement.
+
+## 18. Explicit Boundary: No Ontology Refinement Performed
+**No ontology semantics, primitives, layers, pillars, or architecture rules have been modified during this integration task.** The findings above are Refinement Signals and Governance Candidates only.
+
+---
+
+# APPENDIX: PRE-GTR-SESSION-01 HISTORICAL STAGE 6 REPORT
+
 # STAGE 6 — EVIDENCE INTEGRATION REPORT
 
 ## 1. Repository Understanding
