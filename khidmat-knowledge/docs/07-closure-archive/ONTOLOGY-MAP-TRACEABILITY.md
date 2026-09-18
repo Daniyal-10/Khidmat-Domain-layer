@@ -114,4 +114,4 @@ This update tracks the evidentiary shift following the first practitioner Ground
 * **Consent & Dignity Semantics:** Precise hard-rule implementation parameters.
 * **Identity Resolution:** Full process for matching/resolving duplicate identities.
 
-**Status Update:** `PARTIALLY REVALIDATED — SESSION 01 EVIDENCE INCORPORATED; FURTHER PRACTITIONER VALIDATION REQUIRED`
+**Status Update:** `PARTIALLY SUPPORTED BY EVIDENCE — SESSION 01 EVIDENCE INCORPORATED; FURTHER PRACTITIONER VALIDATION REQUIRED`

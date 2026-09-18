@@ -543,7 +543,7 @@ The first practitioner session provided evidence directly bearing on the ontolog
 * **Unresolved Constraint:** There is still no evidence resolving the "recorded status vs actual current reality" mismatch (A15). The dual-clock problem remains an unresolved temporal/architecture question. (Review ID: GT-AR3)
 
 **Layer 7 - Cognition:**
-* **Observed Epistemic Behavior:** Ground-reality checking, volunteer judgment over actual need, government hospital documents serving as trusted sources, identity mismatch concerns, and tracking-card signatures acting as verification evidence are confirmed as active epistemic behaviors. (Review ID: GT-L1, GT-OQ10)
+* **Observed Epistemic Behavior:** Ground-reality checking, volunteer judgment over actual need, government hospital documents serving as trusted sources, identity mismatch concerns, and tracking-card signatures acting as verification evidence are observed as active epistemic behaviors. (Review ID: GT-L1, GT-OQ10)
 * **Unresolved Constraints:** The full epistemic model is NOT validated. Crucially, "unknown vs checked and false" (Review ID: GT-OQ12) and "conflicting-source resolution" (Review ID: GT-PL4, GT-OQ13) remain fundamentally unresolved and must not be treated as closed.
 
 **Layer 8 - Coordination Patterns:**

@@ -1189,7 +1189,7 @@ The first practitioner session provided evidence that clarifies and narrows spec
 **Observed Temporal Behavior (Refining §7.4 and §14):**
 * **Need Dynamics:** There is a clear operational distinction between one-time needs (e.g., medical bill) and recurring needs (e.g., monthly rations). (Review ID: GT-OQ4, GT-PL1)
 * **Reverification:** Recurring needs trigger a mandatory reverification cycle before support continuation. (Review ID: GT-OQ1)
-* **Continuation/Closure:** Support cases are explicitly extended or closed based on these checks, validating the dynamic nature of needs.
+* **Continuation/Closure:** Support cases are explicitly extended or closed based on these checks, corroborating the dynamic nature of needs.
 
 **Observed Coordination Patterns (Refining §11 and §13):**
 * **Direct Micro-Donor Adoption:** Donors directly adopt cases, effectively acting at the case altitude in this specific context. (Review ID: GT-OQ17, GT-L8, GT-PL7)
@@ -1207,7 +1207,7 @@ AI reasoning and implementation are to be derived.** Nothing downstream may intr
 absent here without either tracing it to the two authoritative sources or to external humanitarian
 standards, or opening it as a question.
 
-**Status: PARTIALLY REVALIDATED — SESSION 01 EVIDENCE INCORPORATED; FURTHER PRACTITIONER VALIDATION REQUIRED.** The foundation phase is closed. This document does not change
+**Status: PARTIALLY SUPPORTED BY EVIDENCE — SESSION 01 EVIDENCE INCORPORATED; FURTHER PRACTITIONER VALIDATION REQUIRED.** The foundation phase is closed. This document does not change
 except by amending an authoritative source and re-deriving. No further foundation documents are
 to be authored.
 
