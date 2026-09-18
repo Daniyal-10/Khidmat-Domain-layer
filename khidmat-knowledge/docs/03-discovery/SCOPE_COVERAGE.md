@@ -233,15 +233,3 @@ and would not be. **Both blockers require action outside this process** — a ru
 Lead, and practitioner access from the client.
 
 ---
-
-## 6. Post-GTR Session 01 Scope Evidence
-
-> Source: Ground Truth Session 01, ORGANIZED-GTR-SESSION-01.md
-
-The first practitioner session provided evidence directly bearing on the scope decisions documented here.
-
-**Findings Observed in this Operating Context:**
-* **Donor Adoption (Section 4, Option C):** The previously theoretical "adoption relationship" has been actively observed. The Khidmat operation relies heavily on a direct micro-donor model where specific cases/families are adopted by donors. (Review ID: GT-OQ17, GT-L8, GT-PL7)
-* **Direct Fulfillment:** Vendor-level fulfillment and direct tracking-card delivery confirmation are in active use, reinforcing that the "delivery" portion of the lifecycle is present in this specific operational reality. (Review ID: GT-OQ19, GT-L6, GT-P6, GT-AR2)
-
-These observations corroborate the Option C decision to model the donor and delivery sides as humanitarian reality rather than excluding them entirely. However, they remain specific to this grassroots operating context and do not necessarily imply a universal multi-actor matching marketplace.

@@ -89,29 +89,3 @@
 | Need interactions | UNTRACEABLE / CONTESTED (Insufficient structural evidence) |
 
 ---
-
-## 3. Post-GTR Session 01 Evidence Update
-
-> Source: Ground Truth Session 01, ORGANIZED-GTR-SESSION-01.md
-
-This update tracks the evidentiary shift following the first practitioner Ground Truth Review (GTR) session. The ontology is **NOT CLOSED**. It has transitioned from synthetic/internal evidence to being partially revalidated by practitioner evidence in a specific operational context.
-
-### What has gained practitioner evidence:
-* **Entities:** Person, Household, Beneficiary, Vendor, Donor, Volunteer.
-* **Relationships:** Family membership, head-of-family representation, donor adoption.
-* **Temporal States/Events:** Survey, reverification, closed one-time vs recurring needs.
-* **Cognition (Epistemic):** Ground-reality verification by volunteers, source-trust (government hospitals).
-* **Coordination:** Direct donor adoption, vendor fulfillment, physical tracking-card confirmation.
-
-### What is challenged (Contextual Scope Limits):
-* **Programme Altitude:** Khidmat operates as a grassroots organization without nested programmes. This challenges the universality of the Programme entity within this specific context, though it remains in the broader domain model pending governance.
-
-### What remains unresolved (Hypothesis/Pending):
-* **Dual-Clock (Status vs Reality):** Mismatches between system record and field reality.
-* **Contradiction/Conflict Resolution:** Exact mechanics for resolving conflicting sources or conflicting constraints (e.g., dignity vs score).
-* **Unknown State:** Epistemic stance modeling for unverified / unable-to-determine claims (as "false" has now been observed).
-* **Vulnerability Composition:** Exact compounding mechanics for vulnerabilities.
-* **Consent & Dignity Semantics:** Precise hard-rule implementation parameters.
-* **Identity Resolution:** Full process for matching/resolving duplicate identities.
-
-**Status Update:** `PARTIALLY SUPPORTED BY EVIDENCE — SESSION 01 EVIDENCE INCORPORATED; FURTHER PRACTITIONER VALIDATION REQUIRED`

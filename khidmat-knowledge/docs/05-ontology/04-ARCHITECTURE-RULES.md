@@ -465,23 +465,6 @@ None of the following prevents Stage 5 (Ground Truth Reviews) from beginning. Ea
 | **Contradiction-representation** | Cognition (Layer 7). | Retains all conflicting claims with source attribution rather than overwriting. Resolution algorithms are deferred to architecture. | Option A Closure (CONFIRMED evidence — not a G4 item; no single-source caveat applies) |
 | **Missing-information-representation** | Cognition (Layer 7). | The system preserves explicit epistemic information so that unknown or uncertain claims are not collapsed. | Option A Closure (CONFIRMED evidence — not a G4 item; no single-source caveat applies) |
 
-### 7.3 Post-GTR Session 01 Evidence Update
-
-> Source: Ground Truth Session 01, ORGANIZED-GTR-SESSION-01.md
-
-The first practitioner session provided evidence affecting specific architecture rules. The following observed challenges do NOT automatically rewrite the rules based on a single session. They are recorded here for revalidation.
-
-| Review ID | Issue / Topic | Session 01 Evidence | Status |
-|---|---|---|---|
-| GT-AR1 | Altitude Qualification | Not assessable. Context operates at a single altitude (no programmes). | Unresolved. |
-| GT-AR3 | Status vs Reality Mismatch (Dual-clock rule) | No evidence in session. | Unresolved. |
-| GT-AR4 | Conflicting Sources (Contradiction handling) | No direct evidence in session. | Unresolved. |
-| GT-AR5 | Dignity vs Score (Constraint resolution) | No evidence in session. | Unresolved. |
-| GT-AR6 | Vulnerability & Risk Independence | Partially answered. No explicit challenge to rule yet. | Partially Unresolved. |
-
-Where Session 01 provided organizational evidence that differs from broader domain assumptions (e.g., this organization operates without nested Programmes), the architecture rule remains standing pending broader practitioner evidence and governance.
-
----
 
 ## 8. Status
 

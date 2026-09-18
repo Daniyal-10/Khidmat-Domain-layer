@@ -374,19 +374,3 @@ reference model ยง12.3. Its open questions are consolidated in reference model ย
 **Superseded, not withdrawn.** Nothing here is retracted. It is no longer an input.
 
 ---
-
-## 7. Post-GTR Session 01 Discovery Evidence
-
-> Source: Ground Truth Session 01, ORGANIZED-GTR-SESSION-01.md
-
-The first practitioner session provided genuine discovery evidence about the Khidmat operational context. 
-
-**Important Evidentiary Constraint:** The expert's context is a local support/charity, operating as a grassroots volunteer organization in the Bhopal surrounding area, with a direct volunteer/donor matchmaking model. Therefore, the findings below must be explicitly distinguished: they are **observed in this operating context**, not automatically **established across the humanitarian domain**.
-
-**Findings Observed in this Operating Context:**
-* **Absence of Nested Programmes:** The organization functions entirely without a nested Programme construct, operating directly at the grassroots level. (Review ID: GT-PL5, GT-OQ6)
-* **Direct Micro-Donor Model:** The system relies on direct adoption of cases by donors, who may split or combine their contributions. (Review ID: GT-OQ17, GT-L8)
-* **Local Scope Limitation:** Seasonal issues or pandemic crises are excluded from this organization's active operational scope. (Review ID: GT-OQ1)
-* **Operational Workflow:** Initial survey (acting as a reported claim) followed by ground-reality verification by experienced local volunteers is the standard method for establishing truth, resulting in rejection of false claims, correction of needs, and approval of genuine needs. (Review ID: GT-L1, GT-P1)
-
-Do not generalize these findings beyond their evidentiary scope. The broader questions of Programme altitude and universal humanitarian structure remain subject to governance and further evidence.

@@ -526,30 +526,6 @@ The following concepts were previously carried forward as tensions, but are now 
 *   **Funder Altitude (RM §11.4):** Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). No distinct third altitude layer or primitive exists. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
 *   **Outcome / Impact Ownership:** Outcome and Impact remain distinct from their measurement or assessment representations. Their operational measurement structures and ownership are context-dependent unless specifically established by source evidence. The ontology does not impose a universal ownership assignment to the Human Subject. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
 
-### 12.3 Post-GTR Session 01 Evidence Update
-
-> Source: Ground Truth Session 01, ORGANIZED-GTR-SESSION-01.md
-
-The first practitioner session provided evidence directly bearing on the ontology layers within this specific grassroots context:
-
-**Layer 2 - Entities:**
-* Observed active entities: Person, Household/family, Beneficiary, Vendor, Donor, Volunteer. (Review ID: GT-OQ17, GT-OQ19)
-
-**Layer 3 - Relationships:**
-* Observed active relationships: family membership, head-of-family representation, direct donor adoption, beneficiary-vendor relations, and volunteer-verification linkages. (Review ID: GT-OQ8, GT-OQ11, GT-L8)
-
-**Layer 5 - States & Layer 6 - Events (Temporal Semantics):**
-* **Observed Dynamics:** Strong evidence for reverification cycles, recurring needs vs one-time needs, case continuation, support extension, closure, and changing recovery conditions. (Review ID: GT-OQ4, GT-PL1)
-* **Unresolved Constraint:** There is still no evidence resolving the "recorded status vs actual current reality" mismatch (A15). The dual-clock problem remains an unresolved temporal/architecture question. (Review ID: GT-AR3)
-
-**Layer 7 - Cognition:**
-* **Observed Epistemic Behavior:** Ground-reality checking separates a reported claim from a verified fact. Volunteer judgment can correct surveyed needs, reject totally false claims, and approve genuine requirements (even partially across multiple needs). Government hospital documents serve as trusted sources. Identity mismatch concerns and tracking-card signatures acting as verification evidence are observed as active epistemic behaviors. (Review ID: GT-L1, GT-OQ10)
-* **Unresolved Constraints:** The full epistemic model is NOT validated. While "checked and false" has been explicitly observed as a rejection outcome, the handling of "unknown / unable to determine" remains fundamentally unresolved because the expert noted it is not much required in their specific workflow (Review ID: GT-OQ12). "Conflicting-source resolution" (Review ID: GT-PL4, GT-OQ13) also remains open.
-
-**Layer 8 - Coordination Patterns:**
-* Observed patterns: lead verification group mechanics, verified beneficiary pooling, direct micro-donor adoption, direct vendor fulfillment, and tracking-card confirmation flows. (Review ID: GT-OQ19, GT-L6)
-
----
 
 ## 13. Status
 
