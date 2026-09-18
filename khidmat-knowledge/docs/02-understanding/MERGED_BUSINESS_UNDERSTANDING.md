@@ -665,7 +665,31 @@ coordination is in V1 scope is unstated by both.
 
 ---
 
-## 12. Status
+## 12. Post-GTR Session 01 Evidence Update
+
+> Source: Ground Truth Session 01, ORGANIZED-GTR-SESSION-01.md, multiple Review IDs
+
+The initial business understanding has been aligned with demonstrated operational reality based on the first practitioner session. The following observations clarify and narrow the previous assumptions:
+
+**Organization-Specific Operational Reality (Khidmat Context):**
+* **Grassroots structure:** The operation is a volunteer-based, grassroots model. (Review ID: GT-PL5, GT-OQ6)
+* **Scope exclusion:** The organization does not handle seasonal or pandemic disaster situations in its core workflow. This is a local scope constraint, not a domain-wide absence of seasonal risk. (Review ID: GT-OQ1)
+* **Eligibility rules:** Specific eligibility rules (e.g., verifying Zakat eligibility, avoiding conflict with government hospital provisions) are enforced. (Review ID: GT-OQ15, GT-OQ7)
+
+**Domain and Service Flow Evidence:**
+* **Survey and Ground-Reality:** Needs are initially surveyed and subsequently subjected to ground-reality verification by volunteers. (Review ID: GT-L1, GT-P1, GT-L5)
+* **Beneficiary Resolution:** General needs are often handled at the family or head-of-family level, while specific needs (e.g., medical cases, orphans) require individual beneficiary identification. (Review ID: GT-OQ8, GT-OQ11, GT-P7)
+* **Donor Engagement:** The model features direct micro-donor adoption of cases. (Review ID: GT-OQ17, GT-L8, GT-PL7)
+* **Financial Mechanics:** Contributions are frequently split among multiple donors for a single case, or combined. (Review ID: GT-L8)
+* **Fulfillment:** Assistance is often delivered directly via vendor fulfillment. (Review ID: GT-OQ19)
+* **Confirmation:** Delivery confirmation utilizes physical tracking cards with signatures. (Review ID: GT-L6, GT-P6, GT-AR2)
+* **Temporal Need Dynamics:** Needs are classified as recurring (e.g., monthly rations) or one-time (e.g., specific medical bills, wedding support), with mandatory reverification cycles for recurring support. (Review ID: GT-OQ4, GT-PL1)
+
+*Note: These findings must be treated as evidence of this specific organizational context and do not automatically rewrite the broader humanitarian domain unless independently corroborated.*
+
+---
+
+## 13. Status
 
 **Phase 0 steps 1–3 complete:** Business Logic V1 understood; Client First Draft understood;
 both merged into this document.
