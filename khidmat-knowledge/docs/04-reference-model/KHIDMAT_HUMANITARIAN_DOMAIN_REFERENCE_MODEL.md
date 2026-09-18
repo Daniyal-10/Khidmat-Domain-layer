@@ -1183,7 +1183,7 @@ The first practitioner session provided evidence that clarifies and narrows spec
 **Important Context Constraint:** The observations below are drawn from a single, specific operating context (grassroots, volunteer-driven, local charity model in Bhopal). They are recorded here as **evidenced operational patterns** but do not override the universal domain model without explicit governance.
 
 **Observed Epistemic Behavior (Refining §10):**
-* **Verification Activity:** The process of *claim → survey → field verification* is actively practiced. Volunteers conduct ground-reality checks. The survey serves as an initial reported claim. (Review ID: GT-L1, GT-P1, GT-L5)
+* **Verification Activity:** The process of initial survey / reported claim → experienced volunteer ground-reality verification is actively practiced. Volunteers conduct ground-reality checks. The survey serves as an initial reported claim. (Review ID: GT-L1, GT-P1, GT-L5)
 * **Epistemic Resolution:** Experienced volunteers conducting ground-reality reviews can correct surveyed needs, reject totally false claims, and approve genuine requirements. When multiple needs are reported, partial acceptance at the need-level is possible. (Review ID: GT-OQ12)
 * **Trusted Sources:** Government hospital medical documents are treated as trusted evidence, demonstrating real-world source-trust cognition. (Review ID: GT-OQ10)
 
@@ -1208,7 +1208,7 @@ AI reasoning and implementation are to be derived.** Nothing downstream may intr
 absent here without either tracing it to the two authoritative sources or to external humanitarian
 standards, or opening it as a question.
 
-**Status: PARTIALLY SUPPORTED BY EVIDENCE — SESSION 01 EVIDENCE INCORPORATED; FURTHER PRACTITIONER VALIDATION REQUIRED.** The foundation phase is closed. This document does not change
+**Status: FROZEN 2026-07-29.** The foundation phase is closed. This document does not change
 except by amending an authoritative source and re-deriving. No further foundation documents are
 to be authored.
 

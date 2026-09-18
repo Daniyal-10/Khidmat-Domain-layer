@@ -479,7 +479,7 @@ The first practitioner session provided evidence affecting specific architecture
 | GT-AR5 | Dignity vs Score (Constraint resolution) | No evidence in session. | Unresolved. |
 | GT-AR6 | Vulnerability & Risk Independence | Partially answered. No explicit challenge to rule yet. | Partially Unresolved. |
 
-Where Session 01 provided organizational evidence that contradicts domain assumptions (e.g., absence of Programmes), the architecture rule itself (e.g., CCR-1 Altitude Qualification) remains standing pending governance.
+Where Session 01 provided organizational evidence that differs from broader domain assumptions (e.g., this organization operates without nested Programmes), the architecture rule remains standing pending broader practitioner evidence and governance.
 
 ---
 
