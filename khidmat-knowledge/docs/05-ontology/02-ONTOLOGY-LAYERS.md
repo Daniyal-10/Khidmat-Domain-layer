@@ -543,8 +543,8 @@ The first practitioner session provided evidence directly bearing on the ontolog
 * **Unresolved Constraint:** There is still no evidence resolving the "recorded status vs actual current reality" mismatch (A15). The dual-clock problem remains an unresolved temporal/architecture question. (Review ID: GT-AR3)
 
 **Layer 7 - Cognition:**
-* **Observed Epistemic Behavior:** Ground-reality checking, volunteer judgment over actual need, government hospital documents serving as trusted sources, identity mismatch concerns, and tracking-card signatures acting as verification evidence are observed as active epistemic behaviors. (Review ID: GT-L1, GT-OQ10)
-* **Unresolved Constraints:** The full epistemic model is NOT validated. Crucially, "unknown vs checked and false" (Review ID: GT-OQ12) and "conflicting-source resolution" (Review ID: GT-PL4, GT-OQ13) remain fundamentally unresolved and must not be treated as closed.
+* **Observed Epistemic Behavior:** Ground-reality checking separates a reported claim from a verified fact. Volunteer judgment can correct surveyed needs, reject totally false claims, and approve genuine requirements (even partially across multiple needs). Government hospital documents serve as trusted sources. Identity mismatch concerns and tracking-card signatures acting as verification evidence are observed as active epistemic behaviors. (Review ID: GT-L1, GT-OQ10)
+* **Unresolved Constraints:** The full epistemic model is NOT validated. While "checked and false" has been explicitly observed as a rejection outcome, the handling of "unknown / unable to determine" remains fundamentally unresolved because the expert noted it is not much required in their specific workflow (Review ID: GT-OQ12). "Conflicting-source resolution" (Review ID: GT-PL4, GT-OQ13) also remains open.
 
 **Layer 8 - Coordination Patterns:**
 * Observed patterns: lead verification group mechanics, verified beneficiary pooling, direct micro-donor adoption, direct vendor fulfillment, and tracking-card confirmation flows. (Review ID: GT-OQ19, GT-L6)

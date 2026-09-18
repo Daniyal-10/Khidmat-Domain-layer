@@ -1183,7 +1183,8 @@ The first practitioner session provided evidence that clarifies and narrows spec
 **Important Context Constraint:** The observations below are drawn from a single, specific operating context (grassroots, volunteer-driven, local charity model in Bhopal). They are recorded here as **evidenced operational patterns** but do not override the universal domain model without explicit governance.
 
 **Observed Epistemic Behavior (Refining §10):**
-* **Verification Activity:** The process of *claim → survey → field verification* is actively practiced. Volunteers conduct ground-reality checks. (Review ID: GT-L1, GT-P1, GT-L5)
+* **Verification Activity:** The process of *claim → survey → field verification* is actively practiced. Volunteers conduct ground-reality checks. The survey serves as an initial reported claim. (Review ID: GT-L1, GT-P1, GT-L5)
+* **Epistemic Resolution:** Experienced volunteers conducting ground-reality reviews can correct surveyed needs, reject totally false claims, and approve genuine requirements. When multiple needs are reported, partial acceptance at the need-level is possible. (Review ID: GT-OQ12)
 * **Trusted Sources:** Government hospital medical documents are treated as trusted evidence, demonstrating real-world source-trust cognition. (Review ID: GT-OQ10)
 
 **Observed Temporal Behavior (Refining §7.4 and §14):**

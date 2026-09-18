@@ -36,6 +36,12 @@ The statements recorded here represent what the expert explicitly stated, in the
 * **Completeness:** ANSWERED.
 * **Relevant GTR Review IDs:** GT-L1, GT-OQ4, GT-PL1
 
+**Session 01 Clarification / Follow-up Evidence:**
+* **Additional Expert Answer:** The practitioner clarified that the initial survey information includes contact numbers, stated requirements, and document details (Aadhar, Voter, Aayushman, Permit). This survey is just an initial reported account, not verified truth. Experienced volunteers then conduct a ground-reality review to verify the stated requirements against ground reality. There is no second survey.
+* **Exact/raw wording:** "ye survey from hi h ye detials li jaati h survey form mai survey koi bhi randomly batadeta h number ke sath jo expirenced volunteers h jinhe survey ka experince h woh jaate h"
+* **Refined Artifact Status:** The mentioned documents (Aadhar, Voter, Aayushman, Permit, Khidmat form) are described as being collected/used, but were not supplied for inspection. They are E1 (practitioner testimony of an artifact), not E3.
+
+
 ### A2 — Same Person or New Person
 * **Question ID:** A2
 * **Question Text:** Without biometrics, how did you determine this was (or wasn't) someone already in your system?
@@ -88,6 +94,11 @@ The statements recorded here represent what the expert explicitly stated, in the
 * **Completeness:** ANSWERED.
 * **Relevant GTR Review IDs:** GT-P1, GT-L5
 
+**Session 01 Clarification / Follow-up Evidence:**
+* **Additional Expert Answer:** The practitioner clarified that needs stated in the initial survey can be corrected based on the ground-reality review. If multiple needs are reported, partial acceptance is possible at the need level: genuine needs proceed, while non-genuine needs do not proceed.
+* **Exact/raw wording:** "jo requirements survey mai aati h jo woh khete hai agau unse woh ground reaility match nhi hoti h toh usko reject kardiya jata h aur agar sab geniune hota h tabhi aage form fill kiya jaaata h... its done on the ground verification and the multiple needs the volutneer decides that based on the ground review"
+
+
 ### A6 — Compounding Vulnerability
 * **Question ID:** A6
 * **Question Text:** If this person/household had multiple overlapping issues at once, how did you decide and record that they were "highly vulnerable"?
@@ -126,6 +137,11 @@ The statements recorded here represent what the expert explicitly stated, in the
 * **Direct/Inferred:** Direct.
 * **Completeness:** PARTIALLY_ANSWERED (Did not explicitly discuss how "unknown" is represented).
 * **Relevant GTR Review IDs:** GT-L7, GT-OQ12, GT-P3
+
+**Session 01 Clarification / Follow-up Evidence:**
+* **Additional Expert Answer:** The practitioner clarified the difference between a reported claim (from the survey) and a verified fact. A claim found to be totally false during the ground-reality review is explicitly rejected. A genuine claim proceeds, and a surveyed need can be corrected from ground reality. However, the practitioner noted that an "unknown" state is not really recorded or required in their workflow, meaning the systemic handling of "unable to determine" remains an open question for the ontology.
+* **Exact/raw wording:** "claims are in the servey , evidence when the volunteer visted them and verifired them , their claims about the needs and confims it... unknown here is nothing about the case which is not much requried in this case"
+
 
 ### A9 — When Sources Disagree
 * **Question ID:** A9
@@ -374,27 +390,27 @@ The statements recorded here represent what the expert explicitly stated, in the
 
 | Review ID | Master Question | Evidence Found? | Evidence Level | Answer Status | Domain Reality | Context Dependency | Contradiction? | Artifact? | Ontology Impact | Follow-up Required |
 | --------- | --------------- | --------------- | -------------- | ------------- | -------------- | ------------------ | -------------- | --------- | --------------- | ------------------ |
-| GT-L1 | A1 | Yes | E3 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | VALIDATES_EXISTING_MODEL | No |
-| GT-OQ4 | A1 | Yes | E3 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | MAY_REQUIRE_REFINEMENT | No |
-| GT-PL1 | A1 | Yes | E3 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | VALIDATES_EXISTING_MODEL | No |
+| GT-L1 | A1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
+| GT-OQ4 | A1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | No |
+| GT-PL1 | A1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ1 | A2 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
 | GT-P4 | A2 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
 | GT-AR6 | A2 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
-| GT-OQ3 | A3 | Yes | E3 | ANSWERED | Khidmat Practice | Local Practice (zimmedar) | No | Yes (Provided) | MAY_REQUIRE_REFINEMENT | No |
-| GT-L2 | A3 | Yes | E3 | ANSWERED | Khidmat Practice | Local Practice (zimmedar) | No | Yes (Provided) | MAY_REQUIRE_REFINEMENT | No |
+| GT-OQ3 | A3 | Yes | E1 | ANSWERED | Khidmat Practice | Local Practice (zimmedar) | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | No |
+| GT-L2 | A3 | Yes | E1 | ANSWERED | Khidmat Practice | Local Practice (zimmedar) | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | No |
 | GT-P2 | A4 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | NO_OBVIOUS_IMPACT | Yes |
 | GT-PL2 | A4 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | NO_OBVIOUS_IMPACT | Yes |
-| GT-P1 | A5 | Yes | E3 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | VALIDATES_EXISTING_MODEL | No |
-| GT-L5 | A5 | Yes | E3 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | VALIDATES_EXISTING_MODEL | No |
-| GT-OQ2 | A6 | Yes | E3 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | NO_OBVIOUS_IMPACT | Yes |
-| GT-PL3 | A6 | Yes | E3 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | NO_OBVIOUS_IMPACT | Yes |
-| GT-OQ9 | A6 | Yes | E3 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | NO_OBVIOUS_IMPACT | Yes |
-| GT-P7 | A7 | Yes | E3 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | MAY_REQUIRE_REFINEMENT | Yes |
+| GT-P1 | A5 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
+| GT-L5 | A5 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
+| GT-OQ2 | A6 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | NO_OBVIOUS_IMPACT | Yes |
+| GT-PL3 | A6 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | NO_OBVIOUS_IMPACT | Yes |
+| GT-OQ9 | A6 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | NO_OBVIOUS_IMPACT | Yes |
+| GT-P7 | A7 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | Yes |
 | GT-OQ16 | A7 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-OQ18 | A7 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
-| GT-L3 | A7 | Yes | E3 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | MAY_REQUIRE_REFINEMENT | Yes |
+| GT-L3 | A7 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | Yes |
 | GT-L7 | A8 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
-| GT-OQ12 | A8 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-OQ12 | A8 | Yes | E1 | PARTIALLY_ANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-P3 | A8 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
 | GT-PL4 | A9 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-OQ13 | A9 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
@@ -402,8 +418,8 @@ The statements recorded here represent what the expert explicitly stated, in the
 | GT-AR4 | A9 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-OQ15 | A10 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ7 | A10 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | No |
-| GT-OQ8 | A11 | Yes | E3 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | VALIDATES_EXISTING_MODEL | No |
-| GT-OQ11 | A11 | Yes | E3 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Provided) | VALIDATES_EXISTING_MODEL | No |
+| GT-OQ8 | A11 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
+| GT-OQ11 | A11 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
 | GT-L8 | A12 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | MAY_REQUIRE_COORDINATION_CHANGE | No |
 | GT-OQ19 | A12 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | MAY_REQUIRE_COORDINATION_CHANGE | No |
 | GT-PL7 | A12 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | MAY_REQUIRE_COORDINATION_CHANGE | No |
@@ -417,7 +433,7 @@ The statements recorded here represent what the expert explicitly stated, in the
 | GT-OQ6 | B1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | CHALLENGES_EXISTING_MODEL | Yes (Governance) |
 | GT-OQ17 | B2 | Yes | E1 | ANSWERED | Khidmat Practice | Micro-donor environment | No | No | MAY_REQUIRE_NEW_CONCEPT | No |
 | GT-AR1 | B3 | NO EVIDENCE IN SESSION | E0 | NOT_ASSESSABLE_FROM_SESSION | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | No |
-| GT-OQ14 | B4 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | Yes | Yes (Provided) | MAY_REQUIRE_REFINEMENT | Yes |
+| GT-OQ14 | B4 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | Yes | Yes (Described) | MAY_REQUIRE_REFINEMENT | Yes |
 | GT-AR5 | B5 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-P5 | B6 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | NO_OBVIOUS_IMPACT | Yes |
 | GT-L4 | B7 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |

@@ -109,7 +109,7 @@ This update tracks the evidentiary shift following the first practitioner Ground
 ### What remains unresolved (Hypothesis/Pending):
 * **Dual-Clock (Status vs Reality):** Mismatches between system record and field reality.
 * **Contradiction/Conflict Resolution:** Exact mechanics for resolving conflicting sources or conflicting constraints (e.g., dignity vs score).
-* **Unknown vs False:** Epistemic stance modeling for unverified vs explicitly false claims.
+* **Unknown State:** Epistemic stance modeling for unverified / unable-to-determine claims (as "false" has now been observed).
 * **Vulnerability Composition:** Exact compounding mechanics for vulnerabilities.
 * **Consent & Dignity Semantics:** Precise hard-rule implementation parameters.
 * **Identity Resolution:** Full process for matching/resolving duplicate identities.

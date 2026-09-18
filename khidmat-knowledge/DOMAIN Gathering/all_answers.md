@@ -16,18 +16,22 @@ Education
 Khidmat from layout (what data is taken )
 
 Beneficiary detilas    date:           beneficary photo
-Name:                                  (passport size )
-Age:                    gender:  male  female (checkbox)
+Name:xxx                               (passport size )
+Age:  36                gender:  male (tick) female (checkbox)
 Address:
 
-Hosue : Own    Rental   (checkbox)
-Contact no.             alternative NO
+Hosue : Own    Rental (tick)  (checkbox)
+Contact no.:xxx       alternative NO:
 
 Family members details 
 Name   gender  age   relation   particular
+xxxx   F        70   mother     widow
+xxx    F        30   wife       house wife
+xxxx   M        10   son        study
+xxx    F        04   daughter   study
 
 (table)
-example              mother      widow
+example                    
 
 
 zakaat eligible: yes/no (checkbox)
@@ -38,6 +42,10 @@ documents: 1.aadhar, 2.voter ID, 3. Ayushman, 4. Permit (checkbox)
 Requirements 1.        2.       3.          4.
 
 Case summary:(total case descptiron is writen here)
+(exmaple:KHIDMAT GROUP
+ Buzurg maa aur 2 chote bacche hai, accident mein spinal cord mein multiple injuries hone ki wajah se bister se nahi uth patey hai.kiraye ke ghar mein rehte hai inhe medical, monthly grocery aur rent mein help ki zaroorat hai jo ap direct contact karke bhi help kar sakte hai ya khidmat ke zariye bhi kar sakte hai.
+Jazakallah 
+[contact no.])
 
 
 benficary sign                        surveyor sign
@@ -46,6 +54,9 @@ benficary sign                        surveyor sign
 All docs in the khidmat form are taken
 Aadhar voter Aayushman Permit
 
+ye survey from hi h ye detials li jaati h survey form mai 
+survey koi bhi randomly batadeta h number ke sath
+jo expirenced volunteers h jinhe survey ka experince h woh jaate  h aur jo requirements survey mai aati h jo woh khete hai agau unse woh ground reaility match nhi hoti h toh usko reject kardiya jata h aur agar sab geniune hota h tabhi aage form fill kiya jaaata h
 
 about the family privacy concern too much to hide 
 the khidmat grp dont work like this
@@ -65,6 +76,10 @@ We don't help the beggers
 The volunteers estimate the donation amt (based on what they asked and how much they really should get to fullfill the need)
 
 The Beneficiary ID (Unique ID) should be there , as there can be similar name or identity mismatch 
+all docs and the things are taken which is menitoned in the form and then we are working on the beneficary ids so this solves the id issues
+
+
+
 
 The donor and the beneficiary has this card to track the delivery of the supports from both the ends 
 On which the delivery signatures are taken (the beneficary side will do the receving and the donor will do the fullfilling)
@@ -90,6 +105,18 @@ Household condition can be considered (for the family only) but it is rare and i
 
 family identification and person identification is also there 
 when the need is genral like the food so the head of the family (zimmedar) is noted in the beneficary for the family and for the spefic needs the members which are beneficary their ids are also taken
+
+ Compounding Vulnerability
+ ans - its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary 
+
+ Dependency, Cascading Risk, and Guardianship
+ ofcs these are only considered without metnioning explicitly in the sys but when we are telling the too much needy and also dont have a earning member that directly make their prioirty high 
+
+ Claims, Evidence, and What "Unknown" Looks Like
+ claims are in the servey ,
+ evidence when the volunteer visted them and verifired them , their claims about the needs and confims it
+ unknown here is nothing about the case which is not much requried in this case 
+
 
 
 NO organisations and programs are involved in this just the khidmat grp doing the root work

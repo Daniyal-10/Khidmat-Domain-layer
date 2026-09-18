@@ -677,7 +677,7 @@ The initial business understanding has been aligned with demonstrated operationa
 * **Eligibility rules:** Specific eligibility rules (e.g., verifying Zakat eligibility, avoiding conflict with government hospital provisions) are enforced. (Review ID: GT-OQ15, GT-OQ7)
 
 **Domain and Service Flow Evidence:**
-* **Survey and Ground-Reality:** Needs are initially surveyed and subsequently subjected to ground-reality verification by volunteers. (Review ID: GT-L1, GT-P1, GT-L5)
+* **Survey and Ground-Reality:** Needs are initially surveyed as reported claims and subsequently subjected to ground-reality verification by experienced volunteers. Totally false claims are rejected, genuine requirements proceed, and surveyed needs can be corrected based on the ground reality check. (Review ID: GT-L1, GT-P1, GT-L5)
 * **Beneficiary Resolution:** General needs are often handled at the family or head-of-family level, while specific needs (e.g., medical cases, orphans) require individual beneficiary identification. (Review ID: GT-OQ8, GT-OQ11, GT-P7)
 * **Donor Engagement:** The model features direct micro-donor adoption of cases. (Review ID: GT-OQ17, GT-L8, GT-PL7)
 * **Financial Mechanics:** Contributions are frequently split among multiple donors for a single case, or combined. (Review ID: GT-L8)

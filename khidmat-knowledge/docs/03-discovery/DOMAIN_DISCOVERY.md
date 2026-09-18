@@ -387,6 +387,6 @@ The first practitioner session provided genuine discovery evidence about the Khi
 * **Absence of Nested Programmes:** The organization functions entirely without a nested Programme construct, operating directly at the grassroots level. (Review ID: GT-PL5, GT-OQ6)
 * **Direct Micro-Donor Model:** The system relies on direct adoption of cases by donors, who may split or combine their contributions. (Review ID: GT-OQ17, GT-L8)
 * **Local Scope Limitation:** Seasonal issues or pandemic crises are excluded from this organization's active operational scope. (Review ID: GT-OQ1)
-* **Operational Workflow:** Initial survey followed by ground-reality verification by local volunteers is the standard method for establishing truth. (Review ID: GT-L1, GT-P1)
+* **Operational Workflow:** Initial survey (acting as a reported claim) followed by ground-reality verification by experienced local volunteers is the standard method for establishing truth, resulting in rejection of false claims, correction of needs, and approval of genuine needs. (Review ID: GT-L1, GT-P1)
 
 Do not generalize these findings beyond their evidentiary scope. The broader questions of Programme altitude and universal humanitarian structure remain subject to governance and further evidence.
