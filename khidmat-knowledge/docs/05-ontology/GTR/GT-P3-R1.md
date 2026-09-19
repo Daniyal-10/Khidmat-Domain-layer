@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual records and systems, how do you distinguish between a situation where "we checked and we know this is false/does not exist" versus a situation where "we have not checked this yet"? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'the volunteer will reject the case as not genuine'. 'First we dont register who dont have the documents'. They don't represent uncertainty; they resolve it before registering, or reject. |
+| **Evidence / response** | 'unknown here is nothing... volunteer will reject the case' |
 
 ---
 
@@ -43,8 +43,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | MISSING |
-| **Reviewer reasoning** | The practitioner enforces a strict epistemic gate (must be verified to enter) rather than tracking uncertainty in the system. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Workflow resolves unknowns before entry; system representation of uncertainty was not assessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -56,7 +56,7 @@
 | **Humanitarian domain reality** | Absence of a recorded value is not evidence of absence of the condition. |
 | **Organizational practice** | Requiring systems to track the information status (assessed true, assessed false, unassessed) independently of the value. |
 | **Local/contextual practice** | |
-| **Ontology implication** | The Epistemic Stance primitive (P3) is structurally validated. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -76,7 +76,7 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
@@ -86,5 +86,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

@@ -32,7 +32,7 @@
 | **Question as asked** | Describe a real case where someone's family and household didn't match (e.g., displacement, fostering, polygamy, migration). How did you decide who counted as part of which? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | They take 'Family members details' and 'House: Own/Rental', but do not detail complex boundary cases. |
+| **Evidence / response** | 'Family members details... House: Own/Rental' |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Not enough evidence on complex household vs family boundaries. |
+| **Reviewer reasoning** | Does not discuss complex family/household boundary cases. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Treating Family and Household as independent constructs where membership in one does not dictate membership in the other. |
 | **Local/contextual practice** | |
-| **Ontology implication** | Supports the dual-membership structural model. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -73,11 +73,10 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

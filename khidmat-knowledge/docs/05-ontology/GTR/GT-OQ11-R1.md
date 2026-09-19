@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual work, how do practitioners determine that a person or household has a "need" requiring intervention? What tells a worker that a condition has become a need? Is there a specific threshold? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Standard involves checking: 'Below the poverty line', 'Extremely needy mostly', 'Widow cases', 'No income'. Ground reality must match claimed requirement. |
+| **Evidence / response** | 'Below the poverty line... Extremely needy mostly' |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The wellbeing standard is absolute ('Below poverty line') and contextually verified. |
+| **Reviewer reasoning** | Establishes baseline wellbeing standard used. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | "Need" is a contextual evaluation, not an absolute biological state. |
 | **Organizational practice** | Evaluating needs based on local criteria and professional judgement, and distinguishing between genuine need and programme eligibility. |
 | **Local/contextual practice** | |
-| **Ontology implication** | Need is evaluated contextually; Eligibility is distinct from Need. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

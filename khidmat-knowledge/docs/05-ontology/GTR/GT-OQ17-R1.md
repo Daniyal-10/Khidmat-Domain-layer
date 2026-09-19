@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What does a donor relationship actually consist of in practice? Is it just a one-time gift, an ongoing commitment, or the 'adoption' of specific cases? Also, is there a distinct layer of decision-making happening above individual programmes where the funders themselves coordinate or set terms together?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | Donors coordinate informally in a WhatsApp group, first come first serve adoption. |
+| **Evidence / response** | 'uploaded in a grp where the donors are there' |
 
 ---
 
@@ -44,8 +44,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONTEXT_DEPENDENT |
-| **Reviewer reasoning** | A distinct funder coordination layer doesn't exist; it's a flat informal group. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Local absence of funder altitude does not establish context-dependence. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Coordination occurs not just between programmes, but between funders determining the boundaries within which those programmes operate. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | The architecture must represent the funder ecosystem altitude as distinct from the programme altitude. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual work, can a case move backward or return to an earlier situation? How often does this happen in practice? When it happens, do you create a new case, reopen the previous case, or handle it in some other way? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'if recusisng like medicens they can conitnue'. Also reverification if earning member takes longer. |
+| **Evidence / response** | 'if recusisng like medicens they can conitnue' |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Cases do not follow a strict linear path; they loop back for reverification or recurring needs. |
+| **Reviewer reasoning** | Confirms non-linearity (recurrent/reopening states). |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | Human needs and interventions do not follow strictly linear, forward-only paths. |
 | **Organizational practice** | Managing non-linear cases and ensuring the person and their history persists across multiple engagements, though the specific administrative mechanism (new case vs reopened case) varies by organization. |
 | **Local/contextual practice** | |
-| **Ontology implication** | Non-linearity (CCR-6) is validated; Entity persistence decoupled from case status is validated. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

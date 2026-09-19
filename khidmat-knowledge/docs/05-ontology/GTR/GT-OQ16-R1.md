@@ -32,7 +32,7 @@
 | **Question as asked** | When two needs affect each other, do you explicitly record that relationship in your actual work, or do you simply consider the relationship during assessment and planning? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Need interaction beyond cascading not explicitly described. |
+| **Evidence / response** | 'multiple needs the volutneer decides...' |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Insufficient evidence on need interaction. |
+| **Reviewer reasoning** | STOP item: Fabricated master wording discarded. Need interactions not assessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | Needs interact, worsen, and block each other dynamically. |
 | **Organizational practice** | Capturing need interactions via assessment notes, case plans, and worker judgement rather than formal system relationship linkages. |
 | **Local/contextual practice** | |
-| **Ontology implication** | Formal Need-to-Need relations (P7) are not mandated; interactions are tracked via documentation (P3/Epistemics). |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -73,11 +73,10 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

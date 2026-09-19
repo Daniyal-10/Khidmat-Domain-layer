@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "In your casework, which specific decisions or actions strictly require a human practitioner to review and approve them? Are there scenarios where a system calculation, formula, or junior assessment is explicitly not trusted to make the final determination?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | 'its done on the ground verification... the volutneer decides that based on the ground review'. Humans make the decisions. |
+| **Evidence / response** | 'its done on the ground verification... the volutneer decides' |
 
 ---
 
@@ -47,8 +47,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Automated or survey-level claims are always superseded by human verification. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Shows human judgment, but does not establish a universal 'always requires human sign-off' rule against automation. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -60,7 +60,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | High-consequence decisions involving eligibility, protection, and uncertainty inherently require human judgement and attribution. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | The architecture must distinguish between automated system calculations/beliefs and human-authorized decisions. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -80,7 +80,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
@@ -90,5 +90,4 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

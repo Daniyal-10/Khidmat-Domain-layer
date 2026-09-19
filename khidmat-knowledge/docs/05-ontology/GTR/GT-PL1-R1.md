@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual assessment and casework, do you treat a person's identity, their health, their capabilities, and their household/living environment as different kinds of information? Are changes in these areas tracked independently? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Form groups Person details (Age, gender, photo) separately from Household context (House: Own/Rental, Address). |
+| **Evidence / response** | Form groups Person details separate from Household context. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The form structurally separates the individual (Pillar I) from their environment/household (Pillar II). |
+| **Reviewer reasoning** | Conceptually separates person from environment in form layout. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | Identity, internal capacity, and external environment are experienced and tracked as distinct realities. |
 | **Organizational practice** | Separating these classes of information in assessments and records so they can change independently. |
 | **Local/contextual practice** | |
-| **Ontology implication** | Structural validation of Pillar I boundaries. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

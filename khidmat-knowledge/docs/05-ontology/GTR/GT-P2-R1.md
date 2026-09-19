@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When you assess that a certain condition is true for a household (for example, that they have a specific need or a damaged roof), can you give a real example of where that exact same physical condition meant something completely different depending on the location, the season, or the specific programme evaluating it?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | Khidmat operates in Bhopal and 100-200 km near this city. We don't have multiple locations or programs. The concept of cross-context variability is not exercised here. |
+| **Evidence / response** | 'working in bhopal and 100-200 km near this city' |
 
 ---
 
@@ -44,8 +44,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONTEXT_DEPENDENT |
-| **Reviewer reasoning** | The specific operation does not cross contexts (single geography, single informal program). Therefore, this cannot be assessed here. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Operates in one location/context; cannot assess cross-context variation. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | The meaning, urgency, and programmatic relevance of an observed condition are relative to the context in which it occurs. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | Factual condition observations must not be silently overwritten or altered when a new programme assesses them; instead, a new contextual assessment should be linked to the same underlying condition. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

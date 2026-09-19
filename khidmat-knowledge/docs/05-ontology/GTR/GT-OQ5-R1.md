@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "Describe a case where the administrative step of 'closing the case' and the actual measurement of 'did the assistance work' were tracked differently. Are these always handled by the same person on the same timeline, or do you have a separate process for measuring the actual outcome/impact?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | Outcome tracking not distinct from fulfillment. |
+| **Evidence / response** | Tracking card used by donor and beneficiary. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Not assessed in this operational context. |
+| **Reviewer reasoning** | Outcome ownership distinct from case journey is not assessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Outcome assessment is a distinct operational process from case management, often requiring post-assistance verification. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | Outcomes must be modeled as empirical states assessed independently of the case administrative lifecycle. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "In practice, what exactly do you ask a beneficiary for consent to do? And operationally, what happens to the case or the data if they withdraw their consent partway through receiving assistance?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | No formal withdrawal mentioned, only initial privacy concerns. |
+| **Evidence / response** | Mentions initial privacy concern, no withdrawal. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Insufficient evidence on consent withdrawal. |
+| **Reviewer reasoning** | Consent parameters/withdrawal not assessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Consent withdrawal halts future dependent action and data sharing, but does not invalidate the historical existence of the person or their needs. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | The system must evaluate consent as a constraint preceding specific Actions/Events, rather than tying it to the existence of Entity or Condition records directly. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

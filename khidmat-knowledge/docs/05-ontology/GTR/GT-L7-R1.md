@@ -32,7 +32,7 @@
 | **Question as asked** | How do you distinguish between "we checked and this is not true" and "we have not checked this yet" in your systems? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'unknown here is nothing about the case which is not much requried'. They do not record missing information, they require documents to proceed. |
+| **Evidence / response** | 'unknown here is nothing about the case' |
 
 ---
 
@@ -43,8 +43,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | MISSING |
-| **Reviewer reasoning** | The operation does not record 'unchecked' vs 'checked false', they only record verified facts. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Workflow resolves unknowns before entry; system epistemic stance was not assessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -56,7 +56,7 @@
 | **Humanitarian domain reality** | Reality exists regardless of whether a system has recorded it yet. |
 | **Organizational practice** | Explicitly separating known negation ("No") from open-world ignorance ("Unknown", "Blank"). |
 | **Local/contextual practice** | |
-| **Ontology implication** | The open-world assumption (L7) is structurally validated as an operational requirement. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -76,7 +76,7 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
@@ -86,5 +86,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

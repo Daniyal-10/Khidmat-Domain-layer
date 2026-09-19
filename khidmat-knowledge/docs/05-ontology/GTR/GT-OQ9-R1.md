@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When a household is identified as being 'at risk', how is that actually recorded in your data? Does treating 'at risk' as an ongoing, continuing fact about the household (similar to a health condition) match how you use the term in practice, or is it treated differently?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | Priority is implicitly high when too much needy/no earning member. Handled via case summary, treated as a fact of the case. |
+| **Evidence / response** | 'dont have a earning member that directly make their prioirty high' |
 
 ---
 
@@ -44,8 +44,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | 'At risk' is treated as an ongoing fact of the case, documented in the summary. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Describes urgency/priority, but does not establish the distinct semantic concept of 'Risk'. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Risk is a persistent, changeable condition whose thresholds vary by programme and context. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | Risk must be implemented using the Condition primitive, preserving history and context, not as a universal scalar value or an instantaneous event. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When you record that you have provided a form of assistance, do you naturally describe 'what need it addresses', 'how it's delivered' (e.g., cash vs in-kind), and 'the phase of support' as three entirely separate fields/concepts, or do you record them together as one description?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | Need and assistance are bundled but distinct: 'medical, monthly grocery aur rent mein help ki zaroorat hai... jo ap direct contact karke bhi help kar sakte hai ya khidmat ke zariye'. |
+| **Evidence / response** | Need (medical) and modality (grocery, rent) bundled in description. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Assistance is described by the need it addresses (grocery, rent) and the delivery modality (direct or via Khidmat). |
+| **Reviewer reasoning** | Practitioner bundles need, delivery, and why together. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | The nature of humanitarian assistance is multi-dimensional, requiring separation between the "what", "how", and "when/phase" of the intervention. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | The ontology must not merge these three aspects into a single flat taxonomy for "Assistance Type". |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

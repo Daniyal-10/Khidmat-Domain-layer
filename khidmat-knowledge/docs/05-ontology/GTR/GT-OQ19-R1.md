@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "Is there a distinct role or function in your operating environment that exists solely to coordinate a complex case across multiple different organizations, separate from the case manager who is delivering direct support?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | 'just the khidmat grp volunteerss (the staff)'. No separate coordination role. |
+| **Evidence / response** | 'just the khidmat grp volunteerss' |
 
 ---
 
@@ -44,8 +44,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONTEXT_DEPENDENT |
-| **Reviewer reasoning** | Case coordination is handled directly by the volunteers, no distinct orchestration role. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Local absence of orchestration role does not establish context-dependence. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Complex cases require an orchestration function to track multi-org referrals and prevent service gaps, functioning distinctly from direct assistance provision. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | The ontology must architecturally separate the tracking/orchestration of a case from the individual action/service events within that case. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

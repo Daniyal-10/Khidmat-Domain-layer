@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When you assess that a certain condition is true for a household (for example, that they have a specific need or a damaged roof), can you give a real example of where that exact same physical condition meant something completely different depending on the location, the season, or the specific programme evaluating it?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | 'NO we dont cover the seasonal things are not covered. And not the pandemic situations also'. Seasonal or location changes not tested. |
+| **Evidence / response** | 'NO we dont cover the seasonal things...' |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The practitioner explicitly excludes seasonal or changing contexts, so this cannot be assessed. |
+| **Reviewer reasoning** | Seasonal/location changes not encountered; cannot assess. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Environment and contextual variables dictate the urgency and relevance of household conditions. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | The ontology must structure context separately from conditions, allowing contextual variables to influence need determinations. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

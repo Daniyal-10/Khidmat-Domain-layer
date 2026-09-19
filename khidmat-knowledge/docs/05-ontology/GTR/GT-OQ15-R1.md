@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "Do you interact with schools, clinics, or local employers as active parties with their own interests, decisions, and capacity limits, or do you treat them purely as passive 'places/services' that a person accesses?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | Connect with vendors for ration. Beneficiary visits them. Government hospitals are trusted evidence sources. Vendors act as distinct service providers. |
+| **Evidence / response** | Vendors provide ration, hospitals provide proofs. |
 
 ---
 
@@ -44,8 +44,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Vendors act as actors delivering services, hospitals act as epistemic authorities. The ontology handles both. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Establishes them as services/places, but not explicitly as Actors with their own interests. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Service providers (clinics, schools) assert their own eligibility rules and capacity limits, making independent decisions on service delivery. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | A referral to a Service Provider is a request made to an active Entity, not an automatic state change for the beneficiary, as the provider can reject or fail the delivery. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

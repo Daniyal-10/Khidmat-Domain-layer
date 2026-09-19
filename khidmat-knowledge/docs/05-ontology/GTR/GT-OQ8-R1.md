@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What specific kinds of restrictions have you seen donors attach to funding? (For instance, restrictions based on geography, specific sectors, types of populations, or time limits?)" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | 'Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other'. Restrictions exist. |
+| **Evidence / response** | 'donors have limit to donate...' |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Funding restrictions (limits) are actively applied. |
+| **Reviewer reasoning** | Validates existence of funding restrictions. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Funding restrictions tightly bound assistance eligibility independently of the existence of a human need. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | The constraint taxonomy must explicitly support geographic, demographic, sectoral, and temporal bounding rules. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

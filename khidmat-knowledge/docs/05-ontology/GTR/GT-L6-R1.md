@@ -32,7 +32,7 @@
 | **Question as asked** | Take one real beneficiary or household case and describe its timeline from beginning to end. What significant events or changes happened, and approximately when did they happen? Are there important events in the person's real life that workers do not record? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Specific timeline: Survey -> volunteer visit/verification -> upload to donor group -> donor adoption -> fulfillment -> tracking card signatures. |
+| **Evidence / response** | Survey -> visit -> upload -> adoption -> fulfillment (tracking card). |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Cases follow a timeline of dateable events, some of which (reverification) loop back. |
+| **Reviewer reasoning** | Confirms event sequence and linearity in a case. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Recording case histories as chronological sequences of dateable events scoped strictly to programme relevance. |
 | **Local/contextual practice** | |
-| **Ontology implication** | The Events layer (L6) accurately models case history sequences. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

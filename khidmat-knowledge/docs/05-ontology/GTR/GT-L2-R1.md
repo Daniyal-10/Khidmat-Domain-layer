@@ -32,7 +32,7 @@
 | **Question as asked** | Which of the following do you track as distinct, persistent things in your own systems or records: Person, Household, Family, Community, Organisation, Programme, Donor, Government body, Service provider, Emergent/mutual-aid group, Case? Which are missing? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | They track Person, Family ('zimmedar', members), Donor. Do NOT track Organisation/Programme ('just the khidmat grp doing the root work'). |
+| **Evidence / response** | 'NO organisations and programs are involved' |
 
 ---
 
@@ -40,8 +40,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONTEXT_DEPENDENT |
-| **Reviewer reasoning** | The absence of Organisation/Programme in this specific grassroots context does not invalidate the entity concepts universally. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Local absence of Org/Prog layer does not establish context-dependence. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Tracking all 11 listed entities distinctly to correctly represent their distinct roles, purposes, and relationships (e.g., who provides what to whom). |
 | **Local/contextual practice** | |
-| **Ontology implication** | Supports the full structural scope of Layer 2 entities for operational tracking. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -73,11 +73,10 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

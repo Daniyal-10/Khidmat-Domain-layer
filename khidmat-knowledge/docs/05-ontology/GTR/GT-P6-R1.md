@@ -32,7 +32,7 @@
 | **Question as asked** | What kinds of things happen to a person, household, or case that you consider to be events or occurrences rather than ongoing conditions? Are there situations where something that initially looks like an event is actually treated as an ongoing condition or state instead? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'medical needs are of one time and long also soo they can be if one time then help via the donors and then closed if recusisng like medicens they can conitnue'. Clear boundary between event and ongoing state. |
+| **Evidence / response** | 'medical needs are of one time and long also...' |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner distinguishes between a point-in-time fulfillment and an ongoing continuing state (recurring medicines). |
+| **Reviewer reasoning** | Distinguishes one-time dateable events from ongoing states. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | Reality consists of both ongoing situations and point-in-time happenings that alter those situations. |
 | **Organizational practice** | Operationally distinguishing and recording events separately from ongoing states. |
 | **Local/contextual practice** | |
-| **Ontology implication** | The Occurrence primitive is structurally validated as distinct from Condition. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

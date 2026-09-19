@@ -32,7 +32,7 @@
 | **Question as asked** | Which connections between people, households, and organizations does your work actually need to record (e.g., kinship, dependency, guardianship, responsibility, referral, handoff), and are there important connections not on this list? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Record kinship explicitly ('relation: mother, wife, son, daughter'). |
+| **Evidence / response** | 'relation: mother, wife, son, daughter' |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Social relationships (kinship) are actively recorded and used. |
+| **Reviewer reasoning** | Explicitly tracks kinship relationships. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Representing a specific set of distinct relationships (kinship, dependency, guardianship, responsibility, household membership) within Khidmat's operational domain. |
 | **Local/contextual practice** | |
-| **Ontology implication** | The Relationships layer (L3) is structurally sound and necessary. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

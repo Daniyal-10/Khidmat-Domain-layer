@@ -32,7 +32,7 @@
 | **Question as asked** | Have you ever seen a person's life circumstances and their administrative status tracked in a way that caused confusion? [Follow-up: Is the "beneficiary card" a permanent record of the person, or is it tied to a specific project/donor?] |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Not addressed in the evidence. |
+| **Evidence / response** | Not addressed in evidence. |
 
 ---
 
@@ -44,7 +44,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Insufficient evidence to assess dual-clock confusion. |
+| **Reviewer reasoning** | Dual-clock rule not assessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -56,7 +56,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Spawning individual beneficiary cards when donor requirements demand separate tracking from the family, and tracking active/inactive status on that card. |
 | **Local/contextual practice** | |
-| **Ontology implication** | Reaffirms that administrative states (active/inactive) can belong to the administrative record, but does not definitively prove CCR-7. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -76,7 +76,7 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | Further evidence needed. The practitioner did not provide an example of confusion or explicitly discuss the separation of life circumstances vs. administrative status. Must ask for a concrete example. |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
@@ -86,5 +86,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

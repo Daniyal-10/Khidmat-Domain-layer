@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When gathering facts about a person or household, what different types of evidence do you actually collect in the field? If different sources of evidence point to different conclusions, how do you decide which one to trust? Is there a formal rule for which type of evidence 'wins'?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | Government hospital reports/prescriptions considered true. Aadhar, Voter ID, Ayushman. Volunteer ground verification. |
+| **Evidence / response** | 'medicals proofs... of government hospital are considered true only' |
 
 ---
 
@@ -48,7 +48,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | A clear epistemic hierarchy exists (Government documents > Volunteer verification > Unverified survey claims). |
+| **Reviewer reasoning** | Validates epistemic hierarchy and evidence weighting. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -60,7 +60,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Evidence weight is context-dependent and domain-specific (e.g., identity vs. immediate needs). Conflicting claims must not be silently overwritten. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | The system must permit multiple conflicting claims with distinct sources to exist simultaneously, surfacing them for human resolution rather than resolving them automatically via a global hierarchy. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -80,7 +80,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
@@ -90,5 +90,4 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

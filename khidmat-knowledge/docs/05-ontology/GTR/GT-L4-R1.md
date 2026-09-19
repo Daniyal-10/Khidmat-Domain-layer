@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What kind of operational rules or constraints strictly bind your casework, regardless of what the individual beneficiary needs (e.g., eligibility cutoffs, safeguarding rules, reporting mandates)? Can you describe a real situation where two of these rules pulled you in opposite directions (like a donor reporting requirement clashing with a family's preference for privacy)? How did you handle that clash?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | 'about the family privacy concern too much to hide... only if they are too much concern still they tell in khidmat... they needs to tell about the 3 4 more people'. Privacy preference bounds against verification requirement. |
+| **Evidence / response** | 'about the family privacy concern too much to hide...' |
 
 ---
 
@@ -44,8 +44,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Two rules (privacy vs. verification requirement) bound the work in opposite directions and require human resolution. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | STOP item: Fabricated master wording discarded. Raw text shows rule vs preference, not rule vs rule. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Competing operational rules are a fundamental reality of casework and require human judgement to resolve. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | The system architecture must not attempt to automatically "solve" normative conflicts via arithmetic; it must intentionally preserve the clash. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

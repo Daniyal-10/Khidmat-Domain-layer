@@ -1,3 +1,6 @@
+> [!WARNING] HISTORICAL DOCUMENT
+> This document reflects the original Stage 5 methodology. Practitioner validation was executed but is strictly scoped to one context (Khidmat, Bhopal). Claims of 'universal validation' or 'practitioner consensus' in this document are historical and have been superseded by the final reconciliation audit.
+
 # 5 — Ground Truth Review Record Template
 
 **Ontology Design, step 5 of 7.** Status: **Template only — contains no completed records.**

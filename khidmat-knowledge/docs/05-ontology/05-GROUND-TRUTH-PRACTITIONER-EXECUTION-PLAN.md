@@ -1,3 +1,6 @@
+> [!WARNING] HISTORICAL DOCUMENT
+> This document reflects the original Stage 5 methodology. Practitioner validation was executed but is strictly scoped to one context (Khidmat, Bhopal). Claims of 'universal validation' or 'practitioner consensus' in this document are historical and have been superseded by the final reconciliation audit.
+
 # 5 — Ground Truth Practitioner Execution Plan
 
 > **Historical snapshot notice.** This document organizes the "47 `NOT YET REVIEWED` items" as they stood before Stage 5 execution began. All 47 items have since been reviewed; see the completed `GT-*-R1.md` records and the updated `05-GROUND-TRUTH-REVIEW-MATRIX.md` for current status. Retained here for audit and methodological traceability only.

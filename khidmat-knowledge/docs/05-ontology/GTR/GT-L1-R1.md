@@ -32,7 +32,7 @@
 | **Question as asked** | When you assess a person or household, are dimensions such as health, age, capability, nutrition, economic situation, caregiving, shelter, water/sanitation, etc., treated as distinct assessment dimensions in your actual work? Are the same dimensions reused? Can one change independently? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Dimensions tracked: Age, gender, housing (own/rental), zakaat eligible, monthly income, specific requirements (food, shelter, medical, education). |
+| **Evidence / response** | Age, gender, housing, income, requirements collected. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner uses actual facets (lifecycle, housing condition, economic status, need category) on the ground. |
+| **Reviewer reasoning** | Tracks specific facet dimensions on individuals. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Treating thematic dimensions as distinct, independently variable, and context-selected parameters for assessment. |
 | **Local/contextual practice** | |
-| **Ontology implication** | The structural mechanism of the Facets layer is validated. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

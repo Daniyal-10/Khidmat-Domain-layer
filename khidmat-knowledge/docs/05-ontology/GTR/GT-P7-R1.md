@@ -32,7 +32,7 @@
 | **Question as asked** | Describe how a vulnerability or risk in one family member affects others who depend on them, in a real case you have seen. |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'when we are telling the too much needy and also dont have a earning member that directly make their prioirty high'. Dependency and lack of an earning member directly affects vulnerability. |
+| **Evidence / response** | 'dont have a earning member that directly make their prioirty high' |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The relation (lack of earning member) directly impacts the condition (priority/vulnerability) of the household. |
+| **Reviewer reasoning** | Establishes dependency relations cascading into priority. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Recording dependency and responsibility relationships to assess family-level needs and the systemic impact of one person's vulnerability on another. |
 | **Local/contextual practice** | |
-| **Ontology implication** | The Relation primitive is validated as a necessary structural mechanism for operational tracking. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

@@ -32,7 +32,7 @@
 | **Question as asked** | Topic 1.1: Identity and Persistence. |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'The Beneficiary ID (Unique ID) should be there , as there can be similar name or identity mismatch'. Re-identification is explicitly handled. |
+| **Evidence / response** | 'The Beneficiary ID (Unique ID) should be there... identity mismatch' |
 
 ---
 
@@ -44,7 +44,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly requires tracking persons as the 'same one' across encounters to avoid identity mismatch. |
+| **Reviewer reasoning** | Explicitly tracks re-identification across encounters. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -56,7 +56,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Tracking a person's history (needs, fulfillment, activity status) via a persistent beneficiary card. |
 | **Local/contextual practice** | |
-| **Ontology implication** | The Entity primitive for Person is supported, provided it is structurally distinct from the Beneficiary Card. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -76,7 +76,7 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this specific Review ID regarding basic person continuity, though further evidence is needed to clarify the boundary between Person and Card. |
+| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
@@ -85,5 +85,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

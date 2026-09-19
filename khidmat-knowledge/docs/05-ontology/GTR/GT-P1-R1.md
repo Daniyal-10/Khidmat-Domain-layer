@@ -32,7 +32,7 @@
 | **Question as asked** | Describe conditions you track that persist and change over time for a person or household you have worked with. Does anything you track behave differently from this — e.g., is instantaneous, or never changes? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | We track food, medical, shelter, education needs. They persist and change over time (e.g. medical can be one-time or ongoing). Zakaat eligibility and income are also tracked. |
+| **Evidence / response** | 'widow cases', 'medical needs are of one time and long also' |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly tracks ongoing circumstances (needs) that change over time, validating the Condition primitive. |
+| **Reviewer reasoning** | Practitioner explicitly tracks conditions that change over time. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Operationally separating persisting conditions from instantaneous events (assessments, referrals). |
 | **Local/contextual practice** | |
-| **Ontology implication** | The Condition primitive is structurally validated. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When a case involves dignity, safeguarding, or protection concerns, how are those risks practically recorded in your tools? Have you ever seen these concepts reduced to a numerical 'score' or 'rating', or are they recorded and handled differently?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | 'about the family privacy concern too much to hide... still they tell in khidmat'. It's handled as a constraint and discussion, not a score. |
+| **Evidence / response** | No raw evidence addressing dignity as score vs rule. |
 
 ---
 
@@ -44,8 +44,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Dignity/privacy is treated as a constraint on the operation, not a measurable attribute. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | STOP item: Fabricated master wording discarded. Not assessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Dignity and safeguarding concerns impose rules and restrictions on how a case must be handled. They cannot be fully represented as simple numerical metrics. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | The ontology must provide a mechanism (like Norm/Constraints) to attach safeguarding rules and visibility restrictions to a case, preventing automated mishandling. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

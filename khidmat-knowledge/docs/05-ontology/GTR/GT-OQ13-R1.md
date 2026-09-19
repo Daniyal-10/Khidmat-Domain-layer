@@ -32,7 +32,7 @@
 | **Question as asked** | Does your system or process have a way to explicitly record the disagreement itself? How is it finally resolved? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'never happned' regarding conflict. Disagreement is resolved prior to entry. |
+| **Evidence / response** | 'never happned [conflict]' |
 
 ---
 
@@ -43,8 +43,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | MISSING |
-| **Reviewer reasoning** | Contradictions are not stored; they are resolved via volunteer verification. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Conflicts are avoided; system representation not assessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -56,7 +56,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Resolving contradictions via source attribution and an explicit review step that defines an "accepted" value without deleting the source claims. |
 | **Local/contextual practice** | |
-| **Ontology implication** | Resolves Q13 by defining the mechanism (source attribution + explicit verification status). |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -76,7 +76,7 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
@@ -86,5 +86,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

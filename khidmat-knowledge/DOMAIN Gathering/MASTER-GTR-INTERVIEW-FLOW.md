@@ -35,14 +35,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"The volunteers estimate the donation amt (based on what they asked and how much they really should get to fullfill the need)... jo requirements survey mai aati h jo woh khete hai agau unse woh ground reaility match nhi hoti h toh usko reject kardiya jata h aur agar sab geniune hota h tabhi aage form fill kiya jaaata h"
+**Verified Raw Evidence (Tier A/B):**
+'widow cases', 'medical needs are of one time and long also'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'widow cases', 'medical needs are of one time and long also'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Practitioner explicitly tracks conditions that change over time.
 ### GT-P2
 
 **Question:**
@@ -62,14 +66,18 @@ NOT OBSERVED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"NO we dont cover the seasonal things are not covered. And not the pandemic situations also"
+**Verified Raw Evidence (Tier A/B):**
+'working in bhopal and 100-200 km near this city'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'working in bhopal and 100-200 km near this city'
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Organisation excludes scenario from scope, neither supporting nor contradicting the Context primitive.
+Operates in one location/context; cannot assess cross-context variation.
 ### GT-P3
 
 **Question:**
@@ -89,14 +97,18 @@ NOT OBSERVED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
+**Verified Raw Evidence (Tier A/B):**
+'unknown here is nothing... volunteer will reject the case'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'unknown here is nothing... volunteer will reject the case'
 
 **Final Status:**
-UNRESOLVED
+NOT_ASSESSABLE
 
 **Justification:**
-Practitioner does not operationally distinguish unknown from checked-false in their workflow, providing insufficient evidence.
+Workflow resolves unknowns before entry; system representation of uncertainty was not assessed.
 ### GT-P4
 
 **Question:**
@@ -119,14 +131,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Firstly we dont register who dont have the documents available and secondly they can be determine by the beneficary ID contact no, family members the deaitls we take in the survey form"
+**Verified Raw Evidence (Tier A/B):**
+'The Beneficiary ID (Unique ID) should be there... identity mismatch'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'The Beneficiary ID (Unique ID) should be there... identity mismatch'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Explicitly tracks re-identification across encounters.
 ### GT-P5
 
 **Question:**
@@ -149,14 +165,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"We don't help the beggers... Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other... NO we dont cover the seasonal things are not covered"
+**Verified Raw Evidence (Tier A/B):**
+'We don't help the beggers', 'donors have limit'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'We don't help the beggers', 'donors have limit'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Demonstrates universal rules applied to casework.
 ### GT-P6
 
 **Question:**
@@ -176,14 +196,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"also medical needs are of one time and long also soo they can be if one time then help via the donors and then closed if recusisng like medicens they can conitnue"
+**Verified Raw Evidence (Tier A/B):**
+'medical needs are of one time and long also...'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'medical needs are of one time and long also...'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Distinguishes one-time dateable events from ongoing states.
 ### GT-P7
 
 **Question:**
@@ -206,14 +230,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Family members details Name gender age relation particular... ofcs these are only considered without metnioning explicitly in the sys but when we are telling the too much needy and also dont have a earning member that directly make their prioirty high"
+**Verified Raw Evidence (Tier A/B):**
+'dont have a earning member that directly make their prioirty high'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'dont have a earning member that directly make their prioirty high'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Establishes dependency relations cascading into priority.
 ### GT-L1
 
 **Question:**
@@ -236,14 +264,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Beneficiary detilas... Name... Age... gender... Hosue : Own Rental... monthly income... zakaat eligible: yes/no... Requirements 1. 2. 3. 4." + "Mostly the needs are here in the Food, Shelter, Medical, Education"
+**Verified Raw Evidence (Tier A/B):**
+Age, gender, housing, income, requirements collected.
+
+
+**Verified Raw Evidence (Tier A/B):**
+Age, gender, housing, income, requirements collected.
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Tracks specific facet dimensions on individuals.
 ### GT-L2
 
 **Question:**
@@ -266,14 +298,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Mostly families are covered as we are taking about the help of the family based... head of the family (zimmedar) is noted in the beneficary for the family... Family members details Name gender age relation particular... Also 2 3 vendors are there... Donors can make the donation via the cards"
+**Verified Raw Evidence (Tier A/B):**
+'NO organisations and programs are involved'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'NO organisations and programs are involved'
 
 **Final Status:**
-CONFIRMED
+NOT_ASSESSABLE
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Local absence of Org/Prog layer does not establish context-dependence.
 ### GT-L3
 
 **Question:**
@@ -296,14 +332,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Family members details Name gender age relation particular"
+**Verified Raw Evidence (Tier A/B):**
+'relation: mother, wife, son, daughter'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'relation: mother, wife, son, daughter'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Explicitly tracks kinship relationships.
 ### GT-L4
 
 **Question:**
@@ -321,17 +361,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 If the family does not provide information or documents required for the survey/verification process, the case is not processed forward and is rejected during volunteer verification.
 
-**Final Confirmed Answer:**
-"When the family is trying to keep the information which is required to fill the survey form or the documents, we don't process them forward. They are rejected in the volunteer verification."
+**Final Confirmed Answer (Historical/Synthetic):**
+> [!WARNING] UNSUPPORTED / SYNTHETIC PRIOR CONTENT — NOT PRACTITIONER EVIDENCE
+> "When the family is trying to keep the information which is required to fill the survey form or the documents, we don't process them forward. They are rejected in the volunteer verification."
+
+**Verified Raw Evidence:**
+'about the family privacy concern too much to hide...'
 
 **Final Status:**
-CONFIRMED
+NOT_ASSESSABLE
 
 **Justification:**
-Evidence supports the structural handling of conflicting rules by defaulting to rejection.
-
----
-
+STOP item: Fabricated master wording discarded. Raw text shows rule vs preference, not rule vs rule.
 ### GT-L5
 
 **Question:**
@@ -354,14 +395,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Mostly the needs are here in the Food Shelter Medical Education... The volunteers estimate the donation amt (based on what they asked and how much they really should get to fullfill the need)"
+**Verified Raw Evidence (Tier A/B):**
+Needs tracked: Food, Shelter. 'earning members maybe take more longer...'
+
+
+**Verified Raw Evidence (Tier A/B):**
+Needs tracked: Food, Shelter. 'earning members maybe take more longer...'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Tracks specific states and state changes over time.
 ### GT-L6
 
 **Question:**
@@ -384,14 +429,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"first the survey is done... then those beneficary are visited by the volunteers... the form goes is uploaded in a grp... the donors adopt the beneifcary... The donor and the beneficiary has this card to track the delivery... On which the delivery signatures are taken... about the reverifcation mostly the families and the needy once that we help are too humble families soo there earning members maybe take more longer"
+**Verified Raw Evidence (Tier A/B):**
+Survey -> visit -> upload -> adoption -> fulfillment (tracking card).
+
+
+**Verified Raw Evidence (Tier A/B):**
+Survey -> visit -> upload -> adoption -> fulfillment (tracking card).
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Confirms event sequence and linearity in a case.
 ### GT-L7
 
 **Question:**
@@ -411,14 +460,18 @@ NOT OBSERVED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
+**Verified Raw Evidence (Tier A/B):**
+'unknown here is nothing about the case'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'unknown here is nothing about the case'
 
 **Final Status:**
-UNRESOLVED
+NOT_ASSESSABLE
 
 **Justification:**
-Practitioner does not operationally distinguish unknown from checked-false in their workflow, providing insufficient evidence.
+Workflow resolves unknowns before entry; system epistemic stance was not assessed.
 ### GT-L8
 
 **Question:**
@@ -441,14 +494,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"uploaded in a grp where the donors are there and then here the first come first server is who says that he will help them they are taken as resposible for that particaulr beneficary... The donor and the beneficiary has this card to track the delivery"
+**Verified Raw Evidence (Tier A/B):**
+'uploaded in a grp where the donors are there... first come first server'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'uploaded in a grp where the donors are there... first come first server'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Confirms handoff and recurring loops in coordination.
 ### GT-PL1
 
 **Question:**
@@ -471,14 +528,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Khidmat from layout (what data is taken ) Beneficiary detilas date: beneficary photo... zakaat eligible: yes/no... monthly income:..."
+**Verified Raw Evidence (Tier A/B):**
+Form groups Person details separate from Household context.
+
+
+**Verified Raw Evidence (Tier A/B):**
+Form groups Person details separate from Household context.
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Conceptually separates person from environment in form layout.
 ### GT-PL2
 
 **Question:**
@@ -498,14 +559,18 @@ NOT OBSERVED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"NO we dont cover the seasonal things are not covered. And not the pandemic situations also"
+**Verified Raw Evidence (Tier A/B):**
+'NO we dont cover the seasonal things...'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'NO we dont cover the seasonal things...'
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Organisation excludes scenario from scope, neither supporting nor contradicting the Context primitive.
+Seasonal/location changes not encountered; cannot assess.
 ### GT-PL3
 
 **Question:**
@@ -528,14 +593,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary"
+**Verified Raw Evidence (Tier A/B):**
+'multiple needs the volutneer decides that based on the ground review'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'multiple needs the volutneer decides that based on the ground review'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Vulnerability composition is a judgment call, not a formula.
 ### GT-PL4
 
 **Question:**
@@ -555,14 +624,18 @@ NOT OBSERVED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned"
+**Verified Raw Evidence (Tier A/B):**
+'never happned [conflict]'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'never happned [conflict]'
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Workflow relies on a single volunteer per lead, avoiding conflicting sources entirely; scenario is not assessable in this context.
+Conflicts resolved before entry; contradiction representation not assessed.
 ### GT-PL5
 
 **Question:**
@@ -582,14 +655,18 @@ NOT ASSESSABLE
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"NO organisations and programs are involved in this just the khidmat grp doing the root work"
+**Verified Raw Evidence (Tier A/B):**
+'NO organisations and programs are involved'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'NO organisations and programs are involved'
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Practitioner operates as a single grassroots group without distinct programs or organizations to assess.
+Local absence of Org/Prog layer does not establish context-dependence.
 ### GT-PL6
 
 **Question:**
@@ -612,14 +689,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-
-
-**Final Status:**
-UNRESOLVED
+**Verified Raw Evidence (Tier A/B):**
+Tracking card used jointly by donor and beneficiary.
 
 **Justification:**
-Evidence describes joint tracking via signatures but does not address if they are ever tracked separately, leaving the question unresolved.
+Outcome tracking not separated from fulfillment; proposition not assessed.
+
+**Final Status:**
+NOT_ASSESSABLE
+
+**Justification:**
+Outcome tracking not separated from fulfillment; proposition not assessed.
+
 ### GT-PL7
 
 **Question:**
@@ -642,14 +723,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-
-
-**Final Status:**
-UNRESOLVED
+**Verified Raw Evidence (Tier A/B):**
+Need (medical) and modality (grocery, rent) bundled in description.
 
 **Justification:**
-Evidence details assistance delivery but does not address how the organization internally communicates or structures the description of assistance.
+Practitioner bundles need, delivery, and why together.
+
+**Final Status:**
+CONFIRMED
+
+**Justification:**
+Practitioner bundles need, delivery, and why together.
+
 ### GT-AR1
 
 **Question:**
@@ -669,14 +754,18 @@ NOT ASSESSABLE
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"NO organisations and programs are involved in this just the khidmat grp doing the root work"
+**Verified Raw Evidence (Tier A/B):**
+No programmes exist in this operation.
+
+
+**Verified Raw Evidence (Tier A/B):**
+No programmes exist in this operation.
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Practitioner operates as a single grassroots group without distinct programs or organizations to assess.
+Cannot assess altitude split without a programme layer.
 ### GT-AR2
 
 **Question:**
@@ -699,14 +788,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"about the reverifcation mostly the families and the needy once that we help are too humble families soo there earning members maybe take more longer and even if they have still some time we help them with the bare minimum need to food"
+**Verified Raw Evidence (Tier A/B):**
+'if recusisng like medicens they can conitnue'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'if recusisng like medicens they can conitnue'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Confirms non-linearity (recurrent/reopening states).
 ### GT-AR3
 
 **Question:**
@@ -726,14 +819,18 @@ NOT OBSERVED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"NOt heppend"
+**Verified Raw Evidence (Tier A/B):**
+Not addressed in evidence.
+
+
+**Verified Raw Evidence (Tier A/B):**
+Not addressed in evidence.
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Scenario has not occurred in this practitioner's context, making it not assessable.
+Dual-clock rule not assessed.
 ### GT-AR4
 
 **Question:**
@@ -756,14 +853,18 @@ NOT OBSERVED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
+**Verified Raw Evidence (Tier A/B):**
+'its done on the ground verification... the volutneer decides'
 
+**Justification:**
+Shows human judgment, but does not establish a universal 'always requires human sign-off' rule against automation.
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Workflow relies on a single volunteer per lead, avoiding conflicting sources entirely; scenario is not assessable in this context.
+Shows human judgment, but does not establish a universal 'always requires human sign-off' rule against automation.
+
 ### GT-AR5
 
 **Question:**
@@ -781,17 +882,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 Beneficiaries should not be disrespected. Beneficiary information is not shared unnecessarily. It is shared in the donor group when needed so donors can provide help.
 
-**Final Confirmed Answer:**
-"Yes. They shouldn't be disrespected. We don't share the information unnecessarily anywhere. They are shared only in the group of the donors so they can help them, that's it."
+**Final Confirmed Answer (Historical/Synthetic):**
+> [!WARNING] UNSUPPORTED / SYNTHETIC PRIOR CONTENT — NOT PRACTITIONER EVIDENCE
+> "Yes. They shouldn't be disrespected. We don't share the information unnecessarily anywhere. They are shared only in the group of the donors so they can help them, that's it."
+
+**Verified Raw Evidence:**
+No raw evidence addressing dignity as score vs rule.
 
 **Final Status:**
-CONFIRMED
+NOT_ASSESSABLE
 
 **Justification:**
-Evidence supports that dignity and safeguarding are treated as rules rather than ratings.
-
----
-
+STOP item: Fabricated master wording discarded. Not assessed.
 ### GT-AR6
 
 **Question:**
@@ -811,14 +913,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Firstly we dont register who dont have the documents available and secondly they can be determine by the beneficary ID contact no, family members the deaitls we take in the survey form"
+**Verified Raw Evidence (Tier A/B):**
+'Beneficiary ID... as there can be similar name or identity mismatch'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'Beneficiary ID... as there can be similar name or identity mismatch'
 
 **Final Status:**
-CONFIRMED
+NOT_ASSESSABLE
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Identity tracking is manual; does not validate rule handling algorithmic uncertainty.
 ### GT-OQ1
 
 **Question:**
@@ -841,14 +947,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"The Beneficiary ID (Unique ID) should be there , as there can be similar name or identity mismatch... all docs and the things are taken which is menitoned in the form and then we are working on the beneficary ids so this solves the id issues"
+**Verified Raw Evidence (Tier A/B):**
+Uses Beneficiary ID, contact no, family details.
+
+
+**Verified Raw Evidence (Tier A/B):**
+Uses Beneficiary ID, contact no, family details.
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Determines identity manually without biometrics.
 ### GT-OQ2
 
 **Question:**
@@ -871,14 +981,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary"
+**Verified Raw Evidence (Tier A/B):**
+Volunteer decides vulnerability based on ground review.
+
+
+**Verified Raw Evidence (Tier A/B):**
+Volunteer decides vulnerability based on ground review.
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Matches PL3; composite risk is human judgment.
 ### GT-OQ3
 
 **Question:**
@@ -901,14 +1015,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Mostly families are covered as we are taking about the help of the family based and verified persons. Household condition can be considered (for the family only) but it is rare and its the volunteer take... when the need is genral like the food so the head of the family (zimmedar) is noted in the beneficary for the family"
+**Verified Raw Evidence (Tier A/B):**
+'Family members details... House: Own/Rental'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'Family members details... House: Own/Rental'
 
 **Final Status:**
-CONFIRMED
+NOT_ASSESSABLE
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Does not discuss complex family/household boundary cases.
 ### GT-OQ4
 
 **Question:**
@@ -931,14 +1049,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-
-
-**Final Status:**
-UNRESOLVED
+**Verified Raw Evidence (Tier A/B):**
+Mentions specific examples: widow, study, accident.
 
 **Justification:**
-Evidence lists recorded fields but does not evaluate the completeness of the ontology's proposed categories.
+Provides observed examples but does not establish or validate the ontology's proposed semantic value-set structure.
+
+**Final Status:**
+NOT_ASSESSABLE
+
+**Justification:**
+Provides observed examples but does not establish or validate the ontology's proposed semantic value-set structure.
+
 ### GT-OQ5
 
 **Question:**
@@ -958,14 +1080,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-
-
-**Final Status:**
-UNRESOLVED
+**Verified Raw Evidence (Tier A/B):**
+Tracking card used by donor and beneficiary.
 
 **Justification:**
-Evidence confirms delivery receipt tracking but does not address whether broader outcome measurement is handled by a separate function.
+Outcome ownership distinct from case journey is not assessed.
+
+**Final Status:**
+NOT_ASSESSABLE
+
+**Justification:**
+Outcome ownership distinct from case journey is not assessed.
+
 ### GT-OQ6
 
 **Question:**
@@ -985,14 +1111,18 @@ NOT ASSESSABLE
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"NO organisations and programs are involved in this just the khidmat grp doing the root work"
+**Verified Raw Evidence (Tier A/B):**
+'NO organisations and programs are involved'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'NO organisations and programs are involved'
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Practitioner operates as a single grassroots group without distinct programs or organizations to assess.
+Local absence of Org/Prog layer does not establish context-dependence.
 ### GT-OQ7
 
 **Question:**
@@ -1012,14 +1142,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"there the donors adopt the beneifcary... also from the donor side asper the needed decided doantions the donors can combine or split to help the beneficaries... Donors can make the donation via the cards"
+**Verified Raw Evidence (Tier A/B):**
+Donors adopt from group, track via card, have limits.
+
+
+**Verified Raw Evidence (Tier A/B):**
+Donors adopt from group, track via card, have limits.
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Validates donor coordination mechanisms.
 ### GT-OQ8
 
 **Question:**
@@ -1042,14 +1176,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"zakaat eligible: yes/no... We don't help the beggers... Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other"
+**Verified Raw Evidence (Tier A/B):**
+'donors have limit to donate...'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'donors have limit to donate...'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Validates existence of funding restrictions.
 ### GT-OQ9
 
 **Question:**
@@ -1072,14 +1210,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"ofcs these are only considered without metnioning explicitly in the sys but when we are telling the too much needy and also dont have a earning member that directly make their prioirty high"
+**Verified Raw Evidence (Tier A/B):**
+'dont have a earning member that directly make their prioirty high'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'dont have a earning member that directly make their prioirty high'
 
 **Final Status:**
-CONFIRMED
+NOT_ASSESSABLE
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Describes urgency/priority, but does not establish the distinct semantic concept of 'Risk'.
 ### GT-OQ10
 
 **Question:**
@@ -1102,14 +1244,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"The medicals proofs (reports, prescreptions) of government hospital are considered true only so no double verification from hospitals are needed... evidence when the volunteer visted them and verifired them , their claims about the needs and confims it"
+**Verified Raw Evidence (Tier A/B):**
+'medicals proofs... of government hospital are considered true only'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'medicals proofs... of government hospital are considered true only'
 
 **Final Status:**
-NOT_ASSESSABLE
+CONFIRMED
 
 **Justification:**
-Workflow relies on a single volunteer per lead, avoiding conflicting sources entirely; scenario is not assessable in this context.
+Validates epistemic hierarchy and evidence weighting.
 ### GT-OQ11
 
 **Question:**
@@ -1129,14 +1275,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Below the poverty line. Extremely needy mostly... zakaat eligible: yes/no... Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other"
+**Verified Raw Evidence (Tier A/B):**
+'Below the poverty line... Extremely needy mostly'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'Below the poverty line... Extremely needy mostly'
 
 **Final Status:**
 CONFIRMED
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Establishes baseline wellbeing standard used.
 ### GT-OQ12
 
 **Question:**
@@ -1156,14 +1306,18 @@ NOT OBSERVED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
+**Verified Raw Evidence (Tier A/B):**
+'unknown here is nothing about the case'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'unknown here is nothing about the case'
 
 **Final Status:**
-UNRESOLVED
+NOT_ASSESSABLE
 
 **Justification:**
-Practitioner does not operationally distinguish unknown from checked-false in their workflow, providing insufficient evidence.
+Workflow avoids missing info; system representation is not assessed.
 ### GT-OQ13
 
 **Question:**
@@ -1183,14 +1337,18 @@ NOT OBSERVED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned"
+**Verified Raw Evidence (Tier A/B):**
+'never happned [conflict]'
+
+
+**Verified Raw Evidence (Tier A/B):**
+'never happned [conflict]'
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Workflow relies on a single volunteer per lead, avoiding conflicting sources entirely; scenario is not assessable in this context.
+Conflicts are avoided; system representation not assessed.
 ### GT-OQ14
 
 **Question:**
@@ -1213,14 +1371,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-
-
-**Final Status:**
-UNRESOLVED
+**Verified Raw Evidence (Tier A/B):**
+Mentions initial privacy concern, no withdrawal.
 
 **Justification:**
-Evidence explains disclosure requirements but does not address the scenario of consent being withdrawn mid-case.
+Consent parameters/withdrawal not assessed.
+
+**Final Status:**
+NOT_ASSESSABLE
+
+**Justification:**
+Consent parameters/withdrawal not assessed.
+
 ### GT-OQ15
 
 **Question:**
@@ -1243,14 +1405,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
-"Also 2 3 vendors are there connected with them so the beneficiary can visit them and take the ration (from the card)"
+**Verified Raw Evidence (Tier A/B):**
+Vendors provide ration, hospitals provide proofs.
+
+
+**Verified Raw Evidence (Tier A/B):**
+Vendors provide ration, hospitals provide proofs.
 
 **Final Status:**
-CONFIRMED
+NOT_ASSESSABLE
 
 **Justification:**
-Evidence supports the current structural interpretation as stated.
+Establishes them as services/places, but not explicitly as Actors with their own interests.
 ### GT-OQ16
 
 **Question:**
@@ -1268,17 +1434,18 @@ NOT OBSERVED
 **Practitioner Confirmation / Correction:**
 In this practitioner context, the practitioner did not observe complex interactions between needs beyond the normal identification and confirmation of genuine basic needs. The volunteer confirms that the identified needs are genuine, and the support is focused on the beneficiary's bare-minimum/basic needs.
 
-**Final Confirmed Answer:**
-"NO. Usually we know these needs are true as the volunteer confirms them. That helps them bare minimum side."
+**Final Confirmed Answer (Historical/Synthetic):**
+> [!WARNING] UNSUPPORTED / SYNTHETIC PRIOR CONTENT — NOT PRACTITIONER EVIDENCE
+> "NO. Usually we know these needs are true as the volunteer confirms them. That helps them bare minimum side."
+
+**Verified Raw Evidence:**
+'multiple needs the volutneer decides...'
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Practitioner focuses purely on basic need identification via single volunteer confirmation; complex need interactions are not encountered.
-
----
-
+STOP item: Fabricated master wording discarded. Need interactions not assessed.
 ### GT-OQ17
 
 **Question:**
@@ -1298,14 +1465,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
+**Verified Raw Evidence (Tier A/B):**
+'uploaded in a grp where the donors are there'
 
+**Justification:**
+Local absence of funder altitude does not establish context-dependence.
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Practitioner operates in a model where donors directly adopt beneficiaries, so a distinct higher-level funder coordination layer is not assessable.
+Local absence of funder altitude does not establish context-dependence.
+
 ### GT-OQ18
 
 **Question:**
@@ -1323,17 +1494,18 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 Whether a responsible person/guardian is present does not by itself determine the support decision. The handling depends on the specific situation and the ground reality confirmed by the volunteer, including how much genuine need the beneficiary actually has.
 
-**Final Confirmed Answer:**
-"Yes, depends on the situation and the ground reality that the volunteer confirms, that how much they need really."
+**Final Confirmed Answer (Historical/Synthetic):**
+> [!WARNING] UNSUPPORTED / SYNTHETIC PRIOR CONTENT — NOT PRACTITIONER EVIDENCE
+> "Yes, depends on the situation and the ground reality that the volunteer confirms, that how much they need really."
+
+**Verified Raw Evidence:**
+'dont have a earning member...'
 
 **Final Status:**
-CONFIRMED
+NOT_ASSESSABLE
 
 **Justification:**
-Evidence supports that handling depends on ground reality of needs rather than administrative presence of a guardian alone.
-
----
-
+STOP item: Fabricated master wording discarded. Orphan vs unguardianed not assessed.
 ### GT-OQ19
 
 **Question:**
@@ -1353,11 +1525,15 @@ RECORDED
 **Practitioner Confirmation / Correction:**
 
 
-**Final Confirmed Answer:**
+**Verified Raw Evidence (Tier A/B):**
+'just the khidmat grp volunteerss'
 
+**Justification:**
+Local absence of orchestration role does not establish context-dependence.
 
 **Final Status:**
 NOT_ASSESSABLE
 
 **Justification:**
-Practitioner relies on ad-hoc volunteer claiming within a single group, so cross-organizational case coordination roles are not assessable.
+Local absence of orchestration role does not establish context-dependence.
+

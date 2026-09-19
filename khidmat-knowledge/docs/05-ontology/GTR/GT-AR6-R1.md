@@ -32,7 +32,7 @@
 | **Question as asked** | When an automated system, database search, or matching tool is "unsure" about something—for example, it suspects two records might belong to the same person but isn't 100% certain—what happens next in your workflow? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'The Beneficiary ID (Unique ID) should be there , as there can be similar name or identity mismatch'. Identification issues are handled explicitly. |
+| **Evidence / response** | 'Beneficiary ID... as there can be similar name or identity mismatch' |
 
 ---
 
@@ -43,8 +43,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The system relies on explicit documentation and unique IDs rather than black-box matching. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Identity tracking is manual; does not validate rule handling algorithmic uncertainty. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -56,7 +56,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Surfacing algorithmic uncertainty to human workers for verification instead of auto-merging records. |
 | **Local/contextual practice** | |
-| **Ontology implication** | CCR-2 (Algorithmic Humility) is validated. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -76,7 +76,7 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
@@ -85,5 +85,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What does a donor relationship actually consist of in practice? Is it just a one-time gift, an ongoing commitment, or the 'adoption' of specific cases?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | Donors adopt beneficiary from the group. They can combine or split donations. Can send proxy. Have limits to prevent dependency. Tracking card used. |
+| **Evidence / response** | Donors adopt from group, track via card, have limits. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Donor relationships are highly explicit, involving adoption, splitting, limits, and direct tracking. |
+| **Reviewer reasoning** | Validates donor coordination mechanisms. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | The donor relationship defines operational boundaries (funding restrictions) and available resources for a programme, without the donor directly assuming casework. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | Giving-side entities function structurally as external sources of constraints and resources, interfacing with the ecosystem via Coordination Patterns. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -77,11 +77,10 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
+| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

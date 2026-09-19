@@ -41,13 +41,8 @@ The domain model was developed through a strict, sequential process designed to 
 
 ## 5. Current Governed Status
 
-**NOT READY — provenance/evidence blocking.**
-While the foundational structural framework (primitives, layers, pillars) stands and is structurally closed, the overall evidentiary foundation is currently compromised. Specific governance rulings (such as G1 and G4) that rested on unverified practitioner evidence (the 47 GT-*-R1 records) are not currently evidence-supported, per the current authoritative verdict in `10-ONTOLOGY-RECONCILIATION-CLOSURE-REPORT.md`.
-
-However, the model carefully preserves the distinction between what is structurally known and what is operationally open or uncertain:
-- **Structurally Resolved**: Major domain semantics are closed. For example, Risk and Need are formally classified as Conditions (G5). The primitive definition is locked as a category of concept (G3). Structural closure of primitives, layers, and pillars remains intact based on internal derivation logic, independent of the unverified evidence.
-- **Evidentiary Blocking**: Governance rulings resting on unverified evidence (G1, G4) are currently quarantined. Final closure cannot happen until the unverified records are replaced, corroborated, or formally expunged.
-- **Unresolved / Explicitly Absent**: Meaningful uncertainty is retained rather than hidden. The exact composition formula for Vulnerability remains an undefined "Source-Absent Parameter". The CCR-7 dual-clock temporal requirement remains an unresolved architectural guideline (G2), not a mandatory universal constraint. The precise entities and workflows of the "giving" side are structurally accommodated but remain unpopulated.
+**STAGE 5 RECONCILIATION COMPLETE — PENDING FINAL CLOSURE AUDIT**
+Stage 5 evidence reconciliation has been completed subject to the documented qualification that the practitioner evidence represents one operational context (Khidmat, Bhopal) and does not constitute universal humanitarian-domain validation.
 
 ## 6. The Next Phase: Architecture
 

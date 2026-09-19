@@ -32,7 +32,7 @@
 | **Question as asked** | When a person's or household's condition changes, what happens to the previous recorded value in your actual system/process? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Needs tracked as Food, Shelter, Medical, Education. Earning members taking longer -> food assistance continues (change over time). |
+| **Evidence / response** | Needs tracked: Food, Shelter. 'earning members maybe take more longer...' |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Specific values are assigned to needs, and changes over time (recurring vs resolved) are tracked. |
+| **Reviewer reasoning** | Tracks specific states and state changes over time. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Retaining historical assessment values to track changes over time and support re-verification. |
 | **Local/contextual practice** | |
-| **Ontology implication** | The States layer (L5) longitudinal tracking requirement is structurally validated. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

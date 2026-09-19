@@ -32,7 +32,7 @@
 | **Question as asked** | When two different sources provide conflicting information about the exact same fact, what actually happens in your system? Are both pieces of information kept? Does one piece of information overwrite the other? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'never happned'. They send an experienced volunteer to verify, so no conflict reaches the system. |
+| **Evidence / response** | 'never happned [conflict]' |
 
 ---
 
@@ -43,8 +43,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | MISSING |
-| **Reviewer reasoning** | Contradictions are resolved at the edge (by the volunteer) and not recorded in the system. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Conflicts resolved before entry; contradiction representation not assessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -56,7 +56,7 @@
 | **Humanitarian domain reality** | Sources disagree on facts in reality. |
 | **Organizational practice** | Retaining conflicting claims concurrently rather than immediately overwriting one with the other. |
 | **Local/contextual practice** | |
-| **Ontology implication** | The Epistemics Pillar (IV) is structurally validated as requiring contradiction tolerance. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -76,7 +76,7 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 6 (Evidence) |
 
 
@@ -86,5 +86,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

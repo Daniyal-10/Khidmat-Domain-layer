@@ -32,7 +32,7 @@
 | **Question as asked** | Same as GT-PL5: do you experience "the organisation" and "the programme" as one thing or two in practice? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'NO organisations and programs are involved in this just the khidmat grp doing the root work'. |
+| **Evidence / response** | 'NO organisations and programs are involved' |
 
 ---
 
@@ -40,8 +40,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONTEXT_DEPENDENT |
-| **Reviewer reasoning** | Organisation/programme distinction is absent in this context. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Local absence of Org/Prog layer does not establish context-dependence. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Managing Organisations as operators and Programmes as distinct structured interventions. |
 | **Local/contextual practice** | |
-| **Ontology implication** | A structural challenge exists against the current Tier 1-derived position. |
+| **Ontology implication** | Proposition not assessed. |
 
 ---
 
@@ -73,11 +73,10 @@
 
 | Field | Value |
 |---|---|
-| **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
+| **Follow-up requirement** | Not assessable in this practitioner context; carried to Stage 6 as untested; validation would require a different context or practitioner. |
 | **Carried to** | Stage 7 (Governance) |
 
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.

@@ -32,7 +32,7 @@
 | **Question as asked** | When several circumstances occur together and you consider someone vulnerable, do you actually record or classify the resulting vulnerability as something in its own right, or do you only record the individual contributing circumstances/factors? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'its done on the ground verification and the multiple needs the volutneer decides that based on the ground review'. It is a judgment call by the volunteer, no mathematical formula. |
+| **Evidence / response** | 'multiple needs the volutneer decides that based on the ground review' |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Vulnerability composition is handled via human judgment on the ground, not a mathematical formula. |
+| **Reviewer reasoning** | Vulnerability composition is a judgment call, not a formula. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -53,7 +53,7 @@
 | **Humanitarian domain reality** | Vulnerability emerges from complex, context-dependent interactions of circumstances, not linear additive formulas. |
 | **Organizational practice** | Capturing compound vulnerability as a distinct assessment result (score/category/flag) driven by programme rules or professional judgement. |
 | **Local/contextual practice** | |
-| **Ontology implication** | Vulnerability is an emergent, context-dependent State. |
+| **Ontology implication** | Validated. |
 
 ---
 
@@ -79,5 +79,4 @@
 
 ## 7. Provenance
 
-Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
-Old synthetic conclusions have been completely removed.
+Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.
