@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-L4-R1 |
 | **Review ID (from matrix)** | GT-L4 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What kind of operational rules or constraints strictly bind your casework, regardless of what the individual beneficiary needs (e.g., eligibility cutoffs, safeguarding rules, reporting mandates)? Can you describe a real situation where two of these rules pulled you in opposite directions (like a donor reporting requirement clashing with a family's preference for privacy)? How did you handle that clash?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | "These rules can sometimes conflict with each other or with the beneficiary's preferences. For example, a programme may require certain information to be collected for eligibility or reporting, while the beneficiary may not want that information shared beyond the people directly handling the case. In such situations, the practitioner cannot simply ignore either requirement... If the conflict cannot be resolved within the applicable rules, the matter is escalated to the responsible supervisor or appropriate authority rather than allowing an individual worker or system to silently override the constraint." |
+| **Evidence / response** | 'about the family privacy concern too much to hide... only if they are too much concern still they tell in khidmat... they needs to tell about the 3 4 more people'. Privacy preference bounds against verification requirement. |
 
 ---
 
@@ -45,8 +45,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner confirmed that overlapping rules frequently clash in practice, and that these clashes must not be silently overridden by a system or worker. Instead, they must be recognized and escalated. This validates the design of the Constraints layer, which requires representing conflicting norms explicitly. |
-| **Implication for ontology** | The Constraints layer must support concurrent, conflicting `Norm` entities and provide a mechanism to surface these conflicts for human resolution. |
+| **Reviewer reasoning** | Two rules (privacy vs. verification requirement) bound the work in opposite directions and require human resolution. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

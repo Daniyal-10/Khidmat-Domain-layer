@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-PL5-R1 |
 | **Review ID (from matrix)** | GT-PL5 |
-| **Date recorded** | 2026-08-31 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | In your operating environment, is there a meaningful difference between "an organisation" and "a programme," or are they effectively the same thing in practice? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "Organisation: a distinct organisational entity that can operate programmes, provide services, coordinate activities... An Organisation can have multiple Programmes. Programme: a distinct organised intervention or initiative operated by an Organisation, with its own eligibility criteria, support rules, activities, and objectives... These relationships should not cause the entities to be collapsed into one another." |
+| **Evidence / response** | 'NO organisations and programs are involved in this just the khidmat grp doing the root work'. They do not experience the distinction. |
 
 ---
 
@@ -40,9 +40,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The existing Tier 1 authority reportedly collapses Organisation and Programme. The practitioner evidence explicitly distinguishes them, noting that an Organisation acts as the operator and can have multiple Programmes, each with its own specific eligibility criteria and support rules. There is a real tension between current authority and observed operational practice. |
-| **Implication for ontology** | The tension between the Tier 1 authority (collapsing the two) and field practice (requiring parent-child distinction) must be carried forward to the governance/architectural decision stage (Stage 7). Do not resolve this tension or split the entities in the ontology during Stage 5. |
+| **Finding classification** | CONTEXT_DEPENDENT |
+| **Reviewer reasoning** | The single-group nature of this operation means the distinction isn't exercised. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 7 (Governance) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

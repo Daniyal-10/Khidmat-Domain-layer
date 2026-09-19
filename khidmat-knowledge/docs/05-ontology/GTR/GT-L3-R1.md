@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-L3-R1 |
 | **Review ID (from matrix)** | GT-L3 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | Which connections between people, households, and organizations does your work actually need to record (e.g., kinship, dependency, guardianship, responsibility, referral, handoff), and are there important connections not on this list? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "Khidmat needs to record relationships that are relevant... Important relationships include: Family and kinship relationships, Parent and child, Spouse, Sibling, Dependency, Guardian and child/ward, Caregiver and dependent, Head of Family, Responsibility for another person, Household membership... These relationships should remain distinct because they represent different kinds of connections. For example, being a family member is different from being a guardian..." |
+| **Evidence / response** | Record kinship explicitly ('relation: mother, wife, son, daughter'). |
 
 ---
 
@@ -41,8 +41,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly identified the relationships that Khidmat needs to represent in its operational domain and confirmed that these relationships are semantically distinct. |
-| **Implication for ontology** | The social connections posited in the Relationships layer (L3) are genuinely required for operational tracking and must be preserved as distinct relationship types. |
+| **Reviewer reasoning** | Social relationships (kinship) are actively recorded and used. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

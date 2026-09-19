@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-OQ16-R1 |
 | **Review ID (from matrix)** | GT-OQ16 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | When two needs affect each other, do you explicitly record that relationship in your actual work, or do you simply consider the relationship during assessment and planning? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "One need can contribute to, worsen, depend on, or prevent resolution of another need... In practice, these relationships may be captured through assessment notes, case planning, referrals, prioritisation, or the worker's assessment rather than always being represented as a separate formal relationship between two need records." |
+| **Evidence / response** | Need interaction beyond cascading not explicitly described. |
 
 ---
 
@@ -41,8 +41,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The practitioner confirmed that needs interact in operational reality. However, they refined how this is handled structurally: organizational practice relies on unstructured or semi-structured documentation (assessment notes, human judgement) rather than formal, rigid data relationships between individual need records. |
-| **Implication for ontology** | The open question is resolved by refining the structural boundary. While needs interact, the ontology must NOT mandate a formal, computable Relation (P7) between Need entities. It must accommodate these interactions within human cognition and assessment documentation. |
+| **Reviewer reasoning** | Insufficient evidence on need interaction. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

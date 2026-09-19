@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-OQ19-R1 |
 | **Review ID (from matrix)** | GT-OQ19 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "Is there a distinct role or function in your operating environment that exists solely to coordinate a complex case across multiple different organizations, separate from the case manager who is delivering direct support?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | "Yes. Complex cases can require coordination across multiple organisations and services... coordination can also involve a separate function or role when several organisations, referrals, services, or support streams are involved. The coordination function is responsible for helping the different parties work together, tracking referrals or handoffs, identifying gaps or duplication, and following up on actions across organisations. This coordination function is distinct from the actual service delivery performed by each organisation. However, the exact staffing arrangement can vary. In a smaller operation, the same person may perform both case-management and coordination responsibilities. What is distinct is the coordination function, not necessarily a universally separate job title or employee." |
+| **Evidence / response** | 'just the khidmat grp volunteerss (the staff)'. No separate coordination role. |
 
 ---
 
@@ -44,9 +44,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The practitioner answered the open question regarding the validity of a "Case Orchestration" stub extension. They confirmed that cross-organizational case coordination is an operationally distinct function (tracking handoffs, gaps, duplication) fundamentally separate from direct service delivery, even if the same employee occasionally performs both. |
-| **Implication for ontology** | The stub extension point for Case Orchestration is valid and necessary. It should be modeled as a distinct Coordination Pattern managing the broader case timeline across multiple organizational boundaries. |
+| **Finding classification** | CONTEXT_DEPENDENT |
+| **Reviewer reasoning** | Case coordination is handled directly by the volunteers, no distinct orchestration role. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

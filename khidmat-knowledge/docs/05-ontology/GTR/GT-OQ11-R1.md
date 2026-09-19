@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-OQ11-R1 |
 | **Review ID (from matrix)** | GT-OQ11 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual work, how do practitioners determine that a person or household has a "need" requiring intervention? What tells a worker that a condition has become a need? Is there a specific threshold? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "There is not necessarily one universal threshold... Different programmes can have different eligibility rules... A person's need can exist independently of whether they qualify for a particular programme... 'need' should not be treated as simply another fixed condition value. It is an assessment or determination arising from the person's circumstances, the relevant standard or criteria, and the context..." |
+| **Evidence / response** | Standard involves checking: 'Below the poverty line', 'Extremely needy mostly', 'Widow cases', 'No income'. Ground reality must match claimed requirement. |
 
 ---
 
@@ -40,9 +40,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
-| **Reviewer reasoning** | The open question asked what standard defines "enough" to constitute a need. The evidence refines this by establishing there is no universal standard. Instead, a "need" is a contextual determination. Crucially, the practitioner explicitly severed "having a need" from "being eligible for a programme." |
-| **Implication for ontology** | Resolves the open question by establishing that "Need" is not a raw fact but an evaluated Condition (P1) whose threshold is determined by local Context (P2) and Norms (P5). Furthermore, it structurally requires the ontology to distinguish between a "Need" and "Programme Eligibility." |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | The wellbeing standard is absolute ('Below poverty line') and contextually verified. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

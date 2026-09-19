@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-P6-R1 |
 | **Review ID (from matrix)** | GT-P6 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | What kinds of things happen to a person, household, or case that you consider to be events or occurrences rather than ongoing conditions? Are there situations where something that initially looks like an event is actually treated as an ongoing condition or state instead? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "we consider things such as registration, assessment, referral, provision of assistance... as events or occurrences when they happen at a particular point in time... Some things that may initially appear to be events are actually ongoing conditions. For example, being unemployed... is not itself a single event... we distinguish between something that happens at a point in time and a condition that persists over time, even though an event can cause a condition to change." |
+| **Evidence / response** | 'medical needs are of one time and long also soo they can be if one time then help via the donors and then closed if recusisng like medicens they can conitnue'. Clear boundary between event and ongoing state. |
 
 ---
 
@@ -41,8 +41,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly distinguishes between point-in-time happenings/events/occurrences (registration, assessment, referral, assistance) and persistent conditions that remain true over a span of time (unemployment). |
-| **Implication for ontology** | Validates the structural distinction between an Occurrence (event) primitive and a persistent Condition primitive. (This does not infer an exhaustive event taxonomy or mandate an event-sourcing technical architecture). |
+| **Reviewer reasoning** | The practitioner distinguishes between a point-in-time fulfillment and an ongoing continuing state (recurring medicines). |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

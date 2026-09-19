@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-AR1-R1 |
 | **Review ID (from matrix)** | GT-AR1 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "In your work, have you ever seen terms like 'needs assessment', 'planning', or 'coordination' used to mean two genuinely different things depending on whether the speaker was talking about an individual person's case versus talking about a broader population-level programme? Can you describe how the activities actually differ?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | "Yes. In practice, terms such as needs assessment, planning, monitoring, and coordination can refer to different activities depending on whether they concern an individual case or a broader programme/population. At the individual case level, a needs assessment is concerned with understanding the circumstances and needs of a particular person... At a programme or population level, assessment is broader... identifying patterns of need across many households... planning at programme level concerns things such as programme objectives, eligibility criteria... rather than the action plan for one individual household... Therefore, the same word does not necessarily represent the same operational activity. The scope and subject of the activity matter. The system should not assume that a case-level assessment and a programme-level assessment are the same record simply because both are called an 'assessment.'" |
+| **Evidence / response** | No programmes exist in this operation. |
 
 ---
 
@@ -45,8 +45,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The practitioner explicitly confirmed that identical terms (assessment, planning, coordination, monitoring) represent fundamentally different operational activities depending on whether their scope is an individual case or a population/programme. This exactly validates the premise of CCR-1. |
-| **Implication for ontology** | Confirms CCR-1 (Altitude qualification) as a critical structural requirement. The ontology must explicitly type activities by their altitude to prevent conflation. |
+| **Reviewer reasoning** | Altitude distinction between case and programme cannot be assessed here. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

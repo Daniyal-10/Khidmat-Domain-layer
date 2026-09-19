@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-OQ12-R1 |
 | **Review ID (from matrix)** | GT-OQ12 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | What practical mechanism, field, or process do you use to show this distinction? What happens if a field is simply left blank? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "the implementation should preferably use explicit epistemic values such as: Yes, No, Unknown, Not assessed, Not applicable... A blank field means that the information has not been recorded yet... an assessment/value should therefore be able to carry both the observed value and its information status rather than relying only on whether a field contains a value... the system should preserve the distinction between a recorded negative observation and absence of information rather than using the presence or absence of a value alone to determine truth." |
+| **Evidence / response** | 'unknown here is nothing about the case which is not much requried'. Unknowns are not represented. |
 
 ---
 
@@ -43,9 +43,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | UNRESOLVED |
-| **Reviewer reasoning** | The open question was "how to represent missing info." The practitioner resolved this by defining the mechanism: data structures must couple the value with an explicit categorical "information status" field (e.g., Unknown, Not Assessed, Yes, No) rather than inferring epistemic state from null or blank fields. |
-| **Implication for ontology** | Resolves Q12 by explicitly mandating that data structures carry a dedicated epistemic status property. |
+| **Finding classification** | MISSING |
+| **Reviewer reasoning** | Missing information is not explicitly represented; the record must be complete. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -83,3 +83,8 @@
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

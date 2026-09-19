@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-OQ4-R1 |
 | **Review ID (from matrix)** | GT-OQ4 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | When recording conditions such as health, age, capability/disability, nutrition, economic situation, caregiving, shelter, water/sanitation, protection/safety, or other relevant conditions: What actual values or categories do workers use in practice? Are these values fixed across your organization, or are they programme-specific? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "The exact values and categories can vary depending on the programme... Workers should also be able to distinguish between a condition that was assessed... and a condition that was not assessed, is unknown, or is not applicable... There are also situations where a person's circumstances do not fit neatly into one predefined category... workers may use notes... the ontology should not assume that one fixed universal value set covers every programme..." |
+| **Evidence / response** | 'accident mein spinal cord mein multiple injuries', 'widow', 'study'. Form captures precise life and health values. |
 
 ---
 
@@ -40,9 +40,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | UNRESOLVED |
-| **Reviewer reasoning** | The open question was "what are the actual values you record". The practitioner evidence refines the ontology's approach by proving that a universal, exhaustive value set does not exist. Value sets must be deferred to the local programme, and the data structure must strictly support epistemic statuses ("unknown/unassessed") and unstructured fallbacks. |
-| **Implication for ontology** | Resolves the open question by pushing facet value set definitions out of the core ontology and into local Context/Norms (P2/P5). It also mandates epistemic support (P3) at the field level for missing or edge-case information. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Values are recorded as free-text facts in the case summary or specific relation fields. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

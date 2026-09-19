@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-OQ14-R1 |
 | **Review ID (from matrix)** | GT-OQ14 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "In practice, what exactly do you ask a beneficiary for consent to do? And operationally, what happens to the case or the data if they withdraw their consent partway through receiving assistance?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | "In practice, consent is required when we need to collect, use, store, or share a beneficiary's personal information... or when participation in a particular activity requires the person's agreement... If a beneficiary withdraws consent during an ongoing case, the withdrawal must be respected for activities that depend on that consent. We do not treat withdrawal of consent as meaning that the person no longer exists or that their underlying need has disappeared. The caseworker determines what assistance or processing can continue under the applicable rules and what activities must stop, and records the change appropriately. Where another lawful or mandatory basis exists for retaining particular records or taking a required safeguarding action, that is handled according to the applicable rules rather than assuming that withdrawal automatically deletes all historical information." |
+| **Evidence / response** | No formal withdrawal mentioned, only initial privacy concerns. |
 
 ---
 
@@ -44,9 +44,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | UNRESOLVED |
-| **Reviewer reasoning** | The practitioner confirmed consent operates as a `Norm`, and fleshed out the "minimal placeholder" by explaining the operational mechanics: consent dictates data sharing and activity participation. Most importantly, consent withdrawal does *not* equate to automated cascading retroactive deletion of the record, as other lawful bases may apply. |
-| **Implication for ontology** | Consent must be modeled as an ongoing validation rule (`Norm`) on actions (collection, sharing, participation) rather than a master cascading-delete toggle. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Insufficient evidence on consent withdrawal. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

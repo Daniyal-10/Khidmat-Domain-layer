@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-OQ10-R1 |
 | **Review ID (from matrix)** | GT-OQ10 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When gathering facts about a person or household, what different types of evidence do you actually collect in the field? If different sources of evidence point to different conclusions, how do you decide which one to trust? Is there a formal rule for which type of evidence 'wins'?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | "In actual casework, we may receive evidence from several sources, including the person's own statement, documents or records, direct observation by a practitioner, information from family or community members, and information from organisations or service providers. These sources do not necessarily have the same reliability for every situation. The appropriate level of trust depends on what is being verified and the context of the case. For example, an official document may be the strongest evidence for a person's identity or eligibility-related fact, while direct observation or practitioner assessment may be more useful for understanding a person's current living conditions or immediate needs. If different sources provide conflicting information, workers should not simply delete one source or silently overwrite the previous information. The different claims and their sources should remain available, and the conflict should be identified for verification. There should not necessarily be one universal rule saying that one evidence type always wins over every other type. The reliability or relevance of evidence can depend on the particular fact being assessed, the source, the circumstances, and the purpose of the assessment. Where the conflict cannot be resolved automatically or confidently, it should be referred to an appropriate human practitioner for review." |
+| **Evidence / response** | Government hospital reports/prescriptions considered true. Aadhar, Voter ID, Ayushman. Volunteer ground verification. |
 
 ---
 
@@ -47,9 +47,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The practitioner confirmed that evidence types are diverse and must be tracked with claims, but actively refuted the idea of a universal "epistemic hierarchy" where one evidence type always outweighs another. The weighting is context-dependent, which refines our understanding that the *absence* of a hardcoded hierarchy in the ontology is a feature, not a bug. It also reinforced the need to preserve conflicting claims without silent overwrites. |
-| **Implication for ontology** | The Epistemic Stance primitive (P3) must support associating a source type with a claim, but the ontology should not build a structural hierarchy for automated conflict resolution based purely on those types. Conflict resolution requires human review or context-specific logic. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | A clear epistemic hierarchy exists (Government documents > Volunteer verification > Unverified survey claims). |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -87,3 +87,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

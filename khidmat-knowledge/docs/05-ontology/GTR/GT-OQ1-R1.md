@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-OQ1-R1 |
 | **Review ID (from matrix)** | GT-OQ1 |
-| **Date recorded** | 2026-08-28 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | How do you currently determine, without biometrics, that a new registration is the same person as an existing record? [Follow-up: What happens if a phone number is shared by multiple people in a family, or if a beneficiary loses or changes their phone number?] |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified; references Aadhaar/Voter ID in India. |
-| **Evidence / response** | "We primarily identify and link beneficiaries using their phone number... We will also collect identity documents for the person and bind each person to an individual ID. For example, documents such as an Aadhaar card or Voter ID in India can be used. This makes identifying and distinguishing the same person much easier than relying only on the phone number." |
+| **Evidence / response** | Beneficiary ID, contact no, family members details, aadhar/voter id. 'we dont register who dont have the documents available'. |
 
 ---
 
@@ -43,9 +43,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
-| **Reviewer reasoning** | The practitioner stated that while phone numbers are primarily used for linking, they also collect identity documents (e.g., Aadhaar/Voter ID) to bind to an internal "individual ID", which makes identification "much easier" than phone numbers alone. This refines the deterministic matching mechanism by demonstrating a multi-layered approach (phone, government ID, internal ID) in this organization. The evidence does not establish government ID as a universal identity-resolution mechanism across the domain. |
-| **Implication for ontology** | The ontology may need to structurally distinguish between a Person (Entity), a contact method (phone), a government ID, and an internal administrative ID, rather than collapsing them. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Identity resolution relies on official government documents and explicit unique ID generation. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -82,3 +82,8 @@
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

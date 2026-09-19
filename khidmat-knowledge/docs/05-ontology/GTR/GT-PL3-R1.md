@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-PL3-R1 |
 | **Review ID (from matrix)** | GT-PL3 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | When several circumstances occur together and you consider someone vulnerable, do you actually record or classify the resulting vulnerability as something in its own right, or do you only record the individual contributing circumstances/factors? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "Vulnerability can result from several circumstances occurring together... Two people may have similar individual factors but have different vulnerability assessments because their circumstances... interact... The resulting determination can be represented through an assessment result, vulnerability category, score, flag, or professional judgement... the overall vulnerability assessment is not necessarily reducible to one individual factor." |
+| **Evidence / response** | 'its done on the ground verification and the multiple needs the volutneer decides that based on the ground review'. It is a judgment call by the volunteer, no mathematical formula. |
 
 ---
 
@@ -41,8 +41,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner confirmed that vulnerability is a distinct, irreducible assessment outcome based on the interaction of multiple factors. They explicitly noted that identical underlying factors can yield different vulnerability outcomes due to context, confirming that no universal calculation formula applies. |
-| **Implication for ontology** | Vulnerability must be modeled as an emergent Condition (State) whose composition logic is delegated to local context (Norms/Cognition), rather than computed by a universal hardcoded formula. |
+| **Reviewer reasoning** | Vulnerability composition is handled via human judgment on the ground, not a mathematical formula. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

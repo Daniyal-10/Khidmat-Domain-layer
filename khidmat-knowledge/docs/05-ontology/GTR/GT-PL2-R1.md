@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-PL2-R1 |
 | **Review ID (from matrix)** | GT-PL2 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When you assess that a certain condition is true for a household (for example, that they have a specific need or a damaged roof), can you give a real example of where that exact same physical condition meant something completely different depending on the location, the season, or the specific programme evaluating it?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | "Yes. In actual humanitarian work, the same physical or observed condition can have different meanings depending on the location, season, household circumstances, and programme context... A damaged roof in an area experiencing heavy monsoon rainfall may create an immediate shelter and safety need. The same degree of roof damage in a dry season or a different climate may represent a less urgent need... Workers should therefore be able to distinguish: the condition that was observed; the context in which it was observed; the assessment or interpretation made within that context; the resulting need or vulnerability determination; and the programme or intervention under which the determination was made." |
+| **Evidence / response** | 'NO we dont cover the seasonal things are not covered. And not the pandemic situations also'. Seasonal or location changes not tested. |
 
 ---
 
@@ -45,8 +45,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The practitioner clearly identified that the environment/context (season, climate) fundamentally alters the interpretation of a physical condition. This confirms the boundary of Pillar II, establishing that Context & Environment is a distinct structural pillar necessary for interpreting conditions. |
-| **Implication for ontology** | Confirms the structural validity of Pillar II (Context & Environment) and its role in mediating the relationship between physical conditions and programmatic needs. |
+| **Reviewer reasoning** | The practitioner explicitly excludes seasonal or changing contexts, so this cannot be assessed. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-L1-R1 |
 | **Review ID (from matrix)** | GT-L1 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | When you assess a person or household, are dimensions such as health, age, capability, nutrition, economic situation, caregiving, shelter, water/sanitation, etc., treated as distinct assessment dimensions in your actual work? Are the same dimensions reused? Can one change independently? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "dimensions such as health, age, capability, nutrition, economic situation, caregiving, shelter, and water/sanitation are treated as distinct assessment dimensions... These dimensions can be reused across different assessments or programmes, although a particular programme may only use the dimensions relevant to its purpose. One dimension can also change without necessarily changing the others... The exact set of dimensions can therefore vary..." |
+| **Evidence / response** | Dimensions tracked: Age, gender, housing (own/rental), zakaat eligible, monthly income, specific requirements (food, shelter, medical, education). |
 
 ---
 
@@ -41,8 +41,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly confirmed that assessment dimensions are distinct, independently variable, and reusable. They also confirmed that specific programmes select only the relevant subset of these dimensions rather than applying a universal set to every case. |
-| **Implication for ontology** | Validates the structural mechanism of the Facets layer (L1). The ontology must provide independently variable descriptive axes while allowing local context (Programmes) to govern their application. |
+| **Reviewer reasoning** | The practitioner uses actual facets (lifecycle, housing condition, economic status, need category) on the ground. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

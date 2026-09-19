@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-P1-R1 |
 | **Review ID (from matrix)** | GT-P1 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | Describe conditions you track that persist and change over time for a person or household you have worked with. Does anything you track behave differently from this — e.g., is instantaneous, or never changes? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "we track conditions that can continue over a period of time and can change as the person's or household's situation changes... Some things are better treated as events rather than ongoing conditions. For example, a person being referred to a service, receiving assistance, or being assessed on a particular date is an event... The resulting situation or need can continue after that event." |
+| **Evidence / response** | We track food, medical, shelter, education needs. They persist and change over time (e.g. medical can be one-time or ongoing). Zakaat eligibility and income are also tracked. |
 
 ---
 
@@ -41,8 +41,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly distinguished between ongoing circumstances (conditions/needs) that persist across a time span, and point-in-time happenings (events) like an assessment. |
-| **Implication for ontology** | Validates the necessity of the Condition primitive (P1) as structurally distinct from the Occurrence (Event) primitive (P6). |
+| **Reviewer reasoning** | The practitioner explicitly tracks ongoing circumstances (needs) that change over time, validating the Condition primitive. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

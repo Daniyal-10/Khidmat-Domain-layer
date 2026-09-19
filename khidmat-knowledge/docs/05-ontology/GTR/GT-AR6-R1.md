@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-AR6-R1 |
 | **Review ID (from matrix)** | GT-AR6 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | When an automated system, database search, or matching tool is "unsure" about something—for example, it suspects two records might belong to the same person but isn't 100% certain—what happens next in your workflow? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "if Khidmat uses an automated matching... mechanism and the system is uncertain, that uncertainty should be surfaced to the human worker rather than silently treated as certainty... The automated system may provide: a possible match, a confidence/uncertainty indication, supporting identifiers... and a request for human verification... uncertain conclusions should remain reviewable by a human rather than being silently converted into authoritative facts." |
+| **Evidence / response** | 'The Beneficiary ID (Unique ID) should be there , as there can be similar name or identity mismatch'. Identification issues are handled explicitly. |
 
 ---
 
@@ -44,8 +44,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | CCR-2 (Algorithmic Humility) forbids systems from hiding uncertainty or making irreversible silent decisions when matching. The practitioner validated this exact constraint, stating that uncertain matches must surface confidence levels and evidence for human review rather than executing silently. |
-| **Implication for ontology** | Validates CCR-2 (Algorithmic Humility). The system architecture must include states for "uncertain algorithmic conclusion" and workflows for "human verification." |
+| **Reviewer reasoning** | The system relies on explicit documentation and unique IDs rather than black-box matching. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -82,3 +82,8 @@
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

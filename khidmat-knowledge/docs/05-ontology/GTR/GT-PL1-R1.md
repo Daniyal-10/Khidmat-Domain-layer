@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-PL1-R1 |
 | **Review ID (from matrix)** | GT-PL1 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual assessment and casework, do you treat a person's identity, their health, their capabilities, and their household/living environment as different kinds of information? Are changes in these areas tracked independently? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "These areas can change independently. For example, the person can remain the same while their health changes, their capabilities change, or their household conditions change... we do not treat all of this information as one single attribute of the person." |
+| **Evidence / response** | Form groups Person details (Age, gender, photo) separately from Household context (House: Own/Rental, Address). |
 
 ---
 
@@ -41,8 +41,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly confirmed that the conceptual seams defined by Pillar I are accurate to field practice: identity is distinct from acute deficits (health/capabilities), which are in turn distinct from the surrounding living environment. They change independently. |
-| **Implication for ontology** | Validates the architectural boundary of Pillar I, confirming that identity, internal conditions, and external environmental circumstances must be structurally separated and independently trackable. |
+| **Reviewer reasoning** | The form structurally separates the individual (Pillar I) from their environment/household (Pillar II). |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

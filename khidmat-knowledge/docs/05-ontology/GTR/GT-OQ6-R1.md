@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-OQ6-R1 |
 | **Review ID (from matrix)** | GT-OQ6 |
-| **Date recorded** | 2026-08-31 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | Same as GT-PL5: do you experience "the organisation" and "the programme" as one thing or two in practice? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "Organisation: a distinct organisational entity that can operate programmes, provide services, coordinate activities... An Organisation can have multiple Programmes. Programme: a distinct organised intervention or initiative operated by an Organisation, with its own eligibility criteria, support rules, activities, and objectives... These relationships should not cause the entities to be collapsed into one another." |
+| **Evidence / response** | 'NO organisations and programs are involved in this just the khidmat grp doing the root work'. |
 
 ---
 
@@ -40,9 +40,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The practitioner explicitly challenged the collapsing of Organisation and Programme, separating them operationally into an operator (Organisation) and a specific intervention (Programme) with unique rules. This highlights a clear conflict between the field's operational requirements and the ontology's current Tier 1-derived authority. |
-| **Implication for ontology** | The conflict must be carried to Stage 7 (Governance) for a formal architectural decision. The ontology must not be modified during Stage 5 to resolve this. |
+| **Finding classification** | CONTEXT_DEPENDENT |
+| **Reviewer reasoning** | Organisation/programme distinction is absent in this context. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 7 (Governance) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

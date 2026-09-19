@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-OQ8-R1 |
 | **Review ID (from matrix)** | GT-OQ8 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What specific kinds of restrictions have you seen donors attach to funding? (For instance, restrictions based on geography, specific sectors, types of populations, or time limits?)" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | "Donor funding can have restrictions on how support is used. These can include geographic restrictions, target-population restrictions, specific sectors or types of assistance, eligible activities or expenses, funding periods or deadlines, and reporting requirements. For example, a donor may fund assistance for a particular population or location and only for specific types of support during a defined funding period. A beneficiary may have a genuine need outside those restrictions, but that does not automatically mean the donor-funded programme can provide that support. In that situation, the need still exists and should not be confused with programme eligibility. The practitioner may need to identify another appropriate programme, funding source, or referral rather than treating the person as having no need." |
+| **Evidence / response** | 'Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other'. Restrictions exist. |
 
 ---
 
@@ -44,9 +44,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
-| **Reviewer reasoning** | The practitioner confirmed that funding restrictions act as independent bounding rules (`Norms`) and provided the specific operational taxonomy that was previously absent (geography, target population, sector, eligible activities, time periods). They also reinforced that these constraints do not negate the underlying empirical need. |
-| **Implication for ontology** | Funding restrictions should be modeled using the `Norm` primitive, parameterized by the provided taxonomy (geography, population, sector, time). |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Funding restrictions (limits) are actively applied. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

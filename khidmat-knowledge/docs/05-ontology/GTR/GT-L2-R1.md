@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-L2-R1 |
 | **Review ID (from matrix)** | GT-L2 |
-| **Date recorded** | 2026-08-28 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | Which of the following do you track as distinct, persistent things in your own systems or records: Person, Household, Family, Community, Organisation, Programme, Donor, Government body, Service provider, Emergent/mutual-aid group, Case? Which are missing? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "Each of these is tracked as a separate entity because it has a different identity, role, purpose, and relationship... Person: an individual... Family: a group of people connected through family relationships... Household: the living unit... Case: a specific humanitarian engagement... Organisation: a distinct organisational entity... Programme: a distinct organised intervention... Donor: a distinct entity... Government body: a distinct institutional entity... Service Provider: an entity that provides a particular service... Community: a distinct social grouping... Emergent / mutual-aid group: a distinct group formed by people to provide or coordinate support..." |
+| **Evidence / response** | They track Person, Family ('zimmedar', members), Donor. Do NOT track Organisation/Programme ('just the khidmat grp doing the root work'). |
 
 ---
 
@@ -40,9 +40,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly confirmed tracking all 11 listed entities as distinct constructs. They provided clear boundaries (e.g., distinguishing Family from Household, and Organisation from Programme) and emphasized that these entities participate in different relationships, so they must not be collapsed into one another. |
-| **Implication for ontology** | The practitioner evidence supports treating all 11 listed constructs as distinct in this operational context. The evidence does not by itself establish that this structure is universally correct or override existing authority. Any architectural decision to merge, remove, or restructure these constructs must remain subject to the existing governance and authority process. |
+| **Finding classification** | CONTEXT_DEPENDENT |
+| **Reviewer reasoning** | The absence of Organisation/Programme in this specific grassroots context does not invalidate the entity concepts universally. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

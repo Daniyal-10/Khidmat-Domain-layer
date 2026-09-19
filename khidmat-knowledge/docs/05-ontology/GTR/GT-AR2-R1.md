@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-AR2-R1 |
 | **Review ID (from matrix)** | GT-AR2 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual work, can a case move backward or return to an earlier situation? How often does this happen in practice? When it happens, do you create a new case, reopen the previous case, or handle it in some other way? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "Cases are not always completely linear... A person's need can be resolved and later return. A beneficiary can become inactive... and later become active again... A referral may also fail... The case therefore does not necessarily progress through one fixed sequence... the same person can have multiple periods of assistance or multiple engagements over time... In some situations, the existing beneficiary history is retained and the person's administrative status is updated... In other situations, a programme may create a new case or intervention record." |
+| **Evidence / response** | 'if recusisng like medicens they can conitnue'. Also reverification if earning member takes longer. |
 
 ---
 
@@ -41,8 +41,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly described cases as non-linear (needs recur, beneficiaries become active/inactive, referrals fail, no fixed forward-only sequence). The same person can have multiple engagement periods. Crucially, they noted organizations handle returning needs differently (reopen old case vs. create new case). |
-| **Implication for ontology** | Validates the architectural requirement for non-linear case journeys. The stronger evidence-backed invariant is: The Person persists across engagement cycles and their relevant historical information remains accessible, regardless of whether an organization reopens an existing case or creates a new case record. |
+| **Reviewer reasoning** | Cases do not follow a strict linear path; they loop back for reverification or recurring needs. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

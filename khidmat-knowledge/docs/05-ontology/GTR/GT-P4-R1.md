@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-P4-R1 |
 | **Review ID (from matrix)** | GT-P4 |
-| **Date recorded** | 2026-08-28 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | Topic 1.1: Identity and Persistence. |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "A beneficiary card should remain associated with that particular person and their needs. It should allow us to track the person's needs, when those needs were fulfilled, and when the person became inactive or active again... Volunteers re-verify the beneficiaries and their current needs, and changes such as the head of family leaving, dying, or the family situation changing can be handled at that point." |
+| **Evidence / response** | 'The Beneficiary ID (Unique ID) should be there , as there can be similar name or identity mismatch'. Re-identification is explicitly handled. |
 
 ---
 
@@ -43,9 +43,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
-| **Reviewer reasoning** | The practitioner described tracking a person's needs and activity over time using a "beneficiary card", providing evidence that individuals are treated as persisting across encounters. However, the evidence focuses on the persistence of the card. The evidence supports continuity, but we must not conflate the administrative card with the underlying Person entity. |
-| **Implication for ontology** | The ontology may need to clearly distinguish between the persistent Person (Entity) and the administrative record (Beneficiary Card) associated with them. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | The practitioner explicitly requires tracking persons as the 'same one' across encounters to avoid identity mismatch. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -82,3 +82,8 @@
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-AR3-R1 |
 | **Review ID (from matrix)** | GT-AR3 |
-| **Date recorded** | 2026-08-28 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | Have you ever seen a person's life circumstances and their administrative status tracked in a way that caused confusion? [Follow-up: Is the "beneficiary card" a permanent record of the person, or is it tied to a specific project/donor?] |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "...If there are also individual needs within the same family, a beneficiary card is created for the individual member as well, so that their individual needs can be fulfilled separately according to the donor or charity requirements... A beneficiary card should remain associated with that particular person and their needs. It should allow us to track the person's needs, when those needs were fulfilled, and when the person became inactive or active again." |
+| **Evidence / response** | Not addressed in the evidence. |
 
 ---
 
@@ -44,8 +44,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The practitioner described tracking needs, fulfillment, and active/inactive status via a beneficiary card instantiated for specific donor requirements. However, they did not answer the core question: "Have you ever seen a person's life circumstances and their administrative status tracked in a way that caused confusion?" The evidence is insufficient to confirm the Dual-clock rule or prove that administrative status and lived reality are strictly separated across the domain. |
-| **Implication for ontology** | Suggests compatibility with separating Person from administrative status, but insufficient to confirm the Dual-clock rule as an architectural constraint. |
+| **Reviewer reasoning** | Insufficient evidence to assess dual-clock confusion. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -83,3 +83,8 @@
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

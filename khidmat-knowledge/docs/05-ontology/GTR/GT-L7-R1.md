@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-L7-R1 |
 | **Review ID (from matrix)** | GT-L7 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | How do you distinguish between "we checked and this is not true" and "we have not checked this yet" in your systems? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "if a household has no children and this has actually been established... that should be represented as 'No'... If the worker has not asked... or does not have enough information... it should be represented as 'Unknown' or 'Not assessed', rather than being interpreted as 'No'... A blank field must not be interpreted as 'No' or as evidence that the condition does not exist... absence of a recorded value is not evidence of absence of the condition." |
+| **Evidence / response** | 'unknown here is nothing about the case which is not much requried'. They do not record missing information, they require documents to proceed. |
 
 ---
 
@@ -43,9 +43,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | UNRESOLVED |
-| **Reviewer reasoning** | The Cognition layer (L7) relies entirely on the system not conflating "false" with "unknown." The practitioner explicitly validated this exact distinction, stating that "absence of a recorded value is not evidence of absence of the condition," and distinguishing a confirmed "No" from "Not assessed" or blank fields. |
-| **Implication for ontology** | Validates the open-world commitment of the Cognition layer (L7). |
+| **Finding classification** | MISSING |
+| **Reviewer reasoning** | The operation does not record 'unchecked' vs 'checked false', they only record verified facts. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -83,3 +83,8 @@
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

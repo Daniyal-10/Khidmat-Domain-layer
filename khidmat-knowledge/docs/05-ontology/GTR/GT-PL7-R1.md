@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-PL7-R1 |
 | **Review ID (from matrix)** | GT-PL7 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When you record that you have provided a form of assistance, do you naturally describe 'what need it addresses', 'how it's delivered' (e.g., cash vs in-kind), and 'the phase of support' as three entirely separate fields/concepts, or do you record them together as one description?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | "We normally distinguish these aspects when describing assistance. First, we identify what need or problem the assistance is intended to address. Second, we identify how the assistance is delivered, such as cash, voucher, in-kind goods, direct service, referral, or another form of support. Third, we may identify the phase or stage of support, such as immediate/emergency assistance, ongoing support, recovery, or follow-up. These are related, but they are not necessarily the same piece of information. For example, two beneficiaries may have the same underlying food-related need but receive different forms of assistance, while the same delivery method could be used for completely different needs... operationally the need being addressed, the form of support, and the stage of support are distinct concepts." |
+| **Evidence / response** | Need and assistance are bundled but distinct: 'medical, monthly grocery aur rent mein help ki zaroorat hai... jo ap direct contact karke bhi help kar sakte hai ya khidmat ke zariye'. |
 
 ---
 
@@ -44,9 +44,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | UNRESOLVED |
-| **Reviewer reasoning** | The practitioner perfectly articulated the three distinct conceptual axes of assistance: Sector (need addressed), Modality (how it is delivered), and Phase (stage of support). They explicitly stated that these are operationally distinct and cannot be collapsed. This completely validates the facet structure proposed in Pillar VII. |
-| **Implication for ontology** | Confirms the validity of representing resources and support using the distinct dimensions of Sector, Modality, and Phase. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Assistance is described by the need it addresses (grocery, rent) and the delivery modality (direct or via Khidmat). |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-AR4-R1 |
 | **Review ID (from matrix)** | GT-AR4 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "In your casework, which specific decisions or actions strictly require a human practitioner to review and approve them? Are there scenarios where a system calculation, formula, or junior assessment is explicitly not trusted to make the final determination?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | "Certain decisions in humanitarian casework require human judgement and should not be left entirely to an automated calculation or system rule. This is particularly important when a decision can materially affect a person's access to assistance, eligibility, protection, safety, dignity, or case status. A system may calculate scores, identify possible matches, apply programme rules, or highlight cases for attention, but these outputs should support the practitioner rather than automatically replace the practitioner's judgement where the situation is uncertain, sensitive, exceptional, or consequential. Examples include: deciding whether a person genuinely requires assistance; interpreting conflicting or incomplete evidence; assessing unusual or exceptional circumstances; making sensitive protection or safeguarding decisions; determining an appropriate intervention when several needs interact; reviewing an uncertain automated match or classification; approving a consequential case decision. When the available information is uncertain or contradictory, the system should surface the issue to a human rather than silently making an irreversible decision. The final decision should remain attributable to the responsible practitioner or authorised decision-maker where human judgement is required." |
+| **Evidence / response** | 'its done on the ground verification... the volutneer decides that based on the ground review'. Humans make the decisions. |
 
 ---
 
@@ -47,9 +47,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The practitioner exactly described the premise of CCR-5, detailing that automated systems should only support the practitioner and must not replace human judgement for consequential, sensitive, or uncertain decisions. The requirement to attribute the final decision to a human was explicitly validated. |
-| **Implication for ontology** | Confirms CCR-5 (Human-oversight trigger) as a structural requirement. The ontology must support capturing human attribution for consequential case events. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Automated or survey-level claims are always superseded by human verification. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -87,3 +87,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

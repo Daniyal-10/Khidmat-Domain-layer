@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-L5-R1 |
 | **Review ID (from matrix)** | GT-L5 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | When a person's or household's condition changes, what happens to the previous recorded value in your actual system/process? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "we normally record a new assessment or update rather than treating the previous situation as if it never existed. The previous assessment remains available as part of the history... Historical information is important for re-verification, follow-up, understanding changes in needs..." |
+| **Evidence / response** | Needs tracked as Food, Shelter, Medical, Education. Earning members taking longer -> food assistance continues (change over time). |
 
 ---
 
@@ -41,8 +41,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly confirmed the operational necessity of retaining past condition values alongside new updates to support re-verification and tracking changes over time. |
-| **Implication for ontology** | Validates the core requirement of the States layer (L5) to record conditions longitudinally by capturing states at specific points in time, rather than erasing past states. |
+| **Reviewer reasoning** | Specific values are assigned to needs, and changes over time (recurring vs resolved) are tracked. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

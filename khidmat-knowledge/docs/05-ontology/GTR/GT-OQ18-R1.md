@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-OQ18-R1 |
 | **Review ID (from matrix)** | GT-OQ18 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | Have you encountered a child who was orphaned but well-guardianed, or unguardianed but not orphaned? How did that distinction matter in practice? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "Orphanhood and being unguarded should be treated as different situations... A child can be orphaned but adequately cared for... A child can also be not orphaned but effectively unguarded... The system should therefore record orphanhood separately from the child's current guardian/care situation." |
+| **Evidence / response** | Not directly addressed. |
 
 ---
 
@@ -40,9 +40,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly confirmed that orphanhood and guardianship are separate operational situations. They demonstrated that a child can be an orphan with adequate care, or a non-orphan without adequate care, and therefore the two circumstances must be independently represented. |
-| **Implication for ontology** | Orphanhood and guardianship must not be conflated in the ontology. They represent structurally distinct realities (biological/historical status vs. a current active caregiving relationship). |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Insufficient evidence on orphanhood distinction. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

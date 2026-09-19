@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-OQ13-R1 |
 | **Review ID (from matrix)** | GT-OQ13 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | Does your system or process have a way to explicitly record the disagreement itself? How is it finally resolved? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "the system should be able to represent that: Source A reported one value, Source B reported another value, both claims existed, and a later verification/review may determine which value is currently accepted for a particular purpose... information should be attributable to its source and retain enough history/context to understand how the current value was established." |
+| **Evidence / response** | 'never happned' regarding conflict. Disagreement is resolved prior to entry. |
 
 ---
 
@@ -43,9 +43,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Q13 was genuinely open regarding the structural mechanism for handling contradictions. The practitioner refined it by defining the required structure: claims must carry source provenance, their history must be preserved concurrently, and there is an explicit operational differentiation between raw claims and a verified "accepted" value determined after review. |
-| **Implication for ontology** | Resolves Q13 by structurally requiring source attribution (Relation, P7) for claims and an explicit "verification/acceptance" status to separate raw conflicting inputs from verified operational truths. |
+| **Finding classification** | MISSING |
+| **Reviewer reasoning** | Contradictions are not stored; they are resolved via volunteer verification. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -83,3 +83,8 @@
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

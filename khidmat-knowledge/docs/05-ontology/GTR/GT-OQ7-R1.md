@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-OQ7-R1 |
 | **Review ID (from matrix)** | GT-OQ7 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What does a donor relationship actually consist of in practice? Is it just a one-time gift, an ongoing commitment, or the 'adoption' of specific cases?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | "A donor is a separate entity from the beneficiary, organisation, or programme. A donor relationship can take different forms. It may be a one-time contribution, an ongoing funding commitment, or funding that is restricted to a particular programme, geography, population, sector, or type of assistance. A donor does not normally 'become' the case or beneficiary. Instead, the donor provides resources or funding that enable an organisation or programme to provide support. A donor can also be a person or an organisation. The important distinction is the role they perform in providing resources or support. Where funding is connected to particular programmes or activities, the relationship between the donor/funder and those programmes is important to track because it can determine what resources are available and what restrictions apply." |
+| **Evidence / response** | Donors adopt beneficiary from the group. They can combine or split donations. Can send proxy. Have limits to prevent dependency. Tracking card used. |
 
 ---
 
@@ -44,9 +44,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
-| **Reviewer reasoning** | The practitioner confirmed that Donors are structurally distinct entities (Persons or Organisations) whose relationship to a programme defines funding commitments and restrictions. This directly refines the previously "undescribed" nature of giving-side entities, anchoring them as constraint-providers rather than participants that "adopt" cases directly. |
-| **Implication for ontology** | Donor relationships should be modeled as resource-providing coordination patterns that impose constraints (Norms) on the associated programmes. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Donor relationships are highly explicit, involving adoption, splitting, limits, and direct tracking. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

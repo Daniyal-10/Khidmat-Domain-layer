@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-P2-R1 |
 | **Review ID (from matrix)** | GT-P2 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When you assess that a certain condition is true for a household (for example, that they have a specific need or a damaged roof), can you give a real example of where that exact same physical condition meant something completely different depending on the location, the season, or the specific programme evaluating it?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | "Yes. In actual humanitarian work, the same physical or observed condition can have different meanings depending on the location, season, household circumstances, and programme context... A damaged roof in an area experiencing heavy monsoon rainfall may create an immediate shelter and safety need. The same degree of roof damage in a dry season or a different climate may represent a less urgent need. Similarly, the same household condition can be assessed differently by different programmes because their eligibility criteria, objectives, available support, and thresholds may differ. Context therefore affects the meaning, severity, urgency, relevance, and response associated with a condition. The underlying physical observation should not be silently changed simply because the context changes... A condition can remain factually the same while its practical significance changes because the surrounding context changes." |
+| **Evidence / response** | Khidmat operates in Bhopal and 100-200 km near this city. We don't have multiple locations or programs. The concept of cross-context variability is not exercised here. |
 
 ---
 
@@ -44,9 +44,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The practitioner confirmed that the factual condition (e.g., damaged roof) exists independently, but its operational meaning, severity, and resulting need are strictly determined by the context (season, geography, programme). This exactly matches the primitive definition of Context as the frame relative to which a statement holds. |
-| **Implication for ontology** | Confirms the structural separation of `Condition` and `Context`. The system must permit multiple different needs or assessments to be derived from a single condition based on varying contexts. |
+| **Finding classification** | CONTEXT_DEPENDENT |
+| **Reviewer reasoning** | The specific operation does not cross contexts (single geography, single informal program). Therefore, this cannot be assessed here. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

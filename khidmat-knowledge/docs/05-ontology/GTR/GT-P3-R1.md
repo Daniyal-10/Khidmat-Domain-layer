@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-P3-R1 |
 | **Review ID (from matrix)** | GT-P3 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual records and systems, how do you distinguish between a situation where "we checked and we know this is false/does not exist" versus a situation where "we have not checked this yet"? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "we need to distinguish between information that is known to be false/not applicable and information that is simply unknown or has not yet been assessed... A blank field means that the information has not been recorded yet and therefore its truth status is not established. The system should distinguish this from an explicitly assessed negative result... an assessment/value should therefore be able to carry both the observed value and its information status rather than relying only on whether a field contains a value." |
+| **Evidence / response** | 'the volunteer will reject the case as not genuine'. 'First we dont register who dont have the documents'. They don't represent uncertainty; they resolve it before registering, or reject. |
 
 ---
 
@@ -43,9 +43,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | UNRESOLVED |
-| **Reviewer reasoning** | The ontology's Epistemic Stance primitive (P3) exists to carry "the warrant the system holds for what it asserts, including what it does not know." The practitioner explicitly confirmed this is operationally required in Khidmat: the system must distinguish known true, known false, unknown, and not assessed, and this status must be structurally distinct from the raw data value. |
-| **Implication for ontology** | Validates the structural necessity of the Epistemic Stance primitive (P3) as a distinct property applied to data values. |
+| **Finding classification** | MISSING |
+| **Reviewer reasoning** | The practitioner enforces a strict epistemic gate (must be verified to enter) rather than tracking uncertainty in the system. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -83,3 +83,8 @@
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

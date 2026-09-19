@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-OQ17-R1 |
 | **Review ID (from matrix)** | GT-OQ17 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What does a donor relationship actually consist of in practice? Is it just a one-time gift, an ongoing commitment, or the 'adoption' of specific cases? Also, is there a distinct layer of decision-making happening above individual programmes where the funders themselves coordinate or set terms together?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | "Yes, there can be decision-making and coordination above an individual programme. Funders can establish funding priorities, restrictions, reporting requirements, geographic or population focus, and other conditions that affect multiple programmes. Where several funders or funding arrangements are involved, there can also be coordination around priorities, allocation of resources, reporting, or avoiding duplication. However, this does not mean that all funders are automatically one organisation or that every funding arrangement has the same structure. The actual arrangement depends on the funding context. The important operational distinction is that decisions made at the funding level can affect programmes below them without being the same thing as programme-level casework." |
+| **Evidence / response** | Donors coordinate informally in a WhatsApp group, first come first serve adoption. |
 
 ---
 
@@ -44,9 +44,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The open question queried the existence of a distinct decision-making layer where funders coordinate. The practitioner resolved this by explicitly confirming that funder coordination (priorities, resource allocation, duplication avoidance) operates as a distinct systemic layer above individual programmes. |
-| **Implication for ontology** | Funder coordination must be structurally supported as an independent layer of Coordination Patterns, capable of casting constraints downwards onto programmes without being conflated with programme-level casework. |
+| **Finding classification** | CONTEXT_DEPENDENT |
+| **Reviewer reasoning** | A distinct funder coordination layer doesn't exist; it's a flat informal group. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

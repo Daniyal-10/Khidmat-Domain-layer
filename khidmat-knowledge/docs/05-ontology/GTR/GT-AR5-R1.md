@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-AR5-R1 |
 | **Review ID (from matrix)** | GT-AR5 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When a case involves dignity, safeguarding, or protection concerns, how are those risks practically recorded in your tools? Have you ever seen these concepts reduced to a numerical 'score' or 'rating', or are they recorded and handled differently?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | "Dignity, safeguarding, and protection concerns should be treated as important constraints on how humanitarian assistance and casework are conducted, not merely as another numerical measurement of a person's condition. These concerns may be recorded through structured fields where appropriate, but sensitive circumstances often require contextual information, practitioner judgement, notes, referrals, restrictions, or other safeguards. Reducing dignity or protection to a single numerical score can lose important context and may produce misleading conclusions. For example, two people could receive similar vulnerability scores while requiring very different responses because of differences in safety, protection, confidentiality, consent, or personal circumstances. Therefore, a numerical score may sometimes be useful as one input into assessment, but it should not be treated as a complete representation of dignity, safeguarding, or protection. Sensitive information should also be handled carefully so that recording the information does not itself create additional risks to the person. The practical response should therefore preserve the relevant context and ensure that sensitive or high-risk cases can receive appropriate human review and safeguarding action." |
+| **Evidence / response** | 'about the family privacy concern too much to hide... still they tell in khidmat'. It's handled as a constraint and discussion, not a score. |
 
 ---
 
@@ -45,8 +45,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner response explicitly confirms that dignity and protection act as contextual constraints on casework, not just numerical conditions. Reducing them to a single score is misleading because it loses the required actionable constraints (safeguards, restrictions, confidentiality) that govern the case. |
-| **Implication for ontology** | Confirms CCR-8. Safeguarding and dignity requirements align structurally with the `Norm` (Constraints) primitive rather than solely the `Condition` (Facets/States) primitive. |
+| **Reviewer reasoning** | Dignity/privacy is treated as a constraint on the operation, not a measurable attribute. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

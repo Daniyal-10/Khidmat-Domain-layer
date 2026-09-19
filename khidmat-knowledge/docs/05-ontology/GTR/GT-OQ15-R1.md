@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-OQ15-R1 |
 | **Review ID (from matrix)** | GT-OQ15 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "Do you interact with schools, clinics, or local employers as active parties with their own interests, decisions, and capacity limits, or do you treat them purely as passive 'places/services' that a person accesses?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | "Yes. Service providers can be active parties rather than simply passive places where a beneficiary receives something. For example, a hospital, school, training centre, employer, shelter provider, or other service provider can have its own procedures, eligibility requirements, capacity limits, schedules, and decisions. A beneficiary may be referred to such a provider, but the provider decides whether and how it can deliver the service within its own operational constraints. For example, a person may be referred to a training centre, but the centre may have limited seats or eligibility requirements. The referral therefore does not guarantee that the service will actually be delivered. This makes the service provider an actor involved in the coordination process rather than merely a location or attribute of the beneficiary." |
+| **Evidence / response** | Connect with vendors for ration. Beneficiary visits them. Government hospitals are trusted evidence sources. Vendors act as distinct service providers. |
 
 ---
 
@@ -44,9 +44,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
-| **Reviewer reasoning** | The open question was whether service providers operate as Entities (active actors) or simply Context (passive places). The practitioner resolved this definitively by establishing that service providers possess independent agency, capacity constraints, and decision-making power over referrals. Therefore, they operate as active parties in the coordination process. |
-| **Implication for ontology** | Service Providers must be modeled structurally as Entities (Actors), not merely as contextual attributes or passive locations. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Vendors act as actors delivering services, hospitals act as epistemic authorities. The ontology handles both. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

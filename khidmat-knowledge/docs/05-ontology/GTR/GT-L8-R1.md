@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-L8-R1 |
 | **Review ID (from matrix)** | GT-L8 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "Describe a real referral or handoff you've facilitated between people or organizations. Operationally, what makes it a 'handoff' rather than just closing your case and the other organization starting a completely new case?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | "Yes. A referral or handoff is different from simply closing one case and allowing another organisation to start from zero. In an actual handoff, the receiving organisation or service provider is connected to the existing situation and the reason for the referral. Relevant information can be shared, with appropriate consent... The referral identifies why the person is being referred and what support is expected from the receiving provider... A referral can therefore remain part of the original coordination history even though another organisation performs the actual service. However, the receiving organisation may still maintain its own case or service record. The important distinction is that the coordination/handoff between the two sides is itself meaningful and should not be confused with simply closing the original case." |
+| **Evidence / response** | 'if recusisng like medicens they can conitnue'. Recurring cases are supported. |
 
 ---
 
@@ -45,8 +45,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly confirmed that referrals and handoffs are operationally meaningful connections between case histories, distinct from simply closing one case and starting another from zero. This validates the specific coordination patterns identified in L8. |
-| **Implication for ontology** | Confirms the structural necessity of Coordination Patterns (`Handoff`, `Referral`) that explicitly link distinct cases or actions across organizational boundaries. |
+| **Reviewer reasoning** | Ongoing coordination (recurring needs, donor tracking) is evidenced. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

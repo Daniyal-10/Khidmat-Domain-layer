@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-OQ5-R1 |
 | **Review ID (from matrix)** | GT-OQ5 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "Describe a case where the administrative step of 'closing the case' and the actual measurement of 'did the assistance work' were tracked differently. Are these always handled by the same person on the same timeline, or do you have a separate process for measuring the actual outcome/impact?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | "Yes. In actual casework, closing a case and determining whether the assistance achieved its intended outcome are separate activities... Outcome measurement can happen separately through follow-up, monitoring, reassessment, beneficiary feedback, verification, or MEAL activities. The person responsible for the case may be different from the person or team responsible for monitoring the outcome... The outcome should therefore be represented separately from the administrative state of the case, including information about what was intended, what was observed or measured, when it was assessed, and who or what source provided the assessment." |
+| **Evidence / response** | Outcome tracking not distinct from fulfillment. |
 
 ---
 
@@ -44,9 +44,9 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | UNRESOLVED |
-| **Reviewer reasoning** | The open question regarding who "owns" outcomes and how they relate to the case timeline is resolved by separating them. The practitioner clarified that outcomes are separate assessments owned by different roles (often MEAL) on different timelines, independent of the administrative "case closed" event. |
-| **Implication for ontology** | Outcome ownership should be explicitly assigned to the States layer (L5) rather than the case Events layer (L6), requiring its own distinct Epistemic Stance and source attribution (e.g., who measured the outcome and when). |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Not assessed in this operational context. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

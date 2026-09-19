@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-L6-R1 |
 | **Review ID (from matrix)** | GT-L6 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | Take one real beneficiary or household case and describe its timeline from beginning to end. What significant events or changes happened, and approximately when did they happen? Are there important events in the person's real life that workers do not record? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "A typical case can contain a sequence of events over time... The important events are generally recorded with their relevant dates or timestamps... Different events can affect different aspects of the case... A single case can therefore contain multiple events... Not every event in a person's real life is necessarily recorded. The organisation generally records events that are relevant to the programme..." |
+| **Evidence / response** | Specific timeline: Survey -> volunteer visit/verification -> upload to donor group -> donor adoption -> fulfillment -> tracking card signatures. |
 
 ---
 
@@ -41,8 +41,8 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner described a case as potentially containing multiple events occurring sequentially over time, recorded with relevant dates/timestamps, and affecting different aspects of the case. They explicitly stated that not every event in a person's life is recorded; the timeline is operationally scoped to programme relevance. |
-| **Implication for ontology** | Supports a dateable sequence of recorded events forming part of case history. It also enforces the boundary that the system does not need to capture a complete timeline of a person's life, only programme-relevant occurrences. |
+| **Reviewer reasoning** | Cases follow a timeline of dateable events, some of which (reverification) loop back. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

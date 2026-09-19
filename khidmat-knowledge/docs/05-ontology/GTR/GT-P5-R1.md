@@ -12,7 +12,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Record ID** | GT-P5-R1 |
 | **Review ID (from matrix)** | GT-P5 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What kind of operational rules or constraints strictly bind your casework, regardless of what the individual beneficiary needs (e.g., eligibility cutoffs, safeguarding rules, reporting mandates)? Can you describe a real situation where two of these rules pulled you in opposite directions (like a donor reporting requirement clashing with a family's preference for privacy)? How did you handle that clash?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | "Yes. Our casework is subject to operational rules and constraints that apply independently of what a beneficiary needs. These can include programme eligibility criteria, donor restrictions, safeguarding requirements, consent and privacy requirements, geographic or population restrictions, documentation requirements, and reporting requirements. These rules can sometimes conflict with each other or with the beneficiary's preferences... the practitioner cannot simply ignore either requirement. We follow the applicable safeguarding, consent, privacy, programme, and reporting requirements and use practitioner judgement to determine what can legitimately be done. If the conflict cannot be resolved within the applicable rules, the matter is escalated to the responsible supervisor or appropriate authority rather than allowing an individual worker or system to silently override the constraint." |
+| **Evidence / response** | Rules apply regardless of case: 'We don't help the beggers', 'medicals proofs... of government hospital are considered true only', 'donors have limit to donate'. |
 
 ---
 
@@ -45,8 +45,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly confirmed that casework is governed by independent operational rules (eligibility, safeguarding, donor restrictions) that bound action regardless of beneficiary need. This perfectly validates the primitive definition of `Norm`. |
-| **Implication for ontology** | Confirms the structural validity of the `Norm` primitive as an independent entity bounding operations. |
+| **Reviewer reasoning** | The operation is bound by strict, case-independent rules (norms). |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -80,3 +80,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

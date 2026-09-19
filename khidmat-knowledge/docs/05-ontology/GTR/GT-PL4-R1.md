@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-PL4-R1 |
 | **Review ID (from matrix)** | GT-PL4 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | When two different sources provide conflicting information about the exact same fact, what actually happens in your system? Are both pieces of information kept? Does one piece of information overwrite the other? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "contradictory information can occur when different sources provide different information about the same person... The system/process should not silently destroy the earlier information simply because a newer value has been entered... The information should retain its source and the relevant assessment/record context... both claims existed... the historical/source information should not be unnecessarily lost." |
+| **Evidence / response** | 'never happned'. They send an experienced volunteer to verify, so no conflict reaches the system. |
 
 ---
 
@@ -43,9 +43,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Pillar IV explicitly bounds "what is asserted" from "who asserted it," allowing multiple conflicting claims to coexist structurally. The practitioner confirmed this is an operational requirement for Khidmat: new values must not silently overwrite old ones, and competing claims from different sources must both be concurrently retained. |
-| **Implication for ontology** | Validates the architectural boundary of Pillar IV (Epistemics): systems must be capable of structurally retaining multiple competing claims without one destroying the other. |
+| **Finding classification** | MISSING |
+| **Reviewer reasoning** | Contradictions are resolved at the edge (by the volunteer) and not recorded in the system. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -83,3 +83,8 @@
 
 
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.

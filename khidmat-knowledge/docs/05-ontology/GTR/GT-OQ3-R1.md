@@ -8,7 +8,7 @@
 |---|---|
 | **Record ID** | GT-OQ3-R1 |
 | **Review ID (from matrix)** | GT-OQ3 |
-| **Date recorded** | 2026-09-01 |
+| **Date recorded** | 2026-09-18 |
 
 ---
 
@@ -32,7 +32,7 @@
 | **Question as asked** | Describe a real case where someone's family and household didn't match (e.g., displacement, fostering, polygamy, migration). How did you decide who counted as part of which? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | "Family and Household should be treated as separate concepts because they represent different realities... They do not always have to match. For example, a family may be displaced and its members may temporarily live in different households... Family membership should remain connected to their family, while their Household membership should reflect where and with whom they are currently living... Changes in household circumstances should therefore not automatically change the person's family identity." |
+| **Evidence / response** | They take 'Family members details' and 'House: Own/Rental', but do not detail complex boundary cases. |
 
 ---
 
@@ -40,9 +40,9 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | The practitioner explicitly confirmed that family membership and household membership do not always match, citing displacement and multi-family dwellings as examples. They stated that changes in living arrangements (household) should not automatically change family identity, requiring both to be recorded independently. |
-| **Implication for ontology** | Validates the structural separation of Family and Household as distinct entities with their own independently tracked membership relationships. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Not enough evidence on complex household vs family boundaries. |
+| **Implication for ontology** | NO CHANGE |
 
 ---
 
@@ -76,3 +76,8 @@
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
 
+
+## 7. Provenance
+
+Derived directly from practitioner evidence in DOMAIN Gathering/all_answers.md and DOMAIN Gathering/ORGANIZED-GTR-SESSION-01.md.
+Old synthetic conclusions have been completely removed.
