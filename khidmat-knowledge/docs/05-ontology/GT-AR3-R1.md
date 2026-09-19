@@ -43,7 +43,7 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT OBSERVED IN THIS PRACTITIONER CONTEXT |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The practitioner described tracking needs, fulfillment, and active/inactive status via a beneficiary card instantiated for specific donor requirements. However, they did not answer the core question: "Have you ever seen a person's life circumstances and their administrative status tracked in a way that caused confusion?" The evidence is insufficient to confirm the Dual-clock rule or prove that administrative status and lived reality are strictly separated across the domain. |
 | **Implication for ontology** | Suggests compatibility with separating Person from administrative status, but insufficient to confirm the Dual-clock rule as an architectural constraint. |
 

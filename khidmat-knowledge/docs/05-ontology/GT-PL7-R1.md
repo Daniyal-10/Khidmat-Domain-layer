@@ -44,7 +44,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
+| **Finding classification** | UNRESOLVED |
 | **Reviewer reasoning** | The practitioner perfectly articulated the three distinct conceptual axes of assistance: Sector (need addressed), Modality (how it is delivered), and Phase (stage of support). They explicitly stated that these are operationally distinct and cannot be collapsed. This completely validates the facet structure proposed in Pillar VII. |
 | **Implication for ontology** | Confirms the validity of representing resources and support using the distinct dimensions of Sector, Modality, and Phase. |
 

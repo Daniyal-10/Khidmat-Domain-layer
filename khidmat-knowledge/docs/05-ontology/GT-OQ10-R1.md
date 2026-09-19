@@ -47,7 +47,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT OBSERVED IN THIS PRACTITIONER CONTEXT |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The practitioner confirmed that evidence types are diverse and must be tracked with claims, but actively refuted the idea of a universal "epistemic hierarchy" where one evidence type always outweighs another. The weighting is context-dependent, which refines our understanding that the *absence* of a hardcoded hierarchy in the ontology is a feature, not a bug. It also reinforced the need to preserve conflicting claims without silent overwrites. |
 | **Implication for ontology** | The Epistemic Stance primitive (P3) must support associating a source type with a claim, but the ontology should not build a structural hierarchy for automated conflict resolution based purely on those types. Conflict resolution requires human review or context-specific logic. |
 

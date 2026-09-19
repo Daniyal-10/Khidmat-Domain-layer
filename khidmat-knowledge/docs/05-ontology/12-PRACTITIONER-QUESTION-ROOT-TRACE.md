@@ -22,7 +22,7 @@ None of the 6 proposed questions are completely and adequately answered for the 
 * **Q4 (Delivery Disputed):** The expert only described successful delivery tracking via dual-signed cards, omitting what happens when a beneficiary disputes delivery.
 
 ## QUESTIONS THAT SHOULD NOT BE ASKED
-* **Q1 (Organisation / Programme):** This question is redundant and NOT APPLICABLE. The Session 01 practitioner already established that their grassroots context (Khidmat group) operates without nested programmes. The tension between the Tier 1 collapsed model and the unverified R1 records cannot be resolved by asking this specific practitioner again, as their operational reality genuinely lacks these structures.
+* **Q1 (Organisation / Programme):** This question is redundant and NOT APPLICABLE. The Session 01 practitioner already established that their grassroots context (Khidmat group) operates without nested programmes. This issue has been formally resolved by scope clarification (G1) without relying on unverified records—the split is retained as structural modeling, and Khidmat instantiates zero programmes.
 
 ## RECOMMENDED NEXT ACTION
 Draft a revised Question Set for Session 02 that completely removes Q1, splits Q6 into specific missing edge cases (handling unresolved identity mismatch and changes in household composition), and focuses Q2, Q3, Q4, and Q5 purely on the unanswered edge cases. Do NOT recommend another audit, as the evidence gaps are clearly mapped.

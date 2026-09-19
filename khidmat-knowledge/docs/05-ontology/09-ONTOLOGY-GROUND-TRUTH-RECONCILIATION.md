@@ -73,10 +73,10 @@
 * **GROUND-TRUTH ISSUE:** Do Programmes universally exist beneath Organisations?
 * **SOURCE EVIDENCE:** "NO organisations and programs are involved in this just the khidmat grp doing the root work" (Khidmat Session 01)
 * **SEMANTIC INTERPRETATION:** Grassroots organizations may operate at a flat altitude without nested programmes. The ontology Tier 1 authority collapses them, but previous (now unverified) evidence challenged this.
-* **CURRENT ONTOLOGY COVERAGE:** Tier 1 authority collapses Organisation and Programme into one Entity.
-* **COVERAGE TEST:** The Khidmat evidence shows a case where there is no nested programme. This context-specific reality actually *supports* the collapsed or flat model in their specific scenario, or rather, proves that nested programmes are not a universal domain requirement.
-* **SEMANTIC GAP?:** The evidence from Session 01 does not prove a universal semantic gap; it proves a context-specific operational model. The conflicting R1 evidence is unverified.
-* **DECISION:** CONTEXT-SPECIFIC — DEFER TO STAGE 7 GOVERNANCE WITHOUT ONTOLOGY REDESIGN.
+* **CURRENT ONTOLOGY COVERAGE:** Structurally distinct entities per G1.
+* **COVERAGE TEST:** The Khidmat evidence shows a case where there is no nested programme.
+* **SEMANTIC GAP?:** No semantic gap. The concepts are structurally distinct (G1), and Khidmat simply instantiates only the Organisation.
+* **DECISION:** RESOLVED — SCOPE NOTE APPLIED (G1).
 
 ### R5 — Micro-donor coordination
 * **GROUND-TRUTH ISSUE:** Direct peer-to-peer or micro-donor matching.

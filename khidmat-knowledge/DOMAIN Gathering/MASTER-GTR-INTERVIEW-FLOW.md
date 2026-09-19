@@ -3,10 +3,12 @@
 ## FINAL GTR CONFIRMATION SUMMARY
 
 * Total Review IDs: 47
-* Confirmed: 39
-* Partially supported: 4
-* Not confirmed / not observed: 3
-* Corrections required: 1
+* Confirmed: 26
+* Partially supported: 0
+* Not confirmed / not observed: 0
+* Not assessable: 13
+* Unresolved: 8
+* Corrections required: 0
 * Final confirmation pending: 0
 
 ---
@@ -38,6 +40,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-P2
 
 **Question:**
@@ -61,7 +66,10 @@ NOT OBSERVED
 "NO we dont cover the seasonal things are not covered. And not the pandemic situations also"
 
 **Final Status:**
-NOT OBSERVED — CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Organisation excludes scenario from scope, neither supporting nor contradicting the Context primitive.
 ### GT-P3
 
 **Question:**
@@ -85,7 +93,10 @@ NOT OBSERVED
 "unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
 
 **Final Status:**
-NOT OBSERVED — CONFIRMED
+UNRESOLVED
+
+**Justification:**
+Practitioner does not operationally distinguish unknown from checked-false in their workflow, providing insufficient evidence.
 ### GT-P4
 
 **Question:**
@@ -113,6 +124,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-P5
 
 **Question:**
@@ -140,6 +154,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-P6
 
 **Question:**
@@ -164,6 +181,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-P7
 
 **Question:**
@@ -191,6 +211,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-L1
 
 **Question:**
@@ -218,6 +241,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-L2
 
 **Question:**
@@ -245,6 +271,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-L3
 
 **Question:**
@@ -272,6 +301,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-L4
 
 **Question:**
@@ -293,7 +325,10 @@ If the family does not provide information or documents required for the survey/
 "When the family is trying to keep the information which is required to fill the survey form or the documents, we don't process them forward. They are rejected in the volunteer verification."
 
 **Final Status:**
-ANSWERED / CONFIRMED
+CONFIRMED
+
+**Justification:**
+Evidence supports the structural handling of conflicting rules by defaulting to rejection.
 
 ---
 
@@ -324,6 +359,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-L6
 
 **Question:**
@@ -351,6 +389,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-L7
 
 **Question:**
@@ -374,7 +415,10 @@ NOT OBSERVED
 "unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
 
 **Final Status:**
-NOT OBSERVED — CONFIRMED
+UNRESOLVED
+
+**Justification:**
+Practitioner does not operationally distinguish unknown from checked-false in their workflow, providing insufficient evidence.
 ### GT-L8
 
 **Question:**
@@ -402,6 +446,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-PL1
 
 **Question:**
@@ -429,6 +476,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-PL2
 
 **Question:**
@@ -452,7 +502,10 @@ NOT OBSERVED
 "NO we dont cover the seasonal things are not covered. And not the pandemic situations also"
 
 **Final Status:**
-NOT OBSERVED — CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Organisation excludes scenario from scope, neither supporting nor contradicting the Context primitive.
 ### GT-PL3
 
 **Question:**
@@ -480,6 +533,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-PL4
 
 **Question:**
@@ -503,7 +559,10 @@ NOT OBSERVED
 "we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned"
 
 **Final Status:**
-NOT OBSERVED — CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Workflow relies on a single volunteer per lead, avoiding conflicting sources entirely; scenario is not assessable in this context.
 ### GT-PL5
 
 **Question:**
@@ -527,7 +586,10 @@ NOT ASSESSABLE
 "NO organisations and programs are involved in this just the khidmat grp doing the root work"
 
 **Final Status:**
-NOT ASSESSABLE — CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Practitioner operates as a single grassroots group without distinct programs or organizations to assess.
 ### GT-PL6
 
 **Question:**
@@ -554,7 +616,10 @@ RECORDED
 
 
 **Final Status:**
-PARTIALLY SUPPORTED / NOT FULLY CONFIRMED
+UNRESOLVED
+
+**Justification:**
+Evidence describes joint tracking via signatures but does not address if they are ever tracked separately, leaving the question unresolved.
 ### GT-PL7
 
 **Question:**
@@ -581,7 +646,10 @@ RECORDED
 
 
 **Final Status:**
-PARTIALLY SUPPORTED
+UNRESOLVED
+
+**Justification:**
+Evidence details assistance delivery but does not address how the organization internally communicates or structures the description of assistance.
 ### GT-AR1
 
 **Question:**
@@ -605,7 +673,10 @@ NOT ASSESSABLE
 "NO organisations and programs are involved in this just the khidmat grp doing the root work"
 
 **Final Status:**
-NOT ASSESSABLE — CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Practitioner operates as a single grassroots group without distinct programs or organizations to assess.
 ### GT-AR2
 
 **Question:**
@@ -633,6 +704,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-AR3
 
 **Question:**
@@ -656,7 +730,10 @@ NOT OBSERVED
 "NOt heppend"
 
 **Final Status:**
-NOT OBSERVED — CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Scenario has not occurred in this practitioner's context, making it not assessable.
 ### GT-AR4
 
 **Question:**
@@ -683,7 +760,10 @@ NOT OBSERVED
 
 
 **Final Status:**
-CORRECTION REQUIRED / then CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Workflow relies on a single volunteer per lead, avoiding conflicting sources entirely; scenario is not assessable in this context.
 ### GT-AR5
 
 **Question:**
@@ -705,7 +785,10 @@ Beneficiaries should not be disrespected. Beneficiary information is not shared 
 "Yes. They shouldn't be disrespected. We don't share the information unnecessarily anywhere. They are shared only in the group of the donors so they can help them, that's it."
 
 **Final Status:**
-ANSWERED / CONFIRMED
+CONFIRMED
+
+**Justification:**
+Evidence supports that dignity and safeguarding are treated as rules rather than ratings.
 
 ---
 
@@ -733,6 +816,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-OQ1
 
 **Question:**
@@ -760,6 +846,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-OQ2
 
 **Question:**
@@ -787,6 +876,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-OQ3
 
 **Question:**
@@ -814,6 +906,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-OQ4
 
 **Question:**
@@ -840,7 +935,10 @@ RECORDED
 
 
 **Final Status:**
-PARTIALLY SUPPORTED
+UNRESOLVED
+
+**Justification:**
+Evidence lists recorded fields but does not evaluate the completeness of the ontology's proposed categories.
 ### GT-OQ5
 
 **Question:**
@@ -864,7 +962,10 @@ RECORDED
 
 
 **Final Status:**
-PARTIALLY SUPPORTED
+UNRESOLVED
+
+**Justification:**
+Evidence confirms delivery receipt tracking but does not address whether broader outcome measurement is handled by a separate function.
 ### GT-OQ6
 
 **Question:**
@@ -888,7 +989,10 @@ NOT ASSESSABLE
 "NO organisations and programs are involved in this just the khidmat grp doing the root work"
 
 **Final Status:**
-NOT ASSESSABLE — CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Practitioner operates as a single grassroots group without distinct programs or organizations to assess.
 ### GT-OQ7
 
 **Question:**
@@ -913,6 +1017,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-OQ8
 
 **Question:**
@@ -940,6 +1047,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-OQ9
 
 **Question:**
@@ -967,6 +1077,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-OQ10
 
 **Question:**
@@ -993,7 +1106,10 @@ RECORDED
 "The medicals proofs (reports, prescreptions) of government hospital are considered true only so no double verification from hospitals are needed... evidence when the volunteer visted them and verifired them , their claims about the needs and confims it"
 
 **Final Status:**
-CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Workflow relies on a single volunteer per lead, avoiding conflicting sources entirely; scenario is not assessable in this context.
 ### GT-OQ11
 
 **Question:**
@@ -1018,6 +1134,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-OQ12
 
 **Question:**
@@ -1041,7 +1160,10 @@ NOT OBSERVED
 "unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
 
 **Final Status:**
-NOT OBSERVED — CONFIRMED
+UNRESOLVED
+
+**Justification:**
+Practitioner does not operationally distinguish unknown from checked-false in their workflow, providing insufficient evidence.
 ### GT-OQ13
 
 **Question:**
@@ -1065,7 +1187,10 @@ NOT OBSERVED
 "we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned"
 
 **Final Status:**
-NOT OBSERVED — CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Workflow relies on a single volunteer per lead, avoiding conflicting sources entirely; scenario is not assessable in this context.
 ### GT-OQ14
 
 **Question:**
@@ -1092,7 +1217,10 @@ RECORDED
 
 
 **Final Status:**
-NOT CONFIRMED / EVIDENCE DOES NOT FULLY ANSWER QUESTION
+UNRESOLVED
+
+**Justification:**
+Evidence explains disclosure requirements but does not address the scenario of consent being withdrawn mid-case.
 ### GT-OQ15
 
 **Question:**
@@ -1120,6 +1248,9 @@ RECORDED
 
 **Final Status:**
 CONFIRMED
+
+**Justification:**
+Evidence supports the current structural interpretation as stated.
 ### GT-OQ16
 
 **Question:**
@@ -1141,7 +1272,10 @@ In this practitioner context, the practitioner did not observe complex interacti
 "NO. Usually we know these needs are true as the volunteer confirms them. That helps them bare minimum side."
 
 **Final Status:**
-NOT OBSERVED / NOT ASSESSABLE — CONFIRMED
+NOT_ASSESSABLE
+
+**Justification:**
+Practitioner focuses purely on basic need identification via single volunteer confirmation; complex need interactions are not encountered.
 
 ---
 
@@ -1168,7 +1302,10 @@ RECORDED
 
 
 **Final Status:**
-NOT FULLY CONFIRMED / NOT OBSERVED AS A DISTINCT LAYER IN THIS PRACTITIONER CONTEXT
+NOT_ASSESSABLE
+
+**Justification:**
+Practitioner operates in a model where donors directly adopt beneficiaries, so a distinct higher-level funder coordination layer is not assessable.
 ### GT-OQ18
 
 **Question:**
@@ -1190,7 +1327,10 @@ Whether a responsible person/guardian is present does not by itself determine th
 "Yes, depends on the situation and the ground reality that the volunteer confirms, that how much they need really."
 
 **Final Status:**
-ANSWERED / CONFIRMED
+CONFIRMED
+
+**Justification:**
+Evidence supports that handling depends on ground reality of needs rather than administrative presence of a guardian alone.
 
 ---
 
@@ -1217,4 +1357,7 @@ RECORDED
 
 
 **Final Status:**
-NOT FULLY CONFIRMED / NOT OBSERVED AS A DISTINCT ROLE IN THIS PRACTITIONER CONTEXT
+NOT_ASSESSABLE
+
+**Justification:**
+Practitioner relies on ad-hoc volunteer claiming within a single group, so cross-organizational case coordination roles are not assessable.

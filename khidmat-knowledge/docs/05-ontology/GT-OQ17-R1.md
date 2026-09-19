@@ -44,7 +44,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The open question queried the existence of a distinct decision-making layer where funders coordinate. The practitioner resolved this by explicitly confirming that funder coordination (priorities, resource allocation, duplication avoidance) operates as a distinct systemic layer above individual programmes. |
 | **Implication for ontology** | Funder coordination must be structurally supported as an independent layer of Coordination Patterns, capable of casting constraints downwards onto programmes without being conflated with programme-level casework. |
 

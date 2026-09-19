@@ -1,5 +1,7 @@
 # FINAL AUDIT — MINIMUM SUFFICIENT ONTOLOGY READINESS AUDIT
 
+> **Historical snapshot notice.** This document's closure/readiness verdict has been superseded by `docs/05-ontology/10-ONTOLOGY-RECONCILIATION-CLOSURE-REPORT.md`'s finding of "NOT READY — provenance/evidence blocking," because the practitioner evidence this document relied on (the 47 GT-*-R1 records) was subsequently found unverified.
+
 ## 1. Primitive Sufficiency Audit
 *   **Result:** `SUFFICIENT`
 *   The seven existing primitives (Condition, Context, Epistemic Stance, Entity, Norm, Occurrence, Relation) are sufficient to classify all currently established domain concepts without forced fit. No necessary foundational category lacks a primitive, and no evidence supports introducing an eighth primitive.
@@ -47,7 +49,7 @@
 ## 6. Temporal Sufficiency
 *   **Result:** `PASS`
 *   The ontology handles persistent entities, ongoing conditions, bounded occurrences, and contextual change adequately without requiring a new "Process" primitive.
-*   **CCR-7 — RESOLVED: ONE TEMPORAL FOUNDATION WITH MULTIPLE TEMPORAL PERSPECTIVES**. (Historically, the original dual-clock question was not empirically established by Ground Truth, leaving it initially unresolved. The later semantic resolution confirmed temporal semantics were already sufficient: a semantic distinction between human/life/situation and administrative/programme engagement remains mandatory and must not collapse into a single status, but no independent mechanical clocks are required, exactly two perspectives are not mandated, and no new primitive/layer/pillar is required. Context provides the semantic frame without imposing implementation architecture).
+*   **CCR-7 — UNRESOLVED: NON-BLOCKING, NON-FORECLOSING**. (Historically, the original dual-clock question was not empirically established by Ground Truth, leaving it initially unresolved. No subsequent analysis document corroborating a resolution is traceable. It remains a valid semantic distinction hypothesis between human/life/situation and administrative/programme engagement which must not collapse into a single status, but this is an unverified operational hypothesis.)
 
 ## 7. Open-World Sufficiency
 *   **Result:** `PASS`
@@ -55,7 +57,7 @@
 
 ## 8. Outcome / Impact Sufficiency
 *   **Result:** `PASS`
-*   Outcome and Impact are distinct from measurement events. Ownership is maintained as context-dependent / governed provisional (G4) and not universally forced onto the Human Subject.
+*   Outcome and Impact are distinct from measurement events. Ownership is maintained as context-dependent / governed provisional (G4 - unevidenced design assumptions based on unverified evidence) and not universally forced onto the Human Subject.
 
 ## 9. Vulnerability / Need / Risk Sufficiency
 *   **Result:** `PASS`
@@ -63,7 +65,7 @@
 
 ## 10. Actor / Organisation / Programme Sufficiency
 *   **Result:** `PASS`
-*   Organisation ≠ Programme is formally split (G1). Service Provider and funder altitude remain correctly scoped as governed provisional (G4).
+*   Organisation ≠ Programme is formally split (G1). Service Provider and funder altitude remain correctly scoped as governed provisional (G4 - unevidenced design assumptions based on unverified evidence).
 
 ## 11. Evidence Sufficiency
 *   **Result:** `TAXONOMIC DETAIL DEFERRED — NOT A FOUNDATIONAL GAP`
@@ -83,7 +85,7 @@
 
 ## 15. Evidence / Governance Synchronization
 *   **Result:** `PASS`
-*   Governed provisional items (G4) are properly identified as such. CCR-7 is formally resolved (G2) without mandating independent clocks. Source-absent parameters remain explicitly unpopulated rather than invented.
+*   Governed provisional items (G4) are properly identified as such. CCR-7 is explicitly unresolved (G2) without mandating independent clocks. Source-absent parameters remain explicitly unpopulated rather than invented.
 
 ## 16. Implementation Boundary Audit
 *   **Result:** `PASS`
@@ -129,7 +131,7 @@ Four distinct kinds of "done" are in play across this project's status vocabular
 
 *   **Structural closure** — the primitive/layer/pillar/rule *categories themselves* are fixed: no new primitive, layer, or pillar is currently required. **Status: YES.**
 *   **Semantic closure** — every structural category has an unambiguous definition and boundary, with no unresolved classification tension for the concepts currently admitted. **Status: YES for the seven primitives and eight layers as categories; specific concept placements (e.g., Risk, Need, Organisation/Programme) are individually resolved per `07-STAGE-7-GOVERNANCE-DECISIONS.md`, and any concept not yet given an explicit placement (e.g., Situation, prior to the clarification added in `03-ONTOLOGY-PILLARS.md` §3) is a semantic-closure gap, not a structural one.**
-*   **Empirical validation** — the structure has been checked against real humanitarian practice (ground truth) and, where checked, corroborated. **Status: PARTIAL — 47 of 47 matrix items reviewed (see `06-STAGE-6-EVIDENCE-INTEGRATION-REPORT.md`), but several rest on single-source practitioner evidence and are marked Governed Provisional (G4) precisely because empirical validation, while present, is not yet broad.**
+*   **Empirical validation** — the structure has been checked against real humanitarian practice (ground truth) and, where checked, corroborated. **Status: PARTIAL — 47 of 47 matrix items reviewed (see `06-STAGE-6-EVIDENCE-INTEGRATION-REPORT.md`), but several rest on UNVERIFIED evidence and should currently be treated as unevidenced design assumptions pending corroboration.**
 *   **Engineering / downstream readiness** — a competent architect can begin schema, API, and system design without first needing to invent or redefine a foundational category. **Status: YES** (per §17 of this document, the "Can We Start?" test).
 
 *   **FORMALLY CLOSED (structural):** YES

@@ -44,7 +44,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The practitioner clearly identified that the environment/context (season, climate) fundamentally alters the interpretation of a physical condition. This confirms the boundary of Pillar II, establishing that Context & Environment is a distinct structural pillar necessary for interpreting conditions. |
 | **Implication for ontology** | Confirms the structural validity of Pillar II (Context & Environment) and its role in mediating the relationship between physical conditions and programmatic needs. |
 

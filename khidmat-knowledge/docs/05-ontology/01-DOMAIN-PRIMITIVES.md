@@ -337,7 +337,7 @@ Consequence for this set — each primitive carries a different evidential weigh
 | **Occurrence** (P6) | Moderate — lifecycle and verification practice via TD-03 |
 | **Entity** (P4) | Partial — trajectory/enrolment separation via TD-03 |
 | **Condition** (P1) | Moderate — Stage 5 practitioner-corroborated (GT-P1, GT-OQ2, GT-OQ9, GT-OQ11) |
-| **Relation** (P7) | Moderate — Stage 5 practitioner-corroborated (GT-P7, GT-L3) |
+| **Relation** (P7) | Limited — single-source, partial (Session 01, PARTIALLY_ANSWERED); prior unverified corroboration (GT-L3-R1 et al.) excluded per provenance audit |
 
 **The primitives now have practitioner corroboration.**
 This does not invalidate them — categories classify regardless of evidence density — but it is

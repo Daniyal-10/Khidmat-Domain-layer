@@ -47,7 +47,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT OBSERVED IN THIS PRACTITIONER CONTEXT |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The practitioner exactly described the premise of CCR-5, detailing that automated systems should only support the practitioner and must not replace human judgement for consequential, sensitive, or uncertain decisions. The requirement to attribute the final decision to a human was explicitly validated. |
 | **Implication for ontology** | Confirms CCR-5 (Human-oversight trigger) as a structural requirement. The ontology must support capturing human attribution for consequential case events. |
 

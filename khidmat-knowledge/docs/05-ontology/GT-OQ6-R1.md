@@ -40,7 +40,7 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CHALLENGED |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The practitioner explicitly challenged the collapsing of Organisation and Programme, separating them operationally into an operator (Organisation) and a specific intervention (Programme) with unique rules. This highlights a clear conflict between the field's operational requirements and the ontology's current Tier 1-derived authority. |
 | **Implication for ontology** | The conflict must be carried to Stage 7 (Governance) for a formal architectural decision. The ontology must not be modified during Stage 5 to resolve this. |
 

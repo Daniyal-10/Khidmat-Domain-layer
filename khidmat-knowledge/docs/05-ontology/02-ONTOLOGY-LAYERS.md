@@ -118,11 +118,11 @@ rather than incomplete: dimensions are stable business concepts while concrete i
 | Household | RM §4.2 | BD-TD03-004 (trajectory tracked separately from programme status) |
 | Family | RM §4.1 | Blueprint only — resolved as a distinct Entity, bounded by kinship/legal guardianship; see §12 ("Family vs Household") |
 | Community | RM §4.4 | Blueprint |
-| Organisation | RM §11.1 | **Strong** — Stage 7 G1 split |
-| Programme | RM §11.1 | **Strong** — Stage 7 G1 split; carries programme-specific eligibility, funding, and activity rules |
+| Organisation | RM §11.1 | **Strong** — Stage 7 G1 split. *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.* |
+| Programme | RM §11.1 | **Strong** — Stage 7 G1 split; carries programme-specific eligibility, funding, and activity rules. *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.* |
 | Donor / giver | RM §11.1 | **Strong** — BD-TD01-004 (CHS defines actors to include them) |
 | Government body | RM §11.1, §13.4 | BD-TD01-001. Structurally, a government scheme is a Programme operated by a Government body, classified via the Sector×Modality×Phase facets. This accommodates government schemes as content/taxonomy without structural omission. |
-| Service Provider (Healthcare, School, Employer) | RM §11.1 | **Structurally resolved** — modelled as an active Entity with independent capacity/eligibility decisions (GT-OQ15), but retains single-source caveat (F-3); Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration. |
+| Service Provider (Healthcare, School, Employer) | RM §11.1 | **Structurally resolved** — modelled as an active Entity with independent capacity/eligibility decisions (GT-OQ15), but rests on UNVERIFIED evidence (F-3); Governed provisional — rests on UNVERIFIED evidence; treated as an unevidenced design assumption pending corroboration (not practitioner-confirmed). |
 | Emergent group / mutual-aid structure | RM §4.5 | **Strong** — BD-TD01-005, ≥3 source families |
 | Case | RM §12 | Blueprint |
 | Evidence artifact | RM §10.2 | Weak — kinds unenumerated |
@@ -158,10 +158,10 @@ The ontology clearly distinguishes the foundational primitive (**Relation**) fro
 
 | Relationship | Between | Source | Evidence |
 |---|---|---|---|
-| Kinship (parent, child, spouse, sibling) | Person ↔ Person | RM §4.1 | **Moderate — Stage 5 practitioner-corroborated (GT-L3, CONFIRMED)**. Prior dossier term-count absence (TD-01–06) reflects the organisational-side evidence gap noted in `01-DOMAIN-PRIMITIVES.md` §7.1, now closed by direct practitioner testimony. |
-| Guardianship / caregiving | Person ↔ Person | RM §4.1 | **Moderate** — Stage 5 (GT-P7, GT-L3, GT-OQ18). CONFIRMED-distinct from Orphanhood Condition (L5). |
-| Dependency | Person ↔ Person | RM §4.1 | **Moderate — Stage 5 practitioner-corroborated (GT-L3, CONFIRMED)**. Prior dossier term-count absence (TD-01–06) reflects the organisational-side evidence gap noted in `01-DOMAIN-PRIMITIVES.md` §7.1, now closed by direct practitioner testimony. Also corroborated by GT-P7 (CONFIRMED). |
-| Responsibility (income, caregiving, education, decision) | Person ↔ Household | RM §4.1 | **Moderate — Stage 5 practitioner-corroborated (GT-L3, CONFIRMED)**. Prior dossier term-count absence (TD-01–06) reflects the organisational-side evidence gap noted in `01-DOMAIN-PRIMITIVES.md` §7.1, now closed by direct practitioner testimony. |
+| Kinship (parent, child, spouse, sibling) | Person ↔ Person | RM §4.1 | **Limited — single-source, partial (Session 01, items A6/A7, PARTIALLY_ANSWERED); prior unverified corroboration (GT-L3-R1 et al.) excluded per provenance audit.** |
+| Guardianship / caregiving | Person ↔ Person | RM §4.1 | **Limited — single-source, partial (Session 01, items A6/A7, PARTIALLY_ANSWERED); prior unverified corroboration (GT-L3-R1 et al.) excluded per provenance audit.** |
+| Dependency | Person ↔ Person | RM §4.1 | **Limited — single-source, partial (Session 01, items A6/A7, PARTIALLY_ANSWERED); prior unverified corroboration (GT-L3-R1 et al.) excluded per provenance audit.** |
+| Responsibility (income, caregiving, education, decision) | Person ↔ Household | RM §4.1 | **Limited — single-source, partial (Session 01, items A6/A7, PARTIALLY_ANSWERED); prior unverified corroboration (GT-L3-R1 et al.) excluded per provenance audit.** |
 | Household membership | Person ↔ Household | RM §4.2 | Blueprint |
 | Constrains | Programme ↔ Case | RM §11.4 | **Strong** — BD-TD03-001 (mechanism itself unevidenced, Assumption AR-005 in TD-03) |
 | Referral | Organisation ↔ Organisation | RM §12.1 | **Strong** — BD-TD04-002 (CFM referral pathways) |
@@ -176,7 +176,7 @@ The ontology clearly distinguishes the foundational primitive (**Relation**) fro
 ### 4.2 The asymmetry this layer must not conceal
 
 **Institutional relationships are the best-evidenced content in the ontology. Social
-relationships are the least.** Every kinship, dependency and caregiving relationship above originally rested on BL V1 §6 alone, with zero corroboration across the six evidence dossiers — this gap has since been closed by direct Stage 5 practitioner testimony (GT-L3, GT-P7), both CONFIRMED.
+relationships are the least.** Every kinship, dependency and caregiving relationship above originally rested on BL V1 §6 alone, with zero corroboration across the six evidence dossiers — this gap is partially, not fully, addressed by Session 01's limited testimony, and remains the weakest-evidenced content in the ontology.
 
 This matters more than the count suggests. RM §4.1's central claim — that **vulnerability
 cascades along dependency**, *"a mother's risk is her infant's risk"* — is a statement about
@@ -247,7 +247,7 @@ Consent mechanics (what consent is obtained for, from whom, and what withdrawal 
 |---|---|---|---|
 | Person — health | acute · chronic · disability · mental · nutritional (incl. SAM/MAM staging) | RM §3.5 | **Blueprint only** |
 | Person — capability | across five dimensions | RM §3.4 | **Blueprint only** |
-| Person — orphanhood | biological/legal fact of being an orphan | RM §6.3 | **Moderate** — Stage 5 (GT-OQ18). CONFIRMED-distinct from active-caregiving relation (L3). |
+| Person — orphanhood | biological/legal fact of being an orphan | RM §6.3 | **Evidence not found — GT-OQ18-R1 unverified; not addressed by Session 01** |
 | Person — lifecycle stage | nine developmental stages | RM §3.3 | Blueprint; separation-from-programme-status corroborated by BD-TD03-004 |
 | Household — shelter | safe · damaged · flood-prone · leaking | RM §4.2 | **Blueprint only** |
 | Household — resilience | absorptive, adaptive, recovery capacity | RM §4.2 | **Blueprint only** |
@@ -334,7 +334,7 @@ further stages of the same lifecycle. BD-TD04-001 records MEAL as a **separate b
 capability** on its own cadence, *"not the final stage of any one case's journey"* (≥4
 institutional sources).
 
-**STRUCTURALLY RESOLVED.** Outcome and impact *measurement* events are admitted to this layer. The operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is explicitly delegated to architecture/workflow design. Outcome and Impact remain distinct from their measurement or assessment representations. Their operational measurement structures and ownership are context-dependent unless specifically established by source evidence. The ontology does not impose a universal ownership assignment to the Human Subject. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
+**STRUCTURALLY RESOLVED.** Outcome and impact *measurement* events are admitted to this layer. The operational ownership question (whether Outcome Measurement / MEAL is part of the case journey or a separate discipline) is explicitly delegated to architecture/workflow design. Outcome and Impact remain distinct from their measurement or assessment representations. Their operational measurement structures and ownership are context-dependent unless specifically established by source evidence. The ontology does not impose a universal ownership assignment to the Human Subject. Governed provisional — rests on UNVERIFIED evidence; treated as an unevidenced design assumption pending corroboration (not practitioner-confirmed).
 
 ---
 
@@ -433,8 +433,8 @@ task logic or automation instruction has become a workflow specification and lef
 | **Reassessment loop** | Monitoring returns a case to an earlier stage | **Strong** — BD-TD03-002 |
 | **Multi-need satisfaction** | One intervention satisfies several needs across sectors concurrently | **Strong** — BD-TD06-003 (multipurpose cash) |
 | **Deduplication across organisations** | Two organisations recognise the same person | Blueprint — RM §2; **blocked on the identity-resolution gap**, §3.2 |
-| **Funder Coordination** | Funders set priorities/restrictions/reporting across programmes, distinct from programme casework | **Moderate** — Stage 5 (GT-OQ17); shape only, single-source caveat |
-| **Case Orchestration** | Cross-organisational coordination function (handoffs, gap/duplication tracking) distinct from direct service delivery | **Moderate** — Stage 5 (GT-OQ19); shape only, single-source caveat |
+| **Funder Coordination** | Funders set priorities/restrictions/reporting across programmes, distinct from programme casework | **Moderate** — Stage 5 (GT-OQ17); shape only, rests on UNVERIFIED evidence |
+| **Case Orchestration** | Cross-organisational coordination function (handoffs, gap/duplication tracking) distinct from direct service delivery | **Moderate** — Stage 5 (GT-OQ19); shape only, rests on UNVERIFIED evidence |
 | **Area-level crisis trigger** | A crisis-onset Occurrence and aggregated Context/Condition signals trigger response at the Community Entity level (UHR-1 stub) | **Medium-High** — BD-TD05-002 |
 | **Giving and matching** | A verified need becomes visible to a giver, who commits support | **None** — undescribed (RM §16.4) |
 | **Adoption** | A giver holds a sustained relationship with a household | **None** — absent from every source |
@@ -452,7 +452,7 @@ This applies to *needs assessment*, *planning*, *monitoring* and *coordination* 
 
 ### 9.3 A pattern whose ownership is pending
 
-**STRUCTURALLY RESOLVED.** The operational ownership of Outcome and impact measurement (whether it belongs to the Case Journey per BL V1 or to a separate MEAL discipline per RM §12.5) is explicitly delegated to architecture/workflow design. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
+**STRUCTURALLY RESOLVED.** The operational ownership of Outcome and impact measurement (whether it belongs to the Case Journey per BL V1 or to a separate MEAL discipline per RM §12.5) is explicitly delegated to architecture/workflow design. Governed provisional — rests on UNVERIFIED evidence; treated as an unevidenced design assumption pending corroboration (not practitioner-confirmed).
 
 ### 9.4 What this layer cannot yet hold
 
@@ -468,7 +468,7 @@ Each layer's ceiling is the strength of its source primitive (pre-Stage-5 eviden
 |---|---|---|---|
 | Facets | Condition, Context | **Moderate/Strong** (Stage 5 upgraded) | Support facets are the only externally corroborated facet structure |
 | Entities | Entity (P4) | **Moderate** | Institutional entities Strong; Person weakest |
-| Relationships | Relation (P7) | **Moderate** (Stage 5 upgraded) | The most asymmetric layer |
+| Relationships | Relation (P7) | **Limited** (Prior Stage 5 upgrade excluded) | The most asymmetric layer |
 | Constraints | Norm (P5), Context (P2) | **Strong** | Best-evidenced layer after Coordination |
 | States | Condition (P1) | **Moderate** (Stage 5 upgraded) | **Previously least evidenced layer; now practitioner-corroborated** |
 | Events | Occurrence (P6) | **Moderate** | Boundary with States unevidenced |
@@ -494,7 +494,7 @@ made to keep derivation moving, and each is reversible.**
 | **A-02** | Context feeds Facets **and** scopes Constraints, rather than forming its own layer | The prescribed eight layers contain no Context layer; Context frames rather than participates (Phase 1 P2 boundary) | A ruling that scope requires its own layer |
 | **A-03** | The Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
 | **A-04** | Organisation and Programme are collapsed into one Entity | **SUPERSEDED BY STAGE 7 G1:** Split into two Entities connected by an operates relation. | None |
-| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | Structural admission is resolved (they are Occurrences); operational ownership (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration. | None |
+| **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | Structural admission is resolved (they are Occurrences); operational ownership (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. Governed provisional — rests on UNVERIFIED evidence; treated as an unevidenced design assumption pending corroboration (not practitioner-confirmed). | None |
 | **A-07** | The point-versus-span distinction (States ÷ Events) is retained despite being unevidenced | Removing it would merge two primitives and restructure four layers on equally thin grounds | Evidence that the distinction is not real, or a ruling that they merge |
 
 ---
@@ -506,7 +506,7 @@ made to keep derivation moving, and each is reversible.**
 The following domain concepts are formally resolved at the ontological level:
 
 *   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* is not a primitive and is not itself Entity-classified content. The **persisting subject** is the **Entity (P4)**. **Identity resolution** is an **Epistemic Stance** (Layer 7), grounded by **Evidence** content. Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
-*   **Organisation vs Programme:** Stage 7 G1 explicitly split `Organisation` and `Programme` into two distinct Entities (Layer 2) connected by an `operates` Relation (Layer 3), rather than remaining collapsed. Programme-specific eligibility, funding, and activity rules attach to the Programme.
+*   **Organisation vs Programme:** Stage 7 G1 explicitly split `Organisation` and `Programme` into two distinct Entities (Layer 2) connected by an `operates` Relation (Layer 3), rather than remaining collapsed. Programme-specific eligibility, funding, and activity rules attach to the Programme. *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.*
 *   **Undocumented Status (RM §3.2):** Ontologically, this is the absence of *Evidence* (Entity), which simultaneously instantiates as a *Constraint* (Layer 4) limiting formal Coordination Patterns, and a *Condition* (Layer 5) aggravating Vulnerability.
 *   **Wellbeing Standard (RM §3.6):** Structurally a *Norm* (Layer 4) that is strictly *Context-dependent* (Layer 1). A Need is a *Condition* (Layer 5) assessed against this Context-bound Norm.
 *   **Family vs Household (RM §4.3):** Both are *Entities* (Layer 2) rather than merely Relational Structures. *Family* is bounded by kinship/legal guardianship. *Household* is bounded by co-residence/shared economy.
@@ -519,12 +519,12 @@ The following domain concepts are formally resolved at the ontological level:
 
 The following concepts were previously carried forward as tensions, but are now structurally resolved:
 
-*   **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. CONFIRMED-distinct by Stage 5 (GT-OQ18) as an independent Condition (Orphanhood) and Relation (Guardianship).
-*   **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another (prerequisite, aggravating, substituting, mutually exclusive) is not stated by any source. Stage 5 evidence (GT-OQ16) is insufficient to justify introducing a formal Need↔Need Relation type at this stage. Provisionally treated as Cognition/documentation content — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
+*   **Orphanhood vs Unguardianed (RM §6.3):** RM does not distinguish the two. Evidence not found — GT-OQ18-R1 unverified; not addressed by Session 01.
+*   **Need Interactions (RM §7.5):** While dependency-cascade is one evidenced pattern, a general model of how needs relate to one another (prerequisite, aggravating, substituting, mutually exclusive) is not stated by any source. Stage 5 evidence (GT-OQ16) is insufficient to justify introducing a formal Need↔Need Relation type at this stage. Provisionally treated as Cognition/documentation content — rests on UNVERIFIED evidence; treated as an unevidenced design assumption pending corroboration (not practitioner-confirmed).
 *   **Contradiction Modeling (RM §10.5):** Structurally resolved by Stage 5 (GT-OQ12) — retains all conflicting claims with source attribution rather than overwriting.
 *   **Missing Information as Knowledge (RM §10.5):** Structurally resolved by Stage 5 (GT-L7, GT-OQ13) — the Cognition layer preserves explicit epistemic information so that unknown, uncertain, or conflicting claims are not collapsed into first-order reality.
-*   **Funder Altitude (RM §11.4):** Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). No distinct third altitude layer or primitive exists. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
-*   **Outcome / Impact Ownership:** Outcome and Impact remain distinct from their measurement or assessment representations. Their operational measurement structures and ownership are context-dependent unless specifically established by source evidence. The ontology does not impose a universal ownership assignment to the Human Subject. Governed provisional — single-source practitioner evidence acknowledged by Stage 7 G4; retained as a governance decision pending broader corroboration.
+*   **Funder Altitude (RM §11.4):** Modeled via existing layers: Entities (L2), Norms (L4), and Coordination Patterns (L8). No distinct third altitude layer or primitive exists. Governed provisional — rests on UNVERIFIED evidence; treated as an unevidenced design assumption pending corroboration (not practitioner-confirmed).
+*   **Outcome / Impact Ownership:** Outcome and Impact remain distinct from their measurement or assessment representations. Their operational measurement structures and ownership are context-dependent unless specifically established by source evidence. The ontology does not impose a universal ownership assignment to the Human Subject. Governed provisional — rests on UNVERIFIED evidence; treated as an unevidenced design assumption pending corroboration (not practitioner-confirmed).
 
 
 ## 13. Status

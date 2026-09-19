@@ -1,5 +1,7 @@
 # ONTOLOGY-FOUNDATIONAL-BASELINE-v1.0
 
+> **Historical snapshot notice.** This document's closure/readiness verdict has been superseded by `docs/05-ontology/10-ONTOLOGY-RECONCILIATION-CLOSURE-REPORT.md`'s finding of "NOT READY — provenance/evidence blocking," because the practitioner evidence this document relied on (the 47 GT-*-R1 records) was subsequently found unverified.
+
 ## 1. Status
 
 > Khidmat Humanitarian Domain Ontology — Foundational Design Formally Closed
@@ -85,17 +87,17 @@ The ontology provides semantic constraints and vocabulary; downstream architectu
 
 ## 7. Known Non-Blocking Items
 
-### GOVERNED PROVISIONAL
+### GOVERNED PROVISIONAL (UNVERIFIED DESIGN ASSUMPTIONS)
 * Need Interactions
 * Service Provider agency
 * Outcome/Impact ownership
 * Funder Altitude
 * Case Orchestration
 
-### HISTORICALLY UNRESOLVED (NOW FORMALLY RESOLVED)
-* **CCR-7: RESOLVED — ONE TEMPORAL FOUNDATION WITH MULTIPLE TEMPORAL PERSPECTIVES**. 
-  Ground Truth supported semantic separation between the person and administrative engagement but did not establish a universal mandatory dual-clock architecture, originally leaving G2 unresolved. The later focused CCR-7 ontological analysis demonstrated that the semantic issue is resolved without requiring independent mechanical clocks. 
-  - There is **one underlying temporal foundation/continuum**.
+### EXPLICITLY UNRESOLVED NON-BLOCKING ITEMS
+* **CCR-7: UNRESOLVED — NON-BLOCKING, NON-FORECLOSING**. 
+  Ground Truth supported semantic separation between the person and administrative engagement but did not establish a universal mandatory dual-clock architecture. No corroborating analysis document is traceable in this repository. It remains an unresolved operational hypothesis.
+  - There is hypothesized **one underlying temporal foundation/continuum**.
   - Temporal facts may be interpreted through **multiple semantic perspectives** (e.g., human/life/situation, programme/engagement, legal, funder, or other legitimate domain contexts). The ontology does not mandate exactly two perspectives.
   - Human/life/situation trajectory and organisational/programme/administrative engagement must remain semantically distinguishable and **must not collapse into one combined status** (i.e., Case Closed ≠ Need Resolved; Programme Ended ≠ Vulnerability Ended; No Active Case ≠ No Humanitarian Need; Support Delivered ≠ Outcome Achieved).
   - This relies exclusively on existing semantics (`Condition`, `Context`, `Entity`, `Occurrence`, `Relation`, `State`). `Context` may distinguish the semantic frame/perspective in which a temporal `State` or `Occurrence` is understood. Context is not a temporal primitive.

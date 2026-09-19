@@ -44,7 +44,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The practitioner answered the open question regarding the validity of a "Case Orchestration" stub extension. They confirmed that cross-organizational case coordination is an operationally distinct function (tracking handoffs, gaps, duplication) fundamentally separate from direct service delivery, even if the same employee occasionally performs both. |
 | **Implication for ontology** | The stub extension point for Case Orchestration is valid and necessary. It should be modeled as a distinct Coordination Pattern managing the broader case timeline across multiple organizational boundaries. |
 

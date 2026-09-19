@@ -43,7 +43,7 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
+| **Finding classification** | UNRESOLVED |
 | **Reviewer reasoning** | The Cognition layer (L7) relies entirely on the system not conflating "false" with "unknown." The practitioner explicitly validated this exact distinction, stating that "absence of a recorded value is not evidence of absence of the condition," and distinguishing a confirmed "No" from "Not assessed" or blank fields. |
 | **Implication for ontology** | Validates the open-world commitment of the Cognition layer (L7). |
 

@@ -40,7 +40,7 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CHALLENGED |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The existing Tier 1 authority reportedly collapses Organisation and Programme. The practitioner evidence explicitly distinguishes them, noting that an Organisation acts as the operator and can have multiple Programmes, each with its own specific eligibility criteria and support rules. There is a real tension between current authority and observed operational practice. |
 | **Implication for ontology** | The tension between the Tier 1 authority (collapsing the two) and field practice (requiring parent-child distinction) must be carried forward to the governance/architectural decision stage (Stage 7). Do not resolve this tension or split the entities in the ontology during Stage 5. |
 

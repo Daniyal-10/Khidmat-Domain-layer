@@ -157,6 +157,10 @@
 <body>
 
 <header class="cover wrap">
+  <div class="note warn" style="margin-top: 20px; margin-bottom: 10px;">
+    <div class="lbl">Historical snapshot notice</div>
+    <p>This document's closure/readiness verdict has been superseded by <code>docs/05-ontology/10-ONTOLOGY-RECONCILIATION-CLOSURE-REPORT.md</code>'s finding of "NOT READY — provenance/evidence blocking," because the practitioner evidence this document relied on (the 47 GT-*-R1 records) was subsequently found unverified.</p>
+  </div>
   <div class="eyebrow">Ontology Design — Completion Update</div>
   <h1>Khidmat Humanitarian Domain Ontology</h1>
   <p class="sub">A structured account of how the foundational ontology was designed, tested against practitioner ground truth, integrated with evidence, governed, and verified as sufficient for the current project scope.</p>
@@ -410,7 +414,7 @@
       <tr><td>Need classification</td><td>Need is a Condition with its own lifecycle (opens, changes severity, resolves). The basic-wellbeing standard it is measured against is a Norm, not a persisting thing a Relation could connect to.</td><td><span class="tag t-ok">Resolved</span></td></tr>
       <tr><td>Primitive definition</td><td>A Domain Primitive is a category of concept, not a concrete irreducible — ratifying the reading already used since Stage 1.</td><td><span class="tag t-ok">Resolved</span></td></tr>
       <tr><td>Five provisional modelling items <span class="tag t-none" style="margin-left:6px">not blockers</span></td><td>Need-interactions, Service Provider agency, Outcome/Impact ownership, Funder altitude, and Case orchestration are each workable for current modelling, but each rests on a single practitioner account. They are adopted as the working answer, flagged for broader corroboration over time, and reopen only with new evidence or an explicit new ruling — not silently.</td><td><span class="tag t-warn">Governed provisional</span></td></tr>
-      <tr><td>Life-trajectory vs. administrative status</td><td>A person's life/situation trajectory and their administrative/programme engagement are semantically distinct and must never collapse into one combined status (Case Closed ≠ Need Resolved; Programme Ended ≠ Vulnerability Ended). This is represented using existing <code>Condition</code> and <code>Context</code> semantics — one underlying temporal foundation, interpreted through multiple perspectives. No independent mechanical clocks, and no new primitive, layer, or pillar, are introduced.</td><td><span class="tag t-ok">Resolved</span></td></tr>
+      <tr><td>Life-trajectory vs. administrative status</td><td>A person's life/situation trajectory and their administrative/programme engagement are semantically distinct and must never collapse into one combined status (Case Closed ≠ Need Resolved; Programme Ended ≠ Vulnerability Ended). This distinction is hypothesized to be represented using existing <code>Condition</code> and <code>Context</code> semantics — one underlying temporal foundation, interpreted through multiple perspectives. No corroborating analysis document is traceable to confirm a resolution, meaning it correctly persists as an unverified semantic hypothesis.</td><td><span class="tag t-warn">Unresolved (Non-blocking)</span></td></tr>
     </tbody>
   </table></div>
   <div class="note ok">

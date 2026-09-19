@@ -44,7 +44,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The practitioner explicitly confirmed that identical terms (assessment, planning, coordination, monitoring) represent fundamentally different operational activities depending on whether their scope is an individual case or a population/programme. This exactly validates the premise of CCR-1. |
 | **Implication for ontology** | Confirms CCR-1 (Altitude qualification) as a critical structural requirement. The ontology must explicitly type activities by their altitude to prevent conflation. |
 

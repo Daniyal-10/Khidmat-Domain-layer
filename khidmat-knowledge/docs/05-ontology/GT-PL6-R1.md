@@ -44,7 +44,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
+| **Finding classification** | UNRESOLVED |
 | **Reviewer reasoning** | The practitioner explicitly confirmed that the administrative closing of a case and the empirical achievement of an outcome are separate activities, often occurring on different timelines and managed by different personnel (Action vs. MEAL). Case closure is an administrative milestone, whereas outcome is an empirical condition. |
 | **Implication for ontology** | Confirms the structural boundary between Pillar VI (Action & Coordination) events and empirical States (Outcomes). The system must not automatically infer that an outcome was achieved solely because an assistance case was closed. |
 

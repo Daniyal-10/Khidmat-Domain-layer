@@ -44,7 +44,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
+| **Finding classification** | UNRESOLVED |
 | **Reviewer reasoning** | The practitioner confirmed consent operates as a `Norm`, and fleshed out the "minimal placeholder" by explaining the operational mechanics: consent dictates data sharing and activity participation. Most importantly, consent withdrawal does *not* equate to automated cascading retroactive deletion of the record, as other lawful bases may apply. |
 | **Implication for ontology** | Consent must be modeled as an ongoing validation rule (`Norm`) on actions (collection, sharing, participation) rather than a master cascading-delete toggle. |
 

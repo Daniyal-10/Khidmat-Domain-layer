@@ -40,7 +40,7 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
+| **Finding classification** | UNRESOLVED |
 | **Reviewer reasoning** | The open question was "what are the actual values you record". The practitioner evidence refines the ontology's approach by proving that a universal, exhaustive value set does not exist. Value sets must be deferred to the local programme, and the data structure must strictly support epistemic statuses ("unknown/unassessed") and unstructured fallbacks. |
 | **Implication for ontology** | Resolves the open question by pushing facet value set definitions out of the core ontology and into local Context/Norms (P2/P5). It also mandates epistemic support (P3) at the field level for missing or edge-case information. |
 

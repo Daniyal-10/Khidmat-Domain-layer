@@ -63,7 +63,7 @@ The repository currently contains authoritative raw practitioner evidence from G
 
 | Term | Documents Using It | Meaning in Each | Consistent? | Required Action |
 | ---- | ------------------ | --------------- | ----------- | --------------- |
-| Organisation / Programme | RM, L2, L3, L4, Stage 7 G1, GTR-01 Patch | RM/L2/G1 splits them; GTR-01 patch claims grassroots lacks programmes | UNRESOLVED | Strip patches; address via Stage 6 integration (localize missing programmes to context). |
+| Organisation / Programme | RM, L2, L3, L4, Stage 7 G1, GTR-01 Patch | RM/L2/G1 splits them; GTR-01 patch claims grassroots lacks programmes | RESOLVED — SCOPE NOTE APPLIED (G1) | Retain split in general structure; note Khidmat operates as one Organisation with zero Programmes. |
 | Beneficiary / Person | GTR-01, Primitives, RM | GTR uses "Beneficiary/Zimmedar"; RM uses Person/Household | CONTEXT-SPECIFIC | Map Khidmat operational terms to foundational primitives via mapping layer. |
 | Verification | RM, GTR-01 | RM sees it as Event changing Claim to Finding; GTR sees it as Volunteer Ground Check | CONFIRMED | Reconcile the operational process to the Epistemic Stance mechanisms. |
 

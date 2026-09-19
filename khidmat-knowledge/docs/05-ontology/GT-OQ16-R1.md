@@ -40,7 +40,7 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The practitioner confirmed that needs interact in operational reality. However, they refined how this is handled structurally: organizational practice relies on unstructured or semi-structured documentation (assessment notes, human judgement) rather than formal, rigid data relationships between individual need records. |
 | **Implication for ontology** | The open question is resolved by refining the structural boundary. While needs interact, the ontology must NOT mandate a formal, computable Relation (P7) between Need entities. It must accommodate these interactions within human cognition and assessment documentation. |
 

@@ -1,4 +1,4 @@
-﻿# Khidmat Humanitarian Domain Model
+# Khidmat Humanitarian Domain Model
 
 Welcome to the Khidmat Humanitarian Domain repository. This project contains the definitive conceptual and semantic foundation for Khidmat AI. It is designed to model humanitarian reality—separating what actually exists in the field from how software systems track it.
 
@@ -41,12 +41,12 @@ The domain model was developed through a strict, sequential process designed to 
 
 ## 5. Current Governed Status
 
-**The ontology is structurally stable, baselined, and architecture-ready.**
-The foundational structural framework (primitives, layers, pillars) is established and governed against authoritative sources, while specific individual semantic classifications remain provisional.
+**NOT READY — provenance/evidence blocking.**
+While the foundational structural framework (primitives, layers, pillars) stands and is structurally closed, the overall evidentiary foundation is currently compromised. Specific governance rulings (such as G1 and G4) that rested on unverified practitioner evidence (the 47 GT-*-R1 records) are not currently evidence-supported, per the current authoritative verdict in `10-ONTOLOGY-RECONCILIATION-CLOSURE-REPORT.md`.
 
 However, the model carefully preserves the distinction between what is structurally known and what is operationally open or uncertain:
-- **Structurally Resolved**: Major domain semantics are closed. For example, Risk and Need are formally classified as Conditions (G5). The primitive definition is locked as a category of concept (G3). `Organisation` and `Programme` are explicitly split into distinct Entities connected by a relationship (G1).
-- **Provisional / Single-Source**: Certain coordination patterns and practitioner classifications (such as Outcome ownership and Case Orchestration) are structurally resolved but rest on single-source evidence (G4) and remain provisional pending broader corroboration.
+- **Structurally Resolved**: Major domain semantics are closed. For example, Risk and Need are formally classified as Conditions (G5). The primitive definition is locked as a category of concept (G3). Structural closure of primitives, layers, and pillars remains intact based on internal derivation logic, independent of the unverified evidence.
+- **Evidentiary Blocking**: Governance rulings resting on unverified evidence (G1, G4) are currently quarantined. Final closure cannot happen until the unverified records are replaced, corroborated, or formally expunged.
 - **Unresolved / Explicitly Absent**: Meaningful uncertainty is retained rather than hidden. The exact composition formula for Vulnerability remains an undefined "Source-Absent Parameter". The CCR-7 dual-clock temporal requirement remains an unresolved architectural guideline (G2), not a mandatory universal constraint. The precise entities and workflows of the "giving" side are structurally accommodated but remain unpopulated.
 
 ## 6. The Next Phase: Architecture

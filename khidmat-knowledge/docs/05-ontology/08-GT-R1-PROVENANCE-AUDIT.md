@@ -32,5 +32,5 @@ Where Session 01 (Khidmat) and the R1 records overlap, there are explicit contra
 Because the 47 R1 records are UNVERIFIED:
 1. They **cannot** be used as confirmed practitioner evidence to justify ontology refinements.
 2. The "Historical Stage 6 Report" and its conclusions relying heavily on these unverified records are now unsupported.
-3. The Stage 7 governance candidate (C2) to split Organisation and Programme was based on `GT-PL5-R1`. Since Session 01 contradicts this and `GT-PL5-R1` is unverified, the evidentiary basis for splitting them is currently invalid.
+3. *Note: The Organisation/Programme split (G1) was originally based on `GT-PL5-R1`. While this R1 evidence remains unverified, G1 is no longer an open evidentiary or blocking question. It has since been resolved directly by scope clarification: the split is retained as ordinary structural modeling, while Khidmat is scoped as one Organisation with zero Programmes. The provenance concern about the 47-record set remains applicable to other items.*
 4. Their evidentiary status is frozen. No ontology changes can be made based on the R1 files.

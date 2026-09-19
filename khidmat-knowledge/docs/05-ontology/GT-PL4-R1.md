@@ -43,7 +43,7 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT OBSERVED IN THIS PRACTITIONER CONTEXT |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | Pillar IV explicitly bounds "what is asserted" from "who asserted it," allowing multiple conflicting claims to coexist structurally. The practitioner confirmed this is an operational requirement for Khidmat: new values must not silently overwrite old ones, and competing claims from different sources must both be concurrently retained. |
 | **Implication for ontology** | Validates the architectural boundary of Pillar IV (Epistemics): systems must be capable of structurally retaining multiple competing claims without one destroying the other. |
 

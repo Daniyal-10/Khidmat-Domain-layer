@@ -43,7 +43,7 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
+| **Finding classification** | UNRESOLVED |
 | **Reviewer reasoning** | The ontology's Epistemic Stance primitive (P3) exists to carry "the warrant the system holds for what it asserts, including what it does not know." The practitioner explicitly confirmed this is operationally required in Khidmat: the system must distinguish known true, known false, unknown, and not assessed, and this status must be structurally distinct from the raw data value. |
 | **Implication for ontology** | Validates the structural necessity of the Epistemic Stance primitive (P3) as a distinct property applied to data values. |
 

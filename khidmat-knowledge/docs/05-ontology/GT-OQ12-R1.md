@@ -43,7 +43,7 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
+| **Finding classification** | UNRESOLVED |
 | **Reviewer reasoning** | The open question was "how to represent missing info." The practitioner resolved this by defining the mechanism: data structures must couple the value with an explicit categorical "information status" field (e.g., Unknown, Not Assessed, Yes, No) rather than inferring epistemic state from null or blank fields. |
 | **Implication for ontology** | Resolves Q12 by explicitly mandating that data structures carry a dedicated epistemic status property. |
 

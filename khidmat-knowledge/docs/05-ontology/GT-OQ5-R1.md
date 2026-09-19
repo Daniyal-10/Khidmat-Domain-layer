@@ -44,7 +44,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
+| **Finding classification** | UNRESOLVED |
 | **Reviewer reasoning** | The open question regarding who "owns" outcomes and how they relate to the case timeline is resolved by separating them. The practitioner clarified that outcomes are separate assessments owned by different roles (often MEAL) on different timelines, independent of the administrative "case closed" event. |
 | **Implication for ontology** | Outcome ownership should be explicitly assigned to the States layer (L5) rather than the case Events layer (L6), requiring its own distinct Epistemic Stance and source attribution (e.g., who measured the outcome and when). |
 

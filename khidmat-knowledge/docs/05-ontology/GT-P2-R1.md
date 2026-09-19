@@ -44,7 +44,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
+| **Finding classification** | NOT_ASSESSABLE |
 | **Reviewer reasoning** | The practitioner confirmed that the factual condition (e.g., damaged roof) exists independently, but its operational meaning, severity, and resulting need are strictly determined by the context (season, geography, programme). This exactly matches the primitive definition of Context as the frame relative to which a statement holds. |
 | **Implication for ontology** | Confirms the structural separation of `Condition` and `Context`. The system must permit multiple different needs or assessments to be derived from a single condition based on varying contexts. |
 

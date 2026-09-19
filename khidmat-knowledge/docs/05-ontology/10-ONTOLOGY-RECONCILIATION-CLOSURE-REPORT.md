@@ -1,7 +1,7 @@
 # ONTOLOGY RECONCILIATION CLOSURE REPORT
 
 ## 1. Provenance Verification Result
-**UNVERIFIED.** The 47 `GT-*-R1.md` records introduced on 2026-09-01 lack any traceable practitioner interview, transcript, or raw source in the repository. They explicitly contradict the verified Khidmat Session 01 evidence on key structural issues (like the existence of Programmes). Their evidentiary status is frozen, and they cannot be used to justify ontology refinements or architectural decisions.
+**UNVERIFIED.** The 47 `GT-*-R1.md` records introduced on 2026-09-01 lack any traceable practitioner interview, transcript, or raw source in the repository. They explicitly contradict the verified Khidmat Session 01 evidence on key structural issues (like the existence of Programmes). Their evidentiary status is frozen, and they cannot be used to justify ontology refinements or architectural decisions. *(Note: The specific question of Organisation vs Programme has since been resolved by scope clarification—the split is retained as ordinary structural modeling, while Khidmat is scoped as one Organisation with zero Programmes. The provenance concern remains applicable to other items.)*
 
 ## 2. Current Ontology Map
 * **7 Domain Primitives:** Condition, Context, Epistemic Stance, Entity, Norm, Occurrence, Relation.
@@ -21,7 +21,7 @@ The unverified R1 records have been quarantined and stripped of their authority 
 1. **Reported vs Ground-reality:** Fully represented via `Epistemic Stance` (Claimed vs Verified).
 2. **Epistemic Status:** Fully represented via `Epistemic Stance`.
 3. **Recurring vs One-off:** Partially represented via temporal `Facets` on `States`. Clarification only.
-4. **Organisation vs Programme:** Context-specific. Khidmat has no programmes. Structural decision deferred to Stage 7.
+4. **Organisation vs Programme:** RESOLVED — SCOPE NOTE APPLIED (G1). Retained as distinct concepts in general structure; Khidmat instantiates zero Programmes.
 5. **Micro-donor Coordination:** Fully represented via `Coordination Patterns`.
 6. **Person vs Family Need:** Fully represented via flexible `Entity` attachment.
 7. **Evidence/Source Trust:** Fully represented via `Epistemic Stance` and source `Relation`.
@@ -35,10 +35,10 @@ The unverified R1 records have been quarantined and stripped of their authority 
 ## 7. Changes Rejected and Why
 * **Rejecting the addition of a `TrustLevel` or `Verification` entity:** Rejected because `Epistemic Stance` already handles the warrant and trust of an assertion.
 * **Rejecting the addition of a `FamilyNeed` entity:** Rejected because Needs (`States`) can natively attach to either a Person or a Household `Entity`.
-* **Rejecting the splitting of Organisation and Programme:** Rejected because Khidmat evidence shows a flat organization with no programmes, contradicting the unverified R1 records that demanded a split. The issue is deferred to Governance.
+* **Organisation and Programme Split:** No longer rejected; now structurally resolved via G1. The split is retained as ordinary structural modeling, while Khidmat is scoped as one Organisation with zero Programmes.
 
 ## 8. Deferred Issues
-* **Organisation vs. Programme:** Reconciling the Tier 1 collapsed model with grassroots realities that lack programmes (deferred to Stage 7 Governance).
+* **Organisation vs. Programme:** RESOLVED (G1) — no longer deferred.
 * **Dual-Clock Mismatch:** Deferred pending further evidence on status vs reality disconnects.
 
 ## 9. Integrity Audit Result
