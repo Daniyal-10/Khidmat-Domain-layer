@@ -79,3 +79,4 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
+

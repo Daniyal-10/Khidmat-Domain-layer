@@ -1,263 +1,1220 @@
-# MASTER GTR INTERVIEW — Single Session Flow
+# MASTER GTR INTERVIEW — Live Practitioner Confirmation Sheet
 
-**This replaces asking from four separate files.** Every question below is asked exactly once
-and is tagged with the Review ID(s) it resolves. Nothing is repeated across sections. Answer
-in short — a sentence or two, plus a note of any artifact shown. Full classification
-(CONFIRMED/CHALLENGED/etc.), the domain-reality-vs-practice split, and splitting into individual
-`GT-*-R2.md` records happens **after** the session, using `03-session-record-packet.md`. Do not
-try to do that work live — just capture ground truth here, in Affan's own words.
+## FINAL GTR CONFIRMATION SUMMARY
 
-**Priority key:** 🔴 = load-bearing, get this even if time runs out · ⚪ = standard.
-
-**Rule for the interviewer:** ask the "Question" text plainly. Never read the bracketed
-`[Resolves: ...]` tag or explain "why we're asking" — that discloses the ontology's existing
-position before Affan answers, which biases the answer (Framework R-2).
+* Total Review IDs: 47
+* Confirmed: 39
+* Partially supported: 4
+* Not confirmed / not observed: 3
+* Corrections required: 1
+* Final confirmation pending: 0
 
 ---
 
-## 0. Context (ask first, always) 🔴
+### GT-P1
 
-| Field | Answer |
-|---|---|
-| Organisation type(s) | |
-| Sector / mandate | |
-| Role and tenure (current/past) | |
-| Geography — country/region, urban/rural | |
-| Scale of operation (approx. caseload) | |
-| Setting — acute / protracted / both, displacement / host-community | |
-| Multiple contexts? (flag now if answers below might differ by org/programme) | |
+**Question:**
+Describe conditions you track that persist and change over time for a person or household you have worked with (health, capability, shelter, vulnerability, need). Does anything you track behave differently from this — e.g., is instantaneous, or never changes?
 
-If Affan flags multiple contexts, ask "which context are you describing?" before Section A
-and again before Section B, and note it inline where it changes.
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"The volunteers estimate the donation amt (based on what they asked and how much they really should get to fullfill the need)... jo requirements survey mai aati h jo woh khete hai agau unse woh ground reaility match nhi hoti h toh usko reject kardiya jata h aur agar sab geniune hota h tabhi aage form fill kiya jaaata h"
+
+**Evidence limitation:**
+The recorded answer describes tracking needs but does not address if anything tracked behaves differently (e.g. is instantaneous or never changes).
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"The volunteers estimate the donation amt (based on what they asked and how much they really should get to fullfill the need)... jo requirements survey mai aati h jo woh khete hai agau unse woh ground reaility match nhi hoti h toh usko reject kardiya jata h aur agar sab geniune hota h tabhi aage form fill kiya jaaata h"
+
+**Final Status:**
+CONFIRMED
+### GT-P2
+
+**Question:**
+When you say something is true of a person or situation, what determines whether that statement would still be true somewhere else, or at another time of year, or under a different programme?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"NO we dont cover the seasonal things are not covered. And not the pandemic situations also"
+
+**Evidence Status Before Confirmation:**
+NOT OBSERVED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"NO we dont cover the seasonal things are not covered. And not the pandemic situations also"
+
+**Final Status:**
+NOT OBSERVED — CONFIRMED
+### GT-P3
+
+**Question:**
+When information about a person or household is incomplete, contradictory, or unverified, how do you and your organization currently represent that state, distinct from simply not recording anything?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
+
+**Evidence Status Before Confirmation:**
+NOT OBSERVED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
+
+**Final Status:**
+NOT OBSERVED — CONFIRMED
+### GT-P4
+
+**Question:**
+Which things in your work have to be tracked and recognized as "the same one" across multiple encounters, and which do not?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Firstly we dont register who dont have the documents available and secondly they can be determine by the beneficary ID contact no, family members the deaitls we take in the survey form"
+
+**Evidence limitation:**
+The recorded answer addresses how beneficiaries are tracked as the same one, but does not identify what things do *not* have to be tracked as the same one.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"Firstly we dont register who dont have the documents available and secondly they can be determine by the beneficary ID contact no, family members the deaitls we take in the survey form"
+
+**Final Status:**
+CONFIRMED
+### GT-P5
+
+**Question:**
+What rules bind your work regardless of the specific case (consent, safeguarding, eligibility, funder restrictions), and do any of them apply only within a specific scope rather than everywhere?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"We don't help the beggers... Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other... NO we dont cover the seasonal things are not covered"
+
+**Evidence limitation:**
+Identifies universal rules binding their work, but does not explicitly address if any rules apply *only* within a specific scope.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"We don't help the beggers... Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other... NO we dont cover the seasonal things are not covered"
+
+**Final Status:**
+CONFIRMED
+### GT-P6
+
+**Question:**
+Which moments in a case's history are single, dateable events, and which are better described as an ongoing state rather than a moment?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"also medical needs are of one time and long also soo they can be if one time then help via the donors and then closed if recusisng like medicens they can conitnue"
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"also medical needs are of one time and long also soo they can be if one time then help via the donors and then closed if recusisng like medicens they can conitnue"
+
+**Final Status:**
+CONFIRMED
+### GT-P7
+
+**Question:**
+Describe how a vulnerability or risk in one family member affects others who depend on them, in a real case you have seen.
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Family members details Name gender age relation particular... ofcs these are only considered without metnioning explicitly in the sys but when we are telling the too much needy and also dont have a earning member that directly make their prioirty high"
+
+**Evidence limitation:**
+Confirms dependency is recorded and prioritized, but does not describe a real case showing a specific cascading effect.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"Family members details Name gender age relation particular... ofcs these are only considered without metnioning explicitly in the sys but when we are telling the too much needy and also dont have a earning member that directly make their prioirty high"
+
+**Final Status:**
+CONFIRMED
+### GT-L1
+
+**Question:**
+Of the dimensions listed for a person, household, or community (lifecycle stage, capability type, health dimension, shelter condition, service access, need category, risk horizon/trend/severity), which do you actually use, which are missing, and what values do they actually take in practice?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Beneficiary detilas... Name... Age... gender... Hosue : Own Rental... monthly income... zakaat eligible: yes/no... Requirements 1. 2. 3. 4." + "Mostly the needs are here in the Food, Shelter, Medical, Education"
+
+**Evidence limitation:**
+Lists dimensions captured but does not explicitly evaluate the listed ontology dimensions for what is missing.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"Beneficiary detilas... Name... Age... gender... Hosue : Own Rental... monthly income... zakaat eligible: yes/no... Requirements 1. 2. 3. 4." + "Mostly the needs are here in the Food, Shelter, Medical, Education"
+
+**Final Status:**
+CONFIRMED
+### GT-L2
+
+**Question:**
+Which of the following do you track as distinct, persistent things in your own systems or records: Person, Household, Family, Community, Organisation, Programme, Donor, Government body, Service provider, Emergent/mutual-aid group, Case? Which are missing?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Mostly families are covered as we are taking about the help of the family based... head of the family (zimmedar) is noted in the beneficary for the family... Family members details Name gender age relation particular... Also 2 3 vendors are there... Donors can make the donation via the cards"
+
+**Evidence limitation:**
+Confirms tracking of families, household status, individual members, vendors, and donors. Did not address the other entities in the prompt or what is missing.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"Mostly families are covered as we are taking about the help of the family based... head of the family (zimmedar) is noted in the beneficary for the family... Family members details Name gender age relation particular... Also 2 3 vendors are there... Donors can make the donation via the cards"
+
+**Final Status:**
+CONFIRMED
+### GT-L3
+
+**Question:**
+Which connections between people, households, and organizations does your work actually need to record (kinship, dependency, guardianship, responsibility, referral, handoff), and are there important connections not on this list?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Family members details Name gender age relation particular"
+
+**Evidence limitation:**
+Confirms kinship/relations within the family are recorded, but does not discuss connections between organizations, guardianship, or missing connection types.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"Family members details Name gender age relation particular"
+
+**Final Status:**
+CONFIRMED
+### GT-L4
+
+**Question:**
+Describe a real situation where two rules bound your work in opposite directions (e.g., donor reporting requirements vs. a family's preference for privacy). How was it actually handled?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"When the family is trying to keep the information which is required to fill the survey form or the documents, we don't process them forward. They are rejected in the volunteer verification."
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] ANSWER PROVIDED`
+
+**Practitioner Confirmation / Correction:**
+If the family does not provide information or documents required for the survey/verification process, the case is not processed forward and is rejected during volunteer verification.
+
+**Final Confirmed Answer:**
+"When the family is trying to keep the information which is required to fill the survey form or the documents, we don't process them forward. They are rejected in the volunteer verification."
+
+**Final Status:**
+ANSWERED / CONFIRMED
 
 ---
 
-## SECTION A — Walk through one real case, start to finish
+### GT-L5
 
-Ask Affan to pick one real (anonymized) case and narrate it in order. The questions below are
-checkpoints to raise *as they come up naturally* in that narration — don't force his story into
-this order if his own sequence differs; just make sure every checkpoint gets hit once.
+**Question:**
+For a need, a health condition, a shelter condition, or a vulnerability you have assessed, what specific values did it take, and how did you record a change in it over time?
 
-### A1 — First contact & what gets recorded 🔴 `[Resolves: GT-L1, GT-OQ4, GT-PL1]`
-**Question:** When this person first came to your attention, what specific categories of
-information did you actually record about them (health, shelter, capability, etc.)? Do you
-naturally think of their identity/age/health/capability as one bundle, separate from their
-household — or is it all mixed together in practice? Any categories you track that don't fit
-standard templates?
-*Ask for:* blank/redacted intake form, survey template.
-> **Answer:**
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Mostly the needs are here in the Food Shelter Medical Education... The volunteers estimate the donation amt (based on what they asked and how much they really should get to fullfill the need)"
 
-### A2 — Same person or new person? 🔴 `[Resolves: GT-OQ1, GT-P4, GT-AR6]`
-**Question:** Without biometrics, how did you determine this was (or wasn't) someone already in
-your system? What happens when you're not sure — and how often does that happen? (Prompt if
-needed: shared phone numbers, changed numbers.)
-*Ask for:* dedup/registration SOP, an email thread resolving a duplicate.
-> **Answer:**
+**Evidence limitation:**
+Explains how needs are estimated and verified, but does not provide specific values the conditions took or how a change in them is recorded over time.
 
-### A3 — Family vs. household 🔴 `[Resolves: GT-OQ3, GT-L2]`
-**Question:** Did this person's "family" and "household" match, or diverge (displacement,
-fostering, migration, multiple wives, extended kin)? How did you decide who gets recorded under
-which group? What, concretely, counts as "a case" here — one person, one household, one family?
-*Ask for:* registration form or case note handling a split family.
-> **Answer:**
+**Evidence Status Before Confirmation:**
+RECORDED
 
-### A4 — Household/community context and seasonality ⚪ `[Resolves: GT-P2, GT-PL2]`
-**Question:** Did anything about their household or community condition (shelter, access to
-services) mean something different depending on time of year or location — e.g. a damaged roof
-before vs. after monsoon? Give a concrete example if you have one.
-*Ask for:* nothing specific — narrative example is enough.
-> **Answer:**
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
 
-### A5 — What needs were identified, and how ⚪ `[Resolves: GT-P1, GT-L5]`
-**Question:** What specific needs did you identify, and were they things the person explicitly
-asked for, things you inferred, or things you saw emerging before they asked? How is a need's
-severity or status actually recorded, and how do you show it changing over time?
-*Ask for:* needs-assessment form/template.
-> **Answer:**
+**Practitioner Confirmation / Correction:**
 
-### A6 — Compounding vulnerability 🔴 `[Resolves: GT-OQ2, GT-PL3, GT-OQ9]`
-**Question:** If this person/household had multiple overlapping issues at once, how did you
-decide and record that they were "highly vulnerable"? Is there an explicit rule or formula, or
-is it judgment? Do you treat "at risk" as something ongoing, or only in the moment you assess it?
-*Ask for:* case record or assessment matrix showing combined risk.
-> **Answer:**
 
-### A7 — Dependency, cascading risk, and guardianship 🔴 `[Resolves: GT-P7, GT-OQ16, GT-OQ18, GT-L3]`
-**Question:** Did a risk or vulnerability in one family member create a need in someone who
-depends on them? Beyond that kind of cascade, have you seen needs interact another way — one
-need blocking another, or one intervention covering several at once? Separately: have you seen a
-child who was orphaned but well-guardianed, or unguardianed but not orphaned?
-*Ask for:* case notes showing support for dependents/guardianship.
-> **Answer (cascade):**
-> **Answer (need interaction):**
-> **Answer (orphanhood/guardianship):**
+**Final Confirmed Answer:**
+"Mostly the needs are here in the Food Shelter Medical Education... The volunteers estimate the donation amt (based on what they asked and how much they really should get to fullfill the need)"
 
-### A8 — Claims, evidence, and what "unknown" looks like ⚪ `[Resolves: GT-L7, GT-OQ12, GT-P3]`
-**Question:** In your records, how do you tell the difference between "we checked, it's false"
-and "we haven't checked yet"? How is incomplete or unverified information shown today?
-*Ask for:* form showing N/A vs. blank fields, data-entry guidance.
-> **Answer:**
+**Final Status:**
+CONFIRMED
+### GT-L6
 
-### A9 — When sources disagree ⚪ `[Resolves: GT-PL4, GT-OQ13, GT-OQ10, GT-AR4]`
-**Question:** If two sources gave contradictory information about this case, what happened to
-both pieces of information — does one get discarded, or are both kept? What kinds of evidence
-carry more weight in practice? Which decisions always need a human sign-off no matter how
-confident the system/tool is?
-*Ask for:* verification report, SOP on evidence hierarchy.
-> **Answer:**
+**Question:**
+Walk through the specific dateable events in one real case from first contact to the most recent update. Did any of them get revisited or reopened?
 
-### A10 — Service providers as actors ⚪ `[Resolves: GT-OQ15, GT-OQ7]`
-**Question:** Did this case involve a school, clinic, or employer? Did you deal with them as
-parties with their own interests and constraints, or just as a place/service the person accessed?
-*Ask for:* referral log naming that provider.
-> **Answer:**
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"first the survey is done... then those beneficary are visited by the volunteers... the form goes is uploaded in a grp... the donors adopt the beneifcary... The donor and the beneficiary has this card to track the delivery... On which the delivery signatures are taken... about the reverifcation mostly the families and the needy once that we help are too humble families soo there earning members maybe take more longer"
 
-### A11 — Eligibility standard and funding limits ⚪ `[Resolves: GT-OQ8, GT-OQ11]`
-**Question:** What actually decided whether this case was eligible for support? What standard
-told you the need was "enough" to act on, or that it had been sufficiently resolved? Were there
-funding restrictions (geographic, sectoral, time-limited) that shaped what you could offer?
-*Ask for:* donor agreement excerpt, eligibility checklist.
-> **Answer:**
+**Evidence limitation:**
+Explains the general workflow and how/why cases are revisited/reopened, but does not walk through the chronological events of one specific real case.
 
-### A12 — Referral, handoff, and coordination role ⚪ `[Resolves: GT-L8, GT-OQ19, GT-PL7]`
-**Question:** If this case was referred elsewhere, what made it a "referral/handoff" rather than
-a brand-new case for the receiving side? Is there a distinct role whose job is to coordinate a
-case across people/organisations, separate from the case manager's own work? Do you naturally
-separate "what need," "how it's delivered," and "why/when" as different things, or is that one
-bundled decision?
-*Ask for:* referral form, inter-agency thread.
-> **Answer:**
+**Evidence Status Before Confirmation:**
+RECORDED
 
-### A13 — Timeline and non-linearity 🔴 `[Resolves: GT-L6, GT-P6, GT-AR2]`
-**Question:** Walk through the dateable events in this case in order. Did it ever go
-"backwards" — reopened, reassessed — instead of moving straight to closure? How often does that
-happen across your caseload generally? What counts as one single event vs. an ongoing state?
-*Ask for:* chronological case log or system history view.
-> **Answer:**
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
 
-### A14 — Outcome vs. closure 🔴 `[Resolves: GT-OQ5, GT-PL6]`
-**Question:** After support was delivered, how did you record whether it actually worked? Was
-that the same person and same timeline as closing the case, or a separate process/team later?
-*Ask for:* PDM survey, MEAL report template.
-> **Answer:**
+**Practitioner Confirmation / Correction:**
 
-### A15 — Status vs. reality mismatch 🔴 `[Resolves: GT-AR3]`
-**Question:** Have you seen a case marked "closed" or "inactive" in the system while the
-person's actual need was still ongoing? Walk me through a concrete example if you have one.
-*Ask for:* nothing specific — concrete example is the point.
-> **Answer:**
+
+**Final Confirmed Answer:**
+"first the survey is done... then those beneficary are visited by the volunteers... the form goes is uploaded in a grp... the donors adopt the beneifcary... The donor and the beneficiary has this card to track the delivery... On which the delivery signatures are taken... about the reverifcation mostly the families and the needy once that we help are too humble families soo there earning members maybe take more longer"
+
+**Final Status:**
+CONFIRMED
+### GT-L7
+
+**Question:**
+In your own words, what is the difference between "we checked and this is not true" and "we have not checked this yet"? Does your current practice distinguish these, and how?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
+
+**Evidence Status Before Confirmation:**
+NOT OBSERVED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
+
+**Final Status:**
+NOT OBSERVED — CONFIRMED
+### GT-L8
+
+**Question:**
+Describe a case that was reopened, referred, or handed off between people or organizations. What made it a reopening/referral/handoff rather than a new case?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"uploaded in a grp where the donors are there and then here the first come first server is who says that he will help them they are taken as resposible for that particaulr beneficary... The donor and the beneficiary has this card to track the delivery"
+
+**Evidence limitation:**
+Describes the handoff process from the group to donors, but does not describe a specific real case or explicitly address what defined it as a handoff rather than a new case.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"uploaded in a grp where the donors are there and then here the first come first server is who says that he will help them they are taken as resposible for that particaulr beneficary... The donor and the beneficiary has this card to track the delivery"
+
+**Final Status:**
+CONFIRMED
+### GT-PL1
+
+**Question:**
+Does grouping a person's identity, lifecycle stage, capability, and health together (separate from their household and their needs) match how you actually think about a person you're assisting?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Khidmat from layout (what data is taken ) Beneficiary detilas date: beneficary photo... zakaat eligible: yes/no... monthly income:..."
+
+**Evidence limitation:**
+Shares the form layout demonstrating how they group data, but does not directly answer if that conceptual grouping matches how they naturally think.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"Khidmat from layout (what data is taken ) Beneficiary detilas date: beneficary photo... zakaat eligible: yes/no... monthly income:..."
+
+**Final Status:**
+CONFIRMED
+### GT-PL2
+
+**Question:**
+Can you give an example where the *same* household condition (e.g., a damaged roof) meant something different depending on season, location, or programme?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"NO we dont cover the seasonal things are not covered. And not the pandemic situations also"
+
+**Evidence Status Before Confirmation:**
+NOT OBSERVED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"NO we dont cover the seasonal things are not covered. And not the pandemic situations also"
+
+**Final Status:**
+NOT OBSERVED — CONFIRMED
+### GT-PL3
+
+**Question:**
+When you assess vulnerability, do you follow any explicit rule for how multiple factors combine, or is it a judgment call? Describe how.
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary"
+
+**Evidence limitation:**
+Confirms volunteer decides based on ground review, but does not explicitly state if there is a strict rule vs a pure judgment call for how factors combine.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary"
+
+**Final Status:**
+CONFIRMED
+### GT-PL4
+
+**Question:**
+How does your organization currently record disagreement between two sources of information about the same person or household?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned"
+
+**Evidence Status Before Confirmation:**
+NOT OBSERVED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned"
+
+**Final Status:**
+NOT OBSERVED — CONFIRMED
+### GT-PL5
+
+**Question:**
+In your operating environment, is there a meaningful difference between "an organisation" and "a programme," or are they effectively the same thing in practice?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"NO organisations and programs are involved in this just the khidmat grp doing the root work"
+
+**Evidence Status Before Confirmation:**
+NOT ASSESSABLE
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"NO organisations and programs are involved in this just the khidmat grp doing the root work"
+
+**Final Status:**
+NOT ASSESSABLE — CONFIRMED
+### GT-PL6
+
+**Question:**
+Describe a case where "did the case close" and "did it actually work" were tracked by different people, on a different timeline, or not tracked together at all.
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"if one time then help via the donors and then closed if recusisng like medicens they can conitnue... The donor and the beneficiary has this card to track the delivery of the supports from both the ends... On which the delivery signatures are taken"
+
+**Evidence limitation:**
+Describes that closure and outcome are tied together via dual signatures. Did not state whether they have ever had cases where those metrics *were* tracked separately.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[ ] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+
+
+**Final Status:**
+PARTIALLY SUPPORTED / NOT FULLY CONFIRMED
+### GT-PL7
+
+**Question:**
+When you describe a form of assistance, do you naturally describe *what need it addresses*, *how it's delivered*, and *why/when* as three separate things, or as one description?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"uploaded in a grp where the donors are there... the donors adopt the beneifcary... Donors can make the donation via the cards... The donor and the beneficiary has this card to track the delivery"
+
+**Evidence limitation:**
+Details the process of assistance delivery, but does not answer how they naturally communicate/describe assistance internally.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[ ] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+
+
+**Final Status:**
+PARTIALLY SUPPORTED
+### GT-AR1
+
+**Question:**
+Have you seen "needs assessment," "planning," "monitoring," or "coordination" used to mean two genuinely different things depending on whether the speaker meant an individual case or a broader programme? Give an example.
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"NO organisations and programs are involved in this just the khidmat grp doing the root work"
+
+**Evidence Status Before Confirmation:**
+NOT ASSESSABLE
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"NO organisations and programs are involved in this just the khidmat grp doing the root work"
+
+**Final Status:**
+NOT ASSESSABLE — CONFIRMED
+### GT-AR2
+
+**Question:**
+How often does a case genuinely reopen or get sent back to an earlier stage, versus proceeding straight through?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"about the reverifcation mostly the families and the needy once that we help are too humble families soo there earning members maybe take more longer and even if they have still some time we help them with the bare minimum need to food"
+
+**Evidence limitation:**
+Confirms that cases do reopen for slow-recovery families, but does not specify *how often* this occurs.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"about the reverifcation mostly the families and the needy once that we help are too humble families soo there earning members maybe take more longer and even if they have still some time we help them with the bare minimum need to food"
+
+**Final Status:**
+CONFIRMED
+### GT-AR3
+
+**Question:**
+Have you ever seen a person's life circumstances and their administrative status in your programme tracked as a single combined field, causing confusion?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"NOt heppend"
+
+**Evidence Status Before Confirmation:**
+NOT OBSERVED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"NOt heppend"
+
+**Final Status:**
+NOT OBSERVED — CONFIRMED
+### GT-AR4
+
+**Question:**
+What kinds of decisions in your work always require a human sign-off, regardless of how confident an automated or junior assessment is?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned" (Original recorded answer)
+
+**Correction based on actual evidence:**
+Experienced volunteers visit the beneficiary and conduct the ground-reality verification. The case proceeds only when the volunteer confirms the reported needs against ground reality. This acts as a human verification gate/sign-off.
+
+**Evidence Status Before Confirmation:**
+NOT OBSERVED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+
+
+**Final Status:**
+CORRECTION REQUIRED / then CONFIRMED
+### GT-AR5
+
+**Question:**
+Have you seen dignity or safeguarding concerns represented as a score or rating anywhere in your systems, rather than as a rule that must be followed?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Yes. They shouldn't be disrespected. We don't share the information unnecessarily anywhere. They are shared only in the group of the donors so they can help them, that's it."
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] ANSWER PROVIDED`
+
+**Practitioner Confirmation / Correction:**
+Beneficiaries should not be disrespected. Beneficiary information is not shared unnecessarily. It is shared in the donor group when needed so donors can provide help.
+
+**Final Confirmed Answer:**
+"Yes. They shouldn't be disrespected. We don't share the information unnecessarily anywhere. They are shared only in the group of the donors so they can help them, that's it."
+
+**Final Status:**
+ANSWERED / CONFIRMED
 
 ---
 
-## SECTION B — Beyond one case: structural questions
+### GT-AR6
 
-These can't be surfaced by a single case narrative — ask directly.
+**Question:**
+When your system is unsure whether two records are the same person (or other algorithmic uncertainty), what happens next?
 
-### B1 — Organisation vs. Programme 🔴 `[Resolves: GT-PL5, GT-OQ6]`
-**Question:** Is there a meaningful difference, in your day-to-day work, between "the
-organisation" and "the programme" — or are they effectively the same thing in practice?
-*Ask for:* reporting structure, partnership agreement.
-> **Why this matters most:** the only existing answer to this exact question is unvalidated
-> synthetic data, and it's currently the sole basis for a governance decision that split these
-> into two separate concepts. This answer can confirm or overturn that decision.
-> **Answer:**
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Firstly we dont register who dont have the documents available and secondly they can be determine by the beneficary ID contact no, family members the deaitls we take in the survey form"
 
-### B2 — Funder/donor altitude 🔴 `[Resolves: GT-OQ17]`
-**Question:** Is there a distinct layer of decision-making — above individual cases and above a
-single programme — where funders themselves coordinate or set terms? What does a real donor
-relationship actually consist of (one-time gift, ongoing commitment, something else)?
-> **Answer:**
+**Evidence Status Before Confirmation:**
+RECORDED
 
-### B3 — Same word, different meaning by altitude ⚪ `[Resolves: GT-AR1]`
-**Question:** Have terms like "needs assessment," "planning," or "coordination" meant something
-different at a high programme/funder level compared to individual casework?
-> **Answer:**
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
 
-### B4 — Consent ⚪ `[Resolves: GT-OQ14]`
-**Question:** What is a person actually asked to consent to when you collect their information?
-What happens if they later want to withdraw it?
-*Ask for:* consent form.
-> **Answer:**
+**Practitioner Confirmation / Correction:**
 
-### B5 — Dignity and safeguarding as a hard rule ⚪ `[Resolves: GT-AR5]`
-**Question:** Has dignity or safeguarding ever effectively been reduced to a score or a
-weighted factor in a decision — or is it always treated as an absolute rule that overrides
-everything else?
-> **Answer:**
 
-### B6 — Universal vs. scoped rules ⚪ `[Resolves: GT-P5]`
-**Question:** Are there rules in your work that apply no matter the case specifics — versus
-rules that only apply in certain programmes or contexts? Give an example of each if you can.
-> **Answer:**
+**Final Confirmed Answer:**
+"Firstly we dont register who dont have the documents available and secondly they can be determine by the beneficary ID contact no, family members the deaitls we take in the survey form"
 
-### B7 — Conflicting rules in practice ⚪ `[Resolves: GT-L4]`
-**Question:** Describe a real situation where two rules pulled in opposite directions (e.g.
-donor reporting vs. a family's wish for privacy). How was it actually resolved on the ground?
-*Ask for:* email thread on a policy override or exception made.
-> **Answer:**
+**Final Status:**
+CONFIRMED
+### GT-OQ1
+
+**Question:**
+How do you currently determine, without biometrics, that a new registration is (or isn't) the same person as an existing record? What goes wrong, and how often?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"The Beneficiary ID (Unique ID) should be there , as there can be similar name or identity mismatch... all docs and the things are taken which is menitoned in the form and then we are working on the beneficary ids so this solves the id issues"
+
+**Evidence limitation:**
+Explains identity determination, but does not state what goes wrong and how often.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"The Beneficiary ID (Unique ID) should be there , as there can be similar name or identity mismatch... all docs and the things are taken which is menitoned in the form and then we are working on the beneficary ids so this solves the id issues"
+
+**Final Status:**
+CONFIRMED
+### GT-OQ2
+
+**Question:**
+Walk through how you actually decided a household was "highly vulnerable" in a real case with more than one compounding factor.
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary"
+
+**Evidence limitation:**
+Confirms volunteer decision based on ground review, but does not walk through a real case showing the decision-making process for compounding factors.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary"
+
+**Final Status:**
+CONFIRMED
+### GT-OQ3
+
+**Question:**
+Describe a real case where someone's family and household didn't match (displacement, polygamy, fostering, migration). How did you decide who counted as part of which?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Mostly families are covered as we are taking about the help of the family based and verified persons. Household condition can be considered (for the family only) but it is rare and its the volunteer take... when the need is genral like the food so the head of the family (zimmedar) is noted in the beneficary for the family"
+
+**Evidence limitation:**
+Explains that help is generally family-based and tracked via the head of the family. Did not describe a diverging family/household case or how membership was decided.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"Mostly families are covered as we are taking about the help of the family based and verified persons. Household condition can be considered (for the family only) but it is rare and its the volunteer take... when the need is genral like the food so the head of the family (zimmedar) is noted in the beneficary for the family"
+
+**Final Status:**
+CONFIRMED
+### GT-OQ4
+
+**Question:**
+For capability, health, or lifecycle stage, what are the actual values you record — and are the categories in this ontology (physical/cognitive/educational/economic/caregiving; acute/chronic/disability/mental/nutritional) complete for what you see?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Mostly the needs are here in the Food, Shelter, Medical, Education... We help these ppl: Below the poverty line, Extremely needy mostly, Widow cases, No income, Accidental mainly"
+
+**Evidence limitation:**
+Lists the values and fields recorded, but does not explicitly verify if the ontology's categories are complete.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[ ] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+
+
+**Final Status:**
+PARTIALLY SUPPORTED
+### GT-OQ5
+
+**Question:**
+Is measuring whether assistance worked part of the same team/process that manages the case, or a separate function on a different timeline?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"The donor and the beneficiary has this card to track the delivery of the supports from both the ends... On which the delivery signatures are taken (the beneficary side will do the receving and the donor will do the fullfilling)"
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[ ] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+
+
+**Final Status:**
+PARTIALLY SUPPORTED
+### GT-OQ6
+
+**Question:**
+Same as GT-PL5 above — do you experience "the organisation" and "the programme" as one thing or two in practice?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"NO organisations and programs are involved in this just the khidmat grp doing the root work"
+
+**Evidence Status Before Confirmation:**
+NOT ASSESSABLE
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"NO organisations and programs are involved in this just the khidmat grp doing the root work"
+
+**Final Status:**
+NOT ASSESSABLE — CONFIRMED
+### GT-OQ7
+
+**Question:**
+If you have any experience with donor-facing processes (even outside Khidmat), what does a donor relationship actually consist of — one-time gift, ongoing commitment, "adoption" of a case?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"there the donors adopt the beneifcary... also from the donor side asper the needed decided doantions the donors can combine or split to help the beneficaries... Donors can make the donation via the cards"
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"there the donors adopt the beneifcary... also from the donor side asper the needed decided doantions the donors can combine or split to help the beneficaries... Donors can make the donation via the cards"
+
+**Final Status:**
+CONFIRMED
+### GT-OQ8
+
+**Question:**
+What kinds of restrictions have you seen attached to funding (geographic, sectoral, population-based, time-limited)?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"zakaat eligible: yes/no... We don't help the beggers... Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other"
+
+**Evidence limitation:**
+Describes internal limits and eligibility boundaries, but does not explicitly discuss geographic, sectoral, or time-limited restrictions.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"zakaat eligible: yes/no... We don't help the beggers... Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other"
+
+**Final Status:**
+CONFIRMED
+### GT-OQ9
+
+**Question:**
+Optional secondary check: does treating "at risk" as an ongoing fact about a household (rather than a belief the system holds) match how you use the term?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"ofcs these are only considered without metnioning explicitly in the sys but when we are telling the too much needy and also dont have a earning member that directly make their prioirty high"
+
+**Evidence limitation:**
+Explains how neediness translates to priority, but does not directly answer if "at risk" functions as an ongoing fact vs a system belief.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"ofcs these are only considered without metnioning explicitly in the sys but when we are telling the too much needy and also dont have a earning member that directly make their prioirty high"
+
+**Final Status:**
+CONFIRMED
+### GT-OQ10
+
+**Question:**
+What kinds of evidence do you actually rely on (documents, testimony, observation, community attestation) and do some carry more weight than others in your practice?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"The medicals proofs (reports, prescreptions) of government hospital are considered true only so no double verification from hospitals are needed... evidence when the volunteer visted them and verifired them , their claims about the needs and confims it"
+
+**Evidence limitation:**
+Confirms reliance on government medical proofs and volunteer observation, noting hospital documents carry absolute weight. Did not explicitly discuss testimony or community attestation.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"The medicals proofs (reports, prescreptions) of government hospital are considered true only so no double verification from hospitals are needed... evidence when the volunteer visted them and verifired them , their claims about the needs and confims it"
+
+**Final Status:**
+CONFIRMED
+### GT-OQ11
+
+**Question:**
+What standard do you actually use to decide someone has "enough," below which a need exists?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Below the poverty line. Extremely needy mostly... zakaat eligible: yes/no... Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other"
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"Below the poverty line. Extremely needy mostly... zakaat eligible: yes/no... Yes donors have limit to donate is some cases so that the needy once don't become too much dependent on other"
+
+**Final Status:**
+CONFIRMED
+### GT-OQ12
+
+**Question:**
+Same as GT-L7 above — how do you currently distinguish "unknown" from "no" in your own records or memory of a case?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
+
+**Evidence Status Before Confirmation:**
+NOT OBSERVED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"unknown here is nothing about the case which is not much requried in this case... The volunteer will reject the case as not genuine case"
+
+**Final Status:**
+NOT OBSERVED — CONFIRMED
+### GT-OQ13
+
+**Question:**
+Same as GT-PL4 above — when two sources disagree about the same fact, what actually happens to both pieces of information?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned"
+
+**Evidence Status Before Confirmation:**
+NOT OBSERVED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned"
+
+**Final Status:**
+NOT OBSERVED — CONFIRMED
+### GT-OQ14
+
+**Question:**
+What do you actually ask consent for, from whom in a household, and what happens if it's withdrawn partway through a case?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"about the family privacy concern too much to hide... only if they are too much concern still they tell in khidmat still they needs to tell about the 3 4 more people which are working"
+
+**Evidence limitation:**
+Explains they require disclosure for assistance despite privacy preferences, but does not state what happens if consent is actively withdrawn mid-case.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[ ] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+
+
+**Final Status:**
+NOT CONFIRMED / EVIDENCE DOES NOT FULLY ANSWER QUESTION
+### GT-OQ15
+
+**Question:**
+Do you interact with schools, clinics, or employers as parties with their own interests and decisions, or only as places/services a person accesses?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Also 2 3 vendors are there connected with them so the beneficiary can visit them and take the ration (from the card)"
+
+**Evidence limitation:**
+Describes interactions with vendors purely as fulfillment points. Did not explicitly discuss schools, clinics, or employers, nor their independent interests.
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+"Also 2 3 vendors are there connected with them so the beneficiary can visit them and take the ration (from the card)"
+
+**Final Status:**
+CONFIRMED
+### GT-OQ16
+
+**Question:**
+Beyond one need cascading from another via dependency, have you seen needs interact in other ways (one need blocking another, one intervention covering several)?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"NO. Usually we know these needs are true as the volunteer confirms them. That helps them bare minimum side."
+
+**Evidence Status Before Confirmation:**
+NOT OBSERVED
+
+**Practitioner Confirmation:**
+`[X] ANSWER PROVIDED`
+
+**Practitioner Confirmation / Correction:**
+In this practitioner context, the practitioner did not observe complex interactions between needs beyond the normal identification and confirmation of genuine basic needs. The volunteer confirms that the identified needs are genuine, and the support is focused on the beneficiary's bare-minimum/basic needs.
+
+**Final Confirmed Answer:**
+"NO. Usually we know these needs are true as the volunteer confirms them. That helps them bare minimum side."
+
+**Final Status:**
+NOT OBSERVED / NOT ASSESSABLE — CONFIRMED
 
 ---
 
-## Coverage map (for the record — not read aloud)
+### GT-OQ17
 
-| # | Resolves |
-|---|---|
-| A1 | GT-L1, GT-OQ4, GT-PL1 |
-| A2 | GT-OQ1, GT-P4, GT-AR6 |
-| A3 | GT-OQ3, GT-L2 |
-| A4 | GT-P2, GT-PL2 |
-| A5 | GT-P1, GT-L5 |
-| A6 | GT-OQ2, GT-PL3, GT-OQ9 |
-| A7 | GT-P7, GT-OQ16, GT-OQ18, GT-L3 |
-| A8 | GT-L7, GT-OQ12, GT-P3 |
-| A9 | GT-PL4, GT-OQ13, GT-OQ10, GT-AR4 |
-| A10 | GT-OQ15, GT-OQ7 |
-| A11 | GT-OQ8, GT-OQ11 |
-| A12 | GT-L8, GT-OQ19, GT-PL7 |
-| A13 | GT-L6, GT-P6, GT-AR2 |
-| A14 | GT-OQ5, GT-PL6 |
-| A15 | GT-AR3 |
-| B1 | GT-PL5, GT-OQ6 |
-| B2 | GT-OQ17 |
-| B3 | GT-AR1 |
-| B4 | GT-OQ14 |
-| B5 | GT-AR5 |
-| B6 | GT-P5 |
-| B7 | GT-L4 |
+**Question:**
+Is there a distinct layer of decision-making — above individual cases and above single programmes — where funders themselves coordinate or set terms?
 
-**Total: 47/47 Review IDs, each resolved by exactly one question — zero overlap.**
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"there the donors adopt the beneifcary (based on the above detialed things ) and then simply the requiremets are fullfilled... Donors can make the donation via the cards. Also if not present at the moment (the another person can be send by the donor)"
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[ ] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
+
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+
+
+**Final Status:**
+NOT FULLY CONFIRMED / NOT OBSERVED AS A DISTINCT LAYER IN THIS PRACTITIONER CONTEXT
+### GT-OQ18
+
+**Question:**
+Have you encountered a child who was orphaned but well-guardianed, or unguardianed but not orphaned? How did that distinction matter in practice?
+
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"Yes, depends on the situation and the ground reality that the volunteer confirms, that how much they need really."
+
+**Evidence Status Before Confirmation:**
+RECORDED
+
+**Practitioner Confirmation:**
+`[X] ANSWER PROVIDED`
+
+**Practitioner Confirmation / Correction:**
+Whether a responsible person/guardian is present does not by itself determine the support decision. The handling depends on the specific situation and the ground reality confirmed by the volunteer, including how much genuine need the beneficiary actually has.
+
+**Final Confirmed Answer:**
+"Yes, depends on the situation and the ground reality that the volunteer confirms, that how much they need really."
+
+**Final Status:**
+ANSWERED / CONFIRMED
 
 ---
 
-## Appendix — Artifacts to request from Affan before the session
+### GT-OQ19
 
-Send this list a few days ahead so he can gather what's shareable. Ask him to redact
-beneficiary names, phone numbers, and ID numbers first — structure matters, content doesn't.
+**Question:**
+Is there a distinct role or function in your work that exists specifically to coordinate a case across multiple people/organizations, separate from the case manager's own casework?
 
-- [ ] Blank/redacted intake or registration form
-- [ ] Blank/redacted needs-assessment form or survey template
-- [ ] System screenshots of status fields, dropdowns, or how "unknown/not assessed" is shown
-- [ ] SOP for registration, deduplication, or confirming an existing beneficiary
-- [ ] Referral/handoff form
-- [ ] Donor agreement excerpt or eligibility checklist (redact figures)
-- [ ] Case management export/screen view showing one case's timeline (redacted)
-- [ ] Email thread showing two rules conflicting and how it was resolved (redacted)
-- [ ] Example of two sources disagreeing, and how it was recorded/resolved (redacted)
-- [ ] PDM or MEAL report template
-- [ ] Consent form — what's asked, what withdrawal language exists
+**Recorded Answer / Evidence from Previous Practitioner Session:**
+"uploaded in a grp where the donors are there and then here the first come first server is who says that he will help them they are taken as resposible for that particaulr beneficary"
 
----
+**Evidence Status Before Confirmation:**
+RECORDED
 
-## After the session
+**Practitioner Confirmation:**
+`[ ] CONFIRMED`
+`[ ] CORRECTED`
+`[ ] ADDITIONAL INFORMATION`
 
-1. For each numbered question above, split its answer into one `GT-*-R2.md` record per
-   Review ID in the Coverage map, using the templates in `03-session-record-packet.md`. A
-   single answer that touches 3 IDs (e.g. A7, A9) becomes 3 separate records — don't merge.
-2. Classify each record (CONFIRMED / CHALLENGED / REFINED / MISSING / CONTEXT_DEPENDENT /
-   UNRESOLVED / NOT_ASSESSABLE) and fill the domain-reality-vs-org-practice-vs-local-practice
-   split — this is where the real analytical work happens, not during the live session.
-3. Update `05-GROUND-TRUTH-REVIEW-MATRIX.md` status per Review ID.
-4. Flag `GT-PL5`/`GT-OQ6` and `GT-AR3` results back to Stage 7 governance specifically — G1 and
-   the CCR-7 ruling were made on unvalidated synthetic data and need explicit re-review, not a
-   silent update.
-5. Only after 1–4 are done should the reference model or ontology documents be touched.
+**Practitioner Confirmation / Correction:**
+
+
+**Final Confirmed Answer:**
+
+
+**Final Status:**
+NOT FULLY CONFIRMED / NOT OBSERVED AS A DISTINCT ROLE IN THIS PRACTITIONER CONTEXT

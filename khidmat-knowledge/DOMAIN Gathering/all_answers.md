@@ -137,3 +137,15 @@ there the donors adopt the beneifcary (based on the above detialed things ) and 
 
 
 also i have asked about the survey detials so also we will add them also in this as they are recvied till then we can extract the real info what we reuqired from this
+
+
+## Session 02 Follow-up Answers
+
+**Q1 (Inconclusive Ground Reality):** "The volunteer will reject the case as not genuine case"
+
+**Q2 (Conflicting Sources):** "we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned"
+
+**Q3 (Disputed Delivery):** "NOt heppend"
+
+**Q4 (Identity Mismatch Without Official Documents):** "Firstly we dont register who dont have the documents available and secondly they can be determine by the beneficary ID contact no, family members the deaitls we take in the survey form"
+

@@ -36,6 +36,9 @@
 
 ---
 
+| **Practitioner Follow-Up Answer (Session 02)** | "The volunteer will reject the case as not genuine case" |
+| **Evidence Interpretation (Session 02)** | Practitioner reports rejection when the case cannot be established as genuine. They do not record an abstract 'Unknown' state. |
+
 ## 3. Finding
 
 | Field | Value |
@@ -75,3 +78,8 @@
 |---|---|
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID. |
 | **Carried to** | Stage 6 (Evidence) |
+
+
+
+
+

@@ -40,11 +40,14 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 ---
 
+| **Practitioner Follow-Up Answer (Session 02)** | "we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned" |
+| **Evidence Interpretation (Session 02)** | NOT OBSERVED / NOT EXPERIENCED IN THIS PRACTITIONER CONTEXT. The practitioner relies on experienced volunteers and has not encountered this scenario. No conflict-resolution mechanism established. |
+
 ## 3. Finding
 
 | Field | Value |
 |---|---|
-| **Finding classification** | REFINED |
+| **Finding classification** | NOT OBSERVED IN THIS PRACTITIONER CONTEXT |
 | **Reviewer reasoning** | The practitioner confirmed that evidence types are diverse and must be tracked with claims, but actively refuted the idea of a universal "epistemic hierarchy" where one evidence type always outweighs another. The weighting is context-dependent, which refines our understanding that the *absence* of a hardcoded hierarchy in the ontology is a feature, not a bug. It also reinforced the need to preserve conflicting claims without silent overwrites. |
 | **Implication for ontology** | The Epistemic Stance primitive (P3) must support associating a source type with a claim, but the ontology should not build a structural hierarchy for automated conflict resolution based purely on those types. Conflict resolution requires human review or context-specific logic. |
 
@@ -79,3 +82,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 |---|---|
 | **Follow-up requirement** | sufficient — no further evidence needed for this Review ID |
 | **Carried to** | Stage 6 (Evidence) |
+
+
+
+
+

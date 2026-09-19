@@ -36,6 +36,9 @@
 
 ---
 
+| **Practitioner Follow-Up Answer (Session 02)** | "Firstly we dont register who dont have the documents available and secondly they can be determine by the beneficary ID contact no, family members the deaitls we take in the survey form" |
+| **Evidence Interpretation (Session 02)** | People without the required documents are not registered. For registered beneficiaries, identification can be determined using: Beneficiary ID, contact number, family members, and survey form details. |
+
 ## 3. Finding
 
 | Field | Value |
@@ -75,3 +78,7 @@
 |---|---|
 | **Follow-up requirement** | Further evidence needed. We must determine if this multi-layered ID approach (phone + state ID + internal ID) is common across other humanitarian contexts, or if some contexts rely solely on contact methods or biometrics. |
 | **Carried to** | Stage 6 (Evidence) |
+
+
+
+

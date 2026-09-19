@@ -393,9 +393,9 @@ The statements recorded here represent what the expert explicitly stated, in the
 | GT-L1 | A1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ4 | A1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | No |
 | GT-PL1 | A1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
-| GT-OQ1 | A2 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
-| GT-P4 | A2 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
-| GT-AR6 | A2 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
+| GT-OQ1 | A2 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
+| GT-P4 | A2 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
+| GT-AR6 | A2 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
 | GT-OQ3 | A3 | Yes | E1 | ANSWERED | Khidmat Practice | Local Practice (zimmedar) | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | No |
 | GT-L2 | A3 | Yes | E1 | ANSWERED | Khidmat Practice | Local Practice (zimmedar) | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | No |
 | GT-P2 | A4 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | NO_OBVIOUS_IMPACT | Yes |
@@ -409,13 +409,13 @@ The statements recorded here represent what the expert explicitly stated, in the
 | GT-OQ16 | A7 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-OQ18 | A7 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-L3 | A7 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | Yes |
-| GT-L7 | A8 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
-| GT-OQ12 | A8 | Yes | E1 | PARTIALLY_ANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
-| GT-P3 | A8 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
-| GT-PL4 | A9 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
-| GT-OQ13 | A9 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
-| GT-OQ10 | A9 | Yes | E1 | INDIRECTLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
-| GT-AR4 | A9 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-L7 | A8 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
+| GT-OQ12 | A8 | Yes | E1 | ANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-P3 | A8 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
+| GT-PL4 | A9 | Yes | E1 | NOT_OBSERVED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-OQ13 | A9 | Yes | E1 | NOT_OBSERVED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-OQ10 | A9 | Yes | E1 | NOT_OBSERVED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
+| GT-AR4 | A9 | Yes | E1 | NOT_OBSERVED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-OQ15 | A10 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ7 | A10 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ8 | A11 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
@@ -428,7 +428,7 @@ The statements recorded here represent what the expert explicitly stated, in the
 | GT-AR2 | A13 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ5 | A14 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | Yes |
 | GT-PL6 | A14 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | Yes |
-| GT-AR3 | A15 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-AR3 | A15 | Yes | E1 | NOT_OBSERVED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-PL5 | B1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | CHALLENGES_EXISTING_MODEL | Yes (Governance) |
 | GT-OQ6 | B1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | CHALLENGES_EXISTING_MODEL | Yes (Governance) |
 | GT-OQ17 | B2 | Yes | E1 | ANSWERED | Khidmat Practice | Micro-donor environment | No | No | MAY_REQUIRE_NEW_CONCEPT | No |
@@ -454,3 +454,4 @@ The statements recorded here represent what the expert explicitly stated, in the
 * Number requiring follow-up: 21
 * Number potentially requiring ontology refinement: 14
 * Number requiring governance: 2
+
