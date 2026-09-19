@@ -1,5 +1,11 @@
 # Domain Discovery
 
+> **STATUS: HISTORICAL / RETAINED / NOT FOR ACTIVE AGENT USE**
+> This file is historical and is retained for traceability only.
+> It is not an active ontology input and is not current practitioner Ground Truth.
+> AI agents must not use this file as active reasoning or context unless explicitly requested.
+> Human/manual historical inspection is allowed. It should not be treated as current Khidmat truth.
+
 > **FROZEN 2026-07-29. Superseded in role. Do not edit, do not extend.**
 >
 > Ontology design reads `docs/04-reference-model/KHIDMAT_HUMANITARIAN_DOMAIN_REFERENCE_MODEL.md`,

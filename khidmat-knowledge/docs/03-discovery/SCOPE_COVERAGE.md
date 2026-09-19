@@ -1,5 +1,11 @@
 # Scope Coverage — the described system vs. the authoritative source
 
+> **STATUS: HISTORICAL / RETAINED / NOT FOR ACTIVE AGENT USE**
+> This file is historical and is retained for traceability only.
+> It is not an active ontology input and is not current practitioner Ground Truth.
+> AI agents must not use this file as active reasoning or context unless explicitly requested.
+> Human/manual historical inspection is allowed. It should not be treated as current Khidmat truth.
+
 > **FROZEN 2026-07-29. Decision taken — this finding is closed.**
 >
 > Raised as a blocking conflict: Business Logic V1 §17 excludes roughly half the end-to-end
