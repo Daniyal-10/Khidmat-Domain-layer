@@ -80,10 +80,10 @@ therefore legitimate ground-truth targets.
 |---|---|---|---|
 | GT-AR1 | CCR-1 — Altitude qualification | Have you seen "needs assessment," "planning," "monitoring," or "coordination" used to mean two genuinely different things depending on whether the speaker meant an individual case or a broader programme? Give an example. | NOT_ASSESSABLE |
 | GT-AR2 | CCR-6 — Non-linearity | How often does a case genuinely reopen or get sent back to an earlier stage, versus proceeding straight through? | CONFIRMED |
-| GT-AR3 | CCR-7 — Dual-clock rule | Have you ever seen a person's life circumstances and their administrative status in your programme tracked as a single combined field, causing confusion? | NOT_ASSESSABLE |
+| GT-AR3 | CCR-7 — Temporal Perspectives rule | Have you ever seen a person's life circumstances and their administrative status in your programme tracked as a single combined field, causing confusion? | NOT_ASSESSABLE |
 | GT-AR4 | CCR-5 — Human-oversight trigger | What kinds of decisions in your work always require a human sign-off, regardless of how confident an automated or junior assessment is? | NOT_ASSESSABLE |
 | GT-AR5 | CCR-8 — Dignity-as-constraint | Have you seen dignity or safeguarding concerns represented as a score or rating anywhere in your systems, rather than as a rule that must be followed? | NOT_ASSESSABLE |
-| GT-AR6 | CCR-2 — Algorithmic humility | When your system is unsure whether two records are the same person (or other algorithmic uncertainty), what happens next? | NOT_ASSESSABLE |
+| GT-AR6 | UHR-4 / CCR-5 — Algorithmic humility | When your system is unsure whether two records are the same person (or other algorithmic uncertainty), what happens next? | NOT_ASSESSABLE |
 
 ---
 

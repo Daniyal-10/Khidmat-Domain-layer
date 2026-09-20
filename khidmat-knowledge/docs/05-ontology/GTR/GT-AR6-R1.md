@@ -19,7 +19,7 @@
 | **Ontology element under review** | Algorithmic humility |
 | **Ontology layer(s)** | N/A (Architecture Rule) |
 | **Ontology pillar(s)** | N/A |
-| **Current structural position** | CCR-2 (Algorithmic humility) |
+| **Current structural position** | UHR-4 / CCR-5 (Algorithmic humility) |
 | **Open question reference, if any** | N/A |
 | **Upstream citation chain** | Stage 1–4 artifact → Reference Model section → Tier 1 source |
 

@@ -16,10 +16,10 @@
 
 | Field | Value |
 |---|---|
-| **Ontology element under review** | CCR-7 — Dual-clock rule |
+| **Ontology element under review** | CCR-7 — Temporal Perspectives rule |
 | **Ontology layer(s)** | States, Events |
 | **Ontology pillar(s)** | VI — Action & Coordination |
-| **Current structural position** | Dual-clock rule separates life circumstances from administrative status. |
+| **Current structural position** | Temporal Perspectives rule separates life circumstances from administrative status. |
 | **Open question reference, if any** | N/A |
 | **Upstream citation chain** | Stage 1–4 artifact → Reference Model section → Tier 1 source |
 
@@ -44,7 +44,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Dual-clock rule not assessed. |
+| **Reviewer reasoning** | Temporal Perspectives rule not assessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -87,3 +87,4 @@
 ## 7. Provenance
 
 Derived directly from raw practitioner evidence in DOMAIN Gathering/all_answers.md. All synthetic or unsupported historical claims have been purged.
+
