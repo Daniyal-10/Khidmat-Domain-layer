@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Validates existence of funding restrictions. |
+| **Reviewer reasoning** | Validates existence of funding restrictions, but does not independently establish the full geographic/sectoral/population/time-limited taxonomy. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | Funding restrictions tightly bound assistance eligibility independently of the existence of a human need. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | Validated. |
+| **Ontology implication** | Confirmed for this context (existence of restrictions supported, but full taxonomy not demonstrated). |
 
 ---
 

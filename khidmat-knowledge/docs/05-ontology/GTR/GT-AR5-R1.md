@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When a case involves dignity, safeguarding, or protection concerns, how are those risks practically recorded in your tools? Have you ever seen these concepts reduced to a numerical 'score' or 'rating', or are they recorded and handled differently?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | No raw evidence addressing dignity as score vs rule. |
+| **Evidence / response** | The organization takes the minimum required data in the survey form, avoiding unnecessary personal data. They limit assistance based on their capacity while respecting families with significant privacy concerns by collecting only minimal information. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | STOP item: Fabricated master wording discarded. Not assessed. |
+| **Reviewer reasoning** | The evidence demonstrates a commitment to data minimization and privacy sensitivity in practice. However, it does not establish that dignity, safeguarding, or protection concerns are represented as numerical scores or ratings, nor does it establish a formal safeguarding field. Thus, the specific ontology proposition remains unassessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -55,7 +55,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Humanitarian domain reality** | Dignity and safeguarding concerns impose rules and restrictions on how a case must be handled. They cannot be fully represented as simple numerical metrics. |
-| **Organizational practice** | |
+| **Organizational practice** | Minimizing data collection and limiting assistance scale to respect family privacy concerns.|
 | **Local/contextual practice** | |
 | **Ontology implication** | Proposition not assessed. |
 

@@ -44,7 +44,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Explicitly tracks re-identification across encounters. |
+| **Reviewer reasoning** | Explicitly tracks re-identification across encounters, primarily demonstrating prevention-based identity verification rather than live duplicate reconciliation. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -56,7 +56,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Tracking a person's history (needs, fulfillment, activity status) via a persistent beneficiary card. |
 | **Local/contextual practice** | |
-| **Ontology implication** | Validated. |
+| **Ontology implication** | Confirmed for this context (prevention-based verification). |
 
 ---
 

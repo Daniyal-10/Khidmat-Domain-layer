@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Describes urgency/priority, but does not establish the distinct semantic concept of 'Risk'. |
+| **Reviewer reasoning** | Describes urgency/priority, but does not clearly distinguish Risk vs Need according to the Reference Model definitions. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

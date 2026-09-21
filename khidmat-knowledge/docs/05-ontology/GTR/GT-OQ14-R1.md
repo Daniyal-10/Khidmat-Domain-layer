@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "In practice, what exactly do you ask a beneficiary for consent to do? And operationally, what happens to the case or the data if they withdraw their consent partway through receiving assistance?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | Mentions initial privacy concern, no withdrawal. |
+| **Evidence / response** | The survey form functions as a consent form, collecting minimum required data. It contains explicit consent wording signed by both the beneficiary and the volunteer, along with contact information. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Consent parameters/withdrawal not assessed. |
+| **Reviewer reasoning** | The evidence confirms that consent is formally captured at the time of verification via a signed statement. However, it does not establish what happens operationally if consent is withdrawn partway through assistance. Without a consent-withdrawal workflow, the full question remains unassessed. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -55,7 +55,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Humanitarian domain reality** | Consent withdrawal halts future dependent action and data sharing, but does not invalidate the historical existence of the person or their needs. |
-| **Organizational practice** | |
+| **Organizational practice** | Capturing formal signed consent from the beneficiary and volunteer on the initial survey/verification form.|
 | **Local/contextual practice** | |
 | **Ontology implication** | Proposition not assessed. |
 

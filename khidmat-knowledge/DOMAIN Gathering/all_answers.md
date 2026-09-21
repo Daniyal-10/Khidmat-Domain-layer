@@ -149,3 +149,34 @@ also i have asked about the survey detials so also we will add them also in this
 
 **Q4 (Identity Mismatch Without Official Documents):** "Firstly we dont register who dont have the documents available and secondly they can be determine by the beneficary ID contact no, family members the deaitls we take in the survey form"
 
+
+## Additional Practitioner Clarifications — Stage 5 GTR Finalization
+
+These clarifications were provided subsequently by the domain expert
+to address specific GTR questions for which the original session
+answer record did not contain sufficient evidence.
+
+These statements are practitioner-provided clarifications and should
+be treated as additional evidence for the corresponding GTRs.
+
+### GT-AR3
+**Additional Practitioner Clarification**
+The beneficiary card is tied to the beneficiary person and the family.
+The verification history is also linked to the beneficiary. A volunteer verifies the beneficiary, and that verification is associated with the beneficiary before the beneficiary card is issued.
+After the beneficiary receives a donor, the donor is also linked to the beneficiary while that donor is providing support.
+Even if the donor is no longer actively supporting the beneficiary, the data still captures who the donor was for that beneficiary.
+
+### GT-AR5
+**Additional Practitioner Clarification**
+The domain expert stated that the organization takes the minimum data required in the survey form.
+They do not work by taking unnecessary amounts of personal data.
+If a family has significant privacy concerns, they try to collect only the minimum information required.
+They also try to limit the number of people they provide assistance to so that they only help as many people as they are able to while respecting the family's privacy concerns.
+
+### GT-OQ14
+**Additional Practitioner Clarification**
+The survey form completed when the volunteer visits the beneficiary for verification also functions as the consent form.
+The organization takes only the minimum required data.
+The form contains a consent statement:
+"I hereby acknowledge that the information used above is true to my knowledge and I give my consent to the Khidmat Group to use this information as per their will."
+The beneficiary's signature and the surveyor/volunteer's signature are present, along with the relevant number/contact information.

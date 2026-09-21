@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Practitioner bundles need, delivery, and why together. |
+| **Reviewer reasoning** | Practitioner bundles need and delivery modality, but the evidence does not strongly exercise all three dimensions (Sector x Modality x Phase). |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -57,7 +57,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Humanitarian domain reality** | The nature of humanitarian assistance is multi-dimensional, requiring separation between the "what", "how", and "when/phase" of the intervention. |
 | **Organizational practice** | |
 | **Local/contextual practice** | |
-| **Ontology implication** | Validated. |
+| **Ontology implication** | Confirmed for this context (supports need + modality, does not fully exercise Phase). |
 
 ---
 

@@ -44,7 +44,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Determines identity manually without biometrics. |
+| **Reviewer reasoning** | Determines identity manually without biometrics; primarily demonstrates prevention-based verification (via documents/identifiers) rather than live duplicate resolution. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
@@ -56,7 +56,7 @@
 | **Humanitarian domain reality** | |
 | **Organizational practice** | Using phone numbers primarily, but binding each person to an internal "individual ID" supported by collected identity documents. |
 | **Local/contextual practice** | Use of Aadhaar or Voter ID specifically (India context). |
-| **Ontology implication** | Validated. |
+| **Ontology implication** | Confirmed for this context (prevention-based verification, no duplicate merging demonstrated). |
 
 ---
 
