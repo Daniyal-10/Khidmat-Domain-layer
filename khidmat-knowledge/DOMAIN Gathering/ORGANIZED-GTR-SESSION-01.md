@@ -214,10 +214,11 @@ The statements recorded here represent what the expert explicitly stated, in the
 * **Completeness:** PARTIALLY_ANSWERED.
 * **Relevant GTR Review IDs:** GT-OQ5, GT-PL6
 
-### A15 — Status vs Reality Mismatch
+### A15 - Status vs Reality Mismatch
 * **Question ID:** A15
-* **Expert Answer:** None.
-* **Completeness:** UNANSWERED.
+* **Question Text:** Have you ever seen a person's life circumstances and their administrative status tracked in a way that caused confusion? [Follow-up: Is the "beneficiary card" a permanent record of the person, or is it tied to a specific project/donor?]
+* **Expert Answer:** (Additional Clarification) The beneficiary card is tied to the beneficiary person and the family. The verification history is also linked to the beneficiary. A volunteer verifies the beneficiary, and that verification is associated with the beneficiary before the beneficiary card is issued. After the beneficiary receives a donor, the donor is also linked to the beneficiary while that donor is providing support. Even if the donor is no longer actively supporting the beneficiary, the data still captures who the donor was for that beneficiary.
+* **Completeness:** CLARIFIED.
 * **Relevant GTR Review IDs:** GT-AR3
 
 ---
@@ -256,23 +257,25 @@ The statements recorded here represent what the expert explicitly stated, in the
 * **Completeness:** NOT_ASSESSABLE_FROM_SESSION.
 * **Relevant GTR Review IDs:** GT-AR1
 
-### B4 — Consent
+### B4 - Consent
 * **Question ID:** B4
 * **Question Text:** What is a person actually asked to consent to?
-* **Expert Answer:** The form requires a "beneficary sign". If families are too private/concerned, Khidmat insists on some level of disclosure (e.g. providing references of 3-4 working people) as a prerequisite to help.
+* **Expert Answer:** The form requires a "beneficary sign". If families are too private/concerned, Khidmat insists on some level of disclosure (e.g. providing references of 3-4 working people) as a prerequisite to help. 
+**Additional Clarification:** The survey form completed when the volunteer visits the beneficiary for verification also functions as the consent form. The organization takes only the minimum required data. The form contains a consent statement: "I hereby acknowledge that the information used above is true to my knowledge and I give my consent to the Khidmat Group to use this information as per their will." The beneficiary's signature and the surveyor/volunteer's signature are present, along with the relevant number/contact information.
 * **Exact/raw wording:** "about the family privacy concern too much to hide the khidmat grp dont work like this only if they are too much concern still they tell in khidmat still they needs to tell about the 3 4 more people which are working"
 * **Examples given:** Demanding references if hiding information.
 * **Terminology used by expert:** "privacy concern"
-* **Artifacts mentioned:** Form signature.
+* **Artifacts mentioned:** Form signature, Consent form.
 * **Context/dependencies:** A minimum threshold of disclosure is mandatory to receive assistance.
 * **Direct/Inferred:** Direct.
-* **Completeness:** PARTIALLY_ANSWERED.
+* **Completeness:** CLARIFIED.
 * **Relevant GTR Review IDs:** GT-OQ14
 
-### B5 — Dignity / Safeguarding as a Hard Rule
+### B5 - Dignity / Safeguarding as a Hard Rule
 * **Question ID:** B5
-* **Expert Answer:** None.
-* **Completeness:** UNANSWERED.
+* **Question Text:** "When a case involves dignity, safeguarding, or protection concerns, how are those risks practically recorded in your tools? Have you ever seen these concepts reduced to a numerical 'score' or 'rating', or are they recorded and handled differently?"
+* **Expert Answer:** (Additional Clarification) The domain expert stated that the organization takes the minimum data required in the survey form. They do not work by taking unnecessary amounts of personal data. If a family has significant privacy concerns, they try to collect only the minimum information required. They also try to limit the number of people they provide assistance to so that they only help as many people as they are able to while respecting the family's privacy concerns.
+* **Completeness:** CLARIFIED.
 * **Relevant GTR Review IDs:** GT-AR5
 
 ### B6 — Universal vs Scoped Rules
@@ -428,13 +431,13 @@ The statements recorded here represent what the expert explicitly stated, in the
 | GT-AR2 | A13 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ5 | A14 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | Yes |
 | GT-PL6 | A14 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | Yes |
-| GT-AR3 | A15 | Yes | E1 | NOT_OBSERVED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-AR3 | A15 | Yes | E1 | CLARIFIED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-PL5 | B1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | CHALLENGES_EXISTING_MODEL | Yes (Governance) |
 | GT-OQ6 | B1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | CHALLENGES_EXISTING_MODEL | Yes (Governance) |
 | GT-OQ17 | B2 | Yes | E1 | ANSWERED | Khidmat Practice | Micro-donor environment | No | No | MAY_REQUIRE_NEW_CONCEPT | No |
 | GT-AR1 | B3 | NO EVIDENCE IN SESSION | E0 | NOT_ASSESSABLE_FROM_SESSION | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | No |
-| GT-OQ14 | B4 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | Yes | Yes (Described) | MAY_REQUIRE_REFINEMENT | Yes |
-| GT-AR5 | B5 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-OQ14 | B4 | Yes | E1 | CLARIFIED | Khidmat Practice | NOT ESTABLISHED | Yes | Yes (Described) | MAY_REQUIRE_REFINEMENT | Yes |
+| GT-AR5 | B5 | Yes | E1 | CLARIFIED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-P5 | B6 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | NO_OBVIOUS_IMPACT | Yes |
 | GT-L4 | B7 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 
