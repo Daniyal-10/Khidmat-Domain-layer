@@ -5,10 +5,10 @@
 
 **Ontology Design, step 5 of 7.** Status: **Framework established — zero reviews conducted.**
 
-> **Historical snapshot notice.** The status line above ("zero reviews conducted") and every statement in this document describing the review process as not-yet-started reflect the state of the repository *at the time this framework was authored*, before Stage 5 practitioner reviews were carried out. This document is retained for audit and methodological traceability. It has since been superseded in practice: 47 completed Ground Truth review records (`GT-*-R1.md`) now exist, and their findings have been carried through Stage 6 evidence integration (`06-STAGE-6-EVIDENCE-INTEGRATION-REPORT.md`) and Stage 7 governance (`07-STAGE-7-GOVERNANCE-DECISIONS.md`). Do not read this document's "zero reviews" language as describing the current repository state — see `docs/06-review-package/ONTOLOGY-DESIGN-COMPLETION-UPDATE.html` for current status.
+> **Historical snapshot notice.** The status line above ("zero reviews conducted") and every statement in this document describing the review process as not-yet-started reflect the state of the repository *at the time this framework was authored*, before Stage 5 practitioner reviews were carried out. This document is retained for audit and methodological traceability. It has since been superseded in practice: 47 completed Ground Truth review records (`GT-*-R1.md`) now exist. Their findings are pending Stage 6 evidence integration and Stage 7 governance. Do not read this document's "zero reviews" language as describing the current repository state.
 
 Derived from `01-DOMAIN-PRIMITIVES.md`, `02-ONTOLOGY-LAYERS.md`, `03-ONTOLOGY-PILLARS.md`,
-`04-ARCHITECTURE-RULES.md`, and `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md`.
+`04-ARCHITECTURE-RULES.md`, and `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md (historical)`.
 
 ---
 
@@ -29,7 +29,7 @@ not simulate, anticipate, or pre-populate what that collection will show.
 
 ## 1. Purpose
 
-Stages 1-4 produced the current ontology structure, subsequently formalized and governed through Stage 7 rulings G1, G2, and G3 (see `docs/05-ontology/07-STAGE-7-GOVERNANCE-DECISIONS.md`). The ontology is baselined and architecture-ready. While the original Ground Truth evidence did not establish a universal mandatory dual-clock architecture (leaving it initially unresolved), the subsequent G2 governance ruling formally treated CCR-7 semantically as an operational hypothesis: the ontology hypothesizes **one temporal foundation with multiple temporal perspectives**. This ensures human/life/situation and administrative/programme engagement remain semantically distinct and do not collapse into one combined status, without mandating exactly two perspectives, independent mechanical clocks, or any new primitives (Context distinguishes the semantic frame). This structure was built entirely from two authoritative
+Stages 1-4 produced the current ontology structure as a conceptual baseline. This structure was built entirely from two authoritative
 business documents and six evidence dossiers whose Tier B/D sources describe *sector
 institutions*, not *lived humanitarian casework*. `01-DOMAIN-PRIMITIVES.md` §7.1 records this
 asymmetry directly: the primitives carrying the human side of the domain — Condition and
@@ -41,7 +41,7 @@ ground truth might say.
 
 Stage 5 is a **validation layer**. It tests the existing seven primitives, eight layers, seven
 pillars, and architecture rules against real humanitarian practice, and it prioritizes the
-already-named `[OPEN]` questions in `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md`. It does not
+already-named `[OPEN]` questions in `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md (historical)`. It does not
 redesign the foundation, and it does not close an open question merely because one practitioner
 answered it once.
 
@@ -53,7 +53,7 @@ answered it once.
 |---|---|
 | **Tier 1** — `KHIDMAT_BUSINESS_LOGIC_BLUEPRINT_V1.md`, `KHIDMAT_AI_BUSINESS_OVERVIEW.html`, `docs/01-evidence/` | Sources of fact. Unchanged by Stage 5. |
 | **Tier 2** — `docs/04-reference-model/KHIDMAT_HUMANITARIAN_DOMAIN_REFERENCE_MODEL.md` | Source of derivation. Unchanged by Stage 5. |
-| **Ground-truth evidence (this stage)** | Real, but **not Tier 1**. A completed review record is evidence to be weighed, cited, and carried into Stage 6 (Evidence) and Stage 7 (Governance) — it does not silently amend Tier 1 or Tier 2, and it does not overwrite `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md` on its own authority. |
+| **Ground-truth evidence (this stage)** | Real, but **not Tier 1**. A completed review record is evidence to be weighed, cited, and carried into Stage 6 (Evidence) and Stage 7 (Governance) — it does not silently amend Tier 1 or Tier 2, and it does not overwrite `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md (historical)` on its own authority. |
 
 A finding that contradicts the Reference Model is not "wrong by definition" — it is exactly the
 kind of signal Stage 5 exists to surface. But per README's Standing Rule 1, only an explicit
@@ -82,7 +82,7 @@ against real cases, independent of any specific open question:
 
 ### 3.2 Targeted open-question review
 
-Prioritizes the specific `[OPEN]` items already named in `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md`
+Prioritizes the specific `[OPEN]` items already named in `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md (historical)`
 and `03-ONTOLOGY-PILLARS.md` §8.2 / `04-ARCHITECTURE-RULES.md` §7.1. These are listed with their
 existing identifiers in `05-GROUND-TRUTH-REVIEW-MATRIX.md` §2. No new open question is invented
 here merely to enlarge Stage 5's scope; if a genuinely new gap surfaces during review, it is
@@ -131,7 +131,7 @@ themselves converged.
 **F-3 — A single response does not close an open question.** `UNRESOLVED` is not a failure
 state; it is the correct classification whenever the accumulated evidence for a Review ID is
 insufficient to support `CONFIRMED`, `CHALLENGED`, `REFINED`, or `MISSING`. Closing an
-open question (per `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md`) requires an explicit governance
+open question (per `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md (historical)`) requires an explicit governance
 decision at Stage 7, informed by — but not automatically triggered by — Stage 5 findings.
 
 **F-4 — Finding classification is fixed vocabulary.** Reviewers select from exactly the seven
@@ -180,7 +180,7 @@ Tier 1 source (Business Logic V1 §n, Client Draft section, or TD-0n finding)
 ```
 
 Where the review targets a named open question (e.g., Q1–Q19 in
-`PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md`, or an item in `03-ONTOLOGY-PILLARS.md` §8.2), the
+`PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md (historical)`, or an item in `03-ONTOLOGY-PILLARS.md` §8.2), the
 existing identifier is carried forward unchanged, never re-numbered.
 
 ---
@@ -189,7 +189,7 @@ existing identifier is carried forward unchanged, never re-numbered.
 
 - It does not modify `01-DOMAIN-PRIMITIVES.md`, `02-ONTOLOGY-LAYERS.md`,
   `03-ONTOLOGY-PILLARS.md`, `04-ARCHITECTURE-RULES.md`, or
-  `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md`, unless a review surfaces an outright logical
+  `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md (historical)`, unless a review surfaces an outright logical
   contradiction that makes the existing foundation internally impossible to apply — in which
   case the contradiction is documented separately (per the parent task's §19) and reported, not
   silently patched.

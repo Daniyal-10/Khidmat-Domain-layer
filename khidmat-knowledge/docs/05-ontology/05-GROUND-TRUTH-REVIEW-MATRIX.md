@@ -1,16 +1,11 @@
 # 5 — Ground Truth Review Matrix
 
-**Ontology Design, step 5 of 7.** Status: **Every item below is `NOT YET REVIEWED`.**
-
-> **Historical snapshot caveat on the header above.** The literal "Status" column values in the tables below have been updated in place to reflect actual Stage 5 findings (CONFIRMED / REFINED / CHALLENGED / UNRESOLVED) and are current. Only the document's introductory "Status:" line and §0 framing language, which describe the pre-review state, are historical — retained as originally authored rather than edited, per this repository's no-silent-rewrite discipline.
+**Ontology Design, step 5 of 7.** Status: **STAGE 5 CLOSED — FINDINGS INTEGRATED BELOW**.
 
 Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`. Recorded per item using
-`05-GROUND-TRUTH-REVIEW-RECORD-TEMPLATE.md` once genuine practitioner evidence exists.
+`05-GROUND-TRUTH-REVIEW-RECORD-TEMPLATE.md` with genuine practitioner evidence from the Khidmat Bhopal session.
 
-**No finding in this file is real.** `Status` is a literal placeholder value, not an
-abbreviated result. Do not read `NOT YET REVIEWED` as `UNRESOLVED` — the latter is a finding
-classification reached after evidence was collected and found insufficient; the former means
-no evidence has been sought yet.
+The findings in this file reflect the completed Stage 5 review outcomes. They record evidence gathered from one operational context and represent local confirmation or assessability, not universal humanitarian-domain validation.
 
 ---
 
@@ -90,7 +85,7 @@ therefore legitimate ground-truth targets.
 ## 5. Targeted open-question review
 
 Every row below carries forward an identifier already established in
-`PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md` (Q1–Q19) or, where the open item originates
+`PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md (historical)` (historical) (Q1–Q19) or, where the open item originates
 elsewhere, its existing citation. No identifier is renumbered.
 
 | Review ID | Open question ref | Open question | Current structural position | Ground-truth question | Status |
@@ -126,7 +121,7 @@ elsewhere, its existing citation. No identifier is renumbered.
   purely methodological rules (ECR, XCR, most PIR/LCR/PBR) are correctly excluded per
   `04-ARCHITECTURE-RULES.md` §4.5 ECR-5 and are not ground-truth-testable by definition. ✅
 - **Named open questions:** 19 of 19 covered (GT-OQ1–GT-OQ19), matching
-  `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md` Q1–Q19 exactly, with cross-references to
+  `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md (historical)` (historical) Q1–Q19 exactly, with cross-references to
   `03-ONTOLOGY-PILLARS.md` §8.2 and `04-ARCHITECTURE-RULES.md` §7.1 where the same item is
   named there. ✅
 

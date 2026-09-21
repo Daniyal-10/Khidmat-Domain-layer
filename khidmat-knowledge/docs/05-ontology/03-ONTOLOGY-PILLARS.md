@@ -71,7 +71,7 @@ The pillars are derived systematically:
 **Supporting primitives:** Entity (P4), Relation (P7), Norm (P5).
 **RM concepts within it:** Organisations, Programmes, Donors, Community Groups, Governments, Accountability.
 **Why it is a pillar:** It models the resource and response side of the equation. It is distinct from the human subject and is necessary to represent accountability, funding chains, and ecosystem coordination.
-**Boundary:** Universal. Jurisdiction-specific localizations (e.g., local charity regulations or specific government bodies) will populate this layer, but the structure is universal. Organisation and Programme are explicitly split into two distinct Entities connected by an `operates` relation, per Stage 7 G1 amending the earlier Tier 1 (BL V1 §4) collapse (see `02-ONTOLOGY-LAYERS.md` A-04). *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.*
+**Boundary:** Universal. Jurisdiction-specific localizations (e.g., local charity regulations or specific government bodies) will populate this layer, but the structure is universal. Organisation and Programme are proposed to be split into two distinct Entities connected by an `operates` relation (see `02-ONTOLOGY-LAYERS.md` A-04) pending Stage 6 and Stage 7 governance. *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.*
 **What remains outside:** The specific actions they take (Events).
 
 ### Pillar VI: Action & Coordination
@@ -128,7 +128,7 @@ Tested against the required Reference Model coverage list:
 * Situation, Need, Vulnerability, Risk → **Covered (Pillar III)**
 * Evidence, Claims, Verification, Assessment → **Covered (Pillar IV handles the knowledge; Pillar VI handles the action)**
 * Volunteer/field activity → **Covered (Pillar V handles the Actor; Pillar VI handles the Action)**
-* Organisations, Programmes (now distinct Entities per Stage 7 G1; *Scope note: Khidmat's own current operation instantiates zero Programme entities*) — **Covered (Pillar V)**
+* Organisations, Programmes (proposed distinct Entities; *Scope note: Khidmat's own current operation instantiates zero Programme entities*) — **Covered (Pillar V)**
 * Support/interventions, Resources, Giving/donors, Matching, Delivery → **Covered (Pillar VII handles Resources/Interventions; Pillar V handles Donors; Pillar VI handles Delivery)**
 * Re-verification, Outcomes, Long-term wellbeing → **Covered (Pillar VI handles Re-verification; Pillar I handles Wellbeing; Pillar III handles Outcomes/Risk trajectories)**
 * Accountability, Context → **Covered (Pillar V handles Accountability Constraints; Pillar II handles Context)**
@@ -199,20 +199,19 @@ The following concepts were previously carried forward as tensions, but are now 
 **Empirical and Governance Dependencies:**
 
 Future domain population, jurisdiction-specific localization, exact taxonomies, practitioner enrichment, and implementation details remain open. The foundational ontology's structure — the seven primitives, eight layers, and seven pillars,
-and the resolved classification decisions listed above — is resolved and structurally stable.
-This constitutes a formal structural resolution; all prior structural governance dependencies are closed.
+and the resolved classification decisions listed above — is a retained conceptual hypothesis.
+This structure is pending formal Stage 6 interpretation and Stage 7 governance decisions.
 
 ---
 
 ## 9. Stage 3 completion status
 
-* **Stage 1 (Domain Primitives):** Structurally Stable and Formally Closed.
-* **Stage 2 (Ontology Layers):** Structurally Stable and Formally Closed.
-* **Stage 3 (Ontology Pillars):** Structurally Stable and Formally Closed.
+* **Stage 1 (Domain Primitives):** Conceptual Baseline (Governance Pending).
+* **Stage 2 (Ontology Layers):** Conceptual Baseline (Governance Pending).
+* **Stage 3 (Ontology Pillars):** Conceptual Baseline (Governance Pending).
 
-Architecture has **NOT** been designed yet. The Stage 1-3 foundation is **structurally stable and formally closed**:
-its categories, layers and pillars are fully resolved against authoritative project sources.
-While practitioner validation exists to validate and enrich the
-ontology, it will not reopen the structural foundation unless evidence identifies a genuine
-structural category that cannot be represented. Architecture design may now proceed on this
-fully resolved and closed basis.
+Architecture has **NOT** been designed yet. The Stage 1-3 foundation is a **provisional design baseline**:
+its categories, layers and pillars are hypotheses derived from authoritative project sources.
+Practitioner validation (Stage 5) populated initial empirical evidence.
+The foundation remains subject to Stage 6 interpretation and Stage 7 governance decisions before it can be frozen.
+Architecture design may **NOT** proceed until the ontology is formally frozen by governance.

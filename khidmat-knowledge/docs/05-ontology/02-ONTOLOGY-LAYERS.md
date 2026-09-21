@@ -118,8 +118,8 @@ rather than incomplete: dimensions are stable business concepts while concrete i
 | Household | RM §4.2 | BD-TD03-004 (trajectory tracked separately from programme status) |
 | Family | RM §4.1 | Blueprint only — resolved as a distinct Entity, bounded by kinship/legal guardianship; see §12 ("Family vs Household") |
 | Community | RM §4.4 | Blueprint |
-| Organisation | RM §11.1 | **Strong** — Stage 7 G1 split. *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.* |
-| Programme | RM §11.1 | **Strong** — Stage 7 G1 split; carries programme-specific eligibility, funding, and activity rules. *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.* |
+| Organisation | RM §11.1 | **Strong** — retains proposed split pending Stage 6 interpretation. *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.* |
+| Programme | RM §11.1 | **Strong** — retains proposed split pending Stage 6 interpretation; carries programme-specific eligibility, funding, and activity rules. *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.* |
 | Donor / giver | RM §11.1 | **Strong** — BD-TD01-004 (CHS defines actors to include them) |
 | Government body | RM §11.1, §13.4 | BD-TD01-001. Structurally, a government scheme is a Programme operated by a Government body, classified via the Sector×Modality×Phase facets. This accommodates government schemes as content/taxonomy without structural omission. |
 | Service Provider (Healthcare, School, Employer) | RM §11.1 | **Structurally resolved** — modelled as an active Entity with independent capacity/eligibility decisions (GT-OQ15), but rests on UNVERIFIED evidence (F-3); Governed provisional — rests on UNVERIFIED evidence; treated as an unevidenced design assumption pending corroboration (not practitioner-confirmed). |
@@ -129,7 +129,7 @@ rather than incomplete: dimensions are stable business concepts while concrete i
 
 ### 3.2 The strongest and weakest points of this layer
 
-**Strongest.** Institutional entities. While Business Logic V1 §4 originally collapsed implementing organisations and the programmes they lead into a single actor row, Stage 7 G1 formally amended this to split them into two distinct Entities (Organisation and Programme). Programme-specific eligibility, funding, and activity rules attach to the Programme.
+**Strongest.** Institutional entities. While Business Logic V1 §4 originally collapsed implementing organisations and the programmes they lead into a single actor row, an ongoing conceptual proposal splits them into two distinct Entities (Organisation and Programme) pending Stage 6 and 7 governance. Programme-specific eligibility, funding, and activity rules attach to the Programme.
 
 **Weakest.** Person. RM §3.1 makes person-persistence load-bearing for three separate principles,
 and the pre-Stage-5 evidence rating records that **how sameness is established is Evidence not found** —
@@ -165,13 +165,13 @@ The ontology clearly distinguishes the foundational primitive (**Relation**) fro
 | Household membership | Person ↔ Household | RM §4.2 | Blueprint |
 | Constrains | Programme ↔ Case | RM §11.4 | **Strong** — BD-TD03-001 (mechanism itself unevidenced, Assumption AR-005 in TD-03) |
 | Referral | Organisation ↔ Organisation | RM §12.1 | **Strong** — BD-TD04-002 (CFM referral pathways) |
-| Operates | Organisation ↔ Programme | Stage 7 G1 | **Strong** — Stage 7 G1 split |
+| Operates | Organisation ↔ Programme | Proposed | **Strong** — retained proposal pending Stage 6 interpretation |
 | Handoff of a service | Capability ↔ Capability | RM §12.3 | **Strong** — BD-TD05-003 |
 | Adoption of a family | Donor ↔ Household | RM §16.4 | **None** — absent from every source |
 | Participation / Agency | Entity ↔ Occurrence | RM §11, §12 | **Moderate** — Stage 5 (GT-OQ15, GT-OQ19) |
 | Temporal Succession (precedes, follows, overlaps; never causation) | Occurrence ↔ Occurrence | RM §12.4 | **Strong** — BD-TD03-002 |
 | Evidence Support / Challenge | Evidential concept ↔ Claim | RM §10.2 | Blueprint |
-| Programmatic Participation / Funding | Entity ↔ Programme | RM §11.1, §11.4 | **Strong** — Stage 7 G1 split, BD-TD02-003 |
+| Programmatic Participation / Funding | Entity ↔ Programme | RM §11.1, §11.4 | **Strong** — retained proposal pending Stage 6 interpretation, BD-TD02-003 |
 
 ### 4.2 The asymmetry this layer must not conceal
 
@@ -493,7 +493,7 @@ made to keep derivation moving, and each is reversible.**
 | **A-01** | Condition feeds **two** layers — Facets (axis) and States (value on the axis) | RM §16.5 records dimensions present and values absent; splitting makes the asymmetry visible rather than hiding it inside one layer | A ruling that Facets should hold values, or that dimensions and values belong together |
 | **A-02** | Context feeds Facets **and** scopes Constraints, rather than forming its own layer | The prescribed eight layers contain no Context layer; Context frames rather than participates (Phase 1 P2 boundary) | A ruling that scope requires its own layer |
 | **A-03** | The Evidence *entity/occurrence* content, per §5.3's rejection of Evidence as a primitive, feeds **Cognition** rather than Entities | Evidence grounds belief; its function is epistemic. An evidence *artifact* also persists, so it is provisionally admitted to Entities too | An evidence taxonomy showing artifacts require independent tracking |
-| **A-04** | Organisation and Programme are collapsed into one Entity | **SUPERSEDED BY STAGE 7 G1:** Split into two Entities connected by an operates relation. | None |
+| **A-04** | Organisation and Programme are collapsed into one Entity | **PROPOSED CHANGE PENDING STAGE 7:** Split into two Entities connected by an operates relation. | None |
 | **A-05** | Outcome and impact *measurement* events are admitted to Layer 6 | Structural admission is resolved (they are Occurrences); operational ownership (Case Journey vs MEAL) is explicitly delegated to architecture/workflow design. Governed provisional — rests on UNVERIFIED evidence; treated as an unevidenced design assumption pending corroboration (not practitioner-confirmed). | None |
 | **A-07** | The point-versus-span distinction (States ÷ Events) is retained despite being unevidenced | Removing it would merge two primitives and restructure four layers on equally thin grounds | Evidence that the distinction is not real, or a ruling that they merge |
 
@@ -506,7 +506,7 @@ made to keep derivation moving, and each is reversible.**
 The following domain concepts are formally resolved at the ontological level:
 
 *   **Identity & Biometrics (RM §3.1, §16.4):** *Identity* is not a primitive and is not itself Entity-classified content. The **persisting subject** is the **Entity (P4)**. **Identity resolution** is an **Epistemic Stance** (Layer 7), grounded by **Evidence** content. Biometrics, documents, and attestation are subclasses of Evidence conferring different epistemic weights.
-*   **Organisation vs Programme:** Stage 7 G1 explicitly split `Organisation` and `Programme` into two distinct Entities (Layer 2) connected by an `operates` Relation (Layer 3), rather than remaining collapsed. Programme-specific eligibility, funding, and activity rules attach to the Programme. *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.*
+*   **Organisation vs Programme:** A proposed conceptual amendment splits `Organisation` and `Programme` into two distinct Entities (Layer 2) connected by an `operates` Relation (Layer 3), rather than remaining collapsed. This remains a retained hypothesis pending Stage 6 interpretation and Stage 7 governance. Programme-specific eligibility, funding, and activity rules attach to the Programme. *Scope note: Khidmat's own current operation instantiates zero Programme entities; the Programme concept remains part of the ontology's general structure for cases where it applies.*
 *   **Undocumented Status (RM §3.2):** Ontologically, this is the absence of *Evidence* (Entity), which simultaneously instantiates as a *Constraint* (Layer 4) limiting formal Coordination Patterns, and a *Condition* (Layer 5) aggravating Vulnerability.
 *   **Wellbeing Standard (RM §3.6):** Structurally a *Norm* (Layer 4) that is strictly *Context-dependent* (Layer 1). A Need is a *Condition* (Layer 5) assessed against this Context-bound Norm.
 *   **Family vs Household (RM §4.3):** Both are *Entities* (Layer 2) rather than merely Relational Structures. *Family* is bounded by kinship/legal guardianship. *Household* is bounded by co-residence/shared economy.
@@ -534,15 +534,15 @@ derivation map (§1) accounts for all seven primitives with none unconsumed and 
 evidence strength inherited and made explicit per layer (§10); assumptions isolated (§11); five
 open tensions carried intact (§12).
 
-**Practitioner validation:** Ground Truth practitioner validation was obtained during Stage 5. Relevant evidence gaps and tensions were formally resolved and integrated via the Stage 5–7 governance process, successfully corroborating the layer definitions.
+**Practitioner validation:** Ground Truth practitioner validation was obtained during Stage 5. Evidence integration (Stage 6) and formal governance (Stage 7) have not yet been performed.
 
 **Cannot be populated:** giving-side entities and patterns (§3.3, §9.4); values within every human
 facet (§2.3, §6.3); evidence kinds (§8.5).
 
-**Blocking for the next phase:** None structurally, since Risk was formally resolved as a Condition.
+**Blocking for the next phase:** Pending Stage 6 and Stage 7 governance decisions.
 
-**Foundation status:** `01-DOMAIN-PRIMITIVES.md`'s primitive set is **structurally stable and formally closed** — its
-seven categories and their derivation are fully resolved against authoritative Tier 1 sources. Every layer
-above inherits that same structural stability. The 8 Layers are structurally stable and governance-closed.
+**Foundation status:** `01-DOMAIN-PRIMITIVES.md`'s primitive set is a **conceptual baseline** — its
+seven categories and their derivation are documented hypotheses from Tier 1 sources. Every layer
+above inherits that same status. The 8 Layers are a structural hypothesis awaiting governance.
 
 

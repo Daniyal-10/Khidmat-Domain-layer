@@ -2,8 +2,8 @@
 
 ## 1. Repository State
 - **Branch**: `stage5-gtr-finalization`
-- **HEAD Commit**: `9f674db` (chore(ontology): remove Stage 5 reconciliation scratch artifacts)
-- **Working Tree**: Contains targeted modifications to `docs/05-ontology/05-GROUND-TRUTH-REVIEW-MATRIX.md` and `docs/05-ontology/GTR/GT-AR6-R1.md` to correct the `GT-AR6` mapping error. Scratch Python artifacts have been purged.
+- **HEAD Commit**: `099b6ee` (chore(ontology): finalize Stage 5 closure normalization)
+- **Working Tree**: Clean baseline established for Stage 5 closure (historical scratch artifacts and stale remediation documents removed).
 
 ## 2. What Was Verified
 - Validated the structural integrity of the 7 Primitives, 8 Layers, 7 Pillars, and Architecture Rules.
@@ -12,7 +12,7 @@
 - Confirmed the 20/27 (CONFIRMED/NOT_ASSESSABLE) distribution.
 
 ## 3. Phase 2 Provenance Finding
-- **What was planned**: `STAGE-5-RECONCILIATION-PROPOSAL.md` laid out the correct final statuses (20 CONFIRMED, 27 NOT_ASSESSABLE) based on a thorough read of Session 01 evidence. The document concluded with "PHASE 2 NOT YET AUTHORIZED".
+- **What was planned**: `STAGE-5-RECONCILIATION-PROPOSAL.md` (historical file) laid out the correct final statuses (20 CONFIRMED, 27 NOT_ASSESSABLE) based on a thorough read of Session 01 evidence. The document concluded with "PHASE 2 NOT YET AUTHORIZED".
 - **What was actually executed**: Commit `84c417a` forcefully executed Phase 2 via python scripts (`scratch/update_*.py`). It embedded the final statuses into the Matrix and GTR records, and prepended "HISTORICAL DOCUMENT" banners to the outdated Stage 5 execution frameworks.
 - **What evidence was used**: The verified practitioner evidence (Session 01) mapped exactly to the statuses.
 - **What was subsequently audited**: Commit `9f674db` then deleted the scratch scripts, leaving the repository in an executed but formally unacknowledged state.
@@ -90,11 +90,11 @@ No other files required changes. No foundation modifications were made.
 
 ## 12. Git State
 - **Branch**: `stage5-gtr-finalization`
-- **HEAD**: `9f674db`
-- **Working Tree**: 2 files modified (not staged)
+- **HEAD**: `099b6ee`
+- **Working Tree**: Clean
 - **Commits Created**: 0
-- **Files Modified**: `docs/05-ontology/GTR/GT-AR6-R1.md`, `docs/05-ontology/05-GROUND-TRUTH-REVIEW-MATRIX.md`
-- **Files Deleted**: 0
+- **Files Modified**: 0
+- **Files Deleted**: 2 (intentionally removed remediation and audit docs)
 
 ## 13. Stage 6 Readiness
 > Is the repository now clean enough to begin Stage 6 Evidence Integration?

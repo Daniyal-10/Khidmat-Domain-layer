@@ -301,18 +301,16 @@ Because of this relational definition, Need initially appears to classify as a R
 
 ---
 
-## 7. Status — STRUCTURALLY RESOLVED
+## 7. Status — CONCEPTUAL BASELINE
 
-**Primitive Definition resolved by Stage 7 Governance ruling G3; Risk/Need classification resolved by G5 (see `07-STAGE-7-GOVERNANCE-DECISIONS.md`).**
+**Pending Stage 6 interpretation and Stage 7 governance.**
 
 **Terminology note (added for cross-document consistency):**
-Downstream documents (`02-ONTOLOGY-LAYERS.md` §13; `03-ONTOLOGY-PILLARS.md` §8, §9) describe this primitive set, and the layers/pillars built on it, as "structurally stable" or "structurally resolved." The structural ontology (the seven primitives) has passed final source-grounded resolution against Tier 1 authority. No structural governance dependencies remain. See §5 (Status Semantics) of the
-remediation record for the exact distinction in use project-wide.
+Downstream documents describe this primitive set as a conceptual hypothesis derived from the reference model. The structural ontology (the seven primitives) serves as the provisional design baseline. It has not yet been subject to formal governance.
 
-**Resolved:** The definition of a Domain Primitive (§1), the method (§2), the derivation
-trace (§3), the coverage result that the giving side introduces no new primitive (§5.2), and the classification of Risk and Need (§6) are resolved and structurally sound.
+**Resolved conceptually:** The definition of a Domain Primitive (§1), the method (§2), the derivation trace (§3), the coverage result that the giving side introduces no new primitive (§5.2), and the classification of Risk and Need (§6) are retained as a structurally sound hypothesis.
 
-**The primitive set is formally closed.** The foundation structure is fully resolved against the project's authoritative sources. Practitioner validation (Stage 5) will populate values but will not invent an 8th primitive. No governance block remains.
+**The primitive set is a provisional design baseline.** The foundation structure is derived from the project's authoritative sources. Practitioner validation (Stage 5) populated initial empirical evidence. It remains subject to governed revision (Stage 7).
 
 ### 7.1 The evidence base is asymmetric — measured
 

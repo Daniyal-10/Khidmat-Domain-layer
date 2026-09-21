@@ -1,3 +1,16 @@
+> [!WARNING]
+> **HISTORICAL DOCUMENT — NOT AN ACTIVE GOVERNING DOCUMENT**
+>
+> This document records historical Stage 5 reconciliation / integrity-audit reasoning and is retained for provenance. It must not be treated as the current ontology authority, current GTR status register, or a governance decision.
+>
+> The current authoritative Stage 5 status is maintained in:
+>
+> * `docs/05-ontology/05-GROUND-TRUTH-REVIEW-MATRIX.md`
+> * the 47 `*-R1.md` GTR records
+> * `docs/05-ontology/STAGE-5-CLOSURE-NORMALIZATION.md`
+>
+> Stage 6 Evidence Integration remains the next authorized phase.
+
 # STAGE 5 GROUND TRUTH PACKAGE â€” FOUNDATIONAL INTEGRITY AUDIT
 
 ## 1. Overall Verdict

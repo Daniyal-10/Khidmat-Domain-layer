@@ -105,5 +105,5 @@ Both stand.*
    `NOT YET REVIEWED` until at least one full Record exists, then move to the classification).
 4. No Record may be used to directly edit `01-DOMAIN-PRIMITIVES.md`, `02-ONTOLOGY-LAYERS.md`,
    `03-ONTOLOGY-PILLARS.md`, `04-ARCHITECTURE-RULES.md`, or
-   `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md`. Findings are carried forward into Stage 6
+   `PRE-STAGE-5-DOMAIN-QUESTION-RESOLUTION.md (historical)`. Findings are carried forward into Stage 6
    (Evidence) and resolved, if at all, at Stage 7 (Governance).

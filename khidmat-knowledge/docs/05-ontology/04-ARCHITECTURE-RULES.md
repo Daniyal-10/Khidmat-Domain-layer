@@ -16,7 +16,7 @@ Same discipline as Stage 2 and Stage 3, applied to rules rather than domain cont
 
 | | What it is | Where it lives |
 |---|---|---|
-| **Established rules** | A rule with a named source in a frozen document or an explicit ruling below | §4, main body |
+| **Established rules** | A rule with a named source in a baseline document or an explicit ruling below | §4, main body |
 | **Rulings** | A tension closed by this document, stated once, propagating everywhere | §1 |
 | **Open tensions** | Acknowledged unknowns the architecture must accommodate without resolving | §7, and the UHR rules in §4.8 |
 
@@ -33,7 +33,7 @@ and corrected going forward.
 
 ## 1. Synchronization Correction — Need Classification (Stage 1-origin decision, propagated to Stage 3)
 
-**Finding.** Three answers exist for the same question across the frozen documents:
+**Finding.** Three answers exist for the same question across the baseline documents:
 
 | Document | Says |
 |---|---|
@@ -94,15 +94,15 @@ This ruling is binding per **CTR-2 / CTR-3** (§4.7): it applies wherever Need a
 reopened only by new evidence or an explicit governance ruling, never by a later document
 silently reverting to the Relation reading.
 
-## 1A. Synchronization Correction — Organisation/Programme Split (Stage 7 G1-origin decision)
+## 1A. Synchronization Correction — Organisation/Programme Split (Proposed Amendment)
 
 **Finding.** Business Logic V1 §4 originally collapsed implementing organisations and the programmes they lead into a single actor row ("Programme / Organisation").
 
-**Confirmed classification (originating in Stage 7 `07-STAGE-7-GOVERNANCE-DECISIONS.md` G1):** `Organisation` and `Programme` are split into two distinct Entities connected by a new `operates` Relation.
+**Proposed classification:** `Organisation` and `Programme` are proposed to be split into two distinct Entities connected by a new `operates` Relation, pending Stage 6 interpretation and Stage 7 governance.
 
-**Reasoning.** The Organisation/Programme distinction is retained as ordinary structural modeling (not an evidence-dependent claim). Khidmat itself is scoped as exactly one Organisation entity with zero Programme entities.
+**Reasoning.** The Organisation/Programme distinction is proposed as an ordinary structural modeling refinement. Khidmat itself is scoped as exactly one Organisation entity with zero Programme entities.
 
-**Propagation status: APPLIED.** `02-ONTOLOGY-LAYERS.md` and `03-ONTOLOGY-PILLARS.md` have been updated to reflect the two distinct Entities and the new relationship, overwriting the earlier unified Entity.
+**Propagation status: PROPOSED.** `02-ONTOLOGY-LAYERS.md` and `03-ONTOLOGY-PILLARS.md` currently retain this proposal.
 
 ---
 
@@ -471,7 +471,7 @@ None of the following prevents Stage 5 (Ground Truth Reviews) from beginning. Ea
 **Complete for this phase:** all eight rule categories defined and sourced; the Need
 contradiction identified during the Stage 1–3 completion audit is ruled and closed (§1); a
 compliance pass against existing Stage 1–3 content found one substantive defect (now closed) and
-one cosmetic defect (flagged); all structural tensions are resolved explicitly (§7). All structural governance dependencies are now closed against authoritative Tier 1 sources.
+one cosmetic defect (flagged); all structural tensions are formally documented (§7). Structural governance dependencies remain pending Stage 6 interpretation and Stage 7 governance decisions.
 
 **Not done, by design:** no practitioner validation of the domain content the rules govern; no taxonomy or value-set population.
 
