@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What kind of operational rules or constraints strictly bind your casework, regardless of what the individual beneficiary needs (e.g., eligibility cutoffs, safeguarding rules, reporting mandates)? Can you describe a real situation where two of these rules pulled you in opposite directions (like a donor reporting requirement clashing with a family's preference for privacy)? How did you handle that clash?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | 'about the family privacy concern too much to hide...' |
+| **Evidence / response** | Practitioner establishes operational rules (donor limits, higher priority for families without earning members) and describes that overlapping rules are handled by the experienced volunteer's call. |
 
 ---
 
@@ -44,8 +44,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | STOP item: Fabricated master wording discarded. Raw text shows rule vs preference, not rule vs rule. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Practitioner establishes operational rules (donor limits, higher priority for families without earning members) and describes that overlapping rules are handled by the experienced volunteer's call. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

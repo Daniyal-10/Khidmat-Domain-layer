@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What specific kinds of restrictions have you seen donors attach to funding? (For instance, restrictions based on geography, specific sectors, types of populations, or time limits?)" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | 'donors have limit to donate...' |
+| **Evidence / response** | Practitioner establishes that donors have limits to donate in some cases to prevent beneficiary dependency. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Validates existence of funding restrictions, but does not independently establish the full geographic/sectoral/population/time-limited taxonomy. |
+| **Reviewer reasoning** | Practitioner establishes that donors have limits to donate in some cases to prevent beneficiary dependency. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

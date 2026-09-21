@@ -32,7 +32,7 @@
 | **Question as asked** | What kinds of things happen to a person, household, or case that you consider to be events or occurrences rather than ongoing conditions? Are there situations where something that initially looks like an event is actually treated as an ongoing condition or state instead? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'medical needs are of one time and long also...' |
+| **Evidence / response** | Practitioner distinguishes between one-time needs based on specific events/occurrences and recurring needs. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Distinguishes one-time dateable events from ongoing states. |
+| **Reviewer reasoning** | Practitioner distinguishes between one-time needs based on specific events/occurrences and recurring needs. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

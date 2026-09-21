@@ -32,7 +32,7 @@
 | **Question as asked** | When an automated system, database search, or matching tool is "unsure" about something—for example, it suspects two records might belong to the same person but isn't 100% certain—what happens next in your workflow? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'Beneficiary ID... as there can be similar name or identity mismatch' |
+| **Evidence / response** | Practitioner states that when identity is uncertain (identity mismatch), the workflow is to check beneficiary IDs and documents. |
 
 ---
 
@@ -43,8 +43,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Identity tracking is manual; does not validate rule handling algorithmic uncertainty. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Practitioner states that when identity is uncertain (identity mismatch), the workflow is to check beneficiary IDs and documents. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

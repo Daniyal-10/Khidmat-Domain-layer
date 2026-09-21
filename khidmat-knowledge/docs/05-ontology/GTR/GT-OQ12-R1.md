@@ -32,7 +32,7 @@
 | **Question as asked** | What practical mechanism, field, or process do you use to show this distinction? What happens if a field is simply left blank? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'unknown here is nothing about the case' |
+| **Evidence / response** | Practitioner states all fields are filled, which does not address the distinction or what happens if a field is left blank. |
 
 ---
 
@@ -44,7 +44,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Workflow avoids missing info; system representation is not assessed. |
+| **Reviewer reasoning** | Practitioner states all fields are filled, which does not address the distinction or what happens if a field is left blank. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

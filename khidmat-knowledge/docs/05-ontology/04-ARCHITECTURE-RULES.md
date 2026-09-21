@@ -466,6 +466,13 @@ None of the following prevents Stage 5 (Ground Truth Reviews) from beginning. Ea
 | **Missing-information-representation** | Cognition (Layer 7). | The system preserves explicit epistemic information so that unknown or uncertain claims are not collapsed. | Option A Closure (CONFIRMED evidence — not a G4 item; no single-source caveat applies) |
 
 
+
+### 7.3 Post-GTR Session 01 Evidence Update
+
+Ground truth testing produced the following rulings on architectural rules:
+* **CCR-5 / UHR-4 (Algorithmic humility & Identity routing):** CONFIRMED. The session explicitly established that identity-ambiguity resolution (mismatches, missing IDs) strictly routes to human judgment (volunteers verifying documents on the ground), and final casework decisions always require human verification.
+* **CCR-6 (Non-linearity):** CHALLENGED/REFUTED. The session context explicitly refutes backward case movement (cases cannot go backward). While cases can be re-opened or have extended timelines, true backward administrative transitions were denied. This challenges the universal necessity of backward non-linearity and queues it for governance review.
+
 ## 8. Status
 
 **Complete for this phase:** all eight rule categories defined and sourced; the Need

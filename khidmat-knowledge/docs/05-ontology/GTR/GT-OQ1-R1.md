@@ -32,7 +32,7 @@
 | **Question as asked** | How do you currently determine, without biometrics, that a new registration is the same person as an existing record? [Follow-up: What happens if a phone number is shared by multiple people in a family, or if a beneficiary loses or changes their phone number?] |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified; references Aadhaar/Voter ID in India. |
-| **Evidence / response** | Uses Beneficiary ID, contact no, family details. |
+| **Evidence / response** | Practitioner states identity is determined using Beneficiary ID, contact no, and family member details. |
 
 ---
 
@@ -44,7 +44,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Determines identity manually without biometrics; primarily demonstrates prevention-based verification (via documents/identifiers) rather than live duplicate resolution. |
+| **Reviewer reasoning** | Practitioner states identity is determined using Beneficiary ID, contact no, and family member details. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "In your casework, which specific decisions or actions strictly require a human practitioner to review and approve them? Are there scenarios where a system calculation, formula, or junior assessment is explicitly not trusted to make the final determination?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | 'its done on the ground verification... the volutneer decides' |
+| **Evidence / response** | Practitioner explicitly states that verification of leads and the decision to accept or reject cases strictly require a human practitioner (volunteer). |
 
 ---
 
@@ -47,8 +47,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Shows human judgment, but does not establish a universal 'always requires human sign-off' rule against automation. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Practitioner explicitly states that verification of leads and the decision to accept or reject cases strictly require a human practitioner (volunteer). |
 | **Implication for ontology** | NO CHANGE |
 
 ---

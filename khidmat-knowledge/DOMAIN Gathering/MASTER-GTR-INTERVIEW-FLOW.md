@@ -26,11 +26,11 @@ No answer is inferred from ontology documents, historical files, previous interp
 
 ## Domain Expert Answer
 
-NO organisations and programs are involved in this just the khidmat grp doing the root work
+No , also organisations and programs are involved in this just the khidmat grp doing the root work
 
 ## Evidence / Interpretation
 
-No programmes exist in this operation.
+Practitioner explicitly denies observing this distinction, stating 'No' and that programs are not involved.
 
 ## Finding Classification
 
@@ -48,15 +48,15 @@ In your actual work, can a case move backward or return to an earlier situation?
 
 ## Domain Expert Answer
 
-also medical needs are of one time and long also soo they can be if one time then help via the donors and then closed if recusisng like medicens they can conitnue
+NO it cant move backward , yes the same beneficary case can be open but that benefiacry will be the same but this rarely happens it can be the new case of the same beneficary so we can track the cases also asepr the beneficiary.
 
 ## Evidence / Interpretation
 
-'if recusisng like medicens they can conitnue'
+Practitioner states cases cannot move backward, refuting the proposition of backward movement. Reopening a case is mentioned but does not establish backward state transition.
 
 ## Finding Classification
 
-CONFIRMED
+NOT_ASSESSABLE
 
 ## Ontology Implication
 
@@ -70,6 +70,8 @@ Have you ever seen a person's life circumstances and their administrative status
 
 ## Domain Expert Answer
 
+NO that usually dont happen as we do the volunteer verification before the beneficiary is created
+
 **Additional Practitioner Clarification**
 The beneficiary card is tied to the beneficiary person and the family.
 The verification history is also linked to the beneficiary. A volunteer verifies the beneficiary, and that verification is associated with the beneficiary before the beneficiary card is issued.
@@ -78,7 +80,7 @@ Even if the donor is no longer actively supporting the beneficiary, the data sti
 
 ## Evidence / Interpretation
 
-Not addressed in evidence.
+Practitioner states this usually does not happen. Additional clarification establishes beneficiary card and verification history are tied directly to the beneficiary, but does not provide evidence of confusion between life circumstances and administrative status.
 
 ## Finding Classification
 
@@ -88,20 +90,6 @@ NOT_ASSESSABLE
 
 NO CHANGE
 
-## Evidence Boundary
-
-This clarification establishes relationships between:
-* beneficiary
-* family
-* verification volunteer
-* beneficiary card
-* donor
-* donor support history
-
-It does NOT establish that the practitioner observed confusion between life circumstances and administrative status.
-It also does not establish indefinite/permanent legal retention of the beneficiary record.
-Do not infer either point.
-
 # GT-AR4
 
 ## GTR Question
@@ -110,15 +98,16 @@ Do not infer either point.
 
 ## Domain Expert Answer
 
-its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary
+Currently in the verfication of the leads the human practitioner (volunteer) is required and that is the staff of the khidmat grp,
+NO, the volutneer is experienced so he can accept or reject the case based on the condition , what they asked for and much does the need actually matched.
 
 ## Evidence / Interpretation
 
-'its done on the ground verification... the volutneer decides'
+Practitioner explicitly states that verification of leads and the decision to accept or reject cases strictly require a human practitioner (volunteer).
 
 ## Finding Classification
 
-NOT_ASSESSABLE
+CONFIRMED
 
 ## Ontology Implication
 
@@ -131,6 +120,7 @@ NO CHANGE
 "When a case involves dignity, safeguarding, or protection concerns, how are those risks practically recorded in your tools? Have you ever seen these concepts reduced to a numerical 'score' or 'rating', or are they recorded and handled differently?"
 
 ## Domain Expert Answer
+Yes these kind of things rarely happens , but we are taking minimum data in the survey form to help them we dont work without these verification process if the beneficiary totally disagree so we exclude them and if they want to hide it we try to limit their case to less people 
 
 **Additional Practitioner Clarification**
 The domain expert stated that the organization takes the minimum data required in the survey form.
@@ -140,7 +130,7 @@ They also try to limit the number of people they provide assistance to so that t
 
 ## Evidence / Interpretation
 
-No raw evidence addressing dignity as score vs rule.
+Practitioner states they take minimum data and limit cases for privacy concerns, but does not mention dignity/safeguarding risks being reduced to a numerical score.
 
 ## Finding Classification
 
@@ -150,17 +140,6 @@ NOT_ASSESSABLE
 
 NO CHANGE
 
-## Evidence Boundary
-
-This provides evidence of:
-* minimum-data collection
-* privacy-sensitive information collection
-* limiting the number of beneficiaries assisted according to the organization's practical capacity when privacy concerns are relevant
-
-It does NOT establish that dignity, safeguarding, or protection concerns are represented as numerical scores or ratings.
-It does NOT establish a specific formal safeguarding/protection field or tool.
-Do not infer either point.
-
 # GT-AR6
 
 ## GTR Question
@@ -169,15 +148,15 @@ When an automated system, database search, or matching tool is "unsure" about so
 
 ## Domain Expert Answer
 
-The Beneficiary ID (Unique ID) should be there , as there can be similar name or identity mismatch
+Mainly we give the beneficiaries their unique ID (Beneficiary ID), so that this dont happen but if this happens those 2 persons their beneficiary id should be checked first , and their documents which we are taking at the time of registering them
 
 ## Evidence / Interpretation
 
-'Beneficiary ID... as there can be similar name or identity mismatch'
+Practitioner states that when identity is uncertain (identity mismatch), the workflow is to check beneficiary IDs and documents.
 
 ## Finding Classification
 
-NOT_ASSESSABLE
+CONFIRMED
 
 ## Ontology Implication
 
@@ -190,6 +169,8 @@ NO CHANGE
 When you assess a person or household, are dimensions such as health, age, capability, nutrition, economic situation, caregiving, shelter, water/sanitation, etc., treated as distinct assessment dimensions in your actual work? Are the same dimensions reused? Can one change independently?
 
 ## Domain Expert Answer
+
+Below is the form layout that data we take 
 
 Khidmat from layout (what data is taken )
 
@@ -208,7 +189,7 @@ Requirements 1.        2.       3.          4.
 
 ## Evidence / Interpretation
 
-Age, gender, housing, income, requirements collected.
+Answer shows age, gender, housing, income, and requirements are collected as distinct fields on the assessment form.
 
 ## Finding Classification
 
@@ -226,15 +207,16 @@ Which of the following do you track as distinct, persistent things in your own s
 
 ## Domain Expert Answer
 
-NO organisations and programs are involved in this just the khidmat grp doing the root work
+we track the beneficiaries , their families , persons, donors , service providers (vendors currently) , Case
+we dont track community , organisation, programme , govermnent body Emergent
 
 ## Evidence / Interpretation
 
-'NO organisations and programs are involved'
+Practitioner explicitly lists tracking beneficiaries, families, persons, donors, service providers (vendors), and cases.
 
 ## Finding Classification
 
-NOT_ASSESSABLE
+CONFIRMED
 
 ## Ontology Implication
 
@@ -248,6 +230,8 @@ Which connections between people, households, and organizations does your work a
 
 ## Domain Expert Answer
 
+their blood relations, guardianship, kinship
+
 Family members details 
 Name   gender  age   relation   particular
 xxxx   F        70   mother     widow
@@ -257,7 +241,7 @@ xxx    F        04   daughter   study
 
 ## Evidence / Interpretation
 
-'relation: mother, wife, son, daughter'
+Practitioner establishes recording of kinship and family relations (mother, wife, son, daughter).
 
 ## Finding Classification
 
@@ -275,17 +259,18 @@ NO CHANGE
 
 ## Domain Expert Answer
 
-about the family privacy concern too much to hide
-the khidmat grp dont work like this
-only if they are too much concern still they tell in khidmat still they needs to tell about the 3 4 more people which are working
+we limit the donors at some range so the beneficiaries dont be dependent on other too much
+families which do not have any earning member have a little higher priority like widow daughter
+
+Mostly the volunteer take is enough for any these rules overlapping as the volunteer is experienced doing this so it will be the volunteers call
 
 ## Evidence / Interpretation
 
-'about the family privacy concern too much to hide...'
+Practitioner establishes operational rules (donor limits, higher priority for families without earning members) and describes that overlapping rules are handled by the experienced volunteer's call.
 
 ## Finding Classification
 
-NOT_ASSESSABLE
+CONFIRMED
 
 ## Ontology Implication
 
@@ -299,17 +284,11 @@ When a person's or household's condition changes, what happens to the previous r
 
 ## Domain Expert Answer
 
-Mostly the needs are here in the 
-Food 
-Shelter 
-Medical 
-Education
-... 
-soo there earning members maybe take more longer and even if they have still some time we help them with the bare minimum need to food
+yes the conditions can be changed but that is long term process mostly these cases of recurring needs like basic food and minimum medication takes longer their record history is maintianed based on the person beneficiary id their whole record in tracked that till when they were supported , what was their needs and who helped them
 
 ## Evidence / Interpretation
 
-Needs tracked: Food, Shelter. 'earning members maybe take more longer...'
+Practitioner states record history is maintained based on beneficiary ID, tracking what needs they had and who helped them over time.
 
 ## Finding Classification
 
@@ -334,7 +313,7 @@ as the form is filled and ground check is also done by the volunteer the form go
 
 ## Evidence / Interpretation
 
-Survey -> visit -> upload -> adoption -> fulfillment (tracking card).
+Practitioner describes the distinct events in a case timeline: survey, ground verification, upload for donor adoption, and fulfillment tracking via card.
 
 ## Finding Classification
 
@@ -352,15 +331,17 @@ How do you distinguish between "we checked and this is not true" and "we have no
 
 ## Domain Expert Answer
 
-unknown here is nothing about the case which is not much requried in this case
+we checked and this is not true 
+this case can be directly rejected by the volunteer at the ground level only 
+if not checked that means the verfication is pending
 
 ## Evidence / Interpretation
 
-'unknown here is nothing about the case'
+Practitioner distinguishes between 'checked and not true' (directly rejected) and 'not checked' (verification is pending).
 
 ## Finding Classification
 
-NOT_ASSESSABLE
+CONFIRMED
 
 ## Ontology Implication
 
@@ -374,15 +355,16 @@ NO CHANGE
 
 ## Domain Expert Answer
 
-uploaded in a grp where the donors are there and then here the first come first server is who says that he will help them they are taken as resposible for that particaulr beneficary
+we are single organtization we are not connected to anybody 
+we upload in a grp where the donors are there and then here the first come first server is who says that he will help them they are taken as resposible for that particaular beneficiary
 
 ## Evidence / Interpretation
 
-'uploaded in a grp where the donors are there... first come first server'
+Practitioner explicitly states 'we are single organtization we are not connected to anybody', which refutes inter-organizational handoffs.
 
 ## Finding Classification
 
-CONFIRMED
+NOT_ASSESSABLE
 
 ## Ontology Implication
 
@@ -402,7 +384,7 @@ all docs and the things are taken which is menitoned in the form and then we are
 
 ## Evidence / Interpretation
 
-Uses Beneficiary ID, contact no, family details.
+Practitioner states identity is determined using Beneficiary ID, contact no, and family member details.
 
 ## Finding Classification
 
@@ -420,11 +402,12 @@ NO CHANGE
 
 ## Domain Expert Answer
 
+we take the things which are there in the form and based on those we can take related docs like example of medical their medical records
 The medicals proofs (reports, prescreptions) of government hospital are considered true only so no double verification from hospitals are needed
 
 ## Evidence / Interpretation
 
-'medicals proofs... of government hospital are considered true only'
+Practitioner states medical records are collected and provides a formal rule for trust: government hospital proofs are considered true without double verification.
 
 ## Finding Classification
 
@@ -442,13 +425,11 @@ In your actual work, how do practitioners determine that a person or household h
 
 ## Domain Expert Answer
 
-We help these ppl
-Below the poverty line 
-Extremely needy mostly
+No there is no such rule but we help the people which are already below poverty line and are in extreme needs and the volunteer verifies them to register for the beneficiary
 
 ## Evidence / Interpretation
 
-'Below the poverty line... Extremely needy mostly'
+Practitioner establishes threshold for intervention (below poverty line, extreme needs) which is determined by volunteer verification.
 
 ## Finding Classification
 
@@ -466,11 +447,12 @@ What practical mechanism, field, or process do you use to show this distinction?
 
 ## Domain Expert Answer
 
-unknown here is nothing about the case which is not much requried in this case
+all fields are filled as the volunteer goes to fill the form while taking the information ,
+
 
 ## Evidence / Interpretation
 
-'unknown here is nothing about the case'
+Practitioner states all fields are filled, which does not address the distinction or what happens if a field is left blank.
 
 ## Finding Classification
 
@@ -488,11 +470,11 @@ Does your system or process have a way to explicitly record the disagreement its
 
 ## Domain Expert Answer
 
-we only send a experienced volunteer to the beneficary based on the lead survey so why we will have conflit on the, never happned
+NO (needs confimation)
 
 ## Evidence / Interpretation
 
-'never happned [conflict]'
+Practitioner explicitly states 'NO' and that conflicts have 'never happned'.
 
 ## Finding Classification
 
@@ -510,6 +492,12 @@ NO CHANGE
 
 ## Domain Expert Answer
 
+the survey form have their consent to it 
+
+The form contains a consent statement:
+"I hereby acknowledge that the information used above is true to my knowledge and I give my consent to the Khidmat Group to use this information as per their will."
+The beneficiary's signature and the surveyor/volunteer's signature are present, along with the relevant number/contact information.
+
 **Additional Practitioner Clarification**
 The survey form completed when the volunteer visits the beneficiary for verification also functions as the consent form.
 The organization takes only the minimum required data.
@@ -519,7 +507,7 @@ The beneficiary's signature and the surveyor/volunteer's signature are present, 
 
 ## Evidence / Interpretation
 
-Mentions initial privacy concern, no withdrawal.
+Practitioner establishes how initial consent is captured via a signed survey statement, but does not provide evidence regarding what happens if consent is withdrawn partway.
 
 ## Finding Classification
 
@@ -529,18 +517,6 @@ NOT_ASSESSABLE
 
 NO CHANGE
 
-## Evidence Boundary
-
-This provides evidence that:
-* consent is captured through the survey/verification form
-* the beneficiary signs the form
-* the surveyor/volunteer also signs
-* relevant identifying/contact information is associated with the form
-
-It does NOT provide evidence about what happens if consent is withdrawn partway through assistance.
-No consent-withdrawal workflow has been provided.
-Do not infer one.
-
 # GT-OQ15
 
 ## GTR Question
@@ -549,13 +525,12 @@ Do not infer one.
 
 ## Domain Expert Answer
 
-Also 2 3 vendors are there connected with them so the beneficiary can visit them and take the ration (from the card)
-... 
-The medicals proofs (reports, prescreptions) of government hospital are considered true only
+NO we dont interact with any of these only 2 3 vendors are there connected with them so the beneficiary can visit them and take the ration(food)(from the card)
+
 
 ## Evidence / Interpretation
 
-Vendors provide ration, hospitals provide proofs.
+Practitioner explicitly states 'NO we dont interact with any of these'.
 
 ## Finding Classification
 
@@ -573,11 +548,12 @@ When two needs affect each other, do you explicitly record that relationship in 
 
 ## Domain Expert Answer
 
-its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary
+we just ask the needs and mostly the needs are from the categoirs od food , shelter, education we record the needs 
+there can be multiple needs which can be asked by the person
 
 ## Evidence / Interpretation
 
-'multiple needs the volutneer decides...'
+Practitioner states multiple needs can be asked for, but does not explicitly mention recording the relationship between affecting needs.
 
 ## Finding Classification
 
@@ -595,11 +571,12 @@ NO CHANGE
 
 ## Domain Expert Answer
 
-uploaded in a grp where the donors are there and then here the first come first server is who says that he will help them they are taken as resposible for that particaulr beneficary
+it depends on the case as some are the one time and some are ongoing commitemts , so the donors help them by adopting them 
+also in some cases if there are multiple needs ther can be 2 donors adopting the beneficiary so they can help them 
 
 ## Evidence / Interpretation
 
-'uploaded in a grp where the donors are there'
+Practitioner answers the first part (one-time, ongoing, adoption) but does not provide evidence for a distinct layer of decision-making among funders. Partial answer.
 
 ## Finding Classification
 
@@ -617,11 +594,11 @@ Have you encountered a child who was orphaned but well-guardianed, or unguardian
 
 ## Domain Expert Answer
 
-dont have a earning member that directly make their prioirty high
+this totally depends on the family situation where the the person is living the volunteer can identify tese based on the expricence he have
 
 ## Evidence / Interpretation
 
-'dont have a earning member...'
+Practitioner states it depends on family situation and volunteer experience, but does not provide a clear answer or example.
 
 ## Finding Classification
 
@@ -639,12 +616,11 @@ NO CHANGE
 
 ## Domain Expert Answer
 
-just the khidmat grp volunteerss (the staff)
-Visits the beneficiary to do the ground reality check
+(needs clarification)
 
 ## Evidence / Interpretation
 
-'just the khidmat grp volunteerss'
+Practitioner provides no answer ('needs clarification').
 
 ## Finding Classification
 
@@ -662,11 +638,12 @@ When several circumstances occur together and you consider someone vulnerable, d
 
 ## Domain Expert Answer
 
+when there are multiple needs and what exactly the needs are those are noted in the case summary to get the details
 its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary
 
 ## Evidence / Interpretation
 
-Volunteer decides vulnerability based on ground review.
+Practitioner states multiple needs are noted and synthesized in the case summary based on the volunteer's ground review.
 
 ## Finding Classification
 
@@ -684,14 +661,11 @@ Describe a real case where someone's family and household didn't match (e.g., di
 
 ## Domain Expert Answer
 
-Khidmat from layout (what data is taken )
-Address:
-
-Hosue : Own    Rental (tick)  (checkbox)
+mostly we are helping the families (needs clarity)
 
 ## Evidence / Interpretation
 
-'Family members details... House: Own/Rental'
+Practitioner states 'mostly we are helping the families' but does not describe a case where family and household didn't match.
 
 ## Finding Classification
 
@@ -709,18 +683,12 @@ When recording conditions such as health, age, capability/disability, nutrition,
 
 ## Domain Expert Answer
 
-Family members details 
-Name   gender  age   relation   particular
-xxxx   F        70   mother     widow
-... 
-xxxx   M        10   son        study
-... 
-Case summary:
-accident mein spinal cord mein multiple injuries hone ki wajah se
+for all the same form is there to fill in and then based on these we can help them  
+case summary is the detialed desription which the volunteer write to include the things overall in the case
 
 ## Evidence / Interpretation
 
-Mentions specific examples: widow, study, accident.
+Practitioner mentions using the same form and case summary, but does not explicitly state the actual values/categories used for conditions.
 
 ## Finding Classification
 
@@ -738,12 +706,11 @@ NO CHANGE
 
 ## Domain Expert Answer
 
-The donor and the beneficiary has this card to track the delivery of the supports from both the ends 
-On which the delivery signatures are taken (the beneficary side will do the receving and the donor will do the fullfilling)
+mostly the cases which are one time need they gets closed , the recurring case goes for long
 
 ## Evidence / Interpretation
 
-Tracking card used by donor and beneficiary.
+Practitioner states one-time needs get closed while recurring go for long, but does not address measuring outcome impact versus administrative closure.
 
 ## Finding Classification
 
@@ -761,11 +728,12 @@ Same as GT-PL5: do you experience "the organisation" and "the programme" as one 
 
 ## Domain Expert Answer
 
+both are different but botha are not involved in this project
 NO organisations and programs are involved in this just the khidmat grp doing the root work
 
 ## Evidence / Interpretation
 
-'NO organisations and programs are involved'
+Practitioner explicitly states 'NO organisations and programs are involved in this'.
 
 ## Finding Classification
 
@@ -789,7 +757,7 @@ Yes donors have limit to donate is some cases so that the needy once don't becom
 
 ## Evidence / Interpretation
 
-Donors adopt from group, track via card, have limits.
+Practitioner states donors take responsibility for specific beneficiaries (adoption) and have donation limits.
 
 ## Finding Classification
 
@@ -811,7 +779,7 @@ Yes donors have limit to donate is some cases so that the needy once don't becom
 
 ## Evidence / Interpretation
 
-'donors have limit to donate...'
+Practitioner establishes that donors have limits to donate in some cases to prevent beneficiary dependency.
 
 ## Finding Classification
 
@@ -829,11 +797,11 @@ NO CHANGE
 
 ## Domain Expert Answer
 
-dont have a earning member that directly make their prioirty high
+(needs confimation)
 
 ## Evidence / Interpretation
 
-'dont have a earning member that directly make their prioirty high'
+Practitioner provides no answer ('needs confimation').
 
 ## Finding Classification
 
@@ -851,17 +819,15 @@ Describe conditions you track that persist and change over time for a person or 
 
 ## Domain Expert Answer
 
-Widow cases
-... 
-also medical needs are of one time and long also
+(need answer)
 
 ## Evidence / Interpretation
 
-'widow cases', 'medical needs are of one time and long also'
+No answer provided ('need answer').
 
 ## Finding Classification
 
-CONFIRMED
+NOT_ASSESSABLE
 
 ## Ontology Implication
 
@@ -875,11 +841,13 @@ NO CHANGE
 
 ## Domain Expert Answer
 
-also they are working in bhopal and 100-200 km near this city currently
+(needs confirmation)
+NO we dont cover the seasonal things are not covered
+And not the pandemic situations also
 
 ## Evidence / Interpretation
 
-'working in bhopal and 100-200 km near this city'
+Practitioner explicitly states 'NO we dont cover the seasonal things'.
 
 ## Finding Classification
 
@@ -897,17 +865,17 @@ In your actual records and systems, how do you distinguish between a situation w
 
 ## Domain Expert Answer
 
-unknown here is nothing about the case which is not much requried in this case
-... 
-jo requirements survey mai aati h jo woh khete hai agau unse woh ground reaility match nhi hoti h toh usko reject kardiya jata h
+we checked and this is not true 
+this case can be directly rejected by the volunteer at the ground level only 
+if not checked that means the verfication is pending
 
 ## Evidence / Interpretation
 
-'unknown here is nothing... volunteer will reject the case'
+Practitioner distinguishes between 'checked and this is not true' (directly rejected) and 'if not checked' (verification is pending).
 
 ## Finding Classification
 
-NOT_ASSESSABLE
+CONFIRMED
 
 ## Ontology Implication
 
@@ -925,7 +893,7 @@ The Beneficiary ID (Unique ID) should be there , as there can be similar name or
 
 ## Evidence / Interpretation
 
-'The Beneficiary ID (Unique ID) should be there... identity mismatch'
+Practitioner establishes the use of a Unique Beneficiary ID to handle identity mismatch.
 
 ## Finding Classification
 
@@ -949,11 +917,11 @@ Yes donors have limit to donate is some cases so that the needy once don't becom
 
 ## Evidence / Interpretation
 
-'We don't help the beggers', 'donors have limit'
+Practitioner mentions rules (not helping beggars, donor limits) but does not provide an example of rules clashing or how a clash is handled. Partial answer.
 
 ## Finding Classification
 
-CONFIRMED
+NOT_ASSESSABLE
 
 ## Ontology Implication
 
@@ -967,11 +935,12 @@ What kinds of things happen to a person, household, or case that you consider to
 
 ## Domain Expert Answer
 
-also medical needs are of one time and long also soo they can be if one time then help via the donors and then closed if recusisng like medicens they can conitnue
+One time needs are mostly based on some events or occurrences what the person goes through and the needs like food and medical recurring 
+it depends
 
 ## Evidence / Interpretation
 
-'medical needs are of one time and long also...'
+Practitioner distinguishes between one-time needs based on specific events/occurrences and recurring needs.
 
 ## Finding Classification
 
@@ -989,11 +958,12 @@ Describe how a vulnerability or risk in one family member affects others who dep
 
 ## Domain Expert Answer
 
+yes this can affect the family members of the particular family as
 dont have a earning member that directly make their prioirty high
 
 ## Evidence / Interpretation
 
-'dont have a earning member that directly make their prioirty high'
+Practitioner states that the lack of an earning member (a vulnerability) directly makes the family's priority high.
 
 ## Finding Classification
 
@@ -1011,16 +981,11 @@ In your actual assessment and casework, do you treat a person's identity, their 
 
 ## Domain Expert Answer
 
-Khidmat from layout (what data is taken )
-
-Beneficiary detilas    date:           beneficary photo
-... 
-Family members details 
-Name   gender  age   relation   particular
+yes their identity and their needs are noted as individuals and their living is different 
 
 ## Evidence / Interpretation
 
-Form groups Person details separate from Household context.
+Practitioner states identity and needs are noted as individuals and their living situation is different.
 
 ## Finding Classification
 
@@ -1038,12 +1003,13 @@ NO CHANGE
 
 ## Domain Expert Answer
 
+(needs confirmation)
 NO we dont cover the seasonal things are not covered
 And not the pandemic situations also
 
 ## Evidence / Interpretation
 
-'NO we dont cover the seasonal things...'
+Practitioner explicitly states 'NO we dont cover the seasonal things'.
 
 ## Finding Classification
 
@@ -1061,11 +1027,12 @@ When several circumstances occur together and you consider someone vulnerable, d
 
 ## Domain Expert Answer
 
+when there are multiple needs and what exactly the needs are those are noted in the case summary to get the details
 its done on the ground verification and the multiple needs the volutneer decides that based on the ground review and that is mentioned in the case summary
 
 ## Evidence / Interpretation
 
-'multiple needs the volutneer decides that based on the ground review'
+Practitioner states multiple needs are noted together and synthesized in the case summary based on the volunteer's ground review.
 
 ## Finding Classification
 
@@ -1087,7 +1054,7 @@ we only send a experienced volunteer to the beneficary based on the lead survey 
 
 ## Evidence / Interpretation
 
-'never happned [conflict]'
+Practitioner states this has 'never happned'.
 
 ## Finding Classification
 
@@ -1105,11 +1072,11 @@ In your operating environment, is there a meaningful difference between "an orga
 
 ## Domain Expert Answer
 
-NO organisations and programs are involved in this just the khidmat grp doing the root work
+they are different but also organisations and programs are involved in this just the khidmat grp doing the root work
 
 ## Evidence / Interpretation
 
-'NO organisations and programs are involved'
+Practitioner states 'NO organisations and programs are involved in this'.
 
 ## Finding Classification
 
@@ -1125,14 +1092,15 @@ NO CHANGE
 
 "Describe a case where the administrative step of 'closing the case' and the actual measurement of 'did the assistance work' were tracked differently. Are these always handled by the same person on the same timeline, or do you have a separate process for measuring the actual outcome/impact?"
 
-## Domain Expert Answer
+## Domain Expert 
 
+we dont track the outcomes
 The donor and the beneficiary has this card to track the delivery of the supports from both the ends 
 On which the delivery signatures are taken (the beneficary side will do the receving and the donor will do the fullfilling)
 
 ## Evidence / Interpretation
 
-Tracking card used jointly by donor and beneficiary.
+Practitioner explicitly states 'we dont track the outcomes'.
 
 ## Finding Classification
 
@@ -1151,12 +1119,12 @@ NO CHANGE
 ## Domain Expert Answer
 
 Case summary:(total case descptiron is writen here)
-(exmaple:KHIDMAT GROUP
+example:KHIDMAT GROUP
  Buzurg maa aur 2 chote bacche hai, accident mein spinal cord mein multiple injuries hone ki wajah se bister se nahi uth patey hai.kiraye ke ghar mein rehte hai inhe medical, monthly grocery aur rent mein help ki zaroorat hai
 
 ## Evidence / Interpretation
 
-Need (medical) and modality (grocery, rent) bundled in description.
+Practitioner provides a case summary example where need (medical) and delivery/modality (monthly grocery, rent) are recorded together as one detailed description.
 
 ## Finding Classification
 
@@ -1173,9 +1141,9 @@ NO CHANGE
 | Classification | Count |
 |---|---:|
 
-| CONFIRMED | 20 |
+| CONFIRMED | 22 |
 
-| NOT_ASSESSABLE | 27 |
+| NOT_ASSESSABLE | 25 |
 
 | CONTEXT_DEPENDENT | 0 |
 

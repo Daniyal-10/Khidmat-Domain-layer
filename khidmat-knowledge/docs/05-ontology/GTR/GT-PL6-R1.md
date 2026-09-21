@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "Describe a case where the administrative step of 'closing the case' and the actual measurement of 'did the assistance work' were tracked differently. Are these always handled by the same person on the same timeline, or do you have a separate process for measuring the actual outcome/impact?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | Tracking card used jointly by donor and beneficiary. |
+| **Evidence / response** | Practitioner explicitly states 'we dont track the outcomes'. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Outcome tracking not separated from fulfillment; proposition not assessed. |
+| **Reviewer reasoning** | Practitioner explicitly states 'we dont track the outcomes'. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

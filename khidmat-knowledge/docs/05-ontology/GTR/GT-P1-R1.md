@@ -32,7 +32,7 @@
 | **Question as asked** | Describe conditions you track that persist and change over time for a person or household you have worked with. Does anything you track behave differently from this — e.g., is instantaneous, or never changes? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'widow cases', 'medical needs are of one time and long also' |
+| **Evidence / response** | No answer provided ('need answer'). |
 
 ---
 
@@ -40,8 +40,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Practitioner explicitly tracks conditions that change over time. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | No answer provided ('need answer'). |
 | **Implication for ontology** | NO CHANGE |
 
 ---

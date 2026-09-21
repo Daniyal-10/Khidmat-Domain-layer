@@ -32,7 +32,7 @@
 | **Question as asked** | Does your system or process have a way to explicitly record the disagreement itself? How is it finally resolved? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'never happned [conflict]' |
+| **Evidence / response** | Practitioner explicitly states 'NO' and that conflicts have 'never happned'. |
 
 ---
 
@@ -44,7 +44,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Conflicts are avoided; system representation not assessed. |
+| **Reviewer reasoning** | Practitioner explicitly states 'NO' and that conflicts have 'never happned'. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

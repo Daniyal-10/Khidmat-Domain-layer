@@ -17,20 +17,21 @@
 * Reverification
 * Recurring vs one-time needs
 * Grassroots operation without nested programmes in this context
+* Distinction between "checked and false" (rejected) vs "not checked" (pending)
+* Human judgment (volunteer's call) strictly required for verification and resolving conflicting rules
+* Identity-ambiguity resolution via IDs and documents
+* Explicit refutation of backward case movement
+* Explicit refutation of inter-organizational handoffs
 
 ## WHAT SESSION 01 DID NOT ESTABLISH
 
 * dependency/cascading need semantics
-* unknown vs false
-* conflicting-source resolution
 * status vs reality mismatch
 * altitude-dependent terminology
 * dignity/safeguarding hard-rule semantics
-* conflicting-rule resolution
 * exact consent semantics
 * complete outcome semantics
 * full compounding-vulnerability semantics
-* complete identity-resolution process
 
 ## CHANGE REGISTER
 
@@ -43,6 +44,8 @@
 | \docs/05-ontology/02-ONTOLOGY-LAYERS.md\ | §12.3 Post-GTR Session 01 Evidence Update | None (New section) | Active entities, relationships | Added section | E1/E3 | LOCAL/CONTEXT | MAY_REQUIRE_REFINEMENT | No |
 | \docs/05-ontology/04-ARCHITECTURE-RULES.md\ | §7.3 Post-GTR Session 01 Evidence Update | None (New section) | Context operates at single altitude | Added tracking for AR1-6 | E0/E1 | UNRESOLVED | CHALLENGES_EXISTING_MODEL | Yes |
 | \docs/07-closure-archive/ONTOLOGY-MAP-TRACEABILITY.md\ | §3. Post-GTR Session 01 Evidence Update | None (New section) | Evidence vs Hypothesis shifted | Added tracking section | E1/E3 | UNRESOLVED | NO_OBVIOUS_IMPACT | No |
+| \docs/05-ontology/GTR/GT-L8-R1.md\ | §1. Handoffs | Handoffs occur | No handoffs happen | Refuted proposition | E1 | LOCAL/CONTEXT | CHALLENGES_EXISTING_MODEL | Yes |
+| \docs/05-ontology/GTR/GT-AR2-R1.md\ | §1. Backward movement | Cases can move backward | Cannot move backward | Refuted proposition | E1 | LOCAL/CONTEXT | CHALLENGES_EXISTING_MODEL | Yes |
 
 
 ## SESSION 01 FOLLOW-UP CLARIFICATION — SURVEY / GROUND REALITY

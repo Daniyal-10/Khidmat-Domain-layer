@@ -32,7 +32,7 @@
 | **Question as asked** | How do you distinguish between "we checked and this is not true" and "we have not checked this yet" in your systems? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'unknown here is nothing about the case' |
+| **Evidence / response** | Practitioner distinguishes between 'checked and not true' (directly rejected) and 'not checked' (verification is pending). |
 
 ---
 
@@ -43,8 +43,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Workflow resolves unknowns before entry; system epistemic stance was not assessed. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Practitioner distinguishes between 'checked and not true' (directly rejected) and 'not checked' (verification is pending). |
 | **Implication for ontology** | NO CHANGE |
 
 ---

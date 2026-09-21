@@ -32,7 +32,7 @@
 | **Question as asked** | Have you ever seen a person's life circumstances and their administrative status tracked in a way that caused confusion? [Follow-up: Is the "beneficiary card" a permanent record of the person, or is it tied to a specific project/donor?] |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | The practitioner clarified that the beneficiary card is tied to the beneficiary person and family. Verification history is linked to the beneficiary before the card is issued. Donors are also linked to the beneficiary while supporting, and this donor linkage is captured persistently even after support stops. |
+| **Evidence / response** | Practitioner states this usually does not happen. Additional clarification establishes beneficiary card and verification history are tied directly to the beneficiary, but does not provide evidence of confusion between life circumstances and administrative status. |
 
 
 ## 3. Finding
@@ -40,7 +40,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The new evidence establishes data linkages between beneficiaries, families, verifications, cards, and donors. However, it does not establish that practitioners observed confusion between life circumstances and administrative status, nor does it establish indefinite legal retention of records. Therefore, the core ontology proposition remains unassessed. |
+| **Reviewer reasoning** | Practitioner states this usually does not happen. Additional clarification establishes beneficiary card and verification history are tied directly to the beneficiary, but does not provide evidence of confusion between life circumstances and administrative status. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

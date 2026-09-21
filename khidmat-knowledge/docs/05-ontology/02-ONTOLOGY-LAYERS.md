@@ -527,6 +527,18 @@ The following concepts were previously carried forward as tensions, but are now 
 *   **Outcome / Impact Ownership:** Outcome and Impact remain distinct from their measurement or assessment representations. Their operational measurement structures and ownership are context-dependent unless specifically established by source evidence. The ontology does not impose a universal ownership assignment to the Human Subject. Governed provisional — rests on UNVERIFIED evidence; treated as an unevidenced design assumption pending corroboration (not practitioner-confirmed).
 
 
+
+### 12.3 Post-GTR Session 01 Evidence Update
+
+The following concepts have been validated by the local grassroots context (Khidmat session):
+* **Entities & Relationships (Layer 2 & Layer 3):** Explicit tracking of beneficiaries, families, persons, donors, service providers (vendors), and cases is validated. Kinship and caregiving structures (e.g. 'zimmedar'/head of household) are heavily utilized.
+* **Cognition/Epistemics (Layer 7):** The critical distinction between "checked and false" (rejected) and "not checked" (pending) is actively tracked and drives casework.
+* **Constraints (Layer 4):** Rule conflicts (e.g., privacy vs donor limitations) exist in reality and are resolved by experienced volunteer judgment.
+
+The following concepts challenge the model:
+* **Handoffs (Layer 8):** Inter-organizational handoffs do not occur in this context; donors adopt beneficiaries directly.
+* **Backward Case Movement (Layer 6):** The context refutes cases moving backward.
+
 ## 13. Status
 
 **Complete for this phase:** all eight layers derived, each naming its source primitive; the

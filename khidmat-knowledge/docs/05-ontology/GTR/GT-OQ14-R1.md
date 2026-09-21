@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "In practice, what exactly do you ask a beneficiary for consent to do? And operationally, what happens to the case or the data if they withdraw their consent partway through receiving assistance?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | The survey form functions as a consent form, collecting minimum required data. It contains explicit consent wording signed by both the beneficiary and the volunteer, along with contact information. |
+| **Evidence / response** | Practitioner establishes how initial consent is captured via a signed survey statement, but does not provide evidence regarding what happens if consent is withdrawn partway. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | The evidence confirms that consent is formally captured at the time of verification via a signed statement. However, it does not establish what happens operationally if consent is withdrawn partway through assistance. Without a consent-withdrawal workflow, the full question remains unassessed. |
+| **Reviewer reasoning** | Practitioner establishes how initial consent is captured via a signed survey statement, but does not provide evidence regarding what happens if consent is withdrawn partway. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

@@ -32,7 +32,7 @@
 | **Question as asked** | When you assess a person or household, are dimensions such as health, age, capability, nutrition, economic situation, caregiving, shelter, water/sanitation, etc., treated as distinct assessment dimensions in your actual work? Are the same dimensions reused? Can one change independently? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Age, gender, housing, income, requirements collected. |
+| **Evidence / response** | Answer shows age, gender, housing, income, and requirements are collected as distinct fields on the assessment form. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Tracks specific facet dimensions on individuals. |
+| **Reviewer reasoning** | Answer shows age, gender, housing, income, and requirements are collected as distinct fields on the assessment form. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "Do you interact with schools, clinics, or local employers as active parties with their own interests, decisions, and capacity limits, or do you treat them purely as passive 'places/services' that a person accesses?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | Vendors provide ration, hospitals provide proofs. |
+| **Evidence / response** | Practitioner explicitly states 'NO we dont interact with any of these'. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Establishes them as services/places, but not explicitly as Actors with their own interests. |
+| **Reviewer reasoning** | Practitioner explicitly states 'NO we dont interact with any of these'. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

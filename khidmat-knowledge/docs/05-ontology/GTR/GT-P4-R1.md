@@ -32,7 +32,7 @@
 | **Question as asked** | Topic 1.1: Identity and Persistence. |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'The Beneficiary ID (Unique ID) should be there... identity mismatch' |
+| **Evidence / response** | Practitioner establishes the use of a Unique Beneficiary ID to handle identity mismatch. |
 
 ---
 
@@ -44,7 +44,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Explicitly tracks re-identification across encounters, primarily demonstrating prevention-based identity verification rather than live duplicate reconciliation. |
+| **Reviewer reasoning** | Practitioner establishes the use of a Unique Beneficiary ID to handle identity mismatch. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

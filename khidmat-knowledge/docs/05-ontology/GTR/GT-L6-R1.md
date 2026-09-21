@@ -32,7 +32,7 @@
 | **Question as asked** | Take one real beneficiary or household case and describe its timeline from beginning to end. What significant events or changes happened, and approximately when did they happen? Are there important events in the person's real life that workers do not record? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Survey -> visit -> upload -> adoption -> fulfillment (tracking card). |
+| **Evidence / response** | Practitioner describes the distinct events in a case timeline: survey, ground verification, upload for donor adoption, and fulfillment tracking via card. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Confirms event sequence and linearity in a case. |
+| **Reviewer reasoning** | Practitioner describes the distinct events in a case timeline: survey, ground verification, upload for donor adoption, and fulfillment tracking via card. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

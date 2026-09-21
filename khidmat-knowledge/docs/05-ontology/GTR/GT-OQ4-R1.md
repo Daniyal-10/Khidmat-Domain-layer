@@ -32,7 +32,7 @@
 | **Question as asked** | When recording conditions such as health, age, capability/disability, nutrition, economic situation, caregiving, shelter, water/sanitation, protection/safety, or other relevant conditions: What actual values or categories do workers use in practice? Are these values fixed across your organization, or are they programme-specific? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Mentions specific examples: widow, study, accident. |
+| **Evidence / response** | Practitioner mentions using the same form and case summary, but does not explicitly state the actual values/categories used for conditions. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Provides observed examples but does not establish or validate the ontology's proposed semantic value-set structure. |
+| **Reviewer reasoning** | Practitioner mentions using the same form and case summary, but does not explicitly state the actual values/categories used for conditions. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

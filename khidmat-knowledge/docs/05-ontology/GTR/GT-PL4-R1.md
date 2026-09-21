@@ -32,7 +32,7 @@
 | **Question as asked** | When two different sources provide conflicting information about the exact same fact, what actually happens in your system? Are both pieces of information kept? Does one piece of information overwrite the other? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'never happned [conflict]' |
+| **Evidence / response** | Practitioner states this has 'never happned'. |
 
 ---
 
@@ -44,7 +44,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Conflicts resolved before entry; contradiction representation not assessed. |
+| **Reviewer reasoning** | Practitioner states this has 'never happned'. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

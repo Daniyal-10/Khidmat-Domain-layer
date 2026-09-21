@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When a household is identified as being 'at risk', how is that actually recorded in your data? Does treating 'at risk' as an ongoing, continuing fact about the household (similar to a health condition) match how you use the term in practice, or is it treated differently?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | 'dont have a earning member that directly make their prioirty high' |
+| **Evidence / response** | Practitioner provides no answer ('needs confimation'). |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Describes urgency/priority, but does not clearly distinguish Risk vs Need according to the Reference Model definitions. |
+| **Reviewer reasoning** | Practitioner provides no answer ('needs confimation'). |
 | **Implication for ontology** | NO CHANGE |
 
 ---

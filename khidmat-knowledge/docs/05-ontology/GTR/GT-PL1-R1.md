@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual assessment and casework, do you treat a person's identity, their health, their capabilities, and their household/living environment as different kinds of information? Are changes in these areas tracked independently? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Form groups Person details separate from Household context. |
+| **Evidence / response** | Practitioner states identity and needs are noted as individuals and their living situation is different. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Conceptually separates person from environment in form layout. |
+| **Reviewer reasoning** | Practitioner states identity and needs are noted as individuals and their living situation is different. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

@@ -32,7 +32,7 @@
 | **Question as asked** | Which of the following do you track as distinct, persistent things in your own systems or records: Person, Household, Family, Community, Organisation, Programme, Donor, Government body, Service provider, Emergent/mutual-aid group, Case? Which are missing? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'NO organisations and programs are involved' |
+| **Evidence / response** | Practitioner explicitly lists tracking beneficiaries, families, persons, donors, service providers (vendors), and cases. |
 
 ---
 
@@ -40,8 +40,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Local absence of Org/Prog layer does not establish context-dependence. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Practitioner explicitly lists tracking beneficiaries, families, persons, donors, service providers (vendors), and cases. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

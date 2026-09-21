@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What kind of operational rules or constraints strictly bind your casework, regardless of what the individual beneficiary needs (e.g., eligibility cutoffs, safeguarding rules, reporting mandates)? Can you describe a real situation where two of these rules pulled you in opposite directions (like a donor reporting requirement clashing with a family's preference for privacy)? How did you handle that clash?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | 'We don't help the beggers', 'donors have limit' |
+| **Evidence / response** | Practitioner mentions rules (not helping beggars, donor limits) but does not provide an example of rules clashing or how a clash is handled. Partial answer. |
 
 ---
 
@@ -44,8 +44,8 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Demonstrates universal rules applied to casework. |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Practitioner mentions rules (not helping beggars, donor limits) but does not provide an example of rules clashing or how a clash is handled. Partial answer. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

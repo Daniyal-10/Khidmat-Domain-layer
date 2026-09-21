@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual work, can a case move backward or return to an earlier situation? How often does this happen in practice? When it happens, do you create a new case, reopen the previous case, or handle it in some other way? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'if recusisng like medicens they can conitnue' |
+| **Evidence / response** | Practitioner states cases cannot move backward, refuting the proposition of backward movement. Reopening a case is mentioned but does not establish backward state transition. |
 
 ---
 
@@ -40,8 +40,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Confirms non-linearity (recurrent/reopening states). |
+| **Finding classification** | NOT_ASSESSABLE |
+| **Reviewer reasoning** | Practitioner states cases cannot move backward, refuting the proposition of backward movement. Reopening a case is mentioned but does not establish backward state transition. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

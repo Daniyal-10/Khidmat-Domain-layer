@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When gathering facts about a person or household, what different types of evidence do you actually collect in the field? If different sources of evidence point to different conclusions, how do you decide which one to trust? Is there a formal rule for which type of evidence 'wins'?" |
 | **Reviewer role** | MEAL / Information Management Practitioner |
 | **Humanitarian context** | Broad field operations and casework |
-| **Evidence / response** | 'medicals proofs... of government hospital are considered true only' |
+| **Evidence / response** | Practitioner states medical records are collected and provides a formal rule for trust: government hospital proofs are considered true without double verification. |
 
 ---
 
@@ -48,7 +48,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Validates epistemic hierarchy and evidence weighting. |
+| **Reviewer reasoning** | Practitioner states medical records are collected and provides a formal rule for trust: government hospital proofs are considered true without double verification. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

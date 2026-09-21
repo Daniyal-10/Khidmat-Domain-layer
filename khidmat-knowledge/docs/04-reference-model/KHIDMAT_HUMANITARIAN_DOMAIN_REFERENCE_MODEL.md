@@ -1199,3 +1199,14 @@ behind what is stated here.
 **One ruling is still required before primitive discovery can begin:** whether a Domain Primitive
 means a concrete irreducible of reality (*Person*, *Household*, *Need*) or a category of concept
 (*Identity*, *Relation*, *Condition*). The entire ontology derives from the answer.
+
+
+---
+
+## 17. Post-GTR Session 01 Evidence Update
+
+The Khidmat grassroots review (Session 01) validated core Reference Model principles while challenging specific operational assumptions:
+* **Validated (Identity & Re-verification):** The requirement to explicitly distinguish the person from their documentation (IDs) and actively verify claims on the ground via human practitioners is established.
+* **Validated (Direct Support):** The Reference Model's emphasis on tracking explicit fulfillment is met through direct donor adoption and WhatsApp-coordinated direct fulfillment.
+* **Challenged (Non-linearity):** The assumption that cases frequently move *backward* (reverting states) was explicitly refuted. Cases may be held, extended, or re-opened, but backward state regression is not practiced.
+* **Challenged (Inter-organizational Handoffs):** The assumption that cases are referred or handed off to other aid organizations was explicitly refuted; Khidmat operates as a single entity without external handoffs.

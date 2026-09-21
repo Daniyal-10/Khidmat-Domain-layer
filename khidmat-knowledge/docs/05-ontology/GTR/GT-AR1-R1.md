@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "In your work, have you ever seen terms like 'needs assessment', 'planning', or 'coordination' used to mean two genuinely different things depending on whether the speaker was talking about an individual person's case versus talking about a broader population-level programme? Can you describe how the activities actually differ?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | No programmes exist in this operation. |
+| **Evidence / response** | Practitioner explicitly denies observing this distinction, stating 'No' and that programs are not involved. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Cannot assess altitude split without a programme layer. |
+| **Reviewer reasoning** | Practitioner explicitly denies observing this distinction, stating 'No' and that programs are not involved. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

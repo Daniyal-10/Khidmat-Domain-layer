@@ -32,7 +32,7 @@
 | **Question as asked** | Which connections between people, households, and organizations does your work actually need to record (e.g., kinship, dependency, guardianship, responsibility, referral, handoff), and are there important connections not on this list? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'relation: mother, wife, son, daughter' |
+| **Evidence / response** | Practitioner establishes recording of kinship and family relations (mother, wife, son, daughter). |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Explicitly tracks kinship relationships. |
+| **Reviewer reasoning** | Practitioner establishes recording of kinship and family relations (mother, wife, son, daughter). |
 | **Implication for ontology** | NO CHANGE |
 
 ---

@@ -32,7 +32,7 @@
 | **Question as asked** | Describe how a vulnerability or risk in one family member affects others who depend on them, in a real case you have seen. |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'dont have a earning member that directly make their prioirty high' |
+| **Evidence / response** | Practitioner states that the lack of an earning member (a vulnerability) directly makes the family's priority high. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Establishes dependency relations cascading into priority. |
+| **Reviewer reasoning** | Practitioner states that the lack of an earning member (a vulnerability) directly makes the family's priority high. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

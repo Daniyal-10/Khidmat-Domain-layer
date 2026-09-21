@@ -32,7 +32,7 @@
 | **Question as asked** | When a person's or household's condition changes, what happens to the previous recorded value in your actual system/process? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Needs tracked: Food, Shelter. 'earning members maybe take more longer...' |
+| **Evidence / response** | Practitioner states record history is maintained based on beneficiary ID, tracking what needs they had and who helped them over time. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Tracks specific states and state changes over time. |
+| **Reviewer reasoning** | Practitioner states record history is maintained based on beneficiary ID, tracking what needs they had and who helped them over time. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

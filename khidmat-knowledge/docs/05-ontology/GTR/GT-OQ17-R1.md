@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What does a donor relationship actually consist of in practice? Is it just a one-time gift, an ongoing commitment, or the 'adoption' of specific cases? Also, is there a distinct layer of decision-making happening above individual programmes where the funders themselves coordinate or set terms together?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | 'uploaded in a grp where the donors are there' |
+| **Evidence / response** | Practitioner answers the first part (one-time, ongoing, adoption) but does not provide evidence for a distinct layer of decision-making among funders. Partial answer. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Local absence of funder altitude does not establish context-dependence. |
+| **Reviewer reasoning** | Practitioner answers the first part (one-time, ongoing, adoption) but does not provide evidence for a distinct layer of decision-making among funders. Partial answer. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

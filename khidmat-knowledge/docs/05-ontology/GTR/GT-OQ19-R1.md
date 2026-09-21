@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "Is there a distinct role or function in your operating environment that exists solely to coordinate a complex case across multiple different organizations, separate from the case manager who is delivering direct support?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | 'just the khidmat grp volunteerss' |
+| **Evidence / response** | Practitioner provides no answer ('needs clarification'). |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Local absence of orchestration role does not establish context-dependence. |
+| **Reviewer reasoning** | Practitioner provides no answer ('needs clarification'). |
 | **Implication for ontology** | NO CHANGE |
 
 ---

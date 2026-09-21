@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When you record that you have provided a form of assistance, do you naturally describe 'what need it addresses', 'how it's delivered' (e.g., cash vs in-kind), and 'the phase of support' as three entirely separate fields/concepts, or do you record them together as one description?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | Need (medical) and modality (grocery, rent) bundled in description. |
+| **Evidence / response** | Practitioner provides a case summary example where need (medical) and delivery/modality (monthly grocery, rent) are recorded together as one detailed description. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Practitioner bundles need and delivery modality, but the evidence does not strongly exercise all three dimensions (Sector x Modality x Phase). |
+| **Reviewer reasoning** | Practitioner provides a case summary example where need (medical) and delivery/modality (monthly grocery, rent) are recorded together as one detailed description. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

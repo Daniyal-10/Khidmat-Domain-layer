@@ -32,7 +32,7 @@
 | **Question as asked** | When several circumstances occur together and you consider someone vulnerable, do you actually record or classify the resulting vulnerability as something in its own right, or do you only record the individual contributing circumstances/factors? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | Volunteer decides vulnerability based on ground review. |
+| **Evidence / response** | Practitioner states multiple needs are noted and synthesized in the case summary based on the volunteer's ground review. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Matches PL3; composite risk is human judgment. |
+| **Reviewer reasoning** | Practitioner states multiple needs are noted and synthesized in the case summary based on the volunteer's ground review. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

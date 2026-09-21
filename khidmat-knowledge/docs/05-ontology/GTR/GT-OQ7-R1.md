@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "What does a donor relationship actually consist of in practice? Is it just a one-time gift, an ongoing commitment, or the 'adoption' of specific cases?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and ecosystem |
-| **Evidence / response** | Donors adopt from group, track via card, have limits. |
+| **Evidence / response** | Practitioner states donors take responsibility for specific beneficiaries (adoption) and have donation limits. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Validates donor coordination mechanisms. |
+| **Reviewer reasoning** | Practitioner states donors take responsibility for specific beneficiaries (adoption) and have donation limits. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

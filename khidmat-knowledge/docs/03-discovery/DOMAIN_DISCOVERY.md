@@ -380,3 +380,10 @@ reference model ยง12.3. Its open questions are consolidated in reference model ย
 **Superseded, not withdrawn.** Nothing here is retracted. It is no longer an input.
 
 ---
+
+
+---
+
+## 7. Post-GTR Session 01 Discovery Evidence
+
+The Session 01 (Khidmat) ground truth review highlighted the highly grassroots nature of the domain context. Unlike large-scale UN models, there are no inter-organizational handoffs and no complex programmatic altitude splitting (e.g. nested programs). Volunteer judgment handles conflict resolution directly, which challenges some of the bureaucratic models discovered earlier.

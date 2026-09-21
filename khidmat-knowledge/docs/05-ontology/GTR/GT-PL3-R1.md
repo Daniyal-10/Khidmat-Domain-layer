@@ -32,7 +32,7 @@
 | **Question as asked** | When several circumstances occur together and you consider someone vulnerable, do you actually record or classify the resulting vulnerability as something in its own right, or do you only record the individual contributing circumstances/factors? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'multiple needs the volutneer decides that based on the ground review' |
+| **Evidence / response** | Practitioner states multiple needs are noted together and synthesized in the case summary based on the volunteer's ground review. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Vulnerability composition is a judgment call, not a formula. |
+| **Reviewer reasoning** | Practitioner states multiple needs are noted together and synthesized in the case summary based on the volunteer's ground review. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

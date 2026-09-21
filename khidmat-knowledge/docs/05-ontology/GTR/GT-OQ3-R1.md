@@ -32,7 +32,7 @@
 | **Question as asked** | Describe a real case where someone's family and household didn't match (e.g., displacement, fostering, polygamy, migration). How did you decide who counted as part of which? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'Family members details... House: Own/Rental' |
+| **Evidence / response** | Practitioner states 'mostly we are helping the families' but does not describe a case where family and household didn't match. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Does not discuss complex family/household boundary cases. |
+| **Reviewer reasoning** | Practitioner states 'mostly we are helping the families' but does not describe a case where family and household didn't match. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

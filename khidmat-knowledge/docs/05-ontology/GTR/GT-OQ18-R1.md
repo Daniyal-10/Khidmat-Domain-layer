@@ -32,7 +32,7 @@
 | **Question as asked** | Have you encountered a child who was orphaned but well-guardianed, or unguardianed but not orphaned? How did that distinction matter in practice? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'dont have a earning member...' |
+| **Evidence / response** | Practitioner states it depends on family situation and volunteer experience, but does not provide a clear answer or example. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | STOP item: Fabricated master wording discarded. Orphan vs unguardianed not assessed. |
+| **Reviewer reasoning** | Practitioner states it depends on family situation and volunteer experience, but does not provide a clear answer or example. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

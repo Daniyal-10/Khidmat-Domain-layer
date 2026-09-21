@@ -679,3 +679,14 @@ in Business Logic V1 or the Client First Draft can be audited back through here,
 six source conflicts resolved in §10.
 
 **Superseded, not withdrawn.** Nothing in this document is retracted. It is no longer an input.
+
+
+---
+
+## 12. Post-GTR Session 01 Evidence Update
+
+The Khidmat grassroots review (Session 01) confirmed the following operational realities that refine the Business Understanding:
+* **The "Zimmedar" (Head of Household):** Family tracking heavily relies on the 'zimmedar', anchoring the family entity. 
+* **Survey to Verification Pipeline:** Needs are collected via field survey and strictly verified by experienced volunteers. Totally false claims are rejected; genuine ones proceed.
+* **Direct Donor Fulfillment:** Verified leads are published internally where donors directly "adopt" a case on a first-come, first-serve basis. Fulfillment is verified via a dual-sided tracking card.
+* **Human Judgment Priority:** Algorithmic or strictly coded rules do not override human volunteer judgment. Rule overlap (e.g., privacy vs donor proof) is resolved by the volunteer's call.

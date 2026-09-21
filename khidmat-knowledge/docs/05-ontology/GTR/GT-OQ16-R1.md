@@ -32,7 +32,7 @@
 | **Question as asked** | When two needs affect each other, do you explicitly record that relationship in your actual work, or do you simply consider the relationship during assessment and planning? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'multiple needs the volutneer decides...' |
+| **Evidence / response** | Practitioner states multiple needs can be asked for, but does not explicitly mention recording the relationship between affecting needs. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | STOP item: Fabricated master wording discarded. Need interactions not assessed. |
+| **Reviewer reasoning** | Practitioner states multiple needs can be asked for, but does not explicitly mention recording the relationship between affecting needs. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

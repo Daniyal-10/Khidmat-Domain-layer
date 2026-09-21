@@ -36,7 +36,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | **Question as asked** | "When you assess that a certain condition is true for a household (for example, that they have a specific need or a damaged roof), can you give a real example of where that exact same physical condition meant something completely different depending on the location, the season, or the specific programme evaluating it?" |
 | **Reviewer role** | Programme Management & Coordination Practitioner |
 | **Humanitarian context** | Broad programme coordination and context assessment |
-| **Evidence / response** | 'NO we dont cover the seasonal things...' |
+| **Evidence / response** | Practitioner explicitly states 'NO we dont cover the seasonal things'. |
 
 ---
 
@@ -45,7 +45,7 @@ Governed by `05-GROUND-TRUTH-REVIEW-FRAMEWORK.md`.
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Seasonal/location changes not encountered; cannot assess. |
+| **Reviewer reasoning** | Practitioner explicitly states 'NO we dont cover the seasonal things'. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

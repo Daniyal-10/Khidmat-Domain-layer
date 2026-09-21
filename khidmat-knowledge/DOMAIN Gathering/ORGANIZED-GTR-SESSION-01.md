@@ -143,10 +143,12 @@ The statements recorded here represent what the expert explicitly stated, in the
 * **Exact/raw wording:** "claims are in the servey , evidence when the volunteer visted them and verifired them , their claims about the needs and confims it... unknown here is nothing about the case which is not much requried in this case"
 
 
-### A9 — When Sources Disagree
+### A9 — When Sources Disagree / Human Judgment
 * **Question ID:** A9
-* **Expert Answer:** Not explicitly addressed, though the "no double verification needed" implies a mechanism for prioritizing government sources.
-* **Completeness:** INDIRECTLY_ANSWERED (for GT-OQ10), UNANSWERED for others.
+* **Question Text:** When sources disagree or a final determination is needed, who makes the call?
+* **Expert Answer:** The practitioner explicitly confirmed that the verification of leads and the decision to accept or reject cases strictly require a human practitioner (the experienced volunteer). They noted conflicts have "never happned".
+* **Exact/raw wording:** "Currently in the verfication of the leads the human practitioner (volunteer) is required... he can accept or reject the case... never happned [conflict]"
+* **Completeness:** ANSWERED (for GT-AR4, GT-OQ10), NOT OBSERVED for conflicts.
 * **Relevant GTR Review IDs:** GT-PL4, GT-OQ13, GT-OQ10, GT-AR4
 
 ### A10 — Service Providers as Actors
@@ -178,7 +180,7 @@ The statements recorded here represent what the expert explicitly stated, in the
 ### A12 — Referral, Handoff, and Coordination Role
 * **Question ID:** A12
 * **Question Text:** If this case was referred elsewhere, what made it a "referral/handoff"?
-* **Expert Answer:** Direct donor-beneficiary fulfillment is coordinated via WhatsApp/messaging groups. Group 1 handles Survey (leads) and staff verification. Once verified, the form is uploaded to Group 2 where Donors adopt the beneficiary ("first come first serve"). Fulfillment is tracked via a dual-sided card requiring signatures from both parties. Donors can split or combine donations.
+* **Expert Answer:** The practitioner explicitly refuted handing cases off to other organizations ("we are single organtization we are not connected to anybody"). Internally, verified leads are uploaded to Group 2 where Donors adopt the beneficiary ("first come first serve"). Fulfillment is tracked via a dual-sided card requiring signatures from both parties. Donors can split or combine donations.
 * **Exact/raw wording:** "uploaded in a grp where the donors are there and then here the first come first server is who says that he will help them they are taken as resposible for that particaulr beneficary... donors can combine or split... The donor and the beneficiary has this card to track the delivery"
 * **Examples given:** Donor splitting/combining; donor adopting a verified lead.
 * **Terminology used by expert:** "adopt the beneifcary", "combine or split"
@@ -191,7 +193,7 @@ The statements recorded here represent what the expert explicitly stated, in the
 ### A13 — Timeline and Non-Linearity
 * **Question ID:** A13
 * **Question Text:** Walk through the dateable events in this case in order. Did it ever go "backwards"?
-* **Expert Answer:** Explicit non-linearity exists. Reverification occurs for humble families whose earning members might take longer to recover; bare minimum food needs are extended. Medical needs can be one-time (closed immediately) or recurring (like medicines) which continue over time.
+* **Expert Answer:** The practitioner explicitly refuted backward movement ("NO it cant move backward"). However, non-linearity exists: reverification occurs for humble families whose earning members take longer to recover; bare minimum food needs are extended. Medical needs can be one-time or recurring.
 * **Exact/raw wording:** "about the reverifcation mostly the families and the needy once that we help are too humble families soo there earning members maybe take more longer and even if they have still some time we help them with the bare minimum need to food... also medical needs are of one time and long also soo they can be if one time then help via the donors and then closed if recusisng like medicens they can conitnue"
 * **Examples given:** Earning members taking longer; recurring medicines.
 * **Terminology used by expert:** "reverifcation", "closed", "conitnue"
@@ -398,12 +400,12 @@ The statements recorded here represent what the expert explicitly stated, in the
 | GT-PL1 | A1 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ1 | A2 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
 | GT-P4 | A2 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
-| GT-AR6 | A2 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | Yes |
+| GT-AR6 | A2 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ3 | A3 | Yes | E1 | ANSWERED | Khidmat Practice | Local Practice (zimmedar) | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | No |
-| GT-L2 | A3 | Yes | E1 | ANSWERED | Khidmat Practice | Local Practice (zimmedar) | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | No |
+| GT-L2 | A3 | Yes | E1 | ANSWERED | Khidmat Practice | Local Practice (zimmedar) | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
 | GT-P2 | A4 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | NO_OBVIOUS_IMPACT | Yes |
 | GT-PL2 | A4 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | NO_OBVIOUS_IMPACT | Yes |
-| GT-P1 | A5 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
+| GT-P1 | A5 | NO EVIDENCE | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-L5 | A5 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ2 | A6 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | NO_OBVIOUS_IMPACT | Yes |
 | GT-PL3 | A6 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | NO_OBVIOUS_IMPACT | Yes |
@@ -412,23 +414,23 @@ The statements recorded here represent what the expert explicitly stated, in the
 | GT-OQ16 | A7 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-OQ18 | A7 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-L3 | A7 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | MAY_REQUIRE_REFINEMENT | Yes |
-| GT-L7 | A8 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
+| GT-L7 | A8 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ12 | A8 | Yes | E1 | ANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
-| GT-P3 | A8 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
+| GT-P3 | A8 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | VALIDATES_EXISTING_MODEL | No |
 | GT-PL4 | A9 | Yes | E1 | NOT_OBSERVED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-OQ13 | A9 | Yes | E1 | NOT_OBSERVED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
 | GT-OQ10 | A9 | Yes | E1 | NOT_OBSERVED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Implied) | MAY_REQUIRE_COGNITION_CHANGE | Yes |
-| GT-AR4 | A9 | Yes | E1 | NOT_OBSERVED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-AR4 | A9 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ15 | A10 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ7 | A10 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ8 | A11 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
 | GT-OQ11 | A11 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Described) | VALIDATES_EXISTING_MODEL | No |
-| GT-L8 | A12 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | MAY_REQUIRE_COORDINATION_CHANGE | No |
+| GT-L8 | A12 | Yes | E1 | REFUTED | Khidmat Practice | NOT ESTABLISHED | Yes (No handoffs) | No | CHALLENGES_EXISTING_MODEL | Yes |
 | GT-OQ19 | A12 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | MAY_REQUIRE_COORDINATION_CHANGE | No |
 | GT-PL7 | A12 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | MAY_REQUIRE_COORDINATION_CHANGE | No |
 | GT-L6 | A13 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | No |
 | GT-P6 | A13 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | No |
-| GT-AR2 | A13 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | No |
+| GT-AR2 | A13 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | Yes (Refuted backward) | No | CHALLENGES_EXISTING_MODEL | Yes |
 | GT-OQ5 | A14 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | Yes |
 | GT-PL6 | A14 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | Yes (Requested) | VALIDATES_EXISTING_MODEL | Yes |
 | GT-AR3 | A15 | Yes | E1 | CLARIFIED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
@@ -438,8 +440,8 @@ The statements recorded here represent what the expert explicitly stated, in the
 | GT-AR1 | B3 | NO EVIDENCE IN SESSION | E0 | NOT_ASSESSABLE_FROM_SESSION | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | No |
 | GT-OQ14 | B4 | Yes | E1 | CLARIFIED | Khidmat Practice | NOT ESTABLISHED | Yes | Yes (Described) | MAY_REQUIRE_REFINEMENT | Yes |
 | GT-AR5 | B5 | Yes | E1 | CLARIFIED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
-| GT-P5 | B6 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | NO_OBVIOUS_IMPACT | Yes |
-| GT-L4 | B7 | NO EVIDENCE IN SESSION | E0 | UNANSWERED | NOT ESTABLISHED | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-P5 | B6 | Yes | E1 | PARTIALLY_ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | UNRESOLVED | Yes |
+| GT-L4 | B7 | Yes | E1 | ANSWERED | Khidmat Practice | NOT ESTABLISHED | No | No | VALIDATES_EXISTING_MODEL | No |
 
 ---
 

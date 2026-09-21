@@ -32,7 +32,7 @@
 | **Question as asked** | In your operating environment, is there a meaningful difference between "an organisation" and "a programme," or are they effectively the same thing in practice? |
 | **Reviewer role** | Humanitarian practitioner (role unspecified) |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'NO organisations and programs are involved' |
+| **Evidence / response** | Practitioner states 'NO organisations and programs are involved in this'. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Local absence of Org/Prog layer does not establish context-dependence. |
+| **Reviewer reasoning** | Practitioner states 'NO organisations and programs are involved in this'. |
 | **Implication for ontology** | NO CHANGE |
 
 ---

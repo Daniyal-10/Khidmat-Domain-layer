@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual records and systems, how do you distinguish between a situation where "we checked and we know this is false/does not exist" versus a situation where "we have not checked this yet"? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'unknown here is nothing... volunteer will reject the case' |
+| **Evidence / response** | Practitioner distinguishes between 'checked and this is not true' (directly rejected) and 'if not checked' (verification is pending). |
 
 ---
 
@@ -43,8 +43,8 @@
 
 | Field | Value |
 |---|---|
-| **Finding classification** | NOT_ASSESSABLE |
-| **Reviewer reasoning** | Workflow resolves unknowns before entry; system representation of uncertainty was not assessed. |
+| **Finding classification** | CONFIRMED |
+| **Reviewer reasoning** | Practitioner distinguishes between 'checked and this is not true' (directly rejected) and 'if not checked' (verification is pending). |
 | **Implication for ontology** | NO CHANGE |
 
 ---

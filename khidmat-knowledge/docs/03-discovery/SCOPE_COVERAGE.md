@@ -239,3 +239,10 @@ and would not be. **Both blockers require action outside this process** — a ru
 Lead, and practitioner access from the client.
 
 ---
+
+
+---
+
+## 6. Post-GTR Session 01 Scope Evidence
+
+The Session 01 (Khidmat) ground truth review confirmed that direct donor adoption and direct vendor fulfillment are strictly in scope for this specific contextual deployment, meaning the scope must cover peer-to-peer giving mechanics (like WhatsApp donor groups) rather than just institutional pool funding.

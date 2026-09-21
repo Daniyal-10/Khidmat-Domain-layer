@@ -32,7 +32,7 @@
 | **Question as asked** | In your actual work, how do practitioners determine that a person or household has a "need" requiring intervention? What tells a worker that a condition has become a need? Is there a specific threshold? |
 | **Reviewer role** | Humanitarian practitioner |
 | **Humanitarian context** | Unspecified |
-| **Evidence / response** | 'Below the poverty line... Extremely needy mostly' |
+| **Evidence / response** | Practitioner establishes threshold for intervention (below poverty line, extreme needs) which is determined by volunteer verification. |
 
 ---
 
@@ -41,7 +41,7 @@
 | Field | Value |
 |---|---|
 | **Finding classification** | CONFIRMED |
-| **Reviewer reasoning** | Establishes baseline wellbeing standard used. |
+| **Reviewer reasoning** | Practitioner establishes threshold for intervention (below poverty line, extreme needs) which is determined by volunteer verification. |
 | **Implication for ontology** | NO CHANGE |
 
 ---
